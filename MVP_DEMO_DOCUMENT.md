@@ -10,7 +10,7 @@ This document outlines a demo version of **My BP Care**, a multi-agentic AI tool
 
 ## System Architecture
 
-The system is centered around a **Hypertension Care Orchestration Agent** that coordinates four specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This simplified architecture reduces complexity while maintaining comprehensive care delivery.
+The system is centred around a **Hypertension Care Orchestration Agent** that coordinates four specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This simplified architecture reduces complexity while maintaining comprehensive care delivery.
 
 ## Agent Architecture Review
 
@@ -124,7 +124,7 @@ Simulation Process:
 
 ### 4. Lifestyle Agent
 
-**Purpose:** Simulates referrals to services for sodium/alcohol reduction, exercise programs, and dietary modifications
+**Purpose:** Simulates referrals to services for sodium/alcohol reduction, exercise programmes, dietary modifications, smoking cessation, stress management, and sleep hygiene support
 
 **Key Responsibilities:**
 - Assess lifestyle risk factors
@@ -135,29 +135,35 @@ Simulation Process:
 **Demo Workflow with Dummy Data:**
 ```
 Patient: Emma Davis (ID: PT004)
-Risk factors: High sodium diet, sedentary lifestyle, moderate alcohol use
+Risk factors: High sodium diet, sedentary lifestyle, moderate alcohol use, smoking, poor sleep
 
 Intervention Simulation:
 1. Lifestyle assessment questionnaire completed
-2. Identifies priorities: Diet (sodium reduction), Exercise, Alcohol
+2. Identifies priorities: Diet (sodium reduction), Exercise, Alcohol, Smoking cessation, Stress management
 3. Referrals made:
-   - NHS Healthier You: Weight management program
-   - Local leisure center: Cardiac rehabilitation exercise class
+   - NHS Healthier You: Weight management programme
+   - Local leisure centre: Cardiac rehabilitation exercise class
    - Alcohol support: Online NHS alcohol units calculator
-4. Educational materials sent: DASH diet guide, home BP monitoring tips
+   - NHS Stop Smoking Service: Local counsellor appointment
+   - Stress management: Mindfulness-based stress reduction course
+   - Sleep hygiene: NHS Better Health sleep advice programme
+4. Educational materials sent: DASH diet guide, home BP monitoring tips, smoking cessation toolkit
 5. 4-week follow-up scheduled
-6. Progress tracking: Weight loss 2kg, exercise 3x/week, alcohol reduction 30%
+6. Progress tracking: Weight loss 2kg, exercise 3x/week, alcohol reduction 30%, quit smoking day 18
 ```
 
 **Simulated Services:**
-- NHS Healthier You programs: 12 local providers
-- Exercise referral schemes: 8 participating gyms/centers
+- NHS Healthier You programmes: 12 local providers
+- Exercise referral schemes: 8 participating gyms/centres
 - Dietitian services: 5-week waiting list
-- Digital health tools: NHS Food Scanner app, Couch to 5K
+- NHS Stop Smoking Services: 15 local advisors
+- Stress management courses: 6 providers offering MBSR
+- Sleep hygiene programmes: NHS Better Health digital platform
+- Digital health tools: NHS Food Scanner app, Couch to 5K, Smoke Free app
 
 ### 5. Shared Decision-Making Agent
 
-**Purpose:** Simulates patient support in selecting antihypertensive medications based on preferences and side effects
+**Purpose:** Simulates patient support in selecting antihypertensive medications based on preferences and side effects. Strong evidence in the scientific literature demonstrates that shared decision-making leads to better outcomes, particularly higher adherence to antihypertensive medications.
 
 **Key Responsibilities:**
 - Present treatment options to patients
@@ -198,13 +204,13 @@ Decision-Making Simulation:
 
 ### 6. Titration Agent
 
-**Purpose:** Simulates dose adjustment based on mock treatment response
+**Purpose:** Simulates dose adjustment based on mock treatment response, strictly following NICE guidelines and British National Formulary protocols
 
 **Key Responsibilities:**
-- Monitor treatment response
-- Adjust medication doses
-- Add combination therapy when needed
-- Track side effects and efficacy
+- Monitor treatment response according to NICE-specified intervals
+- Adjust medication doses per BNF guidance
+- Add combination therapy following NICE algorithms
+- Track side effects and efficacy using BNF-defined parameters
 
 **Demo Workflow with Dummy Data:**
 ```
@@ -231,13 +237,13 @@ Titration Simulation:
 
 ### 7. Monitoring Agent
 
-**Purpose:** Simulates U&E (Urea and Electrolytes) monitoring and other safety parameters
+**Purpose:** Simulates U&E (Urea and Electrolytes) monitoring and other safety parameters, strictly adhering to NICE guidelines and British National Formulary monitoring requirements
 
 **Key Responsibilities:**
-- Schedule routine blood tests
-- Monitor for medication-related complications
-- Alert to abnormal results
-- Coordinate with GP for result review
+- Schedule routine blood tests per NICE-specified intervals
+- Monitor for medication-related complications as defined in BNF
+- Alert to abnormal results using BNF thresholds
+- Coordinate with GP for result review following NICE protocols
 
 **Demo Workflow with Dummy Data:**
 ```
@@ -264,13 +270,13 @@ Monitoring Simulation:
 
 ### 8. Red Flag Agent
 
-**Purpose:** Simulates red flag detection and escalation per NICE guidance
+**Purpose:** Simulates red flag detection and escalation per NICE guidance and British National Formulary emergency protocols
 
 **Key Responsibilities:**
-- Continuous monitoring for warning signs
-- Immediate escalation protocols
-- Emergency pathway activation
-- Communication with emergency services
+- Continuous monitoring for warning signs per NICE criteria
+- Immediate escalation protocols following BNF guidance
+- Emergency pathway activation as specified in NICE guidelines
+- Communication with emergency services per established protocols
 
 **Demo Workflow with Dummy Data:**
 ```
@@ -290,10 +296,11 @@ Red Flag Simulation:
    - Family notification protocol
 
 3. Escalation pathway:
-   - GP assessment within 2 hours
-   - Consider hospital admission
-   - Antihypertensive therapy review
-   - 24-hour follow-up mandatory
+   - GP assessment within 2 hours (if no GP confirmation within 15 minutes, escalate to out-of-hours service)
+   - Hospital admission required per NICE CG127 if: BP ≥180/110 with papilloedema, life-threatening symptoms (chest pain, dyspnoea, neurological features), or suspected acute target organ damage
+   - Same-day specialist assessment if BP ≥180/110 without life-threatening features but with cardiovascular complications
+   - Antihypertensive therapy review per BNF protocols
+   - 24-hour follow-up mandatory (if patient unreachable after 3 attempts over 6 hours, trigger welfare check via practice nurse or emergency contact)
 
 4. Documentation: Incident logged for quality improvement
 ```
@@ -322,7 +329,7 @@ Day 3:
 - Educational materials provided
 
 Day 7:
-- Lifestyle plan agreed: Diet modification, exercise program
+- Lifestyle plan agreed: Diet modification, exercise programme
 - Shared Decision-Making Agent consultation scheduled
 
 Day 14:

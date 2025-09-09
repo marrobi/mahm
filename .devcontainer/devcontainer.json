@@ -1,0 +1,138 @@
+{
+  "name": "MAHM Healthcare Development",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-node-azure-pack",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-cosmosdb",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.flake8",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "ms-python.pylint",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer",
+        "ms-playwright.playwright",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "ms-vscode.vscode-markdown-preview-enhanced",
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "deque-systems.vscode-axe-linter",
+        "webhint.vscode-webhint",
+        "humao.rest-client",
+        "42crunch.vscode-openapi",
+        "ms-vscode.vscode-dotenv",
+        "ms-vscode-remote.remote-containers"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.mypyEnabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black",
+        "python.sortImports.provider": "isort",
+        "python.testing.pytestEnabled": true,
+        "python.testing.unittestEnabled": false,
+        "typescript.preferences.includePackageJsonAutoImports": "on",
+        "javascript.suggest.autoImports": true,
+        "typescript.suggest.autoImports": true,
+        "eslint.workingDirectories": ["."],
+        "editor.formatOnSave": true,
+        "cSpell.words": [
+          "NHS",
+          "MAHM",
+          "Hypertension",
+          "FastAPI",
+          "Pydantic",
+          "Cosmos",
+          "pytest",
+          "WCAG",
+          "OWASP"
+        ],
+        "files.associations": {
+          "*.env.example": "dotenv",
+          "*.env.local": "dotenv"
+        },
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11",
+      "installTools": true
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  },
+  "forwardPorts": [
+    3000,
+    8000,
+    8080,
+    5432,
+    6379,
+    10255,
+    8081,
+    10250,
+    10251,
+    10252,
+    10253,
+    10254
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "React Dev Server",
+      "onAutoForward": "notify"
+    },
+    "8000": {
+      "label": "FastAPI Backend",
+      "onAutoForward": "notify"
+    },
+    "8081": {
+      "label": "Cosmos DB Data Explorer",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "python3 -m pip install --upgrade pip && pip3 install fastapi uvicorn pydantic pytest pytest-asyncio black isort flake8 mypy && npm install -g typescript eslint prettier jest",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "node",
+  "runArgs": [
+    "--privileged"
+  ],
+  "containerEnv": {
+    "NODE_ENV": "development",
+    "PYTHONUNBUFFERED": "1",
+    "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+    "AZURE_EXTENSION_USE_DYNAMIC_INSTALL": "yes_without_prompt"
+  }
+}

@@ -28,6 +28,93 @@ This simplified structure reduces complexity while maintaining all core function
 - **Treatment Management Agent** provides integrated medication management and monitoring
 - **Orchestrating Agent** incorporates patient decision-making as part of its coordination role
 
+## Patient Categories and Pathways
+
+The system manages three distinct patient categories, each with different entry points and workflows:
+
+### Category A: Known Hypertension Patients
+**Profile:** Individuals with established essential hypertension diagnosis starting system management
+- Existing diagnosis confirmed through previous clinical assessment
+- May be treatment-naive or already on antihypertensive therapy
+- Require ongoing medication management and monitoring
+
+**System Entry Point:** Treatment Management and Monitoring Phase
+- **Bypass:** Diagnostic Agent (already diagnosed)
+- **Primary Agents:** Orchestrating Agent → Treatment Management Agent → Monitoring Agent
+- **Supporting Agents:** Lifestyle Agent, Red Flag Agent as needed
+
+**Example Workflow:**
+```
+Patient: Jane Smith, 52, diagnosed hypertension 2 months ago
+Entry: GP referral with confirmed diagnosis
+Pathway: Orchestrating Agent → Shared Decision-Making → Medication initiation → Monitoring schedule
+```
+
+### Category B: Normotensive Surveillance Patients  
+**Profile:** Individuals with normal BP requiring periodic monitoring per NICE guidelines
+- Previous normal readings but due for routine screening
+- May have cardiovascular risk factors requiring surveillance
+- Family history or lifestyle factors warranting closer monitoring
+
+**System Entry Point:** Routine Monitoring and Surveillance
+- **Primary Agents:** Orchestrating Agent → BP Measurement Agent → Lifestyle Agent (preventive)
+- **Escalation Path:** If elevated readings detected → Category C diagnostic pathway
+- **Monitoring Frequency:** Annual or per NICE risk stratification
+
+**Example Workflow:**
+```
+Patient: Mark Johnson, 45, annual BP check due
+Entry: Practice recall system
+Pathway: BP Measurement → Normal reading → Lifestyle assessment → Annual recall
+Escalation: If ≥140/90 → Diagnostic pathway activated
+```
+
+### Category C: Newly Detected Elevated BP Patients
+**Profile:** Individuals with newly identified elevated blood pressure readings requiring diagnostic workup
+- Elevated readings during routine monitoring or opportunistic screening
+- No previous hypertension diagnosis
+- Require confirmation through ambulatory monitoring per NICE guidelines
+
+**System Entry Point:** Diagnostic and Assessment Phase
+- **Primary Agents:** Orchestrating Agent → BP Measurement Agent → Diagnosing Agent
+- **Progression Path:** Upon diagnosis → Transition to Category A workflows
+- **Timeline:** NICE-compliant diagnostic pathway (typically 4-12 weeks)
+
+**Example Workflow:**
+```
+Patient: Sarah Williams, 38, elevated reading at pharmacy screening
+Entry: Community BP screening programme
+Pathway: Repeat measurements → ABPM arrangement → Diagnosis confirmation → Treatment initiation
+Transition: Upon hypertension diagnosis → Category A management
+```
+
+### Pathway Decision Matrix
+
+| BP Reading | Previous History | System Response | Patient Category |
+|------------|------------------|-----------------|------------------|
+| <140/90    | No hypertension  | Routine surveillance | Category B |
+| <140/90    | Known hypertension | Continue monitoring | Category A |
+| 140-179/90-109 | No hypertension | Diagnostic pathway | Category C |
+| 140-179/90-109 | Known hypertension | Assess treatment response | Category A |
+| ≥180/110   | Any | Red Flag escalation | All categories |
+
+### Inter-Category Transitions
+
+**B → C:** Normotensive patient develops elevated readings
+- Automatic pathway escalation
+- Diagnostic workup initiated
+- Temporary surveillance intensification
+
+**C → A:** Newly diagnosed patient confirmed with hypertension
+- Seamless transition to treatment management
+- Diagnostic data carried forward
+- Treatment pathway activation
+
+**A → B:** Treated patient achieves sustained normal readings
+- Rare transition requiring specialist review
+- Medication withdrawal protocols
+- Enhanced surveillance maintenance
+
 ## Agent Specifications
 
 ### 1. Orchestrating Agent (Central Hub)
@@ -314,56 +401,102 @@ Red Flag Simulation:
 
 ## User Journey Examples
 
-### Journey 1: New Patient Onboarding
+### Journey 1: Category A - Known Hypertension Patient Starting System Management
 ```
-Patient: Tom Richards, 58, referred by GP risk tool
+Patient: Jennifer Lee, 45, diagnosed hypertension 6 weeks ago, GP referral for system management
 
 Day 1: 
-- Orchestrating Agent receives referral
-- Initial assessment questionnaire sent via NHS App
-- BP measurement scheduled at local pharmacy
+- Orchestrating Agent receives referral with confirmed diagnosis
+- Current medication: Ramipril 2.5mg (newly started)
+- Treatment Management Agent activated (bypasses diagnostic pathway)
 
 Day 3:
-- BP measurement completed: 168/96 mmHg
-- Lifestyle Agent assessment initiated
-- Educational materials provided
+- BP measurement scheduled: 152/88 mmHg (not at target)
+- Monitoring Agent: U&E check scheduled
+- Lifestyle Agent: Additional interventions assessed
 
 Day 7:
-- Lifestyle plan agreed: Diet modification, exercise programme
-- Shared Decision-Making Agent consultation scheduled
+- Shared Decision-Making consultation: Discuss dose optimization
+- Patient agrees to titration approach
+- Educational materials on BP self-monitoring provided
 
 Day 14:
-- Medication decision made: Ramipril 2.5mg
-- Monitoring plan established
-- 4-week review booked
-```
-
-### Journey 2: Medication Titration
-```
-Patient: Jennifer Lee, 45, on treatment for 6 weeks
+- Titration Agent: Ramipril increased to 5mg
+- Monitoring plan: 4-week review, U&E in 2 weeks
+- Target: <140/90 mmHg
 
 Week 6:
-- BP Measurement Agent: 152/88 mmHg (not at target)
-- Titration Agent analysis: Partial response
-- Dose increase recommended
-
-Week 7:
-- Shared Decision-Making consultation
-- Patient agrees to dose increase
-- Ramipril increased to 5mg
-
-Week 10:
-- Monitoring Agent: U&E check normal
-- Continue current therapy
-
-Week 14:
-- BP check: 138/82 mmHg (at target)
-- Monitoring schedule adjusted to monthly
+- BP check: 138/82 mmHg (target achieved)
+- Monitoring schedule: Monthly reviews
+- Transition to maintenance phase
 ```
 
-### Journey 3: Red Flag Escalation
+### Journey 2: Category B - Normotensive Surveillance Patient
 ```
-Patient: Alan Murphy, 72, established patient
+Patient: Mark Johnson, 45, annual BP check due, no previous hypertension
+
+Day 1:
+- Practice recall system triggers BP monitoring
+- Orchestrating Agent: Routine surveillance pathway
+- Patient: Family history of hypertension, BMI 27
+
+Day 3:
+- BP Measurement Agent: Pharmacy screening
+- Reading: 128/78 mmHg (normal, high-normal)
+- Lifestyle Agent: Preventive assessment initiated
+
+Day 7:
+- Lifestyle recommendations: Weight management, exercise programme
+- Educational materials: CVD prevention, healthy eating
+- No medication indicated
+
+Day 14:
+- Follow-up questionnaire: Lifestyle changes implemented
+- Next BP check: 12 months (annual recall)
+- System status: Surveillance maintenance
+
+*Escalation scenario if elevated:*
+If BP reading ≥140/90: Automatic transition to Category C diagnostic pathway
+```
+
+### Journey 3: Category C - Newly Detected Elevated BP Patient
+```
+Patient: Sarah Williams, 38, elevated reading at community screening, no previous diagnosis
+
+Day 1:
+- Community pharmacy screening: 158/92 mmHg
+- Orchestrating Agent: Diagnostic pathway activated
+- Patient notified via NHS App
+
+Day 3:
+- BP Measurement Agent: Repeat measurement at GP practice
+- Reading: 162/94 mmHg (confirms elevation)
+- Diagnosing Agent: ABPM arrangement triggered
+
+Day 7:
+- ABPM completed at local hospital
+- 24-hour average: 148/88 mmHg (confirms stage 1 hypertension)
+- Lifestyle assessment initiated
+
+Day 14:
+- Diagnosis confirmed: Essential hypertension
+- Shared Decision-Making consultation scheduled
+- Patient education: Understanding hypertension
+
+Day 21:
+- Medication decision: Amlodipine 5mg selected
+- **Transition to Category A:** Treatment management pathway
+- Monitoring schedule: 4-week review established
+
+Week 8:
+- Now managed as Category A patient
+- BP target achieved: 135/82 mmHg
+- Regular monitoring protocol active
+```
+
+### Journey 4: Red Flag Escalation (All Categories)
+```
+Patient: Alan Murphy, 72, Category A patient, established hypertension on treatment
 
 Day 1:
 - Routine BP check: 188/112 mmHg
@@ -371,19 +504,24 @@ Day 1:
 - Red Flag Agent immediately activated
 
 Day 1 (within 30 minutes):
-- GP surgery contacted
+- GP surgery contacted automatically
 - Urgent appointment arranged
-- Patient advised to avoid driving
+- Patient advised to avoid driving, rest immediately
 
 Day 1 (2 hours later):
 - GP assessment completed
-- Hospital referral made
+- Hospital referral made: Hypertensive emergency
 - Antihypertensive therapy intensified
 
 Day 2:
-- Follow-up BP: 165/95 mmHg
 - Hospital discharge with new medication plan
-- Close monitoring protocol initiated
+- Follow-up BP: 165/95 mmHg (improved)
+- Enhanced monitoring protocol: Daily for 1 week
+
+Day 7:
+- BP stabilized: 142/88 mmHg
+- Return to routine Category A management
+- Medication titration plan adjusted
 ```
 
 ## Agent Interaction Protocols
@@ -410,16 +548,41 @@ Day 2:
 
 ## Demo Data Sources
 
-### Patient Profiles (Dummy Data)
-- 50 simulated patient records
-- Age range: 35-75 years
-- Mix of ethnicities, genders, and risk factors
-- Various stages of hypertension treatment
+### Patient Profiles by Category (Dummy Data)
 
-### Clinical Data
-- BP readings: Normal distribution around realistic values
-- Laboratory results: Within normal ranges with occasional abnormalities
-- Medication responses: Based on clinical trial efficacy data
+**Category A - Known Hypertension Patients (25 profiles)**
+- Age range: 45-75 years
+- Established hypertension diagnosis
+- Various treatment stages: newly diagnosed (8), stable on treatment (12), requiring optimization (5)
+- Medication status: Treatment-naive (8), monotherapy (10), combination therapy (7)
+
+**Category B - Normotensive Surveillance Patients (15 profiles)**  
+- Age range: 35-65 years
+- Normal BP readings requiring monitoring
+- Risk factors: Family history (8), previous borderline readings (4), cardiovascular risk factors (3)
+- Monitoring frequency: Annual (12), 6-monthly (3 high-risk)
+
+**Category C - Newly Detected Elevated BP Patients (10 profiles)**
+- Age range: 35-70 years  
+- Recent elevated readings at community screening
+- Various presentation: Pharmacy screening (4), GP opportunistic (3), Occupational health (2), Self-referral (1)
+- Diagnostic stage: Awaiting ABPM (4), ABPM completed (3), Diagnosis confirmed (3)
+
+### Clinical Data by Category
+**Category A Clinical Data:**
+- BP readings: 135-180/85-110 mmHg (treatment response variation)
+- Laboratory results: ACE inhibitor monitoring profiles, diuretic effects
+- Medication responses: Based on real-world effectiveness data (60% achieve target with optimization)
+
+**Category B Clinical Data:**
+- BP readings: 110-139/70-89 mmHg (normal to high-normal range)
+- Annual screening patterns: 90% within normal range, 10% develop elevated readings
+- Lifestyle factors: Mixed cardiovascular risk profiles
+
+**Category C Clinical Data:**
+- Initial BP readings: 140-175/90-105 mmHg (stage 1-2 hypertension range)  
+- ABPM data: Realistic 24-hour patterns with 15% white coat effect
+- Diagnostic outcomes: 85% confirm hypertension, 15% white coat/masked hypertension
 
 ### Service Provider Data
 - 15 pharmacy locations with realistic wait times
@@ -427,19 +590,49 @@ Day 2:
 - 10 lifestyle intervention providers
 - Typical NHS waiting times applied
 
-## Success Metrics (Simulated)
+## Success Metrics by Patient Category (Simulated)
 
-### Clinical Outcomes
-- 75% of patients achieve target BP within 12 weeks
-- 90% attend scheduled appointments
-- 95% medication adherence rate
-- 0.5% emergency escalations
+### Category A - Known Hypertension Patients
+**Clinical Outcomes:**
+- 78% achieve target BP <140/90 within 12 weeks of system management
+- 92% medication adherence rate
+- 12% require treatment intensification
+- 2% emergency escalations
 
-### Operational Metrics
-- Average time to first intervention: 48 hours
-- GP escalation rate: 15% of cases
-- Patient satisfaction score: 4.2/5
+**Operational Metrics:**
+- Average time to treatment optimization: 6 weeks
+- GP escalation rate: 18% of cases (complex patients)
+- Patient satisfaction: 4.3/5 (treatment support)
+
+### Category B - Normotensive Surveillance Patients  
+**Clinical Outcomes:**
+- 88% maintain normal BP at annual review
+- 12% develop elevated readings requiring diagnostic pathway
+- 95% attend routine monitoring appointments
+- <1% emergency presentations
+
+**Operational Metrics:**
+- Surveillance compliance: 94% (annual recalls)
+- Lifestyle intervention uptake: 65%
+- Patient satisfaction: 4.1/5 (preventive care)
+
+### Category C - Newly Detected Elevated BP Patients
+**Clinical Outcomes:**
+- 85% receive confirmed hypertension diagnosis within 6 weeks
+- 15% diagnosed with white coat/masked hypertension
+- 92% successfully transition to Category A management
+- 89% attend ABPM appointments
+
+**Operational Metrics:**
+- Time to diagnosis: Average 4.2 weeks (NICE compliant)
+- ABPM completion rate: 94%
+- Patient satisfaction: 4.0/5 (diagnostic journey)
+
+### Overall System Metrics
+- Cross-category patient safety: 99.2% appropriate escalations
 - System uptime: 99.5%
+- Inter-agent communication success: 99.8%
+- NHS App integration satisfaction: 4.2/5
 
 ## Future Development Considerations
 

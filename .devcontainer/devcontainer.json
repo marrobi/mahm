@@ -122,7 +122,7 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postCreateCommand": "python3 -m pip install --upgrade pip && pip3 install fastapi uvicorn pydantic pytest pytest-asyncio black isort flake8 mypy && npm install -g typescript eslint prettier jest",
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],

@@ -12,18 +12,14 @@ This document outlines a demo version of **My BP Care**, a multi-agentic AI tool
 
 The system is centred around a **Hypertension Care Orchestration Agent** that coordinates four specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This simplified architecture reduces complexity while maintaining comprehensive care delivery.
 
-## Agent Architecture Review
-
-Upon reflection, the system could be simplified from 8 specialized agents to 5 core agents by merging related functions:
-
-### Simplified Agent Structure (5 Agents):
+## Agent Structure
 1. **Orchestrating Agent** - Central coordination including shared decision-making conversations
 2. **Assessment Agent** - Combined BP measurement and diagnostic functions
 3. **Lifestyle Agent** - Lifestyle interventions and referrals
 4. **Treatment Management Agent** - Combined medication titration and safety monitoring
 5. **Red Flag Agent** - Emergency detection and escalation
 
-This simplified structure reduces complexity while maintaining all core functions. The merged agents handle related workflows more efficiently:
+This structure maintains all core functions with integrated workflows:
 - **Assessment Agent** handles the complete measurement-to-diagnosis pathway
 - **Treatment Management Agent** provides integrated medication management and monitoring
 - **Orchestrating Agent** incorporates patient decision-making as part of its coordination role
@@ -671,29 +667,56 @@ Day 7:
 **Participants:** All agents in coordinated response
 **Focus:** Complex case requiring multiple interventions
 
-## Technical Architecture (High-Level)
+## User Experience
 
-### Agent Framework
-- Each agent implemented as microservice
-- RESTful API communication
-- Event-driven architecture for real-time responses
-- Centralized logging and monitoring
+### Patient Experience Within the App
 
-### Demo Database Schema
-```
-Patients: ID, demographics, medical history, current medications
-BP_Readings: Patient_ID, timestamp, systolic, diastolic, location
-Interventions: Patient_ID, agent_ID, type, status, outcome
-Escalations: Patient_ID, trigger, severity, resolution
-Appointments: Patient_ID, service_type, date, status
-```
+**Primary Interface: NHS App Integration**
+The patient experience centres around seamless integration within the existing NHS App, providing a familiar and trusted environment for BP management.
 
-### User Interface (NHS App Integration Points)
-- Patient dashboard with latest readings
-- Appointment booking interface
-- Educational resource library
-- Direct communication with care team
-- Emergency contact buttons
+**Patient Dashboard:**
+- **BP Trends**: Visual graphs showing BP readings over time with traffic light colour coding
+- **Next Actions**: Clear, personalised recommendations (e.g., "Book pharmacy BP check by Friday")
+- **Medication Reminders**: Intelligent notifications aligned with prescription schedules
+- **Progress Tracking**: Lifestyle goals and achievements with encouraging feedback
+
+**Patient Journey Features:**
+- **Onboarding**: Guided setup with explanation of system benefits and privacy protections
+- **BP Measurement Booking**: One-tap booking at nearby pharmacies, GP practices, or community hubs
+- **Results Notification**: Immediate feedback on readings with explanations in plain English
+- **Educational Content**: Personalised information about hypertension, lifestyle changes, and medications
+- **Emergency Support**: Prominent "Get Help Now" button for urgent concerns
+
+**Accessibility Features:**
+- Large text options for elderly users
+- Voice readback of key information
+- Multi-language support for diverse communities
+- Screen reader compatibility
+
+### Healthcare Professional Administration Interface
+
+**GP Practice Dashboard:**
+- **Patient Overview**: Summary view of all patients under My BP Care management
+- **Alert Triage**: Prioritised list of patients requiring clinical review
+- **Treatment Plans**: Collaborative medication adjustment with AI recommendations
+- **Escalation Management**: Clear protocols for system-flagged urgent cases
+
+**Practice Manager Interface:**
+- **System Performance**: Metrics on patient engagement and outcome improvements
+- **Resource Planning**: Prediction of appointment demands and pharmacy referrals
+- **Staff Training**: Modules for understanding AI agent recommendations
+
+**Pharmacist Portal:**
+- **BP Measurement Queue**: Appointment scheduling and patient check-in
+- **Clinical Alerts**: Notifications for patients with concerning readings
+- **Lifestyle Referrals**: Interface for connecting patients to local services
+- **Communication Hub**: Secure messaging with GP practices for complex cases
+
+**System Administrator Console:**
+- **Agent Monitoring**: Real-time status of all AI agents and their performance
+- **Data Quality**: Validation checks and error reporting across the system
+- **Safety Protocols**: Fail-safe monitoring and escalation pathway verification
+- **User Support**: Help desk integration for technical issues
 
 ## Conclusion
 

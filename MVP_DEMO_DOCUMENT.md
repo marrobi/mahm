@@ -1,8 +1,8 @@
-# Multi-agentic AI Tool for Hypertension Management (Demo MVP)
+# My BP Care - Multi-agentic AI Hypertension Management (Demo MVP)
 
 ## Executive Summary
 
-This document outlines a demo version of a Multi-agentic AI Tool for hypertension management designed for integration into the NHS App. This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities.
+This document outlines a demo version of **My BP Care**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities.
 
 ## Visual Overview
 
@@ -10,7 +10,23 @@ This document outlines a demo version of a Multi-agentic AI Tool for hypertensio
 
 ## System Architecture
 
-The system is centered around a **Hypertension Care Orchestration Agent** that coordinates seven specialized agents, each handling specific aspects of hypertension management according to NICE guidelines.
+The system is centered around a **Hypertension Care Orchestration Agent** that coordinates four specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This simplified architecture reduces complexity while maintaining comprehensive care delivery.
+
+## Agent Architecture Review
+
+Upon reflection, the system could be simplified from 8 specialized agents to 5 core agents by merging related functions:
+
+### Simplified Agent Structure (5 Agents):
+1. **Orchestrating Agent** - Central coordination including shared decision-making conversations
+2. **Assessment Agent** - Combined BP measurement and diagnostic functions
+3. **Lifestyle Agent** - Lifestyle interventions and referrals
+4. **Treatment Management Agent** - Combined medication titration and safety monitoring
+5. **Red Flag Agent** - Emergency detection and escalation
+
+This simplified structure reduces complexity while maintaining all core functions. The merged agents handle related workflows more efficiently:
+- **Assessment Agent** handles the complete measurement-to-diagnosis pathway
+- **Treatment Management Agent** provides integrated medication management and monitoring
+- **Orchestrating Agent** incorporates patient decision-making as part of its coordination role
 
 ## Agent Specifications
 
@@ -30,7 +46,7 @@ The system is centered around a **Hypertension Care Orchestration Agent** that c
 Patient: John Smith (ID: PT001)
 Initial BP: 165/95 mmHg (elevated)
 
-1. Receives patient referral from GP risk stratification tool
+1. Receives patient data for individuals due/overdue for BP monitoring per NICE guidelines
 2. Analyzes patient data: Age 55, BMI 28, no diabetes, smoker
 3. Initiates NICE pathway: Stage 1 hypertension protocol
 4. Coordinates with BP Measurement Agent for community monitoring
@@ -46,7 +62,7 @@ Initial BP: 165/95 mmHg (elevated)
 
 ### 2. BP Measurement Agent
 
-**Purpose:** Simulates BP checks via Lifelight technology or nearest pharmacy partnerships
+**Purpose:** Simulates BP checks via multiple community locations including Lifelight technology, pharmacy partnerships, GP practice waiting rooms, and other accessible venues
 
 **Key Responsibilities:**
 - Coordinate community-based BP monitoring
@@ -61,7 +77,7 @@ Current medication: Amlodipine 5mg
 
 Simulation Steps:
 1. Receives monitoring request from Orchestrating Agent
-2. Locates nearest participating pharmacy (Boots, Mill Road - 0.3 miles)
+2. Locates nearest BP monitoring location (GP practice waiting room, Boots pharmacy Mill Road - 0.3 miles, or community health hub)
 3. Books appointment slot: Tuesday 2:00 PM
 4. Simulates measurement: 145/88 mmHg
 5. Quality check: Measurement meets NHS standards
@@ -70,13 +86,13 @@ Simulation Steps:
 ```
 
 **Dummy Data Sources:**
-- Pharmacy network: 15 participating locations within 5-mile radius
+- BP monitoring locations: 15 pharmacies, 8 GP practices with waiting room devices, 5 community health hubs within 5-mile radius
 - Lifelight app integration: 89% measurement success rate
 - Average measurement time: 3 minutes
 
 ### 3. Diagnosing Agent
 
-**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring and provides GP go/no-go recommendations
+**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring and provides GP go/no-go recommendations (Note: Patients with existing essential hypertension diagnosis can bypass this agent)
 
 **Key Responsibilities:**
 - Arrange ambulatory blood pressure monitoring (ABPM)

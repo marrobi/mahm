@@ -10,19 +10,20 @@ This document outlines a demo version of **My BP Care**, a multi-agentic AI tool
 
 ## System Architecture
 
-The system is centred around a **Hypertension Care Orchestration Agent** that coordinates four specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This simplified architecture reduces complexity while maintaining comprehensive care delivery.
+The system is centred around a **Hypertension Care Orchestration Agent** that coordinates eight specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This comprehensive architecture ensures all critical functions are covered while maintaining coordinated care delivery.
 
 ## Agent Structure
-1. **Orchestrating Agent** - Central coordination including shared decision-making conversations
-2. **Assessment Agent** - Combined BP measurement and diagnostic functions
-3. **Lifestyle Agent** - Lifestyle interventions and referrals
-4. **Treatment Management Agent** - Combined medication titration and safety monitoring
-5. **Red Flag Agent** - Emergency detection and escalation
+1. **Orchestrating Agent** - Central coordination and care pathway management
+2. **BP Measurement Agent** - Community-based blood pressure monitoring
+3. **Diagnosing Agent** - ABPM arrangement and diagnostic confirmation
+4. **Lifestyle Agent** - Lifestyle interventions and referrals
+5. **Shared Decision-Making Agent** - Patient-centred treatment decisions
+6. **Titration Agent** - Medication dose optimization
+7. **Monitoring Agent** - Safety monitoring and blood test coordination
+8. **Medication Adherence Agent** - Adherence support and compliance monitoring
+9. **Red Flag Agent** - Emergency detection and escalation
 
-This structure maintains all core functions with integrated workflows:
-- **Assessment Agent** handles the complete measurement-to-diagnosis pathway
-- **Treatment Management Agent** provides integrated medication management and monitoring
-- **Orchestrating Agent** incorporates patient decision-making as part of its coordination role
+This comprehensive structure ensures all aspects of hypertension management are covered with specialized agents for each critical function, while maintaining coordination through the central Orchestrating Agent.
 
 ## Patient Categories and Pathways
 
@@ -351,7 +352,57 @@ Monitoring Simulation:
 - Diuretics: U&E at 4 weeks, then every 6 months
 - All patients: Annual lipid profile, HbA1c if diabetic
 
-### 8. Red Flag Agent
+### 8. Medication Adherence Agent
+
+**Purpose:** Proactive monitoring and support for medication compliance, using digital tools and behavioral interventions to optimize adherence to antihypertensive therapy
+
+**Key Responsibilities:**
+- Monitor medication adherence through digital pill reminders and patient reporting
+- Identify early signs of non-compliance before clinical impact
+- Provide personalized adherence support and behavioral interventions
+- Coordinate with pharmacy for medication synchronization and support services
+
+**Demo Workflow with Dummy Data:**
+```
+Patient: Helen Wright (ID: PT009)
+Medication: Amlodipine 10mg daily, prescribed 6 weeks ago
+Recent BP readings trending upward despite dose optimization
+
+Adherence Monitoring Simulation:
+1. Digital monitoring analysis:
+   - NHS App medication tracker: 65% adherence (target >80%)
+   - Missed doses: 10 out of last 30 days
+   - Pattern identified: Weekend non-compliance
+
+2. Proactive intervention triggered:
+   - SMS reminder optimization: Weekend-specific alerts
+   - Pharmacy consultation arranged: Dose timing discussion
+   - Behavioral support: Habit-linking strategies
+
+3. Patient engagement:
+   - Educational call: Importance of consistent dosing
+   - Side effect review: No significant issues reported
+   - Barriers assessment: Forgetfulness during social activities
+
+4. Support plan implemented:
+   - Weekly pharmacy check-ins for 4 weeks
+   - Weekend pill organizer provided
+   - Family member notification system activated
+
+5. Follow-up tracking:
+   - 2-week reassessment: Adherence improved to 85%
+   - BP response: 148/86 mmHg (improving trend)
+   - Next review: Continue monitoring for 8 weeks
+```
+
+**Adherence Support Tools:**
+- NHS App medication reminders with customizable timing
+- Pharmacy partnership for medication synchronization
+- Digital pill organizers with app connectivity
+- Patient education videos on importance of adherence
+- Family/carer notification systems with patient consent
+
+### 9. Red Flag Agent
 
 **Purpose:** Simulates red flag detection and escalation per NICE guidance and British National Formulary emergency protocols
 
@@ -391,7 +442,7 @@ Red Flag Simulation:
 **Red Flag Triggers:**
 - BP ≥180/110 mmHg with symptoms
 - Signs of end-organ damage
-- Medication non-compliance >7 days
+- Severe medication non-compliance >14 days (flagged by Medication Adherence Agent)
 - Patient-reported chest pain, shortness of breath
 - Pregnancy with elevated BP
 
@@ -405,6 +456,7 @@ Day 1:
 - Orchestrating Agent receives referral with confirmed diagnosis
 - Current medication: Ramipril 2.5mg (newly started)
 - Treatment Management Agent activated (bypasses diagnostic pathway)
+- Medication Adherence Agent: Digital reminder system activated
 
 Day 3:
 - BP measurement scheduled: 152/88 mmHg (not at target)
@@ -415,15 +467,18 @@ Day 7:
 - Shared Decision-Making consultation: Discuss dose optimization
 - Patient agrees to titration approach
 - Educational materials on BP self-monitoring provided
+- Medication Adherence Agent: Baseline adherence 78% identified
 
 Day 14:
 - Titration Agent: Ramipril increased to 5mg
 - Monitoring plan: 4-week review, U&E in 2 weeks
 - Target: <140/90 mmHg
+- Medication Adherence Agent: Adherence support reinforced for new dose
 
 Week 6:
 - BP check: 138/82 mmHg (target achieved)
 - Monitoring schedule: Monthly reviews
+- Medication Adherence Agent: Sustained 95% adherence achieved
 - Transition to maintenance phase
 ```
 

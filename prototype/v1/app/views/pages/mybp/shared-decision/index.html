@@ -1,0 +1,457 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Choose your blood pressure treatment" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        Choose your blood pressure treatment
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Compare different blood pressure medications to find the best option for your lifestyle and health needs.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>This tool helps you make an informed choice with your healthcare team. All options shown are suitable for your medical profile.</p>
+      </div>
+
+      <!-- Language and accessibility options -->
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-s">
+            Language and accessibility options
+          </h2>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="language-select">
+                  Language
+                </label>
+                <select class="nhsuk-select" id="language-select" name="language">
+                  <option value="en">English</option>
+                  <option value="ur">اردو (Urdu)</option>
+                  <option value="bn">বাংলা (Bengali)</option>
+                  <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                  <option value="ar">العربية (Arabic)</option>
+                  <option value="pl">Polski (Polish)</option>
+                </select>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-label">
+                  Content format
+                </legend>
+                <div class="nhsuk-radios nhsuk-radios--small">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="format-standard" name="format" type="radio" value="standard" checked>
+                    <label class="nhsuk-label nhsuk-radios__label" for="format-standard">
+                      Standard
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="format-easyread" name="format" type="radio" value="easyread">
+                    <label class="nhsuk-label nhsuk-radios__label" for="format-easyread">
+                      Easy Read
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="format-bsl" name="format" type="radio" value="bsl">
+                    <label class="nhsuk-label nhsuk-radios__label" for="format-bsl">
+                      British Sign Language
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Treatment comparison section -->
+      <h2 class="nhsuk-heading-l">Compare your treatment options</h2>
+      
+      <p>Based on your medical history and current health, these 3 treatments are recommended for you:</p>
+
+      <div class="treatment-comparison">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-card treatment-option" data-treatment="amlodipine">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                  <span class="treatment-name">Amlodipine</span>
+                  <span class="nhsuk-tag nhsuk-tag--blue">Currently taking</span>
+                </h3>
+                <p class="treatment-type">Calcium channel blocker</p>
+                <p class="treatment-dose">5mg once daily</p>
+                
+                <div class="treatment-score">
+                  <div class="score-item">
+                    <span class="score-label">Effectiveness</span>
+                    <div class="score-bar">
+                      <div class="score-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="score-text">Very good</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Side effects</span>
+                    <div class="score-bar">
+                      <div class="score-fill score-fill--amber" style="width: 60%"></div>
+                    </div>
+                    <span class="score-text">Moderate</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Lifestyle fit</span>
+                    <div class="score-bar">
+                      <div class="score-fill score-fill--green" style="width: 90%"></div>
+                    </div>
+                    <span class="score-text">Excellent</span>
+                  </div>
+                </div>
+
+                <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="amlodipine">
+                  View details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-card treatment-option" data-treatment="lisinopril">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                  <span class="treatment-name">Lisinopril</span>
+                  <span class="nhsuk-tag nhsuk-tag--green">Alternative</span>
+                </h3>
+                <p class="treatment-type">ACE inhibitor</p>
+                <p class="treatment-dose">10mg once daily</p>
+                
+                <div class="treatment-score">
+                  <div class="score-item">
+                    <span class="score-label">Effectiveness</span>
+                    <div class="score-bar">
+                      <div class="score-fill" style="width: 80%"></div>
+                    </div>
+                    <span class="score-text">Good</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Side effects</span>
+                    <div class="score-bar">
+                      <div class="score-fill score-fill--green" style="width: 30%"></div>
+                    </div>
+                    <span class="score-text">Low</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Lifestyle fit</span>
+                    <div class="score-bar">
+                      <div class="score-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="score-text">Good</span>
+                  </div>
+                </div>
+
+                <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="lisinopril">
+                  View details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-card treatment-option" data-treatment="candesartan">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                  <span class="treatment-name">Candesartan</span>
+                  <span class="nhsuk-tag nhsuk-tag--green">Alternative</span>
+                </h3>
+                <p class="treatment-type">ARB (Angiotensin receptor blocker)</p>
+                <p class="treatment-dose">8mg once daily</p>
+                
+                <div class="treatment-score">
+                  <div class="score-item">
+                    <span class="score-label">Effectiveness</span>
+                    <div class="score-bar">
+                      <div class="score-fill" style="width: 82%"></div>
+                    </div>
+                    <span class="score-text">Very good</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Side effects</span>
+                    <div class="score-bar">
+                      <div class="score-fill score-fill--green" style="width: 25%"></div>
+                    </div>
+                    <span class="score-text">Very low</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Lifestyle fit</span>
+                    <div class="score-bar">
+                      <div class="score-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="score-text">Very good</span>
+                  </div>
+                </div>
+
+                <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="candesartan">
+                  View details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multimedia resources section -->
+      <div class="nhsuk-card nhsuk-u-margin-top-6">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-l">
+            Learn more about your options
+          </h2>
+          <p>Choose how you'd like to learn more about these blood pressure treatments:</p>
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <a href="/pages/mybp/shared-decision/multimedia?type=video" class="nhsuk-card multimedia-card">
+                <div class="nhsuk-card__content">
+                  <div class="multimedia-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
+                  </div>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Video guides</h3>
+                  <p class="nhsuk-card__description">Watch expert explanations</p>
+                </div>
+              </a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <a href="/pages/mybp/shared-decision/multimedia?type=audio" class="nhsuk-card multimedia-card">
+                <div class="nhsuk-card__content">
+                  <div class="multimedia-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                      <line x1="12" y1="19" x2="12" y2="23"></line>
+                      <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                  </div>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Audio stories</h3>
+                  <p class="nhsuk-card__description">Listen to patient experiences</p>
+                </div>
+              </a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <a href="/pages/mybp/shared-decision/multimedia?type=easyread" class="nhsuk-card multimedia-card">
+                <div class="nhsuk-card__content">
+                  <div class="multimedia-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Easy Read</h3>
+                  <p class="nhsuk-card__description">Simple words and pictures</p>
+                </div>
+              </a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <a href="/pages/mybp/shared-decision/chatbot" class="nhsuk-card multimedia-card">
+                <div class="nhsuk-card__content">
+                  <div class="multimedia-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Ask questions</h3>
+                  <p class="nhsuk-card__description">Chat with AI assistant</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continue button -->
+      <div class="nhsuk-u-margin-top-6">
+        <button class="nhsuk-button" id="continue-btn">
+          Continue with selected treatment
+        </button>
+        <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+          You can discuss your choice with your healthcare team at any time
+        </p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  .treatment-comparison {
+    margin: 2rem 0;
+  }
+  
+  .treatment-option {
+    height: 100%;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .treatment-option:hover {
+    border-color: #005eb8;
+    box-shadow: 0 4px 8px rgba(0, 94, 184, 0.1);
+  }
+  
+  .treatment-option.selected {
+    border-color: #005eb8;
+    background-color: #f0f8ff;
+  }
+  
+  .treatment-name {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .treatment-type {
+    color: #425563;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+  }
+  
+  .treatment-dose {
+    font-weight: bold;
+    color: #005eb8;
+    margin-bottom: 1rem;
+  }
+  
+  .treatment-score {
+    margin: 1rem 0;
+  }
+  
+  .score-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .score-label {
+    min-width: 80px;
+    font-size: 0.85em;
+    color: #425563;
+  }
+  
+  .score-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #f0f4f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .score-fill {
+    height: 100%;
+    background-color: #005eb8;
+    transition: width 0.3s ease;
+  }
+  
+  .score-fill--green {
+    background-color: #007f3b;
+  }
+  
+  .score-fill--amber {
+    background-color: #ffb81c;
+  }
+  
+  .score-text {
+    min-width: 70px;
+    font-size: 0.85em;
+    font-weight: 600;
+  }
+  
+  .multimedia-card {
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.2s ease;
+  }
+  
+  .multimedia-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .multimedia-icon {
+    text-align: center;
+    color: #005eb8;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 48em) {
+    .treatment-comparison .nhsuk-grid-column-one-third {
+      margin-bottom: 1rem;
+    }
+    
+    .score-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    
+    .score-bar {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Treatment selection functionality
+  document.querySelectorAll('.treatment-option').forEach(card => {
+    card.addEventListener('click', function() {
+      // Remove selected class from all cards
+      document.querySelectorAll('.treatment-option').forEach(c => c.classList.remove('selected'));
+      // Add selected class to clicked card
+      this.classList.add('selected');
+      
+      // Enable continue button
+      const continueBtn = document.getElementById('continue-btn');
+      continueBtn.disabled = false;
+      continueBtn.textContent = `Continue with ${this.querySelector('.treatment-name').textContent}`;
+    });
+  });
+  
+  // Language change handler
+  document.getElementById('language-select').addEventListener('change', function() {
+    // In a real app, this would trigger content translation
+    console.log('Language changed to:', this.value);
+  });
+  
+  // Format change handler
+  document.querySelectorAll('input[name="format"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      // In a real app, this would change content presentation
+      console.log('Format changed to:', this.value);
+    });
+  });
+  
+  // Details button handlers
+  document.querySelectorAll('.treatment-details-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const treatment = this.dataset.treatment;
+      // In a real app, this would show detailed treatment information
+      alert(`Showing detailed information for ${treatment}`);
+    });
+  });
+</script>
+{% endblock %}

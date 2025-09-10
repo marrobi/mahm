@@ -1,0 +1,659 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Ask about blood pressure treatments" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to treatment comparison",
+    href: "/pages/mybp/shared-decision/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        Ask about blood pressure treatments
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Get answers to your questions about Amlodipine, Lisinopril, and Candesartan from our AI assistant.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>This AI assistant provides general information only. Always speak to your healthcare team for personalized medical advice.</p>
+      </div>
+
+      <!-- Chat interface -->
+      <div class="chat-container">
+        <div class="chat-header">
+          <div class="chat-assistant-info">
+            <div class="assistant-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 9V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h1v3l3-3h8c1.1 0 2-.9 2-2v-2"></path>
+                <circle cx="9" cy="10" r="1"></circle>
+                <circle cx="15" cy="10" r="1"></circle>
+                <path d="M9 14c1.5 1 3.5 1 5 0"></path>
+              </svg>
+            </div>
+            <div class="assistant-details">
+              <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">NHS BP Assistant</h3>
+              <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-bottom-0">Online • Ask me anything about your treatment options</p>
+            </div>
+          </div>
+          <div class="chat-options">
+            <button class="chat-option-btn" data-action="language">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </button>
+            <button class="chat-option-btn" data-action="voice" title="Voice input">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Welcome message -->
+          <div class="message assistant-message">
+            <div class="message-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 9V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h1v3l3-3h8c1.1 0 2-.9 2-2v-2"></path>
+                <circle cx="9" cy="10" r="1"></circle>
+                <circle cx="15" cy="10" r="1"></circle>
+                <path d="M9 14c1.5 1 3.5 1 5 0"></path>
+              </svg>
+            </div>
+            <div class="message-content">
+              <p>Hello! I'm here to help you understand your blood pressure treatment options. You can ask me about:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>How different medications work</li>
+                <li>Side effects and how to manage them</li>
+                <li>Lifestyle considerations</li>
+                <li>What to expect when starting treatment</li>
+              </ul>
+              <p>What would you like to know?</p>
+            </div>
+            <div class="message-time">Just now</div>
+          </div>
+        </div>
+
+        <!-- Quick questions -->
+        <div class="quick-questions">
+          <p class="quick-questions-label">Quick questions:</p>
+          <div class="quick-question-buttons">
+            <button class="quick-question-btn" data-question="What are the main differences between these three medications?">
+              Medication differences
+            </button>
+            <button class="quick-question-btn" data-question="Which medication has the fewest side effects?">
+              Side effects
+            </button>
+            <button class="quick-question-btn" data-question="Can I take these medications during Ramadan?">
+              Religious considerations
+            </button>
+            <button class="quick-question-btn" data-question="What lifestyle changes can help my blood pressure?">
+              Lifestyle tips
+            </button>
+          </div>
+        </div>
+
+        <!-- Chat input -->
+        <div class="chat-input-container">
+          <div class="chat-input-wrapper">
+            <textarea 
+              class="chat-input" 
+              id="chat-input" 
+              placeholder="Type your question here..."
+              rows="1"></textarea>
+            <button class="chat-send-btn" id="send-btn" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22,2 15,22 11,13 2,9"></polygon>
+              </svg>
+            </button>
+          </div>
+          <p class="chat-disclaimer">
+            This AI provides general information only. For medical advice, always consult your healthcare team.
+          </p>
+        </div>
+      </div>
+
+      <!-- Language selection modal -->
+      <div class="language-modal" id="language-modal" style="display: none;">
+        <div class="language-modal-content">
+          <h3 class="nhsuk-heading-m">Choose your language</h3>
+          <div class="language-options">
+            <button class="language-option active" data-lang="en">English</button>
+            <button class="language-option" data-lang="ur">اردو (Urdu)</button>
+            <button class="language-option" data-lang="bn">বাংলা (Bengali)</button>
+            <button class="language-option" data-lang="pa">ਪੰਜਾਬੀ (Punjabi)</button>
+            <button class="language-option" data-lang="ar">العربية (Arabic)</button>
+            <button class="language-option" data-lang="pl">Polski (Polish)</button>
+          </div>
+          <button class="nhsuk-button nhsuk-button--secondary" onclick="closeLanguageModal()">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  .chat-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    border: 1px solid #d8dde0;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+    background: #f0f4f5;
+    border-bottom: 1px solid #d8dde0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat-assistant-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .assistant-avatar {
+    width: 40px;
+    height: 40px;
+    background: #005eb8;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chat-options {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .chat-option-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: #425563;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  
+  .chat-option-btn:hover {
+    background: #e8edee;
+  }
+  
+  .chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .message {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .user-message {
+    flex-direction: row-reverse;
+  }
+  
+  .message-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .assistant-message .message-avatar {
+    background: #005eb8;
+    color: white;
+  }
+  
+  .user-message .message-avatar {
+    background: #007f3b;
+    color: white;
+  }
+  
+  .message-content {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+  }
+  
+  .user-message .message-content {
+    background: #e8f4fd;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .message-time {
+    font-size: 0.75em;
+    color: #425563;
+    margin-top: 0.25rem;
+    text-align: right;
+  }
+  
+  .user-message .message-time {
+    text-align: left;
+  }
+  
+  .quick-questions {
+    padding: 1rem;
+    border-top: 1px solid #d8dde0;
+    background: #f8f9fa;
+  }
+  
+  .quick-questions-label {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #425563;
+  }
+  
+  .quick-question-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .quick-question-btn {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d8dde0;
+    background: white;
+    border-radius: 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .quick-question-btn:hover {
+    background: #005eb8;
+    color: white;
+    border-color: #005eb8;
+  }
+  
+  .chat-input-container {
+    padding: 1rem;
+    border-top: 1px solid #d8dde0;
+    background: white;
+  }
+  
+  .chat-input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chat-input {
+    flex: 1;
+    border: 1px solid #d8dde0;
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    resize: none;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1.4;
+    max-height: 120px;
+    min-height: 44px;
+  }
+  
+  .chat-input:focus {
+    outline: none;
+    border-color: #005eb8;
+    box-shadow: 0 0 0 2px rgba(0, 94, 184, 0.1);
+  }
+  
+  .chat-send-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: #005eb8;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  
+  .chat-send-btn:enabled:hover {
+    background: #003d75;
+  }
+  
+  .chat-send-btn:disabled {
+    background: #d8dde0;
+    cursor: not-allowed;
+  }
+  
+  .chat-disclaimer {
+    font-size: 0.8em;
+    color: #425563;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .language-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .language-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .language-options {
+    display: grid;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .language-option {
+    padding: 0.75rem;
+    border: 1px solid #d8dde0;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+  }
+  
+  .language-option:hover,
+  .language-option.active {
+    background: #005eb8;
+    color: white;
+    border-color: #005eb8;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #425563;
+    font-style: italic;
+  }
+  
+  .typing-dots {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .typing-dot {
+    width: 4px;
+    height: 4px;
+    background: #425563;
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+  }
+  
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  
+  @keyframes typing {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+  }
+  
+  @media (max-width: 48em) {
+    .chat-container {
+      margin: 1rem 0;
+    }
+    
+    .quick-question-btn {
+      font-size: 0.8em;
+      padding: 0.4rem 0.6rem;
+    }
+    
+    .chat-header {
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  // Chat functionality
+  const chatInput = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  const chatMessages = document.getElementById('chat-messages');
+  let currentLanguage = 'en';
+  
+  // Sample responses for demo
+  const responses = {
+    'differences': "The main differences between these medications are:\n\n• **Amlodipine** (Calcium channel blocker): Works by relaxing blood vessels. Good effectiveness, moderate side effects (ankle swelling possible).\n\n• **Lisinopril** (ACE inhibitor): Blocks hormone that tightens blood vessels. Good effectiveness, low side effects (dry cough in some people).\n\n• **Candesartan** (ARB): Similar to ACE inhibitors but with fewer side effects. Very good effectiveness, very low side effects.\n\nAll three are effective - the choice depends on your individual response and any side effects you experience.",
+    
+    'side effects': "In terms of side effects:\n\n**Fewest side effects:** Candesartan (ARB) - typically very well tolerated\n\n**Lisinopril:** Low side effects, but about 10% of people get a dry cough\n\n**Amlodipine:** Moderate side effects, mainly ankle swelling in about 20% of people\n\nRemember, many people take any of these medications without problems. Side effects often improve over time as your body adjusts.",
+    
+    'ramadan': "Yes, all three medications can be taken during Ramadan! Here's how:\n\n• **Best timing:** Take your daily dose either at Suhur (before dawn) or Iftar (sunset)\n• **Consistency:** Choose one time and stick to it throughout Ramadan\n• **No food needed:** All three can be taken with or without food\n• **Speak to your pharmacist** about the best timing for your specific medication and daily routine\n\nMany Muslim patients successfully manage their blood pressure during fasting periods.",
+    
+    'lifestyle': "Great question! These lifestyle changes can help lower blood pressure:\n\n**Diet:**\n• Reduce salt intake (aim for less than 6g per day)\n• Eat more fruits and vegetables\n• Choose whole grains over processed foods\n\n**Exercise:**\n• Aim for 150 minutes of moderate activity per week\n• Even 10-minute walks help\n\n**Other factors:**\n• Maintain a healthy weight\n• Limit alcohol\n• Don't smoke\n• Manage stress through relaxation or meditation\n• Get good quality sleep\n\nThese changes work well alongside medication to control blood pressure."
+  };
+  
+  // Enable/disable send button based on input
+  chatInput.addEventListener('input', function() {
+    sendBtn.disabled = this.value.trim() === '';
+    autoResize(this);
+  });
+  
+  // Auto-resize textarea
+  function autoResize(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+  }
+  
+  // Send message on Enter (but not Shift+Enter)
+  chatInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+  
+  sendBtn.addEventListener('click', sendMessage);
+  
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    
+    // Add user message
+    addMessage(text, 'user');
+    chatInput.value = '';
+    sendBtn.disabled = true;
+    autoResize(chatInput);
+    
+    // Show typing indicator
+    showTypingIndicator();
+    
+    // Simulate AI response
+    setTimeout(() => {
+      hideTypingIndicator();
+      const response = getAIResponse(text);
+      addMessage(response, 'assistant');
+    }, 1500 + Math.random() * 1000);
+  }
+  
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    
+    if (sender === 'assistant') {
+      avatar.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h1v3l3-3h8c1.1 0 2-.9 2-2v-2"></path><circle cx="9" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle><path d="M9 14c1.5 1 3.5 1 5 0"></path></svg>';
+    } else {
+      avatar.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
+    }
+    
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.innerHTML = formatMessage(text);
+    
+    const time = document.createElement('div');
+    time.className = 'message-time';
+    time.textContent = 'Just now';
+    
+    messageDiv.appendChild(avatar);
+    const contentWrapper = document.createElement('div');
+    contentWrapper.appendChild(content);
+    contentWrapper.appendChild(time);
+    messageDiv.appendChild(contentWrapper);
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  
+  function formatMessage(text) {
+    // Convert markdown-style formatting
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+  }
+  
+  function getAIResponse(userMessage) {
+    const lowerMessage = userMessage.toLowerCase();
+    
+    if (lowerMessage.includes('difference') || lowerMessage.includes('compare')) {
+      return responses.differences;
+    } else if (lowerMessage.includes('side effect')) {
+      return responses['side effects'];
+    } else if (lowerMessage.includes('ramadan') || lowerMessage.includes('fasting') || lowerMessage.includes('religious')) {
+      return responses.ramadan;
+    } else if (lowerMessage.includes('lifestyle') || lowerMessage.includes('diet') || lowerMessage.includes('exercise')) {
+      return responses.lifestyle;
+    } else {
+      return "I understand you're asking about blood pressure treatments. I can help you with information about:\n\n• How the medications work\n• Side effects and management\n• Lifestyle considerations\n• Cultural and religious factors\n\nCould you please be more specific about what you'd like to know?";
+    }
+  }
+  
+  function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message assistant-message typing-indicator';
+    typingDiv.id = 'typing-indicator';
+    typingDiv.innerHTML = `
+      <div class="message-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h1v3l3-3h8c1.1 0 2-.9 2-2v-2"></path><circle cx="9" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle><path d="M9 14c1.5 1 3.5 1 5 0"></path></svg>
+      </div>
+      <div class="message-content">
+        <span>NHS BP Assistant is typing</span>
+        <div class="typing-dots">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  
+  function hideTypingIndicator() {
+    const indicator = document.getElementById('typing-indicator');
+    if (indicator) {
+      indicator.remove();
+    }
+  }
+  
+  // Quick question buttons
+  document.querySelectorAll('.quick-question-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const question = this.dataset.question;
+      chatInput.value = question;
+      sendBtn.disabled = false;
+      sendMessage();
+    });
+  });
+  
+  // Language selection
+  document.querySelector('[data-action="language"]').addEventListener('click', function() {
+    document.getElementById('language-modal').style.display = 'flex';
+  });
+  
+  function closeLanguageModal() {
+    document.getElementById('language-modal').style.display = 'none';
+  }
+  
+  document.querySelectorAll('.language-option').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.language-option').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentLanguage = this.dataset.lang;
+      closeLanguageModal();
+      
+      // In a real app, this would trigger translation
+      console.log('Language changed to:', currentLanguage);
+    });
+  });
+  
+  // Voice input simulation
+  document.querySelector('[data-action="voice"]').addEventListener('click', function() {
+    this.classList.toggle('active');
+    if (this.classList.contains('active')) {
+      // Simulate voice recording
+      chatInput.placeholder = 'Listening...';
+      setTimeout(() => {
+        chatInput.placeholder = 'Type your question here...';
+        this.classList.remove('active');
+        chatInput.value = 'What are the side effects of Amlodipine?';
+        sendBtn.disabled = false;
+      }, 2000);
+    }
+  });
+  
+  // Close modal when clicking outside
+  document.getElementById('language-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLanguageModal();
+    }
+  });
+</script>
+{% endblock %}

@@ -258,7 +258,7 @@ Simulation Process:
 - Cross-reference with NHS London "Million Hearts and Minds" programme for evidence-based, culturally-sensitive interventions
 
 **Accessibility Features:**
-- **Multiple delivery methods:** Online forms, voice conversations with AI agents, telephone support, face-to-face consultations
+- **Multiple delivery methods:** Online forms, voice conversations with AI agents, telephone support, face-to-face consultations (reserved for digitally excluded patients only)
 - **Language support:** Available in major community languages plus BSL interpretation services
 - **Accessible formats:** EasyRead versions, large print, audio descriptions, screen reader compatibility
 - **Cultural sensitivity:** Culturally-appropriate dietary advice, religious considerations, community-specific programmes

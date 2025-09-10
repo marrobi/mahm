@@ -9,27 +9,27 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Dose Titration Journey (5 screens)
+    ## Dose Titration Journey (5 screens)
 
-### 1. Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
+    ### 1. Landing Page
+    ![Dose Titration Landing](dose-titration-landing.png)
+    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
 
-### 2. Readings Review
-![Dose Titration Review](dose-titration-review.png)
-**Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
+    ### 2. Readings Review
+    ![Dose Titration Review](dose-titration-review.png)
+    **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
 
-### 3. AI Recommendation
-![Dose Titration Recommendation](dose-titration-recommendation.png)
-**AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
+    ### 3. AI Recommendation
+    ![Dose Titration Recommendation](dose-titration-recommendation.png)
+    **AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
 
-### 4. Confirmation
-![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
+    ### 4. Confirmation
+    ![Dose Titration Confirmation](dose-titration-confirmation.png)
+    **Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
 
-### 5. Blood Test Scheduling
-![Blood Test Overview](blood-test-overview.png)
-**Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
+    ### 5. Blood Test Scheduling
+    ![Blood Test Overview](blood-test-overview.png)
+    **Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
 
 ---
 

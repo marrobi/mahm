@@ -1,0 +1,698 @@
+<!-- Salt & Alcohol Goal Tracking -->
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Salt & Alcohol" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/pages/mybp/lifestyle/index",
+    text: "Back to Lifestyle Hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Salt & Alcohol",
+        subtitle: "Managing intake for better blood pressure"
+      })}}
+
+      <!-- WEEKLY OVERVIEW -->
+      {{ nhsappSectionHeading({
+        headingText: "This week's progress"
+      }) }}
+
+      <div class="nutrition-overview-grid">
+        <div class="nutrition-overview-card nutrition-overview-card--salt">
+          <div class="nutrition-overview-header">
+            <h3>Salt Intake</h3>
+            <span class="nutrition-status nutrition-status--warning">Improving</span>
+          </div>
+          <div class="nutrition-overview-stats">
+            <div class="nutrition-stat-main">
+              <span class="nutrition-stat-number">5.2g</span>
+              <span class="nutrition-stat-label">Average per day</span>
+            </div>
+            <div class="nutrition-stat-target">
+              <span class="nutrition-target-text">Target: Less than 6g</span>
+              <div class="nutrition-progress-bar">
+                <div class="nutrition-progress-fill" style="width: 87%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nutrition-trend">
+            <span class="nutrition-trend-icon nutrition-trend-icon--down">↓</span>
+            <span class="nutrition-trend-text">Down 0.8g from last week</span>
+          </div>
+        </div>
+
+        <div class="nutrition-overview-card nutrition-overview-card--alcohol">
+          <div class="nutrition-overview-header">
+            <h3>Alcohol Intake</h3>
+            <span class="nutrition-status nutrition-status--good">On track</span>
+          </div>
+          <div class="nutrition-overview-stats">
+            <div class="nutrition-stat-main">
+              <span class="nutrition-stat-number">8</span>
+              <span class="nutrition-stat-label">Units this week</span>
+            </div>
+            <div class="nutrition-stat-target">
+              <span class="nutrition-target-text">Target: Less than 14 units</span>
+              <div class="nutrition-progress-bar">
+                <div class="nutrition-progress-fill" style="width: 57%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nutrition-trend">
+            <span class="nutrition-trend-icon nutrition-trend-icon--same">→</span>
+            <span class="nutrition-trend-text">Similar to last week</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAILY TRACKING -->
+      {{ nhsappSectionHeading({
+        headingText: "Daily tracking"
+      }) }}
+
+      <div class="nutrition-daily-tabs">
+        <div class="nutrition-tab nutrition-tab--active" data-tab="salt">
+          Salt
+        </div>
+        <div class="nutrition-tab" data-tab="alcohol">
+          Alcohol
+        </div>
+      </div>
+
+      <!-- Salt Tab Content -->
+      <div class="nutrition-tab-content nutrition-tab-content--active" id="salt-content">
+        <div class="nutrition-daily-entries">
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Today</span>
+              <span class="nutrition-entry-weekday">Sunday</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">4.8g</span>
+                <span class="nutrition-amount-status nutrition-amount-status--good">Under target</span>
+              </div>
+              <div class="nutrition-entry-foods">
+                <span class="nutrition-food-item">Homemade curry (3.2g)</span>
+                <span class="nutrition-food-item">Bread (1.1g)</span>
+                <span class="nutrition-food-item">Snacks (0.5g)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Yesterday</span>
+              <span class="nutrition-entry-weekday">Saturday</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">6.5g</span>
+                <span class="nutrition-amount-status nutrition-amount-status--warning">Over target</span>
+              </div>
+              <div class="nutrition-entry-foods">
+                <span class="nutrition-food-item">Takeaway meal (4.8g)</span>
+                <span class="nutrition-food-item">Processed snacks (1.7g)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Friday</span>
+              <span class="nutrition-entry-weekday">11 Oct</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">4.2g</span>
+                <span class="nutrition-amount-status nutrition-amount-status--good">Under target</span>
+              </div>
+              <div class="nutrition-entry-foods">
+                <span class="nutrition-food-item">Home cooking (3.0g)</span>
+                <span class="nutrition-food-item">Fresh salad (0.2g)</span>
+                <span class="nutrition-food-item">Snacks (1.0g)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alcohol Tab Content -->
+      <div class="nutrition-tab-content" id="alcohol-content">
+        <div class="nutrition-daily-entries">
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Today</span>
+              <span class="nutrition-entry-weekday">Sunday</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">0</span>
+                <span class="nutrition-amount-label">units</span>
+              </div>
+              <div class="nutrition-entry-note">
+                <span class="nutrition-note-text">Alcohol-free day</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Yesterday</span>
+              <span class="nutrition-entry-weekday">Saturday</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">3</span>
+                <span class="nutrition-amount-label">units</span>
+              </div>
+              <div class="nutrition-entry-drinks">
+                <span class="nutrition-drink-item">1 glass of wine (2.1 units)</span>
+                <span class="nutrition-drink-item">1 beer (0.9 units)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-daily-entry">
+            <div class="nutrition-entry-date">
+              <span class="nutrition-entry-day">Friday</span>
+              <span class="nutrition-entry-weekday">11 Oct</span>
+            </div>
+            <div class="nutrition-entry-content">
+              <div class="nutrition-entry-amount">
+                <span class="nutrition-amount-number">0</span>
+                <span class="nutrition-amount-label">units</span>
+              </div>
+              <div class="nutrition-entry-note">
+                <span class="nutrition-note-text">Alcohol-free day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIPS AND STRATEGIES -->
+      {{ nhsappSectionHeading({
+        headingText: "Tips and strategies"
+      }) }}
+
+      <div class="nutrition-tips">
+        <div class="nhsuk-card nhsuk-card--feature">
+          <div class="nhsuk-card__content nhsuk-card__content--feature">
+            <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/low-salt-cooking">
+                Low-salt cooking techniques
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Learn how to use herbs, spices, and other flavoring techniques to reduce salt without sacrificing taste.
+            </p>
+            <div class="nutrition-tip-tags">
+              <span class="nhsuk-tag nhsuk-tag--blue">Cooking</span>
+              <span class="nhsuk-tag nhsuk-tag--green">Heart-healthy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--feature">
+          <div class="nhsuk-card__content nhsuk-card__content--feature">
+            <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/reading-labels">
+                Reading food labels
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Understand what to look for on food packaging to make better choices for your blood pressure.
+            </p>
+            <div class="nutrition-tip-tags">
+              <span class="nhsuk-tag nhsuk-tag--purple">Education</span>
+              <span class="nhsuk-tag nhsuk-tag--orange">Shopping</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--feature">
+          <div class="nhsuk-card__content nhsuk-card__content--feature">
+            <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/alcohol-alternatives">
+                Healthy alcohol alternatives
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Discover delicious non-alcoholic drinks that can help you enjoy social occasions without compromising your health goals.
+            </p>
+            <div class="nutrition-tip-tags">
+              <span class="nhsuk-tag nhsuk-tag--yellow">Alternatives</span>
+              <span class="nhsuk-tag nhsuk-tag--green">Social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS -->
+      {{ nhsappSectionHeading({
+        headingText: "Your achievements"
+      }) }}
+
+      <div class="nutrition-achievements">
+        <div class="nutrition-achievement nutrition-achievement--earned">
+          <div class="nutrition-achievement-badge">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#cd7f32"/>
+              <text x="24" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1w</text>
+            </svg>
+          </div>
+          <div class="nutrition-achievement-details">
+            <h4>Salt Awareness</h4>
+            <p>Successfully tracked salt intake for 1 week</p>
+          </div>
+        </div>
+
+        <div class="nutrition-achievement nutrition-achievement--progress">
+          <div class="nutrition-achievement-badge nutrition-achievement-badge--progress">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#e8edee" stroke="#007f3b" stroke-width="2"/>
+              <text x="24" y="30" text-anchor="middle" fill="#007f3b" font-size="10" font-weight="bold">2/3</text>
+            </svg>
+          </div>
+          <div class="nutrition-achievement-details">
+            <h4>Under Target Days</h4>
+            <p>2 of 3 days under salt target this week</p>
+          </div>
+        </div>
+
+        <div class="nutrition-achievement nutrition-achievement--locked">
+          <div class="nutrition-achievement-badge nutrition-achievement-badge--locked">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#d5d8db"/>
+              <path d="M24 16c-2.2 0-4 1.8-4 4v2h8v-2c0-2.2-1.8-4-4-4zm5 7h-1v-2c0-2.8-2.2-5-5-5s-5 2.2-5 5v2h-1c-1.7 0-3 1.3-3 3v8c0 1.7 1.3 3 3 3h12c1.7 0 3-1.3 3-3v-8c0-1.7-1.3-3-3-3z" fill="white"/>
+            </svg>
+          </div>
+          <div class="nutrition-achievement-details">
+            <h4>Consistency Master</h4>
+            <p>Stay under target for 2 weeks to unlock</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LOG BUTTON -->
+      <div class="nutrition-quick-log">
+        <a href="#" class="nhsuk-button nhsuk-button--secondary">Log today's intake</a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  /* Salt & Alcohol Nutrition Styles */
+  .nutrition-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .nutrition-overview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .nutrition-overview-card {
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+  }
+
+  .nutrition-overview-card--salt {
+    background: linear-gradient(135deg, #ff6b35 0%, #f39800 100%);
+  }
+
+  .nutrition-overview-card--alcohol {
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+  }
+
+  .nutrition-overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .nutrition-overview-header h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .nutrition-status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .nutrition-status--good {
+    background: rgba(0, 127, 59, 0.9);
+  }
+
+  .nutrition-status--warning {
+    background: rgba(255, 184, 28, 0.9);
+  }
+
+  .nutrition-overview-stats {
+    margin-bottom: 16px;
+  }
+
+  .nutrition-stat-main {
+    margin-bottom: 12px;
+  }
+
+  .nutrition-stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .nutrition-stat-label {
+    display: block;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .nutrition-target-text {
+    display: block;
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+
+  .nutrition-progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .nutrition-progress-fill {
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+  .nutrition-trend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 12px;
+  }
+
+  .nutrition-trend-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .nutrition-trend-icon--down {
+    background: rgba(0, 127, 59, 0.9);
+  }
+
+  .nutrition-trend-icon--up {
+    background: rgba(213, 40, 27, 0.9);
+  }
+
+  .nutrition-trend-icon--same {
+    background: rgba(66, 85, 99, 0.9);
+  }
+
+  .nutrition-trend-text {
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+  .nutrition-daily-tabs {
+    display: flex;
+    background: #f0f4f5;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 20px;
+  }
+
+  .nutrition-tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .nutrition-tab--active {
+    background: white;
+    color: #005eb8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nutrition-tab-content {
+    display: none;
+  }
+
+  .nutrition-tab-content--active {
+    display: block;
+  }
+
+  .nutrition-daily-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .nutrition-daily-entry {
+    display: flex;
+    background: #f9fbfc;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 4px solid #007f3b;
+  }
+
+  .nutrition-entry-date {
+    min-width: 100px;
+    margin-right: 16px;
+  }
+
+  .nutrition-entry-day {
+    display: block;
+    font-weight: 600;
+    color: #212b32;
+  }
+
+  .nutrition-entry-weekday {
+    display: block;
+    font-size: 12px;
+    color: #425563;
+  }
+
+  .nutrition-entry-content {
+    flex: 1;
+  }
+
+  .nutrition-entry-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .nutrition-amount-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #212b32;
+  }
+
+  .nutrition-amount-label {
+    font-size: 14px;
+    color: #425563;
+  }
+
+  .nutrition-amount-status {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .nutrition-amount-status--good {
+    background: #d4f1d4;
+    color: #007f3b;
+  }
+
+  .nutrition-amount-status--warning {
+    background: #fff3cd;
+    color: #856404;
+  }
+
+  .nutrition-entry-foods,
+  .nutrition-entry-drinks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nutrition-food-item,
+  .nutrition-drink-item {
+    font-size: 12px;
+    color: #425563;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .nutrition-entry-note {
+    font-style: italic;
+  }
+
+  .nutrition-note-text {
+    color: #425563;
+    font-size: 14px;
+  }
+
+  .nutrition-tips {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .nutrition-tips {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  .nutrition-tip-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .nutrition-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .nutrition-achievement {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .nutrition-achievement--earned {
+    background: #f0f8ff;
+    border: 2px solid #cd7f32;
+  }
+
+  .nutrition-achievement--progress {
+    background: #fff8e1;
+    border: 2px solid #007f3b;
+  }
+
+  .nutrition-achievement--locked {
+    background: #f5f5f5;
+    border: 2px solid #d5d8db;
+  }
+
+  .nutrition-achievement-badge {
+    flex-shrink: 0;
+  }
+
+  .nutrition-achievement-details h4 {
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  .nutrition-achievement-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #425563;
+  }
+
+  .nutrition-quick-log {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    .nutrition-daily-entry {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nutrition-entry-date {
+      min-width: auto;
+      margin-right: 0;
+    }
+
+    .nutrition-achievement {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .nutrition-entry-amount {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Tab switching functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.nutrition-tab');
+    const contents = document.querySelectorAll('.nutrition-tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.dataset.tab;
+        
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('nutrition-tab--active'));
+        contents.forEach(c => c.classList.remove('nutrition-tab-content--active'));
+        
+        // Add active class to clicked tab and corresponding content
+        this.classList.add('nutrition-tab--active');
+        document.getElementById(targetTab + '-content').classList.add('nutrition-tab-content--active');
+      });
+    });
+  });
+</script>
+{% endblock %}

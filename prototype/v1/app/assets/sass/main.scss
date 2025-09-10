@@ -65,3 +65,154 @@
     margin: 0 auto;
   }
 }
+
+// BP Chart Styles
+.bp-chart {
+  background: #f0f4f5;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.bp-chart__grid {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to right, #e8f0fe 0%, #e8f0fe 25%, #fff3cd 25%, #fff3cd 50%, #f8d7da 50%, #f8d7da 100%);
+  border: 1px solid #d8dde0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.bp-chart__line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.bp-chart__line--systolic {
+  background: #005eb8;
+  top: 40%;
+}
+
+.bp-chart__line--diastolic {
+  background: #330072;
+  top: 70%;
+}
+
+.bp-chart__legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bp-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bp-chart__legend-color {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.bp-chart__legend-color--systolic {
+  background: #005eb8;
+}
+
+.bp-chart__legend-color--diastolic {
+  background: #330072;
+}
+
+// Medication Adherence Styles
+.medication-adherence {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.medication-adherence__score {
+  text-align: center;
+}
+
+.medication-adherence__percentage {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #28a745;
+  line-height: 1;
+}
+
+.medication-adherence__label {
+  font-size: 0.875rem;
+  color: #425563;
+}
+
+.medication-adherence__progress {
+  width: 100%;
+  height: 8px;
+  background: #d8dde0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.medication-adherence__progress-bar {
+  height: 100%;
+  background: #28a745;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+// Progress Indicator Styles
+.progress-indicator {
+  text-align: center;
+}
+
+.progress-indicator__circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f8d7da;
+  border: 4px solid #dc3545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  
+  &.progress-indicator__circle--good {
+    background: #d1ecf1;
+    border-color: #0ea5e9;
+  }
+}
+
+.progress-indicator__value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+// Mobile responsive adjustments for iPhone (393x852)
+@media (max-width: 393px) {
+  .bp-chart {
+    padding: 12px;
+  }
+  
+  .bp-chart__grid {
+    height: 150px;
+  }
+  
+  .medication-adherence__percentage {
+    font-size: 2rem;
+  }
+  
+  .progress-indicator__circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .progress-indicator__value {
+    font-size: 1rem;
+  }
+}

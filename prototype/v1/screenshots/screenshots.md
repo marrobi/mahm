@@ -77,14 +77,31 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
+## Accessibility and Language Settings (3 screens)
+
+### 1. Updated My BP Dashboard
+![My BP Dashboard Updated](mybp-dashboard-updated.png)
+**Updated My BP Dashboard** - Main dashboard now includes the new "Accessibility and language settings" option for users to customize their experience.
+
+### 2. Accessibility Settings Page
+![Accessibility Settings](mybp-accessibility-settings.png)
+**Accessibility and Language Settings** - Comprehensive settings page with display options (large text, high contrast), audio settings (voice readback), language picker with 9 languages, BSL video preferences, and EasyRead mode.
+
+### 3. Settings Confirmation
+![Settings Confirmation](mybp-accessibility-confirmation.png)
+**Settings Saved Confirmation** - Confirmation page showing saved settings with individual change links and navigation options back to My BP.
+
+---
+
 ## Key Features Demonstrated
 
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
+- **Accessibility**: Proper semantic HTML structure and NHS design system compliance, plus comprehensive accessibility customization options
+- **Inclusive Design**: Multi-language support, accessibility features, and BSL video preferences
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Full User Journeys**: Complete end-to-end workflows for all patient pathways including accessibility personalization
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

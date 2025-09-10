@@ -1,6 +1,6 @@
-# Blood Pressure Module Screenshots
+# My BP NHS App Prototype Screenshots
 
-Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype.
+Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
 
 ## Main Dashboard
 
@@ -77,6 +77,30 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
+## Lifestyle & Behaviour Change Hub (5 screens)
+
+### 1. Lifestyle Hub Dashboard
+![Lifestyle Hub Dashboard](lifestyle-hub-dashboard.png)
+**Lifestyle Hub Dashboard** - Main dashboard showing active referrals (Community Nutrition Program, Local Walking Group), goal tracking overview (weight, activity, salt & alcohol), culturally-tailored content recommendations, and weekly achievements with progress badges.
+
+### 2. Weight Management Goal Tracking
+![Weight Management Goal](weight-management-goal.png)
+**Weight Management Goal Tracking** - Circular progress visualization showing 3.2kg lost of 5kg target (65% complete), recent weight entries with daily tracking, achievement badges for consistency streaks, and heart-healthy cooking tips and support resources.
+
+### 3. Physical Activity Goal Tracking
+![Physical Activity Goal](physical-activity-goal.png)
+**Physical Activity Goal Tracking** - Weekly breakdown with daily activity tracking, streak counters (7-day streak), achievement badges for consistency, and culturally-appropriate exercise suggestions including traditional dance and community-based activities.
+
+### 4. Salt & Alcohol Monitoring
+![Salt & Alcohol Monitoring](salt-alcohol-monitoring.png)
+**Salt & Alcohol Monitoring** - Dual-tab interface for tracking daily salt and alcohol intake, progress trends showing improvement over time, educational resources for low-salt cooking techniques and healthy alternatives, and achievement tracking for meeting targets.
+
+### 5. Content Browser with Cultural Filtering
+![Content Browser](content-browser.png)
+**Content Browser with Cultural Filtering** - Interactive filtering system with topic categories (Recipes, Exercise, Guidance, Meditation, Community) and cultural filters (Caribbean, South Asian, African, Muslim, General), featured content with ratings and reading time estimates, and comprehensive health content library.
+
+---
+
 ## Key Features Demonstrated
 
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
@@ -86,5 +110,8 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Cultural Adaptation**: Content and features tailored for diverse cultural backgrounds
+- **Goal Tracking**: Visual progress indicators and achievement systems for health goals
+- **Lifestyle Integration**: Comprehensive tools for tracking and improving lifestyle factors affecting blood pressure
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

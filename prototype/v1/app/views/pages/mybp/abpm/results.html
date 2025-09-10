@@ -1,0 +1,171 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "ABPM Results" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        Your 24-hour blood pressure results
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          Demo results only
+        </h3>
+        <p>These are simulated results for demonstration purposes.</p>
+      </div>
+
+      <!-- Results Overview -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">
+            ABPM Summary
+          </h2>
+          <p class="nhsuk-u-secondary-text-colour">24-hour monitoring completed on 8 October 2024</p>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">148/86</h3>
+              <p class="nhsuk-u-secondary-text-colour">24-hour average</p>
+            </div>
+            <div class="nhsuk-grid-column-two-thirds">
+              <strong class="nhsuk-tag nhsuk-tag--orange">Stage 1 Hypertension</strong>
+              <p class="nhsuk-u-margin-top-2">Results suggest high blood pressure requiring treatment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day/Night Breakdown -->
+      <h2 class="nhsuk-heading-m">Day and night averages</h2>
+      
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Period</th>
+              <th class="nhsuk-table__header" scope="col">Average BP</th>
+              <th class="nhsuk-table__header" scope="col">Classification</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Daytime (6am-10pm)</td>
+              <td class="nhsuk-table__cell"><strong>152/88 mmHg</strong></td>
+              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
+                text: "High",
+                colour: "orange"
+              }) }}</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Nighttime (10pm-6am)</td>
+              <td class="nhsuk-table__cell"><strong>139/81 mmHg</strong></td>
+              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
+                text: "Elevated",
+                colour: "yellow"
+              }) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Dipping Analysis -->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <h3 class="nhsuk-heading-s">Nocturnal dipping: 9%</h3>
+        <p><strong>Normal dipping pattern.</strong> Your blood pressure drops appropriately at night, which is a healthy sign.</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Normal dipping is 10-20% reduction from day to night</li>
+          <li>Your 9% reduction is at the lower end of normal</li>
+          <li>This suggests good cardiovascular health patterns</li>
+        </ul>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What these results mean</h2>
+      
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Urgent">🔴</span>
+            Diagnosis confirmed
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your 24-hour blood pressure results confirm <strong>Stage 1 Hypertension</strong>.</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Daytime average (152/88) exceeds normal range (135/85)</li>
+            <li>24-hour average (148/86) confirms diagnosis</li>
+            <li>Treatment is recommended per NICE guidelines</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Quality indicators</h2>
+      
+      <div class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Technical details about your results
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3 class="nhsuk-heading-s">Monitoring quality</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Total readings:</strong> 68 out of 72 expected (94%)</li>
+            <li><strong>Monitoring duration:</strong> 24 hours 12 minutes</li>
+            <li><strong>Data quality:</strong> Excellent - minimal artifacts</li>
+          </ul>
+          
+          <h3 class="nhsuk-heading-s">Clinical interpretation</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Results consistent with sustained hypertension</li>
+            <li>No evidence of white coat effect</li>
+            <li>Normal circadian rhythm maintained</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Next steps</h2>
+      
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/abpm/pathway-tracker">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm-2 13.5v-7l6 3.5z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">View your diagnostic pathway progress</span>
+        </a>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your GP will review these results within 2 working days</li>
+        <li>You'll be contacted to discuss treatment options</li>
+        <li>Further blood tests may be arranged for safety monitoring</li>
+        <li>Lifestyle advice will be provided alongside any medication</li>
+      </ul>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm-2 13.5v-7l6 3.5z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Return to My BP dashboard</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

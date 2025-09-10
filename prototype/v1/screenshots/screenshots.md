@@ -4,8 +4,20 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Main Dashboard
 
-![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
+![Main Dashboard](bp-main-dashboard-updated.png)
+**Main Dashboard** - Updated landing page showing all five patient journey options: dose titration, BP measurement, blood test booking, ABPM results, and diagnostic pathway tracking.
+
+---
+
+## ABPM Results & Diagnostic Pathway Journey (2 screens)
+
+### 1. ABPM Results Summary
+![ABPM Results](abpm-results.png)
+**24-Hour ABPM Results** - Comprehensive ABPM results display showing day/night averages, dipping analysis, clinical interpretation, and quality indicators. Includes Stage 1 hypertension diagnosis confirmation with detailed clinical context.
+
+### 2. Diagnostic Pathway Tracker
+![Diagnostic Pathway Tracker](abpm-pathway-tracker.png)
+**Diagnostic Pathway Progress** - Step-by-step journey tracking from initial elevated reading through ABPM completion to GP confirmation. Features status badges, timeline summary, and care team information with current "awaiting confirmation" state.
 
 ---
 
@@ -85,6 +97,9 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Full User Journeys**: Complete end-to-end workflows for all patient pathways
+- **ABPM Integration**: 24-hour ambulatory blood pressure monitoring results with clinical interpretation
+- **Diagnostic Pathway Tracking**: Step-by-step progress monitoring with status badges
+- **Status Management**: "Awaiting confirmation" and other workflow states clearly displayed
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

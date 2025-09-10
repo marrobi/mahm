@@ -35,6 +35,21 @@
 
       <p>Choose from the options below to manage your blood pressure care:</p>
 
+      <!-- RED FLAG ALERT - Only shown when high BP detected -->
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b; margin-bottom: 32px;">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          ⚠️ Urgent: High Blood Pressure Alert
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <p>Your recent blood pressure reading of <strong>195/115 mmHg</strong> is very high and needs immediate attention.</p>
+          <p>
+            <a href="/pages/mybp/red-flag-emergency/symptom-confirmation" class="nhsuk-button nhsuk-button--secondary">
+              Start emergency safety check
+            </a>
+          </p>
+        </div>
+      </div>
+
       {{ nhsappCardGroup({
         stacked: true,
         cards: [

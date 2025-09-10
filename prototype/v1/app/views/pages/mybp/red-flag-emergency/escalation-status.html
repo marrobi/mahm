@@ -1,0 +1,159 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Emergency Care Status" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to safety actions",
+    href: "/pages/mybp/red-flag-emergency/immediate-action"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Your emergency care status
+      </h1>
+
+      <div class="nhsuk-inset-text" style="border-left-color: #005eb8;">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Emergency alert activated:</strong> 2:45 PM on 15 October 2024</p>
+      </div>
+
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">
+            ✅ Care arranged for you
+          </h2>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                GP practice notified
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <strong class="nhsuk-tag nhsuk-tag--green">Complete</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">Rose Medical Practice contacted at 2:45 PM</span>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Urgent appointment
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <strong class="nhsuk-tag nhsuk-tag--yellow">In progress</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">GP will call you within 2 hours</span>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Priority level
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <strong class="nhsuk-tag nhsuk-tag--red">Urgent</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">Blood pressure ≥180/110 mmHg</span>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Your details shared
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                BP reading: 195/115 mmHg<br>
+                Symptoms: Headache, visual disturbance<br>
+                Current medication: Amlodipine 5mg
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What to expect</h2>
+      
+      <div class="nhsuk-timeline">
+        <ol class="nhsuk-timeline__list">
+          <li class="nhsuk-timeline__item">
+            <div class="nhsuk-timeline__header">
+              <h3 class="nhsuk-timeline__title">Now - Follow safety advice</h3>
+              <p class="nhsuk-timeline__datetime">
+                <time datetime="2024-10-15">2:45 PM</time>
+              </p>
+            </div>
+            <div class="nhsuk-timeline__body">
+              <p>Rest, stay calm, and continue following the immediate safety actions. Do not drive.</p>
+              <p class="nhsuk-u-secondary-text-colour">✅ Complete</p>
+            </div>
+          </li>
+
+          <li class="nhsuk-timeline__item">
+            <div class="nhsuk-timeline__header">
+              <h3 class="nhsuk-timeline__title">Within 2 hours - GP assessment</h3>
+              <p class="nhsuk-timeline__datetime">
+                <time datetime="2024-10-15">Before 4:45 PM</time>
+              </p>
+            </div>
+            <div class="nhsuk-timeline__body">
+              <p>A GP will call you to assess your condition and provide further instructions.</p>
+              <p class="nhsuk-u-secondary-text-colour">⏳ Waiting</p>
+            </div>
+          </li>
+
+          <li class="nhsuk-timeline__item">
+            <div class="nhsuk-timeline__header">
+              <h3 class="nhsuk-timeline__title">If needed - Hospital referral</h3>
+              <p class="nhsuk-timeline__datetime">
+                <time datetime="2024-10-15">If required by GP</time>
+              </p>
+            </div>
+            <div class="nhsuk-timeline__body">
+              <p>If your GP determines you need immediate hospital care, they will arrange this for you.</p>
+              <p class="nhsuk-u-secondary-text-colour">🏥 Standby</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/red-flag-emergency/emergency-contacts">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">View emergency contacts</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          If your symptoms get worse
+        </h3>
+        <p>Call 999 immediately if you develop:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Severe chest pain</li>
+          <li>Difficulty breathing</li>
+          <li>Sudden weakness or confusion</li>
+          <li>Loss of vision or speech</li>
+        </ul>
+        <p>
+          <a href="tel:999" class="nhsuk-button nhsuk-button--secondary">
+            Call 999 now
+          </a>
+        </p>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>This page will update automatically</strong> when your GP contacts you or your status changes.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

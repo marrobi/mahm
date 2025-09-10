@@ -77,6 +77,30 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
+## Red Flag Emergency Action Flow (5 screens)
+
+### 1. Dashboard with Red Flag Alert
+![Dashboard with Red Flag Alert](red-flag-dashboard.png)
+**My BP Dashboard with Emergency Alert** - The main blood pressure dashboard displaying a prominent red flag alert when blood pressure readings reach dangerous levels (≥195/115 mmHg), providing immediate access to the emergency safety workflow.
+
+### 2. Symptom Confirmation Screen
+![Symptom Confirmation](red-flag-symptom-confirmation.png)
+**Emergency Symptom Assessment** - Comprehensive symptom checker for hypertensive emergencies including severe headache, vision problems, chest pain, breathing difficulties, and neurological symptoms, with direct 999 emergency access for life-threatening situations.
+
+### 3. Immediate Action Guidance
+![Immediate Action Guidance](red-flag-immediate-action.png)
+**Critical Safety Instructions** - Clear, actionable safety guidance following clinical best practices with "Do" and "Don't" lists, including immediate rest instructions, medication guidance, and automatic GP practice notification with 2-hour response guarantee.
+
+### 4. Escalation Status Tracking
+![Escalation Status](red-flag-escalation-status.png)
+**Emergency Care Coordination** - Real-time status dashboard showing GP practice notification (✅ Complete), urgent appointment scheduling (⏳ In progress), priority level indicators (🚨 Urgent), and timeline with expected GP contact within 2 hours.
+
+### 5. Emergency Contacts and Help
+![Emergency Contacts](red-flag-emergency-contacts.png)
+**Comprehensive Emergency Support** - Complete emergency contact management including 999 emergency services, GP practice details with direct calling, NHS 111 out-of-hours care, automated family contact notifications, and Blood Pressure UK helpline support.
+
+---
+
 ## Key Features Demonstrated
 
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
@@ -86,5 +110,10 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Emergency Management**: Red Flag Alert system with comprehensive emergency action flow following NICE CG127 guidelines
+- **Clinical Compliance**: Hypertensive emergency protocols with proper escalation pathways and 2-hour GP response
+- **Direct Phone Integration**: `tel:` links for immediate calling capability (999, GP practice, NHS 111)
+- **Real-Time Status Tracking**: Emergency care coordination with live updates and timeline management
+- **Automated Notifications**: GP practice and family contact alerts for dangerous blood pressure readings
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

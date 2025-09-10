@@ -27,6 +27,10 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Dose Titration Confirmation](dose-titration-confirmation.png)
 **Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
 
+### 5. Blood Test Scheduling
+![Blood Test Overview](blood-test-overview.png)
+**Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
+
 ---
 
 ## BP Measurement Journey (5 screens)

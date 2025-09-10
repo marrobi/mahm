@@ -708,33 +708,33 @@ Day 7:
 ### Category A - Known Hypertension Patients
 **Clinical Outcomes:**
 - 78% achieve target BP <140/90 within 12 weeks of system management
-- 92% medication adherence rate
-- 12% require treatment intensification
-- 2% emergency escalations
+- 92% medication adherence rate per annum
+- 12% require treatment intensification within first 12 months
+- 0.3% emergency escalations per annum
 
 **Operational Metrics:**
 - Average time to treatment optimization: 6 weeks
-- GP escalation rate: 18% of cases (complex patients)
+- GP escalation rate: 18% of cases per annum (complex patients)
 - Patient satisfaction: 4.3/5 (treatment support)
 
 ### Category B - Normotensive Surveillance Patients  
 **Clinical Outcomes:**
 - 88% maintain normal BP at annual review
-- 12% develop elevated readings requiring diagnostic pathway
-- 95% attend routine monitoring appointments
-- <1% emergency presentations
+- 4% develop elevated readings requiring diagnostic pathway per annum
+- 95% attend routine monitoring appointments per annum
+- <0.1% emergency presentations per annum
 
 **Operational Metrics:**
 - Surveillance compliance: 94% (annual recalls)
-- Lifestyle intervention uptake: 65%
+- Lifestyle intervention uptake: 65% per annum
 - Patient satisfaction: 4.1/5 (preventive care)
 
 ### Category C - Newly Detected Elevated BP Patients
 **Clinical Outcomes:**
 - 85% receive confirmed hypertension diagnosis within 6 weeks
-- 15% diagnosed with white coat/masked hypertension
-- 92% successfully transition to Category A management
-- 89% attend ABPM appointments
+- 15% diagnosed with white coat/masked hypertension during diagnostic process
+- 92% successfully transition to Category A management within 8 weeks
+- 89% attend ABPM appointments within scheduled timeframe
 
 **Operational Metrics:**
 - Time to diagnosis: Average 4.2 weeks (NICE compliant)
@@ -742,9 +742,9 @@ Day 7:
 - Patient satisfaction: 4.0/5 (diagnostic journey)
 
 ### Overall System Metrics
-- Cross-category patient safety: 99.2% appropriate escalations
-- System uptime: 99.5%
-- Inter-agent communication success: 99.8%
+- Cross-category patient safety: 99.2% appropriate escalations per annum
+- System uptime: 99.5% (monthly average)
+- Inter-agent communication success: 99.8% (daily operations)
 - NHS App integration satisfaction: 4.2/5
 
 ## Future Development Considerations

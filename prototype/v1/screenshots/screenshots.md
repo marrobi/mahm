@@ -7,6 +7,9 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
 
+![Updated Main Dashboard with Lab Results](mybp-main-dashboard-updated.png)
+**Updated Main Dashboard with Lab Results** - Enhanced dashboard now featuring "View lab results" as the first option with recent activity section showing latest lab result status.
+
 ---
 
 ## Dose Titration Journey (5 screens)
@@ -77,6 +80,18 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
+## Lab Results Journey (2 screens)
+
+### 1. Normal Lab Results
+![Normal Lab Results](lab-results-normal.png)
+**Normal U&E Test Results** - Comprehensive display of normal blood test results with color-coded status indicators, baseline comparisons, clinical explanations, and reassuring "Good news" messaging. Shows all five key parameters (Creatinine, eGFR, Sodium, Potassium, Urea) with reference ranges and trend analysis.
+
+### 2. Abnormal Lab Results with Clinical Alerts
+![Abnormal Lab Results](lab-results-abnormal.png)
+**Abnormal U&E Test Results with Urgent Alerts** - Critical results display featuring prominent "Important" alert banner, elevated creatinine and potassium levels with clear clinical warnings, urgent action needed section, and specific guidance on when to contact healthcare providers immediately.
+
+---
+
 ## Key Features Demonstrated
 
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
@@ -86,5 +101,8 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Lab Results Integration**: Comprehensive U&E blood test results display with color-coded thresholds
+- **Clinical Decision Support**: Intelligent alert system with normal/abnormal result pathways
+- **Patient Education**: Plain English explanations with "What this means" sections for each parameter
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

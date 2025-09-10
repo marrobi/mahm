@@ -1,0 +1,151 @@
+{% extends 'layout.html' %}
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Test booked" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation">
+        <h1 class="nhsuk-panel__title">
+          Blood test appointment booked
+        </h1>
+        <div class="nhsuk-panel__body">
+          Friday 11 October at 8:30am<br><strong>Westfield Hospital Pathology Lab</strong>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Your appointment details</h2>
+      
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Test type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Urea & Electrolytes (U&E)
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date and time
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Friday 11 October 2024, 8:30am
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Westfield Hospital Pathology Lab<br>
+            Westfield Hospital, Oak Avenue<br>
+            W12 7NH
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Reference number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            UE-2024-1011-WH
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Results expected
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Monday 14 October (2-3 working days)
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-m">Before your appointment</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Arrive 10 minutes early for registration</li>
+        <li>Bring photo ID and NHS number if you have it</li>
+        <li>Continue taking your medication as normal</li>
+        <li>No fasting required - eat normally</li>
+        <li>Drink plenty of water to stay hydrated</li>
+      </ul>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What happens during your appointment
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ol class="nhsuk-list nhsuk-list--number">
+            <li><strong>Registration:</strong> Check in at reception with your ID</li>
+            <li><strong>Preparation:</strong> Remove any tight clothing from your arm</li>
+            <li><strong>Blood collection:</strong> Quick blood sample from your arm (1-2 minutes)</li>
+            <li><strong>Aftercare:</strong> Apply pressure to the puncture site</li>
+            <li><strong>Completion:</strong> You can leave immediately after</li>
+          </ol>
+          <p class="nhsuk-u-margin-top-4"><strong>Total time:</strong> Usually 5-10 minutes including waiting</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>SMS reminder:</strong> You'll receive a text reminder 24 hours before your appointment and when results are ready.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Getting your results</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Results will be available in 2-3 working days</li>
+        <li>You'll receive an SMS notification when ready</li>
+        <li>Results automatically appear in your My BP app</li>
+        <li>Your GP will review results and contact you if needed</li>
+        <li>No news is usually good news</li>
+      </ul>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Non-urgent advice">📅</span>Add to your calendar
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Don't forget your appointment:</p>
+          <ul>
+            <li><a href="#" onclick="alert('Calendar invite would be downloaded here')">Download calendar file</a></li>
+            <li><a href="#" onclick="alert('Google Calendar would open here')">Add to Google Calendar</a></li>
+            <li><a href="#" onclick="alert('Outlook would open here')">Add to Outlook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Need to change your appointment?</h2>
+      
+      <p>Call the hospital lab on <strong>020 8123 4500</strong> at least 24 hours before your appointment.</p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          After your test
+        </h3>
+        <p>Contact your GP immediately if you experience unusual bleeding, severe pain, or signs of infection at the puncture site.</p>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Back to My BP dashboard</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

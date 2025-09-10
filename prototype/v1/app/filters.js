@@ -1,8 +1,5 @@
-/**
- * @param {Environment} env
- */
-module.exports = function (env) {
-  const filters = {}
+module.exports = function (env) { /* eslint-disable-line func-names,no-unused-vars */
+  const filters = {};
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
@@ -36,9 +33,5 @@ module.exports = function (env) {
   ------------------------------------------------------------------ */
 
   /* keep the following line to return your filters to the app  */
-  return filters
-}
-
-/**
- * @import { Environment } from 'nunjucks'
- */
+  return filters;
+};

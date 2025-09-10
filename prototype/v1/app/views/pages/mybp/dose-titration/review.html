@@ -1,0 +1,105 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Review your readings" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/dose-titration/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Confirm your blood pressure readings
+      </h1>
+
+      <p>Please check these readings from your home monitor are correct. We'll use them to provide personalized medication guidance.</p>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Date</th>
+              <th class="nhsuk-table__header" scope="col">Reading</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">7 Oct 2024</td>
+              <td class="nhsuk-table__cell">142/88 mmHg</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--orange">Above target</strong>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">3 Oct 2024</td>
+              <td class="nhsuk-table__cell">145/92 mmHg</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--red">Above target</strong>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">26 Sep 2024</td>
+              <td class="nhsuk-table__cell">140/86 mmHg</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--orange">At upper limit</strong>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">19 Sep 2024</td>
+              <td class="nhsuk-table__cell">138/82 mmHg</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--green">On target</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Trend analysis:</strong> Your blood pressure has been gradually increasing over the past 3 weeks, suggesting your current medication dose may not be adequate.</p>
+      </div>
+
+      <form method="post" action="/pages/mybp/dose-titration/recommendation">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do these readings look correct?
+              </h2>
+            </legend>
+            <div class="nhsuk-hint">
+              Check that the dates and blood pressure values match what you recorded at home.
+            </div>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="readings-yes" name="readings-confirmed" type="radio" value="yes" checked>
+                <label class="nhsuk-radios__label" for="readings-yes">
+                  Yes, these readings are correct
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="readings-no" name="readings-confirmed" type="radio" value="no">
+                <label class="nhsuk-radios__label" for="readings-no">
+                  No, I need to update some readings
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Get medication guidance
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

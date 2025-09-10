@@ -1,0 +1,110 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Find a location" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/bp-measurement/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Community BP measurement locations
+      </h1>
+
+      <p>Choose a convenient location near you for your blood pressure measurement.</p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>All locations are within 3 miles of your registered address and have trained volunteers available.</p>
+      </div>
+
+      <form method="post" action="/pages/mybp/bp-measurement/appointment">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Select your preferred location
+              </h2>
+            </legend>
+            
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-1" name="location" type="radio" value="westfield-pharmacy">
+                <label class="nhsuk-radios__label" for="location-1">
+                  <strong>Westfield Community Pharmacy</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    123 High Street, Westfield, W12 8AB<br>
+                    0.7 miles away • Open Mon-Sat 9am-6pm
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-2" name="location" type="radio" value="central-library">
+                <label class="nhsuk-radios__label" for="location-2">
+                  <strong>Central Library Health Hub</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    45 Victoria Road, Centre Town, W12 9XY<br>
+                    1.2 miles away • Open Mon-Fri 10am-4pm, Sat 10am-2pm
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-3" name="location" type="radio" value="community-centre">
+                <label class="nhsuk-radios__label" for="location-3">
+                  <strong>Greenfield Community Centre</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    78 Park Lane, Greenfield, W12 5CD<br>
+                    1.8 miles away • Open Tue, Thu, Sat 9am-5pm
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-4" name="location" type="radio" value="sports-centre">
+                <label class="nhsuk-radios__label" for="location-4">
+                  <strong>Olympic Sports Centre Clinic</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    200 Olympic Way, Park Royal, W12 0NP<br>
+                    2.1 miles away • Open Mon-Sun 8am-8pm
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-details" data-module="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What's available at each location?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h3 class="nhsuk-heading-s">All locations provide:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Lifelight smartphone-based BP measurement</li>
+              <li>Trained volunteer support</li>
+              <li>Private consultation area</li>
+              <li>Wheelchair accessible facilities</li>
+              <li>Free parking (where available)</li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Continue to book appointment
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,93 +1,81 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /app/views/layout.html -->
 {% extends 'layout.html' %}
 
-{% set pageName = "My BP - Hypertension Management" %}
+{% block pageTitle %}
+  NHS App prototype
+{% endblock %}
 
-<!-- For adding a breadcrumb or back link -->
 {% block beforeContent %}
 {% endblock %}
 
-<!-- For adding page content -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-three-quarters">
 
-      <h1 class="nhsuk-heading-xl">
-        My BP
-        <span class="nhsuk-u-font-size-16" style="color: #6f777b; font-weight: normal; margin-left: 10px;">
-          (Demo - dummy data only)
-        </span>
-      </h1>
-
+      <h1>NHS App prototype</h1>
       <p class="nhsuk-lede-text">
-        Manage your blood pressure and medication with AI-supported care.
+        A prototype to test new design components and patterns for the NHS App.
       </p>
 
-      <h2 class="nhsuk-heading-l">What would you like to do today?</h2>
-
-      <p>Choose from the options below to manage your blood pressure care:</p>
-
-      <div class="nhsuk-grid-row nhsuk-card-group">
-        <div class="nhsuk-grid-column-full">
-          
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">
-                <a class="nhsuk-card__link" href="/dose-titration">
-                  Review and adjust medication
-                </a>
-              </h3>
-              <p class="nhsuk-card__description">Check if your blood pressure medication dose needs adjusting based on recent readings.</p>
-              <div class="nhsuk-tag nhsuk-tag--yellow">Action needed</div>
-            </div>
-          </div>
-
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">
-                <a class="nhsuk-card__link" href="/bp-measurement">
-                  Measure blood pressure
-                </a>
-              </h3>
-              <p class="nhsuk-card__description">Take your blood pressure using Lifelight technology at a local community location.</p>
-              <div class="nhsuk-tag nhsuk-tag--blue">Available</div>
-            </div>
-          </div>
-
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h3 class="nhsuk-card__heading">
-                <a class="nhsuk-card__link" href="/blood-test">
-                  Book safety blood test
-                </a>
-              </h3>
-              <p class="nhsuk-card__description">Book your U&E (kidney function) safety monitoring blood test.</p>
-              <div class="nhsuk-tag nhsuk-tag--green">Due soon</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <hr>
-
-      <h2 class="nhsuk-heading-m">Recent activity</h2>
-      
-      <ul class="nhsuk-list">
+      <ul clas="nhsuk-list">
         <li>
-          <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
+          <a href="/pages/">Pages templates and layouts</a>
         </li>
         <li>
-          <strong>Current medication:</strong> Amlodipine 5mg daily
+          <a href="/components/">Components</a>
         </li>
         <li>
-          <strong>Next appointment:</strong> 15 October 2024
+          <a href="/native">Make your prototype feel more app-like</a>
+        </li>
+        <li>
+          <a href="/frame">View prototype in a mobile frame</a>
         </li>
       </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Custom prototype settings</h2>
+      <p><a href="/data-settings">View or change the prototype settings</a>.</p> 
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Help improve the NHS App prototype</h2>
+
+      <p>We welcome feedback and suggestions to help improve the NHS App prototype.</p>
+
+      <p>If you have any ideas, feature requests, or issues to report, please <a href="https://github.com/nhsuk/nhsapp-prototype/issues">submit an issue on GitHub</a>.</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Built using</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "NHS prototype kit"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsuk-prototype-kit/releases'><span class='nhsuk-u-visually-hidden'>NHS prototype kit </span>v5.3.0</a>"
+            }
+          },
+          {
+            key: {
+              text: "NHS.UK frontend"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsuk-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS.UK frontend </span>v9.6.2</a>"
+            }
+          },
+          {
+            key: {
+              text: "NHS App frontend"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsapp-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS App frontend </span>v4.0.0</a>"
+            }
+          }
+        ]
+      }) }}
 
     </div>
   </div>

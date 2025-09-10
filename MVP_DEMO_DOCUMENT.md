@@ -53,7 +53,7 @@ The system manages three distinct patient categories, each with different entry 
 
 **Example Workflow:**
 ```
-Patient: Jane Smith, 52, diagnosed hypertension 7 years ago
+Patient: Preet Kaur, 52, diagnosed hypertension 7 years ago
 Entry: Automated EHR system trawl identifying patients with essential hypertension and no exclusion criteria
 Pathway: Orchestrating Agent → Shared Decision-Making → Medication review → Monitoring schedule
 ```
@@ -71,7 +71,7 @@ Pathway: Orchestrating Agent → Shared Decision-Making → Medication review �
 
 **Example Workflow:**
 ```
-Patient: Mark Johnson, 45, 5-yearly BP check due per NICE guidelines
+Patient: Winston Campbell, 45, 5-yearly BP check due per NICE guidelines
 Entry: NHS Health Check programme or practice recall system
 Pathway: BP Measurement → Normal reading → Lifestyle assessment → 5-year recall
 Escalation: If ≥140/90 → Diagnostic pathway activated
@@ -90,7 +90,7 @@ Escalation: If ≥140/90 → Diagnostic pathway activated
 
 **Example Workflow:**
 ```
-Patient: Sarah Williams, 38, elevated reading at NHS Health Check
+Patient: Aisha Rahman, 38, elevated reading at NHS Health Check
 Entry: NHS Health Check programme or community BP screening programme
 Pathway: Repeat measurements → ABPM arrangement → Diagnosis confirmation → Treatment initiation
 Transition: Upon hypertension diagnosis → Category A management
@@ -140,7 +140,7 @@ Transition: Upon hypertension diagnosis → Category A management
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: John Smith (ID: PT001) - *Simulated data only*
+Patient: Kwame Asante (ID: PT001) - *Simulated data only*
 Initial BP: 165/95 mmHg (elevated)
 
 1. Receives patient data for individuals due/overdue for BP monitoring per NICE guidelines
@@ -191,7 +191,7 @@ Initial BP: 165/95 mmHg (elevated)
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Sarah Johnson (ID: PT002)
+Patient: Fatima Al-Zahra (ID: PT002)
 Current medication: Amlodipine 5mg
 
 Simulation Steps:
@@ -224,7 +224,7 @@ Simulation Steps:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Michael Chen (ID: PT003) - *Simulated data only*
+Patient: Rajesh Patel (ID: PT003) - *Simulated data only*
 Clinic readings: 155/92, 158/95, 152/89 mmHg
 
 Simulation Process:
@@ -267,7 +267,7 @@ Simulation Process:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Emma Davis (ID: PT004) - *Simulated data only*
+Patient: Agyeya Osei (ID: PT004) - *Simulated data only*
 Risk factors: High sodium diet, sedentary lifestyle, moderate alcohol use, smoking, poor sleep
 
 Intervention Simulation:
@@ -315,7 +315,7 @@ Intervention Simulation:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Robert Wilson (ID: PT005) - *Simulated data only*
+Patient: Malcolm MacLeod (ID: PT005) - *Simulated data only*
 Profile: 62 years old, active lifestyle, concerns about fatigue
 
 NHS Decision-Making Simulation:
@@ -811,11 +811,60 @@ The patient experience centres around seamless integration within the existing N
 
 ### Healthcare Professional Administration Interface
 
-**GP Practice Dashboard:**
-- **Patient Overview**: Summary view of all patients under My BP Care management
-- **Alert Triage**: Prioritised list of patients requiring clinical review
-- **Treatment Plans**: Collaborative medication adjustment with AI recommendations
-- **Escalation Management**: Clear protocols for system-flagged urgent cases
+**GP Practice Analytics Dashboard:**
+This comprehensive dashboard provides practice-wide insights into hypertension management performance, with particular focus on addressing health inequalities and improving care for marginalised groups.
+
+**Practice-Wide NICE Guidelines Adherence:**
+- **Overall Compliance Score**: Real-time percentage of practice achieving NICE CG127 targets (baseline: 68%, target: 85%)
+- **Guideline Metrics Dashboard**:
+  - BP target achievement (<140/90): Overall practice rate with trend analysis
+  - Medication titration adherence: Percentage following NICE algorithms
+  - Monitoring interval compliance: Patients receiving timely follow-ups
+  - ABPM utilisation: Diagnostic pathway adherence rates
+  - Lifestyle intervention uptake: Referral completion rates
+
+**Health Inequality Monitoring:**
+- **Marginalised Groups Performance Tracking**:
+  - **Socioeconomic deprivation** (IMD quintiles): BP control rates by deprivation level
+  - **Ethnicity-based outcomes**: Comparative adherence and BP control across ethnic groups
+  - **Language barriers**: Outcomes for patients requiring interpretation services
+  - **Digital exclusion**: Performance comparison between app users vs non-users
+  - **Age-related disparities**: Outcomes for elderly vs working-age populations
+  - **Geographic access**: Rural vs urban patient management effectiveness
+
+**Trend Analysis with Inequality Focus:**
+- 12-month rolling trends showing whether gaps between marginalised and general populations are narrowing
+- Heat maps identifying patient cohorts requiring targeted intervention
+- Predictive analytics highlighting patients at risk of disengagement
+
+**Individual Patient Drill-Down:**
+- **Patient List Management**: Sortable views by risk level, deprivation score, ethnicity, language needs
+- **Clinical Summary**: Full BP history, medication timeline, and comorbidity overview  
+- **Care Pathway Tracking**: Progress through NICE protocols with deviation alerts
+- **Social Determinants View**: Housing, employment, and social factors affecting health outcomes
+- **Communication Preferences**: Preferred languages, accessibility needs, contact methods
+
+**EHR Integration Requirements:**
+- **EMIS Web Integration**: Real-time synchronisation of BP readings, medications, and clinical notes
+- **TPP SystmOne Compatibility**: Seamless data exchange with practice clinical systems
+- **SNOMED CT Coding**: Standardised clinical terminology for accurate data capture
+- **QOF Reporting**: Automated Quality and Outcomes Framework indicator monitoring
+- **Clinical Decision Support**: AI recommendations integrated into existing clinical workflows
+- **Audit Trail**: Complete clinical governance logging for CQC compliance
+
+**Practice Performance Metrics:**
+- **Workload Reduction Indicators**: 
+  - Reduction in routine hypertension appointments
+  - Decreased emergency hypertension presentations
+  - Automated administrative tasks completion
+- **Clinical Safety Metrics**:
+  - Zero-harm incidents related to AI system recommendations
+  - Escalation response times to urgent alerts
+  - Patient satisfaction with AI-supported care
+- **Population Health Outcomes**:
+  - Practice-wide BP control improvement
+  - Cardiovascular event prevention metrics
+  - Medication adherence improvements by demographic
 
 **Practice Manager Interface:**
 - **System Performance**: Metrics on patient engagement and outcome improvements

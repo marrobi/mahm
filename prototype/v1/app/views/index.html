@@ -4,72 +4,93 @@
 
 <!-- Extends the layout from /app/views/layout.html -->
 {% extends 'layout.html' %}
-<!--
-  In /app/views/layout.html you can:
-    - change the header and footer
-    - add custom CSS and JavaScript
--->
 
-<!--
-  Use this to set the page name which will appear at the
-  start of the <title> tag, followed by the service name.
-  This is often not needed on the homepage, where only the
-  service name is needed. You can also reuse this variable
-  within the <h1>, where they are the same.
--->
-{% set pageName = "" %}
+{% set pageName = "My BP - Hypertension Management" %}
 
 <!-- For adding a breadcrumb or back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block beforeContent %}
 {% endblock %}
 
 <!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <!-- You can delete the lines below -->
-      <h2 class="nhsuk-heading-l">
-        NHS prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h2>
-      <hr>
-
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <h1 class="nhsuk-heading-xl">
-        {{ serviceName }}
+        My BP
       </h1>
 
-      <p>Set the service name for your prototype by editing <strong>/app/config.js</strong>.</p>
-
-      <p>
-        This is the index page for your prototype. You can find it at <strong>/app/views/index.html</strong>.
+      <p class="nhsuk-lede-text">
+        Manage your blood pressure and medication with AI-supported care.
       </p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          Demonstration only
+        </h3>
+        <p>This is a prototype demonstration using dummy data only. Not for clinical use.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-l">Your care journeys</h2>
+
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/dose-titration">
+                  Medication dose adjustment
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Review and adjust your blood pressure medication doses based on recent readings.</p>
+              <div class="nhsuk-tag nhsuk-tag--yellow">Action needed</div>
+            </div>
+          </div>
+
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/bp-measurement">
+                  Blood pressure measurement
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Take your blood pressure using Lifelight technology at a local community location.</p>
+              <div class="nhsuk-tag nhsuk-tag--blue">Available</div>
+            </div>
+          </div>
+
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/blood-test">
+                  Schedule blood test
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Book your U&E (kidney function) safety monitoring blood test.</p>
+              <div class="nhsuk-tag nhsuk-tag--green">Due soon</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
       <hr>
 
-      <h2 class="nhsuk-heading-l">
-        Get started
-      </h2>
-
-      <ul class="nhsuk-list nhsuk-list--bullet">
+      <h2 class="nhsuk-heading-m">Recent activity</h2>
+      
+      <ul class="nhsuk-list">
         <li>
-          <a href="https://prototype-kit.service-manual.nhs.uk/how-tos">NHS prototype kit guides</a> – including a tutorial
+          <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
         </li>
         <li>
-          <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a> – for code snippets and guidance on using NHS styles, components and patterns
+          <strong>Current medication:</strong> Amlodipine 5mg daily
+        </li>
+        <li>
+          <strong>Next appointment:</strong> 15 October 2024
         </li>
       </ul>
-
-      <p>
-        There is a selection of <a href="/example-templates">example page templates</a> in <strong>/lib/example-templates/</strong>. To use these, copy and paste them into <strong>/app/views/</strong>.
-      </p>
-      <!-- End of content -->
 
     </div>
   </div>

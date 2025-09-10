@@ -1,0 +1,149 @@
+{% extends 'layout.html' %}
+
+{% set pageName = "BP measurement results" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/bp-measurement/confirmation"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Your blood pressure results
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          Demo results only
+        </h3>
+        <p>These are simulated results for demonstration purposes.</p>
+      </div>
+
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">
+            Latest measurement
+          </h2>
+          <p class="nhsuk-u-secondary-text-colour">Taken today at 10:35am via Lifelight</p>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">138/82</h3>
+              <p class="nhsuk-u-secondary-text-colour">mmHg</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <strong class="nhsuk-tag nhsuk-tag--green">Normal</strong>
+              <p class="nhsuk-u-margin-top-2 nhsuk-u-secondary-text-colour">Within target range</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What this means</h2>
+      
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Good news!</strong> This reading shows your blood pressure is within the normal range for someone with your condition.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your systolic pressure (138) is below the 140 target</li>
+        <li>Your diastolic pressure (82) is below the 90 target</li>
+        <li>This suggests your current medication is working well</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Recent trend</h2>
+      
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Date</th>
+              <th class="nhsuk-table__header" scope="col">Reading</th>
+              <th class="nhsuk-table__header" scope="col">Method</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">11 Oct 2024</td>
+              <td class="nhsuk-table__cell"><strong>138/82</strong></td>
+              <td class="nhsuk-table__cell">Lifelight</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--green">Normal</strong>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">7 Oct 2024</td>
+              <td class="nhsuk-table__cell">142/88</td>
+              <td class="nhsuk-table__cell">Home monitor</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--orange">High</strong>
+              </td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">3 Oct 2024</td>
+              <td class="nhsuk-table__cell">145/92</td>
+              <td class="nhsuk-table__cell">Home monitor</td>
+              <td class="nhsuk-table__cell">
+                <strong class="nhsuk-tag nhsuk-tag--red">High</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="nhsuk-heading-m">AI analysis</h2>
+      
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            View detailed analysis
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3 class="nhsuk-heading-s">Measurement quality</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Signal quality:</strong> Excellent (95% confidence)</li>
+            <li><strong>Movement artifacts:</strong> Minimal</li>
+            <li><strong>Environmental factors:</strong> Optimal</li>
+          </ul>
+          
+          <h3 class="nhsuk-heading-s">Clinical context</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Consistent with treatment response pattern</li>
+            <li>Shows improvement from previous readings</li>
+            <li>Aligns with expected medication effects</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Next steps</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Continue your current medication as prescribed</li>
+        <li>Take your next measurement in 2-4 weeks</li>
+        <li>Keep up with healthy lifestyle choices</li>
+        <li>No immediate GP appointment needed</li>
+      </ul>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Back to My BP dashboard</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

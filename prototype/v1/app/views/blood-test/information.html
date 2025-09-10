@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+
+{% set pageName = "About U&E blood tests" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/blood-test"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        About U&E blood tests
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Understanding what the test involves and why it's important for your care.
+      </p>
+
+      <h2 class="nhsuk-heading-m">What does U&E stand for?</h2>
+      
+      <p><strong>U&E</strong> stands for <strong>Urea and Electrolytes</strong>. This blood test measures several important chemicals in your blood that help doctors understand how well your kidneys are working.</p>
+
+      <h2 class="nhsuk-heading-m">What the test measures</h2>
+      
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Component</th>
+              <th class="nhsuk-table__header" scope="col">What it shows</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><strong>Urea</strong></td>
+              <td class="nhsuk-table__cell">Waste product filtered by kidneys</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><strong>Creatinine</strong></td>
+              <td class="nhsuk-table__cell">Another waste product that indicates kidney function</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><strong>Sodium</strong></td>
+              <td class="nhsuk-table__cell">Salt levels in your blood</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><strong>Potassium</strong></td>
+              <td class="nhsuk-table__cell">Important for heart and muscle function</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Why it's important for BP medication</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Some BP medications can affect how your kidneys work</li>
+        <li>ACE inhibitors and ARBs can sometimes raise potassium levels</li>
+        <li>Diuretics can affect sodium and potassium balance</li>
+        <li>Regular monitoring ensures your medication remains safe</li>
+      </ul>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What happens if results are abnormal?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3 class="nhsuk-heading-s">Don't worry - this is why we monitor</h3>
+          <p>If any levels are outside the normal range:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Your GP will review the results</li>
+            <li>They may adjust your medication dose</li>
+            <li>Sometimes a different medication is more suitable</li>
+            <li>Repeat tests may be arranged</li>
+            <li>Most changes are easily manageable</li>
+          </ul>
+          <p>The monitoring system is designed to catch any issues early, when they're easiest to address.</p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What to expect during the test</h2>
+      
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Registration and check-in (2-3 minutes)</li>
+        <li>A small blood sample taken from your arm (1-2 minutes)</li>
+        <li>Brief rest period if needed</li>
+        <li>Results sent directly to your GP and My BP app</li>
+      </ol>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Good to know:</strong> The blood test is quick and straightforward. Most people find it no more uncomfortable than a small pinch.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Frequency of testing</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>When starting medication:</strong> Test after 1-2 weeks</li>
+        <li><strong>After dose increases:</strong> Test after 4-6 weeks</li>
+        <li><strong>Routine monitoring:</strong> Every 6-12 months</li>
+        <li><strong>If problems found:</strong> More frequent monitoring until stable</li>
+      </ul>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/blood-test/locations">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Find locations and book test</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

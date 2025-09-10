@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% set pageName = "Medication dose review" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Medication dose review
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Your recent blood pressure readings suggest your medication dose may need adjusting.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Our AI system has reviewed your recent readings and clinical guidelines to provide a recommendation.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Current situation</h2>
+      
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Current medication
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Amlodipine 5mg daily
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Recent BP readings
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <ul class="nhsuk-list">
+              <li>142/88 mmHg (3 days ago)</li>
+              <li>145/92 mmHg (1 week ago)</li>
+              <li>140/86 mmHg (2 weeks ago)</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Target BP
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Below 140/90 mmHg
+          </dd>
+        </div>
+      </dl>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/dose-titration/review">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Review your readings and get recommendation</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

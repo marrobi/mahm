@@ -1,0 +1,245 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Accessibility and language settings" %}
+{% set backLink = true %}
+
+{% block beforeContent %}
+  <div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="/pages/mybp/">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Back to My BP
+    </a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Accessibility and language settings",
+        subtitle: "Customise how you use My BP"
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Adjust these settings to make My BP work better for you.
+      </p>
+
+      <form id="accessibility-settings-form" method="post" action="/pages/mybp/accessibility-settings/">
+
+        <!-- SECTION - DISPLAY SETTINGS -->
+        {{ nhsappSectionHeading({
+          headingText: "Display settings"
+        }) }}
+
+        <!-- Large text toggle -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "large-text",
+            name: "large-text",
+            items: [
+              {
+                value: "enabled",
+                text: "Large text",
+                hint: {
+                  text: "Increase text size throughout My BP for easier reading"
+                },
+                checked: data['large-text'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- High contrast mode toggle -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "high-contrast",
+            name: "high-contrast",
+            items: [
+              {
+                value: "enabled",
+                text: "High contrast mode",
+                hint: {
+                  text: "Use high contrast colours to make text and buttons easier to see"
+                },
+                checked: data['high-contrast'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- SECTION - AUDIO SETTINGS -->
+        {{ nhsappSectionHeading({
+          headingText: "Audio settings"
+        }) }}
+
+        <!-- Voice readback toggle -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "voice-readback",
+            name: "voice-readback",
+            items: [
+              {
+                value: "enabled",
+                text: "Voice readback",
+                hint: {
+                  text: "Have content read aloud when you tap on text"
+                },
+                checked: data['voice-readback'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- SECTION - LANGUAGE SETTINGS -->
+        {{ nhsappSectionHeading({
+          headingText: "Language settings"
+        }) }}
+
+        <!-- Language picker -->
+        <div class="nhsuk-form-group">
+          {{ select({
+            id: "language",
+            name: "language",
+            label: {
+              text: "Language"
+            },
+            hint: {
+              text: "Choose your preferred language for My BP"
+            },
+            items: [
+              {
+                value: "en",
+                text: "English",
+                selected: (data['language'] or 'en') === "en"
+              },
+              {
+                value: "cy",
+                text: "Cymraeg (Welsh)",
+                selected: data['language'] === "cy"
+              },
+              {
+                value: "ur",
+                text: "اردو (Urdu)",
+                selected: data['language'] === "ur"
+              },
+              {
+                value: "bn",
+                text: "বাংলা (Bengali)",
+                selected: data['language'] === "bn"
+              },
+              {
+                value: "hi",
+                text: "हिन्दी (Hindi)",
+                selected: data['language'] === "hi"
+              },
+              {
+                value: "pa",
+                text: "ਪੰਜਾਬੀ (Punjabi)",
+                selected: data['language'] === "pa"
+              },
+              {
+                value: "pl",
+                text: "Polski (Polish)",
+                selected: data['language'] === "pl"
+              },
+              {
+                value: "so",
+                text: "Soomaali (Somali)",
+                selected: data['language'] === "so"
+              },
+              {
+                value: "ar",
+                text: "العربية (Arabic)",
+                selected: data['language'] === "ar"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- BSL video preference -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "bsl-videos",
+            name: "bsl-videos",
+            items: [
+              {
+                value: "enabled",
+                text: "British Sign Language (BSL) videos",
+                hint: {
+                  text: "Show BSL videos when available for key health information"
+                },
+                checked: data['bsl-videos'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- SECTION - CONTENT SETTINGS -->
+        {{ nhsappSectionHeading({
+          headingText: "Content settings"
+        }) }}
+
+        <!-- EasyRead mode -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "easy-read",
+            name: "easy-read",
+            items: [
+              {
+                value: "enabled",
+                text: "EasyRead mode",
+                hint: {
+                  text: "Use simple language and pictures to make content easier to understand"
+                },
+                checked: data['easy-read'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- SAVE BUTTON -->
+        <div class="nhsuk-form-group">
+          {{ button({
+            text: "Save settings",
+            classes: "nhsuk-button--primary"
+          }) }}
+        </div>
+
+        <!-- RESET LINK -->
+        <p>
+          <a href="/pages/mybp/accessibility-settings/reset" class="nhsuk-link">
+            Reset all settings to default
+          </a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    // Manual save only - removed auto-submit for better UX
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('accessibility-settings-form');
+      
+      // Add confirmation when saving
+      form.addEventListener('submit', function(e) {
+        const checkedBoxes = form.querySelectorAll('input[type="checkbox"]:checked');
+        const language = form.querySelector('select[name="language"]').value;
+        
+        console.log('Saving settings...', {
+          checkboxes: checkedBoxes.length,
+          language: language
+        });
+      });
+    });
+  </script>
+{% endblock %}

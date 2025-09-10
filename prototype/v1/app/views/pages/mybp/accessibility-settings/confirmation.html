@@ -1,0 +1,179 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Settings saved" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- SUCCESS MESSAGE -->
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="nhsuk-notification-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">
+            Settings saved
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            Your accessibility and language settings have been saved.
+          </p>
+          <p>
+            These settings will now apply to your My BP experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Your settings",
+        subtitle: "Current accessibility and language preferences"
+      })}}
+
+      <!-- CURRENT SETTINGS SUMMARY -->
+      <div class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Large text
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['large-text'] === "enabled" %}
+              <span class="nhsuk-tag nhsuk-tag--green">Enabled</span>
+            {% else %}
+              <span class="nhsuk-tag nhsuk-tag--grey">Disabled</span>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> large text setting</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            High contrast mode
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['high-contrast'] === "enabled" %}
+              <span class="nhsuk-tag nhsuk-tag--green">Enabled</span>
+            {% else %}
+              <span class="nhsuk-tag nhsuk-tag--grey">Disabled</span>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> high contrast setting</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Voice readback
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['voice-readback'] === "enabled" %}
+              <span class="nhsuk-tag nhsuk-tag--green">Enabled</span>
+            {% else %}
+              <span class="nhsuk-tag nhsuk-tag--grey">Disabled</span>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> voice readback setting</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% set languageText = "English" %}
+            {% if data['language'] === "cy" %}
+              {% set languageText = "Cymraeg (Welsh)" %}
+            {% elif data['language'] === "ur" %}
+              {% set languageText = "اردو (Urdu)" %}
+            {% elif data['language'] === "bn" %}
+              {% set languageText = "বাংলা (Bengali)" %}
+            {% elif data['language'] === "hi" %}
+              {% set languageText = "हिन्दी (Hindi)" %}
+            {% elif data['language'] === "pa" %}
+              {% set languageText = "ਪੰਜਾਬੀ (Punjabi)" %}
+            {% elif data['language'] === "pl" %}
+              {% set languageText = "Polski (Polish)" %}
+            {% elif data['language'] === "so" %}
+              {% set languageText = "Soomaali (Somali)" %}
+            {% elif data['language'] === "ar" %}
+              {% set languageText = "العربية (Arabic)" %}
+            {% endif %}
+            {{ languageText }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> language setting</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            BSL videos
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['bsl-videos'] === "enabled" %}
+              <span class="nhsuk-tag nhsuk-tag--green">Enabled</span>
+            {% else %}
+              <span class="nhsuk-tag nhsuk-tag--grey">Disabled</span>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> BSL videos setting</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EasyRead mode
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['easy-read'] === "enabled" %}
+              <span class="nhsuk-tag nhsuk-tag--green">Enabled</span>
+            {% else %}
+              <span class="nhsuk-tag nhsuk-tag--grey">Disabled</span>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/pages/mybp/accessibility-settings/">
+              Change<span class="nhsuk-u-visually-hidden"> EasyRead setting</span>
+            </a>
+          </dd>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          {{ button({
+            text: "Back to My BP",
+            href: "/pages/mybp/",
+            classes: "nhsuk-button--primary"
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          {{ button({
+            text: "Change settings",
+            href: "/pages/mybp/accessibility-settings/",
+            classes: "nhsuk-button--secondary"
+          }) }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

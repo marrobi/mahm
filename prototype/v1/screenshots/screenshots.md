@@ -4,8 +4,28 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Main Dashboard
 
-![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
+![Main Dashboard](mybp-main-updated.png)
+**Main Dashboard** - Landing page showing all four patient journey options: shared decision-making for treatment selection, dose titration, BP measurement, and blood test booking.
+
+---
+
+## Shared Decision-Making Journey (4 screens)
+
+### 1. Treatment Comparison
+![Shared Decision Main](shared-decision-main.png)
+**Choose Your Treatment** - Interactive comparison interface for Amlodipine, Lisinopril, and Candesartan with effectiveness ratings, side effect profiles, and multimedia learning options.
+
+### 2. Video Guides
+![Multimedia Video](shared-decision-multimedia-video.png)
+**Video Learning Resources** - Healthcare professional explanations for each medication with cultural considerations, religious observances, and traditional medicine guidance.
+
+### 3. AI Chatbot Interface
+![Chatbot Initial](shared-decision-chatbot.png)
+**AI Assistant** - Interactive chat interface with NHS BP Assistant for answering questions about treatments, with quick question buttons and voice input support.
+
+### 4. Chatbot with Response
+![Chatbot Response](shared-decision-chatbot-response.png)
+**AI Response Example** - Demonstration of intelligent responses about medication side effects with contextual information and professional medical advice reminders.
 
 ---
 
@@ -79,12 +99,16 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Key Features Demonstrated
 
+- **Shared Decision-Making Tools**: Interactive treatment comparison with multimedia learning resources and AI chatbot support
+- **Cultural Sensitivity**: Multi-language support, religious considerations (Ramadan/fasting), and traditional medicine awareness
+- **AI-Powered Assistance**: Intelligent chatbot with contextual responses about medications and side effects
+- **Multimedia Education**: Video guides, audio stories, Easy Read formats, and visual learning aids
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Full User Journeys**: Complete end-to-end workflows for all four patient pathways
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

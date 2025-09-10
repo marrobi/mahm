@@ -2,7 +2,43 @@
 
 Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype.
 
-## Main Dashboard
+## Patient Onboarding & Consent Flow (8 screens)
+
+### Updated Main Dashboard
+![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
+**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the onboarding requirement before users can access My BP features.
+
+### 1. Welcome Page
+![Onboarding Welcome](onboarding-welcome.png)
+**Welcome to My BP** - Introduction to the AI-powered hypertension management tool, explaining capabilities and getting started process.
+
+### 2. Benefits & Privacy
+![Onboarding Benefits](onboarding-benefits.png)
+**Benefits & Privacy** - Detailed explanation of My BP benefits, health outcomes, and comprehensive privacy protections with data access information.
+
+### 3. Simulation Disclaimer
+![Onboarding Disclaimer](onboarding-disclaimer.png)
+**Simulation Disclaimer** - Clear warning that this is a demonstration version only, with detailed explanation of dummy data and clinical safety warnings.
+
+### 4. Data Usage Statement
+![Onboarding Data Usage](onboarding-data-usage.png)
+**Data Usage Statement** - Comprehensive table showing data collection types, purposes, and user rights with anonymization information.
+
+### 5. Consent Form
+![Onboarding Consent](onboarding-consent.png)
+**Give Your Consent** - User choice interface with radio buttons for accepting or declining service usage, including summary of consent terms.
+
+### 6. Onboarding Complete (Consent Given)
+![Onboarding Completed - Consent](onboarding-completed-consent.png)
+**Onboarding Complete - Consent Given** - Success screen when user consents, providing next steps and dashboard access.
+
+### 7. Onboarding Complete (Consent Declined)
+![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)
+**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines, offering alternative NHS services and option to restart.
+
+---
+
+## Main Dashboard (Original)
 
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
@@ -79,12 +115,16 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Key Features Demonstrated
 
+- **Complete Onboarding Flow**: 5-step patient consent process with conditional completion paths
+- **Session-Based Consent Tracking**: Intelligent dashboard display based on user consent status
+- **Privacy & Security Focus**: Comprehensive data protection explanations and user rights
+- **Clinical Safety Warnings**: Clear demonstration disclaimers and simulation notifications
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Full User Journeys**: Complete end-to-end workflows for all patient pathways
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

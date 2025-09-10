@@ -14,15 +14,17 @@ router.post('/pages/mybp/accessibility-settings/', function (req, res) {
   // Save the settings to session data
   const data = req.session.data || {};
   
-  // Save each setting
-  data['large-text'] = req.body['large-text'];
-  data['high-contrast'] = req.body['high-contrast'];
-  data['voice-readback'] = req.body['voice-readback'];
-  data['language'] = req.body['language'];
-  data['bsl-videos'] = req.body['bsl-videos'];
-  data['easy-read'] = req.body['easy-read'];
+  // Save each setting - handle checkboxes properly (they only send value when checked)
+  data['large-text'] = req.body['large-text'] || '';
+  data['high-contrast'] = req.body['high-contrast'] || '';
+  data['voice-readback'] = req.body['voice-readback'] || '';
+  data['language'] = req.body['language'] || 'en';
+  data['bsl-videos'] = req.body['bsl-videos'] || '';
+  data['easy-read'] = req.body['easy-read'] || '';
   
   req.session.data = data;
+  
+  console.log('Settings saved:', data); // Debug logging
   
   // Redirect to confirmation page
   res.redirect('/pages/mybp/accessibility-settings/confirmation');

@@ -1,0 +1,133 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "AI recommendation" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/dose-titration/review"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="notification-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="notification-banner-title">
+            AI recommendation ready
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            After reviewing your recent blood pressure readings, NICE guidelines recommend adjusting your medication.
+          </p>
+        </div>
+      </div>
+
+      <h1 class="nhsuk-heading-xl">
+        Medication dose recommendation
+      </h1>
+
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">
+            Recommended change
+          </h2>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Current medication
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Amlodipine 5mg daily
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Recommended change
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <strong>Increase to Amlodipine 10mg daily</strong>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Expected benefit
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                5-10 mmHg reduction in systolic BP
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Why this recommendation?</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your recent readings show BP consistently above target (140/90 mmHg)</li>
+        <li>You've been on current dose for 8 weeks with good tolerance</li>
+        <li>NICE guidelines support dose escalation when target not achieved</li>
+        <li>No contraindications identified in your medical history</li>
+      </ul>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Possible side effects and monitoring
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3 class="nhsuk-heading-s">Potential side effects</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Ankle swelling (more common with higher doses)</li>
+            <li>Dizziness or light-headedness</li>
+            <li>Flushing</li>
+          </ul>
+          <h3 class="nhsuk-heading-s">Monitoring plan</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>BP check in 2-4 weeks</li>
+            <li>Contact GP if concerning symptoms develop</li>
+            <li>U&E blood test in 4-6 weeks</li>
+          </ul>
+        </div>
+      </div>
+
+      <form method="post" action="/pages/mybp/dose-titration/confirmation">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do you accept this recommendation?
+              </h2>
+            </legend>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="accept-yes" name="accept" type="radio" value="yes">
+                <label class="nhsuk-radios__label" for="accept-yes">
+                  Yes, I accept the dose increase
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="accept-no" name="accept" type="radio" value="no">
+                <label class="nhsuk-radios__label" for="accept-no">
+                  No, I want to discuss with my GP first
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

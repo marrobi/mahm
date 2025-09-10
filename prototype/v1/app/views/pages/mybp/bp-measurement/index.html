@@ -1,0 +1,95 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Blood pressure measurement" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Blood pressure measurement
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Take your blood pressure using Lifelight technology at a local community location.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Lifelight technology</strong> measures your blood pressure without a cuff, using only your smartphone camera.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">How it works</h2>
+      
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Choose a convenient community location near you</li>
+        <li>Book a 10-minute appointment slot</li>
+        <li>Attend your appointment with your smartphone</li>
+        <li>A trained volunteer will guide you through the measurement</li>
+        <li>Your results are automatically saved to your My BP record</li>
+      </ol>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What to expect during measurement
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Sit comfortably and place your finger on your phone's camera</li>
+            <li>Stay still for about 30 seconds while the app measures</li>
+            <li>The technology detects subtle changes in blood flow through your fingertip</li>
+            <li>Results are calculated using AI and validated measurement algorithms</li>
+            <li>The whole process takes less than 5 minutes</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Benefits of community measurement</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>No need to visit GP practice</li>
+        <li>Convenient locations and flexible times</li>
+        <li>Trained volunteers available to help</li>
+        <li>Results integrated directly into your care plan</li>
+        <li>Free NHS service</li>
+      </ul>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Non-urgent advice">💡</span>Preparation tips
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul>
+            <li>Avoid caffeine for 30 minutes before measurement</li>
+            <li>Don't smoke for 30 minutes before</li>
+            <li>Use the toilet before your appointment</li>
+            <li>Bring your smartphone fully charged</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/locations">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Find locations near me</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

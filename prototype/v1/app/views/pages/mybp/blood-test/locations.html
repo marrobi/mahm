@@ -1,0 +1,133 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Choose location" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/blood-test/information"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Blood test locations
+      </h1>
+
+      <p>Choose a convenient location for your U&E blood test.</p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>All locations offer NHS blood test services with trained phlebotomists and are within 5 miles of your registered address.</p>
+      </div>
+
+      <form method="post" action="/pages/mybp/blood-test/appointment">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Select your preferred location
+              </h2>
+            </legend>
+            
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-1" name="location" type="radio" value="hospital-lab">
+                <label class="nhsuk-radios__label" for="location-1">
+                  <strong>Westfield Hospital Pathology Lab</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    Westfield Hospital, Oak Avenue, W12 7NH<br>
+                    0.8 miles away • Open Mon-Fri 7:30am-4pm, Sat 8am-12pm<br>
+                    ✓ Same-day appointments usually available
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-2" name="location" type="radio" value="health-centre">
+                <label class="nhsuk-radios__label" for="location-2">
+                  <strong>Park Lane Health Centre</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    56 Park Lane, Westfield, W12 4GH<br>
+                    1.1 miles away • Open Mon-Fri 8am-6pm<br>
+                    ✓ Wheelchair accessible • ✓ On-site parking
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-3" name="location" type="radio" value="medical-centre">
+                <label class="nhsuk-radios__label" for="location-3">
+                  <strong>Victoria Road Medical Centre</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    89 Victoria Road, Centre Town, W12 8XY<br>
+                    1.4 miles away • Open Mon-Fri 7:45am-5:30pm<br>
+                    ✓ Early morning appointments • ✓ Near bus stop
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-4" name="location" type="radio" value="community-clinic">
+                <label class="nhsuk-radios__label" for="location-4">
+                  <strong>Olympic Community Clinic</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    180 Olympic Way, Park Royal, W12 0LP<br>
+                    2.3 miles away • Open Mon-Sat 8am-7pm<br>
+                    ✓ Evening appointments • ✓ Saturday service
+                  </span>
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="location-5" name="location" type="radio" value="private-clinic">
+                <label class="nhsuk-radios__label" for="location-5">
+                  <strong>QuickPath Diagnostics</strong><br>
+                  <span class="nhsuk-u-secondary-text-colour">
+                    25 High Street, Westfield, W12 8AB<br>
+                    0.5 miles away • Open Mon-Sat 7am-8pm, Sun 9am-4pm<br>
+                    ✓ No appointment needed • ✓ Fast turnaround • NHS contract
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-details" data-module="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What to expect at each location
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h3 class="nhsuk-heading-s">All locations provide:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Qualified phlebotomists (blood collection specialists)</li>
+              <li>Clean, private consultation rooms</li>
+              <li>Results sent directly to your GP and My BP app</li>
+              <li>NHS-funded service (free at point of use)</li>
+            </ul>
+            
+            <h3 class="nhsuk-heading-s">Choose based on:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Distance and travel convenience</li>
+              <li>Available appointment times</li>
+              <li>Parking and accessibility needs</li>
+              <li>Whether you prefer hospital or community setting</li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Continue to book appointment
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

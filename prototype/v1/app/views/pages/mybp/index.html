@@ -1,0 +1,78 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the NHS App layout from /app/views/layout-app.html -->
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "My BP - Hypertension Management" %}
+
+<!-- For adding a breadcrumb or back link -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "My BP - Hypertension Management",
+        subtitle: "(Demo - dummy data only)"
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Manage your blood pressure and medication with AI-supported care.
+      </p>
+
+      <!-- SECTION - HYPERTENSION MANAGEMENT -->
+      {{ nhsappSectionHeading({
+        headingText: "What would you like to do today?"
+      }) }}
+
+      <p>Choose from the options below to manage your blood pressure care:</p>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Review and adjust medication",
+            href: "/pages/mybp/dose-titration/index",
+            description: "Check if your blood pressure medication dose needs adjusting based on recent readings."
+          },
+          {
+            title: "Measure blood pressure",
+            href: "/pages/mybp/bp-measurement/index",
+            description: "Take your blood pressure using Lifelight technology at a local community location."
+          },
+          {
+            title: "Book safety blood test",
+            href: "/pages/mybp/blood-test/index",
+            description: "Book your U&E (kidney function) safety monitoring blood test."
+          }
+        ]
+      }) }}
+
+      <!-- SECTION - RECENT ACTIVITY -->
+      {{ nhsappSectionHeading({
+        headingText: "Recent activity"
+      }) }}
+      
+      <ul class="nhsuk-list">
+        <li>
+          <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
+        </li>
+        <li>
+          <strong>Current medication:</strong> Amlodipine 5mg daily
+        </li>
+        <li>
+          <strong>Next appointment:</strong> 15 October 2024
+        </li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

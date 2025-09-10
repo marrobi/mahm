@@ -14,10 +14,10 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-xl">
-        Review your blood pressure readings
+        Confirm your blood pressure readings
       </h1>
 
-      <p>Please confirm these readings are correct before we provide a recommendation.</p>
+      <p>Please check these readings from your home monitor are correct. We'll use them to provide personalized medication guidance.</p>
 
       <div class="nhsuk-table-responsive">
         <table class="nhsuk-table">
@@ -33,28 +33,28 @@
               <td class="nhsuk-table__cell">7 Oct 2024</td>
               <td class="nhsuk-table__cell">142/88 mmHg</td>
               <td class="nhsuk-table__cell">
-                <strong class="nhsuk-tag nhsuk-tag--orange">High</strong>
+                <strong class="nhsuk-tag nhsuk-tag--orange">Above target</strong>
               </td>
             </tr>
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell">3 Oct 2024</td>
               <td class="nhsuk-table__cell">145/92 mmHg</td>
               <td class="nhsuk-table__cell">
-                <strong class="nhsuk-tag nhsuk-tag--red">High</strong>
+                <strong class="nhsuk-tag nhsuk-tag--red">Above target</strong>
               </td>
             </tr>
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell">26 Sep 2024</td>
               <td class="nhsuk-table__cell">140/86 mmHg</td>
               <td class="nhsuk-table__cell">
-                <strong class="nhsuk-tag nhsuk-tag--orange">Borderline</strong>
+                <strong class="nhsuk-tag nhsuk-tag--orange">At upper limit</strong>
               </td>
             </tr>
             <tr class="nhsuk-table__row">
               <td class="nhsuk-table__cell">19 Sep 2024</td>
               <td class="nhsuk-table__cell">138/82 mmHg</td>
               <td class="nhsuk-table__cell">
-                <strong class="nhsuk-tag nhsuk-tag--yellow">Normal</strong>
+                <strong class="nhsuk-tag nhsuk-tag--green">On target</strong>
               </td>
             </tr>
           </tbody>
@@ -71,9 +71,12 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
               <h2 class="nhsuk-fieldset__heading">
-                Are these readings accurate?
+                Do these readings look correct?
               </h2>
             </legend>
+            <div class="nhsuk-hint">
+              Check that the dates and blood pressure values match what you recorded at home.
+            </div>
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="readings-yes" name="readings-confirmed" type="radio" value="yes" checked>
@@ -84,7 +87,7 @@
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="readings-no" name="readings-confirmed" type="radio" value="no">
                 <label class="nhsuk-radios__label" for="readings-no">
-                  No, some readings may be incorrect
+                  No, I need to update some readings
                 </label>
               </div>
             </div>
@@ -92,7 +95,7 @@
         </div>
 
         <button class="nhsuk-button" type="submit">
-          Get AI recommendation
+          Get medication guidance
         </button>
       </form>
 

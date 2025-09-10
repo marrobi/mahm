@@ -1,8 +1,19 @@
-# My BP Care - Multi-agentic AI Hypertension Management (Demo MVP)
+# My BP - Multi-agentic AI Hypertension Management (Demo MVP)
+
+**⚠️ SIMULATION ONLY - NOT FOR CLINICAL USE ⚠️**
+
+*This is a demonstration system using dummy data only. This tool does not have medical device approval and is not intended for real-world clinical decision-making. All patient data, clinical scenarios, and outcomes shown are simulated for demonstration purposes only.*
 
 ## Executive Summary
 
-This document outlines a demo version of **My BP Care**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities.
+This document outlines a demo version of **My BP**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This system demonstrates the potential of multi-agentic AI systems while adhering to Microsoft's Trustworthy AI principles of fairness, reliability, safety, privacy, inclusiveness, transparency, and accountability.
+
+**Primary Objectives:**
+- Improve adherence to NICE guidelines, particularly for people in lower socioeconomic groups and other marginalised communities
+- Reduce administrative workload for GP practices
+- **Above all: ensure clinical safety as the number one priority**
+
+This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities. **All data shown is simulated for demonstration purposes only - this is not a real-world clinical tool.**
 
 ## Visual Overview
 
@@ -42,9 +53,9 @@ The system manages three distinct patient categories, each with different entry 
 
 **Example Workflow:**
 ```
-Patient: Jane Smith, 52, diagnosed hypertension 2 months ago
-Entry: GP referral with confirmed diagnosis
-Pathway: Orchestrating Agent → Shared Decision-Making → Medication initiation → Monitoring schedule
+Patient: Jane Smith, 52, diagnosed hypertension 7 years ago
+Entry: Automated EHR system trawl identifying patients with essential hypertension and no exclusion criteria
+Pathway: Orchestrating Agent → Shared Decision-Making → Medication review → Monitoring schedule
 ```
 
 ### Category B: Normotensive Surveillance Patients  
@@ -60,9 +71,9 @@ Pathway: Orchestrating Agent → Shared Decision-Making → Medication initiatio
 
 **Example Workflow:**
 ```
-Patient: Mark Johnson, 45, annual BP check due
-Entry: Practice recall system
-Pathway: BP Measurement → Normal reading → Lifestyle assessment → Annual recall
+Patient: Mark Johnson, 45, 5-yearly BP check due per NICE guidelines
+Entry: NHS Health Check programme or practice recall system
+Pathway: BP Measurement → Normal reading → Lifestyle assessment → 5-year recall
 Escalation: If ≥140/90 → Diagnostic pathway activated
 ```
 
@@ -79,8 +90,8 @@ Escalation: If ≥140/90 → Diagnostic pathway activated
 
 **Example Workflow:**
 ```
-Patient: Sarah Williams, 38, elevated reading at pharmacy screening
-Entry: Community BP screening programme
+Patient: Sarah Williams, 38, elevated reading at NHS Health Check
+Entry: NHS Health Check programme or community BP screening programme
 Pathway: Repeat measurements → ABPM arrangement → Diagnosis confirmation → Treatment initiation
 Transition: Upon hypertension diagnosis → Category A management
 ```
@@ -116,33 +127,57 @@ Transition: Upon hypertension diagnosis → Category A management
 
 ### 1. Orchestrating Agent (Central Hub)
 
-**Purpose:** Central coordination agent that follows NICE guidance and escalates to GP by exception
+**Purpose:** Central coordination agent that prioritises clinical safety above all else, follows NICE guidance strictly, and escalates to GP by exception
+
+**Clinical Safety Priority:** This agent is designed to be paranoid about clinical safety. If at any point something could be dangerous or "not quite right", it must refer to the GP with the appropriate degree of urgency. It serves as guard rails: if everything fits within NICE guidelines, that's acceptable, but the moment something goes awry, it must refer to the GP.
 
 **Key Responsibilities:**
-- Coordinates all other agents based on NICE hypertension guidelines
-- Makes care pathway decisions
-- Escalates complex cases to GP
-- Maintains patient care timeline
-- Ensures guideline compliance
+- Coordinates all other agents based on NICE hypertension guidelines with clinical safety as the overriding priority
+- Makes care pathway decisions with mandatory safety checks at each stage
+- Escalates complex cases to GP with detailed clinical reasoning
+- Maintains patient care timeline with fail-safe monitoring
+- Ensures strict guideline compliance and patient safety
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: John Smith (ID: PT001)
+Patient: John Smith (ID: PT001) - *Simulated data only*
 Initial BP: 165/95 mmHg (elevated)
 
 1. Receives patient data for individuals due/overdue for BP monitoring per NICE guidelines
-2. Analyzes patient data: Age 55, BMI 28, no diabetes, smoker
-3. Initiates NICE pathway: Stage 1 hypertension protocol
-4. Coordinates with BP Measurement Agent for community monitoring
-5. Schedules lifestyle intervention via Lifestyle Agent
-6. Sets 4-week review milestone
-7. Escalation trigger: If BP >180/110 or patient symptoms worsen
+2. Analyses patient data with safety screening: Age 55, BMI 28, no diabetes, smoker
+3. Safety check: Reviews for any contraindications or risk factors requiring immediate GP consultation
+4. Initiates NICE pathway: Stage 1 hypertension protocol with safety monitoring
+5. Coordinates with BP Measurement Agent for community monitoring
+6. Schedules lifestyle intervention via Lifestyle Agent
+7. Sets 4-week review milestone with mandatory safety checkpoint
+8. Continuous monitoring: Any deviation from expected pathway triggers GP escalation
 ```
 
-**Escalation Protocols:**
-- Immediate GP escalation: Severe hypertension (≥180/110), symptoms of end-organ damage
-- Routine escalation: No improvement after 3 months of intervention
-- Exception handling: Medication contraindications, patient non-compliance
+**Comprehensive Escalation Protocols:**
+**Immediate GP Escalation (same day):**
+- Severe hypertension (≥180/110 mmHg)
+- Symptoms of end-organ damage (headaches, visual changes, chest pain, breathlessness)
+- Acute cardiovascular events or symptoms
+- Medication adverse reactions or contraindications
+- Patient pregnancy (hypertension in pregnancy requires specialist management)
+- Signs of secondary hypertension
+- Patient unable to provide informed consent
+- Multiple missed appointments raising safety concerns
+
+**Urgent GP Escalation (within 48 hours):**
+- No improvement after 4 weeks of optimal treatment
+- Significant BP variability or treatment resistance
+- Patient non-adherence to medication requiring clinical assessment
+- Comorbidity developments (diabetes, kidney disease, cardiovascular disease)
+- Patient reporting concerning symptoms
+- Abnormal blood test results requiring interpretation
+
+**Routine GP Escalation (within 1 week):**
+- No improvement after 3 months of intervention
+- Patient request for GP consultation
+- Complex treatment decisions requiring clinical judgement
+- Need for specialist referral consideration
+- Annual medication review requirements
 
 ### 2. BP Measurement Agent
 
@@ -163,10 +198,10 @@ Simulation Steps:
 1. Receives monitoring request from Orchestrating Agent
 2. Locates nearest BP monitoring location (GP practice waiting room, Boots pharmacy Mill Road - 0.3 miles, or community health hub)
 3. Books appointment slot: Tuesday 2:00 PM
-4. Simulates measurement: 145/88 mmHg
+4. Simulates measurement: 145/88 mmHg (*dummy data for demonstration*)
 5. Quality check: Measurement meets NHS standards
 6. Reports back to Orchestrating Agent
-7. Schedules next measurement in 2 weeks
+7. Schedules next measurement per NICE guidelines: 4 weeks for stable treated hypertension
 ```
 
 **Dummy Data Sources:**
@@ -176,34 +211,40 @@ Simulation Steps:
 
 ### 3. Diagnosing Agent
 
-**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring and provides GP go/no-go recommendations (Note: Patients with existing essential hypertension diagnosis can bypass this agent)
+**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring and provides evidence-based recommendations requiring GP approval for all new hypertension diagnoses (Note: Patients with existing essential hypertension diagnosis can bypass this agent)
+
+**Human-in-the-Loop Requirement:** No patient can receive a new diagnosis of essential hypertension without GP approval. The system provides evidence-based recommendations and evidence packs to the GP, but the final diagnostic decision and treatment initiation requires GP confirmation.
 
 **Key Responsibilities:**
-- Arrange ambulatory blood pressure monitoring (ABPM)
-- Analyze 24-hour BP patterns
-- Confirm hypertension diagnosis
-- Provide evidence-based recommendations to GP
+- Arrange ambulatory blood pressure monitoring (ABPM) through Boots pharmacies
+- Analyse 24-hour BP patterns
+- Compile evidence packages for GP review
+- Provide structured diagnostic recommendations
+- Await GP go/no-go approval before proceeding with treatment pathways
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Michael Chen (ID: PT003)
+Patient: Michael Chen (ID: PT003) - *Simulated data only*
 Clinic readings: 155/92, 158/95, 152/89 mmHg
 
 Simulation Process:
 1. Triggered by 3 elevated clinic readings
-2. Arranges ABPM at local hospital (St. Mary's Cardiology)
+2. Arranges ABPM at Boots pharmacy (Mill Road branch)
 3. Simulated 24h data:
-   - Daytime average: 148/86 mmHg
-   - Nighttime average: 135/78 mmHg
-   - Nocturnal dipping: 9% (normal)
-4. Analysis: Confirms stage 1 hypertension
-5. Recommendation: Initiate antihypertensive therapy
-6. Sends structured report to GP
+   - Daytime average: 148/86 mmHg (*dummy data*)
+   - Nighttime average: 135/78 mmHg (*dummy data*)
+   - Nocturnal dipping: 9% (normal) (*simulated*)
+4. Analysis: Evidence suggests stage 1 hypertension
+5. Compiles evidence package with ABPM data, risk factors, and NICE guideline recommendations
+6. Sends structured report to GP for diagnostic approval
+7. Awaits GP confirmation before patient transitions to Category A management
+8. If GP approves: Patient moves to treatment pathway
+9. If GP declines: Returns to surveillance or requests additional investigations
 ```
 
 **Simulated Equipment:**
-- ABPM devices: Spacelabs 90217, 90207
-- Booking system integration: 72-hour typical wait time
+- ABPM devices available at Boots: Spacelabs 90217, 90207 (*demonstration equipment*)
+- Booking system integration: 72-hour typical wait time (*simulated data*)
 - Data analysis algorithms: NICE-compliant thresholds
 
 ### 4. Lifestyle Agent
@@ -211,80 +252,100 @@ Simulation Process:
 **Purpose:** Simulates referrals to services for sodium/alcohol reduction, exercise programmes, dietary modifications, smoking cessation, stress management, and sleep hygiene support
 
 **Key Responsibilities:**
-- Assess lifestyle risk factors
-- Coordinate referrals to lifestyle services
+- Assess lifestyle risk factors through accessible, multi-modal questionnaires
+- Coordinate referrals to culturally-appropriate lifestyle services
+- Provide interventions in multiple languages and accessible formats
+- Cross-reference with NHS London "Million Hearts and Minds" programme for evidence-based, culturally-sensitive interventions
+
+**Accessibility Features:**
+- **Multiple delivery methods:** Online forms, voice conversations with AI agents, telephone support, face-to-face consultations
+- **Language support:** Available in major community languages plus BSL interpretation services
+- **Accessible formats:** EasyRead versions, large print, audio descriptions, screen reader compatibility
+- **Cultural sensitivity:** Culturally-appropriate dietary advice, religious considerations, community-specific programmes
 - Track intervention progress
 - Provide educational resources
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Emma Davis (ID: PT004)
+Patient: Emma Davis (ID: PT004) - *Simulated data only*
 Risk factors: High sodium diet, sedentary lifestyle, moderate alcohol use, smoking, poor sleep
 
 Intervention Simulation:
-1. Lifestyle assessment questionnaire completed
+1. Lifestyle assessment questionnaire completed via AI voice agent in patient's preferred language (English)
 2. Identifies priorities: Diet (sodium reduction), Exercise, Alcohol, Smoking cessation, Stress management
-3. Referrals made:
-   - NHS Healthier You: Weight management programme
-   - Local leisure centre: Cardiac rehabilitation exercise class
-   - Alcohol support: Online NHS alcohol units calculator
-   - NHS Stop Smoking Service: Local counsellor appointment
-   - Stress management: Mindfulness-based stress reduction course
-   - Sleep hygiene: NHS Better Health sleep advice programme
-4. Educational materials sent: DASH diet guide, home BP monitoring tips, smoking cessation toolkit
-5. 4-week follow-up scheduled
-6. Progress tracking: Weight loss 2kg, exercise 3x/week, alcohol reduction 30%, quit smoking day 18
+3. Culturally-appropriate referrals made:
+   - NHS Healthier You: Weight management programme with cultural dietary guidance
+   - Local leisure centre: Women-only cardiac rehabilitation exercise class
+   - Alcohol support: Culturally-sensitive NHS alcohol units calculator with community-specific guidance
+   - NHS Stop Smoking Service: Bilingual counsellor appointment
+   - Stress management: Community-based mindfulness programme respecting cultural practices
+   - Sleep hygiene: NHS Better Health sleep advice with cultural sleep practices integration
+4. Multi-format educational materials sent: DASH diet guide (EasyRead + audio), home BP monitoring video tutorial, culturally-adapted smoking cessation toolkit
+5. 4-week follow-up scheduled with preferred communication method
+6. Progress tracking: Weight loss 2kg, exercise 3x/week, alcohol reduction 30%, quit smoking day 18 (*dummy progress data*)
 ```
 
 **Simulated Services:**
-- NHS Healthier You programmes: 12 local providers
-- Exercise referral schemes: 8 participating gyms/centres
-- Dietitian services: 5-week waiting list
-- NHS Stop Smoking Services: 15 local advisors
-- Stress management courses: 6 providers offering MBSR
-- Sleep hygiene programmes: NHS Better Health digital platform
-- Digital health tools: NHS Food Scanner app, Couch to 5K, Smoke Free app
+- NHS Healthier You programmes: 12 local providers with cultural dietary specialists (*demonstration data*)
+- Exercise referral schemes: 8 participating gyms/centres with accessibility features and cultural considerations
+- Dietitian services: 5-week waiting list, multilingual support available
+- NHS Stop Smoking Services: 15 local advisors, 8 offering language support
+- Stress management courses: 6 providers offering culturally-adapted MBSR programmes
+- Sleep hygiene programmes: NHS Better Health digital platform with cultural adaptation features
+- Digital health tools: NHS Food Scanner app (multilingual), Couch to 5K (accessible), Smoke Free app (EasyRead)
+- **Cultural programmes:** NHS London "Million Hearts and Minds" affiliated community interventions
 
 ### 5. Shared Decision-Making Agent
 
 **Purpose:** Simulates patient support in selecting antihypertensive medications based on preferences and side effects. Strong evidence in the scientific literature demonstrates that shared decision-making leads to better outcomes, particularly higher adherence to antihypertensive medications.
 
 **Key Responsibilities:**
-- Present treatment options to patients
-- Explain benefits and risks
-- Consider patient preferences and comorbidities
-- Support informed decision-making
+- Present treatment options through multiple accessible formats and media
+- Explain benefits and risks using patient-preferred communication methods
+- Consider patient preferences, cultural factors, and comorbidities  
+- Support informed decision-making with comprehensive NHS service integration
+
+**Multi-Media Accessibility Features:**
+- **Video content:** Subtitled explanation videos in multiple languages
+- **Podcast-style audio:** For patients preferring audio learning
+- **AI chatbots:** Interactive Q&A sessions about medication options
+- **Virtual avatars:** Culturally-representative healthcare advisors
+- **Language support:** Full translation services and EasyRead formats
+- **BSL interpretation:** Video consultations with BSL interpreters
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Robert Wilson (ID: PT005)
+Patient: Robert Wilson (ID: PT005) - *Simulated data only*
 Profile: 62 years old, active lifestyle, concerns about fatigue
 
-Decision-Making Simulation:
-1. Presents 3 first-line options:
+NHS Decision-Making Simulation:
+1. Presents 3 first-line NHS treatment options via patient's preferred format (interactive video):
    - ACE inhibitor (Ramipril): Good for active patients, dry cough risk
-   - Calcium channel blocker (Amlodipine): Effective, may cause ankle swelling
+   - Calcium channel blocker (Amlodipine): Effective, may cause ankle swelling  
    - Thiazide diuretic (Indapamide): Cost-effective, increased urination
    
-2. Patient priorities identified:
+2. Patient priorities identified through AI conversation:
    - Maintain energy levels for cycling
    - Minimize impact on daily activities
-   - Cost not a primary concern
+   - Preference for NHS-recommended options
 
-3. Educational materials provided:
-   - Video explanations of each medication
-   - Side effect comparison chart
-   - Real patient testimonials
+3. Multi-format educational materials provided:
+   - Subtitled video explanations (5 minutes each, available in Welsh/Urdu/Polish)
+   - Audio podcast-style medication guides
+   - Interactive AI chatbot Q&A session
+   - Cultural avatar providing culturally-appropriate advice
+   - EasyRead comparison charts
 
-4. Patient choice: ACE inhibitor (Ramipril 2.5mg)
-5. Monitoring plan agreed: BP check in 4 weeks
+4. Patient choice made through accessible interface: ACE inhibitor (Ramipril 2.5mg)
+5. NHS monitoring plan agreed: BP check in 4 weeks at preferred community location
 ```
 
-**Decision Support Tools:**
-- Interactive medication comparison
-- Side effect probability calculator
-- Patient preference questionnaire
-- Educational videos (3-5 minutes each)
+**NHS Decision Support Tools:**
+- Interactive NHS medication comparison portal (*simulated interface*)
+- Side effect probability calculator aligned with NHS patient information
+- Cultural preference questionnaire with community health considerations
+- Educational videos featuring diverse NHS patients (*dummy testimonials*)
+- Multilingual AI chatbots for detailed medication discussions
 
 ### 6. Titration Agent
 

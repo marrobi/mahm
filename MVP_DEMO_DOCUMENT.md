@@ -9,9 +9,9 @@
 This document outlines a demo version of **My BP**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This system demonstrates the potential of multi-agentic AI systems while adhering to Microsoft's Trustworthy AI principles of fairness, reliability, safety, privacy, inclusiveness, transparency, and accountability.
 
 **Primary Objectives:**
+- **Clinical safety as the number one priority**
 - Improve adherence to NICE guidelines, particularly for people in lower socioeconomic groups and other marginalised communities
 - Reduce administrative workload for GP practices
-- **Above all: ensure clinical safety as the number one priority**
 
 This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities. **All data shown is simulated for demonstration purposes only - this is not a real-world clinical tool.**
 

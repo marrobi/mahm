@@ -1,0 +1,90 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Benefits & Privacy" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/welcome"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Benefits & Privacy
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Learn how My BP helps you and how we protect your information.
+      </p>
+
+      <h2 class="nhsuk-heading-m">Benefits of using My BP</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>Better health outcomes
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Personalized medication recommendations following NICE guidelines</li>
+            <li>Improved blood pressure monitoring and tracking</li>
+            <li>Reduced need for GP appointments for routine checks</li>
+            <li>Early detection of issues before they become serious</li>
+            <li>Better support for managing your condition</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Your privacy and data protection</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your privacy is our priority.</strong> We follow strict NHS data protection standards and use your information only to provide your care.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your data is encrypted and stored securely</li>
+        <li>Only you and your healthcare team can access your information</li>
+        <li>We follow GDPR and NHS data protection policies</li>
+        <li>You can request to see or delete your data at any time</li>
+        <li>We never share your data with third parties for commercial purposes</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Who has access to your My BP data?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Your GP and practice team</li>
+            <li>Specialists involved in your hypertension care</li>
+            <li>NHS clinical staff providing direct care</li>
+            <li>Authorized NHS Digital teams for system maintenance (anonymized data only)</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/disclaimer">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

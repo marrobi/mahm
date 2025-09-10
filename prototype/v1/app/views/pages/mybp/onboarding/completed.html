@@ -1,0 +1,95 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Onboarding complete" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {% if data['consent'] == 'yes' %}
+        
+        <div class="nhsuk-panel nhsuk-panel--confirmation">
+          <h1 class="nhsuk-panel__title">
+            Welcome to My BP
+          </h1>
+          <div class="nhsuk-panel__body">
+            You're now ready to start managing your blood pressure with AI support
+          </div>
+        </div>
+
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+
+        <ol class="nhsuk-list nhsuk-list--number">
+          <li>Your My BP dashboard is now available</li>
+          <li>You can start tracking blood pressure readings</li>
+          <li>Book safety monitoring tests when needed</li>
+          <li>Get AI-powered medication recommendations</li>
+        </ol>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p><strong>Remember:</strong> This is a demonstration version. All data and recommendations are simulated for showcase purposes only.</p>
+        </div>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="m0 0h24v24h-24z" fill="none"/>
+              <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+            </svg>
+            <span class="nhsuk-action-link__text">Go to My BP dashboard</span>
+          </a>
+        </div>
+
+      {% else %}
+
+        <div class="nhsuk-panel">
+          <h1 class="nhsuk-panel__title">
+            Consent not given
+          </h1>
+          <div class="nhsuk-panel__body">
+            You have chosen not to use My BP at this time
+          </div>
+        </div>
+
+        <h2 class="nhsuk-heading-m">What this means</h2>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>My BP will not be available in your NHS App</li>
+          <li>No data will be collected for My BP purposes</li>
+          <li>Your other NHS App services remain unchanged</li>
+          <li>You can give consent later if you change your mind</li>
+        </ul>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>For blood pressure management, continue to use your existing NHS services and speak to your GP or practice nurse.</p>
+        </div>
+
+        <h2 class="nhsuk-heading-m">Alternative options</h2>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Book GP appointments through your NHS App</li>
+          <li>Use NHS 111 for health advice</li>
+          <li>Visit your local pharmacy for blood pressure checks</li>
+          <li>Access NHS.UK for health information</li>
+        </ul>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="m0 0h24v24h-24z" fill="none"/>
+              <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+            </svg>
+            <span class="nhsuk-action-link__text">Return to NHS App</span>
+          </a>
+        </div>
+
+        <p><a href="/pages/mybp/onboarding/welcome" class="nhsuk-link">Change your mind? Restart the onboarding process</a></p>
+
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

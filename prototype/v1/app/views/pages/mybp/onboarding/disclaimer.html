@@ -1,0 +1,109 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Simulation Disclaimer" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/benefits"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Simulation Disclaimer
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h2 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Demonstration version only
+          </span>
+        </h2>
+        <p><strong>This is a demonstration version of My BP.</strong> It uses simulated data and workflows to showcase the system's capabilities.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What this means</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Urgent advice: </span>Not for clinical use
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>This is not a real clinical tool</strong></li>
+            <li><strong>Do not use for actual medical decisions</strong></li>
+            <li><strong>All recommendations are simulated</strong></li>
+            <li><strong>No real prescriptions or appointments are made</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Dummy data notification</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>All data shown in this prototype is <strong>dummy data</strong> created for demonstration purposes. This includes:</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Blood pressure readings</li>
+        <li>Medication information</li>
+        <li>Appointment dates</li>
+        <li>Test results</li>
+        <li>Patient demographics</li>
+        <li>Clinical recommendations</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Purpose of this prototype</h2>
+
+      <p>This demonstration shows:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>How the My BP system would work</li>
+        <li>User interface design and navigation</li>
+        <li>Multi-agent AI coordination capabilities</li>
+        <li>Clinical safety protocols and workflows</li>
+        <li>Integration with NHS App design patterns</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What happens if I have real health concerns?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you have any real health concerns about your blood pressure:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Contact your GP or healthcare provider</li>
+            <li>Use NHS 111 for urgent but non-emergency advice</li>
+            <li>Call 999 for emergency medical situations</li>
+            <li>Visit your local pharmacy for health advice</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/data-usage">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">I understand - Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

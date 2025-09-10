@@ -1,0 +1,63 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Welcome to My BP" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Welcome to My BP
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Your AI-powered hypertension management tool within the NHS App.
+      </p>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>What My BP can help with
+            </span>
+          </h2>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Track your blood pressure readings</li>
+            <li>Get AI-powered medication recommendations</li>
+            <li>Book safety monitoring tests</li>
+            <li>Access community blood pressure stations</li>
+            <li>Receive personalized health insights</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Getting started</h2>
+      
+      <p>Before you can use My BP, we need to:</p>
+      
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Explain the benefits and privacy protections</li>
+        <li>Tell you about the simulation disclaimer</li>
+        <li>Show you our data usage statement</li>
+        <li>Get your consent to proceed</li>
+      </ol>
+
+      <p>This will only take a few minutes.</p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/benefits">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

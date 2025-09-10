@@ -1,0 +1,131 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Data Usage Statement" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/disclaimer"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Data Usage Statement
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        How we collect, use, and protect your data in My BP.
+      </p>
+
+      <h2 class="nhsuk-heading-m">Data we collect</h2>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Types of data collected in My BP</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Data type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Purpose
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Blood pressure readings</td>
+              <td class="nhsuk-table__cell ">Monitor your condition and provide recommendations</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Medication information</td>
+              <td class="nhsuk-table__cell ">Ensure safe and effective treatment</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Appointment and test data</td>
+              <td class="nhsuk-table__cell ">Coordinate your care</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Demographics</td>
+              <td class="nhsuk-table__cell ">Personalize care and identify health inequalities</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="nhsuk-heading-m">How we use your data</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>Direct care purposes
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Generate personalized medication recommendations</li>
+            <li>Monitor your blood pressure trends</li>
+            <li>Schedule necessary health checks and tests</li>
+            <li>Alert healthcare providers to concerning changes</li>
+            <li>Coordinate care between different healthcare services</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Anonymized data for improvement</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We may use <strong>anonymized</strong> data to improve the service and reduce health inequalities. Your personal information is never included.</p>
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What does anonymized mean?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Anonymized data means:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>All personal identifiers are permanently removed</li>
+            <li>It cannot be linked back to you as an individual</li>
+            <li>It's used only for research and service improvement</li>
+            <li>It helps identify patterns that can improve care for everyone</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-m">Your rights</h2>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Access:</strong> Request a copy of your data</li>
+        <li><strong>Correct:</strong> Update incorrect information</li>
+        <li><strong>Delete:</strong> Request removal of your data</li>
+        <li><strong>Withdraw:</strong> Stop using My BP at any time</li>
+        <li><strong>Complain:</strong> Contact NHS Digital or the ICO</li>
+      </ul>
+
+      <p>For more information, see the <a href="#" class="nhsuk-link">NHS Digital privacy notice</a>.</p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/consent">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

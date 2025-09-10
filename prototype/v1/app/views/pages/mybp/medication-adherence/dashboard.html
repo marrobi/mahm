@@ -1,0 +1,145 @@
+<!-- Medication Adherence Dashboard -->
+
+<!-- Extends the NHS App layout from /app/views/layout-app.html -->
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Medication adherence dashboard" %}
+
+<!-- For adding a breadcrumb or back link -->
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Medication adherence dashboard"
+      })}}
+
+      <!-- CURRENT ADHERENCE OVERVIEW -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">Current adherence overview</h2>
+          <p class="nhsuk-u-secondary-text-colour">Based on last 30 days</p>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="color: #f47738;">85%</h3>
+              <p class="nhsuk-u-secondary-text-colour">Adherence rate</p>
+              <strong class="nhsuk-tag nhsuk-tag--orange">Improving</strong>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <div style="background: linear-gradient(90deg, #005eb8 85%, #d4edda 15%); height: 30px; border-radius: 15px; margin-bottom: 16px;"></div>
+              <p class="nhsuk-u-margin-top-2 nhsuk-u-secondary-text-colour">Target: >90%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - RECENT PROGRESS -->
+      {{ nhsappSectionHeading({
+        headingText: "Recent progress"
+      }) }}
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Great improvement!</strong> Your adherence has increased from 65% to 85% over the past 2 weeks.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Adherence improved by 20% since interventions started</li>
+        <li>Weekend pill organizer helping with consistency</li>
+        <li>Blood pressure responding well: 148/86 mmHg (improving trend)</li>
+      </ul>
+
+      <!-- SECTION - QUICK ACTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Quick actions"
+      }) }}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "View missed dose patterns",
+            href: "/pages/mybp/medication-adherence/history",
+            description: "See when doses were missed and identify patterns to improve."
+          },
+          {
+            title: "Active interventions",
+            href: "/pages/mybp/medication-adherence/interventions",
+            description: "Track your current support plan and upcoming pharmacy check-ins."
+          }
+        ]
+      }) }}
+
+      <!-- SECTION - CURRENT MEDICATION -->
+      {{ nhsappSectionHeading({
+        headingText: "Current medication"
+      }) }}
+      
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Medication</th>
+              <th class="nhsuk-table__header" scope="col">Dose</th>
+              <th class="nhsuk-table__header" scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Amlodipine</td>
+              <td class="nhsuk-table__cell">10mg daily</td>
+              <td class="nhsuk-table__cell">Morning (8:00 AM)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION - PERSONALIZED SUGGESTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Personalized suggestions"
+      }) }}
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Weekend reminder needed
+          </span>
+        </h3>
+        <p>You tend to miss doses on weekends during social activities. Consider setting phone alarms for Saturday and Sunday mornings.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Link to habits:</strong> Take your medication with your morning coffee</li>
+        <li><strong>Visual cues:</strong> Keep pill organizer visible on bedside table</li>
+        <li><strong>Weekend support:</strong> Set weekend-specific reminders on your phone</li>
+        <li><strong>Social support:</strong> Family member notifications are active to help remind you</li>
+      </ul>
+
+      <!-- SECTION - NEXT STEPS -->
+      {{ nhsappSectionHeading({
+        headingText: "Next steps"
+      }) }}
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Pharmacy check-in:</strong> Next appointment scheduled for Friday 18 October 2024</li>
+        <li><strong>Target review:</strong> Continue monitoring for 6 more weeks</li>
+        <li><strong>BP response assessment:</strong> Next measurement due in 2 weeks</li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

@@ -7,6 +7,25 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
 
+![Main Dashboard with Adherence](medication-adherence-main-dashboard.png)
+**Main Dashboard with Medication Adherence** - Updated landing page now including the new medication adherence dashboard as the first option for patients.
+
+---
+
+## Medication Adherence Journey (3 screens)
+
+### 1. Adherence Dashboard
+![Medication Adherence Dashboard](medication-adherence-dashboard.png)
+**Medication Adherence Dashboard** - Main dashboard showing 85% adherence rate with visual progress bar, recent improvements, and quick action options for viewing patterns and interventions.
+
+### 2. Missed Dose Patterns
+![Medication Adherence History](medication-adherence-history.png)
+**Missed Dose Patterns** - Calendar heatmap showing missed doses over 30 days with clear weekend non-compliance pattern, detailed breakdown by day of week, and impact on blood pressure readings.
+
+### 3. Active Interventions
+![Medication Adherence Interventions](medication-adherence-interventions.png)
+**Active Interventions** - Comprehensive view of current support plan including weekly pharmacy check-ins, pill organizer, family notifications, SMS reminders, behavioral strategies, and progress monitoring.
+
 ---
 
 ## Dose Titration Journey (5 screens)

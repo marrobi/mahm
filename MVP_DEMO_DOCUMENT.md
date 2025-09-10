@@ -101,11 +101,19 @@ Transition: Upon hypertension diagnosis → Category A management
 
 | BP Reading | Previous History | System Response | Patient Category |
 |------------|------------------|-----------------|------------------|
+| <90/60 + symptoms | Any | GP escalation for symptomatic hypotension | All categories |
+| <100/60 asymptomatic | Athletic/young adult | Document physiological hypotension, routine surveillance | Category B |
 | <140/90    | No hypertension  | Routine surveillance | Category B |
 | <140/90    | Known hypertension | Continue monitoring | Category A |
 | 140-179/90-109 | No hypertension | Diagnostic pathway | Category C |
 | 140-179/90-109 | Known hypertension | Assess treatment response | Category A |
 | ≥180/110   | Any | Red Flag escalation | All categories |
+
+**Additional Hypotension Considerations (per clinical practice guidelines):**
+- **Postural hypotension**: Drop >20mmHg systolic or >10mmHg diastolic on standing requires GP review
+- **Symptomatic hypotension**: Dizziness, fainting, weakness with low BP readings require immediate GP escalation  
+- **Physiological hypotension**: Common in athletes and young adults (typically 90-110/50-70mmHg) - document as normal variant if asymptomatic
+- **Medication-induced hypotension**: Monitor for over-treatment in Category A patients, particularly elderly
 
 ### Inter-Category Transitions
 

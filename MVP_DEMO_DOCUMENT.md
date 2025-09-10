@@ -6,12 +6,13 @@
 
 ## Executive Summary
 
-This document outlines a demo version of **My BP**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This system demonstrates the potential of multi-agentic AI systems while adhering to Microsoft's Trustworthy AI principles of fairness, reliability, safety, privacy, inclusiveness, transparency, and accountability.
+This document outlines a demo version of **My BP**, a multi-agentic AI tool for hypertension management designed for integration into the NHS App. This system demonstrates the potential of multi-agentic AI systems while adhering to Microsoft's Trustworthy AI principles of fairness, reliability, safety, privacy, inclusiveness, transparency, and accountability. As an NHS service, My BP would be **entirely free of charge to patients at the point of use**.
 
 **Primary Objectives:**
 - **Clinical safety as the number one priority**
 - Improve adherence to NICE guidelines, particularly for people in lower socioeconomic groups and other marginalised communities
 - Reduce administrative workload for GP practices
+- Support digitally excluded patients through additional accessible tools (simple interfaces, hybrid digital/non-digital options, accessibility support) or by freeing up clinician time to provide enhanced face-to-face care for those who cannot or will not use digital systems
 
 This MVP demonstrates the orchestration of multiple specialized agents supporting hypertension care, using dummy data and simulated workflows to showcase the system's capabilities. **All data shown is simulated for demonstration purposes only - this is not a real-world clinical tool.**
 
@@ -53,7 +54,7 @@ The system manages three distinct patient categories, each with different entry 
 
 **Example Workflow:**
 ```
-Patient: Preet Kaur, 52, diagnosed hypertension 7 years ago
+Patient: Sarah Thompson, 52, diagnosed hypertension 7 years ago
 Entry: Automated EHR system trawl identifying patients with essential hypertension and no exclusion criteria
 Pathway: Orchestrating Agent → Shared Decision-Making → Medication review → Monitoring schedule
 ```
@@ -71,7 +72,7 @@ Pathway: Orchestrating Agent → Shared Decision-Making → Medication review �
 
 **Example Workflow:**
 ```
-Patient: Winston Campbell, 45, 5-yearly BP check due per NICE guidelines
+Patient: James Wilson, 45, 5-yearly BP check due per NICE guidelines
 Entry: NHS Health Check programme or practice recall system
 Pathway: BP Measurement → Normal reading → Lifestyle assessment → 5-year recall
 Escalation: If ≥140/90 → Diagnostic pathway activated
@@ -90,7 +91,7 @@ Escalation: If ≥140/90 → Diagnostic pathway activated
 
 **Example Workflow:**
 ```
-Patient: Aisha Rahman, 38, elevated reading at NHS Health Check
+Patient: Emma Clarke, 38, elevated reading at NHS Health Check
 Entry: NHS Health Check programme or community BP screening programme
 Pathway: Repeat measurements → ABPM arrangement → Diagnosis confirmation → Treatment initiation
 Transition: Upon hypertension diagnosis → Category A management
@@ -140,7 +141,7 @@ Transition: Upon hypertension diagnosis → Category A management
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Kwame Asante (ID: PT001) - *Simulated data only*
+Patient: Michael Davies (ID: PT001) - *Simulated data only*
 Initial BP: 165/95 mmHg (elevated)
 
 1. Receives patient data for individuals due/overdue for BP monitoring per NICE guidelines
@@ -191,7 +192,7 @@ Initial BP: 165/95 mmHg (elevated)
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Fatima Al-Zahra (ID: PT002)
+Patient: Jennifer Roberts (ID: PT002)
 Current medication: Amlodipine 5mg
 
 Simulation Steps:
@@ -224,7 +225,7 @@ Simulation Steps:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Rajesh Patel (ID: PT003) - *Simulated data only*
+Patient: Preet Patel (ID: PT003) - *Simulated data only*
 Clinic readings: 155/92, 158/95, 152/89 mmHg
 
 Simulation Process:
@@ -258,7 +259,7 @@ Simulation Process:
 - Cross-reference with NHS London "Million Hearts and Minds" programme for evidence-based, culturally-sensitive interventions
 
 **Accessibility Features:**
-- **Multiple delivery methods:** Online forms, voice conversations with AI agents, telephone support, face-to-face consultations (reserved for digitally excluded patients only)
+- **Multiple delivery methods (free NHS service):** Online forms, voice conversations with AI agents, telephone support, face-to-face consultations (reserved for digitally excluded patients only)
 - **Language support:** Available in major community languages plus BSL interpretation services
 - **Accessible formats:** EasyRead versions, large print, audio descriptions, screen reader compatibility
 - **Cultural sensitivity:** Culturally-appropriate dietary advice, religious considerations, community-specific programmes
@@ -267,7 +268,7 @@ Simulation Process:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Agyeya Osei (ID: PT004) - *Simulated data only*
+Patient: David Johnson (ID: PT004) - *Simulated data only*
 Risk factors: High sodium diet, sedentary lifestyle, moderate alcohol use, smoking, poor sleep
 
 Intervention Simulation:
@@ -315,7 +316,7 @@ Intervention Simulation:
 
 **Demo Workflow with Dummy Data:**
 ```
-Patient: Malcolm MacLeod (ID: PT005) - *Simulated data only*
+Patient: Robert MacDonald (ID: PT005) - *Simulated data only*
 Profile: 62 years old, active lifestyle, concerns about fatigue
 
 NHS Decision-Making Simulation:
@@ -330,7 +331,7 @@ NHS Decision-Making Simulation:
    - Preference for NHS-recommended options
 
 3. Multi-format educational materials provided:
-   - Subtitled video explanations (5 minutes each, available in Welsh/Urdu/Polish)
+   - Subtitled video explanations (5 minutes each, available in multiple languages e.g., Welsh/Urdu/Polish)
    - Audio podcast-style medication guides
    - Interactive AI chatbot Q&A session
    - Cultural avatar providing culturally-appropriate advice

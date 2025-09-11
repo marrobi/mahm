@@ -13,7 +13,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
     ### 1. Landing Page
     ![Dose Titration Landing](dose-titration-landing.png)
-    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
+    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start medication review based on NICE guidelines.
 
     ### 2. Readings Review
     ![Dose Titration Review](dose-titration-review.png)

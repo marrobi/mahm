@@ -66,64 +66,174 @@
   }
 }
 
-// BP Chart Styles
+// BP Chart Styles - Enhanced with better traffic light coding
 .bp-chart {
-  background: #f0f4f5;
-  border-radius: 4px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.bp-chart__grid {
-  position: relative;
-  height: 200px;
-  background: linear-gradient(to right, #e8f0fe 0%, #e8f0fe 25%, #fff3cd 25%, #fff3cd 50%, #f8d7da 50%, #f8d7da 100%);
+  background: #ffffff;
   border: 1px solid #d8dde0;
-  border-radius: 4px;
+  border-radius: 8px;
+  padding: 20px;
   margin-bottom: 16px;
 }
 
-.bp-chart__line {
+.bp-chart__header {
+  margin-bottom: 20px;
+  
+  h4 {
+    margin-bottom: 4px;
+  }
+}
+
+.bp-chart__visual {
+  position: relative;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.bp-chart__zones {
   position: absolute;
   width: 100%;
-  height: 4px;
-  border-radius: 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.bp-chart__line--systolic {
-  background: #005eb8;
-  top: 40%;
+.bp-chart__zone {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  
+  &.bp-chart__zone--normal {
+    background: linear-gradient(to right, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+    border: 1px solid rgba(40, 167, 69, 0.2);
+  }
+  
+  &.bp-chart__zone--elevated {
+    background: linear-gradient(to right, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+    border: 1px solid rgba(255, 193, 7, 0.2);
+  }
+  
+  &.bp-chart__zone--high {
+    background: linear-gradient(to right, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
+    border: 1px solid rgba(220, 53, 69, 0.2);
+  }
 }
 
-.bp-chart__line--diastolic {
-  background: #330072;
-  top: 70%;
+.bp-chart__zone-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #425563;
+}
+
+.bp-chart__points {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.bp-chart__point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  
+  &.bp-chart__point--normal {
+    background: #28a745;
+    top: 85%;
+  }
+  
+  &.bp-chart__point--elevated {
+    background: #ffc107;
+    top: 50%;
+  }
+  
+  &.bp-chart__point--high {
+    background: #dc3545;
+    top: 20%;
+  }
+  
+  &:hover .bp-chart__point-value {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
+  }
+}
+
+.bp-chart__point-value {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%) scale(0.8);
+  background: #212529;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 3;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #212529;
+  }
+}
+
+.bp-chart__trend-line {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, #dc3545, #ffc107, #28a745);
+  border-radius: 1px;
+  z-index: 1;
 }
 
 .bp-chart__legend {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  
+  @media (max-width: 393px) {
+    gap: 12px;
+  }
 }
 
 .bp-chart__legend-item {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 0.875rem;
 }
 
-.bp-chart__legend-color {
-  width: 16px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-.bp-chart__legend-color--systolic {
-  background: #005eb8;
-}
-
-.bp-chart__legend-color--diastolic {
-  background: #330072;
+.bp-chart__legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  
+  &.bp-chart__legend-dot--normal {
+    background: #28a745;
+  }
+  
+  &.bp-chart__legend-dot--elevated {
+    background: #ffc107;
+  }
+  
+  &.bp-chart__legend-dot--high {
+    background: #dc3545;
+  }
 }
 
 // Medication Adherence Styles
@@ -214,5 +324,35 @@
   
   .progress-indicator__value {
     font-size: 1rem;
+  }
+}
+
+// Emergency Support Styles
+.emergency-support {
+  .nhsuk-care-card--urgent {
+    border-left-color: #d5281b;
+    background-color: #fdf2f2;
+  }
+  
+  .emergency-button {
+    background-color: #d5281b;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    
+    &:hover {
+      background-color: #b91c0c;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nhsuk-icon {
+      fill: white;
+    }
   }
 }

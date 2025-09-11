@@ -24,6 +24,31 @@
         subtitle: "Hypertension Management Dashboard"
       })}}
 
+      <!-- EMERGENCY SUPPORT BUTTON -->
+      <div class="emergency-support nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card nhsuk-care-card--urgent">
+          <div class="nhsuk-care-card__heading-container">
+            <h2 class="nhsuk-care-card__heading">
+              <span role="img" aria-label="Emergency">🚨</span>
+              Emergency support
+            </h2>
+          </div>
+          <div class="nhsuk-care-card__content">
+            <p>If you're experiencing severe symptoms, chest pain, difficulty breathing, or your BP is over 180/110 mmHg</p>
+            <div class="nhsuk-action-link">
+              <a class="nhsuk-action-link__link emergency-button" href="tel:999">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                  <path d="m0 0h24v24h-24z" fill="none"/>
+                  <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+                </svg>
+                <span class="nhsuk-action-link__text">Get help now - Call 999</span>
+              </a>
+            </div>
+            <p class="nhsuk-u-margin-top-3 nhsuk-u-secondary-text-colour">For non-emergency concerns, contact your GP practice or call 111</p>
+          </div>
+        </div>
+      </div>
+
       <!-- CURRENT STATUS OVERVIEW -->
       <div class="nhsuk-summary-card nhsuk-u-margin-bottom-5">
         <div class="nhsuk-summary-card__header">
@@ -55,20 +80,59 @@
           <p class="nhsuk-u-secondary-text-colour">Last 3 months</p>
         </div>
         
-        <!-- Simple visual chart using CSS -->
+        <!-- Enhanced visual chart with better traffic light coding -->
         <div class="bp-chart">
-          <div class="bp-chart__grid">
-            <div class="bp-chart__line bp-chart__line--systolic" data-values="145,142,139,138"></div>
-            <div class="bp-chart__line bp-chart__line--diastolic" data-values="92,88,85,82"></div>
+          <div class="bp-chart__header">
+            <h4 class="nhsuk-heading-s">Your BP progress</h4>
+            <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-2">Trending downward - well done!</p>
           </div>
+          
+          <div class="bp-chart__visual">
+            <!-- Zone indicators -->
+            <div class="bp-chart__zones">
+              <div class="bp-chart__zone bp-chart__zone--normal">
+                <span class="bp-chart__zone-label">Normal (&lt;140/90)</span>
+              </div>
+              <div class="bp-chart__zone bp-chart__zone--elevated">
+                <span class="bp-chart__zone-label">Elevated (140-159/90-99)</span>
+              </div>
+              <div class="bp-chart__zone bp-chart__zone--high">
+                <span class="bp-chart__zone-label">High (&gt;160/100)</span>
+              </div>
+            </div>
+            
+            <!-- Data points -->
+            <div class="bp-chart__points">
+              <div class="bp-chart__point bp-chart__point--high" style="left: 10%;" data-reading="145/92" data-date="30 Sep">
+                <span class="bp-chart__point-value">145/92</span>
+              </div>
+              <div class="bp-chart__point bp-chart__point--elevated" style="left: 35%;" data-reading="142/88" data-date="3 Oct">
+                <span class="bp-chart__point-value">142/88</span>
+              </div>
+              <div class="bp-chart__point bp-chart__point--normal" style="left: 65%;" data-reading="139/85" data-date="7 Oct">
+                <span class="bp-chart__point-value">139/85</span>
+              </div>
+              <div class="bp-chart__point bp-chart__point--normal" style="left: 90%;" data-reading="138/82" data-date="11 Oct">
+                <span class="bp-chart__point-value">138/82</span>
+              </div>
+            </div>
+            
+            <!-- Trend line -->
+            <div class="bp-chart__trend-line"></div>
+          </div>
+          
           <div class="bp-chart__legend">
             <div class="bp-chart__legend-item">
-              <span class="bp-chart__legend-color bp-chart__legend-color--systolic"></span>
-              <span>Systolic (target &lt;140)</span>
+              <span class="bp-chart__legend-dot bp-chart__legend-dot--normal"></span>
+              <span>Normal (Target achieved)</span>
             </div>
             <div class="bp-chart__legend-item">
-              <span class="bp-chart__legend-color bp-chart__legend-color--diastolic"></span>
-              <span>Diastolic (target &lt;90)</span>
+              <span class="bp-chart__legend-dot bp-chart__legend-dot--elevated"></span>
+              <span>Elevated (Monitor closely)</span>
+            </div>
+            <div class="bp-chart__legend-item">
+              <span class="bp-chart__legend-dot bp-chart__legend-dot--high"></span>
+              <span>High (Action needed)</span>
             </div>
           </div>
         </div>

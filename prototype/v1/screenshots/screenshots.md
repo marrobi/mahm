@@ -8,7 +8,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
 
 ![Main Dashboard with Adherence](medication-adherence-main-dashboard.png)
-**Main Dashboard with Medication Adherence** - Updated landing page now including the new medication adherence dashboard as the first option for patients.
+**Main Dashboard with Medication Adherence** - Updated landing page featuring AI-supported care with orchestrator-controlled medication management. Users view support plans and details but cannot directly adjust medications - this is managed by the multi-agentic system.
 
 ---
 
@@ -18,13 +18,13 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Medication Adherence Dashboard](medication-adherence-dashboard.png)
 **Medication Adherence Dashboard** - Main dashboard showing 85% adherence rate with visual progress bar, recent improvements, and quick action options for viewing patterns and interventions.
 
-### 2. Missed Dose Patterns
+### 2. Your Medication History
 ![Medication Adherence History](medication-adherence-history.png)
-**Missed Dose Patterns** - Calendar heatmap showing missed doses over 30 days with clear weekend non-compliance pattern, detailed breakdown by day of week, and impact on blood pressure readings.
+**Your Medication History** - Easy-to-read calendar showing when you've taken your medication over the past 30 days. You often miss doses on Saturday and Sunday mornings. Includes weekly summary and tips to help improve your routine.
 
-### 3. Active Interventions
+### 3. Your Support Plan
 ![Medication Adherence Interventions](medication-adherence-interventions.png)
-**Active Interventions** - Comprehensive view of current support plan including weekly pharmacy check-ins, pill organizer, family notifications, SMS reminders, behavioral strategies, and progress monitoring.
+**Your Support Plan** - Comprehensive view of current support interventions including educational support, digital medication reminders, community pharmacy support, and family assistance. Uses British English throughout and shows realistic NHS services based on NICE guidelines.
 
 ---
 

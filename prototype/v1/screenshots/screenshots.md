@@ -19,13 +19,13 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
     ![Dose Titration Review](dose-titration-review.png)
     **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
 
-    ### 3. AI Recommendation
+    ### 3. Medication Recommendation
     ![Dose Titration Recommendation](dose-titration-recommendation.png)
-    **AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
+    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan.
 
     ### 4. Confirmation
     ![Dose Titration Confirmation](dose-titration-confirmation.png)
-    **Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
+    **Dose Increase Confirmed** - Confirmation screen with care plan updates and safety information. The system will remind you in 2-4 weeks to check your blood pressure again. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
 
     ### 5. Blood Test Scheduling
     ![Blood Test Overview](blood-test-overview.png)
@@ -86,7 +86,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
+- **Mobile-Responsive Design**: NHS App-appropriate layout optimised for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all three patient pathways

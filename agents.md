@@ -66,7 +66,7 @@ prototype/v1/
 └── package.json          # Dependencies and scripts
 ```
 ### Starting Development
-1. **ALWAYS run in prototype/v1 directory**: `cd /home/runner/work/mahm/mahm/prototype/v1`
+1. **ALWAYS run in prototype/v1 directory**: `cd prototype/v1`
 2. **Install dependencies first**: `npm install` (80s - NEVER CANCEL)
 3. **Build assets**: `npm run build` (5s)
 4. **Run tests**: `npm test` (2s) 

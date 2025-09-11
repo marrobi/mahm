@@ -25,38 +25,52 @@
       })}}
 
       <p class="nhsuk-lede-text">
-        Manage your blood pressure and medication with AI-supported care.
+        Your blood pressure is managed by AI agents following NICE guidelines, with automatic coordination with your GP when needed.
       </p>
 
-      <!-- SECTION - HYPERTENSION MANAGEMENT -->
+      <!-- SECTION - YOUR BP DASHBOARD -->
       {{ nhsappSectionHeading({
-        headingText: "What would you like to do today?"
+        headingText: "Your blood pressure dashboard"
       }) }}
 
-      <p>Choose from the options below to manage your blood pressure care:</p>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-panel">
+            <h3 class="nhsuk-heading-m">Current status</h3>
+            <p><strong>Your AI care team is managing your treatment plan</strong></p>
+            <p>Based on your recent readings and NICE guidelines, your medication is being optimized automatically. You'll be notified of any changes.</p>
+          </div>
+        </div>
+      </div>
+
+      {{ nhsappSectionHeading({
+        headingText: "What you can do"
+      }) }}
+
+      <p>Here's how you can support your blood pressure management:</p>
 
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
           {
-            title: "Choose your blood pressure treatment",
-            href: "/pages/mybp/shared-decision/index",
-            description: "Compare different medications and learn about your treatment options with multimedia support."
+            title: "View your BP readings",
+            href: "/pages/mybp/dashboard",
+            description: "See your blood pressure trends and progress over time with visual charts."
           },
           {
-            title: "Review and adjust medication",
-            href: "/pages/mybp/dose-titration/index",
-            description: "Check if your blood pressure medication dose needs adjusting based on recent readings."
-          },
-          {
-            title: "Measure blood pressure",
+            title: "Submit a BP reading",
             href: "/pages/mybp/bp-measurement/index",
             description: "Take your blood pressure using Lifelight technology at a local community location."
           },
           {
-            title: "Book safety blood test",
-            href: "/pages/mybp/blood-test/index",
-            description: "Book your U&E (kidney function) safety monitoring blood test."
+            title: "Report a side effect",
+            href: "/pages/mybp/side-effects",
+            description: "Tell us about any side effects you're experiencing with your current medication."
+          },
+          {
+            title: "Ask a question",
+            href: "/pages/mybp/shared-decision/chatbot",
+            description: "Get answers about your blood pressure, medications, or treatment from our AI assistant."
           }
         ]
       }) }}
@@ -71,12 +85,26 @@
           <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
         </li>
         <li>
-          <strong>Current medication:</strong> Amlodipine 5mg daily
+          <strong>Current medication:</strong> Amlodipine 5mg daily (AI-optimized)
         </li>
         <li>
-          <strong>Next appointment:</strong> 15 October 2024
+          <strong>Treatment status:</strong> Monitoring period - no changes needed
+        </li>
+        <li>
+          <strong>Next safety check:</strong> U&E blood test due 15 October 2024
         </li>
       </ul>
+
+      <!-- SECTION - AI CARE TEAM STATUS -->
+      {{ nhsappSectionHeading({
+        headingText: "Your AI care team"
+      }) }}
+      
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Active monitoring:</strong> Your blood pressure is being continuously monitored by AI agents following NICE guidelines. Any medication adjustments will be coordinated with your GP automatically.</p>
+        <p><strong>Next review:</strong> If your BP readings remain stable, your next clinical review will be in 3 months.</p>
+      </div>
 
     </div>
   </div>

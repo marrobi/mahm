@@ -4,15 +4,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 
 ## Main Dashboard
 
-![Main Dashboard](mybp-main-updated-multiagentic.png)
-**Multiagentic Main Dashboard** - AI-powered care management interface showing patient's current status with orchestrated care team. Users can view their BP dashboard, submit readings, report side effects, and ask questions. Treatment decisions are made by AI agents following NICE guidelines.
+![Main Dashboard](mybp-main-updated-patient-friendly.png)
+**Multiagentic Main Dashboard** - Patient-friendly digital health team interface showing care management status. Updated with user-friendly language using "digital health team" instead of technical "AI agents" terminology. Features British English spelling throughout.
 
 ---
 
 ## Patient Dashboard
 
-![BP Dashboard](mybp-dashboard.png)
-**Your BP Readings Dashboard** - Comprehensive view of blood pressure trends with AI analysis and care team insights. Shows recent readings with color-coded status and treatment response monitoring.
+![BP Dashboard](mybp-dashboard-updated-colors.png)
+**Your BP Readings Dashboard** - Comprehensive view of blood pressure trends with digital health analysis. Updated with improved color coding where "Slightly high" readings use amber (#f9c642) instead of alarming red color for better patient experience.
 
 ---
 

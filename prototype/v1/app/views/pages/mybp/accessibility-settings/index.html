@@ -91,6 +91,24 @@
           headingText: "Navigation and interaction"
         }) }}
 
+        <!-- Focus indicators -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "focus-indicators",
+            name: "focus-indicators",
+            items: [
+              {
+                value: "enabled",
+                text: "Enhanced focus indicators",
+                hint: {
+                  text: "Show stronger visual focus indicators when navigating with keyboard"
+                },
+                checked: data['focus-indicators'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
         <!-- Button labels -->
         <div class="nhsuk-form-group">
           {{ checkboxes({
@@ -101,7 +119,7 @@
                 value: "enabled",
                 text: "Enhanced button labels",
                 hint: {
-                  text: "Show clearer labels on buttons and links"
+                  text: "Show clearer and more descriptive labels on buttons and links"
                 },
                 checked: data['button-labels'] === "enabled"
               }
@@ -119,9 +137,27 @@
                 value: "enabled",
                 text: "Reduce motion",
                 hint: {
-                  text: "Turn off animations and movement effects"
+                  text: "Turn off animations and movement effects (follows system preference)"
                 },
                 checked: data['reduce-motion'] === "enabled"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- Touch target size -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "touch-targets",
+            name: "touch-targets",
+            items: [
+              {
+                value: "enabled",
+                text: "Larger touch targets",
+                hint: {
+                  text: "Make buttons and links easier to tap on touchscreen devices"
+                },
+                checked: data['touch-targets'] === "enabled"
               }
             ]
           }) }}
@@ -214,6 +250,47 @@
                   text: "Use simple language and clear layout for health information"
                 },
                 checked: data['communication-support'] and 'easy-read' in data['communication-support']
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- SECTION - ALERTS AND NOTIFICATIONS -->
+        {{ nhsappSectionHeading({
+          headingText: "Alerts and notifications"
+        }) }}
+
+        <!-- Screen reader announcements -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "screen-reader",
+            name: "screen-reader",
+            items: [
+              {
+                value: "enhanced",
+                text: "Enhanced screen reader support",
+                hint: {
+                  text: "Provide additional context and descriptions for screen reader users"
+                },
+                checked: data['screen-reader'] === "enhanced"
+              }
+            ]
+          }) }}
+        </div>
+
+        <!-- Audio cues -->
+        <div class="nhsuk-form-group">
+          {{ checkboxes({
+            idPrefix: "audio-cues",
+            name: "audio-cues",
+            items: [
+              {
+                value: "enabled",
+                text: "Audio confirmation sounds",
+                hint: {
+                  text: "Play sounds to confirm when actions are completed successfully"
+                },
+                checked: data['audio-cues'] === "enabled"
               }
             ]
           }) }}

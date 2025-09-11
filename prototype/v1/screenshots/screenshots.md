@@ -77,44 +77,52 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Accessibility and Language Settings (3 screens) - **Updated with NHS Standards**
+## Accessibility and Language Settings (3 screens) - **Enhanced with NHS Best Practices**
 
-### 1. Updated My BP Dashboard
-![My BP Dashboard Updated](https://github.com/user-attachments/assets/a1154c98-d9d5-476c-bd63-40ad4c1f309a)
-**Updated My BP Dashboard** - Main dashboard includes the "Accessibility and language settings" option, enabling users to customize their experience according to NHS accessibility standards.
+### 1. Orchestrator-Driven My BP Dashboard
+![My BP Dashboard - Orchestrator Driven](mybp-dashboard-orchestrator-driven.png)
+**Orchestrator-Driven Dashboard** - Redesigned main dashboard following MVP specifications:
+- **Your next recommended action**: AI system determines priority actions (medication dose adjustment) 
+- **Available anytime**: Non-priority features users can access independently
+- **Orchestrator control**: System guides users through care pathway rather than presenting choices
+- **MVP alignment**: Follows multi-agentic orchestration architecture from demo document
 
-### 2. Improved Accessibility Settings Page  
-![Accessibility Settings Improved](https://github.com/user-attachments/assets/0aa718c5-a5fe-4d52-9a19-59d12e2dd664)
-**NHS-Compliant Accessibility Settings** - Redesigned settings page following NHS style guidance with:
-- **Text and display**: Text size options (Standard/Large/Extra large) and bold text toggle
-- **Navigation and interaction**: Enhanced button labels and reduce motion options
-- **Language and communication**: 9 language options plus BSL interpretation and Easy read format
-- **Improved UX**: Better grouping, clearer labels, and collapsible reset section
+### 2. Enhanced Accessibility Settings Page  
+![Enhanced Accessibility Settings](mybp-accessibility-settings-enhanced.png)
+**NHS Best Practice Accessibility Settings** - Comprehensive accessibility options following NHS guidance:
+- **Text and display**: Text size dropdown (Standard/Large/Extra large) and bold text option
+- **Navigation and interaction**: Enhanced focus indicators, button labels, reduce motion, larger touch targets
+- **Language and communication**: 9 languages (English, Welsh, Urdu, Bengali, Hindi, Punjabi, Polish, Somali, Arabic) plus BSL interpretation and Easy read format
+- **Alerts and notifications**: Enhanced screen reader support and audio confirmation sounds
+- **NHS compliance**: WCAG 2.1 AA standards with realistic NHS App features
 
 ### 3. Enhanced Settings Confirmation
-![Settings Confirmation Improved](settings-confirmation-improved.png)
-**Improved Confirmation Page** - NHS-standard confirmation page with:
-- Clear success banner with proper ARIA labels
-- Organized settings display by category
-- Individual change links for each setting
-- Better visual hierarchy and accessibility compliance
+![Enhanced Settings Confirmation](mybp-accessibility-confirmation-enhanced.png)
+**Improved Confirmation Page** - NHS-standard confirmation with:
+- Success notification with proper accessibility markup
+- Organized settings display by functional categories
+- Individual change links for granular control
+- Back to My BP and Change settings action buttons
 
 ---
 
 ## Key Features Demonstrated
 
+- **Multi-agentic Orchestration**: Central AI orchestrator determines next actions rather than presenting user choices
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **NHS-Compliant Accessibility**: Full compliance with NHS style guidance and WCAG 2.1 AA standards including:
+- **NHS-Compliant Accessibility**: Full compliance with NHS best practices and WCAG 2.1 AA standards including:
   - Realistic text sizing options following NHS typography patterns
-  - Proper focus management and keyboard navigation
-  - Enhanced semantic markup and ARIA labels
+  - Enhanced focus indicators and keyboard navigation support
+  - Larger touch targets for motor accessibility
+  - Proper semantic markup and ARIA labels
   - System preference integration (reduced motion, high contrast)
-  - Simplified, user-friendly accessibility options
+  - Screen reader enhancements and audio confirmation options
 - **Inclusive Design**: Multi-language support (9 languages), BSL interpretation, and Easy read formats
 - **Real-world Implementation**: Based on actual NHS App accessibility patterns and features
+- **MVP Architecture Compliance**: Orchestrator-driven user experience following multi-agentic demo specifications
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all patient pathways including NHS-standard accessibility personalization
 

@@ -28,30 +28,49 @@
         Manage your blood pressure and medication with AI-supported care.
       </p>
 
-      <!-- SECTION - HYPERTENSION MANAGEMENT -->
+      <!-- SECTION - YOUR NEXT ACTION -->
       {{ nhsappSectionHeading({
-        headingText: "What would you like to do today?"
+        headingText: "Your next recommended action"
       }) }}
 
-      <p>Choose from the options below to manage your blood pressure care:</p>
+      <p>Based on your recent blood pressure readings and treatment plan, our AI system recommends:</p>
+
+      <!-- PRIORITY ACTION CARD -->
+      <div class="nhsuk-care-card nhsuk-care-card--immediate">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Immediate action required: </span>
+              Medication dose adjustment needed
+            </span>
+          </h2>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your recent blood pressure readings (142/88 mmHg) suggest your current medication dose may need adjusting. The AI system has reviewed your readings and recommends a dose review.</p>
+          <p><strong>Recommended next step:</strong> Review and adjust your Amlodipine dose</p>
+          {{ button({
+            text: "Review medication dose",
+            href: "/pages/mybp/dose-titration/index",
+            classes: "nhsuk-button--primary"
+          }) }}
+        </div>
+      </div>
+
+      <!-- ANYTIME ACTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Available anytime"
+      }) }}
+
+      <p>You can use these features whenever you need them:</p>
 
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
           {
-            title: "Review and adjust medication",
-            href: "/pages/mybp/dose-titration/index",
-            description: "Check if your blood pressure medication dose needs adjusting based on recent readings."
-          },
-          {
-            title: "Measure blood pressure",
+            title: "Record blood pressure measurement",
             href: "/pages/mybp/bp-measurement/index",
-            description: "Take your blood pressure using Lifelight technology at a local community location."
-          },
-          {
-            title: "Book safety blood test",
-            href: "/pages/mybp/blood-test/index",
-            description: "Book your U&E (kidney function) safety monitoring blood test."
+            description: "Add a new blood pressure reading whenever you take a measurement."
           },
           {
             title: "Accessibility and language settings",

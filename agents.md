@@ -6,36 +6,13 @@ This file provides comprehensive instructions for GitHub Copilot and other codin
 
 ## Project Overview
 
-MAHM is a demonstration NHS App prototype for Multi-Agentic AI Hypertension Management. This is a healthcare technology demonstration project for NHS App integration that uses **dummy data only** for demonstration purposes and follows NHS Digital development standards.
+MAHM is a demonstration NHS App prototype for Multi-Agentic AI Hypertension Management. This is a healthcare technology demonstration project for NHS App integration that uses **dummy data only** for demonstration purposes and follows NHS Digital development standards. MVP scope and requirements are described in `MVP_DEMO_DOCUMENT.md` in the root of the repository. This must be read before making any changes, if given user comments we deviate from what is in this document ensure it is updated as part of the same pull request.
 
 ### Key Project Details
-
-- **Main codebase location**: `prototype/v1/` (NHS prototype kit application)
-- **Technology stack**: Node.js + Express + Nunjucks templating + Gulp build system
 - **Purpose**: Demonstrate AI-supported hypertension care integration within NHS App
 - **Data**: ALL data is simulated for demonstration only - NOT for clinical use
 
-## Quick Start Commands
-
-**Bootstrap the environment:**
-1. `cd /home/runner/work/mahm/mahm/prototype/v1`
-2. `node --version` (should be v20+)
-3. `npm install` - Takes 80 seconds. NEVER CANCEL. Set timeout to 120+ seconds.
-4. `npm run build` - Takes 5 seconds. NEVER CANCEL. Set timeout to 30+ seconds.
-5. `npm test` - Takes 2 seconds. NEVER CANCEL. Set timeout to 30+ seconds.
-6. `npm run lint:js` - Takes 1 second.
-
-**Development workflow:**
-- `npm start` - Start application (port 2000)
-- `npm run watch` - Development mode with BrowserSync (app: port 2000, BrowserSync: port 3000). NEVER CANCEL. Takes 25 seconds to fully start.
-- `npm run build` - Build assets only
-- `npm test` - Run Jest tests with coverage
-- `npm run test:ci` - CI-friendly test run
-- `npm run lint:js` - ESLint validation
-
-## Technology Stack and Development Practices
-
-### Current Implementation (NHS Prototype Kit)
+## Technology Stack and Development Practices: NHS Prototype Kit
 - **Framework**: Node.js with Express.js web framework
 - **Templating**: Nunjucks template engine (.html files)
 - **Build System**: Gulp for asset compilation (SASS → CSS, JavaScript, asset copying)
@@ -43,8 +20,6 @@ MAHM is a demonstration NHS App prototype for Multi-Agentic AI Hypertension Mana
 - **Testing**: Jest testing framework with coverage reporting (currently 76% overall, 3 test suites, 9 tests)
 - **Code Quality**: ESLint with Airbnb configuration
 - **Accessibility**: WCAG 2.1 AA compliance required for all components
-
-## Build Process and Timing
 
 ### Installation (First Time)
 - **Command**: `npm install`
@@ -73,7 +48,7 @@ MAHM is a demonstration NHS App prototype for Multi-Agentic AI Hypertension Mana
 - **Time**: 1 second
 - **Configuration**: ESLint with Airbnb configuration in `linters/.eslintrc.js`
 
-## Application Structure
+### Prototype Kit Structure
 
 ```
 prototype/v1/
@@ -90,9 +65,6 @@ prototype/v1/
 ├── app.js                # Express server entry point
 └── package.json          # Dependencies and scripts
 ```
-
-## Development and Testing Workflow
-
 ### Starting Development
 1. **ALWAYS run in prototype/v1 directory**: `cd /home/runner/work/mahm/mahm/prototype/v1`
 2. **Install dependencies first**: `npm install` (80s - NEVER CANCEL)
@@ -138,6 +110,31 @@ prototype/v1/
    - Check NHS App frontend components display properly
    - Test responsive design on different viewport sizes
 
+### Screenshots
+- All pull requests that create or update user interface functionality need to create new screenshots and ensure they are linked in `screenshots.md`
+- When comments are made on `screenshots.md` please update the UI itself, and replace/add screenshots to `screenshots.md` for further review.
+
+### Adding New Pages
+1. Create template in `app/views/pages/`
+2. Add route in `app/routes.js` if needed
+3. Build assets: `npm run build`
+4. Test in browser: http://localhost:2000/your-new-page
+
+### Modifying Styles
+1. Edit SASS files in `app/assets/sass/`
+2. Build automatically rebuilds in watch mode
+3. Changes appear immediately with BrowserSync
+
+### Updating Components
+1. Templates use NHS App frontend components
+2. Reference: NHS Design System and NHS App Design System
+3. Test accessibility with screen readers
+
+### Adding Tests
+1. Create `.test.js` files in `tests/` directory
+2. Use Jest + basic assertions
+3. Run `npm test` to verify coverage
+
 ## Code Quality Requirements
 
 ### Security Practices
@@ -163,17 +160,6 @@ prototype/v1/
 - Include setup and deployment instructions
 - All APIs must have clear documentation
 
-## CI/CD Validation
-
-**ALWAYS run these commands before committing:**
-1. `npm run lint:js` - Must pass with no errors
-2. `npm test` - Must achieve >75% coverage
-3. `npm run build` - Must complete without errors
-
-**GitHub Actions**:
-- Pull requests automatically run `npm run lint:js` and `npm run test:ci`
-- Both must pass for PR approval
-
 ### Code Reviews
 - All changes require pull request review
 - Tests must pass before merging
@@ -194,52 +180,12 @@ prototype/v1/
 - **NHS compliant**: Follows NHS Digital development standards
 - Consider future NHS Spine integration requirements
 
-## Common Development Tasks
-
-### Adding New Pages
-1. Create template in `app/views/pages/`
-2. Add route in `app/routes.js` if needed
-3. Build assets: `npm run build`
-4. Test in browser: http://localhost:2000/your-new-page
-
-### Modifying Styles
-1. Edit SASS files in `app/assets/sass/`
-2. Build automatically rebuilds in watch mode
-3. Changes appear immediately with BrowserSync
-
-### Updating Components
-1. Templates use NHS App frontend components
-2. Reference: NHS Design System and NHS App Design System
-3. Test accessibility with screen readers
-
-### Adding Tests
-1. Create `.test.js` files in `tests/` directory
-2. Use Jest + basic assertions
-3. Run `npm test` to verify coverage
-
-## Important File Locations
-
-- **Main app entry**: `app.js`
-- **Views/Templates**: `app/views/` (Nunjucks .html files)
-- **Routes**: `app/routes.js`
-- **Styles**: `app/assets/sass/`
-- **Scripts**: `app/assets/javascript/`
-- **Tests**: `tests/app/` and `tests/lib/`
-- **Build config**: `gulpfile.js`
-- **Lint config**: `linters/.eslintrc.js`
-
 ## Key Integration Points
 
 ### NHS App Integration
 - Uses `nhsapp-frontend` components
 - Styled with NHS brand guidelines
 - Mobile-first responsive design
-
-### MAHM Features
-- Blood pressure management workflows
-- AI-supported care demonstrations
-- Community measurement integration
-- Simulated patient data flows
 
 ## Troubleshooting
 
@@ -276,22 +222,6 @@ prototype/v1/
 - Use consistent date/time formats (ISO 8601)
 - Implement proper data sanitization
 - Ensure dummy data is clearly marked as such
-
-### Performance Considerations
-- **Build time**: Under 5 seconds for full rebuild
-- **Test time**: Under 2 seconds for full test suite
-- **Watch startup**: 25 seconds for full development environment
-- **Hot reload**: Instant for template changes, 3-4 seconds for SASS/JS
-
-## When Contributing Code
-
-1. **ALWAYS run in prototype/v1 directory**: `cd /home/runner/work/mahm/mahm/prototype/v1`
-2. Ensure all tests pass locally: `npm test`
-3. Run linting and formatting tools: `npm run lint:js`
-4. Build the application: `npm run build`
-5. Test with dummy data only
-6. Consider NHS compliance requirements
-7. Follow established patterns and conventions
 
 ## Additional Resources
 

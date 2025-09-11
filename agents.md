@@ -111,8 +111,10 @@ prototype/v1/
    - Test responsive design on different viewport sizes
 
 ### Screenshots
-- All pull requests that create or update user interface functionality need to create new screenshots and ensure they are linked in `screenshots.md`
+- *All* pull requests that create or update user interface functionality need to create new screenshots and ensure they are linked in `screenshots.md` in the `prototype/v1` directory.
+- Screenshots should be iPhone-formatted (393 pixels wide, but with full vertical scroll) to demonstrate layout, navigation, and sample content.
 - When comments are made on `screenshots.md` please update the UI itself, and replace/add screenshots to `screenshots.md` for further review.
+
 
 ### Adding New Pages
 1. Create template in `app/views/pages/`

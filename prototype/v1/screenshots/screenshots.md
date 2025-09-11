@@ -10,23 +10,23 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Welcome Page
 ![Onboarding Welcome](onboarding-welcome.png)
-**Welcome to My BP** - Introduction to the AI-powered hypertension management tool, explaining capabilities and getting started process.
+**Welcome to My BP** - Introduction to the multi-agentic AI hypertension management tool, explaining the 9 specialized agents, patient categories, and clinical safety priority according to MVP documentation.
 
 ### 2. Benefits & Privacy
 ![Onboarding Benefits](onboarding-benefits.png)
-**Benefits & Privacy** - Detailed explanation of My BP benefits, health outcomes, and comprehensive privacy protections with data access information.
+**Benefits & Privacy** - Comprehensive explanation of primary objectives including health inequality reduction, trustworthy AI principles, accessibility features, and NHS data protection standards.
 
 ### 3. Simulation Disclaimer
 ![Onboarding Disclaimer](onboarding-disclaimer.png)
-**Simulation Disclaimer** - Clear warning that this is a demonstration version only, with detailed explanation of dummy data and clinical safety warnings.
+**Simulation Disclaimer** - Enhanced warning emphasizing this is demonstration only, with detailed explanation of multi-agentic system scope, dummy data types, and clinical safety protocols.
 
 ### 4. Data Usage Statement
 ![Onboarding Data Usage](onboarding-data-usage.png)
-**Data Usage Statement** - Comprehensive table showing data collection types, purposes, and user rights with anonymization information.
+**Data Usage Statement** - Detailed table showing data collection by each of the 9 AI agents, patient category management, clinical governance, and comprehensive privacy rights.
 
 ### 5. Consent Form
 ![Onboarding Consent](onboarding-consent.png)
-**Give Your Consent** - User choice interface with radio buttons for accepting or declining service usage, including summary of consent terms.
+**Give Your Consent** - Enhanced consent interface for multi-agentic system with comprehensive summary of trustworthy AI principles, clinical safety protocols, and demonstration status.
 
 ### 6. Onboarding Complete (Consent Given)
 ![Onboarding Completed - Consent](onboarding-completed-consent.png)
@@ -115,12 +115,16 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Key Features Demonstrated
 
-- **Complete Onboarding Flow**: 5-step patient consent process with conditional completion paths
+- **Enhanced Multi-Agentic Architecture**: Complete 9-agent system with specialized roles per MVP documentation
+- **Clinical Safety Priority**: Emphasized throughout with GP escalation protocols and human oversight
+- **Trustworthy AI Principles**: Microsoft's six principles integrated into consent and data protection
+- **Health Inequality Focus**: Accessibility features, cultural sensitivity, and marginalized community support
+- **Patient Category Management**: Clear explanation of three care pathways (A, B, C)
+- **Comprehensive Data Governance**: Agent-specific data collection with clinical governance oversight
+- **Enhanced Simulation Warnings**: Stronger clinical safety disclaimers per MVP requirements
 - **Session-Based Consent Tracking**: Intelligent dashboard display based on user consent status
-- **Privacy & Security Focus**: Comprehensive data protection explanations and user rights
-- **Clinical Safety Warnings**: Clear demonstration disclaimers and simulation notifications
+- **Privacy & Security Focus**: NHS Digital standards and comprehensive user rights
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
-- **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance

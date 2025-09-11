@@ -19,18 +19,26 @@
       </h1>
 
       <p class="nhsuk-lede-text">
-        How we collect, use, and protect your data in My BP.
+        Comprehensive overview of how we collect, use, and protect your data in the multi-agentic My BP system.
       </p>
 
-      <h2 class="nhsuk-heading-m">Data we collect</h2>
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Clinical governance:</strong> All AI agent interactions are logged for quality monitoring, safety oversight, and continuous improvement of care delivery.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Data we collect by agent type</h2>
 
       <div class="nhsuk-table-responsive">
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Types of data collected in My BP</caption>
+          <caption class="nhsuk-table__caption">Types of data collected by each AI agent in My BP</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
               <th role="columnheader" class="" scope="col">
                 Data type
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Collecting agent
               </th>
               <th role="columnheader" class="" scope="col">
                 Purpose
@@ -39,20 +47,44 @@
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Blood pressure readings</td>
-              <td class="nhsuk-table__cell ">Monitor your condition and provide recommendations</td>
+              <td class="nhsuk-table__cell">Blood pressure readings & measurement quality</td>
+              <td class="nhsuk-table__cell">BP Measurement Agent</td>
+              <td class="nhsuk-table__cell">Monitor condition, validate measurements, coordinate community monitoring</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Medication information</td>
-              <td class="nhsuk-table__cell ">Ensure safe and effective treatment</td>
+              <td class="nhsuk-table__cell">24-hour ABPM data & diagnostic evidence</td>
+              <td class="nhsuk-table__cell">Diagnosing Agent</td>
+              <td class="nhsuk-table__cell">Confirm hypertension diagnosis, provide evidence packs for GP approval</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Appointment and test data</td>
-              <td class="nhsuk-table__cell ">Coordinate your care</td>
+              <td class="nhsuk-table__cell">Medication history, adherence patterns, side effects</td>
+              <td class="nhsuk-table__cell">Titration Agent, Medication Adherence Agent</td>
+              <td class="nhsuk-table__cell">Optimize treatment, improve adherence, prevent complications</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Demographics</td>
-              <td class="nhsuk-table__cell ">Personalize care and identify health inequalities</td>
+              <td class="nhsuk-table__cell">Lifestyle factors, cultural preferences, dietary habits</td>
+              <td class="nhsuk-table__cell">Lifestyle Agent</td>
+              <td class="nhsuk-table__cell">Provide culturally-appropriate interventions, reduce health inequalities</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Treatment preferences, decision rationale, values</td>
+              <td class="nhsuk-table__cell">Shared Decision-Making Agent</td>
+              <td class="nhsuk-table__cell">Support informed choices, improve treatment satisfaction</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Laboratory results (U&E, liver function, lipids)</td>
+              <td class="nhsuk-table__cell">Monitoring Agent</td>
+              <td class="nhsuk-table__cell">Ensure medication safety, prevent complications</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Emergency symptoms, risk indicators, escalation triggers</td>
+              <td class="nhsuk-table__cell">Red Flag Agent</td>
+              <td class="nhsuk-table__cell">Immediate safety monitoring, emergency escalation</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Demographics, socioeconomic factors, access barriers</td>
+              <td class="nhsuk-table__cell">Orchestrating Agent</td>
+              <td class="nhsuk-table__cell">Coordinate care, address health inequalities, personalize pathways</td>
             </tr>
           </tbody>
         </table>
@@ -71,21 +103,42 @@
         </div>
         <div class="nhsuk-care-card__content">
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Generate personalized medication recommendations</li>
-            <li>Monitor your blood pressure trends</li>
-            <li>Schedule necessary health checks and tests</li>
-            <li>Alert healthcare providers to concerning changes</li>
-            <li>Coordinate care between different healthcare services</li>
+            <li><strong>Clinical decision support:</strong> Generate NICE guideline-compliant recommendations</li>
+            <li><strong>Safety monitoring:</strong> Continuous monitoring with immediate escalation protocols</li>
+            <li><strong>Care coordination:</strong> Orchestrate multiple agents for comprehensive care</li>
+            <li><strong>Health inequality reduction:</strong> Provide culturally-appropriate, accessible interventions</li>
+            <li><strong>Quality improvement:</strong> Monitor agent performance and clinical outcomes</li>
+            <li><strong>GP support:</strong> Provide evidence packs for complex clinical decisions</li>
           </ul>
         </div>
       </div>
+
+      <h2 class="nhsuk-heading-m">Patient category data management</h2>
+
+      <p>Your data usage varies by your patient category:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Category A (Known hypertension):</strong> Full treatment management, medication optimization, monitoring</li>
+        <li><strong>Category B (Normotensive surveillance):</strong> Periodic monitoring, lifestyle support, preventive interventions</li>
+        <li><strong>Category C (Newly detected elevated BP):</strong> Diagnostic support, ABPM coordination, GP approval workflows</li>
+      </ul>
 
       <h2 class="nhsuk-heading-m">Anonymized data for improvement</h2>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>We may use <strong>anonymized</strong> data to improve the service and reduce health inequalities. Your personal information is never included.</p>
+        <p>We use <strong>anonymized population-level data</strong> to improve the service and reduce health inequalities across different communities. Your personal information is never included.</p>
       </div>
+
+      <p>Anonymized data helps us:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Monitor health inequality reduction across ethnic groups and socioeconomic areas</li>
+        <li>Improve AI agent performance and safety protocols</li>
+        <li>Enhance cultural appropriateness of lifestyle interventions</li>
+        <li>Optimize resource allocation in underserved communities</li>
+        <li>Research effectiveness of multi-agentic care coordination</li>
+      </ul>
 
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -96,10 +149,11 @@
         <div class="nhsuk-details__text">
           <p>Anonymized data means:</p>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>All personal identifiers are permanently removed</li>
+            <li>All personal identifiers are permanently removed using NHS Digital standards</li>
             <li>It cannot be linked back to you as an individual</li>
-            <li>It's used only for research and service improvement</li>
+            <li>It's used only for population health research and service improvement</li>
             <li>It helps identify patterns that can improve care for everyone</li>
+            <li>It supports our mission to reduce health inequalities</li>
           </ul>
         </div>
       </details>
@@ -107,14 +161,22 @@
       <h2 class="nhsuk-heading-m">Your rights</h2>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><strong>Access:</strong> Request a copy of your data</li>
-        <li><strong>Correct:</strong> Update incorrect information</li>
-        <li><strong>Delete:</strong> Request removal of your data</li>
-        <li><strong>Withdraw:</strong> Stop using My BP at any time</li>
-        <li><strong>Complain:</strong> Contact NHS Digital or the ICO</li>
+        <li><strong>Access:</strong> Request a copy of your data across all AI agents</li>
+        <li><strong>Correct:</strong> Update incorrect information in your care records</li>
+        <li><strong>Delete:</strong> Request removal of your data (subject to clinical safety requirements)</li>
+        <li><strong>Withdraw:</strong> Stop using My BP at any time and return to standard GP care</li>
+        <li><strong>Complain:</strong> Contact NHS Digital, your GP practice, or the ICO</li>
+        <li><strong>Transparency:</strong> Request explanations of AI agent recommendations</li>
       </ul>
 
-      <p>For more information, see the <a href="#" class="nhsuk-link">NHS Digital privacy notice</a>.</p>
+      <h2 class="nhsuk-heading-m">Clinical governance and oversight</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Human oversight:</strong> All AI agent recommendations are subject to clinical governance frameworks with GP escalation protocols when needed.</p>
+      </div>
+
+      <p>For more information, see the <a href="#" class="nhsuk-link">NHS Digital privacy notice</a> and <a href="#" class="nhsuk-link">My BP clinical governance framework</a>.</p>
 
       <div class="nhsuk-action-link">
         <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/consent">

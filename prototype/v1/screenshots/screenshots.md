@@ -13,11 +13,11 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. ABPM Results Summary
 ![ABPM Results](abpm-results.png)
-**24-Hour ABPM Results** - Comprehensive ABPM results display showing day/night averages, dipping analysis, clinical interpretation, and quality indicators. Includes Stage 1 hypertension diagnosis confirmation with detailed clinical context.
+**24-Hour ABPM Results** - Comprehensive ABPM results display aligned with MVP document specifications. Shows day/night averages (148/86 mmHg daytime, 135/78 mmHg nighttime), 9% nocturnal dipping analysis, clinical interpretation, and quality indicators. Includes Stage 1 hypertension diagnosis confirmation with mandatory **GP approval required** messaging per NICE guidelines.
 
 ### 2. Diagnostic Pathway Tracker
 ![Diagnostic Pathway Tracker](abpm-pathway-tracker.png)
-**Diagnostic Pathway Progress** - Step-by-step journey tracking from initial elevated reading through ABPM completion to GP confirmation. Features status badges, timeline summary, and care team information with current "awaiting confirmation" state.
+**Diagnostic Pathway Progress** - Category C patient journey implementation following MVP document workflow. Step-by-step tracking from initial elevated reading (155/92 mmHg) through repeat measurements, ABPM at Boots pharmacy, to GP confirmation. Features status badges (Complete, In progress, Pending), timeline summary, and care team information. Emphasizes "GP approval required" per MVP requirements before treatment can commence.
 
 ---
 
@@ -91,15 +91,21 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Key Features Demonstrated
 
+- **MVP Document Compliance**: Full implementation of Category C patient workflow per MVP specifications
+- **NICE Guidelines Adherence**: Strict compliance with NICE CG127 hypertension management protocols
+- **GP Approval Workflow**: Mandatory GP approval for new hypertension diagnoses as specified in MVP document
+- **Clinical Data Accuracy**: ABPM values match MVP examples (148/86 24-hour average, 148/86 daytime, 135/78 nighttime)
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
+- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for iPhone resolution (393x852 pixels)
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all patient pathways
+- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information aligned with MVP examples
+- **Full User Journeys**: Complete end-to-end workflows for Category C diagnostic pathway
 - **ABPM Integration**: 24-hour ambulatory blood pressure monitoring results with clinical interpretation
-- **Diagnostic Pathway Tracking**: Step-by-step progress monitoring with status badges
-- **Status Management**: "Awaiting confirmation" and other workflow states clearly displayed
+- **Diagnostic Pathway Tracking**: Step-by-step progress monitoring with status badges (Complete/In progress/Pending)
+- **Status Management**: "Awaiting GP confirmation" and other workflow states clearly displayed per MVP requirements
+- **Evidence Package Compilation**: Clear indication that clinical evidence has been compiled for GP review
+- **Treatment Pathway Gate**: No progression to treatment without explicit GP approval as per MVP document
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.
+All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content. Implementation follows MVP document Category C workflow specifications with mandatory GP approval gates and NICE guideline compliance.

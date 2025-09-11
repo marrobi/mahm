@@ -77,45 +77,48 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Lifestyle & Behaviour Change Hub (5 screens) - MVP Aligned
+## Lifestyle & Behaviour Change Hub (5 screens) - iPhone Optimized & MVP Aligned
 
-### 1. Lifestyle Hub Dashboard (MVP Updated)
-![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-mvp-updated.png)
-**Lifestyle Hub Dashboard - MVP Aligned** - Main dashboard now emphasizing clinical safety as the top priority with urgent safety banner, NHS service integration showing active referrals to "NHS Healthier You" programme and NHS Exercise Referral schemes, AI system coordination notice explaining how lifestyle activities are coordinated with BP monitoring and medication management, and NICE guideline-aligned goal tracking with clinical rationale for each target.
+### 1. Lifestyle Hub Dashboard (iPhone Optimized)
+![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-iphone-optimized.png)
+**Lifestyle Hub Dashboard - iPhone Optimized & MVP Aligned** - Properly rendered at iPhone dimensions (393x852px) with enhanced clinical safety as the top priority featuring NHS emergency guidance, clear programme status showing "Currently attending" vs "Starting soon" with improved terminology to address user feedback, evidence-based NHS service integration with "NHS Healthier You" and NHS Exercise Referral programmes, AI system coordination notices, and NICE guideline-aligned goal tracking with clinical rationale.
 
-### 2. Weight Management Goal Tracking (MVP Updated)
-![Weight Management Goal](weight-management-goal-mvp-updated.png)
-**Weight Management Goal Tracking - MVP Enhanced** - Updated with clinical context banner explaining 5-10% weight loss targets from NICE CG127, AI monitoring integration showing progress shared with GP monthly, enhanced target information referencing NICE guidelines, and NHS service referral options including NHS Healthier You programme, dietitian consultations, and exercise referral schemes - all free at point of use.
+### 2. Weight Management Goal Tracking (iPhone Optimized)  
+![Weight Management Goal](weight-management-goal-iphone-optimized.png)
+**Weight Management Goal Tracking - iPhone Optimized** - Properly rendered for iPhone with improved mobile responsiveness, clinical context banner with NICE CG127 references, AI monitoring integration showing GP coordination, and NHS service referral options including free dietitian consultations and exercise programmes. All text properly displayed at mobile resolution.
 
-### 3. Physical Activity Goal Tracking
-![Physical Activity Goal](physical-activity-goal.png)
-**Physical Activity Goal Tracking** - Weekly breakdown with daily activity tracking, streak counters (7-day streak), achievement badges for consistency, and culturally-appropriate exercise suggestions including traditional dance and community-based activities.
+### 3. Physical Activity Goal Tracking (iPhone Optimized)
+![Physical Activity Goal](physical-activity-goal-iphone-optimized.png)
+**Physical Activity Goal Tracking - iPhone Optimized** - Mobile-optimized layout with NICE-compliant 150-minute weekly targets, 7-day streak counters, achievement badges, and culturally-appropriate exercise suggestions including traditional dance and community activities. Properly responsive design elements.
 
-### 4. Salt & Alcohol Monitoring
-![Salt & Alcohol Monitoring](salt-alcohol-monitoring.png)
-**Salt & Alcohol Monitoring** - Dual-tab interface for tracking daily salt and alcohol intake, progress trends showing improvement over time, educational resources for low-salt cooking techniques and healthy alternatives, and achievement tracking for meeting targets.
+### 4. Salt & Alcohol Monitoring (iPhone Optimized)
+![Salt & Alcohol Monitoring](salt-alcohol-monitoring-iphone-optimized.png)
+**Salt & Alcohol Monitoring - iPhone Optimized** - Dual-tab interface properly rendered for iPhone with NHS guideline-aligned targets (<6g salt daily, alcohol within NHS guidelines), progress trends, and educational resources. Fixed British English spelling throughout (flavouring not flavoring).
 
-### 5. Content Browser with Cultural Filtering (MVP Updated)
-![Content Browser](content-browser-mvp-updated.png)
-**Content Browser - MVP Enhanced** - Now prominently featuring NHS "Million Hearts and Minds" programme content, NHS verification badges for clinical content, enhanced accessibility information with multiple format options (audio, EasyRead, BSL interpretation, multiple languages), and clear messaging about free NHS service provision. Includes comprehensive accessibility support notice for digitally excluded patients with telephone and face-to-face consultation options.
+### 5. Content Browser with Cultural Filtering (iPhone Optimized)
+![Content Browser](content-browser-iphone-optimized.png)
+**Content Browser - iPhone Optimized & Culturally Sensitive** - Properly rendered mobile layout featuring NHS-verified content from "Million Hearts and Minds" programme, improved cultural filtering using "community" rather than "culture" terminology, evidence-based programme content, and comprehensive accessibility features. Enhanced mobile responsiveness with properly aligned elements and fixed rendering issues.
 
 ---
 
-## Key Features Demonstrated - MVP Compliance
+## Key Features Demonstrated - iPhone Optimized & MVP Compliance
 
-- **Clinical Safety Priority**: Prominent safety warnings and escalation pathways throughout all screens
+- **iPhone Rendering Optimization**: All screenshots properly rendered at iPhone dimensions (393x852px) with responsive mobile design
+- **British English Compliance**: All text uses British spelling throughout (flavouring, colour, etc.)
+- **Clinical Safety Priority**: Enhanced NHS emergency guidance with proper 999 escalation information based on NHS standards
+- **Evidence-Based Programmes**: All lifestyle programmes reference verified NHS services including "NHS Healthier You" and NHS Exercise Referral schemes
+- **Cultural Sensitivity**: Improved cultural filtering based on NHS "Million Hearts and Minds" programme standards, using "community" rather than "culture" terminology
 - **Multi-Agent System Integration**: Clear demonstration of how Lifestyle Agent coordinates with Orchestrating Agent, Monitoring Agent, and other system components
-- **NHS Service Integration**: Explicit integration with NHS Healthier You programme, NHS exercise referral schemes, NHS Stop Smoking Service, and NHS "Million Hearts and Minds" cultural health programme
+- **NHS Service Integration**: Explicit integration with evidence-based NHS programmes and services, all free at point of use
 - **NICE Guidelines Compliance**: Clinical targets and recommendations explicitly reference NICE CG127 hypertension guidelines
-- **Accessibility & Cultural Sensitivity**: Comprehensive multi-format content delivery including audio, EasyRead, BSL interpretation, multiple languages, and support for digitally excluded patients
+- **Accessibility & Inclusion**: Comprehensive multi-format content delivery including audio, EasyRead, BSL interpretation, multiple languages, and support for digitally excluded patients
+- **Mobile-Responsive Design**: Enhanced mobile layout with improved element alignment and fixed rendering issues
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
+- **Interactive Navigation**: Working forms, radio buttons, and user input handling optimized for touch interfaces
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows integrated with broader hypertension management system
 - **AI System Coordination**: Clear visibility of how lifestyle interventions are coordinated with BP monitoring, medication management, and clinical oversight
 - **Free NHS Service Emphasis**: Consistent messaging about all services being free at point of use
 - **GP Integration**: Clear pathways for escalation to GP when clinical oversight is needed
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.
+All screenshots captured at proper iPhone resolution (393x852 pixels) with full-page scrolling and optimized mobile responsiveness.

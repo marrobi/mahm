@@ -44,15 +44,15 @@
         </div>
 
         <div class="content-filter-section">
-          <h3 class="nhsuk-heading-s">Filter by culture</h3>
+          <h3 class="nhsuk-heading-s">Filter by community</h3>
           <div class="content-filter-chips">
-            <button class="content-filter-chip content-filter-chip--active" data-culture="all">All cultures</button>
+            <button class="content-filter-chip content-filter-chip--active" data-culture="all">All communities</button>
             <button class="content-filter-chip" data-culture="caribbean">Caribbean</button>
             <button class="content-filter-chip" data-culture="south-asian">South Asian</button>
             <button class="content-filter-chip" data-culture="african">African</button>
-            <button class="content-filter-chip" data-culture="muslim">Muslim</button>
             <button class="content-filter-chip" data-culture="general">General</button>
           </div>
+          <p class="nhsuk-body-s">Cultural content categories based on NHS "Million Hearts and Minds" programme and community health needs assessments.</p>
         </div>
       </div>
 
@@ -75,7 +75,7 @@
               </a>
             </h3>
             <p class="nhsuk-card__description">
-              Traditional Caribbean dishes adapted for better blood pressure management by NHS dietitians. Part of NHS "Million Hearts and Minds" cultural health programme. Includes jerk chicken, rice and peas, and callaloo with reduced salt and increased flavor.
+              Traditional Caribbean dishes adapted for better blood pressure management by NHS dietitians. Part of NHS "Million Hearts and Minds" cultural health programme. Includes jerk chicken, rice and peas, and callaloo with reduced salt and increased flavour.
             </p>
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
@@ -89,7 +89,7 @@
           </div>
         </div>
 
-        <div class="nhsuk-card nhsuk-card--feature" data-filter="guidance" data-culture="muslim">
+        <div class="nhsuk-card nhsuk-card--feature" data-filter="guidance" data-culture="general">
           <div class="nhsuk-card__content nhsuk-card__content--feature">
             <div class="content-card-image">
               <div class="content-card-placeholder content-card-placeholder--purple">
@@ -97,16 +97,16 @@
               </div>
             </div>
             <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
-              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
-                Managing Blood Pressure During Ramadan
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/religious-considerations">
+                Managing Blood Pressure with Religious Considerations
               </a>
             </h3>
             <p class="nhsuk-card__description">
-              Comprehensive guidance for managing hypertension medication and lifestyle during the holy month, reviewed by NHS clinical team with religious scholars. Including timing adjustments and healthy iftar options.
+              Comprehensive guidance for managing hypertension medication and lifestyle during religious observances, reviewed by NHS clinical team. Including timing adjustments and healthy eating options.
             </p>
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
-              <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
               <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">10 min read</span>
               <span class="content-card-rating">
@@ -270,22 +270,22 @@
           </div>
         </div>
 
-        <div class="nhsuk-card nhsuk-card--clickable" data-filter="guidance" data-culture="muslim">
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="guidance" data-culture="general">
           <div class="nhsuk-card__content">
             <div class="content-card-image-small">
               <div class="content-card-placeholder content-card-placeholder--blue">⏰</div>
             </div>
             <h3 class="nhsuk-card__heading">
-              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/prayer-schedule">
-                Balancing Prayer Times and Medication
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/medication-timing">
+                Medication Timing and Daily Routines
               </a>
             </h3>
             <p class="nhsuk-card__description">
-              Practical advice for coordinating daily medication schedules with prayer times and religious observances.
+              Practical advice for coordinating daily medication schedules with work, religious observances, and daily activities.
             </p>
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
-              <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
               <span class="content-card-time">4 min read</span>
             </div>
           </div>
@@ -529,6 +529,25 @@
 
     .content-card-placeholder {
       font-size: 24px;
+    }
+    
+    .content-filters {
+      margin-bottom: 24px;
+      padding: 16px;
+    }
+    
+    .content-filter-section {
+      margin-bottom: 16px;
+    }
+    
+    .content-card-meta {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .content-card-image-small {
+      width: 50px;
+      height: 50px;
     }
   }
 </style>

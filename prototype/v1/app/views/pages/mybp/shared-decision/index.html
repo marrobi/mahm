@@ -1,7 +1,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Choose your blood pressure treatment" %}
+{% set pageHeading = "Treatment Decision Required" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -15,196 +15,101 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-xl">
-        Choose your blood pressure treatment
+        Treatment Decision Required
       </h1>
 
       <p class="nhsuk-lede-text">
-        Compare different blood pressure medications to find the best option for your lifestyle and health needs.
+        Your AI care team has determined that two medications are equally suitable for your situation. Please help us choose which one would work best for you.
       </p>
 
-      <div class="nhsuk-inset-text">
+      <div class="nhsuk-inset-text nhsuk-inset-text--blue">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This tool helps you make an informed choice with your healthcare team. All options shown are suitable for your medical profile.</p>
+        <p><strong>Why am I seeing this?</strong> According to NICE guidelines, both Amlodipine and Lisinopril are equally appropriate for your medical profile. Your preference will help determine the best choice for you.</p>
       </div>
 
-      <!-- Language and accessibility options -->
+      <!-- Equipoise explanation -->
       <div class="nhsuk-card nhsuk-u-margin-bottom-4">
         <div class="nhsuk-card__content">
-          <h2 class="nhsuk-card__heading nhsuk-heading-s">
-            Language and accessibility options
-          </h2>
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-half">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="language-select">
-                  Language
-                </label>
-                <select class="nhsuk-select" id="language-select" name="language">
-                  <option value="en">English</option>
-                  <option value="ur">اردو (Urdu)</option>
-                  <option value="bn">বাংলা (Bengali)</option>
-                  <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-                  <option value="ar">العربية (Arabic)</option>
-                  <option value="pl">Polski (Polish)</option>
-                </select>
-              </div>
-            </div>
-            <div class="nhsuk-grid-column-one-half">
-              <fieldset class="nhsuk-fieldset">
-                <legend class="nhsuk-fieldset__legend nhsuk-label">
-                  Content format
-                </legend>
-                <div class="nhsuk-radios nhsuk-radios--small">
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="format-standard" name="format" type="radio" value="standard" checked>
-                    <label class="nhsuk-label nhsuk-radios__label" for="format-standard">
-                      Standard
-                    </label>
-                  </div>
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="format-easyread" name="format" type="radio" value="easyread">
-                    <label class="nhsuk-label nhsuk-radios__label" for="format-easyread">
-                      Easy Read
-                    </label>
-                  </div>
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="format-bsl" name="format" type="radio" value="bsl">
-                    <label class="nhsuk-label nhsuk-radios__label" for="format-bsl">
-                      British Sign Language
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-          </div>
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">Your clinical situation</h2>
+          <p>You have been diagnosed with stage 1 hypertension. Based on NICE guidelines and your medical profile, two medications are equally suitable:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Amlodipine</strong> - A calcium channel blocker (first-line treatment)</li>
+            <li><strong>Lisinopril</strong> - An ACE inhibitor (first-line treatment)</li>
+          </ul>
+          <p>Both are proven to be equally effective for your situation. Your personal preferences will help determine which is best for you.</p>
         </div>
       </div>
 
       <!-- Treatment comparison section -->
-      <h2 class="nhsuk-heading-l">Compare your treatment options</h2>
+      <h2 class="nhsuk-heading-l">Compare your two options</h2>
       
-      <p>Based on your medical history and current health, these 3 treatments are recommended for you:</p>
+      <p>Both treatments are clinically equivalent according to NICE guidelines. Here's what you need to know about each:</p>
 
       <div class="treatment-comparison">
         <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-third">
+          <div class="nhsuk-grid-column-one-half">
             <div class="nhsuk-card treatment-option" data-treatment="amlodipine">
               <div class="nhsuk-card__content">
                 <h3 class="nhsuk-card__heading nhsuk-heading-m">
                   <span class="treatment-name">Amlodipine</span>
-                  <span class="nhsuk-tag nhsuk-tag--blue">Currently taking</span>
+                  <span class="nhsuk-tag nhsuk-tag--blue">Option A</span>
                 </h3>
                 <p class="treatment-type">Calcium channel blocker</p>
-                <p class="treatment-dose">5mg once daily</p>
+                <p class="treatment-dose">Starting dose: 5mg once daily</p>
                 
-                <div class="treatment-score">
-                  <div class="score-item">
-                    <span class="score-label">Effectiveness</span>
-                    <div class="score-bar">
-                      <div class="score-fill" style="width: 85%"></div>
-                    </div>
-                    <span class="score-text">Very good</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Side effects</span>
-                    <div class="score-bar">
-                      <div class="score-fill score-fill--amber" style="width: 60%"></div>
-                    </div>
-                    <span class="score-text">Moderate</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Lifestyle fit</span>
-                    <div class="score-bar">
-                      <div class="score-fill score-fill--green" style="width: 90%"></div>
-                    </div>
-                    <span class="score-text">Excellent</span>
+                <div class="treatment-facts">
+                  <h4 class="nhsuk-heading-s">Key facts (BNF):</h4>
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>Long-acting (24-hour protection)</li>
+                    <li>Can be taken with or without food</li>
+                    <li>Works by relaxing blood vessels</li>
+                    <li>Common side effect: ankle swelling (10-20% of people)</li>
+                    <li>Usually well tolerated</li>
+                  </ul>
+                  
+                  <h4 class="nhsuk-heading-s">Patient experience:</h4>
+                  <div class="patient-quote">
+                    <p><em>"I've been taking Amlodipine for 2 years. The ankle swelling was noticeable at first but settled down after a few months. I take it with my morning coffee - very easy to remember."</em></p>
+                    <p class="quote-attribution">- Maria, 58, London</p>
                   </div>
                 </div>
 
                 <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="amlodipine">
-                  View details
+                  Choose Amlodipine
                 </button>
               </div>
             </div>
           </div>
 
-          <div class="nhsuk-grid-column-one-third">
+          <div class="nhsuk-grid-column-one-half">
             <div class="nhsuk-card treatment-option" data-treatment="lisinopril">
               <div class="nhsuk-card__content">
                 <h3 class="nhsuk-card__heading nhsuk-heading-m">
                   <span class="treatment-name">Lisinopril</span>
-                  <span class="nhsuk-tag nhsuk-tag--green">Alternative</span>
+                  <span class="nhsuk-tag nhsuk-tag--green">Option B</span>
                 </h3>
                 <p class="treatment-type">ACE inhibitor</p>
-                <p class="treatment-dose">10mg once daily</p>
+                <p class="treatment-dose">Starting dose: 10mg once daily</p>
                 
-                <div class="treatment-score">
-                  <div class="score-item">
-                    <span class="score-label">Effectiveness</span>
-                    <div class="score-bar">
-                      <div class="score-fill" style="width: 80%"></div>
-                    </div>
-                    <span class="score-text">Good</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Side effects</span>
-                    <div class="score-bar">
-                      <div class="score-fill score-fill--green" style="width: 30%"></div>
-                    </div>
-                    <span class="score-text">Low</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Lifestyle fit</span>
-                    <div class="score-bar">
-                      <div class="score-fill" style="width: 75%"></div>
-                    </div>
-                    <span class="score-text">Good</span>
+                <div class="treatment-facts">
+                  <h4 class="nhsuk-heading-s">Key facts (BNF):</h4>
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>Also protects heart and kidneys</li>
+                    <li>Best taken at same time each day</li>
+                    <li>Works by blocking blood vessel tightening</li>
+                    <li>Common side effect: dry cough (5-10% of people)</li>
+                    <li>May cause dizziness when standing</li>
+                  </ul>
+                  
+                  <h4 class="nhsuk-heading-s">Patient experience:</h4>
+                  <div class="patient-quote">
+                    <p><em>"Started Lisinopril 6 months ago. I did get the dry cough in the first few weeks but it went away. I feel it gives me extra protection for my heart health too."</em></p>
+                    <p class="quote-attribution">- James, 62, Manchester</p>
                   </div>
                 </div>
 
                 <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="lisinopril">
-                  View details
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="nhsuk-grid-column-one-third">
-            <div class="nhsuk-card treatment-option" data-treatment="candesartan">
-              <div class="nhsuk-card__content">
-                <h3 class="nhsuk-card__heading nhsuk-heading-m">
-                  <span class="treatment-name">Candesartan</span>
-                  <span class="nhsuk-tag nhsuk-tag--green">Alternative</span>
-                </h3>
-                <p class="treatment-type">ARB (Angiotensin receptor blocker)</p>
-                <p class="treatment-dose">8mg once daily</p>
-                
-                <div class="treatment-score">
-                  <div class="score-item">
-                    <span class="score-label">Effectiveness</span>
-                    <div class="score-bar">
-                      <div class="score-fill" style="width: 82%"></div>
-                    </div>
-                    <span class="score-text">Very good</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Side effects</span>
-                    <div class="score-bar">
-                      <div class="score-fill score-fill--green" style="width: 25%"></div>
-                    </div>
-                    <span class="score-text">Very low</span>
-                  </div>
-                  <div class="score-item">
-                    <span class="score-label">Lifestyle fit</span>
-                    <div class="score-bar">
-                      <div class="score-fill" style="width: 85%"></div>
-                    </div>
-                    <span class="score-text">Very good</span>
-                  </div>
-                </div>
-
-                <button class="nhsuk-button nhsuk-button--secondary treatment-details-btn" data-treatment="candesartan">
-                  View details
+                  Choose Lisinopril
                 </button>
               </div>
             </div>
@@ -216,26 +121,26 @@
       <div class="nhsuk-card nhsuk-u-margin-top-6">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-card__heading nhsuk-heading-l">
-            Learn more about your options
+            Learn more about your two options
           </h2>
-          <p>Choose how you'd like to learn more about these blood pressure treatments:</p>
+          <p>Get additional information to help you decide between Amlodipine and Lisinopril:</p>
           
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-quarter">
-              <a href="/pages/mybp/shared-decision/multimedia?type=video" class="nhsuk-card multimedia-card">
+              <a href="/pages/mybp/shared-decision/multimedia?type=video&drugs=amlodipine-lisinopril" class="nhsuk-card multimedia-card">
                 <div class="nhsuk-card__content">
                   <div class="multimedia-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polygon points="5,3 19,12 5,21"></polygon>
                     </svg>
                   </div>
-                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Video guides</h3>
-                  <p class="nhsuk-card__description">Watch expert explanations</p>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Patient stories</h3>
+                  <p class="nhsuk-card__description">Watch people share their experiences</p>
                 </div>
               </a>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
-              <a href="/pages/mybp/shared-decision/multimedia?type=audio" class="nhsuk-card multimedia-card">
+              <a href="/pages/mybp/shared-decision/multimedia?type=audio&drugs=amlodipine-lisinopril" class="nhsuk-card multimedia-card">
                 <div class="nhsuk-card__content">
                   <div class="multimedia-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -245,13 +150,13 @@
                       <line x1="8" y1="23" x2="16" y2="23"></line>
                     </svg>
                   </div>
-                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Audio stories</h3>
-                  <p class="nhsuk-card__description">Listen to patient experiences</p>
+                  <h3 class="nhsuk-card__heading nhsuk-heading-s">Audio experiences</h3>
+                  <p class="nhsuk-card__description">Listen to detailed patient journeys</p>
                 </div>
               </a>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
-              <a href="/pages/mybp/shared-decision/multimedia?type=easyread" class="nhsuk-card multimedia-card">
+              <a href="/pages/mybp/shared-decision/multimedia?type=easyread&drugs=amlodipine-lisinopril" class="nhsuk-card multimedia-card">
                 <div class="nhsuk-card__content">
                   <div class="multimedia-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -260,12 +165,12 @@
                     </svg>
                   </div>
                   <h3 class="nhsuk-card__heading nhsuk-heading-s">Easy Read</h3>
-                  <p class="nhsuk-card__description">Simple words and pictures</p>
+                  <p class="nhsuk-card__description">Simple comparison guide</p>
                 </div>
               </a>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
-              <a href="/pages/mybp/shared-decision/chatbot" class="nhsuk-card multimedia-card">
+              <a href="/pages/mybp/shared-decision/chatbot?context=equipoise&drugs=amlodipine-lisinopril" class="nhsuk-card multimedia-card">
                 <div class="nhsuk-card__content">
                   <div class="multimedia-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -273,7 +178,7 @@
                     </svg>
                   </div>
                   <h3 class="nhsuk-card__heading nhsuk-heading-s">Ask questions</h3>
-                  <p class="nhsuk-card__description">Chat with AI assistant</p>
+                  <p class="nhsuk-card__description">Compare these two options</p>
                 </div>
               </a>
             </div>
@@ -283,11 +188,8 @@
 
       <!-- Continue button -->
       <div class="nhsuk-u-margin-top-6">
-        <button class="nhsuk-button" id="continue-btn">
-          Continue with selected treatment
-        </button>
         <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-          You can discuss your choice with your healthcare team at any time
+          Once you've made your choice, your AI care team will implement the treatment plan and coordinate with your GP as needed.
         </p>
       </div>
 
@@ -335,49 +237,36 @@
     margin-bottom: 1rem;
   }
   
-  .treatment-score {
+  .treatment-facts {
     margin: 1rem 0;
   }
   
-  .score-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    gap: 0.5rem;
+  .treatment-facts h4 {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
   
-  .score-label {
-    min-width: 80px;
-    font-size: 0.85em;
-    color: #425563;
+  .treatment-facts ul {
+    margin-bottom: 1rem;
   }
   
-  .score-bar {
-    flex: 1;
-    height: 8px;
-    background-color: #f0f4f5;
+  .patient-quote {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-left: 4px solid #005eb8;
     border-radius: 4px;
-    overflow: hidden;
+    margin: 0.5rem 0;
   }
   
-  .score-fill {
-    height: 100%;
-    background-color: #005eb8;
-    transition: width 0.3s ease;
+  .patient-quote p {
+    margin-bottom: 0.5rem;
   }
   
-  .score-fill--green {
-    background-color: #007f3b;
-  }
-  
-  .score-fill--amber {
-    background-color: #ffb81c;
-  }
-  
-  .score-text {
-    min-width: 70px;
-    font-size: 0.85em;
-    font-weight: 600;
+  .quote-attribution {
+    font-size: 0.9em;
+    color: #425563;
+    font-style: normal;
+    margin-bottom: 0 !important;
   }
   
   .multimedia-card {
@@ -398,18 +287,13 @@
   }
   
   @media (max-width: 48em) {
-    .treatment-comparison .nhsuk-grid-column-one-third {
+    .treatment-comparison .nhsuk-grid-column-one-half {
       margin-bottom: 1rem;
     }
     
-    .score-item {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
-    }
-    
-    .score-bar {
-      width: 100%;
+    .patient-quote {
+      padding: 0.75rem;
+      margin: 0.5rem 0;
     }
   }
 </style>
@@ -422,35 +306,23 @@
       document.querySelectorAll('.treatment-option').forEach(c => c.classList.remove('selected'));
       // Add selected class to clicked card
       this.classList.add('selected');
-      
-      // Enable continue button
-      const continueBtn = document.getElementById('continue-btn');
-      continueBtn.disabled = false;
-      continueBtn.textContent = `Continue with ${this.querySelector('.treatment-name').textContent}`;
     });
   });
   
-  // Language change handler
-  document.getElementById('language-select').addEventListener('change', function() {
-    // In a real app, this would trigger content translation
-    console.log('Language changed to:', this.value);
-  });
-  
-  // Format change handler
-  document.querySelectorAll('input[name="format"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-      // In a real app, this would change content presentation
-      console.log('Format changed to:', this.value);
-    });
-  });
-  
-  // Details button handlers
+  // Treatment choice buttons
   document.querySelectorAll('.treatment-details-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       const treatment = this.dataset.treatment;
-      // In a real app, this would show detailed treatment information
-      alert(`Showing detailed information for ${treatment}`);
+      
+      // Show confirmation
+      if (confirm(`Are you sure you want to choose ${treatment.charAt(0).toUpperCase() + treatment.slice(1)}? Your AI care team will implement this treatment plan and coordinate with your GP.`)) {
+        // In a real app, this would submit the choice to the backend
+        alert(`Treatment choice recorded: ${treatment.charAt(0).toUpperCase() + treatment.slice(1)}. Your care team will contact you within 48 hours to start your treatment plan.`);
+        
+        // Redirect back to main page
+        window.location.href = '/pages/mybp/index';
+      }
     });
   });
 </script>

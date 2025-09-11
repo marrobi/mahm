@@ -23,13 +23,23 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 
 ---
 
-## AI Chatbot Support
+## AI Chatbot Support - Equipoise Decision Context
 
-![Chatbot Interface](shared-decision-chatbot.png)
-**AI Assistant** - Interactive chat interface with NHS BP Assistant for answering questions about treatments, with quick question buttons and voice input support.
+![Equipoise Chatbot Interface](shared-decision-equipoise-chatbot.png)
+**Treatment Decision Support** - Contextual AI assistant specifically designed to help patients choose between two equally-suitable treatments (Amlodipine vs Lisinopril) when NICE guidelines indicate clinical equipoise.
 
-![Chatbot Response](shared-decision-chatbot-response.png)
-**AI Response Example** - Demonstration of intelligent responses about medication side effects with contextual information and professional medical advice reminders.
+![Equipoise Chatbot Response](shared-decision-equipoise-chatbot-response.png)
+**Equipoise AI Response** - Intelligent comparison between the two medications in equipoise, providing evidence-based information from BNF to support informed patient choice in clinical decision-making.
+
+---
+
+## Shared Decision-Making - Clinical Equipoise Context
+
+![Equipoise Treatment Decision](shared-decision-equipoise-final.png)
+**Treatment Decision Required** - Interface only appears when AI orchestrator determines clinical equipoise exists. Shows two equally-suitable treatments (Amlodipine vs Lisinopril) with BNF-based facts and real patient testimonials.
+
+![Equipoise Patient Stories](shared-decision-equipoise-multimedia.png)
+**Patient Experience Resources** - Personalized multimedia content focused on the specific drugs in equipoise, featuring real patient stories and experiences to support treatment choice rather than generic educational content.
 
 ---
 
@@ -60,16 +70,18 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 ## Key Features of Multiagentic System
 
 - **AI Orchestration**: Central Hypertension Care Orchestration Agent coordinates all treatment decisions following NICE guidelines
+- **Clinical Equipoise Handling**: Shared decision-making tools only triggered when NICE guidelines indicate multiple equally-valid treatments
+- **Evidence-Based Content**: All treatment information sourced from BNF with real patient testimonials rather than generic content
 - **Patient-Focused Interface**: Users can view data, submit readings, and report issues - but treatment decisions are made by AI agents
+- **Contextual Decision Support**: AI assistants provide specific comparisons only when choice between equivalent treatments is required
 - **Automatic Care Coordination**: AI agents manage medication adjustments and GP consultations without user intervention
 - **Safety Monitoring**: Continuous monitoring with automatic escalation to GP when needed
 - **Patient Dashboard**: Comprehensive view of BP trends with AI analysis and insights
 - **Side Effect Management**: Immediate reporting to AI care team with automatic review protocols
 - **Cultural Sensitivity**: Multi-language support and cultural considerations maintained
-- **AI Chatbot Support**: Intelligent assistant for patient questions and education
-- **Clinical Safety**: Appropriate NICE guidelines compliance and safety protocols
+- **Clinical Safety**: Appropriate NICE guidelines compliance with equipoise-based decision protocols
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 
-The system demonstrates how AI agents can manage complex healthcare decisions while maintaining patient engagement through appropriate information sharing and feedback mechanisms.
+The system demonstrates how AI agents can manage complex healthcare decisions while engaging patients appropriately only when clinical equipoise requires their input for treatment selection.
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

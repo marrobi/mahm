@@ -1,7 +1,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Ask about blood pressure treatments" %}
+{% set pageHeading = "Treatment Decision Support" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -15,16 +15,16 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-xl">
-        Ask about blood pressure treatments
+        Treatment Decision Support
       </h1>
 
       <p class="nhsuk-lede-text">
-        Get answers to your questions about Amlodipine, Lisinopril, and Candesartan from our AI assistant.
+        Ask questions to help you choose between Amlodipine and Lisinopril for your hypertension treatment.
       </p>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This AI assistant provides general information only. Always speak to your healthcare team for personalized medical advice.</p>
+        <p>This assistant is specifically designed to help you compare these two equally-suitable treatments. For general health questions, please contact your healthcare team.</p>
       </div>
 
       <!-- Chat interface -->
@@ -40,8 +40,8 @@
               </svg>
             </div>
             <div class="assistant-details">
-              <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">NHS BP Assistant</h3>
-              <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-bottom-0">Online • Ask me anything about your treatment options</p>
+              <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">NHS Treatment Decision Assistant</h3>
+              <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-bottom-0">Online • Helping you choose between your two treatment options</p>
             </div>
           </div>
           <div class="chat-options">
@@ -75,14 +75,15 @@
               </svg>
             </div>
             <div class="message-content">
-              <p>Hello! I'm here to help you understand your blood pressure treatment options. You can ask me about:</p>
+              <p>Hello! I'm here to help you choose between <strong>Amlodipine</strong> and <strong>Lisinopril</strong> for your hypertension treatment.</p>
+              <p>Your AI care team has determined that both medications are equally suitable for your medical profile. I can help you understand:</p>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>How different medications work</li>
-                <li>Side effects and how to manage them</li>
-                <li>Lifestyle considerations</li>
-                <li>What to expect when starting treatment</li>
+                <li>How each medication works differently</li>
+                <li>Side effects and what to expect</li>
+                <li>How they fit with your lifestyle</li>
+                <li>What other patients have experienced</li>
               </ul>
-              <p>What would you like to know?</p>
+              <p>What would you like to know about these two options?</p>
             </div>
             <div class="message-time">Just now</div>
           </div>
@@ -92,17 +93,17 @@
         <div class="quick-questions">
           <p class="quick-questions-label">Quick questions:</p>
           <div class="quick-question-buttons">
-            <button class="quick-question-btn" data-question="What are the main differences between these three medications?">
-              Medication differences
+            <button class="quick-question-btn" data-question="What's the main difference between Amlodipine and Lisinopril?">
+              Key differences
             </button>
-            <button class="quick-question-btn" data-question="Which medication has the fewest side effects?">
-              Side effects
+            <button class="quick-question-btn" data-question="Which one has fewer side effects - Amlodipine or Lisinopril?">
+              Side effects comparison
             </button>
-            <button class="quick-question-btn" data-question="Can I take these medications during Ramadan?">
+            <button class="quick-question-btn" data-question="Can I take either medication during Ramadan?">
               Religious considerations
             </button>
-            <button class="quick-question-btn" data-question="What lifestyle changes can help my blood pressure?">
-              Lifestyle tips
+            <button class="quick-question-btn" data-question="What do other patients say about these two medications?">
+              Patient experiences
             </button>
           </div>
         </div>
@@ -466,15 +467,15 @@
   const chatMessages = document.getElementById('chat-messages');
   let currentLanguage = 'en';
   
-  // Sample responses for demo
+  // Sample responses for demo - focused on Amlodipine vs Lisinopril equipoise
   const responses = {
-    'differences': "The main differences between these medications are:\n\n• **Amlodipine** (Calcium channel blocker): Works by relaxing blood vessels. Good effectiveness, moderate side effects (ankle swelling possible).\n\n• **Lisinopril** (ACE inhibitor): Blocks hormone that tightens blood vessels. Good effectiveness, low side effects (dry cough in some people).\n\n• **Candesartan** (ARB): Similar to ACE inhibitors but with fewer side effects. Very good effectiveness, very low side effects.\n\nAll three are effective - the choice depends on your individual response and any side effects you experience.",
+    'differences': "**Amlodipine vs Lisinopril - Key Differences:**\n\n**How they work:**\n• **Amlodipine** (Calcium channel blocker): Relaxes blood vessels by blocking calcium\n• **Lisinopril** (ACE inhibitor): Blocks enzymes that tighten blood vessels\n\n**Dosing:**\n• **Amlodipine**: Usually 5mg once daily\n• **Lisinopril**: Usually 10mg once daily\n\n**Additional benefits:**\n• **Amlodipine**: Long-lasting (24-hour protection)\n• **Lisinopril**: Also protects heart and kidneys\n\n**Both are equally effective** for lowering blood pressure according to NICE guidelines.",
     
-    'side effects': "In terms of side effects:\n\n**Fewest side effects:** Candesartan (ARB) - typically very well tolerated\n\n**Lisinopril:** Low side effects, but about 10% of people get a dry cough\n\n**Amlodipine:** Moderate side effects, mainly ankle swelling in about 20% of people\n\nRemember, many people take any of these medications without problems. Side effects often improve over time as your body adjusts.",
+    'side effects': "**Side Effect Comparison:**\n\n**Amlodipine:**\n• Ankle swelling (10-20% of people) - most common\n• Usually settles after a few months\n• Can be taken with or without food\n\n**Lisinopril:**\n• Dry cough (5-10% of people) - most notable\n• Slight dizziness when standing up initially\n• Better with kidney protection\n\n**Winner:** Lisinopril typically has fewer bothersome side effects, but individual responses vary significantly.",
     
-    'ramadan': "Yes, all three medications can be taken during Ramadan! Here's how:\n\n• **Best timing:** Take your daily dose either at Suhur (before dawn) or Iftar (sunset)\n• **Consistency:** Choose one time and stick to it throughout Ramadan\n• **No food needed:** All three can be taken with or without food\n• **Speak to your pharmacist** about the best timing for your specific medication and daily routine\n\nMany Muslim patients successfully manage their blood pressure during fasting periods.",
+    'ramadan': "**Taking either medication during Ramadan:**\n\n**Both Amlodipine and Lisinopril are suitable during fasting:**\n• **Best timing:** Take at Suhur (before dawn) or Iftar (sunset)\n• **Food:** Neither requires food - can take on empty stomach\n• **Consistency:** Pick one time and stick to it throughout Ramadan\n\n**Slight advantage to Amlodipine:** Longer-acting, so timing flexibility is better if you occasionally forget.",
     
-    'lifestyle': "Great question! These lifestyle changes can help lower blood pressure:\n\n**Diet:**\n• Reduce salt intake (aim for less than 6g per day)\n• Eat more fruits and vegetables\n• Choose whole grains over processed foods\n\n**Exercise:**\n• Aim for 150 minutes of moderate activity per week\n• Even 10-minute walks help\n\n**Other factors:**\n• Maintain a healthy weight\n• Limit alcohol\n• Don't smoke\n• Manage stress through relaxation or meditation\n• Get good quality sleep\n\nThese changes work well alongside medication to control blood pressure."
+    'experiences': "**What patients tell us:**\n\n**Amlodipine experiences:**\n*\"The ankle swelling was annoying at first, but it got better after 3 months. Now I don't notice it.\"* - Sarah, 54\n\n*\"Very easy to remember - I take it with my morning coffee every day.\"* - Ahmed, 61\n\n**Lisinopril experiences:**\n*\"I got the dry cough in the first month but it went away. I like knowing it's protecting my heart too.\"* - James, 58\n\n*\"No side effects for me at all. My blood pressure came down nicely.\"* - Maria, 49\n\n**Most patients do well on either medication.**"
   };
   
   // Enable/disable send button based on input
@@ -562,16 +563,16 @@
   function getAIResponse(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
     
-    if (lowerMessage.includes('difference') || lowerMessage.includes('compare')) {
+    if (lowerMessage.includes('difference') || lowerMessage.includes('compare') || lowerMessage.includes('between')) {
       return responses.differences;
-    } else if (lowerMessage.includes('side effect')) {
+    } else if (lowerMessage.includes('side effect') || lowerMessage.includes('fewer side effects')) {
       return responses['side effects'];
     } else if (lowerMessage.includes('ramadan') || lowerMessage.includes('fasting') || lowerMessage.includes('religious')) {
       return responses.ramadan;
-    } else if (lowerMessage.includes('lifestyle') || lowerMessage.includes('diet') || lowerMessage.includes('exercise')) {
-      return responses.lifestyle;
+    } else if (lowerMessage.includes('patient') || lowerMessage.includes('experience') || lowerMessage.includes('other patients')) {
+      return responses.experiences;
     } else {
-      return "I understand you're asking about blood pressure treatments. I can help you with information about:\n\n• How the medications work\n• Side effects and management\n• Lifestyle considerations\n• Cultural and religious factors\n\nCould you please be more specific about what you'd like to know?";
+      return "I'm here to help you choose between **Amlodipine** and **Lisinopril** for your hypertension treatment. I can provide information about:\n\n• Key differences between these two medications\n• Side effect comparisons\n• Cultural and religious considerations\n• What other patients have experienced\n\nWhat specific aspect would you like to know more about?";
     }
   }
   

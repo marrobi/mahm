@@ -30,8 +30,8 @@
 
       <!-- EMERGENCY SUPPORT BUTTON -->
       <div class="nhsuk-u-margin-bottom-4">
-        <a href="/pages/mybp/emergency" class="nhsuk-button nhsuk-button--warning" role="button">
-          🚨 Get Help Now
+        <a href="/pages/mybp/emergency" class="nhsuk-button nhsuk-button--secondary" role="button">
+          Get Help & Emergency Support
         </a>
         <p class="nhsuk-u-font-size-14 nhsuk-u-margin-top-1">For urgent BP concerns or medication side effects</p>
       </div>
@@ -60,14 +60,14 @@
         <div class="nhsuk-notification-banner" role="region" aria-labelledby="next-actions-title">
           <div class="nhsuk-notification-banner__header">
             <h2 class="nhsuk-notification-banner__title" id="next-actions-title">
-              Personalized recommendations
+              Personalised recommendations
             </h2>
           </div>
           <div class="nhsuk-notification-banner__content">
             <ol class="nhsuk-list nhsuk-list--number">
-              <li><strong>Review medication</strong> - Your recent readings suggest a dose adjustment may help</li>
-              <li><strong>Book BP check</strong> - Schedule your next measurement within 2 weeks</li>
-              <li><strong>Check lab results</strong> - Your latest U&E test results are available</li>
+              <li><strong>Take your next BP reading</strong> - Due in 3 days</li>
+              <li><strong>Check your latest lab results</strong> - U&E test results are available to view</li>
+              <li><strong>Continue taking your medication</strong> - Amlodipine 5mg daily as prescribed</li>
             </ol>
           </div>
         </div>
@@ -103,19 +103,14 @@
             description: "Check your latest U&E blood test results and kidney function monitoring."
           },
           {
-            title: "Review and adjust medication",
-            href: "/pages/mybp/dose-titration/index",
-            description: "Check if your blood pressure medication dose needs adjusting based on recent readings."
-          },
-          {
             title: "Measure blood pressure",
             href: "/pages/mybp/bp-measurement/index",
             description: "Take your blood pressure using Lifelight technology at a local community location."
           },
           {
-            title: "Book safety blood test",
-            href: "/pages/mybp/blood-test/index",
-            description: "Book your U&E (kidney function) safety monitoring blood test."
+            title: "Medication information",
+            href: "/pages/mybp/medication-info",
+            description: "View information about your current blood pressure medication and how it works."
           }
         ]
       }) }}
@@ -162,16 +157,16 @@
         </div>
       </div>
 
-      <!-- SECTION - PATIENT CATEGORY -->
+      <!-- SECTION - YOUR CARE PATHWAY -->
       {{ nhsappSectionHeading({
         headingText: "Your care pathway"
       }) }}
       
       <div class="nhsuk-u-margin-bottom-4">
         <div style="background: #e8f4fd; border-left: 4px solid #005eb8; padding: 16px; border-radius: 4px;">
-          <h4 class="nhsuk-u-margin-bottom-2">Category A: Known Hypertension Patient</h4>
-          <p class="nhsuk-u-margin-bottom-2">You have an established essential hypertension diagnosis and are receiving ongoing treatment management.</p>
-          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0"><strong>Active agents:</strong> Orchestrating Agent, Titration Agent, Monitoring Agent, Medication Adherence Agent</p>
+          <h4 class="nhsuk-u-margin-bottom-2">Hypertension Management Programme</h4>
+          <p class="nhsuk-u-margin-bottom-2">You are receiving ongoing treatment management for essential hypertension through our AI-coordinated care system.</p>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0"><strong>Active support:</strong> Medication monitoring, BP tracking, safety blood tests, and lifestyle guidance</p>
         </div>
       </div>
 

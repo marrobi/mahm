@@ -21,6 +21,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Accessibility options for inclusive design
 - Multi-agent system coordination indicators
 
+![Updated Main Dashboard - Final Version](updated-mybp-dashboard.png)
+**Updated Main Dashboard - Final Version** - Corrected dashboard addressing clinical feedback:
+- Replaced red emergency "Get Help Now" button with appropriate secondary styling
+- Removed patient-facing medication review and booking options (handled by orchestrator)
+- Eliminated "Category A" patient terminology from public interface
+- Updated to British spellings ("Personalised" not "Personalized")
+- Focus on patient actions: BP measurements, viewing results, medication adherence
+- Clear care pathway description without technical categories
+
 ---
 
 ## Dose Titration Journey (5 screens)
@@ -108,6 +117,18 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
   - Specific symptoms requiring immediate GP practice contact
 - Separation of clinical explanation from actionable patient instructions
 - Clinically appropriate timeframes aligned with NICE/BNF guidelines for moderate potassium elevation
+
+### 3. AI Treatment Decision Results
+![AI Decision Lab Results](ai-decision-lab-results.png)
+**AI-Driven Medication Adjustment Based on U&E Results** - Sophisticated AI decision-making example following NICE guidelines:
+- Original plan: Increase Amlodipine 5mg to 10mg for BP readings of 142/88 mmHg
+- AI system decision: Add Ramipril 2.5mg instead after reviewing U&E results
+- Clinical rationale based on NICE Guideline NG136 (Hypertension in adults):
+  - Kidney function adequate for ACE inhibitor (creatinine 125 μmol/L)
+  - Potassium level safe for ACE inhibitor initiation (4.2 mmol/L)
+  - Step 2 treatment preference for combination therapy over dose increases
+- Automated prescription sent to pharmacy with clear monitoring plan
+- Demonstrates AI capability for sophisticated clinical decisions while adhering to guidelines
 
 ---
 

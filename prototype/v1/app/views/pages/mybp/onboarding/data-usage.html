@@ -1,7 +1,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Data Usage Statement" %}
+{% set pageHeading = "How we use your information" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -15,139 +15,129 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-xl">
-        Data Usage Statement
+        How we use your information
       </h1>
 
       <p class="nhsuk-lede-text">
-        Overview of how we collect, use, and protect your information in My BP.
+        Learn how My BP collects, uses, and protects your health information.
       </p>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Clinical governance:</strong> All AI agent interactions are logged for quality monitoring, safety oversight, and continuous improvement of care delivery.</p>
+        <p><strong>Quality monitoring:</strong> All system interactions are logged to ensure safety and continuously improve your care.</p>
       </div>
 
-      <h2 class="nhsuk-heading-m">Data we collect by agent type</h2>
+      <h2 class="nhsuk-heading-m">Information we collect</h2>
 
       <div class="nhsuk-table-responsive">
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Types of data collected by each AI agent in My BP</caption>
+          <caption class="nhsuk-table__caption">Types of information collected by My BP</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
               <th role="columnheader" class="" scope="col">
-                Data type
+                What we collect
               </th>
               <th role="columnheader" class="" scope="col">
-                Collecting agent
+                Who collects it
               </th>
               <th role="columnheader" class="" scope="col">
-                Purpose
+                Why we need it
               </th>
             </tr>
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Blood pressure readings & measurement quality</td>
-              <td class="nhsuk-table__cell">BP Measurement Agent</td>
-              <td class="nhsuk-table__cell">Monitor condition, validate measurements, coordinate community monitoring</td>
+              <td class="nhsuk-table__cell">Your blood pressure readings and how they were taken</td>
+              <td class="nhsuk-table__cell">Blood pressure monitoring system</td>
+              <td class="nhsuk-table__cell">To track your condition and check measurements are accurate</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">24-hour ABPM data & diagnostic evidence</td>
-              <td class="nhsuk-table__cell">Diagnosing Agent</td>
-              <td class="nhsuk-table__cell">Confirm hypertension diagnosis, provide evidence packs for GP approval</td>
+              <td class="nhsuk-table__cell">24-hour blood pressure monitoring results</td>
+              <td class="nhsuk-table__cell">Diagnostic support system</td>
+              <td class="nhsuk-table__cell">To help confirm if you have high blood pressure for your GP</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Medication history, adherence patterns, side effects</td>
-              <td class="nhsuk-table__cell">Titration Agent, Medication Adherence Agent</td>
-              <td class="nhsuk-table__cell">Optimize treatment, improve adherence, prevent complications</td>
+              <td class="nhsuk-table__cell">Your medicines, how well you take them, and any side effects</td>
+              <td class="nhsuk-table__cell">Medicine management system</td>
+              <td class="nhsuk-table__cell">To help find the right treatment and support you with taking medicines</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Lifestyle factors, cultural preferences, dietary habits</td>
-              <td class="nhsuk-table__cell">Lifestyle Agent</td>
-              <td class="nhsuk-table__cell">Provide culturally-appropriate interventions, reduce health inequalities</td>
+              <td class="nhsuk-table__cell">Your lifestyle, diet, and cultural preferences</td>
+              <td class="nhsuk-table__cell">Lifestyle support system</td>
+              <td class="nhsuk-table__cell">To give you personalised advice that fits with your life and culture</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Treatment preferences, decision rationale, values</td>
-              <td class="nhsuk-table__cell">Shared Decision-Making Agent</td>
-              <td class="nhsuk-table__cell">Support informed choices, improve treatment satisfaction</td>
+              <td class="nhsuk-table__cell">Your treatment choices and what matters to you</td>
+              <td class="nhsuk-table__cell">Decision support system</td>
+              <td class="nhsuk-table__cell">To help you make informed choices about your care</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Laboratory results (U&E, liver function, lipids)</td>
-              <td class="nhsuk-table__cell">Monitoring Agent</td>
-              <td class="nhsuk-table__cell">Ensure medication safety, prevent complications</td>
+              <td class="nhsuk-table__cell">Blood test results (kidney function, liver function)</td>
+              <td class="nhsuk-table__cell">Safety monitoring system</td>
+              <td class="nhsuk-table__cell">To make sure your medicines are safe and working properly</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Emergency symptoms, risk indicators, escalation triggers</td>
-              <td class="nhsuk-table__cell">Red Flag Agent</td>
-              <td class="nhsuk-table__cell">Immediate safety monitoring, emergency escalation</td>
+              <td class="nhsuk-table__cell">Warning signs and urgent symptoms you report</td>
+              <td class="nhsuk-table__cell">Safety alert system</td>
+              <td class="nhsuk-table__cell">To quickly identify when you need urgent medical help</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Demographics, socioeconomic factors, access barriers</td>
-              <td class="nhsuk-table__cell">Orchestrating Agent</td>
-              <td class="nhsuk-table__cell">Coordinate care, address health inequalities, personalize pathways</td>
+              <td class="nhsuk-table__cell">Your background information and any barriers to healthcare</td>
+              <td class="nhsuk-table__cell">Care coordination system</td>
+              <td class="nhsuk-table__cell">To personalise your care and ensure fair access to services</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 class="nhsuk-heading-m">How we use your data</h2>
+      <h2 class="nhsuk-heading-m">How we use your information</h2>
 
       <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
         <div class="nhsuk-care-card__heading-container">
           <h3 class="nhsuk-care-card__heading">
             <span role="text">
-              <span class="nhsuk-u-visually-hidden">Information: </span>Direct care purposes
+              <span class="nhsuk-u-visually-hidden">Information: </span>Your healthcare
             </span>
           </h3>
           <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
         </div>
         <div class="nhsuk-care-card__content">
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li><strong>Clinical decision support:</strong> Generate NICE guideline-compliant recommendations</li>
-            <li><strong>Safety monitoring:</strong> Continuous monitoring with immediate escalation protocols</li>
-            <li><strong>Care coordination:</strong> Orchestrate multiple agents for comprehensive care</li>
-            <li><strong>Health inequality reduction:</strong> Provide culturally-appropriate, accessible interventions</li>
-            <li><strong>Quality improvement:</strong> Monitor agent performance and clinical outcomes</li>
-            <li><strong>GP support:</strong> Provide evidence packs for complex clinical decisions</li>
+            <li><strong>Give you personalised care:</strong> Follow NHS guidelines to recommend the right treatment for you</li>
+            <li><strong>Keep you safe:</strong> Monitor for warning signs and alert your doctor when needed</li>
+            <li><strong>Coordinate your care:</strong> Work with your GP and other healthcare services</li>
+            <li><strong>Support you:</strong> Provide advice that fits your culture, language, and lifestyle</li>
+            <li><strong>Improve the service:</strong> Learn what works best to help future patients</li>
+            <li><strong>Help your doctor:</strong> Provide clear information to support their decisions</li>
           </ul>
         </div>
       </div>
 
-      <h2 class="nhsuk-heading-m">Patient category data management</h2>
-
-      <p>Your data usage varies by your patient category:</p>
-
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><strong>Category A (Known hypertension):</strong> Full treatment management, medication optimization, monitoring</li>
-        <li><strong>Category B (Normotensive surveillance):</strong> Periodic monitoring, lifestyle support, preventive interventions</li>
-        <li><strong>Category C (Newly detected elevated BP):</strong> Diagnostic support, ABPM coordination, GP approval workflows</li>
-      </ul>
-
-      <h2 class="nhsuk-heading-m">Anonymized data for improvement</h2>
+      <h2 class="nhsuk-heading-m">Anonymised data for improvement</h2>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>We use <strong>anonymized population-level data</strong> to improve the service and reduce health inequalities across different communities. Your personal information is never included.</p>
+        <p>We use <strong>anonymised population-level data</strong> to improve the service and reduce health inequalities across different communities. Your personal information is never included.</p>
       </div>
 
-      <p>Anonymized data helps us:</p>
+      <p>Anonymised data helps us:</p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
         <li>Monitor health inequality reduction across ethnic groups and socioeconomic areas</li>
-        <li>Improve AI agent performance and safety protocols</li>
-        <li>Enhance cultural appropriateness of lifestyle interventions</li>
-        <li>Optimize resource allocation in underserved communities</li>
+        <li>Improve system performance and safety protocols</li>
+        <li>Enhance cultural appropriateness of lifestyle support</li>
+        <li>Optimise resource allocation in underserved communities</li>
         <li>Research effectiveness of AI-supported care coordination</li>
       </ul>
 
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-            What does anonymized mean?
+            What does anonymised mean?
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>Anonymized data means:</p>
+          <p>Anonymised data means:</p>
           <ul class="nhsuk-list nhsuk-list--bullet">
             <li>All personal identifiers are permanently removed using NHS Digital standards</li>
             <li>It cannot be linked back to you as an individual</li>
@@ -161,19 +151,19 @@
       <h2 class="nhsuk-heading-m">Your rights</h2>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><strong>Access:</strong> Request a copy of your data across all AI agents</li>
+        <li><strong>Access:</strong> Request a copy of your information held in My BP</li>
         <li><strong>Correct:</strong> Update incorrect information in your care records</li>
         <li><strong>Delete:</strong> Request removal of your data (subject to clinical safety requirements)</li>
         <li><strong>Withdraw:</strong> Stop using My BP at any time and return to standard GP care</li>
         <li><strong>Complain:</strong> Contact NHS Digital, your GP practice, or the ICO</li>
-        <li><strong>Transparency:</strong> Request explanations of AI agent recommendations</li>
+        <li><strong>Transparency:</strong> Request explanations of system recommendations</li>
       </ul>
 
-      <h2 class="nhsuk-heading-m">Clinical governance and oversight</h2>
+      <h2 class="nhsuk-heading-m">Clinical oversight and safety</h2>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Human oversight:</strong> All AI agent recommendations are subject to clinical governance frameworks with GP escalation protocols when needed.</p>
+        <p><strong>Healthcare professional oversight:</strong> All recommendations follow NHS clinical guidelines. Your GP remains responsible for your care and can override any system recommendations.</p>
       </div>
 
       <p>For more information, see the <a href="#" class="nhsuk-link">NHS Digital privacy notice</a> and <a href="#" class="nhsuk-link">My BP clinical governance framework</a>.</p>

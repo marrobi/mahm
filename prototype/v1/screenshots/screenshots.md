@@ -77,19 +77,27 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Accessibility and Language Settings (3 screens)
+## Accessibility and Language Settings (3 screens) - **Updated with NHS Standards**
 
 ### 1. Updated My BP Dashboard
-![My BP Dashboard Updated](mybp-dashboard-updated.png)
-**Updated My BP Dashboard** - Main dashboard now includes the new "Accessibility and language settings" option for users to customize their experience.
+![My BP Dashboard Updated](https://github.com/user-attachments/assets/a1154c98-d9d5-476c-bd63-40ad4c1f309a)
+**Updated My BP Dashboard** - Main dashboard includes the "Accessibility and language settings" option, enabling users to customize their experience according to NHS accessibility standards.
 
-### 2. Accessibility Settings Page
-![Accessibility Settings](mybp-accessibility-settings.png)
-**Accessibility and Language Settings** - Comprehensive settings page with display options (large text, high contrast), audio settings (voice readback), language picker with 9 languages, BSL video preferences, and EasyRead mode.
+### 2. Improved Accessibility Settings Page  
+![Accessibility Settings Improved](https://github.com/user-attachments/assets/0aa718c5-a5fe-4d52-9a19-59d12e2dd664)
+**NHS-Compliant Accessibility Settings** - Redesigned settings page following NHS style guidance with:
+- **Text and display**: Text size options (Standard/Large/Extra large) and bold text toggle
+- **Navigation and interaction**: Enhanced button labels and reduce motion options
+- **Language and communication**: 9 language options plus BSL interpretation and Easy read format
+- **Improved UX**: Better grouping, clearer labels, and collapsible reset section
 
-### 3. Settings Confirmation
-![Settings Confirmation](mybp-accessibility-confirmation.png)
-**Settings Saved Confirmation** - Confirmation page showing saved settings with individual change links and navigation options back to My BP.
+### 3. Enhanced Settings Confirmation
+![Settings Confirmation Improved](settings-confirmation-improved.png)
+**Improved Confirmation Page** - NHS-standard confirmation page with:
+- Clear success banner with proper ARIA labels
+- Organized settings display by category
+- Individual change links for each setting
+- Better visual hierarchy and accessibility compliance
 
 ---
 
@@ -99,9 +107,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance, plus comprehensive accessibility customization options
-- **Inclusive Design**: Multi-language support, accessibility features, and BSL video preferences
+- **NHS-Compliant Accessibility**: Full compliance with NHS style guidance and WCAG 2.1 AA standards including:
+  - Realistic text sizing options following NHS typography patterns
+  - Proper focus management and keyboard navigation
+  - Enhanced semantic markup and ARIA labels
+  - System preference integration (reduced motion, high contrast)
+  - Simplified, user-friendly accessibility options
+- **Inclusive Design**: Multi-language support (9 languages), BSL interpretation, and Easy read formats
+- **Real-world Implementation**: Based on actual NHS App accessibility patterns and features
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all patient pathways including accessibility personalization
+- **Full User Journeys**: Complete end-to-end workflows for all patient pathways including NHS-standard accessibility personalization
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

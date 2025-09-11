@@ -1,4 +1,4 @@
-// Accessibility Settings JavaScript
+// Accessibility Settings JavaScript - NHS compliant implementation
 // This script applies accessibility settings based on user preferences
 
 (function() {
@@ -7,7 +7,8 @@
     // Apply accessibility settings when page loads
     document.addEventListener('DOMContentLoaded', function() {
         applyAccessibilitySettings();
-        initializeVoiceReadback();
+        initializeKeyboardNavigation();
+        respectSystemPreferences();
     });
 
     function applyAccessibilitySettings() {
@@ -15,124 +16,147 @@
         const body = document.body;
         const settings = getSettingsFromPage();
 
-        // Apply large text
-        if (settings.largeText === 'enabled') {
-            body.classList.add('large-text-enabled');
+        // Apply text size
+        if (settings.textSize === 'large') {
+            body.classList.add('text-size-large');
+        } else if (settings.textSize === 'extra-large') {
+            body.classList.add('text-size-extra-large');
         }
 
-        // Apply high contrast
-        if (settings.highContrast === 'enabled') {
-            body.classList.add('high-contrast-enabled');
+        // Apply bold text
+        if (settings.boldText === 'enabled') {
+            body.classList.add('bold-text-enabled');
         }
 
-        // Apply voice readback
-        if (settings.voiceReadback === 'enabled') {
-            body.classList.add('voice-readback-enabled');
-            enableVoiceReadback();
+        // Apply enhanced button labels
+        if (settings.buttonLabels === 'enabled') {
+            body.classList.add('button-labels-enabled');
+            enhanceButtonLabels();
         }
 
-        // Apply EasyRead mode
-        if (settings.easyRead === 'enabled') {
+        // Apply reduce motion
+        if (settings.reduceMotion === 'enabled') {
+            body.classList.add('reduce-motion-enabled');
+        }
+
+        // Apply easy read format
+        if (settings.communicationSupport && settings.communicationSupport.includes('easy-read')) {
             body.classList.add('easy-read-enabled');
         }
 
-        // Apply BSL videos
-        if (settings.bslVideos === 'enabled') {
-            body.classList.add('bsl-videos-enabled');
+        // Apply BSL interpretation
+        if (settings.communicationSupport && settings.communicationSupport.includes('sign-language')) {
+            body.classList.add('bsl-interpretation-enabled');
         }
 
-        // Apply language setting (this would typically trigger content changes)
+        // Apply language setting
         if (settings.language && settings.language !== 'en') {
             body.setAttribute('lang', settings.language);
+            body.setAttribute('dir', isRTLLanguage(settings.language) ? 'rtl' : 'ltr');
         }
     }
 
     function getSettingsFromPage() {
         // In a real implementation, these would come from server-side data
-        // For now, we'll simulate getting them from localStorage or meta tags
+        // For now, we'll simulate getting them from localStorage
         return {
-            largeText: localStorage.getItem('mybp-large-text') || '',
-            highContrast: localStorage.getItem('mybp-high-contrast') || '',
-            voiceReadback: localStorage.getItem('mybp-voice-readback') || '',
-            easyRead: localStorage.getItem('mybp-easy-read') || '',
-            bslVideos: localStorage.getItem('mybp-bsl-videos') || '',
-            language: localStorage.getItem('mybp-language') || 'en'
+            textSize: localStorage.getItem('mybp-text-size') || 'standard',
+            boldText: localStorage.getItem('mybp-bold-text') || '',
+            buttonLabels: localStorage.getItem('mybp-button-labels') || '',
+            reduceMotion: localStorage.getItem('mybp-reduce-motion') || '',
+            language: localStorage.getItem('mybp-language') || 'en',
+            communicationSupport: JSON.parse(localStorage.getItem('mybp-communication-support') || '[]')
         };
     }
 
-    function enableVoiceReadback() {
-        // Make text elements clickable for voice readback
-        const readableElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, .nhsuk-lede-text, .nhsuk-card__heading, .nhsuk-card__description');
-        
-        readableElements.forEach(function(element) {
-            element.classList.add('voice-readable');
-            element.setAttribute('tabindex', '0');
-            element.setAttribute('role', 'button');
-            element.setAttribute('aria-label', 'Click to read aloud: ' + element.textContent.trim());
-            
-            element.addEventListener('click', function() {
-                readTextAloud(element.textContent);
-            });
-            
-            element.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    readTextAloud(element.textContent);
+    function enhanceButtonLabels() {
+        // Add better ARIA labels to buttons
+        const buttons = document.querySelectorAll('.nhsuk-button');
+        buttons.forEach(function(button) {
+            if (!button.getAttribute('aria-label')) {
+                const text = button.textContent.trim();
+                if (text) {
+                    button.setAttribute('aria-label', text + ' button');
                 }
-            });
-        });
-    }
-
-    function initializeVoiceReadback() {
-        // Check if browser supports speech synthesis
-        if (!('speechSynthesis' in window)) {
-            console.warn('Speech synthesis not supported in this browser');
-            return;
-        }
-
-        // Stop any ongoing speech when page unloads
-        window.addEventListener('beforeunload', function() {
-            speechSynthesis.cancel();
-        });
-    }
-
-    function readTextAloud(text) {
-        if (!('speechSynthesis' in window)) {
-            alert('Voice readback is not supported in your browser.');
-            return;
-        }
-
-        // Cancel any ongoing speech
-        speechSynthesis.cancel();
-
-        // Create speech utterance
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.8; // Slightly slower for clarity
-        utterance.pitch = 1;
-        utterance.volume = 1;
-
-        // Add visual feedback
-        const readingElements = document.querySelectorAll('.reading');
-        readingElements.forEach(el => el.classList.remove('reading'));
-
-        // Find the element being read and highlight it
-        const readableElements = document.querySelectorAll('.voice-readable');
-        readableElements.forEach(function(element) {
-            if (element.textContent.trim() === text.trim()) {
-                element.classList.add('reading');
-                
-                utterance.onend = function() {
-                    element.classList.remove('reading');
-                };
-                
-                utterance.onerror = function() {
-                    element.classList.remove('reading');
-                };
             }
         });
 
-        // Speak the text
-        speechSynthesis.speak(utterance);
+        // Enhance links with context
+        const links = document.querySelectorAll('.nhsuk-link');
+        links.forEach(function(link) {
+            if (!link.getAttribute('aria-label') && link.getAttribute('href')) {
+                const text = link.textContent.trim();
+                const context = link.closest('.nhsuk-card, .nhsuk-summary-list__row');
+                if (context && text) {
+                    const contextText = context.querySelector('.nhsuk-card__heading, .nhsuk-summary-list__key');
+                    if (contextText) {
+                        link.setAttribute('aria-label', text + ' for ' + contextText.textContent.trim());
+                    }
+                }
+            }
+        });
+    }
+
+    function initializeKeyboardNavigation() {
+        // Ensure proper tab order and focus management
+        const interactiveElements = document.querySelectorAll('a, button, input, select, textarea, [tabindex]');
+        
+        interactiveElements.forEach(function(element, index) {
+            // Add skip link functionality
+            element.addEventListener('keydown', function(e) {
+                // Allow Escape to move focus back to main content
+                if (e.key === 'Escape' && element.closest('.nhsuk-notification-banner, .nhsuk-details')) {
+                    const mainContent = document.querySelector('main, #main-content, .nhsuk-main-wrapper');
+                    if (mainContent) {
+                        mainContent.focus();
+                    }
+                }
+            });
+        });
+
+        // Add focus indicators for custom components
+        const customInteractive = document.querySelectorAll('.nhsuk-card[href], .voice-readable');
+        customInteractive.forEach(function(element) {
+            element.setAttribute('tabindex', '0');
+            element.addEventListener('focus', function() {
+                this.style.outline = '3px solid #ffb81c';
+                this.style.outlineOffset = '0';
+            });
+            element.addEventListener('blur', function() {
+                this.style.outline = '';
+                this.style.outlineOffset = '';
+            });
+        });
+    }
+
+    function respectSystemPreferences() {
+        // Respect prefers-reduced-motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.body.classList.add('reduce-motion-enabled');
+        }
+
+        // Respect prefers-contrast
+        if (window.matchMedia('(prefers-contrast: high)').matches) {
+            document.body.classList.add('high-contrast-system');
+        }
+
+        // Listen for changes in system preferences
+        window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function(e) {
+            if (e.matches) {
+                document.body.classList.add('reduce-motion-enabled');
+            } else {
+                // Only remove if not explicitly set by user
+                const userSetting = localStorage.getItem('mybp-reduce-motion');
+                if (!userSetting) {
+                    document.body.classList.remove('reduce-motion-enabled');
+                }
+            }
+        });
+    }
+
+    function isRTLLanguage(language) {
+        const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+        return rtlLanguages.includes(language);
     }
 
     // Save settings to localStorage when form is submitted
@@ -141,24 +165,46 @@
             const formData = new FormData(e.target);
             
             // Save to localStorage for immediate application
-            localStorage.setItem('mybp-large-text', formData.get('large-text') || '');
-            localStorage.setItem('mybp-high-contrast', formData.get('high-contrast') || '');
-            localStorage.setItem('mybp-voice-readback', formData.get('voice-readback') || '');
-            localStorage.setItem('mybp-easy-read', formData.get('easy-read') || '');
-            localStorage.setItem('mybp-bsl-videos', formData.get('bsl-videos') || '');
+            localStorage.setItem('mybp-text-size', formData.get('text-size') || 'standard');
+            localStorage.setItem('mybp-bold-text', formData.get('bold-text') || '');
+            localStorage.setItem('mybp-button-labels', formData.get('button-labels') || '');
+            localStorage.setItem('mybp-reduce-motion', formData.get('reduce-motion') || '');
             localStorage.setItem('mybp-language', formData.get('language') || 'en');
+            
+            // Handle multiple values for communication support
+            const communicationSupport = formData.getAll('communication-support');
+            localStorage.setItem('mybp-communication-support', JSON.stringify(communicationSupport));
         }
     });
 
     // Apply settings from localStorage on every page load
-    // This simulates server-side session persistence
     window.addEventListener('load', function() {
-        const settings = getSettingsFromPage();
-        
         // Re-apply settings after any dynamic content loads
         setTimeout(function() {
             applyAccessibilitySettings();
         }, 100);
     });
+
+    // Announce important changes to screen readers
+    function announceToScreenReader(message) {
+        const announcement = document.createElement('div');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.className = 'nhsuk-u-visually-hidden';
+        announcement.textContent = message;
+        
+        document.body.appendChild(announcement);
+        
+        // Remove after announcement
+        setTimeout(function() {
+            document.body.removeChild(announcement);
+        }, 1000);
+    }
+
+    // Export function for use in other scripts
+    window.MyBPAccessibility = {
+        applySettings: applyAccessibilitySettings,
+        announce: announceToScreenReader
+    };
 
 })();

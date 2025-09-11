@@ -67,164 +67,172 @@
 }
 
 ///////////////////////////////////////////
-// Accessibility settings styles
+// Accessibility settings styles - NHS compliant
 ///////////////////////////////////////////
 
-// Large text mode
-.large-text-enabled {
-  font-size: 1.2em !important;
+// Text size settings - following NHS responsive typography
+.text-size-large {
+  font-size: 1.125em; // 18px base instead of 16px
   
   h1, .nhsuk-heading-xl {
-    font-size: 2.4rem !important;
+    font-size: 2.25rem; // Proportionally larger
   }
   
   h2, .nhsuk-heading-l {
-    font-size: 2rem !important;
+    font-size: 1.875rem;
   }
   
   h3, .nhsuk-heading-m {
-    font-size: 1.6rem !important;
+    font-size: 1.5rem;
   }
   
   h4, .nhsuk-heading-s {
-    font-size: 1.4rem !important;
+    font-size: 1.25rem;
   }
   
   p, .nhsuk-body-m, .nhsuk-body-l {
-    font-size: 1.2rem !important;
-  }
-  
-  .nhsuk-lede-text {
-    font-size: 1.4rem !important;
-  }
-  
-  button, .nhsuk-button {
-    font-size: 1.2rem !important;
-    padding: 16px 24px !important;
-  }
-}
-
-// High contrast mode
-.high-contrast-enabled {
-  background: #000000 !important;
-  color: #ffffff !important;
-  
-  * {
-    background: inherit !important;
-    color: inherit !important;
-  }
-  
-  .nhsuk-button {
-    background: #ffff00 !important;
-    color: #000000 !important;
-    border: 2px solid #ffffff !important;
-    
-    &:hover, &:focus {
-      background: #ffffff !important;
-      color: #000000 !important;
-    }
-  }
-  
-  .nhsuk-button--secondary {
-    background: #ffffff !important;
-    color: #000000 !important;
-    border: 2px solid #ffffff !important;
-    
-    &:hover, &:focus {
-      background: #ffff00 !important;
-      color: #000000 !important;
-    }
-  }
-  
-  a, .nhsuk-link {
-    color: #ffff00 !important;
-    text-decoration: underline !important;
-    
-    &:hover, &:focus {
-      color: #ffffff !important;
-    }
-  }
-  
-  .nhsuk-card {
-    background: #333333 !important;
-    border: 2px solid #ffffff !important;
-  }
-  
-  .nhsuk-tag {
-    background: #ffff00 !important;
-    color: #000000 !important;
-  }
-  
-  .nhsuk-notification-banner {
-    background: #004225 !important;
-    border: 2px solid #ffffff !important;
-  }
-  
-  .nhsuk-back-link__link {
-    color: #ffff00 !important;
-  }
-  
-  .nhsuk-checkboxes__input:focus + .nhsuk-checkboxes__label::before {
-    box-shadow: 0 0 0 4px #ffff00 !important;
-  }
-  
-  .nhsuk-select:focus {
-    box-shadow: 0 0 0 4px #ffff00 !important;
-  }
-}
-
-// Voice readback styles
-.voice-readback-enabled {
-  .voice-readable {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    
-    &:hover {
-      background-color: rgba(0, 94, 184, 0.1);
-    }
-    
-    &.reading {
-      background-color: rgba(0, 94, 184, 0.2);
-      outline: 2px solid #005eb8;
-    }
-  }
-}
-
-// EasyRead mode styles
-.easy-read-enabled {
-  .nhsuk-lede-text {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
     line-height: 1.6;
   }
   
-  p, .nhsuk-body-m {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 24px;
+  .nhsuk-lede-text {
+    font-size: 1.3rem;
   }
   
-  // Simplify complex components in EasyRead mode
-  .nhsuk-summary-list {
-    .nhsuk-summary-list__key {
-      font-weight: bold;
-      font-size: 1.1rem;
+  button, .nhsuk-button {
+    font-size: 1.125rem;
+    padding: 14px 20px;
+  }
+}
+
+.text-size-extra-large {
+  font-size: 1.25em; // 20px base
+  
+  h1, .nhsuk-heading-xl {
+    font-size: 2.5rem;
+  }
+  
+  h2, .nhsuk-heading-l {
+    font-size: 2rem;
+  }
+  
+  h3, .nhsuk-heading-m {
+    font-size: 1.75rem;
+  }
+  
+  h4, .nhsuk-heading-s {
+    font-size: 1.5rem;
+  }
+  
+  p, .nhsuk-body-m, .nhsuk-body-l {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  
+  .nhsuk-lede-text {
+    font-size: 1.5rem;
+  }
+  
+  button, .nhsuk-button {
+    font-size: 1.25rem;
+    padding: 16px 24px;
+  }
+}
+
+// Bold text setting - subtle enhancement
+.bold-text-enabled {
+  p, .nhsuk-body-m, .nhsuk-body-l, 
+  .nhsuk-card__description, .nhsuk-card__content {
+    font-weight: 500; // Medium weight instead of bold to maintain readability
+  }
+  
+  .nhsuk-lede-text {
+    font-weight: 600;
+  }
+}
+
+// Enhanced button labels
+.button-labels-enabled {
+  .nhsuk-button {
+    position: relative;
+    
+    &::after {
+      content: attr(aria-label);
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      background: #212b32;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 10;
     }
     
-    .nhsuk-summary-list__value {
-      font-size: 1.1rem;
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
     }
   }
   
-  // Add icons to buttons in EasyRead mode
-  .nhsuk-button::before {
-    content: "➤ ";
+  .nhsuk-link {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+}
+
+// Reduce motion - respects user preferences
+.reduce-motion-enabled {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Easy read format - simplified layout
+.easy-read-enabled {
+  .nhsuk-lede-text,
+  p, .nhsuk-body-m {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  // Simplify form labels
+  .nhsuk-label {
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .nhsuk-hint {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  
+  // Add visual indicators for important elements
+  .nhsuk-button--primary::before {
+    content: "→ ";
+    margin-right: 4px;
+  }
+  
+  .nhsuk-warning-callout::before {
+    content: "⚠ ";
     margin-right: 8px;
   }
 }
 
-// BSL video indicator
-.bsl-videos-enabled {
-  .bsl-video-available {
+// BSL interpretation indicator
+.bsl-interpretation-enabled {
+  .bsl-available {
     position: relative;
     
     &::after {
@@ -234,10 +242,45 @@
       right: 8px;
       background: #005eb8;
       color: white;
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-weight: bold;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
+  }
+}
+
+// Focus enhancements for better keyboard navigation
+.nhsuk-button:focus,
+.nhsuk-link:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #ffb81c;
+  outline-offset: 0;
+  box-shadow: 0 0 0 3px #ffb81c;
+}
+
+// High contrast improvements - more subtle than before
+@media (prefers-contrast: high) {
+  .nhsuk-button {
+    border: 2px solid currentColor;
+  }
+  
+  .nhsuk-card {
+    border: 1px solid #425563;
+  }
+}
+
+// Respect system preferences
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -10,7 +10,7 @@ MAHM is a demonstration NHS App prototype for Multi-Agentic AI Hypertension Mana
 
 ### Key Project Details
 - **Purpose**: Demonstrate AI-supported hypertension care integration within NHS App
-- **Data**: ALL data is simulated for demonstration only - NOT for clinical use
+- **Data**: **all data** is simulated for demonstration only - NOT for clinical use
 
 ## Technology Stack and Development Practices: NHS Prototype Kit
 - **Framework**: Node.js with Express.js web framework

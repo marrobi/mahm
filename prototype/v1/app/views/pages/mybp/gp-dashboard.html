@@ -1,0 +1,258 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Professional tools" %}
+{% set pageHeading = "GP Practice Analytics Dashboard - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Comprehensive hypertension management overview with health inequality monitoring.
+      </p>
+
+      <!-- SECTION - PRACTICE OVERVIEW -->
+      {{ nhsappSectionHeading({
+        headingText: "Practice-wide NICE guidelines adherence"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #00a499; color: white; padding: 20px; border-radius: 8px; text-align: center;">
+            <h3 class="nhsuk-u-margin-bottom-2" style="color: white;">78%</h3>
+            <p class="nhsuk-u-margin-bottom-0" style="color: white;">Overall NICE compliance</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0" style="color: white;">Target: 85%</p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #ffb81c; color: white; padding: 20px; border-radius: 8px; text-align: center;">
+            <h3 class="nhsuk-u-margin-bottom-2" style="color: white;">72%</h3>
+            <p class="nhsuk-u-margin-bottom-0" style="color: white;">BP target achievement</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0" style="color: white;">&lt;140/90 mmHg</p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #005eb8; color: white; padding: 20px; border-radius: 8px; text-align: center;">
+            <h3 class="nhsuk-u-margin-bottom-2" style="color: white;">1,247</h3>
+            <p class="nhsuk-u-margin-bottom-0" style="color: white;">Active hypertension patients</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0" style="color: white;">My BP managed: 389</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - HEALTH INEQUALITY MONITORING -->
+      {{ nhsappSectionHeading({
+        headingText: "Health inequality monitoring"
+      }) }}
+      
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="inequality-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="inequality-banner-title">
+            Attention needed
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p>BP control gaps identified in marginalised groups requiring targeted intervention.</p>
+        </div>
+      </div>
+
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">BP control rates by demographic group</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Patient group
+            </th>
+            <th role="columnheader" class="" scope="col">
+              BP control rate
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Gap vs practice average
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Action needed
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">IMD Quintile 1 (most deprived)</td>
+            <td class="nhsuk-table__cell">58% <span class="nhsuk-tag nhsuk-tag--red">Low</span></td>
+            <td class="nhsuk-table__cell">-14%</td>
+            <td class="nhsuk-table__cell"><a href="#action-deprived">Targeted outreach</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">South Asian ethnicity</td>
+            <td class="nhsuk-table__cell">65% <span class="nhsuk-tag nhsuk-tag--orange">Below target</span></td>
+            <td class="nhsuk-table__cell">-7%</td>
+            <td class="nhsuk-table__cell"><a href="#action-ethnicity">Cultural adaptations</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Elderly (75+)</td>
+            <td class="nhsuk-table__cell">69% <span class="nhsuk-tag nhsuk-tag--orange">Below target</span></td>
+            <td class="nhsuk-table__cell">-3%</td>
+            <td class="nhsuk-table__cell"><a href="#action-elderly">Enhanced support</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Digitally excluded</td>
+            <td class="nhsuk-table__cell">61% <span class="nhsuk-tag nhsuk-tag--red">Low</span></td>
+            <td class="nhsuk-table__cell">-11%</td>
+            <td class="nhsuk-table__cell"><a href="#action-digital">Face-to-face priority</a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Practice average</td>
+            <td class="nhsuk-table__cell">72% <span class="nhsuk-tag nhsuk-tag--green">Target</span></td>
+            <td class="nhsuk-table__cell">Baseline</td>
+            <td class="nhsuk-table__cell">Continue monitoring</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SECTION - AGENT PERFORMANCE -->
+      {{ nhsappSectionHeading({
+        headingText: "Multi-agent system performance"
+      }) }}
+      
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <h4>Agent coordination metrics</h4>
+          <ul class="nhsuk-list">
+            <li><strong>Orchestrating Agent:</strong> <span class="nhsuk-tag nhsuk-tag--green">99.2%</span> uptime</li>
+            <li><strong>Red Flag Agent:</strong> <span class="nhsuk-tag nhsuk-tag--green">100%</span> response rate</li>
+            <li><strong>Monitoring Agent:</strong> <span class="nhsuk-tag nhsuk-tag--green">94%</span> test completion</li>
+            <li><strong>Titration Agent:</strong> <span class="nhsuk-tag nhsuk-tag--green">87%</span> target achievement</li>
+          </ul>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <h4>Safety escalations (last 30 days)</h4>
+          <ul class="nhsuk-list">
+            <li><strong>Immediate escalations:</strong> 12 cases</li>
+            <li><strong>Urgent escalations:</strong> 28 cases</li>
+            <li><strong>Routine escalations:</strong> 145 cases</li>
+            <li><strong>False positives:</strong> 0 cases <span class="nhsuk-tag nhsuk-tag--green">Excellent</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION - PATIENT CATEGORIES -->
+      {{ nhsappSectionHeading({
+        headingText: "Patient category distribution"
+      }) }}
+      
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #e8f4fd; border-left: 4px solid #005eb8; padding: 16px; border-radius: 4px;">
+            <h4>Category A: Known Hypertension</h4>
+            <p><strong>289 patients</strong></p>
+            <p class="nhsuk-u-font-size-14">Treatment management phase</p>
+            <p class="nhsuk-u-font-size-14">74% achieving BP targets</p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #f0f4f5; border-left: 4px solid #768692; padding: 16px; border-radius: 4px;">
+            <h4>Category B: Surveillance</h4>
+            <p><strong>167 patients</strong></p>
+            <p class="nhsuk-u-font-size-14">Normotensive monitoring</p>
+            <p class="nhsuk-u-font-size-14">95% attendance rate</p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <div style="background: #fef5e7; border-left: 4px solid #ffb81c; padding: 16px; border-radius: 4px;">
+            <h4>Category C: New Diagnosis</h4>
+            <p><strong>43 patients</strong></p>
+            <p class="nhsuk-u-font-size-14">Diagnostic pathway</p>
+            <p class="nhsuk-u-font-size-14">Avg 4.2 weeks to diagnosis</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - WORKLOAD REDUCTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Practice workload impact"
+      }) }}
+      
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Information">💡</span>Estimated time savings
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul>
+            <li><strong>Routine BP monitoring:</strong> 12 hours/week saved through community partnerships</li>
+            <li><strong>Medication titration:</strong> 8 hours/week saved through AI-supported decisions</li>
+            <li><strong>Patient education:</strong> 6 hours/week saved through automated resources</li>
+            <li><strong>Administrative tasks:</strong> 15 hours/week saved through EHR integration</li>
+          </ul>
+          <p><strong>Total estimated saving: 41 hours/week</strong> - equivalent to 1 FTE clinician</p>
+        </div>
+      </div>
+
+      <!-- SECTION - EHR INTEGRATION STATUS -->
+      {{ nhsappSectionHeading({
+        headingText: "EHR integration status"
+      }) }}
+      
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">System connectivity status</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">System</th>
+            <th role="columnheader" class="" scope="col">Status</th>
+            <th role="columnheader" class="" scope="col">Last sync</th>
+            <th role="columnheader" class="" scope="col">Data flow</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EMIS Web</td>
+            <td class="nhsuk-table__cell"><span class="nhsuk-tag nhsuk-tag--green">Connected</span></td>
+            <td class="nhsuk-table__cell">2 minutes ago</td>
+            <td class="nhsuk-table__cell">Bidirectional</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">TPP SystmOne</td>
+            <td class="nhsuk-table__cell"><span class="nhsuk-tag nhsuk-tag--green">Connected</span></td>
+            <td class="nhsuk-table__cell">5 minutes ago</td>
+            <td class="nhsuk-table__cell">Bidirectional</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">QOF Reporting</td>
+            <td class="nhsuk-table__cell"><span class="nhsuk-tag nhsuk-tag--green">Active</span></td>
+            <td class="nhsuk-table__cell">Daily updates</td>
+            <td class="nhsuk-table__cell">Automated</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS App</td>
+            <td class="nhsuk-table__cell"><span class="nhsuk-tag nhsuk-tag--green">Integrated</span></td>
+            <td class="nhsuk-table__cell">Real-time</td>
+            <td class="nhsuk-table__cell">Patient-facing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Return to patient view</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

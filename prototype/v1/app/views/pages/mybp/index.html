@@ -25,15 +25,74 @@
       })}}
 
       <p class="nhsuk-lede-text">
-        Manage your blood pressure and medication with AI-supported care.
+        Manage your blood pressure and medication with AI-supported care from 9 specialized agents coordinated by our NHS-approved system.
       </p>
+
+      <!-- EMERGENCY SUPPORT BUTTON -->
+      <div class="nhsuk-u-margin-bottom-4">
+        <a href="/pages/mybp/emergency" class="nhsuk-button nhsuk-button--warning" role="button">
+          🚨 Get Help Now
+        </a>
+        <p class="nhsuk-u-font-size-14 nhsuk-u-margin-top-1">For urgent BP concerns or medication side effects</p>
+      </div>
+
+      <!-- SECTION - BP TRENDS -->
+      {{ nhsappSectionHeading({
+        headingText: "Your BP trends"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 16px; border-radius: 8px; border-left: 4px solid #ffb81c;">
+            <h4 class="nhsuk-u-margin-bottom-2">Latest reading: <span class="nhsuk-tag nhsuk-tag--orange">142/88 mmHg</span></h4>
+            <p class="nhsuk-u-margin-bottom-2"><strong>Status:</strong> Above target - medication review recommended</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0">Target: &lt;140/90 mmHg | Taken: 3 days ago | Trend: ↗️ Slightly increasing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - NEXT ACTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Next actions for you"
+      }) }}
+      
+      <div class="nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-notification-banner" role="region" aria-labelledby="next-actions-title">
+          <div class="nhsuk-notification-banner__header">
+            <h2 class="nhsuk-notification-banner__title" id="next-actions-title">
+              Personalized recommendations
+            </h2>
+          </div>
+          <div class="nhsuk-notification-banner__content">
+            <ol class="nhsuk-list nhsuk-list--number">
+              <li><strong>Review medication</strong> - Your recent readings suggest a dose adjustment may help</li>
+              <li><strong>Book BP check</strong> - Schedule your next measurement within 2 weeks</li>
+              <li><strong>Check lab results</strong> - Your latest U&E test results are available</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - MEDICATION REMINDERS -->
+      {{ nhsappSectionHeading({
+        headingText: "Medication reminders"
+      }) }}
+      
+      <div class="nhsuk-u-margin-bottom-4">
+        <div style="background: #ffffff; border: 2px solid #00a499; padding: 16px; border-radius: 8px;">
+          <h4 class="nhsuk-u-margin-bottom-2">Today's medication: <span class="nhsuk-tag nhsuk-tag--green">Taken ✓</span></h4>
+          <p class="nhsuk-u-margin-bottom-2"><strong>Amlodipine 5mg</strong> - Taken at 8:00 AM</p>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-2">Next dose: Tomorrow at 8:00 AM</p>
+          <p class="nhsuk-u-font-size-14">💡 <strong>Adherence rate:</strong> 94% this month (excellent!)</p>
+        </div>
+      </div>
 
       <!-- SECTION - HYPERTENSION MANAGEMENT -->
       {{ nhsappSectionHeading({
-        headingText: "What would you like to do today?"
+        headingText: "Manage your care"
       }) }}
 
-      <p>Choose from the options below to manage your blood pressure care:</p>
+      <p>Your care is coordinated by our AI agent system following NICE guidelines:</p>
 
       {{ nhsappCardGroup({
         stacked: true,
@@ -63,23 +122,103 @@
 
       <!-- SECTION - RECENT ACTIVITY -->
       {{ nhsappSectionHeading({
-        headingText: "Recent activity"
+        headingText: "Recent activity & progress tracking"
       }) }}
       
-      <ul class="nhsuk-list">
-        <li>
-          <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
-        </li>
-        <li>
-          <strong>Latest lab results:</strong> <span class="nhsuk-tag nhsuk-tag--green">Normal</span> U&E test (28 Oct 2024)
-        </li>
-        <li>
-          <strong>Current medication:</strong> Amlodipine 5mg daily
-        </li>
-        <li>
-          <strong>Next appointment:</strong> 15 October 2024
-        </li>
-      </ul>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <h4>Clinical updates</h4>
+          <ul class="nhsuk-list">
+            <li>
+              <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
+            </li>
+            <li>
+              <strong>Latest lab results:</strong> <span class="nhsuk-tag nhsuk-tag--green">Normal</span> U&E test (28 Oct 2024)
+            </li>
+            <li>
+              <strong>Current medication:</strong> Amlodipine 5mg daily
+            </li>
+            <li>
+              <strong>Next appointment:</strong> 15 October 2024
+            </li>
+          </ul>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <h4>Lifestyle progress</h4>
+          <ul class="nhsuk-list">
+            <li>
+              <strong>Exercise goal:</strong> <span class="nhsuk-tag nhsuk-tag--green">3/3 sessions</span> this week
+            </li>
+            <li>
+              <strong>Medication adherence:</strong> <span class="nhsuk-tag nhsuk-tag--green">94%</span> this month
+            </li>
+            <li>
+              <strong>Weight tracking:</strong> <span class="nhsuk-tag nhsuk-tag--blue">2kg reduction</span> since start
+            </li>
+            <li>
+              <strong>Sodium reduction:</strong> <span class="nhsuk-tag nhsuk-tag--yellow">In progress</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION - PATIENT CATEGORY -->
+      {{ nhsappSectionHeading({
+        headingText: "Your care pathway"
+      }) }}
+      
+      <div class="nhsuk-u-margin-bottom-4">
+        <div style="background: #e8f4fd; border-left: 4px solid #005eb8; padding: 16px; border-radius: 4px;">
+          <h4 class="nhsuk-u-margin-bottom-2">Category A: Known Hypertension Patient</h4>
+          <p class="nhsuk-u-margin-bottom-2">You have an established essential hypertension diagnosis and are receiving ongoing treatment management.</p>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0"><strong>Active agents:</strong> Orchestrating Agent, Titration Agent, Monitoring Agent, Medication Adherence Agent</p>
+        </div>
+      </div>
+
+      <!-- SECTION - ACCESSIBILITY OPTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Accessibility options"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-grid-column-full">
+          <p>Make this service easier to use:</p>
+          <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="large-text" name="accessibility" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="large-text">
+                Large text for easier reading
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="voice-readback" name="accessibility" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="voice-readback">
+                Voice readback of key information
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="simplified-language" name="accessibility" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="simplified-language">
+                Simplified language (EasyRead)
+              </label>
+            </div>
+          </div>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-top-2">
+            <a href="/pages/mybp/accessibility">More accessibility options</a> | 
+            <a href="/pages/mybp/languages">Other languages available</a> | 
+            <a href="/pages/mybp/bsl-support">BSL interpretation</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- SECTION - HEALTHCARE PROFESSIONAL ACCESS -->
+      <div class="nhsuk-u-margin-top-6">
+        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+        <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-2">
+          <strong>Healthcare professionals:</strong> 
+          <a href="/pages/mybp/gp-dashboard">Access GP Practice Analytics Dashboard</a>
+        </p>
+      </div>
 
     </div>
   </div>

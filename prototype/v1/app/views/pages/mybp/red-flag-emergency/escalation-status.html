@@ -20,51 +20,56 @@
 
       <div class="nhsuk-inset-text" style="border-left-color: #005eb8;">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Emergency alert activated:</strong> 2:45 PM on 15 October 2024</p>
+        <p><strong>Emergency alert activated:</strong> 14:45 on 15 October 2024</p>
         <p><strong>Protocol:</strong> GP confirmation required within 15 minutes, or automatic escalation to out-of-hours service</p>
       </div>
 
       <div class="nhsuk-summary-card">
         <div class="nhsuk-summary-card__header">
           <h2 class="nhsuk-summary-card__title">
-            ✅ Care arranged for you
+            ✅ Your care arrangements
           </h2>
         </div>
         <div class="nhsuk-summary-card__body">
+          <p class="nhsuk-u-margin-bottom-4"><strong>Care pathway determined by orchestrator following NICE guidelines:</strong></p>
+          
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                GP practice notified
+                GP practice notification
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--green">Complete</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">Rose Medical Practice contacted at 2:45 PM</span>
+                <strong class="nhsuk-tag nhsuk-tag--blue">Complete</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">Rose Medical Practice contacted at 14:45</span>
+                <br><span class="nhsuk-u-secondary-text-colour"><em>Status: Completed action</em></span>
               </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Urgent appointment
+                Clinical assessment required
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--yellow">In progress</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">GP will call you within 2 hours</span>
+                <strong class="nhsuk-tag nhsuk-tag--orange">Urgent</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">GP assessment within 2 hours</span>
+                <br><span class="nhsuk-u-secondary-text-colour"><em>Priority: High urgency due to BP ≥180/110 mmHg with symptoms</em></span>
               </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Priority level
+                Hospital pathway
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--red">Urgent</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">Blood pressure ≥180/110 mmHg</span>
+                <strong class="nhsuk-tag nhsuk-tag--grey">Standby</strong>
+                <br><span class="nhsuk-u-secondary-text-colour">A&E referral if GP determines emergency</span>
+                <br><span class="nhsuk-u-secondary-text-colour"><em>Status: Available if clinical assessment indicates immediate hospital care needed</em></span>
               </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Your details shared
+                Patient details shared
               </dt>
               <dd class="nhsuk-summary-list__value">
                 BP reading: 195/115 mmHg<br>
@@ -74,10 +79,15 @@
               </dd>
             </div>
           </dl>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><strong>Colour coding:</strong> Blue = completed actions, Orange = urgent actions required, Grey = standby/conditional actions</p>
+          </div>
         </div>
       </div>
 
-      <h2 class="nhsuk-heading-m">What to expect</h2>
+      <h2 class="nhsuk-heading-m">Care pathway timeline</h2>
       
       <div class="nhsuk-timeline">
         <ol class="nhsuk-timeline__list">
@@ -85,7 +95,7 @@
             <div class="nhsuk-timeline__header">
               <h3 class="nhsuk-timeline__title">Now - Follow safety advice</h3>
               <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">2:45 PM</time>
+                <time datetime="2024-10-15">14:45</time>
               </p>
             </div>
             <div class="nhsuk-timeline__body">
@@ -96,27 +106,27 @@
 
           <li class="nhsuk-timeline__item">
             <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">Within 2 hours - GP assessment</h3>
+              <h3 class="nhsuk-timeline__title">Within 2 hours - GP clinical assessment</h3>
               <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">Before 4:45 PM</time>
+                <time datetime="2024-10-15">Before 16:45</time>
               </p>
             </div>
             <div class="nhsuk-timeline__body">
-              <p>A GP will call you to assess your condition and provide further instructions.</p>
-              <p class="nhsuk-u-secondary-text-colour">⏳ Waiting</p>
+              <p>A GP will call you to assess your condition following NICE CG127 guidelines and determine if hospital referral is needed.</p>
+              <p class="nhsuk-u-secondary-text-colour">⏳ Waiting for GP contact</p>
             </div>
           </li>
 
           <li class="nhsuk-timeline__item">
             <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">If needed - Hospital referral</h3>
+              <h3 class="nhsuk-timeline__title">If required - A&E emergency referral</h3>
               <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">If required by GP</time>
+                <time datetime="2024-10-15">If GP determines emergency</time>
               </p>
             </div>
             <div class="nhsuk-timeline__body">
-              <p>If your GP determines you need immediate hospital care, they will arrange this for you.</p>
-              <p class="nhsuk-u-secondary-text-colour">🏥 Standby</p>
+              <p>If your GP assessment indicates hypertensive emergency (papilloedema, acute target organ damage, or life-threatening symptoms), immediate A&E referral will be arranged.</p>
+              <p class="nhsuk-u-secondary-text-colour">🚨 Emergency pathway available</p>
             </div>
           </li>
 
@@ -124,7 +134,7 @@
             <div class="nhsuk-timeline__header">
               <h3 class="nhsuk-timeline__title">24-hour follow-up check</h3>
               <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-16">Tomorrow 2:45 PM</time>
+                <time datetime="2024-10-16">Tomorrow 14:45</time>
               </p>
             </div>
             <div class="nhsuk-timeline__body">

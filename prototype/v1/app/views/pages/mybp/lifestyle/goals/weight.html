@@ -20,8 +20,14 @@
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
         heading: "Weight Management",
-        subtitle: "Track your progress towards better heart health"
+        subtitle: "NHS-supported weight loss for blood pressure improvement"
       })}}
+
+      <!-- CLINICAL CONTEXT BANNER -->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Clinical goal:</strong> Losing 5-10% of body weight can significantly improve your blood pressure control (NICE CG127). Your progress is coordinated with your medication management and monitored by the AI system for safety.</p>
+      </div>
 
       <!-- CURRENT PROGRESS SECTION -->
       {{ nhsappSectionHeading({
@@ -54,9 +60,10 @@
           </div>
         </div>
         <div class="goal-summary-details">
-          <p><strong>Target:</strong> Lose 5kg for better blood pressure control</p>
+          <p><strong>Target:</strong> Lose 5kg for better blood pressure control (NICE guideline recommended)</p>
           <p><strong>Started:</strong> 3 weeks ago</p>
           <p><strong>Average per week:</strong> 1.1kg</p>
+          <p><strong>AI monitoring:</strong> Progress shared with GP monthly, blood pressure tracking coordinated</p>
         </div>
       </div>
 
@@ -173,7 +180,7 @@
       <div class="goal-tips">
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p><strong>Did you know?</strong> Losing even 5-10% of your body weight can significantly improve your blood pressure control.</p>
+          <p><strong>Did you know?</strong> Losing even 5-10% of your body weight can significantly improve your blood pressure control. This tip is from NHS clinical guidance (NICE CG127).</p>
         </div>
 
         <div class="goal-tip-cards">
@@ -181,11 +188,11 @@
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading">
                 <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/healthy-cooking">
-                  Heart-healthy cooking tips
+                  NHS Heart-healthy cooking tips
                 </a>
               </h3>
               <p class="nhsuk-card__description">
-                Simple ways to reduce calories while keeping your meals delicious and culturally appropriate.
+                Simple ways to reduce calories while keeping your meals delicious and culturally appropriate. Created by NHS dietitians.
               </p>
             </div>
           </div>
@@ -194,13 +201,35 @@
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading">
                 <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/portion-control">
-                  Understanding portion sizes
+                  NHS Understanding portion sizes
                 </a>
               </h3>
               <p class="nhsuk-card__description">
-                Visual guides to help you manage portion sizes without a scale or measuring cups.
+                Visual guides to help you manage portion sizes without a scale or measuring cups. Based on NHS Better Health guidelines.
               </p>
             </div>
+          </div>
+        </div>
+
+        <!-- NHS SERVICE REFERRAL OPTION -->
+        <div class="nhsuk-care-card nhsuk-care-card--immediate">
+          <div class="nhsuk-care-card__heading-container">
+            <h3 class="nhsuk-care-card__heading">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Immediate action required: </span>
+                Need additional support?
+              </span>
+            </h3>
+            <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+          </div>
+          <div class="nhsuk-care-card__content">
+            <p>The AI system can refer you to:</p>
+            <ul>
+              <li><strong>NHS Healthier You programme:</strong> Free 12-week weight management course</li>
+              <li><strong>Dietitian consultation:</strong> Culturally-appropriate dietary advice</li>
+              <li><strong>Exercise referral scheme:</strong> Supervised physical activity programmes</li>
+            </ul>
+            <p><strong>All NHS services are free at the point of use.</strong> Speak to your GP or use the NHS app to request a referral.</p>
           </div>
         </div>
       </div>

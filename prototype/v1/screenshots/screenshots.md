@@ -77,15 +77,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Lifestyle & Behaviour Change Hub (5 screens)
+## Lifestyle & Behaviour Change Hub (5 screens) - MVP Aligned
 
-### 1. Lifestyle Hub Dashboard
-![Lifestyle Hub Dashboard](lifestyle-hub-dashboard.png)
-**Lifestyle Hub Dashboard** - Main dashboard showing active referrals (Community Nutrition Program, Local Walking Group), goal tracking overview (weight, activity, salt & alcohol), culturally-tailored content recommendations, and weekly achievements with progress badges.
+### 1. Lifestyle Hub Dashboard (MVP Updated)
+![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-mvp-updated.png)
+**Lifestyle Hub Dashboard - MVP Aligned** - Main dashboard now emphasizing clinical safety as the top priority with urgent safety banner, NHS service integration showing active referrals to "NHS Healthier You" programme and NHS Exercise Referral schemes, AI system coordination notice explaining how lifestyle activities are coordinated with BP monitoring and medication management, and NICE guideline-aligned goal tracking with clinical rationale for each target.
 
-### 2. Weight Management Goal Tracking
-![Weight Management Goal](weight-management-goal.png)
-**Weight Management Goal Tracking** - Circular progress visualization showing 3.2kg lost of 5kg target (65% complete), recent weight entries with daily tracking, achievement badges for consistency streaks, and heart-healthy cooking tips and support resources.
+### 2. Weight Management Goal Tracking (MVP Updated)
+![Weight Management Goal](weight-management-goal-mvp-updated.png)
+**Weight Management Goal Tracking - MVP Enhanced** - Updated with clinical context banner explaining 5-10% weight loss targets from NICE CG127, AI monitoring integration showing progress shared with GP monthly, enhanced target information referencing NICE guidelines, and NHS service referral options including NHS Healthier You programme, dietitian consultations, and exercise referral schemes - all free at point of use.
 
 ### 3. Physical Activity Goal Tracking
 ![Physical Activity Goal](physical-activity-goal.png)
@@ -95,23 +95,27 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Salt & Alcohol Monitoring](salt-alcohol-monitoring.png)
 **Salt & Alcohol Monitoring** - Dual-tab interface for tracking daily salt and alcohol intake, progress trends showing improvement over time, educational resources for low-salt cooking techniques and healthy alternatives, and achievement tracking for meeting targets.
 
-### 5. Content Browser with Cultural Filtering
-![Content Browser](content-browser.png)
-**Content Browser with Cultural Filtering** - Interactive filtering system with topic categories (Recipes, Exercise, Guidance, Meditation, Community) and cultural filters (Caribbean, South Asian, African, Muslim, General), featured content with ratings and reading time estimates, and comprehensive health content library.
+### 5. Content Browser with Cultural Filtering (MVP Updated)
+![Content Browser](content-browser-mvp-updated.png)
+**Content Browser - MVP Enhanced** - Now prominently featuring NHS "Million Hearts and Minds" programme content, NHS verification badges for clinical content, enhanced accessibility information with multiple format options (audio, EasyRead, BSL interpretation, multiple languages), and clear messaging about free NHS service provision. Includes comprehensive accessibility support notice for digitally excluded patients with telephone and face-to-face consultation options.
 
 ---
 
-## Key Features Demonstrated
+## Key Features Demonstrated - MVP Compliance
 
+- **Clinical Safety Priority**: Prominent safety warnings and escalation pathways throughout all screens
+- **Multi-Agent System Integration**: Clear demonstration of how Lifestyle Agent coordinates with Orchestrating Agent, Monitoring Agent, and other system components
+- **NHS Service Integration**: Explicit integration with NHS Healthier You programme, NHS exercise referral schemes, NHS Stop Smoking Service, and NHS "Million Hearts and Minds" cultural health programme
+- **NICE Guidelines Compliance**: Clinical targets and recommendations explicitly reference NICE CG127 hypertension guidelines
+- **Accessibility & Cultural Sensitivity**: Comprehensive multi-format content delivery including audio, EasyRead, BSL interpretation, multiple languages, and support for digitally excluded patients
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
-- **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
-- **Cultural Adaptation**: Content and features tailored for diverse cultural backgrounds
-- **Goal Tracking**: Visual progress indicators and achievement systems for health goals
-- **Lifestyle Integration**: Comprehensive tools for tracking and improving lifestyle factors affecting blood pressure
+- **Full User Journeys**: Complete end-to-end workflows integrated with broader hypertension management system
+- **AI System Coordination**: Clear visibility of how lifestyle interventions are coordinated with BP monitoring, medication management, and clinical oversight
+- **Free NHS Service Emphasis**: Consistent messaging about all services being free at point of use
+- **GP Integration**: Clear pathways for escalation to GP when clinical oversight is needed
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

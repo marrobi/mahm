@@ -19,9 +19,15 @@
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
-        heading: "Health Content",
-        subtitle: "Culturally-tailored resources for better health"
+        heading: "NHS Health Content Browser",
+        subtitle: "Culturally-tailored NHS resources supporting hypertension management"
       })}}
+
+      <!-- NHS SERVICE NOTICE -->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Free NHS service:</strong> All content and referrals are provided free of charge as part of your NHS care. Content is coordinated with your blood pressure management by our AI system.</p>
+      </div>
 
       <!-- CONTENT FILTERS -->
       <div class="content-filters">
@@ -50,9 +56,9 @@
         </div>
       </div>
 
-      <!-- FEATURED CONTENT -->
+      <!-- NHS MILLION HEARTS AND MINDS FEATURED -->
       {{ nhsappSectionHeading({
-        headingText: "Featured this week"
+        headingText: "Featured NHS content - Million Hearts and Minds programme"
       }) }}
 
       <div class="content-featured">
@@ -69,11 +75,12 @@
               </a>
             </h3>
             <p class="nhsuk-card__description">
-              Traditional Caribbean dishes adapted for better blood pressure management. Includes jerk chicken, rice and peas, and callaloo with reduced salt and increased flavor.
+              Traditional Caribbean dishes adapted for better blood pressure management by NHS dietitians. Part of NHS "Million Hearts and Minds" cultural health programme. Includes jerk chicken, rice and peas, and callaloo with reduced salt and increased flavor.
             </p>
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
               <span class="nhsuk-tag nhsuk-tag--blue">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">15 min read</span>
               <span class="content-card-rating">
                 ⭐⭐⭐⭐⭐ (4.8)
@@ -95,11 +102,12 @@
               </a>
             </h3>
             <p class="nhsuk-card__description">
-              Comprehensive guidance for managing hypertension medication and lifestyle during the holy month, including timing adjustments and healthy iftar options.
+              Comprehensive guidance for managing hypertension medication and lifestyle during the holy month, reviewed by NHS clinical team with religious scholars. Including timing adjustments and healthy iftar options.
             </p>
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
               <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">10 min read</span>
               <span class="content-card-rating">
                 ⭐⭐⭐⭐⭐ (4.9)
@@ -302,6 +310,31 @@
               <span class="content-card-time">8 min read</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- ACCESSIBILITY AND MULTI-FORMAT SUPPORT -->
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+              Accessing content in your preferred format
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p><strong>This NHS content is available in multiple formats:</strong></p>
+          <ul>
+            <li><strong>Audio format:</strong> Use NHS app audio feature or your device's screen reader</li>
+            <li><strong>Large text:</strong> Adjust text size in your device accessibility settings</li>
+            <li><strong>EasyRead format:</strong> Simplified versions available for all content</li>
+            <li><strong>Multiple languages:</strong> Including Urdu, Bengali, Polish, Punjabi, and others</li>
+            <li><strong>BSL interpretation:</strong> Available for video content via NHS app</li>
+          </ul>
+          <p><strong>For digitally excluded patients:</strong> Telephone support (call your GP practice) or face-to-face consultations available.</p>
+          <p><strong>Voice AI agent:</strong> Complete questionnaires and access content using voice commands through the NHS app.</p>
         </div>
       </div>
 

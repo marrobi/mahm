@@ -1,12 +1,12 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Accessibility options - My BP" %}
+{% set pageHeading = "All accessibility options - My BP" %}
 
 {% block beforeContent %}
   {{ backLink({
-    text: "Back to My BP",
-    href: "/pages/mybp/index"
+    text: "Back to accessibility",
+    href: "/pages/mybp/accessibility-hub"
   }) }}
 {% endblock %}
 
@@ -20,8 +20,13 @@
       })}}
 
       <p class="nhsuk-lede-text">
-        Make My BP easier to use with these accessibility features designed for everyone.
+        Complete list of accessibility features designed for everyone. You can also use the <a href="/pages/mybp/accessibility-hub">organized accessibility hub</a> for easier navigation.
       </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Tip:</strong> For a simpler experience, use our <a href="/pages/mybp/accessibility-hub">accessibility hub</a> which organizes these options into focused categories.</p>
+      </div>
 
       <!-- SECTION - VISUAL ACCESSIBILITY -->
       {{ nhsappSectionHeading({
@@ -311,12 +316,12 @@
       <button class="nhsuk-button" type="submit">Save accessibility preferences</button>
 
       <div class="nhsuk-action-link">
-        <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility-hub">
           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
             <path d="m0 0h24v24h-24z" fill="none"/>
             <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
           </svg>
-          <span class="nhsuk-action-link__text">Back to My BP dashboard</span>
+          <span class="nhsuk-action-link__text">Back to accessibility hub</span>
         </a>
       </div>
 

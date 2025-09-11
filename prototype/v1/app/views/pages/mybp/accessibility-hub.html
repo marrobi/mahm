@@ -1,0 +1,157 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Accessibility - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Choose how you want to use My BP. We have options to make it easier for everyone.
+      </p>
+
+      <!-- Quick Settings -->
+      {{ nhsappSectionHeading({
+        headingText: "Quick settings"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/accessibility-display">
+                  Display and vision
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Text size, contrast, and visual settings</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/accessibility-audio">
+                  Audio and sound
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Voice readback and audio descriptions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/accessibility-navigation">
+                  Navigation and motor
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Touch targets, keyboard navigation, and voice control</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/accessibility-language">
+                  Language and communication
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">Language options, EasyRead, and BSL support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Help Section -->
+      {{ nhsappSectionHeading({
+        headingText: "Get help"
+      }) }}
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+              Need help using digital services?
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>We recognize that not everyone can or wants to use digital health services.</p>
+          <ul>
+            <li><strong>Call us</strong> for telephone support</li>
+            <li><strong>Visit your GP practice</strong> for in-person help</li>
+            <li><strong>Ask family or carers</strong> to help you access digital services</li>
+          </ul>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="tel:01234567890">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">Call for digital support: 01234 567890</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen Reader Info -->
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Screen reader compatibility
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>My BP works with popular screen readers including:</p>
+          <ul class="nhsuk-list">
+            <li><strong>NVDA</strong> - Free screen reader for Windows</li>
+            <li><strong>JAWS</strong> - Professional screen reader</li>
+            <li><strong>VoiceOver</strong> - Built into Mac and iOS devices</li>
+            <li><strong>TalkBack</strong> - Built into Android devices</li>
+          </ul>
+          <p class="nhsuk-u-font-size-16">All content includes proper semantic markup and descriptions.</p>
+        </div>
+      </details>
+
+      <!-- All Settings Link -->
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">View all accessibility options</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

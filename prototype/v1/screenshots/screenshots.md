@@ -115,9 +115,30 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Practice workload impact analysis showing 41 hours/week time savings
 - EHR integration status for EMIS Web, TPP SystmOne, and NHS App
 
-### 2. Accessibility Options
-![Accessibility Options](accessibility-options.png)
-**Accessibility Options** - Comprehensive accessibility features aligned with MVP requirements:
+### 2. Accessibility Hub (Redesigned)
+![Accessibility Hub](accessibility-hub.png)
+**Accessibility Hub** - Redesigned accessibility interface following NHS best practices:
+- Organized into focused categories instead of one overwhelming page
+- Card-based navigation for easier cognitive load management
+- Quick settings for Display & Vision, Audio & Sound, Navigation & Motor, Language & Communication
+- Prominent "Get help" section for digital inclusion support
+- Progressive disclosure with collapsible screen reader compatibility info
+- Link to comprehensive options for users who need all settings
+
+### 3. Display and Vision Settings
+![Display and Vision Settings](accessibility-display.png)
+**Display and Vision Settings** - Focused sub-page for visual accessibility:
+- Radio button selection for text size (Normal, Large, Extra Large)
+- High contrast mode toggle with clear benefits explanation
+- Motion reduction settings for users with vestibular disorders
+- Clear navigation back to accessibility hub
+
+### 4. All Accessibility Options (Comprehensive)
+![All Accessibility Options](accessibility-options.png)
+**All Accessibility Options** - Complete list for users who need comprehensive control:
+- Updated with tip directing users to the organized accessibility hub
+- All original features maintained for power users
+- Clear navigation between hub and comprehensive views
 - Visual accessibility (large text, high contrast, reduced motion)
 - Audio accessibility (voice readback, AI voice agents, audio descriptions)
 - Multi-language support (10 languages including Urdu, Hindi, Bengali, Welsh)

@@ -41,10 +41,9 @@
           <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
         </div>
         <div class="nhsuk-care-card__content">
-          <p>Before you can use My BP, you need to complete a brief onboarding process. This covers:</p>
+          <p>Complete the onboarding process to use My BP. This covers:</p>
           <ul class="nhsuk-list nhsuk-list--bullet">
             <li>Benefits and privacy information</li>
-            <li>Simulation disclaimer</li>
             <li>Data usage statement</li>
             <li>Your consent</li>
           </ul>
@@ -66,11 +65,6 @@
       {{ nhsappSectionHeading({
         headingText: "What would you like to do today?"
       }) }}
-      {% else %}
-      {{ nhsappSectionHeading({
-        headingText: "My BP features (requires onboarding)"
-      }) }}
-      {% endif %}
 
       <p>Choose from the options below to manage your blood pressure care:</p>
 
@@ -111,6 +105,7 @@
           <strong>Next appointment:</strong> 15 October 2024
         </li>
       </ul>
+      {% endif %}
 
     </div>
   </div>

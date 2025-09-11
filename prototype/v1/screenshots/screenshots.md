@@ -6,7 +6,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### Updated Main Dashboard
 ![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
-**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the onboarding requirement before users can access My BP features.
+**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
 
 ### 1. Welcome Page
 ![Onboarding Welcome](onboarding-welcome.png)

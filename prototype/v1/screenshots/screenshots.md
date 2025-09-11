@@ -30,7 +30,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 6. Onboarding Complete (Consent Given)
 ![Onboarding Completed - Consent](onboarding-completed-consent.png)
-**Onboarding Complete - Consent Given** - Success screen when user consents, providing next steps and dashboard access.
+**Onboarding Complete - Consent Given** - Success screen when user consents, emphasizing the AI orchestrator's role in determining personalized care pathways following NICE guidelines. The system focuses on prescriptive, next-best-action guidance rather than offering multiple choices.
 
 ### 7. Onboarding Complete (Consent Declined)
 ![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)

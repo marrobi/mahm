@@ -1,11 +1,11 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Professional tools" %}
-{% set pageHeading = "GP Practice Analytics Dashboard - My BP" %}
+{% set pageHeading = "GP Practice Analytics Dashboard" %}
 
 {% block beforeContent %}
   {{ backLink({
-    text: "Back to My BP",
+    text: "Back to main system",
     href: "/pages/mybp/index"
   }) }}
 {% endblock %}
@@ -20,8 +20,19 @@
       })}}
 
       <p class="nhsuk-lede-text">
-        Comprehensive hypertension management overview with health inequality monitoring.
+        Practice-level hypertension management analytics with health inequality monitoring.
       </p>
+
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="desktop-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="desktop-banner-title">
+            Professional desktop interface
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p>This dashboard is designed for healthcare professionals and would be accessed via desktop browser, not through the patient-facing NHS App.</p>
+        </div>
+      </div>
 
       <!-- SECTION - PRACTICE OVERVIEW -->
       {{ nhsappSectionHeading({
@@ -47,7 +58,7 @@
           <div style="background: #005eb8; color: white; padding: 20px; border-radius: 8px; text-align: center;">
             <h3 class="nhsuk-u-margin-bottom-2" style="color: white;">1,247</h3>
             <p class="nhsuk-u-margin-bottom-0" style="color: white;">Active hypertension patients</p>
-            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0" style="color: white;">My BP managed: 389</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0" style="color: white;">Digital platform: 389</p>
           </div>
         </div>
       </div>
@@ -146,38 +157,6 @@
         </div>
       </div>
 
-      <!-- SECTION - PATIENT CATEGORIES -->
-      {{ nhsappSectionHeading({
-        headingText: "Patient category distribution"
-      }) }}
-      
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-third">
-          <div style="background: #e8f4fd; border-left: 4px solid #005eb8; padding: 16px; border-radius: 4px;">
-            <h4>Category A: Known Hypertension</h4>
-            <p><strong>289 patients</strong></p>
-            <p class="nhsuk-u-font-size-14">Treatment management phase</p>
-            <p class="nhsuk-u-font-size-14">74% achieving BP targets</p>
-          </div>
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-          <div style="background: #f0f4f5; border-left: 4px solid #768692; padding: 16px; border-radius: 4px;">
-            <h4>Category B: Surveillance</h4>
-            <p><strong>167 patients</strong></p>
-            <p class="nhsuk-u-font-size-14">Normotensive monitoring</p>
-            <p class="nhsuk-u-font-size-14">95% attendance rate</p>
-          </div>
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-          <div style="background: #fef5e7; border-left: 4px solid #ffb81c; padding: 16px; border-radius: 4px;">
-            <h4>Category C: New Diagnosis</h4>
-            <p><strong>43 patients</strong></p>
-            <p class="nhsuk-u-font-size-14">Diagnostic pathway</p>
-            <p class="nhsuk-u-font-size-14">Avg 4.2 weeks to diagnosis</p>
-          </div>
-        </div>
-      </div>
-
       <!-- SECTION - WORKLOAD REDUCTION -->
       {{ nhsappSectionHeading({
         headingText: "Practice workload impact"
@@ -249,7 +228,7 @@
             <path d="m0 0h24v24h-24z" fill="none"/>
             <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
           </svg>
-          <span class="nhsuk-action-link__text">Return to patient view</span>
+          <span class="nhsuk-action-link__text">Return to main system</span>
         </a>
       </div>
 

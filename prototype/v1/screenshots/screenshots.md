@@ -97,9 +97,17 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Normal Lab Results](lab-results-normal.png)
 **Normal U&E Test Results** - Comprehensive display of normal blood test results with color-coded status indicators, baseline comparisons, clinical explanations, and reassuring "Good news" messaging. Shows all five key parameters (Creatinine, eGFR, Sodium, Potassium, Urea) with reference ranges and trend analysis.
 
-### 2. Abnormal Lab Results with Clinical Alerts
+### 2. Abnormal Lab Results with Simplified Clinical Actions
 ![Abnormal Lab Results](lab-results-abnormal.png)
-**Abnormal U&E Test Results with Urgent Alerts** - Critical results display featuring prominent "Important" alert banner, elevated creatinine and potassium levels with clear clinical warnings, urgent action needed section, and specific guidance on when to contact healthcare providers immediately.
+**Abnormal U&E Test Results with Simplified Urgent Actions** - Critical results display featuring:
+- Prominent "Important" alert banner with clear abnormal results notification
+- Elevated creatinine (135 μmol/L) and potassium (5.8 mmol/L) with color-coded visual indicators
+- Simplified "Urgent action needed" section with clear patient instructions:
+  - GP contact within 24 hours (by end of tomorrow)
+  - Clear fail-safe mechanism if GP hasn't contacted by 5pm tomorrow
+  - Specific symptoms requiring immediate GP practice contact
+- Separation of clinical explanation from actionable patient instructions
+- Clinically appropriate timeframes aligned with NICE/BNF guidelines for moderate potassium elevation
 
 ---
 
@@ -107,13 +115,13 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. GP Practice Analytics Dashboard
 ![GP Practice Analytics Dashboard](gp-analytics-dashboard.png)
-**GP Practice Analytics Dashboard** - Comprehensive healthcare professional interface demonstrating:
-- Practice-wide NICE guidelines adherence monitoring (78% compliance rate)
+**GP Practice Analytics Dashboard** - Professional desktop interface for healthcare providers (not patient-facing) featuring:
+- Practice-wide NICE guidelines adherence monitoring (78% compliance rate vs 85% target)
 - Health inequality tracking across demographic groups (IMD quintiles, ethnicity, age, digital exclusion)
-- Multi-agent system performance metrics with 99.2% uptime
-- Patient category distribution (A: Known Hypertension, B: Surveillance, C: New Diagnosis)
-- Practice workload impact analysis showing 41 hours/week time savings
-- EHR integration status for EMIS Web, TPP SystmOne, and NHS App
+- Multi-agent system performance metrics with 99.2% uptime and 100% Red Flag response rate
+- Practice workload impact analysis showing 41 hours/week time savings (equivalent to 1 FTE clinician)
+- EHR integration status for EMIS Web, TPP SystmOne, QOF Reporting, and NHS App
+- Clear indication this is a professional desktop tool, not part of the patient-facing NHS App
 
 ### 2. Accessibility Hub (Redesigned)
 ![Accessibility Hub](accessibility-hub.png)
@@ -148,16 +156,17 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Digital inclusion support with face-to-face care options
 - Screen reader compatibility (NVDA, JAWS, VoiceOver, TalkBack)
 
-### 3. Emergency Support System
+### 3. Emergency Support System (Patient-Focused)
 ![Emergency Support](emergency-support.png)
-**Emergency Support** - Red Flag Agent emergency detection and response system:
-- Immediate 999 escalation protocols for life-threatening symptoms
-- GP practice urgent contact procedures for high BP readings ≥180/110 mmHg
-- Medication side effects monitoring and guidance
-- Multi-agent emergency response workflow with automatic escalation
-- Out-of-hours support through NHS 111 and local services
-- Comprehensive emergency contact information
-- 24/7 AI monitoring with fail-safe protocols
+**Emergency Support** - Streamlined patient-focused emergency guidance system:
+- Clear 999 emergency contact instructions for life-threatening symptoms
+- GP practice urgent contact procedures for high BP readings ≥180/110 mmHg with symptoms
+- Medication side effects monitoring with common and serious side effect lists
+- Out-of-hours support through NHS 111 and local GP services
+- Comprehensive emergency contact table with appropriate use guidance
+- Patient-centered approach with clear actions rather than AI system promises
+- Removal of unrealistic "AI monitoring active" sections based on clinical feedback
+- Focus on patient responsibility and clear escalation pathways per NICE guidelines
 
 ---
 

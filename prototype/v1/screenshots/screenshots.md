@@ -81,7 +81,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Dashboard with Red Flag Alert
 ![Dashboard with Red Flag Alert](red-flag-dashboard.png)
-**My BP Dashboard with Emergency Alert** - The main blood pressure dashboard displaying a prominent red flag alert when blood pressure readings reach dangerous levels (≥195/115 mmHg), providing immediate access to the emergency safety workflow.
+**My BP Dashboard with Emergency Alert** - The main blood pressure dashboard showing the orchestrator's care plan based on NICE guidelines. Features a prominent red flag alert when blood pressure readings reach dangerous levels (≥195/115 mmHg), with the system automatically arranging appropriate care rather than asking for user preferences.
 
 ### 2. Symptom Confirmation Screen
 ![Symptom Confirmation](red-flag-symptom-confirmation.png)

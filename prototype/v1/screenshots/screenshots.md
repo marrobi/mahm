@@ -4,37 +4,37 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Patient Onboarding & Consent Flow (8 screens)
 
-### Updated Main Dashboard
+### Updated Main Dashboard  
 ![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
-**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
+**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", changed "Benefits and privacy information" to "Service information and privacy", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
 
 ### 1. Welcome Page
 ![Onboarding Welcome](onboarding-welcome.png)
-**Welcome to My BP** - Introduction to the multi-agentic AI hypertension management tool, explaining the 9 specialized agents, patient categories, and clinical safety priority according to MVP documentation.
+**Welcome to My BP** - Patient-friendly introduction to AI-powered blood pressure management tool. Updated with simple language removing all jargon: removed "free at the point of use" terminology, eliminated "agent" terminology and complex Category A, B, C references, simplified technical language for patient accessibility, and made content patient-focused rather than manager/policymaker oriented.
 
-### 2. Benefits & Privacy
+### 2. Benefits & Privacy  
 ![Onboarding Benefits](onboarding-benefits.png)
-**Benefits & Privacy** - Comprehensive explanation of primary objectives including health inequality reduction, trustworthy AI principles, accessibility features, and NHS data protection standards.
+**Benefits & Privacy** - Patient-focused content explaining "How My BP helps you" with primary objectives emphasizing "clinical outcomes and clinical safety". Updated sections include "Your safety comes first", "What you'll get from My BP", "Access and support options", and "How we keep you safe" - all using patient-friendly language instead of complex policy terminology. Excellent privacy section maintained as model for plain English communication.
 
 ### 3. Simulation Disclaimer
 ![Onboarding Disclaimer](onboarding-disclaimer.png)
-**Simulation Disclaimer** - Enhanced warning emphasizing this is demonstration only, with detailed explanation of multi-agentic system scope, dummy data types, and clinical safety protocols.
+**Simulation Disclaimer** - Clear demonstration warnings with proper NHS design system styling. Fixed alignment issues by removing emoji warning triangles and updating to proper NHS warning callout formatting. Enhanced scope explanation using patient-friendly language.
 
 ### 4. Data Usage Statement
 ![Onboarding Data Usage](onboarding-data-usage.png)
-**Data Usage Statement** - Detailed table showing data collection by each of the 9 AI agents, patient category management, clinical governance, and comprehensive privacy rights.
+**Data Usage Statement** - Comprehensive data collection table with fixed header alignment using proper NHS table classes. Enhanced clinical oversight section with specific safety standards and real-world guidance. Added actionable links and contact information for data rights requests. Improved "Your rights" section with clear paths for users to exercise their rights including NHS Digital contact details and ICO links.
 
 ### 5. Consent Form
 ![Onboarding Consent](onboarding-consent.png)
-**Give Your Consent** - Enhanced consent interface for multi-agentic system with comprehensive summary of trustworthy AI principles, clinical safety protocols, and demonstration status.
+**Give Your Consent** - Plain English consent interface removing all jargon. Eliminated "you agree to the comprehensive terms" language and all "multi-agentic" and "multi-agent" terminology. Rewrote "Summary of what you're consenting to" section as "What you're agreeing to" using simple, patient-friendly language following NHS content guidelines for appropriate reading age.
 
 ### 6. Onboarding Complete (Consent Given)
 ![Onboarding Completed - Consent](onboarding-completed-consent.png)
-**Onboarding Complete - Consent Given** - Success screen when user consents, emphasizing the AI orchestrator's role in determining personalized care pathways following NICE guidelines. The system focuses on prescriptive, next-best-action guidance rather than offering multiple choices.
+**Onboarding Complete - Consent Given** - Success screen emphasizing the orchestrator-centered approach where the AI system determines the patient's specific care pathway and presents appropriate next steps based on NICE guidelines. Focuses on how the system will prescriptively guide patients rather than offering multiple upfront choices, reflecting the core orchestrator philosophy.
 
-### 7. Onboarding Complete (Consent Declined)
+### 7. Onboarding Complete (Consent Declined)  
 ![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)
-**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines, offering alternative NHS services and option to restart.
+**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines consent, offering clear alternative NHS services and option to restart onboarding process if they change their mind.
 
 ---
 

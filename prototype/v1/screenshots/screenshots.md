@@ -25,7 +25,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
     ### 4. Confirmation
     ![Dose Titration Confirmation](dose-titration-confirmation.png)
-    **Dose Increase Confirmed** - Confirmation screen with care plan updates and safety information. Features reassuring language that the system will automatically remind users for future monitoring rather than giving them tasks they cannot action today. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
+    **Dose Increase Confirmed** - Confirmation screen with streamlined care plan updates and safety information. Features patient-focused language that tells users only what they need to do today, with clear system reminders for future monitoring tasks. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
 
     ### 5. Blood Test Scheduling
     ![Blood Test Overview](blood-test-overview.png)

@@ -23,11 +23,7 @@
         subtitle: "Culturally-tailored NHS resources supporting hypertension management"
       })}}
 
-      <!-- NHS SERVICE NOTICE -->
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Free NHS service:</strong> All content and referrals are provided free of charge as part of your NHS care. Content is coordinated with your blood pressure management by our AI system.</p>
-      </div>
+
 
       <!-- CONTENT FILTERS -->
       <div class="content-filters">
@@ -66,7 +62,7 @@
           <div class="nhsuk-card__content nhsuk-card__content--feature">
             <div class="content-card-image">
               <div class="content-card-placeholder content-card-placeholder--orange">
-                🍛
+                <span class="content-card-icon">🍽️</span>
               </div>
             </div>
             <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
@@ -93,7 +89,7 @@
           <div class="nhsuk-card__content nhsuk-card__content--feature">
             <div class="content-card-image">
               <div class="content-card-placeholder content-card-placeholder--purple">
-                🌙
+                <span class="content-card-icon">📋</span>
               </div>
             </div>
             <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
@@ -139,6 +135,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--green">Exercise</span>
               <span class="nhsuk-tag nhsuk-tag--yellow">South Asian</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">8 min read</span>
             </div>
           </div>
@@ -160,6 +157,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
               <span class="nhsuk-tag nhsuk-tag--red">African</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">12 min read</span>
             </div>
           </div>
@@ -181,6 +179,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--blue">Meditation</span>
               <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">5 min read</span>
             </div>
           </div>
@@ -202,6 +201,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Community</span>
               <span class="nhsuk-tag nhsuk-tag--blue">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">7 min read</span>
             </div>
           </div>
@@ -223,6 +223,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
               <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">6 min read</span>
             </div>
           </div>
@@ -244,6 +245,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--green">Exercise</span>
               <span class="nhsuk-tag nhsuk-tag--red">African</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">9 min read</span>
             </div>
           </div>
@@ -265,6 +267,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
               <span class="nhsuk-tag nhsuk-tag--yellow">South Asian</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">11 min read</span>
             </div>
           </div>
@@ -286,6 +289,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
               <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">4 min read</span>
             </div>
           </div>
@@ -307,6 +311,7 @@
             <div class="content-card-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Community</span>
               <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
               <span class="content-card-time">8 min read</span>
             </div>
           </div>
@@ -451,6 +456,12 @@
     border-radius: 8px;
   }
 
+  .content-card-icon {
+    font-size: 40px;
+    line-height: 1;
+    display: block;
+  }
+
   .content-card-placeholder--orange {
     background: linear-gradient(135deg, #ff6b35 0%, #f39800 100%);
   }
@@ -529,6 +540,10 @@
 
     .content-card-placeholder {
       font-size: 24px;
+    }
+    
+    .content-card-icon {
+      font-size: 32px;
     }
     
     .content-filters {

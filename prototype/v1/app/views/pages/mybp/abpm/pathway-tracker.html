@@ -22,13 +22,7 @@
         Track your progress from initial elevated readings through to diagnosis and treatment planning.
       </p>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="img" aria-label="Warning">⚠️</span>
-          Demo pathway only
-        </h3>
-        <p>This shows a simulated diagnostic journey for demonstration purposes.</p>
-      </div>
+
 
       <!-- Diagnostic Pathway Progress -->
       <div class="nhsuk-grid-row">
@@ -38,6 +32,7 @@
           <div class="nhsuk-summary-card">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #00703c; font-size: 20px; margin-right: 8px;">✓</span>
                 {{ nhsappBadgeSmall({
                   text: "Complete",
                   colour: "green"
@@ -55,6 +50,7 @@
           <div class="nhsuk-summary-card">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #00703c; font-size: 20px; margin-right: 8px;">✓</span>
                 {{ nhsappBadgeSmall({
                   text: "Complete",
                   colour: "green"
@@ -72,6 +68,7 @@
           <div class="nhsuk-summary-card">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #00703c; font-size: 20px; margin-right: 8px;">✓</span>
                 {{ nhsappBadgeSmall({
                   text: "Complete",
                   colour: "green"
@@ -89,6 +86,7 @@
           <div class="nhsuk-summary-card">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #00703c; font-size: 20px; margin-right: 8px;">✓</span>
                 {{ nhsappBadgeSmall({
                   text: "Complete",
                   colour: "green"
@@ -106,6 +104,7 @@
           <div class="nhsuk-summary-card nhsuk-summary-card--blue">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #f9c747; font-size: 20px; margin-right: 8px;">●</span>
                 {{ nhsappBadgeSmall({
                   text: "In progress",
                   colour: "yellow"
@@ -128,6 +127,7 @@
           <div class="nhsuk-summary-card nhsuk-summary-card--grey">
             <div class="nhsuk-summary-card__header">
               <h3 class="nhsuk-summary-card__title">
+                <span style="color: #768390; font-size: 20px; margin-right: 8px;">○</span>
                 {{ nhsappBadgeSmall({
                   text: "Pending",
                   colour: "grey"
@@ -137,7 +137,7 @@
               <p class="nhsuk-u-secondary-text-colour">To be scheduled</p>
             </div>
             <div class="nhsuk-summary-card__body">
-              <p>Discussion of treatment options, lifestyle advice, and monitoring plan. Shared decision-making consultation to be scheduled.</p>
+              <p>Discussion of treatment options and lifestyle advice will be provided by this AI-supported care system. The multiagentic system will guide you through personalized treatment recommendations and monitoring plans.</p>
             </div>
           </div>
 
@@ -168,61 +168,7 @@
         </div>
       </div>
 
-      <h2 class="nhsuk-heading-m">Timeline summary</h2>
 
-      <div class="nhsuk-table-responsive">
-        <table class="nhsuk-table">
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header" scope="col">Stage</th>
-              <th class="nhsuk-table__header" scope="col">Date completed</th>
-              <th class="nhsuk-table__header" scope="col">Status</th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Initial elevated reading</td>
-              <td class="nhsuk-table__cell">15 Sep 2024</td>
-              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
-                text: "Complete",
-                colour: "green"
-              }) }}</td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Repeat measurements</td>
-              <td class="nhsuk-table__cell">18 Sep 2024</td>
-              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
-                text: "Complete", 
-                colour: "green"
-              }) }}</td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">ABPM monitoring</td>
-              <td class="nhsuk-table__cell">8 Oct 2024</td>
-              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
-                text: "Complete",
-                colour: "green" 
-              }) }}</td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">GP confirmation</td>
-              <td class="nhsuk-table__cell">Expected: 10 Oct 2024</td>
-              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
-                text: "In progress",
-                colour: "yellow"
-              }) }}</td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Treatment planning</td>
-              <td class="nhsuk-table__cell">To be scheduled</td>
-              <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
-                text: "Pending",
-                colour: "grey"
-              }) }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
       <h2 class="nhsuk-heading-m">What you can expect</h2>
 
@@ -243,7 +189,7 @@
               <h3 class="nhsuk-card__heading nhsuk-heading-s">
                 Within 1 week
               </h3>
-              <p class="nhsuk-card__description">Treatment consultation appointment to discuss medication options and lifestyle changes.</p>
+              <p class="nhsuk-card__description">AI-guided treatment consultation to discuss personalized medication options and lifestyle recommendations through the multiagentic care system.</p>
             </div>
           </div>
         </div>
@@ -284,8 +230,9 @@
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
         <h3 class="nhsuk-heading-s">Need to contact us?</h3>
-        <p>If you have urgent concerns about your blood pressure, contact your GP surgery immediately or call 111.</p>
-        <p>For non-urgent questions about your results, you can message your GP practice through the NHS App.</p>
+        <p>If you have symptoms such as severe headache, chest pain, or difficulty breathing, call 999 immediately.</p>
+        <p>For urgent but non-life-threatening concerns about your blood pressure, call NHS 111.</p>
+        <p>For routine questions about your results, you can message your GP practice through the NHS App.</p>
       </div>
 
       <div class="nhsuk-action-link">

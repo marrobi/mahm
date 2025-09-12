@@ -33,7 +33,7 @@
         headingText: "Your care plan today"
       }) }}
 
-      <p>Your care system has arranged your care based on NICE guidelines and your recent readings:</p>
+      <p>Your care system has arranged your care based on clinical guidelines and your recent readings:</p>
 
       <!-- RED FLAG ALERT - Only shown when high BP detected -->
       <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b; margin-bottom: 32px;">
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <!-- ORCHESTRATOR-DETERMINED CARE PLAN -->
+      <!-- AUTOMATICALLY SCHEDULED CARE -->
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
         <p><strong>Care arranged automatically:</strong> Based on your clinical data, your care system has determined you need a medication dose review due to consistently elevated readings above target (140/90 mmHg).</p>
@@ -62,7 +62,7 @@
           {
             title: "📋 Medication dose review required",
             href: "/pages/mybp/dose-titration/index",
-            description: "Your care system has scheduled a medication review based on your recent readings being above target. This follows NICE CG127 protocols automatically.",
+            description: "Your care system has scheduled a medication review based on your recent readings being above target. This follows clinical protocols automatically.",
             label: "Automatically scheduled"
           }
         ]

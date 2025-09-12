@@ -428,82 +428,414 @@ Monitoring Agent
 Azure Monitor + Application Insights
 ```
 
-## Connected Agents Communication Patterns
-Azure AI Foundry Connected Agents use natural language routing, eliminating the need for custom API orchestration. Each agent communicates through the main orchestrating agent using standardized message formats.
+## Healthcare Agent Orchestration Patterns
 
+### Agent State Management
+The system implements healthcare-specific state management patterns for maintaining clinical context across multi-agent interactions:
+
+**Clinical Context Persistence:**
+- **Patient Clinical State**: Maintained across all agent interactions with FHIR resource references
+- **Active Clinical Workflows**: State tracking for ongoing care pathways (diagnosis, titration, monitoring)
+- **Agent Coordination State**: Cross-agent dependencies and workflow handoffs
+- **Safety Check State**: Continuous monitoring state for clinical safety validation
+
+**State Synchronization Patterns:**
+```json
+{
+  "patientClinicalState": {
+    "patientId": "fhir-patient-id",
+    "currentWorkflows": [
+      {
+        "workflowType": "medication-titration",
+        "stage": "dose-optimization", 
+        "assignedAgents": ["titration-agent", "monitoring-agent"],
+        "dependencies": ["lab-results-pending"],
+        "safetyChecks": ["contraindication-clear", "renal-function-normal"]
+      }
+    ],
+    "clinicalContext": {
+      "primaryDiagnosis": "essential-hypertension",
+      "riskFactors": ["diabetes", "family-history"],
+      "currentMedications": ["lisinopril-10mg", "amlodipine-5mg"],
+      "latestVitals": {"bp": "145/92", "timestamp": "2024-01-15T14:30:00Z"}
+    }
+  }
+}
+```
+
+### Clinical Decision Tree Integration
+Unlike simple natural language routing, the system implements structured clinical decision trees for healthcare-appropriate agent coordination:
+
+**Decision Tree Framework:**
+- **Clinical Rule Engine**: NICE guideline-based decision points
+- **Safety Gate Patterns**: Mandatory safety checks between clinical decisions
+- **Escalation Decision Trees**: Structured pathways for different risk levels
+- **Clinical Workflow Branching**: Conditional routing based on clinical criteria
+
+### Enhanced Agent Coordination Patterns
+Building on Connected Agents while adding healthcare-specific coordination:
+
+**Multi-Agent Clinical Workflows:**
+```yaml
+workflow_patterns:
+  - name: "hypertension-diagnosis"
+    entry_point: "diagnosing-agent"
+    decision_points:
+      - stage: "initial-assessment"
+        criteria: "clinic_bp > 140/90"
+        next_agents: ["bp-measurement-agent", "red-flag-agent"]
+      - stage: "confirmation-required" 
+        criteria: "abpm_needed = true"
+        next_agents: ["diagnosing-agent"]
+        safety_gates: ["contraindication-check"]
+      - stage: "treatment-planning"
+        criteria: "diagnosis_confirmed = true"
+        next_agents: ["shared-decision-agent", "lifestyle-agent"]
+        
+  - name: "emergency-escalation"
+    entry_point: "red-flag-agent"
+    priority: "immediate"
+    decision_points:
+      - stage: "triage"
+        criteria: "bp > 180/120 OR symptoms_severe"
+        next_agents: ["monitoring-agent"]
+        external_systems: ["emergency-services", "gp-practice"]
+```
+
+## Connected Agents Communication Patterns
+Azure AI Foundry Connected Agents enhanced with healthcare orchestration patterns for clinical safety and workflow management.
+
+### Enhanced Clinical Safety Framework
+Healthcare agent orchestration requires additional safety layers beyond standard Connected Agents:
+
+**Safety Validation Patterns:**
+- **Clinical Decision Validation**: Every agent decision validated against clinical rules
+- **Cross-Agent Safety Checks**: Agents validate each other's recommendations
+- **Circuit Breaker Patterns**: Automatic fallback when agent decisions conflict
+- **Clinical Audit Checkpoints**: Mandatory audit points for high-risk decisions
+
+**Agent Communication Safety Gates:**
+```json
+{
+  "safetyGate": {
+    "gateType": "medication-change-validation",
+    "requiredChecks": [
+      "contraindication-screening",
+      "drug-interaction-check", 
+      "renal-function-validation",
+      "patient-allergy-check"
+    ],
+    "approvalRequired": ["titration-agent", "monitoring-agent"],
+    "fallbackBehavior": "escalate-to-clinician",
+    "auditRequired": true
+  }
+}
+```
+
+### Agent Orchestration vs Connected Agents Hybrid Approach
+While leveraging Azure AI Foundry Connected Agents for natural language capabilities, the system adds healthcare-specific orchestration layers:
+
+**Orchestration Layer Benefits:**
+- **Clinical Workflow Management**: Structured pathways for complex care scenarios
+- **Safety Validation**: Healthcare-appropriate safety checks between agent interactions
+- **State Consistency**: Ensures clinical context remains consistent across agents
+- **Audit Compliance**: Healthcare-grade audit trails and decision documentation
+
+**Connected Agents Integration:**
+- **Natural Language Understanding**: Leverage Connected Agents for patient communication
+- **Agent Discovery**: Use Connected Agents routing for initial request handling
+- **Conversation Management**: Connected Agents for maintaining patient conversation flow
+- **Scaling Benefits**: Cloud-native scaling and monitoring from Azure AI Foundry
+
+### Clinical Workflow State Management
+Enhanced state management patterns for healthcare workflows:
+
+**Workflow State Tracking:**
+```json
+{
+  "workflowState": {
+    "workflowId": "bp-management-patient-001",
+    "currentStage": "medication-titration",
+    "stageProgress": {
+      "completed": ["initial-assessment", "lifestyle-intervention"],
+      "active": ["dose-optimization"],
+      "pending": ["response-evaluation", "target-achievement"]
+    },
+    "agentAssignments": {
+      "primary": "titration-agent",
+      "supporting": ["monitoring-agent", "red-flag-agent"],
+      "onCall": ["shared-decision-agent"]
+    },
+    "clinicalConstraints": {
+      "maxTitrationSteps": 3,
+      "mandatoryMonitoring": ["u&e", "creatinine"],
+      "safetyTimers": {"next-review": "14-days", "emergency-escalation": "72-hours"}
+    },
+    "patientPreferences": {
+      "maxMedications": 2,
+      "lifestyleFirst": true,
+      "contactPreference": "nhs-app"
+    }
+  }
+}
+```
 ### Core Message Schema
+Enhanced message schema for healthcare agent orchestration with clinical context:
+
 ```json
 {
   "messageId": "uuid",
   "timestamp": "ISO8601",
   "sourceAgent": "agent_name",
-  "targetAgent": "agent_name",
-  "messageType": "request|response|alert|escalation",
+  "targetAgent": "agent_name", 
+  "messageType": "request|response|alert|escalation|workflow-transition",
   "patientId": "fhir_patient_id",
   "priority": "immediate|urgent|routine",
+  "clinicalContext": {
+    "workflowId": "care-pathway-uuid",
+    "workflowStage": "medication-titration",
+    "clinicalState": "stable|monitoring|escalation-required",
+    "safetyFlags": ["renal-impairment", "drug-allergy"],
+    "activeGuidelines": ["nice-ng136", "esc-esh-2023"]
+  },
   "content": {
-    "clinicalContext": {},
-    "data": {},
-    "action": "",
-    "reasoning": ""
+    "clinicalData": {
+      "fhirResources": ["Patient/123", "Observation/bp-001"],
+      "derivedMetrics": {"cv-risk-score": 0.15, "adherence-score": 0.8}
+    },
+    "agentDecision": {
+      "recommendation": "increase-ace-inhibitor-dose",
+      "reasoning": "Target BP not achieved, no contraindications identified",
+      "confidence": 0.95,
+      "alternativeOptions": ["add-calcium-channel-blocker", "lifestyle-intensification"],
+      "requiredApprovals": ["monitoring-agent"],
+      "safetyChecks": ["renal-function-normal", "no-hyperkalemia"]
+    },
+    "workflowInstructions": {
+      "nextStage": "monitoring-period",
+      "assignedAgents": ["monitoring-agent"],
+      "timeline": "review-in-14-days",
+      "escalationTriggers": ["bp-not-improved", "adverse-events"]
+    }
   },
   "auditTrail": {
     "userId": "system_user",
-    "sessionId": "uuid",
-    "complianceFlags": []
+    "sessionId": "uuid", 
+    "complianceFlags": ["nice-compliant", "safety-validated"],
+    "approvalChain": ["titration-agent", "monitoring-agent"],
+    "riskAssessment": "low-risk"
   }
 }
 ```
 
-### Escalation Flow Specification
+### Healthcare Agent Communication Patterns
+Enhanced communication patterns inspired by healthcare agent orchestration best practices:
 
-#### Red Flag Detection & Escalation
+**Agent-to-Agent Communication Flow:**
 ```
-1. ANY Agent → Red Flag Agent
-   Trigger: Clinical indicators above threshold
-   Response Time: <30 seconds
+1. Clinical Request Initiated
+   ↓ (with full clinical context)
    
-2. Red Flag Agent → Orchestrating Agent
-   Classification: immediate|urgent|routine
+2. Primary Agent Assignment (via Connected Agents)
+   ↓ (clinical workflow validation)
    
-3. Orchestrating Agent → Monitoring Agent
-   Action: Alert healthcare team
+3. Safety Gate Validation
+   ↓ (contraindication & guideline checks)
    
-4. Circuit Breaker Pattern
-   If: No response within 2 minutes
-   Then: Automatic escalation to next tier
+4. Supporting Agent Consultation
+   ↓ (parallel clinical input gathering)
+   
+5. Clinical Decision Aggregation  
+   ↓ (multi-agent consensus building)
+   
+6. Safety Validation Layer
+   ↓ (final clinical safety check)
+   
+7. Clinical Decision Implementation
+   ↓ (FHIR updates & patient notification)
+   
+8. Workflow State Update
+   ↓ (next stage preparation)
+   
+9. Continuous Monitoring Activation
+```
+
+**Cross-Agent Validation Patterns:**
+```yaml
+validation_patterns:
+  - name: "medication-decision-validation"
+    primary_agent: "titration-agent"
+    validators: ["monitoring-agent", "red-flag-agent"] 
+    criteria:
+      - "no-contraindications"
+      - "within-clinical-guidelines"
+      - "patient-preference-aligned"
+    approval_threshold: "unanimous"
+    
+  - name: "emergency-escalation-validation"
+    primary_agent: "red-flag-agent"
+    validators: ["monitoring-agent"]
+    criteria:
+      - "clinical-thresholds-exceeded"
+      - "patient-safety-at-risk"
+    approval_threshold: "majority"
+    escalation_timeout: "30-seconds"
+```
+
+### Agent Coordination State Management
+Sophisticated state management for healthcare workflows:
+
+**Clinical State Synchronization:**
+- **Real-time State Sharing**: All agents access current patient clinical state
+- **Workflow Stage Awareness**: Agents understand their role in the care pathway
+- **Conflict Resolution**: Automated resolution of conflicting agent recommendations
+- **State Rollback**: Ability to revert to previous clinical state if needed
+
+**Agent Handoff Patterns:**
+```json
+{
+  "agentHandoff": {
+    "fromAgent": "diagnosing-agent",
+    "toAgent": "titration-agent", 
+    "handoffReason": "diagnosis-confirmed-treatment-required",
+    "clinicalContext": {
+      "diagnosis": "stage-1-hypertension",
+      "riskFactification": "moderate-risk",
+      "patientPreferences": "lifestyle-first-approach"
+    },
+    "completedActions": [
+      "abpm-completed",
+      "lifestyle-assessment-done", 
+      "shared-decision-making-completed"
+    ],
+    "pendingActions": [
+      "medication-initiation",
+      "monitoring-schedule-setup"
+    ],
+    "safetyTransfer": {
+      "allSafetyChecksComplete": true,
+      "riskMitigation": "standard-monitoring-protocol",
+      "escalationCriteria": "bp-not-controlled-4-weeks"
+    }
+  }
+}
+```
+
+### Enhanced Escalation Flow Specification
+Healthcare-specific escalation patterns with multi-agent coordination:
+
+#### Clinical Risk-Based Escalation
+```
+1. Risk Detection (ANY Agent)
+   ↓ (clinical threshold breach)
+   
+2. Risk Assessment Validation
+   ├─→ Red Flag Agent (immediate validation)
+   ├─→ Monitoring Agent (clinical context review)
+   └─→ Primary Agent (workflow impact assessment)
+   
+3. Multi-Agent Risk Consensus
+   ↓ (aggregated risk assessment)
+   
+4. Escalation Path Determination
+   ├─→ IMMEDIATE: Emergency services + GP + Patient
+   ├─→ URGENT: GP practice + Monitoring activation
+   └─→ ROUTINE: Enhanced monitoring + Patient education
+   
+5. Coordinated Response Execution
+   ↓ (parallel action initiation)
+   
+6. Response Validation & Monitoring
+   ↓ (continuous safety monitoring)
+   
+7. Workflow State Update & Documentation
 ```
 
 #### Multi-Tier Escalation Protocols
+Enhanced escalation protocols with agent coordination:
 - **Immediate (0-5 minutes)**: BP >180/120, severe symptoms, drug interactions
+  - Multi-agent validation required (Red Flag + Monitoring + Primary Agent)
+  - Automatic emergency services notification
+  - Simultaneous GP practice alert with clinical context
 - **Urgent (5-60 minutes)**: BP 160-179/100-119, missed critical doses
+  - Dual-agent assessment (Red Flag + Monitoring Agent)
+  - GP practice alert with 1-hour response requirement
+  - Enhanced patient monitoring activation
 - **Routine (1-24 hours)**: Lifestyle adherence, routine monitoring
+  - Single-agent assessment with peer review
+  - Standard care pathway notification
+  - Scheduled follow-up coordination
 
-## Agent Implementation Guidelines
+### Agent Resilience and Monitoring Patterns
+Healthcare-grade resilience patterns for clinical safety:
 
-### 1. Main Orchestrating Agent
-**Purpose**: Central coordination and clinical safety prioritization
+**Agent Health Monitoring:**
+- **Heartbeat Monitoring**: Continuous agent availability checking (<10 second intervals)
+- **Response Time Tracking**: SLA monitoring for clinical decision-making speeds
+- **Decision Quality Validation**: Ongoing validation of agent clinical recommendations
+- **Load Balancing**: Automatic failover for agent overload scenarios
+
+**Circuit Breaker Patterns for Healthcare:**
+```yaml
+circuit_breakers:
+  - name: "clinical-decision-validation"
+    failure_threshold: 3
+    timeout_duration: "60-seconds"
+    fallback_action: "escalate-to-human-clinician"
+    
+  - name: "agent-communication-failure" 
+    failure_threshold: 2
+    timeout_duration: "30-seconds"
+    fallback_action: "activate-backup-agent"
+    
+  - name: "fhir-integration-failure"
+    failure_threshold: 1
+    timeout_duration: "45-seconds" 
+    fallback_action: "use-cached-data-with-warning"
+```
+
+**Agent Backup and Failover:**
+- **Primary-Secondary Agent Pairs**: Each critical agent has a backup ready for failover
+- **Cross-Agent Capability Sharing**: Agents can handle basic functions of failed peers
+- **Human Clinician Escalation**: Automatic escalation when agent consensus cannot be reached
+- **Graceful Degradation**: System maintains core safety functions even with multiple agent failures
+
+## Enhanced Agent Implementation Guidelines
+Healthcare agent orchestration patterns integrated with Azure AI Foundry Connected Agents:
+
+### 1. Main Orchestrating Agent (Enhanced)
+**Purpose**: Clinical workflow coordination with healthcare orchestration patterns
+
+**Enhanced Capabilities:**
+- **Clinical Workflow Management**: Manages complex multi-stage care pathways
+- **Agent Coordination**: Orchestrates multi-agent clinical decision-making processes
+- **Safety Validation**: Validates all clinical decisions against safety rules and guidelines
+- **State Synchronization**: Maintains consistent clinical state across all agents
 
 **Inputs**:
-- Patient context from FHIR (Patient, Observation, MedicationRequest resources)
-- Agent responses and status updates
-- External triggers (new BP readings, lab results)
+- Patient clinical context with complete FHIR resource set
+- Agent coordination requests and responses
+- Clinical workflow state and stage transitions
+- Safety validation results and escalation triggers
 
-**Core Logic**:
-- Route requests to appropriate specialized agents using natural language
-- Maintain patient care pathway state
-- Prioritize clinical safety over efficiency
-- Implement NICE guideline compliance checks
+**Enhanced Core Logic**:
+- **Clinical Pathway Management**: Tracks patient through structured care pathways
+- **Multi-Agent Coordination**: Coordinates complex multi-agent clinical consultations
+- **Safety Gate Enforcement**: Enforces mandatory safety checkpoints in clinical workflows
+- **Guideline Compliance**: Ensures all decisions comply with NICE and clinical guidelines
+- **State Consistency**: Maintains consistent clinical context across all agent interactions
 
 **Outputs**:
-- Task assignments to specialized agents
-- Care plan updates to FHIR CarePlan resource
-- Safety alerts and escalations
+- Coordinated task assignments to specialized agents with clinical context
+- Clinical workflow stage transitions and state updates
+- Safety validation confirmations and escalation triggers
+- FHIR resource updates with full audit trail
 
-**State Management**: 
-- Current care pathway stage per patient
-- Active agent assignments
-- Pending escalations and timeouts
+**Enhanced State Management**: 
+- **Clinical Workflow State**: Complete care pathway progress per patient
+- **Agent Coordination State**: Multi-agent workflow assignments and dependencies
+- **Safety Validation State**: Ongoing safety check status and compliance tracking
+- **Clinical Context State**: Real-time clinical context maintained across all interactions
 
 ### 2. BP Measurement Agent  
 **Purpose**: Community-based blood pressure monitoring coordination
@@ -684,31 +1016,48 @@ Azure AI Foundry Connected Agents use natural language routing, eliminating the 
 - Active intervention programs
 - Barrier identification and management
 
-### 9. Red Flag Agent
-**Purpose**: Emergency detection and escalation
+### 9. Red Flag Agent (Enhanced with Orchestration Patterns)
+**Purpose**: Emergency detection with multi-agent coordination and clinical workflow integration
 
-**Inputs**:
-- Real-time clinical data streams
-- Predefined red flag criteria
-- Escalation protocols and contacts
-- Patient emergency preferences
+**Enhanced Inputs**:
+- Real-time clinical data streams from all system sources
+- Continuous clinical context from other agents
+- Multi-agent clinical assessments and consensus data
+- Healthcare workflow state and clinical pathway context
 
-**Core Logic**:
-- Continuous monitoring for red flag conditions
-- Immediate classification and prioritization
-- Automated escalation to appropriate contacts
-- Documentation of emergency responses
+**Enhanced Core Logic**:
+- **Continuous Multi-Source Monitoring**: Real-time monitoring across all clinical data sources
+- **Multi-Agent Risk Assessment**: Coordinates with other agents for comprehensive risk evaluation
+- **Clinical Context Integration**: Considers full clinical workflow context in risk assessment
+- **Intelligent Escalation**: Uses clinical context to determine appropriate escalation pathways
+- **Workflow Integration**: Integrates emergency responses with ongoing clinical workflows
 
-**Outputs**:
-- Immediate safety alerts
-- Emergency escalation notifications
-- Clinical team notifications
-- Emergency response documentation
+**Enhanced Outputs**:
+- Multi-agent validated safety alerts with clinical context
+- Coordinated emergency escalation with workflow integration
+- Clinical workflow disruption management and continuity planning
+- Comprehensive emergency response documentation with full clinical context
 
-**State Management**:
-- Active monitoring per patient
-- Escalation status tracking
-- Emergency contact management
+**Enhanced State Management**:
+- **Multi-Agent Monitoring Coordination**: Coordinates monitoring responsibilities across agents
+- **Clinical Workflow Emergency Integration**: Manages emergency responses within care pathways
+- **Risk Assessment State**: Maintains comprehensive risk profiles with multi-agent input
+- **Emergency Response Coordination**: Manages complex emergency responses across multiple systems
+
+### Agent Communication and Coordination Framework
+The enhanced agent framework implements sophisticated healthcare orchestration patterns:
+
+**Agent Interdependency Management:**
+- **Clinical Workflow Dependencies**: Agents understand their dependencies within care pathways
+- **Decision Validation Chains**: Multi-agent validation required for critical clinical decisions
+- **State Synchronization**: Real-time clinical state sharing across all agents
+- **Conflict Resolution**: Automated resolution of conflicting agent recommendations
+
+**Healthcare-Specific Communication Patterns:**
+- **Clinical Handoffs**: Structured agent-to-agent clinical context transfer
+- **Multi-Agent Consultations**: Coordinated multi-agent clinical decision-making
+- **Safety Validation Networks**: Cross-agent safety checking and validation
+- **Emergency Coordination**: Coordinated emergency response across multiple agents
 
 ## Detailed Dummy Data Patterns
 

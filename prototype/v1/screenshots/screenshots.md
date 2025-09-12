@@ -4,15 +4,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 
 ## Main Dashboard
 
-![Main Dashboard](mybp-main-updated-patient-friendly.png)
-**Multiagentic Main Dashboard** - Patient-friendly digital health team interface showing care management status. Updated with user-friendly language using "digital health team" instead of technical "AI agents" terminology. Features British English spelling throughout.
+![Main Dashboard](mybp-main-ai-supported-care.png)
+**Multiagentic Main Dashboard** - Patient-friendly interface using "AI supported care" terminology instead of confusing "digital health team" or scary "AI agents". Shows how AI manages treatment following NICE guidelines with automatic GP coordination when needed.
 
 ---
 
 ## Patient Dashboard
 
-![BP Dashboard](mybp-dashboard-updated-colors.png)
-**Your BP Readings Dashboard** - Comprehensive view of blood pressure trends with visual chart mockup showing actual BP data over time with target zones. Features improved color coding where "Slightly high" readings use amber instead of red, and patient-friendly "What your readings mean" section instead of technical terminology.
+![BP Dashboard](mybp-dashboard-ai-supported-care.png)
+**Your BP Readings Dashboard** - Enhanced with visual chart mockup showing actual BP data over time with target zones, ⭐ star icons to denote AI analysis sections, and consistent color coding where "Slightly high" readings use orange instead of confusing red. Features patient-friendly "What your readings mean" section with clear AI analysis indicators.
 
 ---
 

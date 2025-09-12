@@ -1,0 +1,81 @@
+{
+  "name": "BPMonitoringAgent",
+  "displayName": "MAHM BP Monitoring Stub Agent",
+  "description": "Specialized agent for blood pressure monitoring guidance and community-based BP measurement coordination (Phase 1 Stub)",
+  "version": "1.0.0",
+  "type": "specialized",
+  "configuration": {
+    "model": {
+      "provider": "azure-openai",
+      "deploymentName": "gpt-4",
+      "temperature": 0.2,
+      "maxTokens": 1500,
+      "topP": 0.9
+    },
+    "systemPrompt": "You are the BP Monitoring Agent for MAHM (Multi-Agentic Hypertension Management). You specialize in blood pressure measurement guidance and community monitoring coordination.\n\n**CLINICAL SAFETY FIRST**: Always prioritize patient safety. Follow NICE guidelines for blood pressure management.\n\n**Core Responsibilities:**\n1. Provide blood pressure measurement guidance\n2. Coordinate community BP monitoring locations\n3. Interpret BP readings according to NICE guidelines\n4. Detect emergency BP situations\n5. Guide patients on proper measurement techniques\n\n**NICE Guidelines - BP Categories:**\n- Normal: <120/80 mmHg\n- High normal: 120-139/80-89 mmHg\n- Stage 1 Hypertension: 140-159/90-99 mmHg\n- Stage 2 Hypertension: 160-179/100-109 mmHg\n- Stage 3 Hypertension: ≥180/110 mmHg\n\n**Emergency Thresholds:**\n- Severe hypertension: ≥180/120 mmHg\n- Hypertensive emergency: ≥180/120 + symptoms\n\n**Stub Implementation Note**: This is a Phase 1 stub implementation. Responses include placeholder data for demonstration purposes only.\n\nAlways provide clear, evidence-based guidance and escalate appropriately for emergency situations.",
+    "capabilities": [
+      "bp_measurement_guidance",
+      "community_monitoring_coordination",
+      "nice_guideline_interpretation",
+      "emergency_detection",
+      "patient_education"
+    ],
+    "stubData": {
+      "communityLocations": [
+        {
+          "name": "Boots Pharmacy - High Street",
+          "address": "123 High Street, Local Town",
+          "services": ["Free BP checks", "NHS Health Check"],
+          "hours": "Mon-Sat 9:00-18:00",
+          "distance": "0.3 miles"
+        },
+        {
+          "name": "Local GP Practice",
+          "address": "456 Medical Centre, Local Town",
+          "services": ["BP monitoring", "ABPM", "Clinical assessment"],
+          "hours": "Mon-Fri 8:00-18:00",
+          "appointmentRequired": true
+        }
+      ],
+      "measurementTips": [
+        "Sit quietly for 5 minutes before measurement",
+        "Use appropriate cuff size",
+        "Take readings at same time each day",
+        "Avoid caffeine 30 minutes before",
+        "Record multiple readings"
+      ]
+    },
+    "healthCheck": {
+      "enabled": true,
+      "endpoint": "/health",
+      "expectedResponse": {
+        "status": "healthy",
+        "agent": "BPMonitoringAgent",
+        "capabilities": ["bp_monitoring", "community_coordination"],
+        "timestamp": "{{timestamp}}",
+        "stubMode": true
+      }
+    }
+  },
+  "telemetry": {
+    "applicationInsights": {
+      "enabled": true,
+      "trackEvents": true,
+      "trackDependencies": true
+    },
+    "correlationId": {
+      "enabled": true,
+      "header": "x-correlation-id"
+    }
+  },
+  "security": {
+    "authentication": {
+      "type": "managed_identity",
+      "enabled": true
+    },
+    "authorization": {
+      "enabled": true,
+      "roles": ["healthcare_agent", "bp_specialist"]
+    }
+  }
+}

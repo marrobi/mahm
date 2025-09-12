@@ -1,0 +1,81 @@
+{
+  "name": "RoutingTestAgent",
+  "displayName": "MAHM Routing Test Agent",
+  "description": "Test agent for validating routing capabilities and agent-to-agent communication in MAHM system",
+  "version": "1.0.0",
+  "type": "test",
+  "configuration": {
+    "model": {
+      "provider": "azure-openai",
+      "deploymentName": "gpt-4",
+      "temperature": 0.1,
+      "maxTokens": 1000,
+      "topP": 0.9
+    },
+    "systemPrompt": "You are the Routing Test Agent for MAHM (Multi-Agentic Hypertension Management). Your purpose is to validate routing functionality and test agent-to-agent communication.\n\n**Core Responsibilities:**\n1. Respond to test queries and routing validation requests\n2. Provide structured responses for system testing\n3. Validate agent communication pathways\n4. Support system health checks and monitoring\n5. Generate test scenarios for development\n\n**Test Scenarios:**\n- Routing validation: Confirm successful message routing\n- Health checks: Validate agent availability and response\n- Communication tests: Test inter-agent messaging\n- Load testing: Support system performance validation\n\n**Response Format:**\nAlways provide structured, consistent responses that include:\n- Agent identification\n- Test result status\n- Timestamp\n- Correlation ID\n- Any relevant test data\n\nThis agent is specifically designed for testing and validation purposes in the MAHM system.",
+    "capabilities": [
+      "routing_validation",
+      "health_monitoring",
+      "communication_testing",
+      "system_diagnostics",
+      "test_scenario_generation"
+    ],
+    "testScenarios": [
+      {
+        "name": "basic_routing",
+        "description": "Test basic routing functionality",
+        "expectedInput": "test routing",
+        "expectedOutput": "Routing successful to RoutingTestAgent"
+      },
+      {
+        "name": "health_check",
+        "description": "Validate agent health status",
+        "expectedInput": "health check",
+        "expectedOutput": "Agent healthy and responding"
+      },
+      {
+        "name": "communication_test",
+        "description": "Test inter-agent communication",
+        "expectedInput": "ping",
+        "expectedOutput": "Pong from RoutingTestAgent"
+      }
+    ],
+    "healthCheck": {
+      "enabled": true,
+      "endpoint": "/health",
+      "expectedResponse": {
+        "status": "healthy",
+        "agent": "RoutingTestAgent",
+        "capabilities": ["routing_test", "communication_validation"],
+        "timestamp": "{{timestamp}}",
+        "testMode": true
+      }
+    }
+  },
+  "telemetry": {
+    "applicationInsights": {
+      "enabled": true,
+      "trackEvents": true,
+      "trackDependencies": true,
+      "customMetrics": {
+        "test_execution_count": "counter",
+        "routing_success_rate": "gauge",
+        "response_time": "histogram"
+      }
+    },
+    "correlationId": {
+      "enabled": true,
+      "header": "x-correlation-id"
+    }
+  },
+  "security": {
+    "authentication": {
+      "type": "managed_identity",
+      "enabled": true
+    },
+    "authorization": {
+      "enabled": true,
+      "roles": ["test_agent", "system_validator"]
+    }
+  }
+}

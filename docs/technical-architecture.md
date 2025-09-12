@@ -112,11 +112,11 @@ Using Azure AI Foundry's Connected Agents service provides:
 To ensure continuity of care and avoid recalculating personalized guidance on each visit, the system implements a dual-storage approach:
 
 **Azure Cosmos DB for Conversation History:**
-- **Agent Response Cache**: Stores all agent-generated responses with timestamps and context
+- **Agent Response Storage**: Stores all agent-generated responses with timestamps and context
 - **Personalized Guidance Store**: Maintains patient-specific recommendations and care plans
 - **Session Context Management**: Preserves conversation state across multiple interactions
 - **Response Versioning**: Tracks changes in recommendations over time
-- **Query Optimization**: Enables fast retrieval of relevant historical context
+- **Query Optimization**: Enables fast retrieval (< 2 seconds) serving as both storage and cache
 
 **FHIR Integration for Clinical Continuity:**
 - **Communication Resources**: Stores formal clinical communications as FHIR Communication resources
@@ -178,38 +178,36 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
    ↓ (RESTful API call)
    
 2. My BP API Gateway
-   ↓ (Check Cosmos DB for recent responses)
+   ↓ (Query Cosmos DB for existing responses)
    
-3. Response Cache Hit?
-   ├─→ YES: Return cached response (< 2 seconds)
-   └─→ NO: Continue to agent processing
+3. Cosmos DB Query
+   ├─→ Response Found: Return stored response (< 2 seconds)
+   └─→ No Response: Route to Azure AI Foundry Connected Agents
    
 4. Main Orchestrating Agent (Azure AI Foundry)
-   ↓ (Natural language routing)
+   ↓ (Natural language routing to specialized agent)
    
 5. Specialized Agent(s)
-   ↓ (FHIR operations + context from cache)
+   ↓ (Query FHIR for clinical context)
    
 6. Azure API for FHIR (Dummy Data)
    ↑ (Clinical data response)
    
 7. Agent Processing & Decision Making
-   ↓ (Store response in Cosmos DB)
+   ↓ (Store new response in Cosmos DB)
    
 8. Cosmos DB Storage
    ↓ (Response formatting)
    
-9. API Gateway Response Formatting
-   ↑ (Client-optimized format)
-   
-10. Client Interface Update
+9. Client Interface
+   ↑ (Formatted response with personalized guidance)
 ```
 
-### Cache Management Strategy
-- **Cache Duration**: 30 days for non-critical responses, 7 days for medication-related guidance
+### Cosmos DB Management Strategy
+- **Storage Duration**: 30 days for non-critical responses, 7 days for medication-related guidance
 - **Invalidation Triggers**: New clinical data, medication changes, emergency alerts
 - **Refresh Logic**: Automatic refresh when underlying FHIR data changes
-- **Fallback Behavior**: If cache fails, system gracefully falls back to real-time agent processing
+- **Fallback Behavior**: If Cosmos DB query fails, system gracefully falls back to real-time agent processing
 
 ### Benefits of Conversation Storage Architecture
 
@@ -219,7 +217,7 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
 - Reduces need for patients to repeat information
 
 **Performance Optimization:**
-- Sub-2-second response times for cached guidance
+- Sub-2-second response times for stored guidance
 - Reduced load on Azure AI Foundry agents
 - Cost-effective scaling for high patient volumes
 

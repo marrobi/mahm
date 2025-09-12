@@ -29,6 +29,7 @@ Using Azure AI Foundry's Connected Agents service provides:
 ### Azure Infrastructure
 - **Azure AI Foundry workspace** with connected agents configuration
 - **Azure API for FHIR R4** with comprehensive dummy data patterns
+- **Azure Cosmos DB** for agent response storage and conversation history
 - **Azure Monitor + Application Insights** for clinical safety monitoring
 - **Azure Key Vault** for secure configuration management
 
@@ -57,6 +58,7 @@ Using Azure AI Foundry's Connected Agents service provides:
 │  │  • GET /care-plan           ││                                   
 │  │  • POST /medication-request ││                                   
 │  │  • GET /recommendations     ││                                   
+│  │  • GET /conversation-history││                                   
 │  └─────────────────────────────┘│                                   
 └─────────────────────────────────┘                                   
                                    │
@@ -81,25 +83,155 @@ Using Azure AI Foundry's Connected Agents service provides:
 │  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘│ │
 │  └─────────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────┘
-                                   │
-                    ┌──────────────┴──────────────┐
-                    │                             │
-┌─────────────────────────────────┐  ┌─────────────────────────────────┐
-│        Azure API for FHIR       │  │     Azure Monitor + AppInsights │
-│                                 │  │                                 │
-│  ┌─────────────────────────────┐│  │  ┌─────────────────────────────┐│
-│  │      Dummy Patient Data     ││  │  │    Clinical Safety Alerts   ││
-│  │   (Category A, B, C)        ││  │  │                             ││
-│  │                             ││  │  │  ┌─────────────────────────┐││
-│  │  • Patient Resources        ││  │  │  │   Audit Trail Logging   │││
-│  │  • Observation (BP)         ││  │  │  └─────────────────────────┘││
-│  │  • MedicationRequest        ││  │  │                             ││
-│  │  • DiagnosticReport         ││  │  │  ┌─────────────────────────┐││
-│  │  • CarePlan                 ││  │  │  │  Real-time Monitoring   │││
-│  │  • Flag (Red Flags)         ││  │  │  └─────────────────────────┘││
-│  │  └─────────────────────────┘│  └─────────────────────────────────┘
-└─────────────────────────────────┘
+                     │                           │
+          ┌──────────┴─────────┐     ┌──────────┴─────────────────────┐
+          │                    │     │                                │
+┌─────────────────────┐ ┌─────────────────┐ ┌─────────────────────────────────┐
+│   Azure Cosmos DB   │ │ Azure API for   │ │   Azure Monitor + AppInsights   │
+│                     │ │      FHIR       │ │                                 │
+│ ┌─────────────────┐ │ │                 │ │ ┌─────────────────────────────┐ │
+│ │ Conversation    │ │ │ ┌─────────────┐ │ │ │   Clinical Safety Alerts   │ │
+│ │ History         │ │ │ │ Dummy       │ │ │ │                             │ │
+│ │                 │ │ │ │ Patient     │ │ │ │ ┌─────────────────────────┐ │ │
+│ │ • Agent         │ │ │ │ Data        │ │ │ │ │  Audit Trail Logging   │ │ │
+│ │   Responses     │ │ │ │ (A, B, C)   │ │ │ │ └─────────────────────────┘ │ │
+│ │ • Personalized  │ │ │ │             │ │ │ │                             │ │
+│ │   Guidance      │ │ │ │ • Patient   │ │ │ │ ┌─────────────────────────┐ │ │
+│ │ • Session       │ │ │ │ • Observation│ │ │ │ │ Real-time Monitoring   │ │ │
+│ │   Context       │ │ │ │ • Medication │ │ │ │ └─────────────────────────┘ │ │
+│ │ • Cache         │ │ │ │ • Diagnostic │ │ │ └─────────────────────────────┘ │
+│ │   Management    │ │ │ │ • CarePlan   │ │ │                                 │
+│ └─────────────────┘ │ │ │ • Flag       │ │ │                                 │
+└─────────────────────┘ │ └─────────────┘ │ └─────────────────────────────────┘
+                        └─────────────────┘
 ```
+
+## Conversation Storage & Data Persistence
+
+### Response Storage Architecture
+To ensure continuity of care and avoid recalculating personalized guidance on each visit, the system implements a dual-storage approach:
+
+**Azure Cosmos DB for Conversation History:**
+- **Agent Response Cache**: Stores all agent-generated responses with timestamps and context
+- **Personalized Guidance Store**: Maintains patient-specific recommendations and care plans
+- **Session Context Management**: Preserves conversation state across multiple interactions
+- **Response Versioning**: Tracks changes in recommendations over time
+- **Query Optimization**: Enables fast retrieval of relevant historical context
+
+**FHIR Integration for Clinical Continuity:**
+- **Communication Resources**: Stores formal clinical communications as FHIR Communication resources
+- **Provenance Tracking**: Links agent responses to clinical decisions using FHIR Provenance
+- **Care Plan Extensions**: Extends FHIR CarePlan with agent-generated guidance references
+
+### Data Storage Strategy
+
+#### Why Cosmos DB + FHIR Approach
+- **FHIR Limitations**: While FHIR excels at structured clinical data, it's not optimized for conversational AI responses and session management
+- **Cosmos DB Strengths**: Provides flexible document storage, fast retrieval, and natural partitioning by patient ID
+- **Hybrid Benefits**: Maintains clinical data standards (FHIR) while optimizing for AI agent workflows (Cosmos DB)
+
+#### Cosmos DB Schema Design
+```json
+{
+  "id": "conversation-{patientId}-{sessionId}",
+  "partitionKey": "patientId",
+  "conversationType": "agent-interaction",
+  "patientId": "fhir-patient-id",
+  "sessionId": "uuid",
+  "timestamp": "ISO8601",
+  "interactions": [
+    {
+      "interactionId": "uuid",
+      "timestamp": "ISO8601",
+      "triggerAgent": "orchestrating-agent",
+      "involvedAgents": ["bp-agent", "lifestyle-agent"],
+      "userInput": {
+        "type": "bp-reading",
+        "data": {"systolic": 140, "diastolic": 90}
+      },
+      "agentResponses": [
+        {
+          "agentName": "bp-measurement-agent",
+          "responseType": "analysis",
+          "content": "Your BP reading shows stage 1 hypertension...",
+          "recommendations": ["lifestyle-consultation", "medication-review"],
+          "confidence": 0.95
+        }
+      ],
+      "finalResponse": {
+        "summary": "Combined guidance from multiple agents",
+        "actionItems": ["schedule-gp-visit", "start-lifestyle-plan"],
+        "nextCheckIn": "7-days"
+      }
+    }
+  ],
+  "cacheExpiry": "30-days",
+  "clinicalRelevance": "high"
+}
+```
+
+## Data Flow Architecture
+
+### Client to Agent Communication Flow with Storage
+```
+1. Client Interface (NHS App/Web/Mobile)
+   ↓ (RESTful API call)
+   
+2. My BP API Gateway
+   ↓ (Check Cosmos DB for recent responses)
+   
+3. Response Cache Hit?
+   ├─→ YES: Return cached response (< 2 seconds)
+   └─→ NO: Continue to agent processing
+   
+4. Main Orchestrating Agent (Azure AI Foundry)
+   ↓ (Natural language routing)
+   
+5. Specialized Agent(s)
+   ↓ (FHIR operations + context from cache)
+   
+6. Azure API for FHIR (Dummy Data)
+   ↑ (Clinical data response)
+   
+7. Agent Processing & Decision Making
+   ↓ (Store response in Cosmos DB)
+   
+8. Cosmos DB Storage
+   ↓ (Response formatting)
+   
+9. API Gateway Response Formatting
+   ↑ (Client-optimized format)
+   
+10. Client Interface Update
+```
+
+### Cache Management Strategy
+- **Cache Duration**: 30 days for non-critical responses, 7 days for medication-related guidance
+- **Invalidation Triggers**: New clinical data, medication changes, emergency alerts
+- **Refresh Logic**: Automatic refresh when underlying FHIR data changes
+- **Fallback Behavior**: If cache fails, system gracefully falls back to real-time agent processing
+
+### Benefits of Conversation Storage Architecture
+
+**Clinical Continuity:**
+- Patients receive consistent recommendations across sessions
+- Healthcare providers can review AI-generated guidance history
+- Reduces need for patients to repeat information
+
+**Performance Optimization:**
+- Sub-2-second response times for cached guidance
+- Reduced load on Azure AI Foundry agents
+- Cost-effective scaling for high patient volumes
+
+**Audit and Compliance:**
+- Complete traceability of AI recommendations
+- Supports clinical governance and quality assurance
+- Enables analysis of agent performance over time
+
+**Personalization Enhancement:**
+- Builds comprehensive patient interaction profiles
+- Enables more contextual and relevant recommendations
+- Supports learning from patient response patterns
 
 ## User Interface Architecture
 
@@ -181,16 +313,30 @@ POST /api/v1/bp-reading
   - Input: BP measurement data with timestamp
   - Process: Routes through Red Flag Agent for immediate safety check
   - Output: Safety status and next measurement recommendation
+  - Storage: Caches response in Cosmos DB for future reference
 
 # Care Plan Management  
 GET /api/v1/patient/{patientId}/care-plan
   - Returns: Current active care plan with agent-generated recommendations
   - Sources: Aggregated data from Lifestyle, Titration, and Monitoring Agents
+  - Cache: Checks Cosmos DB for recent care plan responses
 
 POST /api/v1/care-plan/update
   - Input: Patient preference changes or goal modifications
   - Process: Routes to Shared Decision-Making Agent for plan revision
   - Output: Updated care plan with rationale
+  - Storage: Stores updated plan and decision rationale in Cosmos DB
+
+# Conversation History Management
+GET /api/v1/patient/{patientId}/conversation-history
+  - Returns: Recent agent interactions and personalized guidance
+  - Source: Cosmos DB conversation cache with FHIR integration
+  - Filter: Last 30 days of clinically relevant interactions
+
+GET /api/v1/patient/{patientId}/personalized-guidance
+  - Returns: Current personalized recommendations from all agents
+  - Cache: Optimized retrieval from Cosmos DB
+  - Fallback: Real-time agent consultation if cache expired
 ```
 
 #### Agent Communication Interface

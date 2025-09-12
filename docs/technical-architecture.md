@@ -119,9 +119,10 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
 - **Query Optimization**: Enables fast retrieval (< 2 seconds) serving as both storage and cache
 
 **FHIR Integration for Clinical Continuity:**
-- **Communication Resources**: Stores formal clinical communications as FHIR Communication resources
+- **Communication Resources**: Stores ALL clinical conversations as FHIR Communication resources for permanent retention
 - **Provenance Tracking**: Links agent responses to clinical decisions using FHIR Provenance
 - **Care Plan Extensions**: Extends FHIR CarePlan with agent-generated guidance references
+- **Clinical Conversation Archival**: Long-term permanent storage of all patient-agent interactions in FHIR-compliant format
 
 ### Data Storage Strategy
 
@@ -165,8 +166,10 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
       }
     }
   ],
-  "cacheExpiry": "30-days",
-  "clinicalRelevance": "high"
+  "permanentStorage": true,
+  "clinicalRelevance": "high",
+  "archived": false,
+  "fhirCommunicationRef": "Communication/clinical-conversation-001"
 }
 ```
 
@@ -204,8 +207,10 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
 ```
 
 ### Cosmos DB Management Strategy
-- **Storage Duration**: 30 days for non-critical responses, 7 days for medication-related guidance
-- **Invalidation Triggers**: New clinical data, medication changes, emergency alerts
+- **Permanent Storage**: ALL clinical conversations and agent responses are stored permanently for audit compliance and clinical continuity
+- **Dual Storage Approach**: Critical clinical conversations also stored as FHIR Communication resources for clinical workflow integration
+- **Cache Management**: Recent conversations (last 30 days) maintained in active cache for performance optimization
+- **Data Archival**: Older conversations moved to archived storage but remain permanently accessible
 - **Refresh Logic**: Automatic refresh when underlying FHIR data changes
 - **Fallback Behavior**: If Cosmos DB query fails, system gracefully falls back to real-time agent processing
 
@@ -1344,6 +1349,44 @@ The enhanced agent framework implements sophisticated healthcare orchestration p
     {"url": "http://example.org/dummy-data-marker", "valueBoolean": true},
     {"url": "http://example.org/escalation-level", "valueString": "immediate"},
     {"url": "http://example.org/trigger-reason", "valueString": "bp-crisis-185-125"}
+  ]
+}
+```
+
+#### Clinical Conversation Storage - FHIR Communication Resource
+```json
+{
+  "resourceType": "Communication",
+  "id": "clinical-conversation-001",
+  "status": "completed",
+  "category": [{"coding": [{"code": "care-coordination", "display": "Care Coordination"}]}],
+  "subject": {"reference": "Patient/dummy-patient-001"},
+  "sent": "2024-01-15T14:30:00Z",
+  "sender": {"reference": "Device/main-orchestrating-agent"},
+  "recipient": [{"reference": "Patient/dummy-patient-001"}],
+  "topic": {"coding": [{"code": "bp-management", "display": "Blood Pressure Management"}]},
+  "payload": [
+    {
+      "contentString": "Based on your recent BP reading of 145/92, I recommend lifestyle modifications and medication review. Your personalized plan includes daily exercise and dietary changes."
+    },
+    {
+      "extension": [
+        {"url": "http://example.org/agent-source", "valueString": "lifestyle-agent"},
+        {"url": "http://example.org/confidence-score", "valueDecimal": 0.95}
+      ],
+      "contentString": "Specific lifestyle recommendations: 30min daily walk, reduce sodium to <2.3g/day, increase potassium-rich foods."
+    }
+  ],
+  "note": [
+    {
+      "text": "Multi-agent consultation: BP-measurement-agent, Lifestyle-agent, Titration-agent collaborated on recommendations"
+    }
+  ],
+  "extension": [
+    {"url": "http://example.org/dummy-data-marker", "valueBoolean": true},
+    {"url": "http://example.org/conversation-session", "valueString": "session-uuid-001"},
+    {"url": "http://example.org/cosmos-db-ref", "valueString": "conversation-patient-001-session-uuid"},
+    {"url": "http://example.org/permanent-storage", "valueBoolean": true}
   ]
 }
 ```

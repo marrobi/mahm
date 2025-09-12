@@ -36,6 +36,31 @@ Using Azure AI Foundry's Connected Agents service provides:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
+│                           NHS App & Client Interfaces               │
+├─────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │
+│  │  NHS App    │ │   Web UI    │ │   Mobile    │ │  Clinician      │ │
+│  │  Interface  │ │   Portal    │ │    App      │ │  Dashboard      │ │
+│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────────┘ │
+└─────────────────────────────────────────────────────────────────────┘
+                                   │
+                    ┌──────────────┴──────────────┐
+                    │                             │
+┌─────────────────────────────────┐  ┌─────────────────────────────────┐
+│       My BP API Gateway         │  │      Azure Key Vault           │
+│                                 │  │   (Configuration & Secrets)    │
+│  ┌─────────────────────────────┐│  └─────────────────────────────────┘
+│  │   RESTful API Endpoints     ││                                   
+│  │                             ││                                   
+│  │  • GET /patient/{id}/bp     ││                                   
+│  │  • POST /bp-reading         ││                                   
+│  │  • GET /care-plan           ││                                   
+│  │  • POST /medication-request ││                                   
+│  │  • GET /recommendations     ││                                   
+│  └─────────────────────────────┘│                                   
+└─────────────────────────────────┘                                   
+                                   │
+┌─────────────────────────────────────────────────────────────────────┐
 │                           Azure AI Foundry Workspace                │
 ├─────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────────────────────────────────────────────────────┐ │
@@ -52,8 +77,8 @@ Using Azure AI Foundry's Connected Agents service provides:
 │  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ └─────────────┘│ │
 │  │  │ Titration   │ │ Monitoring  │ │ Medication  │ ┌─────────────┐│ │
 │  │  │ Agent       │ │ Agent       │ │ Adherence   │ │ Red Flag    ││ │
-│  │  └─────────────┘ └─────────────┘ │ Agent       │ │ Agent       ││ │
-│  │                                  └─────────────┘ └─────────────┘│ │
+│  │  │ Agent       │ │ Agent       │ │ Agent       │ │ Agent       ││ │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘│ │
 │  └─────────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────┘
                                    │
@@ -72,9 +97,45 @@ Using Azure AI Foundry's Connected Agents service provides:
 │  │  • DiagnosticReport         ││  │  │  ┌─────────────────────────┐││
 │  │  • CarePlan                 ││  │  │  │  Real-time Monitoring   │││
 │  │  • Flag (Red Flags)         ││  │  │  └─────────────────────────┘││
-│  └─────────────────────────────┘│  └─────────────────────────────────┘
+│  │  └─────────────────────────┘│  └─────────────────────────────────┘
 └─────────────────────────────────┘
 ```
+
+## User Interface Architecture
+
+### NHS App Integration
+The My BP system integrates with the NHS App through a dedicated hypertension management module that provides:
+
+**Patient-Facing Interface Components:**
+- **Blood Pressure Recording Screen**: Simple input form with validation for manual BP entry
+- **Medication Tracker**: Visual medication schedule with adherence logging
+- **Care Plan Dashboard**: Personalized view of current treatment goals and progress
+- **Community Pharmacy Finder**: Map-based pharmacy location service for BP checks
+- **Educational Content Hub**: NICE-approved hypertension information tailored to user demographics
+
+**Interface Design Principles:**
+- **Accessibility-first**: Large fonts, high contrast, screen reader compatibility
+- **Multi-language Support**: Content available in major community languages
+- **Offline Capability**: Core features work without internet connectivity
+- **Progressive Disclosure**: Complex information broken into digestible steps
+
+### Clinician Dashboard
+Web-based portal for healthcare professionals featuring:
+
+**Clinical Workflow Screens:**
+- **Patient Triage View**: Risk-stratified patient list with AI-generated priorities
+- **Diagnostic Decision Support**: ABPM recommendation engine with NICE compliance
+- **Medication Management**: Drug interaction checking and titration recommendations
+- **Population Health Analytics**: Community-level hypertension management insights
+
+### Mobile Application
+Standalone mobile app for enhanced patient engagement:
+
+**Core Features:**
+- **Smart BP Logging**: OCR capability for automatic BP monitor reading capture
+- **Medication Reminders**: Intelligent notification system with adherence tracking
+- **Lifestyle Goal Tracking**: Exercise, diet, and weight monitoring with cultural adaptations
+- **Emergency Alert System**: One-touch connection to emergency services for critical readings
 
 ## Dummy Data Strategy
 
@@ -89,9 +150,139 @@ Using Azure AI Foundry's Connected Agents service provides:
 - Comprehensive audit trails for all clinical decisions
 - Circuit breaker patterns and fail-safe mechanisms
 
-## Agent Communication & API Specifications
+## API Layer Architecture
 
-### Connected Agents Communication Pattern
+### My BP API Gateway
+The system uses an intermediary API layer between client interfaces and the Azure AI Foundry Connected Agents, providing:
+
+**Purpose of API Gateway:**
+- **Authentication & Authorization**: NHS App integration with OAuth 2.0/OIDC
+- **Request Routing**: Intelligent routing to appropriate Connected Agents
+- **Rate Limiting**: Protecting backend services from overload
+- **Data Transformation**: Converting client requests to agent-compatible formats
+- **Response Aggregation**: Combining outputs from multiple agents into unified responses
+
+**Why Not Direct FHIR Access:**
+- **Clinical Safety**: API layer provides additional validation and safety checks
+- **Agent Coordination**: Natural language routing through Connected Agents requires orchestration
+- **User Experience**: Simplified interface abstractions for complex multi-agent workflows
+- **Security**: Additional security layer beyond FHIR server access controls
+
+### API Endpoint Specifications
+
+#### Core Patient Data Operations
+```yaml
+# Blood Pressure Management
+GET /api/v1/patient/{patientId}/bp-readings
+  - Returns: Paginated BP measurement history
+  - Triggers: BP Measurement Agent for trend analysis
+
+POST /api/v1/bp-reading
+  - Input: BP measurement data with timestamp
+  - Process: Routes through Red Flag Agent for immediate safety check
+  - Output: Safety status and next measurement recommendation
+
+# Care Plan Management  
+GET /api/v1/patient/{patientId}/care-plan
+  - Returns: Current active care plan with agent-generated recommendations
+  - Sources: Aggregated data from Lifestyle, Titration, and Monitoring Agents
+
+POST /api/v1/care-plan/update
+  - Input: Patient preference changes or goal modifications
+  - Process: Routes to Shared Decision-Making Agent for plan revision
+  - Output: Updated care plan with rationale
+```
+
+#### Agent Communication Interface
+```yaml
+# Agent Orchestration Endpoints
+POST /api/v1/agent/orchestrate
+  - Input: Clinical context and patient query
+  - Process: Main Orchestrating Agent natural language routing
+  - Output: Coordinated response from appropriate specialized agents
+
+GET /api/v1/agent/status/{sessionId}
+  - Returns: Current status of multi-agent workflow
+  - Includes: Agent assignments, completion status, pending actions
+
+# Emergency Escalation
+POST /api/v1/emergency/escalate
+  - Input: Critical clinical data requiring immediate attention
+  - Process: Direct routing to Red Flag Agent with priority handling
+  - Output: Escalation confirmation and emergency contact notifications
+```
+
+#### Integration Interfaces
+```yaml
+# NHS App Integration
+GET /api/v1/nhs-app/patient-summary
+  - Returns: Simplified patient overview for NHS App dashboard
+  - Format: Optimized for mobile display with key metrics
+
+POST /api/v1/nhs-app/medication-adherence
+  - Input: Medication taking confirmation from NHS App
+  - Process: Routes to Medication Adherence Agent for pattern analysis
+  - Output: Adherence score and intervention recommendations
+
+# Clinician Dashboard APIs
+GET /api/v1/clinician/patient-list
+  - Returns: Risk-stratified patient list with AI prioritization
+  - Sources: Aggregated insights from all monitoring agents
+
+POST /api/v1/clinician/intervention
+  - Input: Clinician decision or intervention
+  - Process: Updates care plan through appropriate agent coordination
+  - Output: Confirmation and updated patient status
+```
+
+### Data Flow Architecture
+
+#### Client to Agent Communication Flow
+```
+1. Client Interface (NHS App/Web/Mobile)
+   ↓ (RESTful API call)
+   
+2. My BP API Gateway
+   ↓ (Authentication & validation)
+   
+3. Main Orchestrating Agent (Azure AI Foundry)
+   ↓ (Natural language routing)
+   
+4. Specialized Agent(s)
+   ↓ (FHIR operations)
+   
+5. Azure API for FHIR (Dummy Data)
+   ↑ (Clinical data response)
+   
+6. Agent Processing & Decision Making
+   ↑ (Structured response)
+   
+7. API Gateway Response Formatting
+   ↑ (Client-optimized format)
+   
+8. Client Interface Update
+```
+
+#### Emergency Escalation Data Flow
+```
+Critical BP Reading Input
+   ↓ (Immediate routing)
+   
+Red Flag Agent (< 30 seconds)
+   ↓ (Severity classification)
+   
+Main Orchestrating Agent
+   ├─→ Emergency Services (if immediate)
+   ├─→ GP Practice Alert (if urgent)
+   └─→ Patient Notification (all cases)
+   
+Monitoring Agent
+   ↓ (Audit trail logging)
+   
+Azure Monitor + Application Insights
+```
+
+## Connected Agents Communication Patterns
 Azure AI Foundry Connected Agents use natural language routing, eliminating the need for custom API orchestration. Each agent communicates through the main orchestrating agent using standardized message formats.
 
 ### Core Message Schema
@@ -568,47 +759,6 @@ monitoring:
 }
 ```
 
-## MVP Implementation Phases
-
-### Phase 1: Foundation Setup (Weeks 1-2)
-- Deploy Azure AI Foundry workspace and connected agents
-- Configure Azure API for FHIR with dummy data schemas
-- Implement basic orchestrating agent with safety protocols
-- Set up monitoring and alerting infrastructure
-
-### Phase 2: Core Agent Development (Weeks 3-4)
-- Develop and deploy 9 specialized connected agents
-- Configure natural language routing between agents
-- Implement FHIR R4 data integration patterns
-- Test agent coordination and escalation workflows
-
-### Phase 3: Safety & Monitoring (Weeks 5-6)
-- Deploy comprehensive clinical safety monitoring
-- Implement red flag detection and escalation protocols
-- Configure audit trails and compliance reporting
-- Conduct safety testing with dummy patient scenarios
-
-### Phase 4: MVP Demo Preparation (Weeks 7-8)
-- Complete dummy data population for all patient categories
-- Implement demonstration workflows and user interfaces
-- Conduct end-to-end testing with realistic clinical scenarios
-- Prepare documentation and training materials
-
-## Key Success Criteria
-
-- **Clinical Safety**: Zero missed red flags in dummy data scenarios
-- **Agent Coordination**: <5 second routing between connected agents
-- **Data Compliance**: 100% FHIR R4 compliance with proper dummy data marking
-- **Monitoring Coverage**: Complete audit trail for all clinical decisions
-- **Scalability**: Support for 1000+ concurrent dummy patient interactions
-
-## Risk Mitigation
-
-- **Data Safety**: All resources marked with dummy data extensions
-- **Clinical Safety**: Mandatory escalation to human oversight for critical decisions
-- **System Reliability**: Circuit breakers and fail-safe mechanisms throughout
-- **Compliance**: Continuous validation of FHIR R4 compliance and dummy data usage
-
 ---
 
-*This document provides a high-level technical architecture for demonstration purposes only. All patient data references are dummy/simulated for testing and development.*
+*This document provides a comprehensive technical architecture for the My BP multi-agentic AI hypertension management system using Azure AI Foundry Connected Agents. All patient data references are dummy/simulated for demonstration purposes only.*

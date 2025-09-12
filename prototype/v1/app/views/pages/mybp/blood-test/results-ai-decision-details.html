@@ -1,7 +1,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "AI treatment decision details" %}
+{% set pageHeading = "Treatment recommendation details" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -19,13 +19,13 @@
         titleSecondary: true
       })}}
 
-      <p class="nhsuk-lede-text">Our AI-supported care system has made a sophisticated treatment decision based on your U&E test results and NICE guidelines.</p>
+      <p class="nhsuk-lede-text">Our system has made a treatment recommendation based on your U&E test results and NICE guidelines.</p>
 
       <!-- AI Decision Comparison -->
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-card__heading">
-            Original plan vs. AI decision
+            Original plan update
           </h2>
           
           <div class="nhsuk-grid-row">
@@ -33,7 +33,7 @@
               <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                 <div class="nhsuk-card--care__heading-container">
                   <h3 class="nhsuk-card--care__heading">
-                    <span role="img" aria-label="Original plan">📋</span>Original plan
+                    📋 Original plan
                   </h3>
                 </div>
                 <div class="nhsuk-card--care__content">
@@ -48,7 +48,7 @@
               <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--immediate">
                 <div class="nhsuk-card--care__heading-container">
                   <h3 class="nhsuk-card--care__heading">
-                    <span role="img" aria-label="AI decision">🤖</span>AI decision
+                    ✅ Updated recommendation
                   </h3>
                 </div>
                 <div class="nhsuk-card--care__content">
@@ -68,7 +68,7 @@
           <h2 class="nhsuk-card__heading">
             NICE guideline rationale
           </h2>
-          <p>According to <strong>NICE Guideline NG136 (Hypertension in adults)</strong>, the AI system considered:</p>
+          <p>According to <strong>NICE Guideline NG136 (Hypertension in adults)</strong>, the system considered:</p>
           
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-half">
@@ -168,7 +168,7 @@
                   </h3>
                   <p class="nhsuk-card__description">
                     <strong>In 2 weeks</strong><br>
-                    Monitor response to new medication
+                    Our system will remind you when this is due
                   </p>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                   </h3>
                   <p class="nhsuk-card__description">
                     <strong>In 2 weeks</strong><br>
-                    Ensure kidney function stable with ACE inhibitor
+                    Our system will remind you when this is due
                   </p>
                 </div>
               </div>
@@ -210,11 +210,11 @@
         <details class="nhsuk-details nhsuk-expander">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
-              How does AI-supported care make treatment decisions?
+              How does the system make treatment recommendations?
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>Our AI-supported care system follows a structured, evidence-based approach:</p>
+            <p>Our system follows a structured, evidence-based approach:</p>
             <ol>
               <li><strong>Analyses your test results</strong> against established normal ranges and your personal baseline</li>
               <li><strong>Reviews NICE guidelines</strong> for hypertension management and treatment pathways</li>
@@ -223,7 +223,7 @@
               <li><strong>Makes evidence-based recommendations</strong> following established clinical protocols</li>
               <li><strong>Alerts your GP</strong> of all decisions for clinical oversight and approval</li>
             </ol>
-            <p>All AI-supported care decisions are reviewed by healthcare professionals to ensure patient safety and clinical appropriateness.</p>
+            <p>All system recommendations are reviewed by healthcare professionals to ensure patient safety and clinical appropriateness.</p>
           </div>
         </details>
       </div>

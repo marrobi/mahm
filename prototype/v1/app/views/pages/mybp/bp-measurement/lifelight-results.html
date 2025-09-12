@@ -25,14 +25,27 @@
 
       <h2 class="nhsuk-heading-m">Your results</h2>
 
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Average from 3 readings:</strong> Following NICE guidelines, multiple readings were taken and averaged to ensure accuracy.</p>
+      </div>
+
       {{ summaryList({
         rows: [
           {
             key: {
-              text: "Blood pressure"
+              text: "Average blood pressure"
             },
             value: {
               html: "<strong style='font-size: 24px; color: #d5281b;'>148/92 mmHg</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Individual readings"
+            },
+            value: {
+              html: "Reading 1: 152/95 mmHg<br>Reading 2: 146/91 mmHg<br>Reading 3: 146/90 mmHg"
             }
           },
           {
@@ -56,7 +69,7 @@
               text: "Method"
             },
             value: {
-              text: "Lifelight (NHS App)"
+              text: "Lifelight™ (NHS App)"
             }
           },
           {
@@ -128,7 +141,7 @@
             <li><strong>Systolic pressure</strong> (148) - pressure when your heart pushes blood out</li>
             <li><strong>Diastolic pressure</strong> (92) - pressure when your heart rests between beats</li>
           </ul>
-          <p>Your reading of 148/92 mmHg is above the target range. The AI system will recommend appropriate next steps.</p>
+          <p>Your average reading of 148/92 mmHg is above the target range. This result is based on 3 separate measurements taken following NICE guidelines for accurate blood pressure assessment.</p>
         </div>
       </div>
 

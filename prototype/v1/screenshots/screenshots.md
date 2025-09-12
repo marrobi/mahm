@@ -212,3 +212,50 @@ All screenshots captured at iPhone resolution (393x852 pixels) with full-page sc
 - ✅ **Context-specific**: Split preparation tips by measurement type (app vs community)
 - ✅ **User flow**: Clean choice screen → detailed instructions only when relevant
 - ✅ **NHS professional**: Realistic staffing and language throughout
+
+**✅ Comment 2344088855 - Lifelight Technology Corrections**:
+- ❌ **Fixed**: Lifelight measurement method corrected from fingertip to cheek (microblushes detection)
+- ✅ **Added**: Trademark symbols (Lifelight™) throughout all references
+- ✅ **Updated**: Camera interface shows cheek positioning instead of finger placement
+- ✅ **Enhanced**: Instructions updated for facial positioning and lighting requirements
+- ✅ **Improved**: Technology explanation reflects actual Lifelight methodology
+
+**✅ Comment 2344096288 - NICE/BHS Guidelines Compliance**:
+- ✅ **Added**: Multiple readings (3 readings) with automatic averaging per NICE guidelines
+- ✅ **Enhanced**: Results page shows individual readings plus averaged result
+- ✅ **Improved**: Clinical explanation emphasizes NICE-compliant methodology
+- ✅ **Added**: Information box explaining averaging approach for accuracy
+- ✅ **Updated**: Technology description includes 3-reading automatic process
+
+---
+
+## Updated Screenshots - Latest Fixes
+
+### Lifelight Technology Corrections
+![Lifelight Embedded - Fixed](lifelight-embedded-fixed.png)
+**Corrected Lifelight™ Interface** - Fixed based on technology specifications:
+- ✅ **Measurement method**: Changed from finger placement to cheek positioning for microblushes detection
+- ✅ **Trademark compliance**: Added Lifelight™ symbols throughout
+- ✅ **Camera interface**: Updated to show facial positioning instead of finger placement
+- ✅ **Instructions**: Comprehensive guidance for cheek-based measurement with proper lighting
+- ✅ **Technology explanation**: Accurate description of microblushes detection methodology
+- ✅ **NICE compliance**: Multiple readings (3) automatically taken and averaged
+
+### NICE Guidelines Compliant Results
+![Lifelight Results - NICE Compliant](lifelight-results-nice-compliant.png)
+**NICE/BHS Guidelines Compliant Results** - Following clinical best practices:
+- ✅ **Multiple readings**: Shows 3 individual readings (152/95, 146/91, 146/90 mmHg)
+- ✅ **Automatic averaging**: Displays averaged result (148/92 mmHg) per NICE guidelines
+- ✅ **Clinical explanation**: Information box explaining averaging methodology
+- ✅ **Proper methodology**: Emphasizes NICE-compliant multiple reading approach
+- ✅ **Trademark compliance**: Lifelight™ branding throughout
+- ✅ **Educational content**: Enhanced explanation of averaging importance for accuracy
+
+### Final Dashboard Verification
+![My BP Dashboard - Final](mybp-dashboard-final.png)
+**Final Dashboard Verification** - Confirming orchestrator-driven architecture:
+- ✅ **Orchestrator control**: "Your next recommended action" determined by AI system
+- ✅ **No patient choices**: Medication review presented as AI recommendation, not patient option
+- ✅ **Appropriate features**: "Available anytime" section limited to BP recording and settings
+- ✅ **AI management**: Shows "Next AI review" instead of GP appointments
+- ✅ **MVP compliance**: Follows multi-agentic architecture where orchestrator controls clinical decisions

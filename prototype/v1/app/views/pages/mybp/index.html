@@ -69,71 +69,17 @@
       
       <div class="bp-trend-chart nhsuk-u-margin-bottom-5">
         <div class="bp-trend-chart__header">
-          <p class="nhsuk-u-secondary-text-colour">Last 3 months</p>
+          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-3">Last 3 months</p>
+          <p class="nhsuk-u-secondary-text-colour">📈 Trending downward - well done!</p>
         </div>
         
-        <!-- Enhanced visual chart with better traffic light coding -->
-        <div class="bp-chart">
-          <div class="bp-chart__header">
-            <h4 class="nhsuk-heading-s">Your BP progress</h4>
-            <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-2">Trending downward - well done!</p>
-          </div>
-          
-          <div class="bp-chart__visual">
-            <!-- Simplified zone display -->
-            <div class="bp-chart__zones">
-              <div class="bp-chart__zone-info">
-                <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-1">
-                  <span class="bp-status-indicator bp-status-indicator--high"></span> High: 180+/110+
-                  <span class="bp-status-indicator bp-status-indicator--elevated"></span> Elevated: 140-179/90-109
-                  <span class="bp-status-indicator bp-status-indicator--normal"></span> Normal: Below 140/90
-                </p>
-              </div>
-            </div>
-            
-            <!-- Data points -->
-            <div class="bp-chart__points">
-              <div class="bp-chart__point bp-chart__point--elevated" style="left: 10%;" data-reading="145/92" data-date="30 Sep">
-                <span class="bp-chart__point-value">145/92</span>
-              </div>
-              <div class="bp-chart__point bp-chart__point--elevated" style="left: 35%;" data-reading="142/88" data-date="3 Oct">
-                <span class="bp-chart__point-value">142/88</span>
-              </div>
-              <div class="bp-chart__point bp-chart__point--normal" style="left: 65%;" data-reading="139/85" data-date="7 Oct">
-                <span class="bp-chart__point-value">139/85</span>
-              </div>
-              <div class="bp-chart__point bp-chart__point--normal" style="left: 90%;" data-reading="138/82" data-date="11 Oct">
-                <span class="bp-chart__point-value">138/82</span>
-              </div>
-            </div>
-            
-            <!-- Trend line -->
-            <div class="bp-chart__trend-line"></div>
-          </div>
-          
-          <div class="bp-chart__legend">
-            <div class="bp-chart__legend-item">
-              <span class="bp-chart__legend-dot bp-chart__legend-dot--high"></span>
-              <span>High (Action needed)</span>
-            </div>
-            <div class="bp-chart__legend-item">
-              <span class="bp-chart__legend-dot bp-chart__legend-dot--elevated"></span>
-              <span>Elevated (Monitor closely)</span>
-            </div>
-            <div class="bp-chart__legend-item">
-              <span class="bp-chart__legend-dot bp-chart__legend-dot--normal"></span>
-              <span>Normal (Target achieved)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Traffic light coding table -->
-        <div class="nhsuk-table-responsive nhsuk-u-margin-top-3">
+        <!-- Simple NHS-style readings table -->
+        <div class="nhsuk-table-responsive">
           <table class="nhsuk-table">
             <thead class="nhsuk-table__head">
               <tr class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="col">Date</th>
-                <th class="nhsuk-table__header" scope="col">Reading</th>
+                <th class="nhsuk-table__header" scope="col">Reading (mmHg)</th>
                 <th class="nhsuk-table__header" scope="col">Status</th>
               </tr>
             </thead>
@@ -169,44 +115,12 @@
             </tbody>
           </table>
         </div>
-      </div>
-
-      <!-- NEXT ACTIONS -->
-      {{ nhsappSectionHeading({
-        headingText: "Your next actions"
-      }) }}
-      
-      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
-        <div class="nhsuk-care-card__heading-container">
-          <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Information">ℹ️</span>
-            Book U&E blood test
-          </h3>
-        </div>
-        <div class="nhsuk-care-card__content">
-          <p>Your safety monitoring blood test is due. Please book within the next 7 days.</p>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="/pages/mybp/blood-test/index">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                <path d="m0 0h24v24h-24z" fill="none"/>
-                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
-              </svg>
-              <span class="nhsuk-action-link__text">Book now</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
-        <div class="nhsuk-care-card__heading-container">
-          <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Information">📊</span>
-            Next BP measurement
-          </h3>
-        </div>
-        <div class="nhsuk-care-card__content">
-          <p>We will send you a notification on Thursday to remind you to measure your blood pressure.</p>
-          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-top-2">You don't need to do anything today for this.</p>
+        
+        <!-- Simple explanation -->
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-3">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p><strong>Target:</strong> Below 140/90 mmHg</p>
+          <p>Your blood pressure has improved over the last month. Keep taking your medication as prescribed.</p>
         </div>
       </div>
 
@@ -273,6 +187,45 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- YOUR NEXT ACTIONS (moved to bottom) -->
+      {{ nhsappSectionHeading({
+        headingText: "Your next actions"
+      }) }}
+      
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Information">ℹ️</span>
+            Book U&E blood test
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your safety monitoring blood test is due. Please book within the next 7 days.</p>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="/pages/mybp/blood-test/index">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">Book now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Information">📊</span>
+            Next BP measurement
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>We will send you a notification on Thursday to remind you to measure your blood pressure.</p>
+          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-top-2">You don't need to do anything today for this.</p>
         </div>
       </div>
 

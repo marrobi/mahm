@@ -38,6 +38,9 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 ![Equipoise Treatment Decision](shared-decision-equipoise-final.png)
 **Treatment Decision Required** - Interface only appears when AI orchestrator determines clinical equipoise exists. Shows two equally-suitable treatments (Amlodipine vs Lisinopril) with BNF-based facts and real patient testimonials.
 
+![Side Effects Comparison](shared-decision-side-effects-comparison.png)
+**Side Effects Comparison** - Detailed comparison of side effect profiles between the two NICE-recommended treatments in equipoise. Shows BNF-sourced data with frequencies, key differences, and important considerations to help patients make informed treatment choices based on their personal risk tolerance and preferences.
+
 ![Equipoise Patient Stories](shared-decision-equipoise-multimedia.png)
 **Patient Experience Resources** - Personalized multimedia content focused on the specific drugs in equipoise, featuring real patient stories and experiences to support treatment choice rather than generic educational content.
 

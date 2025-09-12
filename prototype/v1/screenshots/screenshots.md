@@ -85,7 +85,8 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Your next recommended action**: AI system determines priority actions (medication dose adjustment) 
 - **Available anytime**: Non-priority features users can access independently
 - **Orchestrator control**: System guides users through care pathway rather than presenting choices
-- **MVP alignment**: Follows multi-agentic orchestration architecture from demo document
+- **AI-managed monitoring**: Shows "Next AI review" instead of GP appointments, reflecting autonomous AI management
+- **MVP alignment**: Follows multi-agentic orchestration architecture that reduces GP administrative burden
 
 ### 2. Enhanced Accessibility Settings Page  
 ![Enhanced Accessibility Settings](mybp-accessibility-settings-enhanced.png)

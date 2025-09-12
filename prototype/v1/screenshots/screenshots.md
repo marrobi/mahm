@@ -7,6 +7,14 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
 
+### Corrected Home Dashboard (Orchestrator-Driven)
+![Corrected Home Dashboard](home-dashboard-corrected.png)
+**Corrected Home Dashboard** - Fixed dashboard following MVP orchestrator architecture:
+- ❌ **Removed**: "Review and adjust medication" (patient-controlled clinical decision)
+- ❌ **Removed**: "Book safety blood test" (patient-controlled clinical decision)  
+- ✅ **Kept**: "Measure blood pressure" with enhanced options (community pharmacy OR embedded Lifelight)
+- ✅ **Result**: Only appropriate patient-controlled actions remain, clinical decisions reserved for AI orchestrator
+
 ---
 
 ## Dose Titration Journey (5 screens)
@@ -31,23 +39,48 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## BP Measurement Journey (5 screens)
 
-### 1. Introduction
+### 1. Updated Blood Pressure Measurement Options
+![Updated BP Measurement Options](bp-measurement-updated.png)
+**Enhanced Measurement Options** - Following MVP feedback, now offers patients choice between:
+- **Embedded Lifelight technology**: Direct measurement using NHS App camera interface
+- **Community pharmacy locations**: Professional-assisted measurement at local facilities
+- ✅ **MVP alignment**: Provides appropriate patient choice while maintaining orchestrator control over clinical decisions
+
+### 2. Embedded Lifelight Interface  
+![Lifelight Embedded Interface](lifelight-embedded-interface.png)
+**Built-in Lifelight Technology** - Complete embedded measurement interface showing:
+- Clear preparation instructions and safety guidance
+- Simulated camera interface for finger placement
+- Step-by-step measurement process explanation
+- Technical details about how Lifelight technology works
+- NHS-standard security and data protection information
+
+### 3. Lifelight Measurement Results
+![Lifelight Results](lifelight-results.png)
+**AI-Orchestrated Results Processing** - Shows how embedded measurement integrates with MVP architecture:
+- Immediate AI system response to elevated reading (148/92 mmHg)
+- Automatic care plan updates and clinical team notifications  
+- Orchestrator-driven next actions (earlier AI assessment scheduled)
+- Patient note-taking option with structured guidance
+- Educational content about blood pressure interpretation
+
+### 4. Original Introduction
 ![BP Measurement Intro](bp-measurement-intro.png)
 **Lifelight Technology Introduction** - Comprehensive overview of contactless BP measurement, process explanation, and preparation tips.
 
-### 2. Location Selection
+### 5. Original Location Selection
 ![BP Measurement Locations](bp-measurement-locations.png)
 **Community Location Selection** - List of available venues with distances, opening hours, and facility information.
 
-### 3. Appointment Booking
+### 6. Original Appointment Booking
 ![BP Measurement Appointment](bp-measurement-appointment.png)
 **Appointment Booking** - Date/time selection with contact details and SMS reminder options.
 
-### 4. Booking Confirmation
+### 7. Original Booking Confirmation
 ![BP Measurement Confirmation](bp-measurement-confirmation.png)
 **Appointment Confirmed** - Complete booking details with preparation instructions, calendar integration, and contact information.
 
-### 5. Sample Results
+### 8. Original Sample Results
 ![BP Measurement Results](bp-measurement-results.png)
 **Sample Measurement Results** - Demo results showing measurement analysis, trend data, AI insights, and next steps.
 
@@ -77,16 +110,17 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Accessibility and Language Settings (3 screens) - **Enhanced with NHS Best Practices**
+## Accessibility and Language Settings (4 screens) - **Enhanced with NHS Best Practices**
 
-### 1. Orchestrator-Driven My BP Dashboard
-![My BP Dashboard - Orchestrator Driven](mybp-dashboard-orchestrator-driven.png)
-**Orchestrator-Driven Dashboard** - Redesigned main dashboard following MVP specifications:
-- **Your next recommended action**: AI system determines priority actions (medication dose adjustment) 
-- **Available anytime**: Non-priority features users can access independently
+### 1. AI-Orchestrated My BP Dashboard
+![My BP Dashboard - AI Orchestrated](mybp-dashboard-ai-orchestrated.png)
+**AI-Orchestrated Dashboard** - Properly implemented MVP specifications:
+- **Your next recommended action**: AI system determines priority actions (medication dose adjustment)
+- **Available anytime**: Non-priority features users can access independently  
 - **Orchestrator control**: System guides users through care pathway rather than presenting choices
-- **AI-managed monitoring**: Shows "Next AI review" instead of GP appointments, reflecting autonomous AI management
+- **AI-managed monitoring**: Shows "Next AI review: 7 October 2024" instead of GP appointments
 - **MVP alignment**: Follows multi-agentic orchestration architecture that reduces GP administrative burden
+- ✅ **Corrected**: Removed inappropriate GP appointment references per feedback
 
 ### 2. Enhanced Accessibility Settings Page  
 ![Enhanced Accessibility Settings](mybp-accessibility-settings-enhanced.png)
@@ -105,11 +139,18 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Individual change links for granular control
 - Back to My BP and Change settings action buttons
 
+### 4. Original Accessibility Screenshots (Reference)
+![My BP Dashboard - Orchestrator Driven](mybp-dashboard-orchestrator-driven.png)
+![Enhanced Accessibility Settings](mybp-accessibility-settings.png) 
+![Enhanced Settings Confirmation](mybp-accessibility-confirmation.png)
+
 ---
 
 ## Key Features Demonstrated
 
 - **Multi-agentic Orchestration**: Central AI orchestrator determines next actions rather than presenting user choices
+- **Corrected Patient Controls**: Removed inappropriate patient-controlled clinical decisions (medication adjustment, blood test booking)
+- **Enhanced BP Measurement**: Dual-option approach with embedded Lifelight technology and community pharmacy locations
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
@@ -124,7 +165,17 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Inclusive Design**: Multi-language support (9 languages), BSL interpretation, and Easy read formats
 - **Real-world Implementation**: Based on actual NHS App accessibility patterns and features
 - **MVP Architecture Compliance**: Orchestrator-driven user experience following multi-agentic demo specifications
+- **AI System Integration**: Embedded Lifelight technology demonstrates seamless AI-orchestrated health monitoring
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all patient pathways including NHS-standard accessibility personalization
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.
+
+## MVP Feedback Addressed
+
+**✅ Comment 2341235244 & 3215788443**: 
+- **Removed**: Inappropriate patient-controlled medication review/adjustment options
+- **Removed**: Patient-controlled blood test booking (orchestrator decision only)
+- **Enhanced**: Blood pressure measurement with dual options (embedded Lifelight + community pharmacy)
+- **Maintained**: AI review scheduling instead of GP appointments to reduce clinical burden
+- **Result**: Dashboard now properly reflects MVP multi-agentic architecture where orchestrator controls clinical decisions

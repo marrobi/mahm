@@ -19,7 +19,7 @@
       </h1>
 
       <p class="nhsuk-lede-text">
-        Take your blood pressure using Lifelight technology at a local community location.
+        Choose how you'd like to measure your blood pressure - at home using this app or at a community location.
       </p>
 
       <div class="nhsuk-inset-text">
@@ -27,7 +27,25 @@
         <p><strong>Lifelight technology</strong> measures your blood pressure without a cuff, using only your smartphone camera.</p>
       </div>
 
-      <h2 class="nhsuk-heading-m">How it works</h2>
+      <h2 class="nhsuk-heading-m">Choose your measurement option</h2>
+      
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Measure now using this app",
+            href: "/pages/mybp/bp-measurement/lifelight-embedded",
+            description: "Use the built-in Lifelight technology right here in the NHS App - takes about 2 minutes"
+          },
+          {
+            title: "Find a community location",
+            href: "/pages/mybp/bp-measurement/locations",
+            description: "Visit a local pharmacy or health centre with trained staff to help you"
+          }
+        ]
+      }) }}
+
+      <h3 class="nhsuk-heading-m">Community location measurement</h3>
       
       <ol class="nhsuk-list nhsuk-list--number">
         <li>Choose a convenient community location near you</li>
@@ -37,32 +55,15 @@
         <li>Your results are automatically saved to your My BP record</li>
       </ol>
 
-      <div class="nhsuk-details" data-module="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            What to expect during measurement
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Sit comfortably and place your finger on your phone's camera</li>
-            <li>Stay still for about 30 seconds while the app measures</li>
-            <li>The technology detects subtle changes in blood flow through your fingertip</li>
-            <li>Results are calculated using AI and validated measurement algorithms</li>
-            <li>The whole process takes less than 5 minutes</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 class="nhsuk-heading-m">Benefits of community measurement</h2>
+      <h3 class="nhsuk-heading-m">App-based measurement</h3>
       
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>No need to visit GP practice</li>
-        <li>Convenient locations and flexible times</li>
-        <li>Trained volunteers available to help</li>
-        <li>Results integrated directly into your care plan</li>
-        <li>Free NHS service</li>
-      </ul>
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Make sure you're in a quiet, comfortable environment</li>
+        <li>Follow the on-screen instructions to position your finger</li>
+        <li>Keep still for about 30 seconds during measurement</li>
+        <li>Your results are automatically calculated and saved</li>
+        <li>Review your measurement and add any notes</li>
+      </ol>
 
       <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
         <div class="nhsuk-care-card__heading-container">
@@ -71,23 +72,15 @@
           </h3>
         </div>
         <div class="nhsuk-care-card__content">
+          <p><strong>For any blood pressure measurement:</strong></p>
           <ul>
             <li>Avoid caffeine for 30 minutes before measurement</li>
             <li>Don't smoke for 30 minutes before</li>
-            <li>Use the toilet before your appointment</li>
-            <li>Bring your smartphone fully charged</li>
+            <li>Use the toilet before measurement</li>
+            <li>Sit quietly for at least 5 minutes before starting</li>
+            <li>Make sure your smartphone is fully charged</li>
           </ul>
         </div>
-      </div>
-
-      <div class="nhsuk-action-link">
-        <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/locations">
-          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-            <path d="m0 0h24v24h-24z" fill="none"/>
-            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
-          </svg>
-          <span class="nhsuk-action-link__text">Find locations near me</span>
-        </a>
       </div>
 
     </div>

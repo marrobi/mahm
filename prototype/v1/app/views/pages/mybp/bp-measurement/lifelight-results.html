@@ -1,0 +1,137 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Blood pressure measurement" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation">
+        <h1 class="nhsuk-panel__title">
+          Blood pressure measurement complete
+        </h1>
+        <div class="nhsuk-panel__body">
+          Your reading has been saved to your My BP record and shared with your care team.
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Your results</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Blood pressure"
+            },
+            value: {
+              html: "<strong style='font-size: 24px; color: #d5281b;'>148/92 mmHg</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Category"
+            },
+            value: {
+              html: "<span class='nhsuk-tag nhsuk-tag--red'>High</span>"
+            }
+          },
+          {
+            key: {
+              text: "Measurement time"
+            },
+            value: {
+              text: "3 October 2024, 2:45 PM"
+            }
+          },
+          {
+            key: {
+              text: "Method"
+            },
+            value: {
+              text: "Lifelight (NHS App)"
+            }
+          },
+          {
+            key: {
+              text: "Measurement quality"
+            },
+            value: {
+              html: "<span class='nhsuk-tag nhsuk-tag--green'>Excellent</span>"
+            }
+          }
+        ]
+      }) }}
+
+      <div class="nhsuk-care-card nhsuk-care-card--immediate">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Immediate action required: </span>
+              AI system update
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your reading (148/92 mmHg) is higher than your target. The AI system has automatically:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Updated your medication review priority</li>
+            <li>Scheduled an earlier AI assessment for tomorrow</li>
+            <li>Notified your clinical team of the elevated reading</li>
+          </ul>
+          <p><strong>Next action:</strong> Return to My BP dashboard to see your updated recommendations.</p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Add notes (optional)</h2>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="measurement-notes">
+          Any additional information about this reading?
+        </label>
+        <div class="nhsuk-hint" id="measurement-notes-hint">
+          For example: feeling stressed, just exercised, feeling unwell
+        </div>
+        <textarea class="nhsuk-textarea" id="measurement-notes" name="measurement-notes" rows="3" aria-describedby="measurement-notes-hint"></textarea>
+      </div>
+
+      <div class="nhsuk-button-group">
+        {{ button({
+          text: "Save notes and continue",
+          href: "/pages/mybp/index"
+        }) }}
+
+        {{ button({
+          text: "Skip notes",
+          href: "/pages/mybp/index",
+          classes: "nhsuk-button--secondary"
+        }) }}
+      </div>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Understanding your blood pressure reading
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Blood pressure is measured in millimetres of mercury (mmHg) and given as 2 figures:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Systolic pressure</strong> (148) - pressure when your heart pushes blood out</li>
+            <li><strong>Diastolic pressure</strong> (92) - pressure when your heart rests between beats</li>
+          </ul>
+          <p>Your reading of 148/92 mmHg is above the target range. The AI system will recommend appropriate next steps.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Blood pressure measurement" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to measurement options",
+    href: "/pages/mybp/bp-measurement/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Measure your blood pressure now
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Use the built-in Lifelight technology to measure your blood pressure using your smartphone camera.
+      </p>
+
+      <div class="nhsuk-care-card nhsuk-care-card--immediate">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Before you start
+            </span>
+          </h2>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Make sure you:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Are in a quiet, well-lit room</li>
+            <li>Have been sitting quietly for at least 5 minutes</li>
+            <li>Haven't had caffeine or smoked in the last 30 minutes</li>
+            <li>Have removed any nail polish from your index finger</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">How to measure</h2>
+      
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Position your phone flat on a stable surface</li>
+        <li>Gently place your index finger over the camera lens</li>
+        <li>Keep completely still for 30 seconds</li>
+        <li>Follow the on-screen instructions and countdown</li>
+        <li>Your results will be calculated automatically</li>
+      </ol>
+
+      <!-- SIMULATED LIFELIGHT INTERFACE -->
+      <div class="nhsuk-panel app-panel--blue nhsuk-u-margin-top-5">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <h3 class="nhsuk-heading-m nhsuk-u-text-align-center">Lifelight Camera Interface</h3>
+            
+            <!-- Camera simulation -->
+            <div style="background: #003078; color: white; padding: 40px; text-align: center; border-radius: 8px; margin: 20px 0;">
+              <div style="background: #005eb8; border-radius: 50%; width: 120px; height: 120px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 24px;">📷</span>
+              </div>
+              <p style="margin-top: 20px; font-size: 18px;">Place your finger here</p>
+              <p style="margin-top: 10px;">Camera will activate when you're ready</p>
+            </div>
+
+            <div class="nhsuk-action-link">
+              <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/lifelight-results">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                  <path d="m0 0h24v24h-24z" fill="none"/>
+                  <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+                </svg>
+                <span class="nhsuk-action-link__text">Start measurement</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-details" data-module="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How Lifelight technology works
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Lifelight uses your smartphone camera to detect subtle changes in blood flow through your fingertip.</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>The camera detects tiny colour changes in your fingertip caused by your pulse</li>
+            <li>AI algorithms analyse these changes to calculate your blood pressure</li>
+            <li>The technology is clinically validated and meets NHS standards</li>
+            <li>No personal data is stored on your device during measurement</li>
+            <li>Results are encrypted and securely transmitted to your NHS record</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

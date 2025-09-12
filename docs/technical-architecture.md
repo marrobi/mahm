@@ -115,47 +115,65 @@ The My BP hypertension management system uses **Azure AI Foundry Connected Agent
 
 ## MVP Implementation Phases
 
-### Phase 1: Core Infrastructure (Weeks 1-4)
+### Phase 1: Foundation + Basic Agent Demo (Weeks 1-4)
+**Deliverables:**
 - Deploy Azure AI Foundry workspace with Connected Agents
 - Configure FHIR server with dummy patient data (Categories A, B, C)
-- Implement basic API Gateway with authentication
-- Set up Cosmos DB for conversation storage
-- Deploy monitoring and logging infrastructure
-
-### Phase 2: Essential Agents (Weeks 5-8) 
 - Implement Main Orchestrating Agent with natural language routing
+- Set up Cosmos DB for conversation storage
+- Deploy basic API Gateway with authentication
+
+**Demo:** Basic conversational AI agent that can answer hypertension questions and route to appropriate clinical responses using dummy patient data. Simple web interface showing agent conversations.
+
+### Phase 2: Core Clinical Agents Demo (Weeks 5-8)
+**Deliverables:**
 - Deploy Red Flag Agent with emergency detection (<30s response)
 - Configure BP Measurement Agent for community monitoring
-- Implement basic agent-to-agent communication patterns
-- Establish clinical safety monitoring
+- Implement Diagnosing Agent with ABPM coordination
+- Establish clinical safety monitoring and multi-agent communication
+- Deploy emergency alert infrastructure
 
-### Phase 3: Clinical Workflow Agents (Weeks 9-12)
-- Deploy Diagnosing Agent with ABPM coordination
+**Demo:** Multi-agent clinical scenarios including emergency detection (red flag alerts), BP monitoring recommendations, and basic diagnostic workflows. Show agent-to-agent handoffs and clinical safety checks.
+
+### Phase 3: Complete Agent Network Demo (Weeks 9-12)
+**Deliverables:**
 - Implement Titration Agent with NICE compliance
 - Configure Monitoring Agent for lab coordination
 - Add Lifestyle Agent with cultural adaptations
-- Implement multi-agent clinical consultations
+- Deploy Shared Decision-Making Agent
+- Implement comprehensive multi-agent clinical consultations
 
-### Phase 4: User Interfaces (Weeks 13-16)
+**Demo:** Full 9-agent network handling complex clinical scenarios including medication titration, lifestyle recommendations with cultural adaptations, and sophisticated multi-agent consultations for complex hypertension cases.
+
+### Phase 4: User Interface Demo (Weeks 13-16)
+**Deliverables:**
 - Develop NHS App integration module
 - Build clinician dashboard with patient triage
-- Create mobile application with smart features
-- Implement emergency alert systems
+- Create mobile application with smart BP logging features
+- Implement emergency alert systems in UIs
 - Deploy user authentication and authorization
 
-### Phase 5: Advanced Features (Weeks 17-20)
-- Add Shared Decision-Making Agent
-- Implement Medication Adherence Agent
-- Deploy advanced healthcare orchestration patterns
-- Add population health analytics
-- Implement comprehensive audit trails
+**Demo:** Complete end-to-end user journeys through NHS App integration, mobile app BP logging, and clinician dashboard patient management. Show real-time emergency alerts and patient triage workflows.
 
-### Phase 6: Testing & Validation (Weeks 21-24)
+### Phase 5: Advanced Features Demo (Weeks 17-20)
+**Deliverables:**
+- Implement Medication Adherence Agent with intelligent reminders
+- Deploy advanced healthcare orchestration patterns
+- Add population health analytics dashboard
+- Implement comprehensive audit trails and compliance reporting
+- Deploy advanced agent coordination patterns
+
+**Demo:** Advanced population health insights, medication adherence tracking, sophisticated orchestration patterns for complex clinical workflows, and comprehensive audit/compliance reporting capabilities.
+
+### Phase 6: Production-Ready System Demo (Weeks 21-24)
+**Deliverables:**
 - Comprehensive safety testing with dummy data scenarios
-- Multi-agent workflow validation
-- Emergency response testing
-- Performance optimization
+- Performance optimization and scalability validation
+- Emergency response testing and validation
 - Clinical safety compliance verification
+- Final system integration and optimization
+
+**Demo:** Production-ready system handling high-volume scenarios, demonstrating scalability, performance metrics, comprehensive safety validation results, and full clinical workflow simulation ready for pilot deployment.
 
 ---
 

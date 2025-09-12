@@ -18,13 +18,9 @@
         Your 24-hour blood pressure results
       </h1>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="img" aria-label="Warning">⚠️</span>
-          Demo results only
-        </h3>
-        <p>These are simulated results for demonstration purposes.</p>
-      </div>
+      <p class="nhsuk-lede-text">
+        ABPM (Ambulatory Blood Pressure Monitoring) measures your blood pressure regularly over 24 hours using a portable device you wear at home and work.
+      </p>
 
       <!-- Results Overview -->
       <div class="nhsuk-summary-card">
@@ -41,8 +37,8 @@
               <p class="nhsuk-u-secondary-text-colour">24-hour average</p>
             </div>
             <div class="nhsuk-grid-column-two-thirds">
-              <strong class="nhsuk-tag nhsuk-tag--orange">Stage 1 Hypertension</strong>
-              <p class="nhsuk-u-margin-top-2">Results suggest high blood pressure requiring treatment</p>
+              <strong class="nhsuk-tag nhsuk-tag--red">Stage 1 Hypertension</strong>
+              <p class="nhsuk-u-margin-top-2">Results suggest high blood pressure requiring GP review</p>
             </div>
           </div>
         </div>
@@ -66,7 +62,7 @@
               <td class="nhsuk-table__cell"><strong>148/86 mmHg</strong></td>
               <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
                 text: "High",
-                colour: "orange"
+                colour: "red"
               }) }}</td>
             </tr>
             <tr class="nhsuk-table__row">
@@ -74,7 +70,7 @@
               <td class="nhsuk-table__cell"><strong>135/78 mmHg</strong></td>
               <td class="nhsuk-table__cell">{{ nhsappBadgeSmall({
                 text: "Elevated",
-                colour: "yellow"
+                colour: "red"
               }) }}</td>
             </tr>
           </tbody>
@@ -95,20 +91,27 @@
 
       <h2 class="nhsuk-heading-m">What these results mean</h2>
       
-      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
         <div class="nhsuk-care-card__heading-container">
           <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Urgent">🔴</span>
-            Diagnosis confirmed
+            <span role="img" aria-label="Important">📋</span>
+            Results suggest Stage 1 hypertension
           </h3>
         </div>
         <div class="nhsuk-care-card__content">
-          <p>Your 24-hour blood pressure results confirm <strong>Stage 1 Hypertension</strong>.</p>
+          <p>Your 24-hour blood pressure results suggest <strong>Stage 1 hypertension</strong>. This means your blood pressure is consistently higher than the normal range and may require treatment.</p>
+          
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <h4 class="nhsuk-heading-s">What is Stage 1 hypertension?</h4>
+            <p>Stage 1 hypertension means your daytime average blood pressure is between 135/85 mmHg and 149/94 mmHg. At this level, your blood pressure is high enough to increase your risk of heart disease and stroke, but can usually be managed effectively with lifestyle changes and medication if needed.</p>
+          </div>
+          
           <ul class="nhsuk-list nhsuk-list--bullet">
             <li>Daytime average (148/86) exceeds normal range (135/85)</li>
-            <li>24-hour average (148/86) confirms diagnosis per NICE guidelines</li>
-            <li><strong>GP approval required</strong> before treatment can commence</li>
-            <li>Evidence package compiled for clinical review</li>
+            <li>24-hour average (148/86) meets NICE criteria for Stage 1 hypertension</li>
+            <li><strong>GP approval required</strong> before any treatment can commence</li>
+            <li>Evidence package compiled and sent for clinical review</li>
           </ul>
         </div>
       </div>

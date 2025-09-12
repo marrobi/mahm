@@ -39,7 +39,32 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## BP Measurement Journey (5 screens)
 
-### 1. Updated Blood Pressure Measurement Options
+### 1. Updated Blood Pressure Measurement Options - **IMPROVED**
+![BP Measurement Improved](bp-measurement-improved.png)
+**Improved Measurement Options** - Addressing NHS style guidance and removing information overload:
+- ✅ **Fixed**: Removed American language ("right here" → "using this app")
+- ✅ **Simplified**: Clean choice interface without overwhelming detail
+- ✅ **Streamlined**: Removed detailed instructions that caused information overload
+- ✅ **NHS-appropriate**: Professional, British terminology throughout
+- ✅ **User-friendly**: Clear, simple descriptions focusing on choice rather than process
+
+### 2. Enhanced Lifelight Interface - **IMPROVED**
+![Lifelight Embedded Improved](lifelight-embedded-improved.png)
+**Improved Embedded Lifelight Technology** - Context-specific guidance and instructions:
+- ✅ **Comprehensive prep**: All Lifelight-specific preparation tips moved here from choice screen
+- ✅ **Detailed instructions**: Step-by-step guidance specific to app-based measurement
+- ✅ **No information overload**: Context-relevant content only (no community location tips)
+- ✅ **Better user flow**: Instructions appear when needed, not overwhelmed at choice stage
+
+### 3. Enhanced Community Locations - **IMPROVED**  
+![Community Locations Improved](community-locations-improved.png)
+**Improved Community Location Selection** - Professional NHS language and context-specific guidance:
+- ✅ **Fixed**: "Trained volunteer" → "Trained pharmacist or healthcare assistant support"
+- ✅ **Added**: Community-specific preparation tips relevant to appointment-based measurement
+- ✅ **Professional**: Realistic NHS staffing language (pharmacist/healthcare assistant)
+- ✅ **Context-relevant**: Preparation focused on arriving for appointments, not home measurement
+
+### 4. Original Enhanced BP Measurement Options (REPLACED)
 ![Updated BP Measurement Options](bp-measurement-updated.png)
 **Enhanced Measurement Options** - Following MVP feedback, now offers patients choice between:
 - **Embedded Lifelight technology**: Direct measurement using NHS App camera interface
@@ -179,3 +204,11 @@ All screenshots captured at iPhone resolution (393x852 pixels) with full-page sc
 - **Enhanced**: Blood pressure measurement with dual options (embedded Lifelight + community pharmacy)
 - **Maintained**: AI review scheduling instead of GP appointments to reduce clinical burden
 - **Result**: Dashboard now properly reflects MVP multi-agentic architecture where orchestrator controls clinical decisions
+
+**✅ Comment 2344085628 - BP Measurement UI Improvements**:
+- ❌ **Fixed**: Removed American language ("right here" → NHS-appropriate "using this app")
+- ✅ **Separated**: Moved Lifelight instructions to dedicated screen (eliminated information overload)
+- ❌ **Fixed**: "Trained volunteer" → "Trained pharmacist or healthcare assistant support" 
+- ✅ **Context-specific**: Split preparation tips by measurement type (app vs community)
+- ✅ **User flow**: Clean choice screen → detailed instructions only when relevant
+- ✅ **NHS professional**: Realistic staffing and language throughout

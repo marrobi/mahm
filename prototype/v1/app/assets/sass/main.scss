@@ -339,3 +339,36 @@
     background-color: #fdf2f2;
   }
 }
+
+// Simplified BP Status Indicators
+.bp-chart__zone-info {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.bp-status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  margin-left: 16px;
+  
+  &:first-child {
+    margin-left: 0;
+  }
+  
+  &.bp-status-indicator--normal {
+    background: #28a745;
+  }
+  
+  &.bp-status-indicator--elevated {
+    background: #ffc107;
+  }
+  
+  &.bp-status-indicator--high {
+    background: #dc3545;
+  }
+}

@@ -80,16 +80,14 @@
           </div>
           
           <div class="bp-chart__visual">
-            <!-- Zone indicators -->
+            <!-- Simplified zone display -->
             <div class="bp-chart__zones">
-              <div class="bp-chart__zone bp-chart__zone--normal">
-                <span class="bp-chart__zone-label">Normal (&lt;140/90)</span>
-              </div>
-              <div class="bp-chart__zone bp-chart__zone--elevated">
-                <span class="bp-chart__zone-label">Elevated (140-159/90-99)</span>
-              </div>
-              <div class="bp-chart__zone bp-chart__zone--high">
-                <span class="bp-chart__zone-label">High (&gt;160/100)</span>
+              <div class="bp-chart__zone-info">
+                <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-1">
+                  <span class="bp-status-indicator bp-status-indicator--normal"></span> Normal: Below 140/90
+                  <span class="bp-status-indicator bp-status-indicator--elevated"></span> Elevated: 140-179/90-109
+                  <span class="bp-status-indicator bp-status-indicator--high"></span> High: 180+/110+
+                </p>
               </div>
             </div>
             
@@ -207,16 +205,8 @@
           </h3>
         </div>
         <div class="nhsuk-care-card__content">
-          <p>Your next measurement is scheduled for next Thursday to continue monitoring your progress.</p>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/index">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                <path d="m0 0h24v24h-24z" fill="none"/>
-                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
-              </svg>
-              <span class="nhsuk-action-link__text">View appointment</span>
-            </a>
-          </div>
+          <p>We will send you a notification on Thursday to remind you to measure your blood pressure.</p>
+          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-top-2">You don't need to do anything today for this.</p>
         </div>
       </div>
 

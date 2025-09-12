@@ -21,11 +21,11 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
     ### 3. Medication Recommendation
     ![Dose Titration Recommendation](dose-titration-recommendation.png)
-    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan.
+    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan. Features reassuring language that the system will remind patients for monitoring rather than giving them tasks they cannot action today.
 
     ### 4. Confirmation
     ![Dose Titration Confirmation](dose-titration-confirmation.png)
-    **Dose Increase Confirmed** - Confirmation screen with care plan updates and safety information. The system will remind you in 2-4 weeks to check your blood pressure again. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
+    **Dose Increase Confirmed** - Confirmation screen with care plan updates and safety information. Features reassuring language that the system will automatically remind users for future monitoring rather than giving them tasks they cannot action today. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
 
     ### 5. Blood Test Scheduling
     ![Blood Test Overview](blood-test-overview.png)

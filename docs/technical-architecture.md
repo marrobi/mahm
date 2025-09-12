@@ -430,77 +430,182 @@ Azure Monitor + Application Insights
 
 ## Healthcare Agent Orchestration Patterns
 
-### Agent State Management
-The system implements healthcare-specific state management patterns for maintaining clinical context across multi-agent interactions:
+Based on healthcare agent orchestration best practices, the My BP system implements enhanced clinical workflow coordination patterns integrated with Azure AI Foundry Connected Agents.
 
-**Clinical Context Persistence:**
+### Clinical Workflow State Management
+
+The system implements sophisticated healthcare workflow state tracking inspired by healthcare agent orchestration patterns:
+
+**Enhanced Clinical Context Persistence:**
 - **Patient Clinical State**: Maintained across all agent interactions with FHIR resource references
 - **Active Clinical Workflows**: State tracking for ongoing care pathways (diagnosis, titration, monitoring)
-- **Agent Coordination State**: Cross-agent dependencies and workflow handoffs
-- **Safety Check State**: Continuous monitoring state for clinical safety validation
+- **Agent Coordination State**: Cross-agent dependencies and workflow handoffs with clinical safety validation
+- **Conversation Continuity**: Patient interaction history preserved to prevent repeated information gathering
+- **Clinical Decision Chains**: Complete traceability of multi-agent clinical decision-making processes
+
+**Healthcare Agent Communication Patterns:**
+- **"Back to You" Yield Control**: Each agent explicitly yields control to the appropriate next agent or orchestrator
+- **Clinical Context Handoffs**: Structured transfer of clinical context between agents with full state preservation
+- **Role Limitation Enforcement**: Agents operate within defined clinical scope with automatic boundary enforcement
+- **Multi-Agent Clinical Consultations**: Coordinated consultation patterns for complex clinical decisions
 
 **State Synchronization Patterns:**
 ```json
 {
   "patientClinicalState": {
     "patientId": "fhir-patient-id",
+    "dataLoadedState": true,
+    "lastInteraction": "2024-01-15T14:30:00Z",
     "currentWorkflows": [
       {
         "workflowType": "medication-titration",
         "stage": "dose-optimization", 
         "assignedAgents": ["titration-agent", "monitoring-agent"],
+        "primaryAgent": "titration-agent",
+        "supportingAgents": ["monitoring-agent", "red-flag-agent"],
         "dependencies": ["lab-results-pending"],
-        "safetyChecks": ["contraindication-clear", "renal-function-normal"]
+        "safetyChecks": ["contraindication-clear", "renal-function-normal"],
+        "yieldControl": "orchestrator"
       }
     ],
     "clinicalContext": {
       "primaryDiagnosis": "essential-hypertension",
       "riskFactors": ["diabetes", "family-history"],
       "currentMedications": ["lisinopril-10mg", "amlodipine-5mg"],
-      "latestVitals": {"bp": "145/92", "timestamp": "2024-01-15T14:30:00Z"}
+      "latestVitals": {"bp": "145/92", "timestamp": "2024-01-15T14:30:00Z"},
+      "conversationHistory": {
+        "timelineCreated": true,
+        "lastAgentConsultation": "titration-agent",
+        "pendingActions": ["u&e-monitoring", "bp-recheck-2weeks"]
+      }
     }
   }
 }
 ```
 
-### Clinical Decision Tree Integration
-Unlike simple natural language routing, the system implements structured clinical decision trees for healthcare-appropriate agent coordination:
+### Enhanced Agent Instructions and Role Management
 
-**Decision Tree Framework:**
-- **Clinical Rule Engine**: NICE guideline-based decision points
-- **Safety Gate Patterns**: Mandatory safety checks between clinical decisions
-- **Escalation Decision Trees**: Structured pathways for different risk levels
-- **Clinical Workflow Branching**: Conditional routing based on clinical criteria
+The system implements healthcare-specific agent instruction patterns for clinical safety and workflow management:
+
+**Agent Instruction Framework:**
+- **Role Definition Clarity**: Each agent has explicitly defined clinical scope and limitations
+- **Temperature Control**: Clinical agents use temperature 0 for consistent decision-making
+- **Yield Control Instructions**: Mandatory "back to you: *AgentName*" patterns for proper handoffs
+- **Clinical Context Requirements**: Agents must validate required clinical information before proceeding
+- **Safety Boundary Enforcement**: Automatic prevention of agents operating outside clinical scope
+
+**Healthcare Agent Configuration Patterns:**
+```yaml
+agent_configuration:
+  - name: "PatientHistory"
+    healthcare_agent: true
+    temperature: 0
+    role_limitations:
+      - "no-treatment-plans"
+      - "no-diagnoses" 
+      - "no-image-interpretation"
+    required_information:
+      - "patient_id"
+    data_loading_pattern:
+      - "load_once_per_session"
+      - "validate_data_loaded_state"
+    yield_control:
+      - "mandatory_handoff"
+      - "specify_target_agent"
+
+  - name: "TitrationAgent"
+    healthcare_agent: true
+    temperature: 0
+    safety_gates:
+      - "contraindication-check"
+      - "renal-function-validation"
+      - "drug-interaction-screening"
+    approval_required:
+      - "monitoring-agent"
+    clinical_guidelines:
+      - "nice-ng136"
+```
+
+### Clinical Decision Tree Integration
+Building on Connected Agents natural language routing, the system adds structured clinical decision trees for healthcare-appropriate agent coordination:
+
+**Enhanced Decision Tree Framework:**
+- **Clinical Rule Engine**: NICE guideline-based decision points with automated compliance checking
+- **Safety Gate Patterns**: Mandatory safety validation checkpoints between clinical decisions
+- **Escalation Decision Trees**: Multi-tier escalation pathways with agent coordination
+- **Clinical Workflow Branching**: Conditional routing based on clinical criteria and agent availability
+- **Agent Facilitator Patterns**: Orchestrator agent facilitates clinical discussions between specialized agents
 
 ### Enhanced Agent Coordination Patterns
 Building on Connected Agents while adding healthcare-specific coordination:
 
-**Multi-Agent Clinical Workflows:**
+### Enhanced Multi-Agent Clinical Workflows
+Healthcare agent orchestration patterns for complex clinical scenario management:
+
+**Clinical Workflow Orchestration Patterns:**
 ```yaml
-workflow_patterns:
-  - name: "hypertension-diagnosis"
+clinical_workflows:
+  - name: "hypertension-diagnosis-workflow"
     entry_point: "diagnosing-agent"
-    decision_points:
+    orchestration_pattern: "facilitated-discussion"
+    agent_sequence:
       - stage: "initial-assessment"
-        criteria: "clinic_bp > 140/90"
-        next_agents: ["bp-measurement-agent", "red-flag-agent"]
-      - stage: "confirmation-required" 
+        primary_agent: "diagnosing-agent"
+        required_input: "clinic_bp > 140/90"
+        supporting_agents: ["patient-history-agent"]
+        yield_pattern: "back to you: *Orchestrator*"
+        
+      - stage: "safety-validation"
+        primary_agent: "red-flag-agent"
+        validation_criteria: ["no-immediate-danger", "bp < 180/120"]
+        supporting_agents: ["monitoring-agent"]
+        safety_gates: ["emergency-threshold-check"]
+        yield_pattern: "back to you: *Orchestrator*"
+        
+      - stage: "confirmation-required"
+        primary_agent: "diagnosing-agent" 
         criteria: "abpm_needed = true"
-        next_agents: ["diagnosing-agent"]
-        safety_gates: ["contraindication-check"]
+        agent_instructions: "Proceed with ABPM arrangement"
+        contraindication_check: true
+        yield_pattern: "back to you: *Orchestrator*"
+        
       - stage: "treatment-planning"
         criteria: "diagnosis_confirmed = true"
-        next_agents: ["shared-decision-agent", "lifestyle-agent"]
-        
-  - name: "emergency-escalation"
+        multi_agent_consultation:
+          facilitator: "orchestrator"
+          participants: ["shared-decision-agent", "lifestyle-agent", "titration-agent"]
+          consultation_pattern: "sequential-with-plan-confirmation"
+          yield_control: "orchestrator-managed"
+
+  - name: "emergency-escalation-workflow"
     entry_point: "red-flag-agent"
     priority: "immediate"
-    decision_points:
-      - stage: "triage"
+    orchestration_pattern: "coordinated-response"
+    agent_sequence:
+      - stage: "immediate-triage"
+        primary_agent: "red-flag-agent"
+        response_time_sla: "30-seconds"
         criteria: "bp > 180/120 OR symptoms_severe"
-        next_agents: ["monitoring-agent"]
+        supporting_agents: ["monitoring-agent"]
+        validation_required: ["multi-agent-consensus"]
+        
+      - stage: "coordinated-escalation"
+        multi_agent_response:
+          - agent: "monitoring-agent"
+            action: "activate-continuous-monitoring"
+          - agent: "orchestrator"  
+            action: "coordinate-external-notifications"
         external_systems: ["emergency-services", "gp-practice"]
+        yield_pattern: "emergency-monitoring-mode"
 ```
+
+**Facilitator Agent Pattern:**
+The Main Orchestrating Agent implements healthcare-specific facilitation patterns:
+- **Clinical Discussion Moderation**: Facilitates structured clinical consultations between specialized agents
+- **Plan Presentation and Confirmation**: Presents multi-agent consultation plans to users for confirmation
+- **Agent Sequence Management**: Manages the order of agent participation based on clinical workflow requirements  
+- **Clinical Context Preservation**: Maintains clinical context throughout multi-agent interactions
+- **Safety Validation Coordination**: Coordinates safety validation across multiple agents before clinical decisions
 
 ## Connected Agents Communication Patterns
 Azure AI Foundry Connected Agents enhanced with healthcare orchestration patterns for clinical safety and workflow management.
@@ -769,36 +874,44 @@ Enhanced escalation protocols with agent coordination:
 ### Agent Resilience and Monitoring Patterns
 Healthcare-grade resilience patterns for clinical safety:
 
-**Agent Health Monitoring:**
-- **Heartbeat Monitoring**: Continuous agent availability checking (<10 second intervals)
-- **Response Time Tracking**: SLA monitoring for clinical decision-making speeds
-- **Decision Quality Validation**: Ongoing validation of agent clinical recommendations
-- **Load Balancing**: Automatic failover for agent overload scenarios
+### Enhanced Agent Resilience Patterns
+Healthcare-grade resilience patterns inspired by healthcare agent orchestration best practices:
 
-**Circuit Breaker Patterns for Healthcare:**
+**Agent Health Monitoring with Clinical Safety Focus:**
+- **Healthcare Agent Channel Monitoring**: Specialized monitoring for healthcare agent communication channels
+- **Clinical Response Time SLA Tracking**: <30 seconds for emergency scenarios, <2 minutes for routine clinical decisions
+- **Agent Load Management**: Automatic load balancing to prevent agent overload during high-demand clinical scenarios
+- **Clinical Decision Quality Validation**: Continuous validation of agent clinical recommendations against established guidelines
+- **Agent State Persistence**: Maintains agent state across service interruptions for clinical continuity
+
+**Circuit Breaker Patterns for Healthcare Agent Orchestration:**
 ```yaml
-circuit_breakers:
-  - name: "clinical-decision-validation"
-    failure_threshold: 3
-    timeout_duration: "60-seconds"
-    fallback_action: "escalate-to-human-clinician"
-    
-  - name: "agent-communication-failure" 
+healthcare_circuit_breakers:
+  - name: "clinical-agent-communication-failure"
     failure_threshold: 2
     timeout_duration: "30-seconds"
-    fallback_action: "activate-backup-agent"
+    fallback_action: "activate-backup-agent-channel"
+    recovery_validation: "agent-health-check-pass"
     
-  - name: "fhir-integration-failure"
+  - name: "multi-agent-consensus-failure" 
     failure_threshold: 1
+    timeout_duration: "60-seconds"
+    fallback_action: "escalate-to-human-clinician"
+    clinical_context_preserved: true
+    
+  - name: "healthcare-agent-orchestration-overload"
+    failure_threshold: 3
     timeout_duration: "45-seconds" 
-    fallback_action: "use-cached-data-with-warning"
+    fallback_action: "graceful-degradation-with-priority-routing"
+    emergency_scenarios_protected: true
 ```
 
-**Agent Backup and Failover:**
-- **Primary-Secondary Agent Pairs**: Each critical agent has a backup ready for failover
-- **Cross-Agent Capability Sharing**: Agents can handle basic functions of failed peers
-- **Human Clinician Escalation**: Automatic escalation when agent consensus cannot be reached
-- **Graceful Degradation**: System maintains core safety functions even with multiple agent failures
+**Agent Backup and Failover with Clinical Context:**
+- **Primary-Secondary Healthcare Agent Pairs**: Each critical healthcare agent has a clinical-context-aware backup
+- **Cross-Agent Clinical Capability Sharing**: Healthcare agents can handle basic clinical functions of failed peers
+- **Clinical Context Transfer**: Seamless transfer of patient clinical context during agent failover
+- **Human Clinician Escalation with Full Context**: Automatic escalation with complete clinical context when agent consensus fails
+- **Clinical Continuity Protection**: System maintains core clinical safety functions even with multiple agent failures
 
 ## Enhanced Agent Implementation Guidelines
 Healthcare agent orchestration patterns integrated with Azure AI Foundry Connected Agents:
@@ -837,7 +950,44 @@ Healthcare agent orchestration patterns integrated with Azure AI Foundry Connect
 - **Safety Validation State**: Ongoing safety check status and compliance tracking
 - **Clinical Context State**: Real-time clinical context maintained across all interactions
 
-### 2. BP Measurement Agent  
+### 2. PatientHistory Agent (Enhanced with Healthcare Orchestration Patterns)
+**Purpose**: Patient data management with healthcare agent orchestration patterns for clinical workflow integration
+
+**Enhanced Capabilities with Healthcare Orchestration Patterns:**
+- **Load Once Pattern**: Implements "load once per session" pattern to prevent redundant data loading
+- **Data State Management**: Maintains `data_loaded = true` state to prevent repeated patient data loading
+- **Yield Control Enforcement**: Mandatory "back to you: *RequestingAgent*" pattern for proper clinical handoffs
+- **Clinical Context Preservation**: Maintains complete clinical context across multi-agent interactions
+- **Role Boundary Enforcement**: Strictly limited to patient history and data retrieval - no clinical interpretations
+
+**Enhanced Inputs**:
+- Patient ID with session state validation
+- Clinical context from previous agent interactions
+- Timeline creation requests with workflow context
+- Follow-up clinical questions with agent attribution
+
+**Enhanced Core Logic with Orchestration Patterns**:
+- **Patient ID Persistence**: Remembers patient ID until new one provided
+- **Single Data Load Validation**: Calls `load_patient_data(ID)` only once per session, sets `data_loaded = true`
+- **Timeline Creation Control**: Creates patient timeline only on request and only if not previously created
+- **Clinical Question Processing**: Uses `process_prompt` for specific queries without reloading patient data
+- **Agent Communication Protocol**: Always identifies requesting agent and yields control appropriately
+- **Clinical Formatting Preservation**: Preserves all `[text](url)` links exactly as provided
+
+**Enhanced Outputs**:
+- Complete patient timelines with clinical context preservation
+- Targeted clinical information responses to specific agent requests
+- Structured yield control statements identifying next agent
+- FHIR-compliant patient data with clinical workflow context
+
+**Enhanced State Management with Healthcare Patterns**:
+- **Data Load State**: `data_loaded = true/false` to prevent redundant operations
+- **Timeline Creation State**: Tracks whether patient timeline has been created
+- **Agent Interaction History**: Maintains record of which agents have requested information
+- **Clinical Context State**: Preserves clinical context across agent handoffs
+- **Session Patient ID**: Persistent patient ID management across workflow stages
+
+### 3. BP Measurement Agent  
 **Purpose**: Community-based blood pressure monitoring coordination
 
 **Inputs**:
@@ -862,7 +1012,7 @@ Healthcare agent orchestration patterns integrated with Azure AI Foundry Connect
 - Measurement history and patterns
 - Pharmacy availability and preferences
 
-### 3. Diagnosing Agent
+### 4. Diagnosing Agent
 **Purpose**: ABPM arrangement and diagnostic workflows
 
 **Inputs**:

@@ -166,25 +166,28 @@
           </div>
         </div>
 
-        <div class="activity-daily-item activity-daily-item--rest">
+        <div class="activity-daily-item activity-daily-item--light">
           <div class="activity-daily-header">
             <span class="activity-daily-day">Tuesday</span>
             <span class="activity-daily-date">9 Oct</span>
           </div>
           <div class="activity-daily-progress">
-            <div class="activity-daily-circle" data-progress="0">
+            <div class="activity-daily-circle" data-progress="50">
               <svg width="60" height="60" viewBox="0 0 60 60">
                 <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="78.5" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
               </svg>
               <div class="activity-daily-circle-text">
-                <span>Rest</span>
-                <small>day</small>
+                <span>15</span>
+                <small>min</small>
               </div>
             </div>
           </div>
           <div class="activity-daily-details">
-            <p class="activity-daily-type">Recovery day</p>
-            <span class="nhsuk-tag nhsuk-tag--grey">Rest</span>
+            <p class="activity-daily-type">Light walking</p>
+            <span class="nhsuk-tag nhsuk-tag--yellow">Light activity</span>
           </div>
         </div>
 
@@ -423,6 +426,11 @@
 
   .activity-daily-item--rest {
     background: #f5f5f5;
+  }
+
+  .activity-daily-item--light {
+    background: #fff8e1;
+    border-color: #ffb81c;
   }
 
   .activity-daily-header {

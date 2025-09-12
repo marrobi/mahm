@@ -122,7 +122,7 @@
               <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: 5-10% body weight reduction for BP improvement (NICE CG127)</p>
             </div>
             <div class="lifestyle-badges">
-              <span class="lifestyle-badge lifestyle-badge--bronze">2 weeks</span>
+              <span class="lifestyle-badge lifestyle-badge--bronze">2-week streak</span>
             </div>
           </div>
         </div>
@@ -142,8 +142,8 @@
               <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: 150 minutes moderate activity per week (NICE CG127)</p>
             </div>
             <div class="lifestyle-badges">
-              <span class="lifestyle-badge lifestyle-badge--silver">4 weeks</span>
-              <span class="lifestyle-badge lifestyle-badge--streak">7 day streak</span>
+              <span class="lifestyle-badge lifestyle-badge--silver">4-week achievement</span>
+              <span class="lifestyle-badge lifestyle-badge--streak">7-day streak</span>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
               <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: <6g salt daily, alcohol within NHS guidelines (NICE CG127)</p>
             </div>
             <div class="lifestyle-badges">
-              <span class="lifestyle-badge lifestyle-badge--bronze">1 week</span>
+              <span class="lifestyle-badge lifestyle-badge--bronze">1-week progress</span>
             </div>
           </div>
         </div>
@@ -177,17 +177,26 @@
       <div class="lifestyle-content-featured">
         <div class="nhsuk-card nhsuk-card--feature">
           <div class="nhsuk-card__content nhsuk-card__content--feature">
-            <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
-              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
-                Heart-Healthy Caribbean Recipes
-              </a>
-            </h3>
+            <div class="lifestyle-content-header">
+              <div class="lifestyle-content-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="6" fill="#005eb8"/>
+                  <path d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h12v2H8v-2z" fill="white"/>
+                </svg>
+              </div>
+              <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
+                  Heart-Healthy Caribbean Recipes
+                </a>
+              </h3>
+            </div>
             <p class="nhsuk-card__description">
               Traditional recipes adapted for heart-healthy cooking with less salt and more herbs and spices. Part of NHS "Million Hearts and Minds" cultural health programme.
             </p>
             <div class="lifestyle-content-meta">
               <span class="nhsuk-tag nhsuk-tag--blue">Recipes</span>
               <span class="nhsuk-tag nhsuk-tag--orange">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--green">NHS Verified</span>
               <span class="lifestyle-content-time">15 min read</span>
             </div>
           </div>
@@ -195,17 +204,26 @@
 
         <div class="nhsuk-card nhsuk-card--feature">
           <div class="nhsuk-card__content nhsuk-card__content--feature">
-            <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
-              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
-                Managing Blood Pressure During Ramadan
-              </a>
-            </h3>
+            <div class="lifestyle-content-header">
+              <div class="lifestyle-content-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="6" fill="#8e44ad"/>
+                  <path d="M16 6l3 9h9l-7.2 5.4 2.8 8.6L16 23.6 8.4 29l2.8-8.6L4 15h9z" fill="white"/>
+                </svg>
+              </div>
+              <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
+                  Managing Blood Pressure During Ramadan
+                </a>
+              </h3>
+            </div>
             <p class="nhsuk-card__description">
               Practical guidance for managing your medication and lifestyle during the holy month. Culturally-sensitive NHS advice reviewed by religious scholars.
             </p>
             <div class="lifestyle-content-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
               <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
+              <span class="nhsuk-tag nhsuk-tag--green">NHS Verified</span>
               <span class="lifestyle-content-time">8 min read</span>
             </div>
           </div>
@@ -396,6 +414,23 @@
     margin-bottom: 16px;
   }
 
+  .lifestyle-content-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .lifestyle-content-logo {
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .lifestyle-content-header .nhsuk-card__heading {
+    margin-bottom: 0;
+    flex: 1;
+  }
+
   .lifestyle-content-meta {
     display: flex;
     align-items: center;
@@ -467,6 +502,16 @@
     
     .lifestyle-content-featured .nhsuk-card {
       margin-bottom: 12px;
+    }
+    
+    .lifestyle-content-header {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .lifestyle-content-logo {
+      margin-top: 2px;
     }
     
     .lifestyle-achievements {

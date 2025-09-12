@@ -202,8 +202,8 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
 ### Cosmos DB Management Strategy
 - **Permanent Storage**: ALL clinical conversations and agent responses are stored permanently for audit compliance and clinical continuity
 - **Dual Storage Approach**: Critical clinical conversations also stored as FHIR Communication resources for clinical workflow integration
-- **Cache Management**: Recent conversations (last 30 days) maintained in active cache for performance optimization
-- **Data Archival**: Older conversations moved to archived storage but remain permanently accessible
+- **Active Storage Management**: Recent conversations (last 30 days) maintained in active storage for performance optimization
+- **Long-term Storage**: Older conversations moved to long-term storage but remain permanently accessible
 - **Refresh Logic**: Automatic refresh when underlying FHIR data changes
 - **Fallback Behavior**: If Cosmos DB query fails, system gracefully falls back to real-time agent processing
 

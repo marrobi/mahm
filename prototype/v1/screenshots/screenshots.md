@@ -89,15 +89,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 3. Immediate Action Guidance
 ![Immediate Action Guidance](red-flag-immediate-action.png)
-**Critical Safety Instructions** - Clear, actionable safety guidance following clinical best practices with "Do" and "Don't" lists, including immediate rest instructions, medication guidance, and automatic GP practice notification with 2-hour response guarantee.
+**Simplified Emergency Instructions** - Clear, single instruction to call 999 or go to A&E following NICE guidelines. Removed confusing elements and contradictory messaging. Simple "Do" and "Don't" safety guidance while waiting for emergency help, with automatic GP notification in background.
 
 ### 4. Escalation Status Tracking
 ![Escalation Status](red-flag-escalation-status.png)
-**Emergency Care Coordination** - Real-time status dashboard showing GP practice notification (✅ Complete), urgent appointment scheduling (⏳ In progress), priority level indicators (🚨 Urgent), and timeline with expected GP contact within 2 hours.
+**Simplified Emergency Status** - Streamlined to essential message: immediate hospital care needed, call 999, GP has been notified. Removed complex over-promising emergency care tracking that was unrealistic.
 
 ### 5. Emergency Contacts and Help
 ![Emergency Contacts](red-flag-emergency-contacts.png)
-**Comprehensive Emergency Support** - Complete emergency contact management including 999 emergency services, GP practice details with direct calling, NHS 111 out-of-hours care, automated family contact notifications, and Blood Pressure UK helpline support.
+**Essential Emergency Contacts** - Simplified to show only 999 emergency services and nearest A&E department. Removed NHS 111 option since this is a true emergency. Removed over-promising coordination text and unnecessary tracking features.
 
 ---
 

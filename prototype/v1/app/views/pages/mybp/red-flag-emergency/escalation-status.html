@@ -15,134 +15,31 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-xl">
-        Your emergency care status
+        Go to A&E or call 999
       </h1>
 
-      <div class="nhsuk-inset-text" style="border-left-color: #005eb8;">
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b;">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          🚨 Emergency: Immediate hospital care needed
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <p>Your blood pressure (195/115 mmHg) with symptoms requires immediate hospital treatment.</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link" style="margin-bottom: 32px;">
+        <a class="nhsuk-action-link__link" href="tel:999" style="background-color: #d5281b;">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text" style="color: white; font-weight: bold;">Call 999 NOW</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Emergency alert activated:</strong> 14:45 on 15 October 2024</p>
-        <p><strong>Protocol:</strong> GP confirmation required within 15 minutes, or automatic escalation to out-of-hours service</p>
-      </div>
-
-      <div class="nhsuk-summary-card">
-        <div class="nhsuk-summary-card__header">
-          <h2 class="nhsuk-summary-card__title">
-            ✅ Your care arrangements
-          </h2>
-        </div>
-        <div class="nhsuk-summary-card__body">
-          <p class="nhsuk-u-margin-bottom-4"><strong>Care pathway determined by orchestrator following NICE guidelines:</strong></p>
-          
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                GP practice notification
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--blue">Complete</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">Rose Medical Practice contacted at 14:45</span>
-                <br><span class="nhsuk-u-secondary-text-colour"><em>Status: Completed action</em></span>
-              </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Clinical assessment required
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--orange">Urgent</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">GP assessment within 2 hours</span>
-                <br><span class="nhsuk-u-secondary-text-colour"><em>Priority: High urgency due to BP ≥180/110 mmHg with symptoms</em></span>
-              </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Hospital pathway
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <strong class="nhsuk-tag nhsuk-tag--grey">Standby</strong>
-                <br><span class="nhsuk-u-secondary-text-colour">A&E referral if GP determines emergency</span>
-                <br><span class="nhsuk-u-secondary-text-colour"><em>Status: Available if clinical assessment indicates immediate hospital care needed</em></span>
-              </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Patient details shared
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                BP reading: 195/115 mmHg<br>
-                Symptoms: Headache, visual disturbance<br>
-                Current medication: Amlodipine 5mg<br>
-                Age: 68 years (increased risk category)
-              </dd>
-            </div>
-          </dl>
-
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p><strong>Colour coding:</strong> Blue = completed actions, Orange = urgent actions required, Grey = standby/conditional actions</p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="nhsuk-heading-m">Care pathway timeline</h2>
-      
-      <div class="nhsuk-timeline">
-        <ol class="nhsuk-timeline__list">
-          <li class="nhsuk-timeline__item">
-            <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">Now - Emergency hospital care needed</h3>
-              <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">14:45</time>
-              </p>
-            </div>
-            <div class="nhsuk-timeline__body">
-              <p>Your blood pressure (195/115 mmHg) with symptoms requires immediate hospital assessment. Go to A&E or call 999.</p>
-              <p class="nhsuk-u-secondary-text-colour" style="color: #d5281b;">🚨 Emergency action required</p>
-            </div>
-          </li>
-
-          <li class="nhsuk-timeline__item">
-            <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">Immediate - Following safety measures</h3>
-              <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">14:45</time>
-              </p>
-            </div>
-            <div class="nhsuk-timeline__body">
-              <p>Rest, stay calm, take usual medication if not already taken today. Someone should stay with you.</p>
-              <p class="nhsuk-u-secondary-text-colour" style="color: #0072ce;">✅ Actions in progress</p>
-            </div>
-          </li>
-
-          <li class="nhsuk-timeline__item">
-            <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">Background - GP practice notified</h3>
-              <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-15">14:46</time>
-              </p>
-            </div>
-            <div class="nhsuk-timeline__body">
-              <p>Your GP practice has been automatically informed of this emergency. They will receive updates from hospital care.</p>
-              <p class="nhsuk-u-secondary-text-colour" style="color: #0072ce;">✅ Notification sent</p>
-            </div>
-          </li>
-
-          <li class="nhsuk-timeline__item">
-            <div class="nhsuk-timeline__header">
-              <h3 class="nhsuk-timeline__title">24-hour follow-up check</h3>
-              <p class="nhsuk-timeline__datetime">
-                <time datetime="2024-10-16">Tomorrow 14:45</time>
-              </p>
-            </div>
-            <div class="nhsuk-timeline__body">
-              <p>Mandatory 24-hour follow-up to ensure your safety and treatment response. If unreachable after 3 attempts, welfare check will be triggered.</p>
-              <p class="nhsuk-u-secondary-text-colour">📋 Scheduled</p>
-            </div>
-          </li>
-        </ol>
+        <p><strong>Your GP practice has been automatically notified</strong> of this emergency.</p>
       </div>
 
       <div class="nhsuk-action-link">
@@ -153,30 +50,6 @@
           </svg>
           <span class="nhsuk-action-link__text">View emergency contacts</span>
         </a>
-      </div>
-
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="img" aria-label="Warning">⚠️</span>
-          If your symptoms get worse
-        </h3>
-        <p>Call 999 immediately if you develop:</p>
-        <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>Severe chest pain</li>
-          <li>Difficulty breathing</li>
-          <li>Sudden weakness or confusion</li>
-          <li>Loss of vision or speech</li>
-        </ul>
-        <p>
-          <a href="tel:999" class="nhsuk-button nhsuk-button--secondary">
-            Call 999 now
-          </a>
-        </p>
-      </div>
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>This page will update automatically</strong> when your GP contacts you or your status changes.</p>
       </div>
 
     </div>

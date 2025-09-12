@@ -20,8 +20,7 @@
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
-        heading: "My BP - Hypertension Management",
-        subtitle: "(Demo - dummy data only)"
+        heading: "My BP - Hypertension Management"
       })}}
 
       <p class="nhsuk-lede-text">
@@ -30,7 +29,7 @@
 
       <!-- SECTION - HYPERTENSION MANAGEMENT -->
       {{ nhsappSectionHeading({
-        headingText: "What would you like to do today?"
+        headingText: "Your recommended next steps"
       }) }}
 
       <p>Your AI care system has identified the following actions for your blood pressure management:</p>
@@ -41,12 +40,12 @@
           {
             title: "Medication review scheduled",
             href: "/pages/mybp/dose-titration/index",
-            description: "Your AI care system has scheduled a medication review based on your recent blood pressure readings."
+            description: "MyBP has scheduled a medication review based on your recent blood pressure readings. This will be ready for you shortly."
           },
           {
             title: "Blood pressure measurement due",
             href: "/pages/mybp/bp-measurement/index",
-            description: "Your AI care system has determined you need a blood pressure check using Lifelight technology."
+            description: "Your AI care system has determined you need a blood pressure check using Lifelight™ technology."
           },
           {
             title: "Safety blood test arranged",

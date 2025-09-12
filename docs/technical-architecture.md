@@ -168,6 +168,7 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
   ],
   "permanentStorage": true,
   "clinicalRelevance": "high",
+  // "archived" indicates access pattern optimization (e.g., moved to cold storage), not deletion. Data is retained permanently.
   "archived": false,
   "fhirCommunicationRef": "Communication/clinical-conversation-001"
 }

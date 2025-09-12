@@ -14,11 +14,14 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b;">
-        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-          ⚠️ High Blood Pressure Alert
-        </h2>
-        <div class="nhsuk-error-summary__body">
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Urgent">⚠️</span>
+            High Blood Pressure Alert
+          </h2>
+        </div>
+        <div class="nhsuk-care-card__content">
           <p>Your recent blood pressure reading of <strong>195/115 mmHg</strong> is very high and requires immediate attention.</p>
         </div>
       </div>
@@ -112,17 +115,25 @@
 
       </form>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="img" aria-label="Warning">⚠️</span>
-          Emergency situation
-        </h3>
-        <p>If you have severe chest pain, difficulty breathing, sudden vision loss, <strong>or if you are pregnant</strong>, <strong>call 999 immediately</strong> or go to your nearest A&E department.</p>
-        <p>
-          <a href="tel:999" class="nhsuk-button nhsuk-button--secondary">
-            Call 999 now
-          </a>
-        </p>
+      <div class="nhsuk-care-card nhsuk-care-card--immediate">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Immediate">🚨</span>
+            Call 999 immediately if:
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list">
+            <li>You have severe chest pain or difficulty breathing</li>
+            <li>You have sudden vision loss</li>
+            <li>You are pregnant with high blood pressure</li>
+          </ul>
+          <p>
+            <a href="tel:999" class="nhsuk-button nhsuk-button--reverse">
+              Call 999 now
+            </a>
+          </p>
+        </div>
       </div>
 
     </div>

@@ -5,7 +5,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ## Main Dashboard
 
 ![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Orchestrator-driven care plan showing automatically arranged care based on NICE guidelines. No longer shows user choice options - the NHS Hypertension Care Orchestrator determines required actions.
+**Main Dashboard** - Care plan showing automatically arranged care based on NICE guidelines. No longer shows user choice options - your care system determines required actions.
 
 ---
 
@@ -13,7 +13,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Landing Page
 ![Dose Titration Landing](dose-titration-landing.png)
-**Orchestrator-Scheduled Medication Review** - Shows that the NHS Hypertension Care Orchestrator has automatically scheduled this review based on persistent elevated readings above target, following NICE CG127 guidelines.
+**Automatically Scheduled Medication Review** - Shows that your care system has automatically scheduled this review based on persistent elevated readings above target, following NICE CG127 guidelines.
 
 ### 2. Readings Review
 ![Dose Titration Review](dose-titration-review.png)
@@ -33,7 +33,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Introduction
 ![BP Measurement Intro](bp-measurement-intro.png)
-**Patient-Initiated Additional Readings** - Clear explanation that while the orchestrator determines when readings are clinically required, patients can submit additional readings anytime to help the orchestrator make more informed care decisions.
+**Patient-Initiated Additional Readings** - Clear explanation that while your care system determines when readings are clinically required, patients can submit additional readings anytime to help your care system make more informed care decisions.
 
 ### 2. Location Selection
 ![BP Measurement Locations](bp-measurement-locations.png)
@@ -57,7 +57,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Test Overview
 ![Blood Test Overview](blood-test-overview.png)
-**Orchestrator-Scheduled Blood Test** - Shows that the NHS Hypertension Care Orchestrator has automatically scheduled a U&E blood test following NICE guidelines after medication dose increase. Emphasizes this is orchestrator-determined care, not patient choice.
+**Automatically Scheduled Blood Test** - Shows that your care system has automatically scheduled a U&E blood test following NICE guidelines after medication dose increase. Emphasizes this is automatically determined care, not patient choice.
 
 ### 2. Educational Information
 ![Blood Test Information](blood-test-information.png)
@@ -81,7 +81,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ### 1. Dashboard with Red Flag Alert
 ![Dashboard with Red Flag Alert](red-flag-dashboard.png)
-**Orchestrator-Driven Care Dashboard** - The main blood pressure dashboard showing the NHS Hypertension Care Orchestrator's automatic care arrangement based on NICE guidelines. Features clear distinction between orchestrator-scheduled care (medication review) and patient-initiated actions (additional BP readings). Red flag alert shows hypertensive emergency requiring immediate hospital treatment.
+**AI-Supported Care Dashboard** - The main blood pressure dashboard showing your care system's automatic care arrangement based on NICE guidelines. Features clear distinction between automatically scheduled care (medication review) and patient-initiated actions (additional BP readings). Red flag alert shows hypertensive emergency requiring immediate hospital treatment.
 
 ### 2. Symptom Confirmation Screen
 ![Symptom Confirmation](red-flag-symptom-confirmation.png)
@@ -103,22 +103,22 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ## Key Features Demonstrated
 
-- **Orchestrator-Driven Care**: The NHS Hypertension Care Orchestrator makes all clinical decisions based on NICE guidelines - patients no longer choose their care options
+- **AI-Supported Care**: Your care system makes all clinical decisions based on NICE guidelines - patients no longer choose their care options
 - **Clear Role Separation**: 
-  - Orchestrator determines: medication reviews, dose adjustments, blood test scheduling, clinical monitoring
-  - Patients can initiate: additional BP readings only (orchestrator still reviews and incorporates these)
+  - Care system determines: medication reviews, dose adjustments, blood test scheduling, clinical monitoring
+  - Patients can initiate: additional BP readings only (care system still reviews and incorporates these)
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
-- **Multiagent Architecture**: System reflects that the orchestrator agent makes clinical decisions, not the patient
-- **Patient-Centered Language**: Clear explanation of orchestrator vs patient roles throughout all screens
+- **Multiagent Architecture**: System reflects that your care system makes clinical decisions, not the patient
+- **Patient-Centered Language**: Clear explanation of care system vs patient roles throughout all screens
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling for patient-initiated actions only
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows respecting orchestrator vs patient boundaries
+- **Full User Journeys**: Complete end-to-end workflows respecting care system vs patient boundaries
 - **Emergency Management**: Red Flag Alert system with comprehensive emergency action flow following NICE CG127 guidelines
 - **Clinical Compliance**: Hypertensive emergency protocols with proper escalation pathways
 - **Direct Phone Integration**: `tel:` links for immediate calling capability (999, GP practice, NHS 111)
 - **Real-Time Status Tracking**: Emergency care coordination with live updates and timeline management
-- **Automated Care Arrangement**: Orchestrator automatically schedules care based on clinical protocols without patient choice
+- **Automated Care Arrangement**: Care system automatically schedules care based on clinical protocols without patient choice
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

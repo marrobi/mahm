@@ -177,16 +177,8 @@ To ensure continuity of care and avoid recalculating personalized guidance on ea
 ## Data Flow Architecture
 
 ### Client to Agent Communication Flow with Storage
-```
-1. Client Interface (NHS App/Web/Mobile)
-   ↓ (RESTful API call)
-   
-2. My BP API Gateway
-   ↓ (Query Cosmos DB for existing responses)
-   
-3. Cosmos DB Query
-   ├─→ Response Found: Return stored response (< 2 seconds)
-   └─→ No Response: Route to Azure AI Foundry Connected Agents
+
+> **Note:** Cosmos DB is the permanent, authoritative store for all clinical conversation history and agent responses. It is not used as a temporary cache; all stored responses represent part of the patient's clinical record.
    
 4. Main Orchestrating Agent (Azure AI Foundry)
    ↓ (Natural language routing to specialized agent)

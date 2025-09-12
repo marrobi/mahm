@@ -21,13 +21,14 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Accessibility options for inclusive design
 - Multi-agent system coordination indicators
 
-![Updated Main Dashboard - Final Version](updated-mybp-dashboard.png)
-**Updated Main Dashboard - Final Version** - Corrected dashboard addressing clinical feedback:
+![Updated Main Dashboard with Side Effects Reporting](updated-mybp-dashboard-with-side-effects.png)
+**Updated Main Dashboard with Side Effects Reporting** - Latest dashboard version addressing all clinical feedback:
 - Replaced red emergency "Get Help Now" button with appropriate secondary styling
 - Removed patient-facing medication review and booking options (handled by orchestrator)
+- Added "Report a side-effect" option as requested for patient safety monitoring
 - Eliminated "Category A" patient terminology from public interface
 - Updated to British spellings ("Personalised" not "Personalized")
-- Focus on patient actions: BP measurements, viewing results, medication adherence
+- Focus on patient actions: BP measurements, viewing results, medication adherence, and safety reporting
 - Clear care pathway description without technical categories
 
 ---
@@ -100,11 +101,56 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
+## Side Effects Reporting Journey (3 screens)
+
+### 1. Side Effects Reporting Form
+![Side Effects Reporting](side-effects-reporting.png)
+**Side Effects Reporting Form** - Comprehensive patient safety interface featuring:
+- Current medication display with dosage and start date information
+- User-friendly radio button selection for initial side effect screening
+- Comprehensive checklist of common side effects with clear descriptions
+- Free text area for detailed symptom description with helpful prompts
+- Duration selection with clinically relevant timeframes
+- Prominent safety warnings for serious side effects requiring immediate action
+- Clear guidance on when to call 999 for emergency situations
+- Additional help resources including GP practice, pharmacist, and Yellow Card Scheme contacts
+
+### 2. Completed Side Effects Form
+![Side Effects Form Filled](side-effects-form-filled.png)
+**Side Effects Form with Patient Input** - Example of completed form showing:
+- Selected side effect: "Ankle or leg swelling" with checkbox ticked
+- Detailed patient description: "Mild swelling in both ankles, particularly noticeable in the evenings. No pain but ankles feel slightly tight when walking."
+- Duration selected: "About a week" indicating ongoing symptoms
+- Professional form layout following NHS design patterns
+- Clear visual hierarchy with proper spacing and accessible form controls
+
+### 3. Side Effects Confirmation
+![Side Effects Confirmation](side-effects-confirmation.png)
+**Side Effects Report Confirmation** - Post-submission confirmation page featuring:
+- NHS-style confirmation panel with unique reference number (SE-2024-1101-001)
+- Clear explanation of next steps with AI system review process
+- Timeline for AI safety monitoring agent assessment (within 2 hours)
+- Automatic GP notification process if needed (within 24 hours)
+- Medication review by AI prescribing agent when appropriate
+- Safety information with escalation pathways for worsening symptoms
+- Report summary showing submitted information for patient records
+- Return navigation and additional resource links for ongoing support
+
+---
+
 ## Lab Results Journey (2 screens)
 
-### 1. Normal Lab Results
-![Normal Lab Results](lab-results-normal.png)
-**Normal U&E Test Results** - Comprehensive display of normal blood test results with color-coded status indicators, baseline comparisons, clinical explanations, and reassuring "Good news" messaging. Shows all five key parameters (Creatinine, eGFR, Sodium, Potassium, Urea) with reference ranges and trend analysis.
+### 1. Normal Lab Results (Updated)
+![Updated Normal Lab Results](updated-normal-lab-results.png)
+**Updated Normal U&E Test Results** - Comprehensive display of normal blood test results with latest improvements:
+- Updated "AI system assessment" terminology (removed healthcare professional references)
+- Monitoring agent reminder system instead of GP contact for next test scheduling  
+- Color-coded status indicators with clear "Good news" banner for patient reassurance
+- All five key parameters (Creatinine, eGFR, Sodium, Potassium, Urea) with reference ranges
+- Visual trend indicators showing baseline comparisons and stability
+- "What this means" plain English explanations for each parameter
+- Care coordination through AI agents rather than manual GP follow-up
+- Clear next steps with AI-supported monitoring and reminder system
 
 ### 2. Abnormal Lab Results with Simplified Clinical Actions
 ![Abnormal Lab Results](lab-results-abnormal.png)
@@ -207,15 +253,16 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all three patient pathways
+- **Full User Journeys**: Complete end-to-end workflows for all patient pathways
 - **Lab Results Integration**: Comprehensive U&E blood test results display with color-coded thresholds
 - **Clinical Decision Support**: Intelligent alert system with normal/abnormal result pathways
 - **Patient Education**: Plain English explanations with "What this means" sections for each parameter
+- **Side Effects Monitoring**: Comprehensive reporting system with AI safety monitoring and escalation
 - **Multi-Agent Coordination**: Visual indicators of 9 specialized AI agents working together per MVP
 - **Health Inequality Monitoring**: GP dashboard tracking outcomes across demographic groups
 - **Emergency Detection**: Red Flag Agent with 24/7 monitoring and automatic escalation
 - **Accessibility Excellence**: Comprehensive features for visual, audio, cognitive, and motor accessibility
-- **Patient Categorization**: Clear identification of Category A/B/C patient pathways
-- **Clinical Safety Focus**: Safety-first design with fail-safe mechanisms and NICE guideline compliance
+- **Patient Safety Focus**: Safety-first design with fail-safe mechanisms and NICE guideline compliance
+- **AI-Supported Care**: Clear terminology distinguishing AI system assessments from healthcare professional input
 
 All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.

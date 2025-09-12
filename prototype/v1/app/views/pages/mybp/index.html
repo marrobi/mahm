@@ -35,15 +35,7 @@
           </div>
           <div class="nhsuk-care-card__content">
             <p>If you're experiencing severe symptoms, chest pain, difficulty breathing, or your BP is over 180/110 mmHg</p>
-            <div class="nhsuk-action-link">
-              <a class="nhsuk-action-link__link emergency-button" href="tel:999">
-                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                  <path d="m0 0h24v24h-24z" fill="none"/>
-                  <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
-                </svg>
-                <span class="nhsuk-action-link__text">Get help now - Call 999</span>
-              </a>
-            </div>
+            <p><strong>Call 999 immediately</strong></p>
             <p class="nhsuk-u-margin-top-3 nhsuk-u-secondary-text-colour">For non-emergency concerns, contact your GP practice or call 111</p>
           </div>
         </div>
@@ -103,7 +95,7 @@
             
             <!-- Data points -->
             <div class="bp-chart__points">
-              <div class="bp-chart__point bp-chart__point--high" style="left: 10%;" data-reading="145/92" data-date="30 Sep">
+              <div class="bp-chart__point bp-chart__point--elevated" style="left: 10%;" data-reading="145/92" data-date="30 Sep">
                 <span class="bp-chart__point-value">145/92</span>
               </div>
               <div class="bp-chart__point bp-chart__point--elevated" style="left: 35%;" data-reading="142/88" data-date="3 Oct">
@@ -173,7 +165,7 @@
                 <td class="nhsuk-table__cell">30 Sep 2024</td>
                 <td class="nhsuk-table__cell">145/92</td>
                 <td class="nhsuk-table__cell">
-                  <strong class="nhsuk-tag nhsuk-tag--red">High</strong>
+                  <strong class="nhsuk-tag nhsuk-tag--orange">Elevated</strong>
                 </td>
               </tr>
             </tbody>
@@ -186,10 +178,10 @@
         headingText: "Your next actions"
       }) }}
       
-      <div class="nhsuk-care-card nhsuk-care-card--immediate nhsuk-u-margin-bottom-4">
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
         <div class="nhsuk-care-card__heading-container">
           <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Urgent">🔴</span>
+            <span role="img" aria-label="Information">ℹ️</span>
             Book U&E blood test
           </h3>
         </div>
@@ -210,19 +202,19 @@
       <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
         <div class="nhsuk-care-card__heading-container">
           <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Information">🟡</span>
+            <span role="img" aria-label="Information">📊</span>
             Next BP measurement
           </h3>
         </div>
         <div class="nhsuk-care-card__content">
-          <p>Your next measurement is recommended in 2-3 weeks to continue monitoring your progress.</p>
+          <p>Your next measurement is scheduled for next Thursday to continue monitoring your progress.</p>
           <div class="nhsuk-action-link">
             <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/index">
               <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                 <path d="m0 0h24v24h-24z" fill="none"/>
                 <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
               </svg>
-              <span class="nhsuk-action-link__text">Schedule measurement</span>
+              <span class="nhsuk-action-link__text">View appointment</span>
             </a>
           </div>
         </div>
@@ -268,7 +260,7 @@
               </div>
               <div class="nhsuk-summary-card__body">
                 <div class="progress-indicator">
-                  <div class="progress-indicator__circle">
+                  <div class="progress-indicator__circle progress-indicator__circle--good">
                     <span class="progress-indicator__value">3/5</span>
                   </div>
                   <p class="nhsuk-u-margin-top-2">Days active</p>
@@ -283,7 +275,7 @@
               </div>
               <div class="nhsuk-summary-card__body">
                 <div class="progress-indicator">
-                  <div class="progress-indicator__circle progress-indicator__circle--good">
+                  <div class="progress-indicator__circle progress-indicator__circle--excellent">
                     <span class="progress-indicator__value">4/5</span>
                   </div>
                   <p class="nhsuk-u-margin-top-2">Days on track</p>
@@ -292,33 +284,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- QUICK ACTIONS -->
-      {{ nhsappSectionHeading({
-        headingText: "Quick actions"
-      }) }}
-      
-      <div class="quick-actions">
-        {{ nhsappCardGroup({
-          cards: [
-            {
-              title: "Record BP reading",
-              href: "/pages/mybp/bp-measurement/record",
-              description: "Manually log a home reading"
-            },
-            {
-              title: "Medication review",
-              href: "/pages/mybp/dose-titration/index",
-              description: "Check if dose needs adjusting"
-            },
-            {
-              title: "Book appointment",
-              href: "/pages/services/gp-appointment-select",
-              description: "See your GP or nurse"
-            }
-          ]
-        }) }}
       </div>
 
     </div>

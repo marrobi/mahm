@@ -6,15 +6,15 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Complete patient dashboard featuring:
-- **Emergency Support**: Prominent "Get Help Now" button for urgent concerns (999 call button)
-- **Current Status**: Latest BP reading with traffic light status indicator
-- **Enhanced BP Trends**: Visual chart with traffic light color coding showing progress over time
-- **Next Actions**: Prioritized action cards for blood test booking and BP measurement scheduling
+- **Emergency Support**: Clear emergency guidance with consistent red styling and "Call 999 immediately" message
+- **Current Status**: Latest BP reading with accurate traffic light status indicator
+- **Enhanced BP Trends**: Visual chart with correct traffic light color coding (green for normal, orange for elevated)
+- **Next Actions**: Appropriately timed action cards with proper urgency levels (no red for routine tasks)
 - **Medication Reminders**: Adherence tracking with visual progress indicators
-- **Lifestyle Progress**: Weekly exercise and healthy eating goals with progress circles
-- **Quick Actions**: Easy access to record readings, medication review, and appointment booking
+- **Lifestyle Progress**: Encouraging progress circles with positive color scheme
+- **Orchestrator-driven approach**: Actions determined by AI system based on NICE guidelines rather than patient choice
 
-This comprehensive dashboard aligns with the MVP requirements specified in the NHS App prototype document.
+This dashboard now aligns with NHS design principles and the MVP requirements, providing clear, non-confusing guidance to patients.
 
 ---
 

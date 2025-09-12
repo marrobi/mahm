@@ -118,17 +118,25 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Separation of clinical explanation from actionable patient instructions
 - Clinically appropriate timeframes aligned with NICE/BNF guidelines for moderate potassium elevation
 
-### 3. AI Treatment Decision Results
-![AI Decision Lab Results](ai-decision-lab-results.png)
-**AI-Driven Medication Adjustment Based on U&E Results** - Sophisticated AI decision-making example following NICE guidelines:
-- Original plan: Increase Amlodipine 5mg to 10mg for BP readings of 142/88 mmHg
-- AI system decision: Add Ramipril 2.5mg instead after reviewing U&E results
-- Clinical rationale based on NICE Guideline NG136 (Hypertension in adults):
-  - Kidney function adequate for ACE inhibitor (creatinine 125 μmol/L)
-  - Potassium level safe for ACE inhibitor initiation (4.2 mmol/L)
-  - Step 2 treatment preference for combination therapy over dose increases
-- Automated prescription sent to pharmacy with clear monitoring plan
-- Demonstrates AI capability for sophisticated clinical decisions while adhering to guidelines
+### 3. AI Treatment Decision Results (Split into Two Pages)
+![AI Decision Lab Results - Page 1](ai-decision-lab-results-page1.png)
+**AI Treatment Decision - Results Summary** - First page of the split AI decision interface featuring:
+- Updated terminology: "AI system assessment" instead of "Healthcare professional's comment" 
+- Clear "AI-supported care" terminology throughout (not "AI care team")
+- Test results summary with visual indicators for creatinine and potassium levels
+- Concise AI decision summary card with link to detailed rationale
+- Improved NHS design system compliance with proper card components
+- Reduced page length for better mobile experience
+
+![AI Decision Lab Results - Page 2](ai-decision-lab-results-page2-details.png)
+**AI Treatment Decision - Detailed Rationale** - Second page with comprehensive details:
+- Original plan vs. AI decision comparison using NHS card components
+- NICE guideline rationale with safety factors and treatment principles
+- Detailed medication plan table with clear new medication highlighting
+- Monitoring and follow-up schedule with visual card layout
+- Modern NHS design patterns with proper spacing and typography
+- Expandable section explaining AI-supported care decision process
+- Focus on AI-supported care terminology rather than confusing "care team" language
 
 ---
 

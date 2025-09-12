@@ -32,10 +32,10 @@
         },
         {
           key: {
-            text: "Healthcare professional's comment"
+            text: "AI system assessment"
           },
           value: {
-            html: "AI system has reviewed results and adjusted treatment plan"
+            html: "AI-supported analysis complete - treatment plan adjusted following NICE guidelines"
           }
         },
         {
@@ -57,9 +57,9 @@
         </div>
         <div class="nhsuk-notification-banner__content">
           <p class="nhsuk-notification-banner__heading">
-            Your AI care team has reviewed your results
+            AI-supported care has reviewed your results
           </p>
-          <p>Based on your U&E test results, our AI system has made adjustments to your treatment plan following NICE guidelines. Your GP has been notified.</p>
+          <p>Based on your U&E test results, our AI-supported care system has made adjustments to your treatment plan following NICE guidelines. Your GP has been notified.</p>
         </div>
       </div>
 
@@ -127,80 +127,27 @@
 
       <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
-      <!-- AI Decision Section -->
-      <div class="nhsuk-care-card nhsuk-care-card--immediate">
-        <div class="nhsuk-care-card__heading-container">
-          <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Information">🤖</span>AI Treatment Decision
+      <!-- AI Decision Summary -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            AI treatment decision
           </h3>
-        </div>
-        <div class="nhsuk-care-card__content">
-          <h4>Original plan vs. AI decision</h4>
-          
-          <div style="background: #fff2cc; border: 1px solid #ffeb3b; padding: 16px; border-radius: 4px; margin-bottom: 16px;">
-            <h5>Original plan (before results):</h5>
-            <p><strong>Increase Amlodipine</strong> from 5mg to 10mg daily due to BP readings of 142/88 mmHg</p>
+          <p class="nhsuk-card__description">
+            Based on your test results, our AI-supported care system has decided to <strong>add Ramipril 2.5mg daily</strong> instead of increasing your current Amlodipine dose.
+          </p>
+          <p class="nhsuk-card__description">
+            This follows NICE guidelines for Step 2 hypertension treatment and is the safest option given your kidney function results.
+          </p>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="results-ai-decision-details">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10zm3.707 10.293-3 3a1 1 0 0 1-1.414-1.414l1.586-1.586h-4.879a1 1 0 0 1 0-2h4.879l-1.586-1.586a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">View detailed AI decision and medication plan</span>
+            </a>
           </div>
-
-          <div style="background: #e8f5e8; border: 1px solid #4caf50; padding: 16px; border-radius: 4px; margin-bottom: 16px;">
-            <h5>AI system decision (after reviewing U&E results):</h5>
-            <p><strong>Add Ramipril</strong> 2.5mg daily instead of increasing Amlodipine</p>
-          </div>
-
-          <h4>NICE guideline rationale</h4>
-          <p>According to <strong>NICE Guideline NG136 (Hypertension in adults)</strong>:</p>
-          <ul>
-            <li>Your kidney function (creatinine 125 μmol/L) is adequate for ACE inhibitor use</li>
-            <li>Potassium level (4.2 mmol/L) allows safe ACE inhibitor initiation</li>
-            <li>Step 2 treatment recommends adding ACE inhibitor to calcium channel blocker</li>
-            <li>Combination therapy often more effective than single drug dose increases</li>
-          </ul>
-
-          <h4>Your new medication plan</h4>
-          <div class="nhsuk-table-responsive">
-            <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Updated medication schedule</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" scope="col">Medication</th>
-                  <th role="columnheader" scope="col">Dose</th>
-                  <th role="columnheader" scope="col">When to take</th>
-                  <th role="columnheader" scope="col">Start date</th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Amlodipine</td>
-                  <td class="nhsuk-table__cell">5mg</td>
-                  <td class="nhsuk-table__cell">Once daily (continue)</td>
-                  <td class="nhsuk-table__cell">Already taking</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell"><strong>Ramipril (NEW)</strong></td>
-                  <td class="nhsuk-table__cell"><strong>2.5mg</strong></td>
-                  <td class="nhsuk-table__cell"><strong>Once daily</strong></td>
-                  <td class="nhsuk-table__cell"><strong>17 November 2024</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="img" aria-label="Warning">📋</span>
-              Next steps
-            </h3>
-            <p><strong>Your prescription has been sent to your nominated pharmacy.</strong><br>
-            You can collect your new Ramipril prescription from tomorrow.<br>
-            Continue taking your Amlodipine as normal.</p>
-          </div>
-
-          <h4>Monitoring plan</h4>
-          <ul>
-            <li><strong>Next BP check:</strong> In 2 weeks (monitor response to new medication)</li>
-            <li><strong>Next U&E test:</strong> In 2 weeks (ensure kidney function stable with ACE inhibitor)</li>
-            <li><strong>Target BP:</strong> &lt;140/90 mmHg (expected within 4-6 weeks)</li>
-          </ul>
         </div>
       </div>
 
@@ -221,26 +168,6 @@
               <li><strong>Urea:</strong> Another waste product filtered by kidneys</li>
             </ul>
             <p>Regular monitoring ensures your treatment remains safe and effective.</p>
-          </div>
-        </details>
-
-        <details class="nhsuk-details nhsuk-expander">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              How does the AI system make treatment decisions?
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <p>Our AI system follows a structured approach based on clinical guidelines:</p>
-            <ol>
-              <li><strong>Analyses your test results</strong> against normal ranges</li>
-              <li><strong>Reviews NICE guidelines</strong> for hypertension management</li>
-              <li><strong>Considers your medical history</strong> and current medications</li>
-              <li><strong>Calculates risk-benefit ratio</strong> of different treatment options</li>
-              <li><strong>Makes evidence-based recommendations</strong> following clinical protocols</li>
-              <li><strong>Alerts your GP</strong> of all decisions for oversight</li>
-            </ol>
-            <p>All AI decisions are reviewed by healthcare professionals to ensure patient safety.</p>
           </div>
         </details>
       </div>

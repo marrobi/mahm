@@ -12,7 +12,7 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for the mul
 ## Patient Dashboard
 
 ![BP Dashboard](mybp-dashboard-updated-colors.png)
-**Your BP Readings Dashboard** - Comprehensive view of blood pressure trends with digital health analysis. Updated with improved color coding where "Slightly high" readings use amber (#f9c642) instead of alarming red color for better patient experience.
+**Your BP Readings Dashboard** - Comprehensive view of blood pressure trends with visual chart mockup showing actual BP data over time with target zones. Features improved color coding where "Slightly high" readings use amber instead of red, and patient-friendly "What your readings mean" section instead of technical terminology.
 
 ---
 

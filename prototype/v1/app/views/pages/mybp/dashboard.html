@@ -33,9 +33,38 @@
           <h2 class="nhsuk-card__heading nhsuk-heading-m">
             Recent readings (Last 30 days)
           </h2>
-          <div style="background: #f0f4f5; padding: 20px; text-align: center; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-            <p><strong>Interactive BP Chart</strong><br/>
-            (Demo: Chart would show BP trends with target zones)</p>
+          <div style="background: #f0f4f5; padding: 20px; min-height: 200px;">
+            <div style="display: flex; justify-content: space-between; align-items: end; height: 160px; border-bottom: 2px solid #768692; border-left: 2px solid #768692; padding: 0 10px 10px 0; position: relative;">
+              <!-- Target zone background -->
+              <div style="position: absolute; bottom: 10px; left: 0; right: 10px; height: 80px; background: rgba(0, 112, 60, 0.1); border: 1px dashed #00703c;"></div>
+              <div style="position: absolute; bottom: 90px; left: 0; right: 10px; font-size: 12px; color: #00703c; font-weight: bold;">Target Zone (120-140 mmHg)</div>
+              
+              <!-- Chart bars -->
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 20px; height: 100px; background: #f9c642; margin-bottom: 5px;"></div>
+                <small style="font-size: 10px;">2 wks</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 20px; height: 70px; background: #00703c; margin-bottom: 5px;"></div>
+                <small style="font-size: 10px;">1 wk</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 20px; height: 110px; background: #f9c642; margin-bottom: 5px;"></div>
+                <small style="font-size: 10px;">3 days</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 20px; height: 85px; background: #00703c; margin-bottom: 5px;"></div>
+                <small style="font-size: 10px;">Today</small>
+              </div>
+              
+              <!-- Y-axis labels -->
+              <div style="position: absolute; left: -30px; bottom: 130px; font-size: 10px; color: #768692;">160</div>
+              <div style="position: absolute; left: -30px; bottom: 90px; font-size: 10px; color: #768692;">140</div>
+              <div style="position: absolute; left: -30px; bottom: 50px; font-size: 10px; color: #768692;">120</div>
+              <div style="position: absolute; left: -30px; bottom: 10px; font-size: 10px; color: #768692;">100</div>
+            </div>
+            <p style="text-align: center; margin-top: 10px; font-size: 14px;"><strong>Your Blood Pressure Trends</strong><br/>
+            Systolic pressure over the last 2 weeks</p>
           </div>
           
           <h3 class="nhsuk-heading-s nhsuk-u-margin-top-4">Latest readings</h3>
@@ -52,7 +81,7 @@
       <div class="nhsuk-card">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-card__heading nhsuk-heading-m">
-            Digital care team insights
+            What your readings mean
           </h2>
           <p><strong>Trend analysis:</strong> Your blood pressure has improved by 8% over the last month.</p>
           <p><strong>Treatment response:</strong> Current medication (Amlodipine 5mg) is working well.</p>

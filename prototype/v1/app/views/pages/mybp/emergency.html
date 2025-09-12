@@ -19,161 +19,87 @@
         titleSecondary: true
       })}}
 
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="ai-assessment-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="ai-assessment-title">
+            AI system assessment
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p>Based on your current symptoms and BP readings, our AI system recommends:</p>
+        </div>
+      </div>
+
       <div class="nhsuk-care-card nhsuk-care-card--urgent">
         <div class="nhsuk-care-card__heading-container">
           <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Urgent advice">🚨</span>Call 999 immediately if you have
+            <span role="img" aria-label="Urgent advice">🚨</span>Call 999 immediately
           </h3>
         </div>
         <div class="nhsuk-care-card__content">
-          <ul>
-            <li><strong>Severe chest pain</strong> or crushing feeling in your chest</li>
-            <li><strong>Sudden severe headache</strong> with visual changes or confusion</li>
-            <li><strong>Difficulty breathing</strong> or shortness of breath</li>
-            <li><strong>Signs of stroke</strong> - face dropping, arm weakness, speech problems</li>
-            <li><strong>Unconsciousness or collapse</strong></li>
-          </ul>
+          <p>Your symptoms indicate a potential medical emergency.</p>
+          <p><strong>Symptoms detected:</strong> Severe chest pain with blood pressure reading of 185/115 mmHg</p>
           <div class="nhsuk-action-link">
             <a class="nhsuk-action-link__link" href="tel:999">
               📞 Call 999 now
             </a>
           </div>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-top-2">Tell them: "I have severe chest pain and very high blood pressure"</p>
         </div>
       </div>
 
-      <!-- SECTION - URGENT SITUATIONS -->
+      <!-- SECTION - WHILE YOU WAIT -->
       {{ nhsappSectionHeading({
-        headingText: "Call your GP practice urgently if you have"
+        headingText: "While you wait for emergency services"
       }) }}
       
-      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
-        <div class="nhsuk-care-card__heading-container">
-          <h3 class="nhsuk-care-card__heading">
-            <span role="img" aria-label="Non-urgent advice">📞</span>Contact your GP today
-          </h3>
-        </div>
-        <div class="nhsuk-care-card__content">
-          <ul>
-            <li><strong>Blood pressure reading ≥180/110 mmHg</strong> with any symptoms</li>
-            <li><strong>Severe headaches</strong> that are getting worse</li>
-            <li><strong>Changes in vision</strong> - blurred or double vision</li>
-            <li><strong>Nausea and vomiting</strong> with high blood pressure</li>
-            <li><strong>Severe dizziness</strong> or fainting episodes</li>
-            <li><strong>Chest pain or tightness</strong> even if mild</li>
-            <li><strong>Unusual fatigue or weakness</strong></li>
-            <li><strong>Swelling in legs, ankles or feet</strong></li>
-          </ul>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="tel:01234567890">
-              📞 Call your GP practice: 01234 567890
-            </a>
-          </div>
-        </div>
+      <div class="nhsuk-do-dont-list">
+        <h3 class="nhsuk-do-dont-list__label">Do</h3>
+        <ul class="nhsuk-list nhsuk-list--tick">
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" height="34" width="34">
+              <path stroke-width="4" stroke-linecap="round" d="m8 14 2 2 4-4"></path>
+            </svg>
+            Stay calm and sit down
+          </li>
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" height="34" width="34">
+              <path stroke-width="4" stroke-linecap="round" d="m8 14 2 2 4-4"></path>
+            </svg>
+            Have your medication list ready
+          </li>
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" height="34" width="34">
+              <path stroke-width="4" stroke-linecap="round" d="m8 14 2 2 4-4"></path>
+            </svg>
+            Make sure someone is with you if possible
+          </li>
+        </ul>
       </div>
 
-      <!-- SECTION - MEDICATION CONCERNS -->
-      {{ nhsappSectionHeading({
-        headingText: "Medication side effects or concerns"
-      }) }}
-      
-      <p>Contact your GP or pharmacist if you experience:</p>
-      
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-half">
-          <h4>Common side effects</h4>
-          <ul class="nhsuk-list">
-            <li>Persistent dry cough</li>
-            <li>Ankle swelling</li>
-            <li>Dizziness when standing</li>
-            <li>Unusual tiredness</li>
-            <li>Increased urination</li>
-          </ul>
-        </div>
-        <div class="nhsuk-grid-column-one-half">
-          <h4>Serious side effects</h4>
-          <ul class="nhsuk-list">
-            <li>Severe skin rash or itching</li>
-            <li>Difficulty swallowing</li>
-            <li>Fast or irregular heartbeat</li>
-            <li>Muscle weakness or cramps</li>
-            <li>Confusion or mood changes</li>
-          </ul>
-        </div>
+      <div class="nhsuk-do-dont-list">
+        <h3 class="nhsuk-do-dont-list__label">Don't</h3>
+        <ul class="nhsuk-list nhsuk-list--cross">
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+              <path d="M17 18.5c.4 0 .8-.1 1.1-.4l1.4-1.4c.6-.6.6-1.6 0-2.2L13 9 18.5 3.5c.6-.6.6-1.6 0-2.2L17.1.9c-.6-.6-1.6-.6-2.2 0L9 6.5 3.5.9C2.9.3 1.9.3 1.3.9L.9 2.3c-.6.6-.6 1.6 0 2.2L6.5 9 .9 14.5c-.6.6-.6 1.6 0 2.2l1.4 1.4c.3.3.7.4 1.1.4.4 0 .8-.1 1.1-.4L9 13l5.5 5.5c.3.3.7.4 1.1.4z"></path>
+            </svg>
+            Take any additional medication
+          </li>
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+              <path d="M17 18.5c.4 0 .8-.1 1.1-.4l1.4-1.4c.6-.6.6-1.6 0-2.2L13 9 18.5 3.5c.6-.6.6-1.6 0-2.2L17.1.9c-.6-.6-1.6-.6-2.2 0L9 6.5 3.5.9C2.9.3 1.9.3 1.3.9L.9 2.3c-.6.6-.6 1.6 0 2.2L6.5 9 .9 14.5c-.6.6-.6 1.6 0 2.2l1.4 1.4c.3.3.7.4 1.1.4.4 0 .8-.1 1.1-.4L9 13l5.5 5.5c.3.3.7.4 1.1.4z"></path>
+            </svg>
+            Drive yourself to hospital
+          </li>
+          <li>
+            <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+              <path d="M17 18.5c.4 0 .8-.1 1.1-.4l1.4-1.4c.6-.6.6-1.6 0-2.2L13 9 18.5 3.5c.6-.6.6-1.6 0-2.2L17.1.9c-.6-.6-1.6-.6-2.2 0L9 6.5 3.5.9C2.9.3 1.9.3 1.3.9L.9 2.3c-.6.6-.6 1.6 0 2.2L6.5 9 .9 14.5c-.6.6-.6 1.6 0 2.2l1.4 1.4c.3.3.7.4 1.1.4.4 0 .8-.1 1.1-.4L9 13l5.5 5.5c.3.3.7.4 1.1.4z"></path>
+            </svg>
+            Delay calling if symptoms worsen
+          </li>
+        </ul>
       </div>
-
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="img" aria-label="Warning">⚠️</span>
-          Important
-        </h3>
-        <p><strong>Never stop taking your blood pressure medication suddenly</strong> unless told to by a healthcare professional. This can cause your blood pressure to spike dangerously.</p>
-      </div>
-
-      <!-- SECTION - OUT OF HOURS -->
-      {{ nhsappSectionHeading({
-        headingText: "Out of hours support"
-      }) }}
-      
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-half">
-          <h4>NHS 111</h4>
-          <p>For urgent health advice when your GP is closed:</p>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="tel:111">
-              📞 Call 111 (free from any phone)
-            </a>
-          </div>
-          <p class="nhsuk-u-font-size-14">Or use the <a href="https://111.nhs.uk">NHS 111 online service</a></p>
-        </div>
-        <div class="nhsuk-grid-column-one-half">
-          <h4>Local out-of-hours service</h4>
-          <p>Your local GP out-of-hours service:</p>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="tel:01234567891">
-              📞 Call 01234 567891
-            </a>
-          </div>
-          <p class="nhsuk-u-font-size-14">Available: 6:30pm-8:00am weekdays, all weekend</p>
-        </div>
-      </div>
-
-      <!-- SECTION - EMERGENCY CONTACTS -->
-      {{ nhsappSectionHeading({
-        headingText: "Your emergency contacts"
-      }) }}
-      
-      <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">Emergency contact information</caption>
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            <th role="columnheader" class="" scope="col">Service</th>
-            <th role="columnheader" class="" scope="col">Number</th>
-            <th role="columnheader" class="" scope="col">When to use</th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Emergency services</td>
-            <td class="nhsuk-table__cell"><strong>999</strong></td>
-            <td class="nhsuk-table__cell">Life-threatening emergencies</td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">NHS 111</td>
-            <td class="nhsuk-table__cell"><strong>111</strong></td>
-            <td class="nhsuk-table__cell">Urgent but not life-threatening</td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Your GP practice</td>
-            <td class="nhsuk-table__cell"><strong>01234 567890</strong></td>
-            <td class="nhsuk-table__cell">Non-urgent medical advice</td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Local pharmacy</td>
-            <td class="nhsuk-table__cell"><strong>01234 567892</strong></td>
-            <td class="nhsuk-table__cell">Medication queries</td>
-          </tr>
-        </tbody>
-      </table>
 
       <div class="nhsuk-action-link">
         <a class="nhsuk-action-link__link" href="/pages/mybp/index">

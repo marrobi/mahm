@@ -1,0 +1,384 @@
+{% extends 'layout-desktop.html' %}
+{% set page = 'system' %}
+{% set title = 'System Performance - My BP GP Analytics' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1 class="page-title">System Performance</h1>
+    <p class="page-subtitle">Multi-agent system monitoring and EHR integration status</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card success">
+      <div class="stat-label">System Uptime</div>
+      <div class="stat-value">99.8%</div>
+      <div class="stat-sublabel">Last 30 days | SLA: 99.5%</div>
+    </div>
+    <div class="stat-card primary">
+      <div class="stat-label">Active Agents</div>
+      <div class="stat-value">9/9</div>
+      <div class="stat-sublabel">All agents operational</div>
+    </div>
+    <div class="stat-card success">
+      <div class="stat-label">Data Sync Status</div>
+      <div class="stat-value">Real-time</div>
+      <div class="stat-sublabel">EHR sync: 2 min delay</div>
+    </div>
+    <div class="stat-card warning">
+      <div class="stat-label">API Response Time</div>
+      <div class="stat-value">127ms</div>
+      <div class="stat-sublabel">Target: <100ms</div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Multi-Agent System Status</h2>
+        <p class="card-subtitle">Real-time performance monitoring of all 9 AI agents</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Status</th>
+              <th>Uptime</th>
+              <th>Tasks Today</th>
+              <th>Success Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Orchestrating Agent</strong><br><span style="color: #64748b; font-size: 12px;">Central coordinator</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.2%</td>
+              <td>1,247</td>
+              <td>98.8%</td>
+            </tr>
+            <tr>
+              <td><strong>Red Flag Agent</strong><br><span style="color: #64748b; font-size: 12px;">Emergency detection</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>100%</td>
+              <td>12</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Monitoring Agent</strong><br><span style="color: #64748b; font-size: 12px;">Lab test coordination</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.1%</td>
+              <td>89</td>
+              <td>94.4%</td>
+            </tr>
+            <tr>
+              <td><strong>Titration Agent</strong><br><span style="color: #64748b; font-size: 12px;">Medication adjustment</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>98.7%</td>
+              <td>156</td>
+              <td>87.2%</td>
+            </tr>
+            <tr>
+              <td><strong>Education Agent</strong><br><span style="color: #64748b; font-size: 12px;">Patient guidance</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.5%</td>
+              <td>342</td>
+              <td>96.1%</td>
+            </tr>
+            <tr>
+              <td><strong>Lifestyle Agent</strong><br><span style="color: #64748b; font-size: 12px;">Behaviour change</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>98.9%</td>
+              <td>178</td>
+              <td>82.3%</td>
+            </tr>
+            <tr>
+              <td><strong>Community Agent</strong><br><span style="color: #64748b; font-size: 12px;">Local partnerships</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.3%</td>
+              <td>67</td>
+              <td>91.5%</td>
+            </tr>
+            <tr>
+              <td><strong>Accessibility Agent</strong><br><span style="color: #64748b; font-size: 12px;">Inclusive design</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.8%</td>
+              <td>23</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Quality Agent</strong><br><span style="color: #64748b; font-size: 12px;">NICE compliance</span></td>
+              <td><span class="badge success">Active</span></td>
+              <td>99.6%</td>
+              <td>445</td>
+              <td>95.7%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">System Health</h3>
+          <p class="card-subtitle">Current performance metrics</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">CPU usage</span>
+                <span class="metric-value">23%</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 23%; background: #00a499;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Memory usage</span>
+                <span class="metric-value">67%</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 67%; background: #ffb81c;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Database performance</span>
+                <span class="metric-value badge success">Optimal</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Queue processing</span>
+                <span class="metric-value">45ms avg</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Security & Compliance</h3>
+          <p class="card-subtitle">Data protection status</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Encryption status</span>
+                <span class="metric-value badge success">Active</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Audit log integrity</span>
+                <span class="metric-value badge success">Verified</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">GDPR compliance</span>
+                <span class="metric-value badge success">Compliant</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Last security scan</span>
+                <span class="metric-value">2 hours ago</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">EHR Integration Status</h2>
+        <p class="card-subtitle">Real-time connectivity with practice systems</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>Status</th>
+              <th>Last Sync</th>
+              <th>Data Flow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>EMIS Web</strong></td>
+              <td><span class="badge success">Connected</span></td>
+              <td>2 minutes ago</td>
+              <td>Bidirectional</td>
+            </tr>
+            <tr>
+              <td><strong>TPP SystmOne</strong></td>
+              <td><span class="badge success">Connected</span></td>
+              <td>5 minutes ago</td>
+              <td>Bidirectional</td>
+            </tr>
+            <tr>
+              <td><strong>QOF Reporting</strong></td>
+              <td><span class="badge success">Active</span></td>
+              <td>Daily updates</td>
+              <td>Automated</td>
+            </tr>
+            <tr>
+              <td><strong>NHS App</strong></td>
+              <td><span class="badge success">Integrated</span></td>
+              <td>Real-time</td>
+              <td>Patient-facing</td>
+            </tr>
+            <tr>
+              <td><strong>Pathology Labs</strong></td>
+              <td><span class="badge success">Connected</span></td>
+              <td>15 minutes ago</td>
+              <td>Results import</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Performance Trends</h2>
+        <p class="card-subtitle">System metrics over the last 30 days</p>
+      </div>
+      <div class="card-content">
+        <div style="margin-bottom: 24px;">
+          <h4>Response Time Trend</h4>
+          <div style="padding: 20px; background: #f8fafc; border-radius: 8px; margin-top: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: end; height: 60px;">
+              <div style="width: 8px; background: #00a499; height: 45%;"></div>
+              <div style="width: 8px; background: #00a499; height: 60%;"></div>
+              <div style="width: 8px; background: #00a499; height: 40%;"></div>
+              <div style="width: 8px; background: #00a499; height: 55%;"></div>
+              <div style="width: 8px; background: #00a499; height: 35%;"></div>
+              <div style="width: 8px; background: #00a499; height: 50%;"></div>
+              <div style="width: 8px; background: #ffb81c; height: 70%;"></div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 8px; color: #64748b; font-size: 12px;">
+            Week 1 → Week 4 (Current week showing increased load)
+          </div>
+        </div>
+
+        <ul class="sidebar-list">
+          <li>
+            <div class="metric">
+              <span class="metric-label">Average response time</span>
+              <span class="metric-value">89ms → 127ms</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Peak concurrent users</span>
+              <span class="metric-value">156 → 203</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Data processed</span>
+              <span class="metric-value">2.3TB this month</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Error rate</span>
+              <span class="metric-value">0.02%</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 32px;">
+    <div class="card-header">
+      <h2 class="card-title">Automated Scaling & Maintenance</h2>
+      <p class="card-subtitle">System self-management and optimization</p>
+    </div>
+    <div class="card-content">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div>
+          <h4 style="margin-bottom: 12px;">Auto-scaling Events (24h)</h4>
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">08:30 - Scale up triggered</span>
+                <span class="metric-value badge info">+2 instances</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">14:15 - Peak load handled</span>
+                <span class="metric-value badge success">Stable</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">22:00 - Scale down initiated</span>
+                <span class="metric-value badge info">-1 instance</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">Maintenance Schedule</h4>
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Next patch deployment</span>
+                <span class="metric-value">Sunday 02:00</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Database optimization</span>
+                <span class="metric-value">Weekly</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Backup verification</span>
+                <span class="metric-value badge success">Daily</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">AI Model Performance</h4>
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Model accuracy</span>
+                <span class="metric-value">96.2%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Last retrain</span>
+                <span class="metric-value">3 days ago</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Data drift detected</span>
+                <span class="metric-value badge success">None</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

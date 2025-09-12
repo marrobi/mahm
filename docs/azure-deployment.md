@@ -4,13 +4,12 @@ This guide provides comprehensive instructions for deploying and configuring the
 
 ## Overview
 
-The deployment creates a complete Azure infrastructure supporting the MAHM Phase 1 objectives:
+The deployment creates a focused Azure infrastructure supporting the MAHM Phase 1 objectives:
 - Azure AI Foundry workspace for Connected Agents orchestration
-- Cosmos DB for conversation storage and clinical history
-- Azure Key Vault for secure secret management
+- Azure Key Vault for secure secret management  
 - Application Insights for observability and monitoring
-- Azure API for FHIR (Health Data Services) for healthcare data integration
-- Managed identities and RBAC for secure authentication
+- Storage Account for AI Foundry workspace requirements
+- Managed identities for secure authentication
 
 ## Prerequisites
 

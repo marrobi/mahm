@@ -45,24 +45,6 @@ variable "key_vault_name" {
   default     = "mahm-kv-dev-001"
 }
 
-variable "cosmos_db_account_name" {
-  description = "Name of the Cosmos DB account"
-  type        = string
-  default     = "mahm-cosmos-dev"
-}
-
-variable "healthcare_workspace_name" {
-  description = "Name of the Azure Health Data Services workspace"
-  type        = string
-  default     = "mahm-health-dev"
-}
-
-variable "fhir_service_name" {
-  description = "Name of the FHIR service"
-  type        = string
-  default     = "mahm-fhir-dev"
-}
-
 variable "environment" {
   description = "Environment name (dev, staging, prod)"
   type        = string

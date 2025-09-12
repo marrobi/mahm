@@ -55,7 +55,7 @@ verify_azure_resources() {
     local resource_group=$(get_output_value "resource_group_name")
     local ai_foundry_workspace=$(get_output_value "ai_foundry_workspace_name")
     local key_vault_name=$(get_output_value "key_vault_name")
-    local cosmos_db_name=$(get_output_value "cosmos_db_account_name")
+    local storage_account=$(get_output_value "storage_account_name")
     local app_insights_name=$(get_output_value "application_insights_name")
     
     # Check resource group
@@ -82,11 +82,11 @@ verify_azure_resources() {
         return 1
     fi
     
-    # Check Cosmos DB
-    if az cosmosdb show --name "$cosmos_db_name" --resource-group "$resource_group" &>/dev/null; then
-        print_success "Cosmos DB '$cosmos_db_name' exists"
+    # Check Storage Account
+    if az storage account show --name "$storage_account" --resource-group "$resource_group" &>/dev/null; then
+        print_success "Storage Account '$storage_account' exists"
     else
-        print_error "Cosmos DB '$cosmos_db_name' not found"
+        print_error "Storage Account '$storage_account' not found"
         return 1
     fi
     
@@ -98,7 +98,7 @@ verify_azure_resources() {
         return 1
     fi
     
-    print_success "All Azure resources verified successfully"
+    print_success "All Azure AI Foundry resources verified successfully"
 }
 
 # Function to test Key Vault access
@@ -116,28 +116,6 @@ test_key_vault_access() {
         print_status "Available secrets: $secrets"
     else
         print_warning "Unable to access Key Vault secrets. Check permissions."
-    fi
-}
-
-# Function to test Cosmos DB connectivity
-test_cosmos_db_connectivity() {
-    print_status "Testing Cosmos DB connectivity..."
-    
-    local cosmos_db_name=$(get_output_value "cosmos_db_account_name")
-    local resource_group=$(get_output_value "resource_group_name")
-    
-    # Check if database exists
-    if az cosmosdb sql database show --account-name "$cosmos_db_name" --name "mahm-conversations" --resource-group "$resource_group" &>/dev/null; then
-        print_success "Cosmos DB database 'mahm-conversations' exists"
-        
-        # Check if container exists
-        if az cosmosdb sql container show --account-name "$cosmos_db_name" --database-name "mahm-conversations" --name "conversations" --resource-group "$resource_group" &>/dev/null; then
-            print_success "Cosmos DB container 'conversations' exists"
-        else
-            print_warning "Cosmos DB container 'conversations' not found"
-        fi
-    else
-        print_warning "Cosmos DB database 'mahm-conversations' not found"
     fi
 }
 
@@ -255,23 +233,6 @@ EOF
     fi
 }
 
-# Function to validate FHIR service
-validate_fhir_service() {
-    print_status "Validating FHIR service..."
-    
-    local fhir_url=$(get_output_value "fhir_service_url")
-    
-    if [ -n "$fhir_url" ]; then
-        print_success "FHIR service URL: $fhir_url"
-        print_status "FHIR service is configured for Phase 1 (stubbed implementation)"
-        
-        # Note: Actual FHIR testing would require authentication and proper setup
-        print_warning "FHIR service testing requires authentication setup (Phase 1 stub)"
-    else
-        print_error "FHIR service URL not found in outputs"
-    fi
-}
-
 # Function to generate verification report
 generate_verification_report() {
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
@@ -288,9 +249,8 @@ generate_verification_report() {
       "resource_group": "$(get_output_value "resource_group_name")",
       "ai_foundry_workspace": "$(get_output_value "ai_foundry_workspace_name")",
       "key_vault": "$(get_output_value "key_vault_name")",
-      "cosmos_db": "$(get_output_value "cosmos_db_account_name")",
-      "application_insights": "$(get_output_value "application_insights_name")",
-      "fhir_service": "$(get_output_value "fhir_service_url")"
+      "storage_account": "$(get_output_value "storage_account_name")",
+      "application_insights": "$(get_output_value "application_insights_name")"
     },
     "agents": {
       "main_orchestrating_agent": {
@@ -309,7 +269,6 @@ generate_verification_report() {
     "tests": {
       "azure_resources": "passed",
       "key_vault_access": "verified",
-      "cosmos_db_connectivity": "verified",
       "agent_routing": "simulation_passed",
       "application_insights": "configured"
     },
@@ -328,13 +287,12 @@ display_summary() {
     echo -e "\n${BLUE}✓ Infrastructure Components:${NC}"
     echo "  • Azure AI Foundry workspace deployed"
     echo "  • Key Vault with secure secret storage"
-    echo "  • Cosmos DB for conversation storage"
+    echo "  • Storage Account for AI Foundry"
     echo "  • Application Insights for observability"
-    echo "  • FHIR service configured (Phase 1 stub)"
     
     echo -e "\n${BLUE}✓ Agent Configuration:${NC}"
     echo "  • Main Orchestrating Agent with routing logic"
-    echo "  • BP Monitoring Stub Agent"
+    echo "  • BP Monitoring Agent"
     echo "  • Routing Test Agent"
     
     echo -e "\n${BLUE}✓ Security & Authentication:${NC}"
@@ -365,11 +323,9 @@ main() {
     check_outputs_file
     verify_azure_resources
     test_key_vault_access
-    test_cosmos_db_connectivity
     simulate_agent_health_checks
     test_agent_routing
     check_application_insights
-    validate_fhir_service
     generate_verification_report
     display_summary
     

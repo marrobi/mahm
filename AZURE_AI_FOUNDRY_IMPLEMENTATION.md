@@ -1,6 +1,6 @@
-# MAHM Azure AI Foundry Implementation - Project Overview
+# MAHM Azure AI Foundry Implementation - AI Foundry Focused
 
-This document provides an overview of the complete Azure AI Foundry workspace deployment with Connected Agents for MAHM (Multi-Agentic Hypertension Management).
+This document provides an overview of the Azure AI Foundry workspace deployment with Connected Agents for MAHM (Multi-Agentic Hypertension Management).
 
 ## Project Structure
 
@@ -12,8 +12,7 @@ mahm/
 │       ├── bp-monitoring-agent.json
 │       └── routing-test-agent.json
 ├── docs/                            # Documentation
-│   ├── azure-deployment.md         # Comprehensive deployment guide
-│   └── technical-architecture.md   # Technical architecture document
+│   └── azure-deployment.md         # Comprehensive deployment guide
 ├── infrastructure/                  # Infrastructure as Code
 │   ├── terraform/                  # Terraform configurations
 │   │   ├── main.tf                # Main resource definitions
@@ -28,220 +27,132 @@ mahm/
 │       ├── verify-deployment.sh
 │       ├── mahm-cli.sh
 │       └── register-agents.sh
-├── prototype/                      # NHS App prototype (existing)
 └── README.md                       # Project overview
 ```
 
 ## Key Components Implemented
 
-### 1. Azure Infrastructure (Terraform)
+### 1. Azure AI Foundry Infrastructure (Terraform)
 
-**Azure AI Foundry Workspace**
-- Machine Learning workspace configured for Connected Agents
+**Azure AI Foundry Workspace (Machine Learning Workspace)**
+- Configured for Azure AI Foundry and Connected Agents
 - Public network access for demo purposes
 - System-assigned managed identity
 - Integration with Key Vault, Storage, and Application Insights
 
-**Security & Authentication**
-- Azure Key Vault for secure secret storage
-- User-assigned managed identity for agent authentication
-- RBAC assignments for least-privilege access
-- Automatic secret storage for connection strings
+**Required Dependencies**
+- **Storage Account**: Required dependency for ML workspace
+- **Application Insights**: Required for observability and telemetry
+- **Azure Key Vault**: Required for secure secret storage
 
-**Data Storage**
-- Cosmos DB account with Session consistency
-- Database: "mahm-conversations"
-- Container: "conversations" with partition key `/conversationId`
-- 400 RU/s throughput for demo workloads
-
-**Healthcare Integration**
-- Azure Health Data Services workspace
-- FHIR R4 service with Azure AD authentication
-- Access policies for AI Foundry workspace
-- Phase 1 stub implementation for demo
-
-**Observability**
-- Application Insights for telemetry and monitoring
-- Correlation ID support across all agents
-- Custom metrics and event tracking
-- Health check monitoring
-
-### 2. Agent Network Configuration
+### 2. Connected Agents Configuration
 
 **Main Orchestrating Agent**
-- Central coordination and clinical safety monitoring
-- Natural language routing with 80%+ confidence
-- Emergency detection and escalation protocols
-- Multi-agent coordination capabilities
-- NICE guideline compliance enforcement
+- Central coordination for multi-agent workflows
+- Natural language routing with confidence thresholds
+- Agent-to-agent communication coordination
+- Health check and telemetry integration
 
-**BP Monitoring Stub Agent**
-- Blood pressure measurement guidance
-- Community monitoring location coordination
-- NICE guideline interpretation for BP categories
-- Emergency threshold detection (≥180/120 mmHg)
+**BP Monitoring Agent**
+- Specialized agent for blood pressure guidance
 - Patient education and measurement tips
+- Reading interpretation and recommendations
+- Health check endpoints
 
 **Routing Test Agent**
-- System validation and routing testing
-- Health check and communication testing
-- Structured test scenario execution
-- Performance metrics and diagnostics
+- System validation and testing
+- Agent communication verification
+- Health monitoring and diagnostics
 - Development and debugging support
 
 ### 3. Deployment Automation
 
 **Infrastructure Deployment Script**
 - Prerequisites validation (Azure CLI, Terraform)
-- Azure context validation and permissions check
-- Terraform initialization and planning
-- User confirmation before resource creation
-- Output collection and agent configuration
+- Azure context validation
+- Terraform deployment with user confirmation
+- Output collection for agent configuration
 
 **Verification Script**
 - Azure resource verification
-- Key Vault access testing
-- Cosmos DB connectivity validation
 - Agent health check simulation
-- Routing functionality demonstration
-- Application Insights integration verification
+- Connectivity validation
+- Integration testing
 
 **MAHM CLI Tool**
 - Deployment status checking
 - Agent health monitoring
-- Routing functionality testing
-- Agent listing and capability discovery
-- Application Insights log analysis
+- System verification
 - Azure portal integration
 
 **Agent Registration Script**
-- Agent registration in Azure AI Foundry
+- Agent registration preparation
 - Health endpoint testing
-- Routing capability demonstration
-- Demo command generation
-- Comprehensive demo reporting
+- Demo functionality validation
 
 ### 4. Security Implementation
 
 **Authentication & Authorization**
 - Managed identity-based authentication
+- Azure Key Vault for secret storage
 - No plaintext secrets in configuration files
-- Azure AD integration for FHIR service
-- Role-based access control (RBAC)
-- Principle of least privilege
-
-**Key Management**
-- Azure Key Vault for all secrets
-- Automatic secret rotation capabilities
-- Access policies for service identities
-- Soft delete and purge protection
-
-**Network Security**
-- Public access enabled for demo (can be restricted for production)
-- Firewall rules and access policies
-- TLS encryption for all communications
-- Audit logging for all access
+- Least-privilege access controls
 
 ### 5. Observability & Monitoring
 
 **Application Insights Integration**
 - Event tracking for agent interactions
-- Dependency tracking for external services
-- Exception tracking and error handling
-- Custom metrics for agent performance
 - Correlation ID propagation
-
-**Health Monitoring**
-- Health check endpoints for all agents
-- Structured JSON responses with metadata
-- Response time tracking
-- Availability monitoring
-- Alert integration capabilities
-
-**Logging Strategy**
-- Structured logging with correlation IDs
-- Clinical safety event logging
-- Routing decision audit trails
-- Performance metrics collection
-- Error pattern analysis
+- Custom metrics and telemetry
+- Health check monitoring
 
 ## Acceptance Criteria Fulfillment
 
 ✅ **Azure AI Foundry workspace deployed** - Complete with Terraform automation
-✅ **Main Orchestrating Agent + 2 stub agents** - Configured and ready for registration
+✅ **Main Orchestrating Agent + 2 specialized agents** - Configured for Connected Agents
 ✅ **Health checks responding with 200 status** - Simulated and tested
-✅ **Routing between agents demonstrated** - Multiple intent scenarios tested
+✅ **Routing between agents demonstrated** - Multiple intent scenarios
 ✅ **Secure authentication implemented** - Managed identities and Key Vault
 ✅ **Application Insights logging** - With correlation ID support
-✅ **FHIR and Cosmos DB integration** - Configured and validated (Phase 1 stub)
-✅ **Complete documentation provided** - Deployment, troubleshooting, and usage guides
+✅ **Complete documentation provided** - Deployment and usage guides
 
 ## Demo Capabilities
 
 ### Infrastructure Demo
-- Azure portal visualization of all deployed resources
+- Azure portal visualization of AI Foundry workspace and dependencies
 - CLI commands for resource inspection
 - Resource group organization and tagging
-- Cost management and monitoring setup
 
 ### Agent Network Demo
 - Agent configuration file review
 - Health check endpoint testing
 - Routing logic demonstration
-- Emergency escalation simulation
+- Connected Agents communication flow
 
 ### Security Demo
 - Managed identity authentication
 - Key Vault secret storage
-- RBAC permission verification
-- Audit trail demonstration
+- Access policy verification
 
 ### Observability Demo
 - Application Insights telemetry
 - Correlation ID tracing
 - Performance metrics collection
-- Error handling and logging
 
-## Phase 1 vs Production Considerations
+## Phase 1 Implementation Notes
 
-### Phase 1 (Current Implementation)
-- Demo environment with public access
-- Simulated agent responses
-- Basic security configuration
-- Minimal resource sizing
-- Stubbed FHIR integration
+### Current Scope - AI Foundry Focus
+- Azure AI Foundry workspace with Connected Agents
+- Core infrastructure dependencies (Storage, Key Vault, App Insights)
+- Three configured agents for demonstration
+- Basic security and observability
+- Deployment automation and verification
 
-### Production Requirements
-- Private network integration
-- Live agent implementations
-- Enhanced security hardening
-- Auto-scaling configuration
-- Full FHIR data integration
-- Disaster recovery planning
-- Compliance certification
-
-## Next Steps
-
-### Immediate (Phase 1 Completion)
-1. Deploy infrastructure using provided scripts
-2. Verify all components are functioning
-3. Test agent routing and health checks
-4. Review security configuration
-5. Generate demo documentation
-
-### Phase 2 Planning
-1. Implement additional specialized agents
-2. Enable full FHIR integration
-3. Add emergency detection capabilities
-4. Implement production security measures
-5. Configure monitoring dashboards
-
-### Production Readiness
-1. Security assessment and hardening
-2. Performance testing and optimization
-3. Disaster recovery implementation
-4. Compliance validation
-5. User acceptance testing
+### Removed from Scope
+- Cosmos DB (beyond AI Foundry requirements)
+- FHIR/Healthcare services (not AI Foundry core)
+- Complex healthcare integrations
+- Advanced clinical workflows
 
 ## Command Reference
 
@@ -253,7 +164,7 @@ mahm/
 # Verify deployment
 ./scripts/verification/verify-deployment.sh
 
-# Register agents (Phase 1 simulation)
+# Register agents (simulation)
 ./scripts/verification/register-agents.sh
 
 # Use MAHM CLI
@@ -262,16 +173,16 @@ mahm/
 
 ### Advanced Operations
 ```bash
-# Check specific agent health
+# Check agent health
 ./scripts/verification/mahm-cli.sh health
 
-# Test custom routing
+# Test routing functionality
 ./scripts/verification/mahm-cli.sh test-routing "check my blood pressure"
 
 # Open Azure portal
 ./scripts/verification/mahm-cli.sh portal
 
-# View Application Insights info
+# View Application Insights
 ./scripts/verification/mahm-cli.sh logs
 ```
 
@@ -279,23 +190,20 @@ mahm/
 
 ### Documentation
 - [Azure Deployment Guide](docs/azure-deployment.md)
-- [Technical Architecture](docs/technical-architecture.md)
 - [Infrastructure README](infrastructure/README.md)
-- [Project Agents Guide](agents.md)
 
 ### External References
 - [Azure AI Foundry Documentation](https://docs.microsoft.com/azure/machine-learning/)
-- [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/)
+- [Connected Agents Framework](https://docs.microsoft.com/azure/ai-services/agents/)
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
 
 ---
 
-**Implementation Status: Phase 1 Complete**
-- ✅ Infrastructure deployment automated
-- ✅ Agent configurations defined
-- ✅ Security measures implemented
-- ✅ Observability configured
+**Implementation Status: AI Foundry Focused**
+- ✅ Azure AI Foundry workspace deployment automated
+- ✅ Connected Agents configurations defined
+- ✅ Core security and observability implemented
+- ✅ Deployment automation functional
 - ✅ Documentation comprehensive
-- ✅ Verification scripts functional
 
-**Ready for deployment and demonstration of Azure AI Foundry workspace with Connected Agents for MAHM Phase 1.**
+**Ready for Azure AI Foundry workspace deployment with Connected Agents for MAHM.**

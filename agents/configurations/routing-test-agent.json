@@ -1,7 +1,7 @@
 {
   "name": "RoutingTestAgent",
   "displayName": "MAHM Routing Test Agent",
-  "description": "Test agent for validating routing capabilities and agent-to-agent communication in MAHM system",
+  "description": "Test agent for validating Azure AI Foundry Connected Agents routing and system functionality",
   "version": "1.0.0",
   "type": "test",
   "configuration": {
@@ -12,32 +12,28 @@
       "maxTokens": 1000,
       "topP": 0.9
     },
-    "systemPrompt": "You are the Routing Test Agent for MAHM (Multi-Agentic Hypertension Management). Your purpose is to validate routing functionality and test agent-to-agent communication.\n\n**Core Responsibilities:**\n1. Respond to test queries and routing validation requests\n2. Provide structured responses for system testing\n3. Validate agent communication pathways\n4. Support system health checks and monitoring\n5. Generate test scenarios for development\n\n**Test Scenarios:**\n- Routing validation: Confirm successful message routing\n- Health checks: Validate agent availability and response\n- Communication tests: Test inter-agent messaging\n- Load testing: Support system performance validation\n\n**Response Format:**\nAlways provide structured, consistent responses that include:\n- Agent identification\n- Test result status\n- Timestamp\n- Correlation ID\n- Any relevant test data\n\nThis agent is specifically designed for testing and validation purposes in the MAHM system.",
+    "systemPrompt": "You are the Routing Test Agent for MAHM (Multi-Agentic Hypertension Management) running on Azure AI Foundry Connected Agents.\n\n**Purpose:**\n1. Validate agent-to-agent routing functionality\n2. Test Connected Agents communication\n3. Provide system health verification\n4. Support development and debugging\n\n**Test Scenarios:**\n- Routing validation tests\n- Health check responses\n- Communication verification\n- System status monitoring\n\n**Response Format:**\nAlways provide structured responses with:\n- Test name/type\n- Status (PASS/FAIL)\n- Timestamp\n- Agent information\n- Correlation ID (when available)\n\nRespond clearly and include technical details for debugging purposes.",
     "capabilities": [
       "routing_validation",
       "health_monitoring",
       "communication_testing",
-      "system_diagnostics",
-      "test_scenario_generation"
+      "system_verification"
     ],
     "testScenarios": [
       {
-        "name": "basic_routing",
-        "description": "Test basic routing functionality",
-        "expectedInput": "test routing",
-        "expectedOutput": "Routing successful to RoutingTestAgent"
+        "name": "basic_routing_test",
+        "description": "Validates basic routing functionality",
+        "expectedResponse": "PASS - Routing test agent responding"
       },
       {
-        "name": "health_check",
-        "description": "Validate agent health status",
-        "expectedInput": "health check",
-        "expectedOutput": "Agent healthy and responding"
+        "name": "health_check_test", 
+        "description": "Validates health check endpoints",
+        "expectedResponse": "PASS - All systems operational"
       },
       {
-        "name": "communication_test",
-        "description": "Test inter-agent communication",
-        "expectedInput": "ping",
-        "expectedOutput": "Pong from RoutingTestAgent"
+        "name": "correlation_id_test",
+        "description": "Validates correlation ID propagation",
+        "expectedResponse": "PASS - Correlation ID tracking working"
       }
     ],
     "healthCheck": {
@@ -46,9 +42,8 @@
       "expectedResponse": {
         "status": "healthy",
         "agent": "RoutingTestAgent",
-        "capabilities": ["routing_test", "communication_validation"],
-        "timestamp": "{{timestamp}}",
-        "testMode": true
+        "capabilities": ["routing_test", "health_monitoring"],
+        "timestamp": "{{timestamp}}"
       }
     }
   },
@@ -56,12 +51,7 @@
     "applicationInsights": {
       "enabled": true,
       "trackEvents": true,
-      "trackDependencies": true,
-      "customMetrics": {
-        "test_execution_count": "counter",
-        "routing_success_rate": "gauge",
-        "response_time": "histogram"
-      }
+      "trackPerformance": true
     },
     "correlationId": {
       "enabled": true,
@@ -72,10 +62,6 @@
     "authentication": {
       "type": "managed_identity",
       "enabled": true
-    },
-    "authorization": {
-      "enabled": true,
-      "roles": ["test_agent", "system_validator"]
     }
   }
 }

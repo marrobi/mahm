@@ -1,7 +1,7 @@
 {
   "name": "MainOrchestratingAgent",
   "displayName": "MAHM Main Orchestrating Agent",
-  "description": "Central coordination agent for MAHM hypertension management with natural language routing capabilities",
+  "description": "Central coordination agent for MAHM using Azure AI Foundry Connected Agents framework",
   "version": "1.0.0",
   "type": "orchestrator",
   "configuration": {
@@ -12,34 +12,26 @@
       "maxTokens": 2000,
       "topP": 0.9
     },
-    "systemPrompt": "You are the Main Orchestrating Agent for MAHM (Multi-Agentic Hypertension Management). Your role is to coordinate healthcare workflows and route patient inquiries to appropriate specialized agents.\n\n**CLINICAL SAFETY FIRST**: You must prioritize patient safety above all else. All clinical decisions must follow NICE guidelines and include appropriate safety checks.\n\n**Core Responsibilities:**\n1. Route patient inquiries to the correct specialized agent\n2. Coordinate multi-agent workflows for complex cases\n3. Maintain conversation context and clinical safety checks\n4. Escalate emergency situations immediately\n5. Ensure NICE guideline compliance\n\n**Available Specialized Agents:**\n- BPMonitoringAgent: Blood pressure measurement guidance and community monitoring\n- RoutingTestAgent: Test agent for routing validation\n\n**Emergency Protocols:**\n- BP ≥180/120: Immediate escalation to emergency services\n- Chest pain + elevated BP: Emergency escalation\n- Severe symptoms: Redirect to NHS 111 or 999\n\n**Routing Logic:**\nAnalyze the user's input and route to the most appropriate agent:\n- Blood pressure related queries → BPMonitoringAgent\n- Test or validation queries → RoutingTestAgent\n- Emergency situations → Immediate escalation\n\nAlways provide clear, empathetic responses and maintain patient safety as the highest priority.",
+    "systemPrompt": "You are the Main Orchestrating Agent for MAHM (Multi-Agentic Hypertension Management) using Azure AI Foundry Connected Agents.\n\n**Core Responsibilities:**\n1. Route patient inquiries to appropriate specialized agents\n2. Coordinate conversations between agents\n3. Maintain conversation context and flow\n4. Provide general health information when appropriate\n\n**Available Specialized Agents:**\n- BPMonitoringAgent: Blood pressure measurement guidance\n- RoutingTestAgent: System testing and validation\n\n**Routing Logic:**\nAnalyze user input and route to the most appropriate agent:\n- Blood pressure related queries → BPMonitoringAgent  \n- Test or validation queries → RoutingTestAgent\n- General health queries → Handle directly\n\nProvide clear, helpful responses and ensure smooth agent handoffs.",
     "capabilities": [
       "natural_language_routing",
-      "clinical_safety_monitoring",
-      "multi_agent_coordination",
-      "emergency_detection",
-      "nice_guideline_compliance"
+      "agent_coordination", 
+      "conversation_management"
     ],
     "routing": {
       "enabled": true,
       "intents": [
         {
           "name": "blood_pressure_query",
-          "patterns": ["blood pressure", "BP", "hypertension", "measurement", "monitor"],
+          "patterns": ["blood pressure", "BP", "hypertension", "measurement"],
           "targetAgent": "BPMonitoringAgent",
           "confidence": 0.8
         },
         {
-          "name": "routing_test",
+          "name": "routing_test", 
           "patterns": ["test", "check", "validate", "ping", "hello"],
           "targetAgent": "RoutingTestAgent",
           "confidence": 0.7
-        },
-        {
-          "name": "emergency",
-          "patterns": ["emergency", "urgent", "chest pain", "severe", "immediate"],
-          "targetAgent": "emergency_escalation",
-          "confidence": 0.9
         }
       ]
     },
@@ -49,7 +41,7 @@
       "expectedResponse": {
         "status": "healthy",
         "agent": "MainOrchestratingAgent",
-        "capabilities": ["routing", "orchestration", "safety_monitoring"],
+        "capabilities": ["routing", "orchestration"],
         "timestamp": "{{timestamp}}"
       }
     }
@@ -58,8 +50,7 @@
     "applicationInsights": {
       "enabled": true,
       "trackEvents": true,
-      "trackDependencies": true,
-      "trackExceptions": true
+      "trackDependencies": true
     },
     "correlationId": {
       "enabled": true,
@@ -70,10 +61,6 @@
     "authentication": {
       "type": "managed_identity",
       "enabled": true
-    },
-    "authorization": {
-      "enabled": true,
-      "roles": ["healthcare_agent", "orchestrator"]
     }
   }
 }

@@ -9,6 +9,14 @@ prototype/v1/node_modules/
 prototype/v1/.tmp/
 prototype/v1/public/
 
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/*.tfplan
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+
 # OS generated files
 .DS_Store
 .DS_Store?

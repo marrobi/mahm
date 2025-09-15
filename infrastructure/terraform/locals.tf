@@ -2,12 +2,12 @@
 locals {
   # Common tags applied to all resources
   common_tags = {
-    Project     = var.project_name
-    Environment = var.environment
-    CostCenter  = var.cost_center
-    Owner       = var.owner
-    ManagedBy   = "terraform"
-    Purpose     = "mahm-ai-foundry-demo"
+    Project            = var.project_name
+    Environment        = var.environment
+    CostCenter         = var.cost_center
+    Owner              = var.owner
+    ManagedBy          = "terraform"
+    Purpose            = "mahm-ai-foundry-demo"
     DataClassification = "demo-data-only"
   }
 

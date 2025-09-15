@@ -7,13 +7,22 @@ This directory contains Terraform configurations and scripts for deploying the A
 ```
 infrastructure/
 ├── terraform/                 # Terraform configuration files
-│   ├── main.tf               # Main resource definitions
+│   ├── main.tf               # Main resource definitions using Azure verified module
 │   ├── variables.tf          # Input variables
 │   ├── outputs.tf            # Output values
 │   ├── locals.tf             # Local values and common tags
 │   └── terraform.tfvars      # Variable values (created during deployment)
 └── README.md                 # This file
 ```
+
+## Azure Verified Module
+
+This implementation uses the official Azure verified module:
+- **Module**: `Azure/avm-ptn-aiml-ai-foundry/azurerm`
+- **Version**: `0.6.0`
+- **Documentation**: [Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry](https://github.com/Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry)
+
+This module provides a comprehensive, tested, and officially supported pattern for deploying Azure AI Foundry workspaces.
 
 ## Quick Start
 
@@ -24,27 +33,22 @@ infrastructure/
 
 ## Deployed Resources
 
-The Terraform configuration deploys the following Azure resources:
+The Azure verified module deploys the following Azure resources:
 
 ### Core Infrastructure
 - **Resource Group**: Container for all MAHM resources
-- **Azure AI Foundry Workspace**: Machine Learning workspace for Connected Agents
+- **Azure AI Foundry Account**: Central AI services account
+- **Azure AI Foundry Project**: Project workspace for Connected Agents
+- **AI Agent Service**: Connected Agents runtime environment
+
+### Supporting Services (BYOR - Bring Your Own Resources)
 - **Storage Account**: Required for AI Foundry workspace
-- **Application Insights**: Observability and monitoring
+- **Azure Key Vault**: Secure storage for secrets and configuration
+- **Log Analytics Workspace**: Centralized logging and monitoring
 
 ### Security & Authentication
-- **Azure Key Vault**: Secure storage for secrets and configuration
-- **Managed Identity**: User-assigned identity for agent authentication
+- **System-assigned Managed Identity**: For AI Foundry workspace
 - **RBAC Assignments**: Role-based access control for resources
-
-### Data Storage
-- **Cosmos DB Account**: NoSQL database for conversation storage
-- **Cosmos DB Database**: "mahm-conversations" database
-- **Cosmos DB Container**: "conversations" container with partition key
-
-### Healthcare Integration
-- **Healthcare Workspace**: Azure Health Data Services workspace
-- **FHIR Service**: FHIR R4 API for healthcare data (Phase 1 stub)
 
 ## Configuration
 
@@ -59,11 +63,7 @@ resource_group_name = "rg-mahm-dev"
 resource_prefix = "mahm-dev"
 ai_foundry_workspace_name = "mahm-ai-foundry-dev"
 storage_account_name = "mahmaidevst001"
-application_insights_name = "mahm-ai-insights-dev"
 key_vault_name = "mahm-kv-dev-001"
-cosmos_db_account_name = "mahm-cosmos-dev"
-healthcare_workspace_name = "mahm-health-dev"
-fhir_service_name = "mahm-fhir-dev"
 ```
 
 ### Customization
@@ -77,93 +77,90 @@ location = "UK West"
 resource_group_name = "rg-mahm-staging"
 
 # Custom resource names
-cosmos_db_account_name = "mahm-cosmos-staging"
+resource_prefix = "mahm-staging"
 key_vault_name = "mahm-kv-staging-001"
 ```
+
+## Azure Verified Module Benefits
+
+Using the official Azure verified module provides:
+
+- **Best Practices**: Follows Microsoft's recommended patterns
+- **Security**: Built-in security configurations and compliance
+- **Reliability**: Tested and maintained by Microsoft
+- **Support**: Official support from Microsoft
+- **Updates**: Regular updates with new Azure features
 
 ## Security Configuration
 
 ### Managed Identities
 
 - **System-assigned identity**: Created for AI Foundry workspace
-- **User-assigned identity**: Created for agent applications with specific permissions
+- **Service identities**: Managed by the Azure verified module
 
 ### RBAC Assignments
 
-- **Cosmos DB Built-in Data Contributor**: Agent access to Cosmos DB
-- **Key Vault Secrets User**: Agent access to Key Vault secrets
+- **Key Vault access**: Configured through the module
+- **Storage access**: Managed by the module
+- **AI Foundry permissions**: Automatically configured
 
-### Key Vault Access Policies
+### Key Vault Integration
 
-- **Deployment user**: Full access (keys, secrets, certificates)
-- **AI Foundry workspace**: Secret read access
-- **Agent identity**: Secret read access
-
-### Stored Secrets
-
-The following secrets are automatically stored in Key Vault:
-
-- `cosmos-connection-string`: Cosmos DB connection string
-- `application-insights-instrumentation-key`: App Insights key
-- `fhir-service-url`: FHIR service endpoint URL
+The module automatically:
+- Creates Key Vault with secure configuration
+- Sets up proper access policies
+- Manages secret storage for AI services
 
 ## Networking
 
 ### Public Access
 
-For demonstration purposes, the deployment enables public network access on:
-- AI Foundry workspace
-- Storage account
-- Key Vault
-- Cosmos DB
+For demonstration purposes, the deployment enables public network access. The Azure verified module supports:
+- Public endpoints (current configuration)
+- Private endpoints (for production use)
+- VNet integration capabilities
 
 ### Production Considerations
 
-For production deployment, consider:
+The Azure verified module supports:
 - Private endpoints for all resources
 - Virtual network integration
-- Network security groups
-- Application Gateway for web traffic
+- Network security configurations
+- Advanced networking scenarios
 
 ## Monitoring and Observability
 
-### Application Insights
+### Built-in Monitoring
+
+The Azure verified module includes:
+- Log Analytics Workspace integration
+- Application Insights support
+- Diagnostic settings
+- Azure Monitor integration
+
+### AI Foundry Monitoring
 
 Configured for:
-- Event tracking for agent interactions
-- Dependency tracking for external services
-- Exception tracking for error handling
-- Custom metrics for agent performance
-
-### Correlation IDs
-
-All agents are configured to:
-- Generate correlation IDs for request tracing
-- Propagate correlation IDs across service calls
-- Log correlation IDs in Application Insights
-
-### Health Checks
-
-Each agent exposes health check endpoints:
-- `/health` endpoint for availability monitoring
-- Structured JSON responses with status and metadata
-- Integration with Application Insights for monitoring
+- AI service telemetry
+- Project-level monitoring
+- Agent performance tracking
+- Cost tracking and optimization
 
 ## Cost Management
 
 ### Resource Sizing
 
 The deployment uses minimal resource sizes suitable for development:
-- **Cosmos DB**: 400 RU/s throughput
 - **Storage Account**: Standard LRS replication
 - **Key Vault**: Standard tier
+- **AI Foundry**: Standard SKU
 
-### Cost Optimization
+### Azure Verified Module Benefits
 
-For production:
-- Use reserved instances for Cosmos DB
-- Implement auto-scaling for variable workloads
-- Consider Azure Hybrid Benefit for compute resources
+The module provides:
+- Optimized resource configurations
+- Cost-effective defaults
+- Scalability planning support
 
 ### Tagging Strategy
 
@@ -183,6 +180,7 @@ All resources are tagged with:
 1. **Resource name conflicts**: Update names in `terraform.tfvars`
 2. **Permission errors**: Verify Azure RBAC assignments
 3. **Quota limits**: Check subscription quotas for the region
+4. **Module version**: Ensure using compatible Terraform version (>= 1.9)
 
 ### Useful Commands
 
@@ -197,17 +195,18 @@ terraform state list
 # Get specific output
 terraform output ai_foundry_workspace_name
 
+# Show module outputs
+terraform output connected_agents_configuration
+
 # Destroy resources (use with caution)
 terraform destroy
 ```
 
-### Log Analysis
+### Module-specific Troubleshooting
 
-Use Application Insights to monitor:
-- Agent health checks
-- Routing decisions
-- Performance metrics
-- Error patterns
+- Review module documentation: [Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry](https://github.com/Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry)
+- Check module version compatibility
+- Verify provider requirements are met
 
 ## Integration with CI/CD
 

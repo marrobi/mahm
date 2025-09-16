@@ -4,7 +4,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Missed dose patterns" %}
+{% set pageHeading = "Your Medication History" %}
 
 <!-- For adding a breadcrumb or back link -->
 {% block beforeContent %}
@@ -22,7 +22,7 @@
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
-        heading: "Missed dose patterns"
+        heading: "Your Medication History"
       })}}
 
       <p class="nhsuk-lede-text">
@@ -36,7 +36,7 @@
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Weekend pattern identified:</strong> You're more likely to miss doses on Saturday and Sunday mornings, particularly during social activities and disrupted routines.</p>
+        <p><strong>Weekend pattern identified:</strong> You often miss doses on Saturday and Sunday mornings, particularly during social activities and disrupted routines.</p>
       </div>
 
       <!-- SECTION - MISSED DOSES CALENDAR -->
@@ -108,86 +108,18 @@
       </div>
 
       <div class="nhsuk-grid-row nhsuk-u-margin-top-4">
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-half">
           <div style="display: flex; align-items: center; margin-bottom: 8px;">
             <div style="width: 20px; height: 20px; background-color: #d5e8f3; margin-right: 8px; border-radius: 3px;"></div>
             <span>Dose taken ✓</span>
           </div>
         </div>
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-half">
           <div style="display: flex; align-items: center; margin-bottom: 8px;">
             <div style="width: 20px; height: 20px; background-color: #fde8e6; margin-right: 8px; border-radius: 3px;"></div>
             <span>Dose missed ✗</span>
           </div>
         </div>
-        <div class="nhsuk-grid-column-one-third">
-          <div style="display: flex; align-items: center; margin-bottom: 8px;">
-            <div style="width: 20px; height: 20px; background-color: #f0f4f5; margin-right: 8px; border-radius: 3px;"></div>
-            <span>Future dates</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION - DETAILED BREAKDOWN -->
-      {{ nhsappSectionHeading({
-        headingText: "Detailed breakdown"
-      }) }}
-
-      <div class="nhsuk-table-responsive">
-        <table class="nhsuk-table">
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header" scope="col">Day of week</th>
-              <th class="nhsuk-table__header" scope="col">Doses taken</th>
-              <th class="nhsuk-table__header" scope="col">Doses missed</th>
-              <th class="nhsuk-table__header" scope="col">Success rate</th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Monday</td>
-              <td class="nhsuk-table__cell">4</td>
-              <td class="nhsuk-table__cell">0</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">100%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Tuesday</td>
-              <td class="nhsuk-table__cell">4</td>
-              <td class="nhsuk-table__cell">0</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">100%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Wednesday</td>
-              <td class="nhsuk-table__cell">4</td>
-              <td class="nhsuk-table__cell">0</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">100%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Thursday</td>
-              <td class="nhsuk-table__cell">4</td>
-              <td class="nhsuk-table__cell">0</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">100%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Friday</td>
-              <td class="nhsuk-table__cell">4</td>
-              <td class="nhsuk-table__cell">0</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">100%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Saturday</td>
-              <td class="nhsuk-table__cell">2</td>
-              <td class="nhsuk-table__cell">3</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--red">40%</strong></td>
-            </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Sunday</td>
-              <td class="nhsuk-table__cell">3</td>
-              <td class="nhsuk-table__cell">2</td>
-              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--orange">60%</strong></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
 
       <!-- SECTION - IMPACT ON BLOOD PRESSURE -->
@@ -202,7 +134,7 @@
             Missed doses were affecting BP control
           </span>
         </h3>
-        <p>Your BP readings had been trending upward despite dose optimization, which was linked to missed weekend doses. Since interventions started, BP is responding better.</p>
+        <p>Your BP readings had been trending upward despite dose optimisation, which was linked to missed weekend doses. Since interventions started, BP is responding better.</p>
       </div>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
@@ -220,7 +152,7 @@
       <ul class="nhsuk-list nhsuk-list--bullet">
         <li><strong>Set weekend alarms:</strong> Phone reminders for Saturday and Sunday at 8:00 AM</li>
         <li><strong>Prepare for social events:</strong> Take medication before going out</li>
-        <li><strong>Use visual cues:</strong> Keep pill organizer somewhere you'll see it on weekends</li>
+        <li><strong>Use visual cues:</strong> Keep pill organiser somewhere you'll see it on weekends</li>
         <li><strong>Track improvements:</strong> Continue monitoring daily to maintain progress</li>
       </ul>
 

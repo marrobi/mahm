@@ -1,0 +1,622 @@
+<!-- Physical Activity Goal Tracking -->
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Physical Activity" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/pages/mybp/lifestyle/index",
+    text: "Back to Lifestyle Hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Physical Activity",
+        subtitle: "Stay active for better blood pressure control"
+      })}}
+
+      <!-- WEEKLY PROGRESS SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "This week's progress"
+      }) }}
+
+      <div class="activity-weekly-card">
+        <div class="activity-weekly-header">
+          <h3>Week of 7-13 October 2024</h3>
+          <span class="nhsuk-tag nhsuk-tag--green">4/5 goals met</span>
+        </div>
+        
+        <div class="activity-weekly-stats">
+          <div class="activity-stat">
+            <span class="activity-stat-number">152</span>
+            <span class="activity-stat-label">Minutes this week</span>
+            <span class="activity-stat-target">Target: 150 min</span>
+          </div>
+          <div class="activity-stat">
+            <span class="activity-stat-number">5</span>
+            <span class="activity-stat-label">Active days</span>
+            <span class="activity-stat-target">Target: 5 days</span>
+          </div>
+          <div class="activity-stat">
+            <span class="activity-stat-number">7,850</span>
+            <span class="activity-stat-label">Average daily steps</span>
+            <span class="activity-stat-target">Target: 8,000</span>
+          </div>
+        </div>
+
+        <div class="activity-weekly-progress">
+          <div class="activity-progress-bar">
+            <div class="activity-progress-fill" style="width: 80%"></div>
+          </div>
+          <p class="activity-progress-text">80% of weekly goals achieved</p>
+        </div>
+      </div>
+
+      <!-- DAILY BREAKDOWN SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Daily breakdown"
+      }) }}
+
+      <div class="activity-daily-grid">
+        <div class="activity-daily-item activity-daily-item--today">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Today</span>
+            <span class="activity-daily-date">13 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="75">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="39.25" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>30</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Walking, Gardening</p>
+            <span class="nhsuk-tag nhsuk-tag--green">Active</span>
+          </div>
+        </div>
+
+        <div class="activity-daily-item activity-daily-item--completed">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Yesterday</span>
+            <span class="activity-daily-date">12 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="100">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="0" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>45</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Dancing, Walking</p>
+            <span class="nhsuk-tag nhsuk-tag--green">Completed</span>
+          </div>
+        </div>
+
+        <div class="activity-daily-item activity-daily-item--completed">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Thursday</span>
+            <span class="activity-daily-date">11 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="100">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="0" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>35</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Swimming</p>
+            <span class="nhsuk-tag nhsuk-tag--green">Completed</span>
+          </div>
+        </div>
+
+        <div class="activity-daily-item activity-daily-item--completed">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Wednesday</span>
+            <span class="activity-daily-date">10 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="100">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="0" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>42</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Walking, Yoga</p>
+            <span class="nhsuk-tag nhsuk-tag--green">Completed</span>
+          </div>
+        </div>
+
+        <div class="activity-daily-item activity-daily-item--light">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Tuesday</span>
+            <span class="activity-daily-date">9 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="50">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="78.5" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>15</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Light walking</p>
+            <span class="nhsuk-tag nhsuk-tag--yellow">Light activity</span>
+          </div>
+        </div>
+
+        <div class="activity-daily-item activity-daily-item--completed">
+          <div class="activity-daily-header">
+            <span class="activity-daily-day">Monday</span>
+            <span class="activity-daily-date">8 Oct</span>
+          </div>
+          <div class="activity-daily-progress">
+            <div class="activity-daily-circle" data-progress="100">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#f0f4f5" stroke-width="6"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#007f3b" stroke-width="6" 
+                        stroke-dasharray="157" stroke-dashoffset="0" 
+                        stroke-linecap="round" transform="rotate(-90 30 30)"/>
+              </svg>
+              <div class="activity-daily-circle-text">
+                <span>40</span>
+                <small>min</small>
+              </div>
+            </div>
+          </div>
+          <div class="activity-daily-details">
+            <p class="activity-daily-type">Walking Group</p>
+            <span class="nhsuk-tag nhsuk-tag--green">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS AND STREAKS -->
+      {{ nhsappSectionHeading({
+        headingText: "Achievements and streaks"
+      }) }}
+
+      <div class="activity-achievements">
+        <div class="activity-achievement activity-achievement--current">
+          <div class="activity-achievement-icon">
+            <span class="activity-streak-number">7</span>
+            <span class="activity-streak-label">Day Streak</span>
+          </div>
+          <div class="activity-achievement-details">
+            <h4>Amazing streak!</h4>
+            <p>You've been active for 7 days in a row. Keep it up!</p>
+          </div>
+        </div>
+
+        <div class="activity-achievement activity-achievement--milestone">
+          <div class="activity-achievement-badge">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#c0c0c0"/>
+              <star cx="24" cy="24" fill="white"/>
+              <text x="24" y="32" text-anchor="middle" fill="white" font-size="10" font-weight="bold">4w</text>
+            </svg>
+          </div>
+          <div class="activity-achievement-details">
+            <h4>Silver Consistency</h4>
+            <p>4 weeks of regular activity completed</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUGGESTED ACTIVITIES -->
+      {{ nhsappSectionHeading({
+        headingText: "Suggested activities"
+      }) }}
+
+      <div class="activity-suggestions">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="#">
+                15-minute morning walk
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Perfect for starting your day. Gentle activity that's easy on the joints.
+            </p>
+            <div class="activity-suggestion-meta">
+              <span class="activity-difficulty">Easy</span>
+              <span class="activity-duration">15 mins</span>
+              <span class="activity-location">Local area</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="#">
+                Chair-based exercises
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Gentle exercises you can do at home, perfect for days when you can't get out.
+            </p>
+            <div class="activity-suggestion-meta">
+              <span class="activity-difficulty">Easy</span>
+              <span class="activity-duration">20 mins</span>
+              <span class="activity-location">At home</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="#">
+                Cultural dance session
+              </a>
+            </h3>
+            <p class="nhsuk-card__description">
+              Join the weekly Bollywood dance class at the community center.
+            </p>
+            <div class="activity-suggestion-meta">
+              <span class="activity-difficulty">Moderate</span>
+              <span class="activity-duration">45 mins</span>
+              <span class="activity-location">Community center</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK ADD ACTIVITY -->
+      <div class="activity-quick-add">
+        <a href="#" class="nhsuk-button nhsuk-button--secondary">Log today's activity</a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  /* Physical Activity Styles */
+  .activity-weekly-card {
+    background: linear-gradient(135deg, #005eb8 0%, #007f3b 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .activity-weekly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .activity-weekly-header h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .activity-weekly-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .activity-stat {
+    text-align: center;
+  }
+
+  .activity-stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .activity-stat-label {
+    display: block;
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+
+  .activity-stat-target {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  .activity-weekly-progress {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 16px;
+  }
+
+  .activity-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .activity-progress-fill {
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+  .activity-progress-text {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .activity-daily-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .activity-daily-item {
+    background: #f9fbfc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+
+  .activity-daily-item--today {
+    border-color: #007f3b;
+    background: #f0f8ff;
+  }
+
+  .activity-daily-item--completed {
+    border-color: #e8edee;
+  }
+
+  .activity-daily-item--rest {
+    background: #f5f5f5;
+  }
+
+  .activity-daily-item--light {
+    background: #fff8e1;
+    border-color: #ffb81c;
+  }
+
+  .activity-daily-header {
+    margin-bottom: 12px;
+  }
+
+  .activity-daily-day {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #212b32;
+  }
+
+  .activity-daily-date {
+    display: block;
+    font-size: 12px;
+    color: #425563;
+  }
+
+  .activity-daily-progress {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .activity-daily-circle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+
+  .activity-daily-circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .activity-daily-circle-text span {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: #212b32;
+  }
+
+  .activity-daily-circle-text small {
+    font-size: 10px;
+    color: #425563;
+  }
+
+  .activity-daily-type {
+    font-size: 12px;
+    color: #425563;
+    margin-bottom: 8px;
+  }
+
+  .activity-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .activity-achievement {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .activity-achievement--current {
+    background: linear-gradient(135deg, #ff6b35 0%, #ffb81c 100%);
+    color: white;
+  }
+
+  .activity-achievement--milestone {
+    background: #f0f8ff;
+    border: 2px solid #c0c0c0;
+  }
+
+  .activity-achievement-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 16px;
+    text-align: center;
+    min-width: 80px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .activity-streak-number {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .activity-streak-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .activity-achievement-badge {
+    flex-shrink: 0;
+  }
+
+  .activity-achievement-details h4 {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+
+  .activity-achievement-details p {
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .activity-suggestions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .activity-suggestions {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  .activity-suggestion-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .activity-suggestion-meta span {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #e8edee;
+    color: #425563;
+  }
+
+  .activity-difficulty {
+    background: #d4f1d4 !important;
+    color: #007f3b !important;
+  }
+
+  .activity-quick-add {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    .activity-weekly-header {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .activity-weekly-stats {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .activity-daily-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .activity-achievement {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .activity-achievement-icon {
+      min-width: 60px;
+      min-height: 60px;
+      padding: 12px;
+    }
+  }
+</style>
+{% endblock %}

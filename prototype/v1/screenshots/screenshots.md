@@ -9,23 +9,27 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Dose Titration Journey (5 screens)
+    ## Dose Titration Journey (5 screens)
 
-### 1. Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
+    ### 1. Landing Page
+    ![Dose Titration Landing](dose-titration-landing.png)
+    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start medication review based on NICE guidelines.
 
-### 2. Readings Review
-![Dose Titration Review](dose-titration-review.png)
-**Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
+    ### 2. Readings Review
+    ![Dose Titration Review](dose-titration-review.png)
+    **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
 
-### 3. AI Recommendation
-![Dose Titration Recommendation](dose-titration-recommendation.png)
-**AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
+    ### 3. Medication Recommendation
+    ![Dose Titration Recommendation](dose-titration-recommendation.png)
+    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan. Features reassuring language that the system will remind patients for monitoring rather than giving them tasks they cannot action today.
 
-### 4. Confirmation
-![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
+    ### 4. Confirmation
+    ![Dose Titration Confirmation](dose-titration-confirmation.png)
+    **Dose Increase Confirmed** - Confirmation screen with streamlined care plan updates and safety information. Features patient-focused language that tells users only what they need to do today, with clear system reminders for future monitoring tasks. Updated to remove duplication and ensure clear, specific language for each reminder type. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
+
+    ### 5. Blood Test Scheduling
+    ![Blood Test Overview](blood-test-overview.png)
+    **Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
 
 ---
 
@@ -115,6 +119,10 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Mobile-Responsive Design**: Enhanced mobile layout with improved element alignment and fixed rendering issues
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling optimized for touch interfaces
+- **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
+- **Interactive Navigation**: Working forms, radio buttons, and user input handling
+- **Mobile-Responsive Design**: NHS App-appropriate layout optimised for mobile devices
+- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows integrated with broader hypertension management system
 - **AI System Coordination**: Clear visibility of how lifestyle interventions are coordinated with BP monitoring, medication management, and clinical oversight

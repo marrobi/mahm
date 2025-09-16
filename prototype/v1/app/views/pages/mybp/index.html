@@ -33,7 +33,7 @@
         headingText: "Your care plan today"
       }) }}
 
-      <p>Your care system has arranged your care based on clinical guidelines and your recent readings:</p>
+      <p>We have arranged your care based on clinical guidelines and your recent readings:</p>
 
       <!-- RED FLAG ALERT - Only shown when high BP detected -->
       <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b; margin-bottom: 32px;">
@@ -50,42 +50,8 @@
         </div>
       </div>
 
-      <!-- AUTOMATICALLY SCHEDULED CARE -->
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Care arranged automatically:</strong> Based on your clinical data, your care system has determined you need a medication dose review due to consistently elevated readings above target (140/90 mmHg).</p>
-      </div>
-
-      {{ nhsappCardGroup({
-        stacked: true,
-        cards: [
-          {
-            title: "📋 Medication dose review required",
-            href: "/pages/mybp/dose-titration/index",
-            description: "Your care system has scheduled a medication review based on your recent readings being above target. This follows clinical protocols automatically.",
-            label: "Automatically scheduled"
-          }
-        ]
-      }) }}
-
-      <!-- PATIENT-INITIATED ACTIONS -->
-      {{ nhsappSectionHeading({
-        headingText: "Additional actions you can take"
-      }) }}
-
-      <p>While your care system manages your clinical care, you can submit additional readings when you want:</p>
-
-      {{ nhsappCardGroup({
-        stacked: true,
-        cards: [
-          {
-            title: "📱 Submit extra BP reading",
-            href: "/pages/mybp/bp-measurement/index",
-            description: "Take an additional blood pressure reading using Lifelight technology. Your care system will review and incorporate this into your care plan.",
-            label: "Optional - patient choice"
-          }
-        ]
-      }) }}
+      <!-- AUTOMATICALLY SCHEDULED CARE - Hidden during emergency -->
+      <!-- PATIENT-INITIATED ACTIONS - Hidden during emergency -->
 
       <!-- SECTION - RECENT ACTIVITY -->
       {{ nhsappSectionHeading({

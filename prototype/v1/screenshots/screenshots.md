@@ -2,180 +2,202 @@
 
 Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype.
 
-## Main Dashboard
-
-![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
-
-### Corrected Home Dashboard (Orchestrator-Driven)
-![Corrected Home Dashboard](home-dashboard-corrected.png)
-**Corrected Home Dashboard** - Fixed dashboard following MVP orchestrator architecture:
-- ❌ **Removed**: "Review and adjust medication" (patient-controlled clinical decision)
-- ❌ **Removed**: "Book safety blood test" (patient-controlled clinical decision)  
-- ✅ **Kept**: "Measure blood pressure" with enhanced options (community pharmacy OR embedded Lifelight)
-- ✅ **Result**: Only appropriate patient-controlled actions remain, clinical decisions reserved for AI orchestrator
+All screenshots have been completely refreshed and taken at iPhone resolution (393x852 pixels) with full vertical scroll to capture complete page content.
 
 ---
 
-## Dose Titration Journey (5 screens)
+## 1. Main Dashboard - Orchestrator-Driven Architecture
 
-### 1. Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
-
-### 2. Readings Review
-![Dose Titration Review](dose-titration-review.png)
-**Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
-
-### 3. AI Recommendation
-![Dose Titration Recommendation](dose-titration-recommendation.png)
-**AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
-
-### 4. Confirmation
-![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
+![My BP Dashboard](mybp-dashboard-updated.png)
+**AI-Orchestrated My BP Dashboard** - Properly implements MVP multi-agentic architecture:
+- **Your next recommended action**: AI system determines priority tasks (medication dose adjustment needed)
+- **Available anytime**: Non-priority features users can access independently (BP recording, accessibility settings)
+- **Orchestrator control**: System guides users through care pathway rather than presenting inappropriate clinical choices
+- **AI-managed monitoring**: Shows "Next AI review: 7 October 2024" instead of GP appointments to reduce clinical burden
+- **MVP alignment**: Follows orchestrator-driven approach where AI controls clinical decisions, patients control appropriate self-monitoring
 
 ---
 
-## BP Measurement Journey (5 screens)
+## 2. Accessibility and Language Settings (2 screens)
 
-### 1. Updated Blood Pressure Measurement Options - **IMPROVED**
-![BP Measurement Improved](bp-measurement-improved.png)
-**Improved Measurement Options** - Addressing NHS style guidance and removing information overload:
-- ✅ **Fixed**: Removed American language ("right here" → "using this app")
-- ✅ **Simplified**: Clean choice interface without overwhelming detail
-- ✅ **Streamlined**: Removed detailed instructions that caused information overload
-- ✅ **NHS-appropriate**: Professional, British terminology throughout
-- ✅ **User-friendly**: Clear, simple descriptions focusing on choice rather than process
-
-### 2. Enhanced Lifelight Interface - **IMPROVED**
-![Lifelight Embedded Improved](lifelight-embedded-improved.png)
-**Improved Embedded Lifelight Technology** - Context-specific guidance and instructions:
-- ✅ **Comprehensive prep**: All Lifelight-specific preparation tips moved here from choice screen
-- ✅ **Detailed instructions**: Step-by-step guidance specific to app-based measurement
-- ✅ **No information overload**: Context-relevant content only (no community location tips)
-- ✅ **Better user flow**: Instructions appear when needed, not overwhelmed at choice stage
-
-### 3. Enhanced Community Locations - **IMPROVED**  
-![Community Locations Improved](community-locations-improved.png)
-**Improved Community Location Selection** - Professional NHS language and context-specific guidance:
-- ✅ **Fixed**: "Trained volunteer" → "Trained pharmacist or healthcare assistant support"
-- ✅ **Added**: Community-specific preparation tips relevant to appointment-based measurement
-- ✅ **Professional**: Realistic NHS staffing language (pharmacist/healthcare assistant)
-- ✅ **Context-relevant**: Preparation focused on arriving for appointments, not home measurement
-
-### 4. Original Enhanced BP Measurement Options (REPLACED)
-![Updated BP Measurement Options](bp-measurement-updated.png)
-**Enhanced Measurement Options** - Following MVP feedback, now offers patients choice between:
-- **Embedded Lifelight technology**: Direct measurement using NHS App camera interface
-- **Community pharmacy locations**: Professional-assisted measurement at local facilities
-- ✅ **MVP alignment**: Provides appropriate patient choice while maintaining orchestrator control over clinical decisions
-
-### 2. Embedded Lifelight Interface  
-![Lifelight Embedded Interface](lifelight-embedded-interface.png)
-**Built-in Lifelight Technology** - Complete embedded measurement interface showing:
-- Clear preparation instructions and safety guidance
-- Simulated camera interface for finger placement
-- Step-by-step measurement process explanation
-- Technical details about how Lifelight technology works
-- NHS-standard security and data protection information
-
-### 3. Lifelight Measurement Results
-![Lifelight Results](lifelight-results.png)
-**AI-Orchestrated Results Processing** - Shows how embedded measurement integrates with MVP architecture:
-- Immediate AI system response to elevated reading (148/92 mmHg)
-- Automatic care plan updates and clinical team notifications  
-- Orchestrator-driven next actions (earlier AI assessment scheduled)
-- Patient note-taking option with structured guidance
-- Educational content about blood pressure interpretation
-
-### 4. Original Introduction
-![BP Measurement Intro](bp-measurement-intro.png)
-**Lifelight Technology Introduction** - Comprehensive overview of contactless BP measurement, process explanation, and preparation tips.
-
-### 5. Original Location Selection
-![BP Measurement Locations](bp-measurement-locations.png)
-**Community Location Selection** - List of available venues with distances, opening hours, and facility information.
-
-### 6. Original Appointment Booking
-![BP Measurement Appointment](bp-measurement-appointment.png)
-**Appointment Booking** - Date/time selection with contact details and SMS reminder options.
-
-### 7. Original Booking Confirmation
-![BP Measurement Confirmation](bp-measurement-confirmation.png)
-**Appointment Confirmed** - Complete booking details with preparation instructions, calendar integration, and contact information.
-
-### 8. Original Sample Results
-![BP Measurement Results](bp-measurement-results.png)
-**Sample Measurement Results** - Demo results showing measurement analysis, trend data, AI insights, and next steps.
-
----
-
-## Blood Test Journey (5 screens)
-
-### 1. Test Overview
-![Blood Test Overview](blood-test-overview.png)
-**U&E Test Overview** - Explanation of why the test is needed, test details, and preparation information.
-
-### 2. Educational Information
-![Blood Test Information](blood-test-information.png)
-**Detailed U&E Information** - Comprehensive educational content about what the test measures and its importance for BP medication safety.
-
-### 3. Location Selection
-![Blood Test Locations](blood-test-locations.png)
-**Healthcare Facility Selection** - Various testing locations including hospitals, health centres, and private labs with detailed facility information.
-
-### 4. Appointment Booking
-![Blood Test Appointment](blood-test-appointment.png)
-**Appointment Booking Form** - Date/time selection with contact details, notification preferences, and preparation reminders.
-
-### 5. Final Confirmation
-![Blood Test Confirmation](blood-test-confirmation.png)
-**Appointment Confirmation** - Complete appointment details, step-by-step process explanation, results information, and calendar integration.
-
----
-
-## Accessibility and Language Settings (4 screens) - **Enhanced with NHS Best Practices**
-
-### 1. AI-Orchestrated My BP Dashboard
-![My BP Dashboard - AI Orchestrated](mybp-dashboard-ai-orchestrated.png)
-**AI-Orchestrated Dashboard** - Properly implemented MVP specifications:
-- **Your next recommended action**: AI system determines priority actions (medication dose adjustment)
-- **Available anytime**: Non-priority features users can access independently  
-- **Orchestrator control**: System guides users through care pathway rather than presenting choices
-- **AI-managed monitoring**: Shows "Next AI review: 7 October 2024" instead of GP appointments
-- **MVP alignment**: Follows multi-agentic orchestration architecture that reduces GP administrative burden
-- ✅ **Corrected**: Removed inappropriate GP appointment references per feedback
-
-### 2. Enhanced Accessibility Settings Page  
-![Enhanced Accessibility Settings](mybp-accessibility-settings-enhanced.png)
-**NHS Best Practice Accessibility Settings** - Comprehensive accessibility options following NHS guidance:
+### 2.1 Enhanced Accessibility Settings Page
+![Accessibility Settings](mybp-accessibility-settings.png)
+**NHS Best Practice Accessibility Settings** - Comprehensive options following NHS guidance:
 - **Text and display**: Text size dropdown (Standard/Large/Extra large) and bold text option
 - **Navigation and interaction**: Enhanced focus indicators, button labels, reduce motion, larger touch targets
 - **Language and communication**: 9 languages (English, Welsh, Urdu, Bengali, Hindi, Punjabi, Polish, Somali, Arabic) plus BSL interpretation and Easy read format
 - **Alerts and notifications**: Enhanced screen reader support and audio confirmation sounds
 - **NHS compliance**: WCAG 2.1 AA standards with realistic NHS App features
 
-### 3. Enhanced Settings Confirmation
-![Enhanced Settings Confirmation](mybp-accessibility-confirmation-enhanced.png)
-**Improved Confirmation Page** - NHS-standard confirmation with:
+### 2.2 Settings Confirmation
+![Settings Confirmation](mybp-accessibility-confirmation.png)
+**NHS-Standard Confirmation Page** - Professional confirmation interface:
 - Success notification with proper accessibility markup
-- Organized settings display by functional categories
+- Organized settings display by functional categories (Text and display, Navigation and interaction, Language and communication)
 - Individual change links for granular control
-- Back to My BP and Change settings action buttons
+- Clear Back to My BP and Change settings action buttons
 
-### 4. Original Accessibility Screenshots (Reference)
-![My BP Dashboard - Orchestrator Driven](mybp-dashboard-orchestrator-driven.png)
-![Enhanced Accessibility Settings](mybp-accessibility-settings.png) 
-![Enhanced Settings Confirmation](mybp-accessibility-confirmation.png)
+---
+
+## 3. Blood Pressure Measurement Journey (8 screens)
+
+### 3.1 Measurement Options
+![BP Measurement Options](bp-measurement-main.png)
+**Enhanced Measurement Options** - Clean choice interface:
+- **Lifelight™ technology**: Use built-in NHS App technology (takes about 2 minutes)
+- **Community locations**: Visit local pharmacy or health centre for assisted measurement
+- **NHS-appropriate language**: Professional British terminology throughout
+- **Information architecture**: Clean choice without overwhelming detail
+
+### 3.2 Embedded Lifelight™ Interface
+![Lifelight Embedded Interface](lifelight-embedded-interface.png)
+**Corrected Lifelight™ Technology Interface** - Fixed based on actual technology specifications:
+- **Measurement method**: Cheek-based microblushes detection (not fingertip)
+- **Trademark compliance**: Lifelight™ symbols throughout
+- **Camera interface**: Facial positioning guidance for left cheek visibility
+- **Comprehensive preparation**: All Lifelight-specific guidance in context
+- **Technology explanation**: Accurate description of microblushes detection methodology
+- **NICE compliance**: Multiple readings (3) automatically taken and averaged
+
+### 3.3 Lifelight™ Results - NICE Compliant
+![Lifelight Results](lifelight-results.png)
+**NICE/BHS Guidelines Compliant Results** - Following clinical best practices:
+- **Multiple readings**: Shows 3 individual readings (152/95, 146/91, 146/90 mmHg)
+- **Automatic averaging**: Displays averaged result (148/92 mmHg) per NICE guidelines
+- **Clinical explanation**: Information box explaining averaging methodology for accuracy
+- **AI system response**: Immediate orchestrator-driven next actions
+- **Patient notes**: Optional structured note-taking with guidance
+- **Educational content**: Clear explanation of blood pressure components
+
+### 3.4 Community Locations
+![Community Locations](community-locations.png)
+**Community Location Selection** - Professional NHS language:
+- **Realistic staffing**: "Trained pharmacist or healthcare assistant support" (not volunteers)
+- **Location details**: Distances, opening hours, accessibility features
+- **Service information**: All locations provide Lifelight™ technology and professional support
+- **Context-relevant preparation**: Tips specific to appointment-based measurement
+
+### 3.5 Appointment Booking
+![BP Measurement Appointment](bp-measurement-appointment.png)
+**Community Appointment Booking** - Simple booking interface:
+- Date/time selection with available slots
+- Contact details for reminders
+- SMS notification preferences
+- Clear appointment duration and requirements
+
+### 3.6 Appointment Confirmation
+![BP Measurement Confirmation](bp-measurement-confirmation.png)
+**Appointment Confirmed** - Complete booking details:
+- Full appointment information with reference number
+- Step-by-step process explanation
+- Preparation instructions and what to bring
+- Calendar integration options
+- Contact information for changes
+
+### 3.7 Sample Results (Demo)
+![BP Measurement Results](bp-measurement-results.png)
+**Sample Measurement Results** - Demo results showing:
+- Latest measurement analysis with quality indicators
+- Recent trend data in tabular format
+- AI analysis including signal quality and clinical context
+- Next steps and recommendations
+- Clear normal/high status indicators
+
+---
+
+## 4. Dose Titration Journey (4 screens)
+
+### 4.1 Landing Page
+![Dose Titration Landing](dose-titration-landing.png)
+**Medication Dose Review Landing** - Current situation overview:
+- Current medication status (Amlodipine 5mg daily)
+- Recent BP readings trend analysis
+- Target BP information (below 140/90 mmHg)
+- AI system review indication
+
+### 4.2 Readings Review
+![Dose Titration Review](dose-titration-review.png)
+**Confirm Blood Pressure Readings** - Patient-friendly review interface:
+- Tabular display of recent readings with status indicators
+- Trend analysis showing gradual BP increase
+- Confirmation options for data accuracy
+- Clear status labels (Above target, At upper limit, On target)
+
+### 4.3 AI Recommendation
+![Dose Titration Recommendation](dose-titration-recommendation.png)
+**AI Medication Recommendation** - Comprehensive clinical guidance:
+- Clear recommendation (increase to Amlodipine 10mg daily)
+- Clinical rationale based on NICE guidelines
+- Expected benefits and potential side effects
+- Monitoring plan with timeline
+- Patient acceptance/discussion options
+
+### 4.4 Confirmation
+![Dose Titration Confirmation](dose-titration-confirmation.png)
+**Dose Increase Confirmed** - Complete confirmation with next steps:
+- Updated prescription details
+- What happens next timeline
+- Care plan updates with upcoming tasks
+- Important safety warnings
+- GP practice notification process
+
+---
+
+## 5. Blood Test Journey (5 screens)
+
+### 5.1 Test Overview
+![Blood Test Overview](blood-test-overview.png)
+**U&E Test Overview** - Explanation and context:
+- Test due date and importance
+- Reasons for testing (medication monitoring)
+- NICE guidelines compliance
+- Test details (no fasting required, 5-10 minutes)
+- Preparation guidance
+
+### 5.2 Educational Information
+![Blood Test Information](blood-test-information.png)
+**Detailed U&E Information** - Comprehensive educational content:
+- What U&E stands for and measures
+- Component explanation (Urea, Creatinine, Sodium, Potassium)
+- Importance for BP medication safety
+- What to expect during testing
+- Frequency guidelines for different scenarios
+
+### 5.3 Location Selection
+![Blood Test Locations](blood-test-locations.png)
+**Healthcare Facility Selection** - Various testing options:
+- Hospital pathology labs, health centres, and private facilities
+- Detailed facility information with opening hours
+- Accessibility features and parking information
+- NHS-funded service confirmation
+- Selection guidance based on convenience and needs
+
+### 5.4 Appointment Booking
+![Blood Test Appointment](blood-test-appointment.png)
+**U&E Test Appointment Booking** - Professional booking interface:
+- Selected location confirmation
+- Multiple date options with time slots
+- Contact details for notifications
+- SMS reminder preferences
+- Key information (duration, what to bring, fasting requirements)
+
+### 5.5 Appointment Confirmation
+![Blood Test Confirmation](blood-test-confirmation.png)
+**Blood Test Appointment Confirmed** - Complete appointment details:
+- Full appointment information with reference number
+- Before appointment checklist
+- Step-by-step process explanation
+- Results timeline and notification process
+- Calendar integration and change contact information
+- Important safety warnings
 
 ---
 
 ## Key Features Demonstrated
 
-- **Multi-agentic Orchestration**: Central AI orchestrator determines next actions rather than presenting user choices
-- **Corrected Patient Controls**: Removed inappropriate patient-controlled clinical decisions (medication adjustment, blood test booking)
-- **Enhanced BP Measurement**: Dual-option approach with embedded Lifelight technology and community pharmacy locations
+- **Multi-agentic Orchestration**: Central AI orchestrator determines next actions rather than presenting inappropriate user choices
+- **Corrected Patient Controls**: Removed patient-controlled clinical decisions (medication adjustment, blood test booking) - orchestrator determines these
+- **Enhanced BP Measurement**: Dual-option approach with embedded Lifelight™ technology and community pharmacy locations
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
@@ -190,72 +212,14 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - **Inclusive Design**: Multi-language support (9 languages), BSL interpretation, and Easy read formats
 - **Real-world Implementation**: Based on actual NHS App accessibility patterns and features
 - **MVP Architecture Compliance**: Orchestrator-driven user experience following multi-agentic demo specifications
-- **AI System Integration**: Embedded Lifelight technology demonstrates seamless AI-orchestrated health monitoring
+- **AI System Integration**: Embedded Lifelight™ technology demonstrates seamless AI-orchestrated health monitoring
 - **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
 - **Full User Journeys**: Complete end-to-end workflows for all patient pathways including NHS-standard accessibility personalization
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.
+**Technology Corrections Applied:**
+- **Lifelight™ Technology**: Corrected to use cheek-based microblushes detection (not fingertip)
+- **NICE Guidelines**: Multiple readings (3) with automatic averaging for accuracy
+- **NHS Language**: Professional British terminology, realistic staffing references
+- **Trademark Compliance**: Lifelight™ symbols used throughout
 
-## MVP Feedback Addressed
-
-**✅ Comment 2341235244 & 3215788443**: 
-- **Removed**: Inappropriate patient-controlled medication review/adjustment options
-- **Removed**: Patient-controlled blood test booking (orchestrator decision only)
-- **Enhanced**: Blood pressure measurement with dual options (embedded Lifelight + community pharmacy)
-- **Maintained**: AI review scheduling instead of GP appointments to reduce clinical burden
-- **Result**: Dashboard now properly reflects MVP multi-agentic architecture where orchestrator controls clinical decisions
-
-**✅ Comment 2344085628 - BP Measurement UI Improvements**:
-- ❌ **Fixed**: Removed American language ("right here" → NHS-appropriate "using this app")
-- ✅ **Separated**: Moved Lifelight instructions to dedicated screen (eliminated information overload)
-- ❌ **Fixed**: "Trained volunteer" → "Trained pharmacist or healthcare assistant support" 
-- ✅ **Context-specific**: Split preparation tips by measurement type (app vs community)
-- ✅ **User flow**: Clean choice screen → detailed instructions only when relevant
-- ✅ **NHS professional**: Realistic staffing and language throughout
-
-**✅ Comment 2344088855 - Lifelight Technology Corrections**:
-- ❌ **Fixed**: Lifelight measurement method corrected from fingertip to cheek (microblushes detection)
-- ✅ **Added**: Trademark symbols (Lifelight™) throughout all references
-- ✅ **Updated**: Camera interface shows cheek positioning instead of finger placement
-- ✅ **Enhanced**: Instructions updated for facial positioning and lighting requirements
-- ✅ **Improved**: Technology explanation reflects actual Lifelight methodology
-
-**✅ Comment 2344096288 - NICE/BHS Guidelines Compliance**:
-- ✅ **Added**: Multiple readings (3 readings) with automatic averaging per NICE guidelines
-- ✅ **Enhanced**: Results page shows individual readings plus averaged result
-- ✅ **Improved**: Clinical explanation emphasizes NICE-compliant methodology
-- ✅ **Added**: Information box explaining averaging approach for accuracy
-- ✅ **Updated**: Technology description includes 3-reading automatic process
-
----
-
-## Updated Screenshots - Latest Fixes
-
-### Lifelight Technology Corrections
-![Lifelight Embedded - Fixed](lifelight-embedded-fixed.png)
-**Corrected Lifelight™ Interface** - Fixed based on technology specifications:
-- ✅ **Measurement method**: Changed from finger placement to cheek positioning for microblushes detection
-- ✅ **Trademark compliance**: Added Lifelight™ symbols throughout
-- ✅ **Camera interface**: Updated to show facial positioning instead of finger placement
-- ✅ **Instructions**: Comprehensive guidance for cheek-based measurement with proper lighting
-- ✅ **Technology explanation**: Accurate description of microblushes detection methodology
-- ✅ **NICE compliance**: Multiple readings (3) automatically taken and averaged
-
-### NICE Guidelines Compliant Results
-![Lifelight Results - NICE Compliant](lifelight-results-nice-compliant.png)
-**NICE/BHS Guidelines Compliant Results** - Following clinical best practices:
-- ✅ **Multiple readings**: Shows 3 individual readings (152/95, 146/91, 146/90 mmHg)
-- ✅ **Automatic averaging**: Displays averaged result (148/92 mmHg) per NICE guidelines
-- ✅ **Clinical explanation**: Information box explaining averaging methodology
-- ✅ **Proper methodology**: Emphasizes NICE-compliant multiple reading approach
-- ✅ **Trademark compliance**: Lifelight™ branding throughout
-- ✅ **Educational content**: Enhanced explanation of averaging importance for accuracy
-
-### Final Dashboard Verification
-![My BP Dashboard - Final](mybp-dashboard-final.png)
-**Final Dashboard Verification** - Confirming orchestrator-driven architecture:
-- ✅ **Orchestrator control**: "Your next recommended action" determined by AI system
-- ✅ **No patient choices**: Medication review presented as AI recommendation, not patient option
-- ✅ **Appropriate features**: "Available anytime" section limited to BP recording and settings
-- ✅ **AI management**: Shows "Next AI review" instead of GP appointments
-- ✅ **MVP compliance**: Follows multi-agentic architecture where orchestrator controls clinical decisions
+All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling to show complete content.

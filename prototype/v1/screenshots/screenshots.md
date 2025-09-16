@@ -1,6 +1,6 @@
-# Blood Pressure Module Screenshots
+# My BP NHS App Prototype Screenshots
 
-Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype.
+Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
 
 ## Patient Onboarding & Consent Flow (8 screens)
 
@@ -45,23 +45,27 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Dose Titration Journey (5 screens)
+    ## Dose Titration Journey (5 screens)
 
-### 1. Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Dose Titration Landing** - Shows current medication status and recent BP readings with option to start review process.
+    ### 1. Landing Page
+    ![Dose Titration Landing](dose-titration-landing.png)
+    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start medication review based on NICE guidelines.
 
-### 2. Readings Review
-![Dose Titration Review](dose-titration-review.png)
-**Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
+    ### 2. Readings Review
+    ![Dose Titration Review](dose-titration-review.png)
+    **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
 
-### 3. AI Recommendation
-![Dose Titration Recommendation](dose-titration-recommendation.png)
-**AI Medication Recommendation** - Comprehensive recommendation screen with clinical rationale, NICE guidelines reference, side effects, and monitoring plan.
+    ### 3. Medication Recommendation
+    ![Dose Titration Recommendation](dose-titration-recommendation.png)
+    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan. Features reassuring language that the system will remind patients for monitoring rather than giving them tasks they cannot action today.
 
-### 4. Confirmation
-![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Dose Increase Confirmed** - Confirmation screen with next steps, care plan updates, and important safety information.
+    ### 4. Confirmation
+    ![Dose Titration Confirmation](dose-titration-confirmation.png)
+    **Dose Increase Confirmed** - Confirmation screen with streamlined care plan updates and safety information. Features patient-focused language that tells users only what they need to do today, with clear system reminders for future monitoring tasks. Updated to remove duplication and ensure clear, specific language for each reminder type. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
+
+    ### 5. Blood Test Scheduling
+    ![Blood Test Overview](blood-test-overview.png)
+    **Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
 
 ---
 
@@ -113,22 +117,29 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Key Features Demonstrated
+## Lifestyle & Behaviour Change Hub (5 screens) - iPhone Optimized & MVP Aligned
 
-- **Enhanced Multi-Agentic Architecture**: Complete 9-agent system with specialized roles per MVP documentation
-- **Clinical Safety Priority**: Emphasized throughout with GP escalation protocols and human oversight
-- **Trustworthy AI Principles**: Microsoft's six principles integrated into consent and data protection
-- **Health Inequality Focus**: Accessibility features, cultural sensitivity, and marginalized community support
-- **Patient Category Management**: Clear explanation of three care pathways (A, B, C)
-- **Comprehensive Data Governance**: Agent-specific data collection with clinical governance oversight
-- **Enhanced Simulation Warnings**: Stronger clinical safety disclaimers per MVP requirements
-- **Session-Based Consent Tracking**: Intelligent dashboard display based on user consent status
-- **Privacy & Security Focus**: NHS Digital standards and comprehensive user rights
-- **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all patient pathways
+### 1. Lifestyle Hub Dashboard (iPhone Optimized)
+![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-iphone-optimized.png)
+**Lifestyle Hub Dashboard - iPhone Optimized & MVP Aligned** - Properly rendered at iPhone dimensions (393x852px) with enhanced clinical safety as the top priority featuring NHS emergency guidance, clear programme status showing "Currently attending" vs "Starting soon" with improved terminology to address user feedback, evidence-based NHS service integration with "NHS Healthier You" and NHS Exercise Referral programmes, AI system coordination notices, and NICE guideline-aligned goal tracking with clinical rationale.
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content.
+### 2. Weight Management Goal Tracking (iPhone Optimized)  
+![Weight Management Goal](weight-management-goal-iphone-optimized.png)
+**Weight Management Goal Tracking - iPhone Optimized** - Properly rendered for iPhone with improved mobile responsiveness, clinical context banner with NICE CG127 references, AI monitoring integration showing GP coordination, and NHS service referral options including free dietitian consultations and exercise programmes. All text properly displayed at mobile resolution.
+
+### 3. Physical Activity Goal Tracking (iPhone Optimized)
+![Physical Activity Goal](physical-activity-goal-iphone-optimized.png)
+**Physical Activity Goal Tracking - iPhone Optimized** - Mobile-optimized layout with NICE-compliant 150-minute weekly targets, 7-day streak counters, achievement badges, and culturally-appropriate exercise suggestions including traditional dance and community activities. Properly responsive design elements.
+
+### 4. Salt & Alcohol Monitoring (iPhone Optimized)
+![Salt & Alcohol Monitoring](salt-alcohol-monitoring-iphone-optimized.png)
+**Salt & Alcohol Monitoring - iPhone Optimized** - Dual-tab interface properly rendered for iPhone with NHS guideline-aligned targets (<6g salt daily, alcohol within NHS guidelines), progress trends, and educational resources. Fixed British English spelling throughout (flavouring not flavoring).
+
+### 5. Content Browser with Cultural Filtering (iPhone Optimized)
+![Content Browser](content-browser-iphone-optimized.png)
+**Content Browser - iPhone Optimized & Culturally Sensitive** - Properly rendered mobile layout featuring NHS-verified content from "Million Hearts and Minds" programme, improved cultural filtering using "community" rather than "culture" terminology, evidence-based programme content, and comprehensive accessibility features. Enhanced mobile responsiveness with properly aligned elements and fixed rendering issues.
+
+---
+
+
+All screenshots captured at proper iPhone resolution (393x852 pixels) with full-page scrolling and optimized mobile responsiveness.

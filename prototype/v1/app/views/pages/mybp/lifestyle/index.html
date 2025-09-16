@@ -98,7 +98,7 @@
       <!-- AI SYSTEM INTEGRATION INFO -->
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>Your support team:</strong> Your lifestyle activities work together with your blood pressure monitoring and medication plan. Our digital support automatically keeps track of your progress and updates your healthcare team when needed.</p>
+        <p><strong>Your support team:</strong> Your lifestyle activities work together with your blood pressure monitoring and medication plan. Our digital support automatically keeps track of your progress and shares updates with your healthcare team as needed.</p>
       </div>
 
       <!-- SECTION - YOUR GOALS (NICE GUIDELINE ALIGNED) -->
@@ -178,21 +178,20 @@
         <div class="nhsuk-card nhsuk-card--feature">
           <div class="nhsuk-card__content nhsuk-card__content--feature">
             <div class="lifestyle-content-header">
-              <div class="lifestyle-content-logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="32" height="32" rx="6" fill="#005eb8"/>
-                  <path d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h12v2H8v-2z" fill="white"/>
-                </svg>
+              <div class="lifestyle-content-icon">
+                <div class="lifestyle-content-icon-square lifestyle-content-icon-square--orange">🍽️</div>
               </div>
-              <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
-                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
-                  Heart-Healthy Caribbean Recipes
-                </a>
-              </h3>
+              <div class="lifestyle-content-text">
+                <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
+                    Heart-Healthy Caribbean Recipes
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Traditional recipes adapted for heart-healthy cooking with less salt and more herbs and spices. Part of NHS "Million Hearts and Minds" cultural health programme.
+                </p>
+              </div>
             </div>
-            <p class="nhsuk-card__description">
-              Traditional recipes adapted for heart-healthy cooking with less salt and more herbs and spices. Part of NHS "Million Hearts and Minds" cultural health programme.
-            </p>
             <div class="lifestyle-content-meta">
               <span class="nhsuk-tag nhsuk-tag--blue">Recipes</span>
               <span class="nhsuk-tag nhsuk-tag--orange">Caribbean</span>
@@ -205,21 +204,20 @@
         <div class="nhsuk-card nhsuk-card--feature">
           <div class="nhsuk-card__content nhsuk-card__content--feature">
             <div class="lifestyle-content-header">
-              <div class="lifestyle-content-logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="32" height="32" rx="6" fill="#8e44ad"/>
-                  <path d="M16 6l3 9h9l-7.2 5.4 2.8 8.6L16 23.6 8.4 29l2.8-8.6L4 15h9z" fill="white"/>
-                </svg>
+              <div class="lifestyle-content-icon">
+                <div class="lifestyle-content-icon-square lifestyle-content-icon-square--purple">📋</div>
               </div>
-              <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
-                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
-                  Managing Blood Pressure During Ramadan
-                </a>
-              </h3>
+              <div class="lifestyle-content-text">
+                <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
+                    Managing Blood Pressure During Ramadan
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Practical guidance for managing your medication and lifestyle during the holy month. Culturally-sensitive NHS advice reviewed by religious scholars.
+                </p>
+              </div>
             </div>
-            <p class="nhsuk-card__description">
-              Practical guidance for managing your medication and lifestyle during the holy month. Culturally-sensitive NHS advice reviewed by religious scholars.
-            </p>
             <div class="lifestyle-content-meta">
               <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
               <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
@@ -421,14 +419,35 @@
     margin-bottom: 12px;
   }
 
-  .lifestyle-content-logo {
+  .lifestyle-content-icon {
     flex-shrink: 0;
     margin-top: 4px;
   }
 
+  .lifestyle-content-icon-square {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .lifestyle-content-icon-square--orange {
+    background: linear-gradient(135deg, #ff6b35 0%, #f39800 100%);
+  }
+
+  .lifestyle-content-icon-square--purple {
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+  }
+
+  .lifestyle-content-text {
+    flex: 1;
+  }
+
   .lifestyle-content-header .nhsuk-card__heading {
     margin-bottom: 0;
-    flex: 1;
   }
 
   .lifestyle-content-meta {

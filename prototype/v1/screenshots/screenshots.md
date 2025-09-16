@@ -2,7 +2,43 @@
 
 Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
 
-## Main Dashboard
+## Patient Onboarding & Consent Flow (8 screens)
+
+### Updated Main Dashboard  
+![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
+**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", changed "Benefits and privacy information" to "Service information and privacy", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
+
+### 1. Welcome Page
+![Onboarding Welcome](onboarding-welcome.png)
+**Welcome to My BP** - Patient-friendly introduction to AI-powered blood pressure management tool. Updated with simple language removing all jargon: removed "free at the point of use" terminology, eliminated "agent" terminology and complex Category A, B, C references, simplified technical language for patient accessibility, and made content patient-focused rather than manager/policymaker oriented.
+
+### 2. Benefits & Privacy  
+![Onboarding Benefits](onboarding-benefits.png)
+**Benefits & Privacy** - Patient-focused content explaining "How My BP helps you" with primary objectives emphasizing "clinical outcomes and clinical safety". Updated sections include "Your safety comes first", "What you'll get from My BP", "Access and support options", and "How we keep you safe" - all using patient-friendly language instead of complex policy terminology. Excellent privacy section maintained as model for plain English communication.
+
+### 3. Simulation Disclaimer
+![Onboarding Disclaimer](onboarding-disclaimer.png)
+**Simulation Disclaimer** - Clear demonstration warnings with proper NHS design system styling. Fixed alignment issues by removing emoji warning triangles and updating to proper NHS warning callout formatting. Enhanced scope explanation using patient-friendly language.
+
+### 4. Data Usage Statement
+![Onboarding Data Usage](onboarding-data-usage.png)
+**Data Usage Statement** - Comprehensive data collection table with fixed header alignment using proper NHS table classes. Enhanced clinical oversight section with specific safety standards and real-world guidance. Added actionable links and contact information for data rights requests. Improved "Your rights" section with clear paths for users to exercise their rights including NHS Digital contact details and ICO links.
+
+### 5. Consent Form
+![Onboarding Consent](onboarding-consent.png)
+**Give Your Consent** - Plain English consent interface removing all jargon. Eliminated "you agree to the comprehensive terms" language and all "multi-agentic" and "multi-agent" terminology. Rewrote "Summary of what you're consenting to" section as "What you're agreeing to" using simple, patient-friendly language following NHS content guidelines for appropriate reading age.
+
+### 6. Onboarding Complete (Consent Given)
+![Onboarding Completed - Consent](onboarding-completed-consent.png)
+**Onboarding Complete - Consent Given** - Success screen emphasizing the orchestrator-centered approach where the AI system determines the patient's specific care pathway and presents appropriate next steps based on NICE guidelines. Focuses on how the system will prescriptively guide patients rather than offering multiple upfront choices, reflecting the core orchestrator philosophy.
+
+### 7. Onboarding Complete (Consent Declined)  
+![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)
+**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines consent, offering clear alternative NHS services and option to restart onboarding process if they change their mind.
+
+---
+
+## Main Dashboard (Original)
 
 ![Main Dashboard](bp-main-dashboard.png)
 **Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
@@ -105,28 +141,5 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 
 ---
 
-## Key Features Demonstrated - iPhone Optimized & MVP Compliance
-
-- **iPhone Rendering Optimization**: All screenshots properly rendered at iPhone dimensions (393x852px) with responsive mobile design
-- **British English Compliance**: All text uses British spelling throughout (flavouring, colour, etc.)
-- **Clinical Safety Priority**: Enhanced NHS emergency guidance with proper 999 escalation information based on NHS standards
-- **Evidence-Based Programmes**: All lifestyle programmes reference verified NHS services including "NHS Healthier You" and NHS Exercise Referral schemes
-- **Cultural Sensitivity**: Improved cultural filtering based on NHS "Million Hearts and Minds" programme standards, using "community" rather than "culture" terminology
-- **Multi-Agent System Integration**: Clear demonstration of how Lifestyle Agent coordinates with Orchestrating Agent, Monitoring Agent, and other system components
-- **NHS Service Integration**: Explicit integration with evidence-based NHS programmes and services, all free at point of use
-- **NICE Guidelines Compliance**: Clinical targets and recommendations explicitly reference NICE CG127 hypertension guidelines
-- **Accessibility & Inclusion**: Comprehensive multi-format content delivery including audio, EasyRead, BSL interpretation, multiple languages, and support for digitally excluded patients
-- **Mobile-Responsive Design**: Enhanced mobile layout with improved element alignment and fixed rendering issues
-- **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling optimized for touch interfaces
-- **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimised for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows integrated with broader hypertension management system
-- **AI System Coordination**: Clear visibility of how lifestyle interventions are coordinated with BP monitoring, medication management, and clinical oversight
-- **Free NHS Service Emphasis**: Consistent messaging about all services being free at point of use
-- **GP Integration**: Clear pathways for escalation to GP when clinical oversight is needed
 
 All screenshots captured at proper iPhone resolution (393x852 pixels) with full-page scrolling and optimized mobile responsiveness.

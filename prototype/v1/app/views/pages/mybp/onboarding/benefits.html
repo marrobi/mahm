@@ -1,0 +1,146 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Benefits & Privacy" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/welcome"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Benefits & Privacy
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Learn how My BP can help you manage your blood pressure and protect your information.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>My BP is a free NHS service.</strong></p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">How My BP helps you</h2>
+
+      <p>Our primary objectives are improving clinical outcomes and clinical safety.</p>
+
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>Your safety comes first
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Your safety is our top priority</strong> - We'll alert your doctor immediately if there's any concern</li>
+            <li><strong>Better blood pressure care for you</strong> - Especially important if you've had difficulty accessing services before</li>
+            <li><strong>More time with your GP when you need it</strong> - We handle routine monitoring so your doctor can focus on what matters most</li>
+            <li><strong>Support that works for you</strong> - Whether you're comfortable with technology or prefer face-to-face care</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What you'll get from My BP</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>Personal support tailored to you
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Clear advice about your blood pressure medication</li>
+            <li>Tips for healthy living that work with your lifestyle</li>
+            <li>Support in the way you prefer - phone, text, video, or face-to-face</li>
+            <li>Help in your language if English isn't your first language</li>
+            <li>Reminders to take your medication when you need them</li>
+            <li>Quick access to your doctor if something urgent comes up</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Access and support options</h2>
+
+      <p>My BP works for everyone - we offer different ways to get support:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Different ways to connect:</strong> Online, by phone, video call, or face-to-face appointments</li>
+        <li><strong>Language support:</strong> Help in your language plus sign language interpreters</li>
+        <li><strong>Cultural support:</strong> Advice that fits your cultural and religious needs</li>
+        <li><strong>Easy-to-use formats:</strong> Large print, audio, or easy-read versions available</li>
+        <li><strong>Community support:</strong> Links to local health programmes in your area</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">How we keep you safe</h2>
+
+      <p>My BP follows strict safety and quality standards:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Fair treatment:</strong> Everyone gets the same high-quality care</li>
+        <li><strong>Safety first:</strong> Your safety is always our top priority</li>
+        <li><strong>Privacy protection:</strong> Your personal information is kept secure</li>
+        <li><strong>Easy to use:</strong> Works for everyone, regardless of computer skills</li>
+        <li><strong>Clear explanations:</strong> We'll always explain our recommendations</li>
+        <li><strong>Doctor oversight:</strong> Your GP stays involved in all your care decisions</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Your privacy and data protection</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your privacy is our priority.</strong> We follow strict NHS data protection standards and use your information only to provide your care.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your data is encrypted and stored securely following NHS Digital standards</li>
+        <li>Only you and your healthcare team can access your information</li>
+        <li>We follow GDPR and NHS data protection policies</li>
+        <li>You can request to see or delete your data at any time</li>
+        <li>We never share your data with third parties for commercial purposes</li>
+        <li>All AI agent interactions are logged for clinical governance</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Who has access to your My BP data?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Your GP and practice team for clinical decision-making</li>
+            <li>Specialists involved in your hypertension care</li>
+            <li>NHS clinical staff providing direct care</li>
+            <li>Authorized NHS Digital teams for system maintenance (anonymized data only)</li>
+            <li>Clinical governance teams for quality monitoring and safety</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/disclaimer">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

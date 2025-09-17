@@ -66,309 +66,221 @@
   }
 }
 
-// BP Chart Styles - Enhanced with better traffic light coding
-.bp-chart {
-  background: #ffffff;
-  border: 1px solid #d8dde0;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 16px;
-}
+///////////////////////////////////////////
+// Accessibility settings styles - NHS compliant
+///////////////////////////////////////////
 
-.bp-chart__header {
-  margin-bottom: 20px;
+// Text size settings - following NHS responsive typography
+.text-size-large {
+  font-size: 1.125em; // 18px base instead of 16px
   
-  h4 {
-    margin-bottom: 4px;
+  h1, .nhsuk-heading-xl {
+    font-size: 2.25rem; // Proportionally larger
+  }
+  
+  h2, .nhsuk-heading-l {
+    font-size: 1.875rem;
+  }
+  
+  h3, .nhsuk-heading-m {
+    font-size: 1.5rem;
+  }
+  
+  h4, .nhsuk-heading-s {
+    font-size: 1.25rem;
+  }
+  
+  p, .nhsuk-body-m, .nhsuk-body-l {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .nhsuk-lede-text {
+    font-size: 1.3rem;
+  }
+  
+  button, .nhsuk-button {
+    font-size: 1.125rem;
+    padding: 14px 20px;
   }
 }
 
-.bp-chart__visual {
-  position: relative;
-  height: 250px;
-  margin-bottom: 20px;
-}
-
-.bp-chart__zones {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.bp-chart__zone {
-  flex: 1;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
+.text-size-extra-large {
+  font-size: 1.25em; // 20px base
   
-  &.bp-chart__zone--normal {
-    background: linear-gradient(to right, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
-    border: 1px solid rgba(40, 167, 69, 0.2);
+  h1, .nhsuk-heading-xl {
+    font-size: 2.5rem;
   }
   
-  &.bp-chart__zone--elevated {
-    background: linear-gradient(to right, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
-    border: 1px solid rgba(255, 193, 7, 0.2);
-  }
-  
-  &.bp-chart__zone--high {
-    background: linear-gradient(to right, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
-    border: 1px solid rgba(220, 53, 69, 0.2);
-  }
-}
-
-.bp-chart__zone-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #425563;
-}
-
-.bp-chart__points {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.bp-chart__point {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  
-  &.bp-chart__point--normal {
-    background: #28a745;
-    top: 85%;
-  }
-  
-  &.bp-chart__point--elevated {
-    background: #ffc107;
-    top: 50%;
-  }
-  
-  &.bp-chart__point--high {
-    background: #dc3545;
-    top: 20%;
-  }
-  
-  &:hover .bp-chart__point-value {
-    opacity: 1;
-    transform: translate(-50%, -100%) scale(1);
-  }
-}
-
-.bp-chart__point-value {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translate(-50%, -100%) scale(0.8);
-  background: #212529;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  opacity: 0;
-  transition: all 0.2s ease;
-  z-index: 3;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 4px solid transparent;
-    border-top-color: #212529;
-  }
-}
-
-.bp-chart__trend-line {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(to right, #dc3545, #ffc107, #28a745);
-  border-radius: 1px;
-  z-index: 1;
-}
-
-.bp-chart__legend {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-  @media (max-width: 393px) {
-    gap: 12px;
-  }
-}
-
-.bp-chart__legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-}
-
-.bp-chart__legend-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  
-  &.bp-chart__legend-dot--normal {
-    background: #28a745;
-  }
-  
-  &.bp-chart__legend-dot--elevated {
-    background: #ffc107;
-  }
-  
-  &.bp-chart__legend-dot--high {
-    background: #dc3545;
-  }
-}
-
-// Medication Adherence Styles
-.medication-adherence {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.medication-adherence__score {
-  text-align: center;
-}
-
-.medication-adherence__percentage {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #28a745;
-  line-height: 1;
-}
-
-.medication-adherence__label {
-  font-size: 0.875rem;
-  color: #425563;
-}
-
-.medication-adherence__progress {
-  width: 100%;
-  height: 8px;
-  background: #d8dde0;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.medication-adherence__progress-bar {
-  height: 100%;
-  background: #28a745;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-// Progress Indicator Styles
-.progress-indicator {
-  text-align: center;
-}
-
-.progress-indicator__circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: #fff3cd;
-  border: 4px solid #ffc107;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 8px;
-  
-  &.progress-indicator__circle--good {
-    background: #d1ecf1;
-    border-color: #17a2b8;
-  }
-  
-  &.progress-indicator__circle--excellent {
-    background: #d4edda;
-    border-color: #28a745;
-  }
-}
-
-.progress-indicator__value {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #212529;
-}
-
-// Mobile responsive adjustments for iPhone (393x852)
-@media (max-width: 393px) {
-  .bp-chart {
-    padding: 12px;
-  }
-  
-  .bp-chart__grid {
-    height: 150px;
-  }
-  
-  .medication-adherence__percentage {
+  h2, .nhsuk-heading-l {
     font-size: 2rem;
   }
   
-  .progress-indicator__circle {
-    width: 60px;
-    height: 60px;
+  h3, .nhsuk-heading-m {
+    font-size: 1.75rem;
   }
   
-  .progress-indicator__value {
+  h4, .nhsuk-heading-s {
+    font-size: 1.5rem;
+  }
+  
+  p, .nhsuk-body-m, .nhsuk-body-l {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  
+  .nhsuk-lede-text {
+    font-size: 1.5rem;
+  }
+  
+  button, .nhsuk-button {
+    font-size: 1.25rem;
+    padding: 16px 24px;
+  }
+}
+
+// Bold text setting - subtle enhancement
+.bold-text-enabled {
+  p, .nhsuk-body-m, .nhsuk-body-l, 
+  .nhsuk-card__description, .nhsuk-card__content {
+    font-weight: 500; // Medium weight instead of bold to maintain readability
+  }
+  
+  .nhsuk-lede-text {
+    font-weight: 600;
+  }
+}
+
+// Enhanced button labels
+.button-labels-enabled {
+  .nhsuk-button {
+    position: relative;
+    
+    &::after {
+      content: attr(aria-label);
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      background: #212b32;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+    }
+    
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
+    }
+  }
+  
+  .nhsuk-link {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+}
+
+// Reduce motion - respects user preferences
+.reduce-motion-enabled {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Easy read format - simplified layout
+.easy-read-enabled {
+  .nhsuk-lede-text,
+  p, .nhsuk-body-m {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  // Simplify form labels
+  .nhsuk-label {
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .nhsuk-hint {
     font-size: 1rem;
+    margin-top: 8px;
+  }
+  
+  // Add visual indicators for important elements
+  .nhsuk-button--primary::before {
+    content: "→ ";
+    margin-right: 4px;
+  }
+  
+  .nhsuk-warning-callout::before {
+    content: "⚠ ";
+    margin-right: 8px;
   }
 }
 
-// Emergency Support Styles
-.emergency-support {
-  .nhsuk-care-card--urgent {
-    border-left-color: #d5281b;
-    background-color: #fdf2f2;
+// BSL interpretation indicator
+.bsl-interpretation-enabled {
+  .bsl-available {
+    position: relative;
+    
+    &::after {
+      content: "BSL";
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #005eb8;
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
   }
 }
 
-// Simplified BP Status Indicators
-.bp-chart__zone-info {
-  padding: 12px;
-  background: #f8f9fa;
-  border-radius: 4px;
-  margin-bottom: 16px;
+// Focus enhancements for better keyboard navigation
+.nhsuk-button:focus,
+.nhsuk-link:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #ffb81c;
+  outline-offset: 0;
+  box-shadow: 0 0 0 3px #ffb81c;
 }
 
-.bp-status-indicator {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
-  margin-left: 16px;
-  
-  &:first-child {
-    margin-left: 0;
+// High contrast improvements - more subtle than before
+@media (prefers-contrast: high) {
+  .nhsuk-button {
+    border: 2px solid currentColor;
   }
   
-  &.bp-status-indicator--normal {
-    background: #28a745;
+  .nhsuk-card {
+    border: 1px solid #425563;
   }
-  
-  &.bp-status-indicator--elevated {
-    background: #ffc107;
-  }
-  
-  &.bp-status-indicator--high {
-    background: #dc3545;
+}
+
+// Respect system preferences
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,0 +1,647 @@
+<!-- Culturally-Tailored Content Browser -->
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Health Content" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/pages/mybp/lifestyle/index",
+    text: "Back to Lifestyle Hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "NHS Health Content Browser",
+        subtitle: "Culturally-tailored NHS resources supporting hypertension management"
+      })}}
+
+
+
+      <!-- CONTENT FILTERS -->
+      <div class="content-filters">
+        <div class="content-filter-section">
+          <h3 class="nhsuk-heading-s">Filter by topic</h3>
+          <div class="content-filter-chips">
+            <button class="content-filter-chip content-filter-chip--active" data-filter="all">All</button>
+            <button class="content-filter-chip" data-filter="recipes">Recipes</button>
+            <button class="content-filter-chip" data-filter="exercise">Exercise</button>
+            <button class="content-filter-chip" data-filter="guidance">Guidance</button>
+            <button class="content-filter-chip" data-filter="meditation">Meditation</button>
+            <button class="content-filter-chip" data-filter="community">Community</button>
+          </div>
+        </div>
+
+        <div class="content-filter-section">
+          <h3 class="nhsuk-heading-s">Filter by community</h3>
+          <div class="content-filter-chips">
+            <button class="content-filter-chip content-filter-chip--active" data-culture="all">All communities</button>
+            <button class="content-filter-chip" data-culture="caribbean">Caribbean</button>
+            <button class="content-filter-chip" data-culture="south-asian">South Asian</button>
+            <button class="content-filter-chip" data-culture="african">African</button>
+            <button class="content-filter-chip" data-culture="general">General</button>
+          </div>
+          <p class="nhsuk-body-s">Cultural content categories based on NHS "Million Hearts and Minds" programme and community health needs assessments.</p>
+        </div>
+      </div>
+
+      <!-- NHS MILLION HEARTS AND MINDS FEATURED -->
+      {{ nhsappSectionHeading({
+        headingText: "Featured NHS content - Million Hearts and Minds programme"
+      }) }}
+
+      <div class="content-featured">
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="recipes" data-culture="caribbean">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--orange">🍽️</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
+                    Heart-Healthy Caribbean Recipes
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Traditional Caribbean dishes adapted for better blood pressure management by NHS dietitians. Part of NHS "Million Hearts and Minds" cultural health programme. Includes jerk chicken, rice and peas, and callaloo with reduced salt and increased flavour.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
+              <span class="nhsuk-tag nhsuk-tag--blue">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">15 min read</span>
+              <span class="content-card-rating">
+                ⭐⭐⭐⭐⭐ (4.8)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="guidance" data-culture="general">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--purple">📋</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/religious-considerations">
+                    Managing Blood Pressure with Religious Considerations
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Comprehensive guidance for managing hypertension medication and lifestyle during religious observances, reviewed by NHS clinical team. Including timing adjustments and healthy eating options.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">10 min read</span>
+              <span class="content-card-rating">
+                ⭐⭐⭐⭐⭐ (4.9)
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALL CONTENT GRID -->
+      {{ nhsappSectionHeading({
+        headingText: "All content"
+      }) }}
+
+      <div class="content-grid">
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="exercise" data-culture="south-asian">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--green">🧘</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/yoga-blood-pressure">
+                    Yoga for Blood Pressure Control
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Gentle yoga sequences specifically designed for hypertension management, including breathing techniques.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--green">Exercise</span>
+              <span class="nhsuk-tag nhsuk-tag--yellow">South Asian</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">8 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="recipes" data-culture="african">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--red">🍲</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/african-heart-foods">
+                    African Heart-Healthy Foods
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Discover traditional African ingredients and cooking methods that support cardiovascular health.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
+              <span class="nhsuk-tag nhsuk-tag--red">African</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">12 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="meditation" data-culture="general">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--blue">🧠</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/stress-meditation">
+                    Stress Reduction Through Meditation
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Learn simple meditation techniques to manage stress and support healthy blood pressure levels.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--blue">Meditation</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">5 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="community" data-culture="caribbean">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--purple">👥</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/community-support">
+                    Building Community Support Networks
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  How to create and maintain support networks within Caribbean communities for health and wellbeing.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Community</span>
+              <span class="nhsuk-tag nhsuk-tag--blue">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">7 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="guidance" data-culture="general">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--green">📊</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/reading-labels">
+                    Understanding Food Labels
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  A comprehensive guide to reading food labels and making heart-healthy choices at the supermarket.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">6 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="exercise" data-culture="african">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--orange">💃</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/african-dance">
+                    Traditional African Dance for Fitness
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Explore how traditional African dance can be an enjoyable way to stay active and improve cardiovascular health.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--green">Exercise</span>
+              <span class="nhsuk-tag nhsuk-tag--red">African</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">9 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="recipes" data-culture="south-asian">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--yellow">🌶️</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/spice-benefits">
+                    Heart-Healthy Spices in South Asian Cooking
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Learn about turmeric, cardamom, and other traditional spices that can support heart health and reduce blood pressure.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--orange">Recipes</span>
+              <span class="nhsuk-tag nhsuk-tag--yellow">South Asian</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">11 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="guidance" data-culture="general">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--blue">⏰</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/medication-timing">
+                    Medication Timing and Daily Routines
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Practical advice for coordinating daily medication schedules with work, religious observances, and daily activities.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">4 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable" data-filter="community" data-culture="general">
+          <div class="nhsuk-card__content">
+            <div class="content-card-header">
+              <div class="content-card-image-small">
+                <div class="content-card-placeholder content-card-placeholder--green">🏥</div>
+              </div>
+              <div class="content-card-text">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/local-services">
+                    Finding Local Health Services
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  How to find culturally appropriate health services, support groups, and wellness programs in your area.
+                </p>
+              </div>
+            </div>
+            <div class="content-card-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Community</span>
+              <span class="nhsuk-tag nhsuk-tag--grey">General</span>
+              <span class="nhsuk-tag nhsuk-tag--red">NHS Verified</span>
+              <span class="content-card-time">8 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCESSIBILITY AND MULTI-FORMAT SUPPORT -->
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+              Accessing content in your preferred format
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p><strong>This NHS content is available in multiple formats:</strong></p>
+          <ul>
+            <li><strong>Audio format:</strong> Use NHS app audio feature or your device's screen reader</li>
+            <li><strong>Large text:</strong> Adjust text size in your device accessibility settings</li>
+            <li><strong>EasyRead format:</strong> Simplified versions available for all content</li>
+            <li><strong>Multiple languages:</strong> Including Urdu, Bengali, Polish, Punjabi, and others</li>
+            <li><strong>BSL interpretation:</strong> Available for video content via NHS app</li>
+          </ul>
+          <p><strong>For digitally excluded patients:</strong> Telephone support (call your GP practice) or face-to-face consultations available.</p>
+          <p><strong>Voice AI agent:</strong> Complete questionnaires and access content using voice commands through the NHS app.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  /* Content Browser Styles */
+  .content-filters {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #f9fbfc;
+    border-radius: 8px;
+  }
+
+  .content-filter-section {
+    margin-bottom: 20px;
+  }
+
+  .content-filter-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-filter-section h3 {
+    margin-bottom: 12px;
+  }
+
+  .content-filter-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .content-filter-chip {
+    background: white;
+    border: 2px solid #e8edee;
+    color: #425563;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .content-filter-chip:hover {
+    border-color: #005eb8;
+    color: #005eb8;
+  }
+
+  .content-filter-chip--active {
+    background: #005eb8;
+    border-color: #005eb8;
+    color: white;
+  }
+
+  .content-featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .content-featured {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .content-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .content-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .content-card-text {
+    flex: 1;
+  }
+
+  .content-card-image-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .content-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    border-radius: 8px;
+  }
+
+  .content-card-placeholder--orange {
+    background: linear-gradient(135deg, #ff6b35 0%, #f39800 100%);
+  }
+
+  .content-card-placeholder--purple {
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+  }
+
+  .content-card-placeholder--green {
+    background: linear-gradient(135deg, #007f3b 0%, #00a551 100%);
+  }
+
+  .content-card-placeholder--red {
+    background: linear-gradient(135deg, #d5281b 0%, #e74c3c 100%);
+  }
+
+  .content-card-placeholder--blue {
+    background: linear-gradient(135deg, #005eb8 0%, #0078d4 100%);
+  }
+
+  .content-card-placeholder--yellow {
+    background: linear-gradient(135deg, #ffb81c 0%, #ffd700 100%);
+  }
+
+  .content-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .content-card-time {
+    font-size: 12px;
+    color: #425563;
+  }
+
+  .content-card-rating {
+    font-size: 12px;
+    color: #425563;
+  }
+
+  /* Hide/show cards based on filters */
+  .content-grid .nhsuk-card,
+  .content-featured .nhsuk-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .content-grid .nhsuk-card.hidden,
+  .content-featured .nhsuk-card.hidden {
+    display: none;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    .content-filter-chips {
+      gap: 6px;
+    }
+
+    .content-filter-chip {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    .content-featured {
+      grid-template-columns: 1fr;
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .content-card-placeholder {
+      font-size: 24px;
+    }
+    
+    .content-filters {
+      margin-bottom: 24px;
+      padding: 16px;
+    }
+    
+    .content-filter-section {
+      margin-bottom: 16px;
+    }
+    
+    .content-card-meta {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .content-card-image-small {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterChips = document.querySelectorAll('.content-filter-chip');
+    const contentCards = document.querySelectorAll('[data-filter]');
+    
+    let activeFilter = 'all';
+    let activeCulture = 'all';
+
+    function updateFilters() {
+      contentCards.forEach(card => {
+        const cardFilter = card.dataset.filter;
+        const cardCulture = card.dataset.culture;
+        
+        const filterMatch = activeFilter === 'all' || cardFilter === activeFilter;
+        const cultureMatch = activeCulture === 'all' || cardCulture === activeCulture;
+        
+        if (filterMatch && cultureMatch) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', function() {
+        const filterType = this.dataset.filter ? 'filter' : 'culture';
+        const filterValue = this.dataset.filter || this.dataset.culture;
+        
+        // Remove active class from siblings
+        const siblings = this.parentElement.querySelectorAll('.content-filter-chip');
+        siblings.forEach(sibling => sibling.classList.remove('content-filter-chip--active'));
+        
+        // Add active class to clicked chip
+        this.classList.add('content-filter-chip--active');
+        
+        // Update active filters
+        if (filterType === 'filter') {
+          activeFilter = filterValue;
+        } else {
+          activeCulture = filterValue;
+        }
+        
+        // Apply filters
+        updateFilters();
+      });
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,67 @@
+{
+  "name": "RoutingTestAgent",
+  "displayName": "MAHM Routing Test Agent",
+  "description": "Test agent for validating Azure AI Foundry Connected Agents routing and system functionality",
+  "version": "1.0.0",
+  "type": "test",
+  "configuration": {
+    "model": {
+      "provider": "azure-openai",
+      "deploymentName": "gpt-4",
+      "temperature": 0.1,
+      "maxTokens": 1000,
+      "topP": 0.9
+    },
+    "systemPrompt": "You are the Routing Test Agent for MAHM (Multi-Agentic Hypertension Management) running on Azure AI Foundry Connected Agents.\n\n**Purpose:**\n1. Validate agent-to-agent routing functionality\n2. Test Connected Agents communication\n3. Provide system health verification\n4. Support development and debugging\n\n**Test Scenarios:**\n- Routing validation tests\n- Health check responses\n- Communication verification\n- System status monitoring\n\n**Response Format:**\nAlways provide structured responses with:\n- Test name/type\n- Status (PASS/FAIL)\n- Timestamp\n- Agent information\n- Correlation ID (when available)\n\nRespond clearly and include technical details for debugging purposes.",
+    "capabilities": [
+      "routing_validation",
+      "health_monitoring",
+      "communication_testing",
+      "system_verification"
+    ],
+    "testScenarios": [
+      {
+        "name": "basic_routing_test",
+        "description": "Validates basic routing functionality",
+        "expectedResponse": "PASS - Routing test agent responding"
+      },
+      {
+        "name": "health_check_test", 
+        "description": "Validates health check endpoints",
+        "expectedResponse": "PASS - All systems operational"
+      },
+      {
+        "name": "correlation_id_test",
+        "description": "Validates correlation ID propagation",
+        "expectedResponse": "PASS - Correlation ID tracking working"
+      }
+    ],
+    "healthCheck": {
+      "enabled": true,
+      "endpoint": "/health",
+      "expectedResponse": {
+        "status": "healthy",
+        "agent": "RoutingTestAgent",
+        "capabilities": ["routing_test", "health_monitoring"],
+        "timestamp": "{{timestamp}}"
+      }
+    }
+  },
+  "telemetry": {
+    "applicationInsights": {
+      "enabled": true,
+      "trackEvents": true,
+      "trackPerformance": true
+    },
+    "correlationId": {
+      "enabled": true,
+      "header": "x-correlation-id"
+    }
+  },
+  "security": {
+    "authentication": {
+      "type": "managed_identity",
+      "enabled": true
+    }
+  }
+}

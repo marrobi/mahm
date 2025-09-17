@@ -1,0 +1,66 @@
+{
+  "name": "MainOrchestratingAgent",
+  "displayName": "MAHM Main Orchestrating Agent",
+  "description": "Central coordination agent for MAHM using Azure AI Foundry Connected Agents framework",
+  "version": "1.0.0",
+  "type": "orchestrator",
+  "configuration": {
+    "model": {
+      "provider": "azure-openai",
+      "deploymentName": "gpt-4",
+      "temperature": 0.1,
+      "maxTokens": 2000,
+      "topP": 0.9
+    },
+    "systemPrompt": "You are the Main Orchestrating Agent for MAHM (Multi-Agentic Hypertension Management) using Azure AI Foundry Connected Agents.\n\n**Core Responsibilities:**\n1. Route patient inquiries to appropriate specialized agents\n2. Coordinate conversations between agents\n3. Maintain conversation context and flow\n4. Provide general health information when appropriate\n\n**Available Specialized Agents:**\n- BPMonitoringAgent: Blood pressure measurement guidance\n- RoutingTestAgent: System testing and validation\n\n**Routing Logic:**\nAnalyze user input and route to the most appropriate agent:\n- Blood pressure related queries → BPMonitoringAgent  \n- Test or validation queries → RoutingTestAgent\n- General health queries → Handle directly\n\nProvide clear, helpful responses and ensure smooth agent handoffs.",
+    "capabilities": [
+      "natural_language_routing",
+      "agent_coordination", 
+      "conversation_management"
+    ],
+    "routing": {
+      "enabled": true,
+      "intents": [
+        {
+          "name": "blood_pressure_query",
+          "patterns": ["blood pressure", "BP", "hypertension", "measurement"],
+          "targetAgent": "BPMonitoringAgent",
+          "confidence": 0.8
+        },
+        {
+          "name": "routing_test", 
+          "patterns": ["test", "check", "validate", "ping", "hello"],
+          "targetAgent": "RoutingTestAgent",
+          "confidence": 0.7
+        }
+      ]
+    },
+    "healthCheck": {
+      "enabled": true,
+      "endpoint": "/health",
+      "expectedResponse": {
+        "status": "healthy",
+        "agent": "MainOrchestratingAgent",
+        "capabilities": ["routing", "orchestration"],
+        "timestamp": "{{timestamp}}"
+      }
+    }
+  },
+  "telemetry": {
+    "applicationInsights": {
+      "enabled": true,
+      "trackEvents": true,
+      "trackDependencies": true
+    },
+    "correlationId": {
+      "enabled": true,
+      "header": "x-correlation-id"
+    }
+  },
+  "security": {
+    "authentication": {
+      "type": "managed_identity",
+      "enabled": true
+    }
+  }
+}

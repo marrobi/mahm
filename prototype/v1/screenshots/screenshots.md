@@ -41,7 +41,16 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ## Main Dashboard (Original)
 
 ![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Landing page showing all three patient journey options: dose titration, BP measurement, and blood test booking.
+**Main Dashboard** - Complete patient dashboard featuring:
+- **Emergency Support**: Clear emergency guidance with consistent red styling and "Call 999 immediately" message
+- **Current Status**: Latest BP reading with accurate traffic light status indicator
+- **Enhanced BP Trends**: Visual chart with correct traffic light color coding (green for normal, orange for elevated)
+- **Next Actions**: Appropriately timed action cards with proper urgency levels (no red for routine tasks)
+- **Medication Reminders**: Adherence tracking with visual progress indicators
+- **Lifestyle Progress**: Encouraging progress circles with positive color scheme
+- **Orchestrator-driven approach**: Actions determined by AI system based on NICE guidelines rather than patient choice
+
+This dashboard now aligns with NHS design principles and the MVP requirements, providing clear, non-confusing guidance to patients.
 
 ---
 

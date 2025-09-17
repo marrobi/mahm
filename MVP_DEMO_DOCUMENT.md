@@ -24,6 +24,32 @@ This MVP demonstrates the orchestration of multiple specialized agents supportin
 
 The system is centred around a **Hypertension Care Orchestration Agent** that coordinates eight specialized agents, each handling specific aspects of hypertension management according to NICE guidelines. This comprehensive architecture ensures all critical functions are covered while maintaining coordinated care delivery.
 
+## NICE NG136 Compliance
+
+This MVP has been specifically designed to align with NICE Guideline NG136 "Hypertension in adults: diagnosis and management." Key compliance areas include:
+
+### Measurement Protocols (NICE 1.1)
+- **Device Validation**: All BP monitoring devices validated and regularly calibrated per NICE 1.1.3
+- **Professional Training**: Measurement providers certified in NICE protocols with periodic review per NICE 1.1.1
+- **Bilateral Measurement**: New diagnoses require measurement in both arms per NICE 1.2.1
+- **Pulse Assessment**: Pulse rhythm checked before measurement to detect irregularities per NICE 1.1.2
+- **Postural Hypotension**: Protocols for lying/standing measurements when indicated per NICE 1.1.5-1.1.8
+
+### Diagnostic Pathways (NICE 1.2)
+- **ABPM Requirement**: Clinic BP 140/90-180/120 mmHg triggers ABPM per NICE 1.2.4
+- **ABPM Protocol**: ≥2 measurements per hour during waking hours per NICE 1.2.6
+- **HBPM Alternative**: Available when ABPM unsuitable with twice-daily measurements per NICE 1.2.7
+- **Threshold Compliance**: Uses NICE diagnostic thresholds throughout
+- **GP Confirmation**: All new diagnoses require GP approval per clinical governance
+
+### Treatment and Monitoring (NICE 1.4)
+- **Lifestyle First**: Comprehensive lifestyle interventions as first-line approach
+- **Target Thresholds**: <140/90 mmHg targets aligned with NICE recommendations
+- **Emergency Escalation**: ≥180/110 mmHg with symptoms triggers immediate GP referral
+- **Monitoring Intervals**: Follow NICE-specified review schedules
+
+For full compliance analysis, see [NICE_NG136_COMPLIANCE_ANALYSIS.md](NICE_NG136_COMPLIANCE_ANALYSIS.md).
+
 ## Agent Structure
 1. **Orchestrating Agent** - Central coordination and care pathway management
 2. **BP Measurement Agent** - Community-based blood pressure monitoring
@@ -193,8 +219,11 @@ Initial BP: 165/95 mmHg (elevated)
 **Purpose:** Simulates BP checks via multiple community locations including Lifelight technology, pharmacy partnerships, GP practice waiting rooms, and other accessible venues
 
 **Key Responsibilities:**
-- Coordinate community-based BP monitoring
-- Validate measurement quality
+- Coordinate community-based BP monitoring per NICE NG136 protocols
+- Validate measurement quality and device calibration
+- Ensure bilateral BP measurement for new diagnoses (NICE 1.2.1)
+- Assess pulse rhythm before measurement to detect irregularities (NICE 1.1.2)
+- Implement postural hypotension protocols when indicated (NICE 1.1.5-1.1.8)
 - Schedule regular monitoring intervals
 - Interface with Lifelight app and pharmacy networks
 
@@ -205,28 +234,37 @@ Current medication: Amlodipine 5mg
 
 Simulation Steps:
 1. Receives monitoring request from Orchestrating Agent
-2. Locates nearest BP monitoring location (GP practice waiting room, Boots pharmacy Mill Road - 0.3 miles, or community health hub)
-3. Books appointment slot: Tuesday 2:00 PM
-4. Simulates measurement: 145/88 mmHg (*dummy data for demonstration*)
-5. Quality check: Measurement meets NHS standards
-6. Reports back to Orchestrating Agent
-7. Schedules next measurement per NICE guidelines: 4 weeks for stable treated hypertension
+2. Pre-measurement protocol per NICE NG136:
+   - Pulse rhythm assessment: Regular rhythm detected
+   - Bilateral measurement requirement: New diagnosis = both arms, follow-up = higher reading arm
+   - Postural assessment if symptoms present: None reported
+3. Locates nearest BP monitoring location (GP practice waiting room, Boots pharmacy Mill Road - 0.3 miles, or community health hub)
+4. Books appointment slot: Tuesday 2:00 PM
+5. Simulates measurement with validated device: 145/88 mmHg (*dummy data for demonstration*)
+6. Quality check: Measurement meets NHS standards and NICE protocols
+7. Reports back to Orchestrating Agent with full measurement context
+8. Schedules next measurement per NICE guidelines: 4 weeks for stable treated hypertension
 ```
 
 **Dummy Data Sources:**
 - BP monitoring locations: 15 pharmacies, 8 GP practices with waiting room devices, 5 community health hubs within 5-mile radius
-- Lifelight app integration: 89% measurement success rate
-- Average measurement time: 3 minutes
+- NICE-compliant device validation: All devices validated per NICE NG136 requirements with regular calibration schedules
+- Professional training: All measurement providers certified in NICE BP measurement protocols with annual review
+- Lifelight app integration: 89% measurement success rate with bilateral measurement capability
+- Average measurement time: 3 minutes (5 minutes for bilateral assessment)
 
 ### 3. Diagnosing Agent
 
-**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring and provides evidence-based recommendations requiring GP approval for all new hypertension diagnoses (Note: Patients with existing essential hypertension diagnosis can bypass this agent)
+**Purpose:** Simulates arrangement of 24-hour ambulatory BP monitoring per NICE NG136 protocols and provides evidence-based recommendations requiring GP approval for all new hypertension diagnoses
 
 **Human-in-the-Loop Requirement:** No patient can receive a new diagnosis of essential hypertension without GP approval. The system provides evidence-based recommendations and evidence packs to the GP, but the final diagnostic decision and treatment initiation requires GP confirmation.
 
 **Key Responsibilities:**
-- Arrange ambulatory blood pressure monitoring (ABPM) through Boots pharmacies
-- Analyse 24-hour BP patterns
+- Arrange ambulatory blood pressure monitoring (ABPM) through Boots pharmacies per NICE NG136 protocols
+- Offer Home Blood Pressure Monitoring (HBPM) when ABPM unsuitable per NICE 1.2.5
+- Ensure ABPM protocol compliance: ≥2 measurements per hour during waking hours (NICE 1.2.6)
+- Ensure HBPM protocol compliance: Twice daily for 4-7 days, excluding first day (NICE 1.2.7)
+- Analyse 24-hour BP patterns using NICE diagnostic thresholds
 - Compile evidence packages for GP review
 - Provide structured diagnostic recommendations
 - Await GP go/no-go approval before proceeding with treatment pathways
@@ -252,9 +290,11 @@ Simulation Process:
 ```
 
 **Simulated Equipment:**
-- ABPM devices available at Boots: Spacelabs 90217, 90207 (*demonstration equipment*)
+- ABPM devices available at Boots: Spacelabs 90217, 90207 (*demonstration equipment*) - validated per NICE NG136 requirements
+- HBPM devices: Validated home monitors with twice-daily measurement capability per NICE 1.2.7
 - Booking system integration: 72-hour typical wait time (*simulated data*)
-- Data analysis algorithms: NICE-compliant thresholds
+- Data analysis algorithms: NICE-compliant thresholds and protocols
+- Device calibration schedules: Monthly validation checks per NICE 1.1.3
 
 ### 4. Lifestyle Agent
 

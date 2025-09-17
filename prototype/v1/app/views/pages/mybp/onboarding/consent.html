@@ -1,0 +1,171 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Give your consent" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/data-usage"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Give your consent
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Choose whether you want to use My BP to help manage your blood pressure.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>By giving consent, you agree to the terms explained in the previous steps. This includes how we collect and use your health information. You can withdraw consent at any time.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What you're agreeing to</h2>
+
+      <div class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            AI-powered blood pressure care
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Digital health support to help you manage your blood pressure
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Your safety comes first
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            We'll alert your GP if we have any concerns about your health
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Personalised care
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Care that's right for your situation, whether you have high blood pressure or we're helping you prevent it
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Information we collect
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Your blood pressure readings, medicines, test results, lifestyle information and your preferences
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            How we use your information
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            To give you the right care at the right time, following NHS clinical guidelines
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Fair and safe care
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            We work to reduce health inequalities and provide care that's fair, reliable, safe and private
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            This is a demonstration
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <strong>⚠️ FOR DEMONSTRATION ONLY - NOT FOR REAL CLINICAL USE ⚠️</strong>
+          </dd>
+        </div>
+      </div>
+
+      <form class="form" action="/pages/mybp/onboarding/completed" method="post">
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do you consent to using My BP?
+              </h2>
+            </legend>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="consent-yes" name="consent" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="consent-yes">
+                  <strong>Yes, I consent to using My BP</strong>
+                </label>
+                <div class="nhsuk-hint nhsuk-radios__hint" id="consent-yes-hint">
+                  I understand this is a demonstration and agree to the terms explained
+                </div>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="consent-no" name="consent" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="consent-no">
+                  <strong>No, I do not consent</strong>
+                </label>
+                <div class="nhsuk-hint nhsuk-radios__hint" id="consent-no-hint">
+                  I will not use My BP at this time
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </div>
+
+      </form>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What happens if I don't consent?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you choose not to consent:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>You will not be able to use My BP</li>
+            <li>You can return to the main NHS App</li>
+            <li>Your existing NHS services remain unchanged</li>
+            <li>You can give consent later if you change your mind</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Can I change my mind later?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Yes, you have the right to:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Withdraw your consent at any time</li>
+            <li>Request deletion of your data</li>
+            <li>Stop using the service</li>
+            <li>Contact us with any concerns</li>
+          </ul>
+          <p>You can manage these preferences in your NHS App settings.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+{% endblock %}

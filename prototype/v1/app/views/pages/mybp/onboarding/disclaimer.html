@@ -1,0 +1,125 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Simulation Disclaimer" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/benefits"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Simulation Disclaimer
+      </h1>
+
+      <div class="nhsuk-warning-callout">
+        <h2 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            SIMULATION ONLY - NOT FOR CLINICAL USE
+          </span>
+        </h2>
+        <p><strong>This is a demonstration system using dummy data only.</strong> This tool does not have medical device approval and is not intended for real-world clinical decision-making. All patient data, clinical scenarios, and outcomes shown are simulated for demonstration purposes only.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">What this means</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Urgent advice: </span>Not for clinical use
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>This is not a real clinical tool</strong></li>
+            <li><strong>Do not use for actual medical decisions</strong></li>
+            <li><strong>All recommendations are simulated</strong></li>
+            <li><strong>No real prescriptions or appointments are made</strong></li>
+            <li><strong>No real clinical monitoring occurs</strong></li>
+            <li><strong>All agent interactions are demonstrations only</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Demonstration scope</h2>
+
+      <p>This demonstration shows how AI technology could support blood pressure care while following Microsoft's responsible AI principles. The demo showcases:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>AI coordination</strong> supporting blood pressure care</li>
+        <li><strong>Three patient situations:</strong> Managing existing high blood pressure, monitoring normal blood pressure, or dealing with newly detected high readings</li>
+        <li><strong>Safety first</strong> with automatic GP alerts when needed</li>
+        <li><strong>NHS guidelines</strong> and approved medication protocols</li>
+        <li><strong>Fair access to care</strong> through accessible, culturally-appropriate support</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Dummy data notification</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>All data shown in this prototype is <strong>dummy data</strong> created for demonstration purposes. This includes:</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Blood pressure readings</strong> - All simulated using realistic clinical patterns</li>
+        <li><strong>Medication information</strong> - Based on NICE guidelines but not real prescriptions</li>
+        <li><strong>Appointment dates and locations</strong> - Fictional booking systems and venues</li>
+        <li><strong>Test results</strong> - Simulated U&E monitoring and laboratory values</li>
+        <li><strong>Patient demographics</strong> - Dummy profiles covering diverse scenarios</li>
+        <li><strong>AI agent recommendations</strong> - Demonstrate clinical decision-making logic</li>
+        <li><strong>Escalation scenarios</strong> - Simulated emergency and urgent referral pathways</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Purpose of this prototype</h2>
+
+      <p>This demonstration shows the potential for:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>AI-driven healthcare coordination</strong> while maintaining clinical safety</li>
+        <li><strong>Multi-agent workflow orchestration</strong> for complex care pathways</li>
+        <li><strong>Health inequality reduction</strong> through accessible, culturally-appropriate tools</li>
+        <li><strong>GP workload reduction</strong> through safe automation of routine tasks</li>
+        <li><strong>Integration patterns</strong> with NHS App design and clinical systems</li>
+        <li><strong>Trustworthy AI implementation</strong> in healthcare settings</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What happens if I have real health concerns?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you have any real health concerns about your blood pressure:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Contact your GP or healthcare provider</li>
+            <li>Use NHS 111 for urgent but non-emergency advice</li>
+            <li>Call 999 for emergency medical situations</li>
+            <li>Visit your local pharmacy for health advice</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/data-usage">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">I understand - Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

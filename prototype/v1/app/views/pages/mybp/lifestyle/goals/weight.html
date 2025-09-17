@@ -1,0 +1,491 @@
+<!-- Weight Management Goal Tracking -->
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Weight Management" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/pages/mybp/lifestyle/index",
+    text: "Back to Lifestyle Hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Weight Management",
+        subtitle: "NHS-supported weight loss for blood pressure improvement"
+      })}}
+
+      <!-- CLINICAL CONTEXT BANNER -->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Clinical goal:</strong> Losing 5-10% of body weight can significantly improve your blood pressure control (NICE CG127). Your progress is coordinated with your medication management and monitored by the AI system for safety.</p>
+      </div>
+
+      <!-- CURRENT PROGRESS SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Your current progress"
+      }) }}
+
+      <div class="goal-summary-card">
+        <div class="goal-summary-main">
+          <div class="goal-stat">
+            <span class="goal-stat-number">3.2kg</span>
+            <span class="goal-stat-label">Lost so far</span>
+          </div>
+          <div class="goal-progress-visual">
+            <div class="goal-progress-circle">
+              <svg width="120" height="120" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#f0f4f5" stroke-width="12"/>
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#007f3b" stroke-width="12" 
+                        stroke-dasharray="339.29" stroke-dashoffset="118.75" 
+                        stroke-linecap="round" transform="rotate(-90 60 60)"/>
+              </svg>
+              <div class="goal-progress-text">
+                <span class="goal-percentage">65%</span>
+                <span class="goal-percentage-label">of target</span>
+              </div>
+            </div>
+          </div>
+          <div class="goal-stat">
+            <span class="goal-stat-number">1.8kg</span>
+            <span class="goal-stat-label">To go</span>
+          </div>
+        </div>
+        <div class="goal-summary-details">
+          <p><strong>Target:</strong> Lose 5kg for better blood pressure control (NICE guideline recommended)</p>
+          <p><strong>Started:</strong> 3 weeks ago</p>
+          <p><strong>Average per week:</strong> 1.1kg</p>
+          <p><strong>AI monitoring:</strong> Progress shared with GP monthly, blood pressure tracking coordinated</p>
+        </div>
+      </div>
+
+      <!-- RECENT ENTRIES SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Recent entries"
+      }) }}
+
+      <div class="goal-entries">
+        <div class="goal-entry">
+          <div class="goal-entry-date">
+            <span class="goal-entry-day">Today</span>
+            <span class="goal-entry-time">8:30 AM</span>
+          </div>
+          <div class="goal-entry-value">
+            <span class="goal-entry-number">82.1kg</span>
+            <span class="goal-entry-change goal-entry-change--down">-0.3kg</span>
+          </div>
+          <div class="goal-entry-note">
+            <span class="nhsuk-tag nhsuk-tag--green">On track</span>
+          </div>
+        </div>
+
+        <div class="goal-entry">
+          <div class="goal-entry-date">
+            <span class="goal-entry-day">Yesterday</span>
+            <span class="goal-entry-time">8:15 AM</span>
+          </div>
+          <div class="goal-entry-value">
+            <span class="goal-entry-number">82.4kg</span>
+            <span class="goal-entry-change goal-entry-change--down">-0.1kg</span>
+          </div>
+        </div>
+
+        <div class="goal-entry">
+          <div class="goal-entry-date">
+            <span class="goal-entry-day">2 days ago</span>
+            <span class="goal-entry-time">8:20 AM</span>
+          </div>
+          <div class="goal-entry-value">
+            <span class="goal-entry-number">82.5kg</span>
+            <span class="goal-entry-change goal-entry-change--same">-</span>
+          </div>
+        </div>
+
+        <div class="goal-entry">
+          <div class="goal-entry-date">
+            <span class="goal-entry-day">3 days ago</span>
+            <span class="goal-entry-time">8:25 AM</span>
+          </div>
+          <div class="goal-entry-value">
+            <span class="goal-entry-number">82.5kg</span>
+            <span class="goal-entry-change goal-entry-change--down">-0.2kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD NEW ENTRY -->
+      <div class="goal-add-entry">
+        <a href="#" class="nhsuk-button nhsuk-button--secondary">Add today's weight</a>
+      </div>
+
+      <!-- ACHIEVEMENTS SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Your achievements"
+      }) }}
+
+      <div class="goal-achievements">
+        <div class="goal-achievement goal-achievement--earned">
+          <div class="goal-achievement-badge">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" fill="#cd7f32"/>
+              <text x="20" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="bold">2w</text>
+            </svg>
+          </div>
+          <div class="goal-achievement-details">
+            <h4 class="nhsuk-heading-xs">2 Week Streak</h4>
+            <p class="nhsuk-body-s">Consistent daily weighing</p>
+          </div>
+        </div>
+
+        <div class="goal-achievement goal-achievement--progress">
+          <div class="goal-achievement-badge goal-achievement-badge--progress">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" fill="#e8edee" stroke="#007f3b" stroke-width="2"/>
+              <text x="20" y="26" text-anchor="middle" fill="#007f3b" font-size="12" font-weight="bold">3/5</text>
+            </svg>
+          </div>
+          <div class="goal-achievement-details">
+            <h4 class="nhsuk-heading-xs">Steady Progress</h4>
+            <p class="nhsuk-body-s">3kg of 5kg target reached</p>
+          </div>
+        </div>
+
+        <div class="goal-achievement goal-achievement--locked">
+          <div class="goal-achievement-badge goal-achievement-badge--locked">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" fill="#d5d8db"/>
+              <path d="M20 14c-1.7 0-3 1.3-3 3v2h6v-2c0-1.7-1.3-3-3-3zm4 5h-1v-2c0-1.7-1.3-3-3-3s-3 1.3-3 3v2h-1c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2z" fill="white"/>
+            </svg>
+          </div>
+          <div class="goal-achievement-details">
+            <h4 class="nhsuk-heading-xs">Target Reached</h4>
+            <p class="nhsuk-body-s">Lose 5kg to unlock</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIPS AND SUPPORT SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Tips and support"
+      }) }}
+
+      <div class="goal-tips">
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p><strong>Did you know?</strong> Losing even 5-10% of your body weight can significantly improve your blood pressure control. This tip is from NHS clinical guidance (NICE CG127).</p>
+        </div>
+
+        <div class="goal-tip-cards">
+          <div class="nhsuk-card nhsuk-card--care">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/healthy-cooking">
+                  NHS Heart-healthy cooking tips
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                Simple ways to reduce calories while keeping your meals delicious and culturally appropriate. Created by NHS dietitians.
+              </p>
+            </div>
+          </div>
+
+          <div class="nhsuk-card nhsuk-card--care">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/portion-control">
+                  NHS Understanding portion sizes
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                Visual guides to help you manage portion sizes without a scale or measuring cups. Based on NHS Better Health guidelines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NHS SERVICE REFERRAL OPTION -->
+        <div class="nhsuk-care-card nhsuk-care-card--immediate">
+          <div class="nhsuk-care-card__heading-container">
+            <h3 class="nhsuk-care-card__heading">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Immediate action required: </span>
+                Need additional support?
+              </span>
+            </h3>
+            <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+          </div>
+          <div class="nhsuk-care-card__content">
+            <p>The AI system can refer you to:</p>
+            <ul>
+              <li><strong>NHS Healthier You programme:</strong> Free 12-week weight management course</li>
+              <li><strong>Dietitian consultation:</strong> Culturally-appropriate dietary advice</li>
+              <li><strong>Exercise referral scheme:</strong> Supervised physical activity programmes</li>
+            </ul>
+            <p><strong>All NHS services are free at the point of use.</strong> Speak to your GP or use the NHS app to request a referral.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  /* Weight Management Goal Styles */
+  .goal-summary-card {
+    background: linear-gradient(135deg, #007f3b 0%, #00a551 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .goal-summary-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .goal-stat {
+    text-align: center;
+    flex: 1;
+  }
+
+  .goal-stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .goal-stat-label {
+    display: block;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+
+  .goal-progress-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .goal-progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+
+  .goal-progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .goal-percentage {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .goal-percentage-label {
+    display: block;
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+  .goal-summary-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 16px;
+  }
+
+  .goal-summary-details p {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .goal-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .goal-entry {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f9fbfc;
+    border-radius: 8px;
+    border-left: 4px solid #007f3b;
+  }
+
+  .goal-entry-date {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .goal-entry-day {
+    display: block;
+    font-weight: 600;
+    color: #212b32;
+  }
+
+  .goal-entry-time {
+    display: block;
+    font-size: 12px;
+    color: #425563;
+  }
+
+  .goal-entry-value {
+    flex: 1;
+    text-align: center;
+  }
+
+  .goal-entry-number {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #212b32;
+  }
+
+  .goal-entry-change {
+    display: block;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .goal-entry-change--down {
+    color: #007f3b;
+  }
+
+  .goal-entry-change--up {
+    color: #d5281b;
+  }
+
+  .goal-entry-change--same {
+    color: #425563;
+  }
+
+  .goal-entry-note {
+    flex: 1;
+    text-align: right;
+  }
+
+  .goal-add-entry {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .goal-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .goal-achievement {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .goal-achievement--earned {
+    background-color: #f0f8ff;
+    border: 2px solid #007f3b;
+  }
+
+  .goal-achievement--progress {
+    background-color: #fff8e1;
+    border: 2px solid #ffb81c;
+  }
+
+  .goal-achievement--locked {
+    background-color: #f5f5f5;
+    border: 2px solid #d5d8db;
+  }
+
+  .goal-achievement-badge {
+    flex-shrink: 0;
+  }
+
+  .goal-achievement-details {
+    flex: 1;
+  }
+
+  .goal-achievement-details h4 {
+    margin-bottom: 4px;
+  }
+
+  .goal-achievement-details p {
+    margin-bottom: 0;
+  }
+
+  .goal-tips {
+    margin-bottom: 32px;
+  }
+
+  .goal-tip-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .goal-tip-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    .goal-summary-main {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .goal-stat {
+      flex: none;
+    }
+
+    .goal-progress-visual {
+      flex: none;
+    }
+
+    .goal-entry {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .goal-entry-value,
+    .goal-entry-note {
+      text-align: center;
+    }
+
+    .goal-achievement {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+{% endblock %}

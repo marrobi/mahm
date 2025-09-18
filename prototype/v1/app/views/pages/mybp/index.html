@@ -1,4 +1,4 @@
-<!-- Use this page as the index for your project -->
+<!-- Patient Dashboard UI for My BP - NHS App -->
 
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
@@ -20,82 +20,303 @@
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
-        heading: "My BP - Hypertension Management",
-        subtitle: "(Demo - dummy data only)"
+        heading: "My BP - Hypertension Management"
       })}}
 
       <p class="nhsuk-lede-text">
-        Manage your blood pressure and medication with AI-supported care.
+        Manage your blood pressure with AI-supported care.
       </p>
 
-      <!-- SECTION - YOUR NEXT ACTION -->
-      {{ nhsappSectionHeading({
-        headingText: "Your next recommended action"
-      }) }}
+      <!-- EMERGENCY SUPPORT BUTTON -->
+      <div class="emergency-support nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card nhsuk-care-card--urgent">
+          <div class="nhsuk-care-card__heading-container">
+            <h2 class="nhsuk-care-card__heading">
+              <span role="img" aria-label="Emergency">🚨</span>
+              Emergency support
+            </h2>
+          </div>
+          <div class="nhsuk-care-card__content">
+            <p>If you're experiencing severe symptoms, chest pain, difficulty breathing, or your BP is over 180/110 mmHg</p>
+            <p><strong>Call 999 immediately</strong></p>
+            <p class="nhsuk-u-margin-top-3 nhsuk-u-secondary-text-colour">For non-emergency concerns, contact your GP practice or call 111</p>
+          </div>
+        </div>
+      </div>
 
-      <p>Based on your recent blood pressure readings and treatment plan, our AI system recommends:</p>
-
-      <!-- PRIORITY ACTION CARD -->
+      <!-- ONBOARDING NOTICE FOR NEW USERS -->
+      {% if data['consent'] != 'yes' %}
       <div class="nhsuk-care-card nhsuk-care-card--immediate">
         <div class="nhsuk-care-card__heading-container">
           <h2 class="nhsuk-care-card__heading">
             <span role="text">
-              <span class="nhsuk-u-visually-hidden">Immediate action required: </span>
-              Medication dose adjustment needed
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Complete onboarding to use My BP
             </span>
           </h2>
           <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
         </div>
         <div class="nhsuk-care-card__content">
-          <p>Your recent blood pressure readings (142/88 mmHg) suggest your current medication dose may need adjusting. The AI system has reviewed your readings and recommends a dose review.</p>
-          <p><strong>Recommended next step:</strong> Review and adjust your Amlodipine dose</p>
-          {{ button({
-            text: "Review medication dose",
-            href: "/pages/mybp/dose-titration/index",
-            classes: "nhsuk-button--primary"
-          }) }}
+          <p>Complete the onboarding process to use My BP. This covers:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Service information and privacy</li>
+            <li>Data usage statement</li>
+            <li>Your consent</li>
+          </ul>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/welcome">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">Start onboarding (2-3 minutes)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- PATIENT DASHBOARD - Only show after onboarding -->
+      {% if data['consent'] == 'yes' %}
+      
+      <!-- CURRENT STATUS OVERVIEW -->
+      <div class="nhsuk-summary-card nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">Current status</h2>
+          <p class="nhsuk-u-secondary-text-colour">Last updated today</p>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Latest reading</h3>
+              <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">138/82</p>
+              <p class="nhsuk-u-secondary-text-colour">mmHg (3 days ago)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <strong class="nhsuk-tag nhsuk-tag--green nhsuk-u-margin-bottom-2">Normal</strong>
+              <p class="nhsuk-u-secondary-text-colour">Target achieved</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- ANYTIME ACTIONS -->
+      <!-- SECTION - AI RECOMMENDED NEXT STEPS -->
       {{ nhsappSectionHeading({
-        headingText: "Available anytime"
+        headingText: "Your recommended next steps"
       }) }}
 
-      <p>You can use these features whenever you need them:</p>
+      <p>Your AI care system has identified the following actions for your blood pressure management:</p>
 
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
           {
-            title: "Record blood pressure measurement",
-            href: "/pages/mybp/bp-measurement/index",
-            description: "Add a new blood pressure reading whenever you take a measurement."
+            title: "Medication review scheduled",
+            href: "/pages/mybp/dose-titration/index",
+            description: "MyBP has scheduled a medication review based on your recent blood pressure readings. This will be ready for you shortly."
           },
           {
-            title: "Accessibility and language settings",
-            href: "/pages/mybp/accessibility-settings/",
-            description: "Customise text size, contrast, language and other accessibility features."
+            title: "Blood pressure measurement due",
+            href: "/pages/mybp/bp-measurement/index",
+            description: "Your AI care system has determined you need a blood pressure check using Lifelight™ technology."
+          },
+          {
+            title: "Safety blood test arranged",
+            href: "/pages/mybp/blood-test/index",
+            description: "Your AI care system has scheduled your U&E (kidney function) safety monitoring blood test."
+          },
+          {
+            title: "View 24-hour blood pressure results",
+            href: "/pages/mybp/abpm/results",
+            description: "Review your 24-hour blood pressure monitoring results and interpretation."
+          },
+          {
+            title: "Track diagnostic pathway",
+            href: "/pages/mybp/abpm/pathway-tracker", 
+            description: "Monitor your progress through the blood pressure diagnostic pathway from initial reading to treatment."
           }
         ]
       }) }}
+
+      <!-- BP TRENDS CHART -->
+      {{ nhsappSectionHeading({
+        headingText: "Blood pressure trends"
+      }) }}
+      
+      <div class="bp-trend-chart nhsuk-u-margin-bottom-5">
+        <div class="bp-trend-chart__header">
+          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-3">Last 3 months</p>
+          <p class="nhsuk-u-secondary-text-colour">📈 Trending downward - well done!</p>
+        </div>
+        
+        <!-- Simple NHS-style readings table -->
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Date</th>
+                <th class="nhsuk-table__header" scope="col">Reading (mmHg)</th>
+                <th class="nhsuk-table__header" scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">11 Oct 2024</td>
+                <td class="nhsuk-table__cell"><strong>138/82</strong></td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--green">Normal</strong>
+                </td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">7 Oct 2024</td>
+                <td class="nhsuk-table__cell">139/85</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--green">Normal</strong>
+                </td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">3 Oct 2024</td>
+                <td class="nhsuk-table__cell">142/88</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--orange">Elevated</strong>
+                </td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">30 Sep 2024</td>
+                <td class="nhsuk-table__cell">145/92</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--orange">Elevated</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Simple explanation -->
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-3">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p><strong>Target:</strong> Below 140/90 mmHg</p>
+          <p>Your blood pressure has improved over the last month. Keep taking your medication as prescribed.</p>
+        </div>
+      </div>
+
+      <!-- MEDICATION REMINDERS -->
+      {{ nhsappSectionHeading({
+        headingText: "Medication reminders"
+      }) }}
+      
+      <div class="medication-summary nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-summary-card">
+          <div class="nhsuk-summary-card__header">
+            <h3 class="nhsuk-summary-card__title">Adherence this week</h3>
+          </div>
+          <div class="nhsuk-summary-card__body">
+            <div class="medication-adherence">
+              <div class="medication-adherence__score">
+                <span class="medication-adherence__percentage">86%</span>
+                <span class="medication-adherence__label">taken on time</span>
+              </div>
+              <div class="medication-adherence__progress">
+                <div class="medication-adherence__progress-bar" style="width: 86%"></div>
+              </div>
+            </div>
+            <p class="nhsuk-u-margin-top-3"><strong>Current medication:</strong> Amlodipine 5mg daily</p>
+            <p class="nhsuk-u-secondary-text-colour">Next dose due: Today at 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIFESTYLE PROGRESS -->
+      {{ nhsappSectionHeading({
+        headingText: "Lifestyle progress"
+      }) }}
+      
+      <div class="lifestyle-progress nhsuk-u-margin-bottom-5">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <div class="nhsuk-summary-card">
+              <div class="nhsuk-summary-card__header">
+                <h4 class="nhsuk-summary-card__title">Weekly exercise</h4>
+              </div>
+              <div class="nhsuk-summary-card__body">
+                <div class="progress-indicator">
+                  <div class="progress-indicator__circle progress-indicator__circle--good">
+                    <span class="progress-indicator__value">3/5</span>
+                  </div>
+                  <p class="nhsuk-u-margin-top-2">Days active</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <div class="nhsuk-summary-card">
+              <div class="nhsuk-summary-card__header">
+                <h4 class="nhsuk-summary-card__title">Healthy eating</h4>
+              </div>
+              <div class="nhsuk-summary-card__body">
+                <div class="progress-indicator">
+                  <div class="progress-indicator__circle progress-indicator__circle--excellent">
+                    <span class="progress-indicator__value">4/5</span>
+                  </div>
+                  <p class="nhsuk-u-margin-top-2">Days on track</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- SECTION - RECENT ACTIVITY -->
       {{ nhsappSectionHeading({
         headingText: "Recent activity"
       }) }}
-      
+
       <ul class="nhsuk-list">
-        <li>
-          <strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)
-        </li>
-        <li>
-          <strong>Current medication:</strong> Amlodipine 5mg daily
-        </li>
-        <li>
-          <strong>Next AI review:</strong> 7 October 2024 (medication response assessment)
-        </li>
+        <li><strong>Last BP reading:</strong> 142/88 mmHg (3 days ago)</li>
+        <li><strong>Current medication:</strong> Amlodipine 5mg daily</li>
+        <li><strong>Next appointment:</strong> 15 October 2024</li>
       </ul>
+
+      <!-- YOUR NEXT ACTIONS (moved to bottom) -->
+      {{ nhsappSectionHeading({
+        headingText: "Your next actions"
+      }) }}
+      
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Information">ℹ️</span>
+            Book U&E blood test
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your safety monitoring blood test is due. Please book within the next 7 days.</p>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="/pages/mybp/blood-test/index">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">Book now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Information">📊</span>
+            Next BP measurement
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>We will send you a notification on Thursday to remind you to measure your blood pressure.</p>
+          <p class="nhsuk-u-secondary-text-colour nhsuk-u-margin-top-2">You don't need to do anything today for this.</p>
+        </div>
+      </div>
+
+      {% endif %}
 
     </div>
   </div>

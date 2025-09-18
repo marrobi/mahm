@@ -1,225 +1,194 @@
-# Blood Pressure Module Screenshots
+# My BP NHS App Prototype Screenshots
 
-Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype.
+Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
 
-All screenshots have been completely refreshed and taken at iPhone resolution (393x852 pixels) with full vertical scroll to capture complete page content.
+## Core Dashboard and Patient Journeys
 
----
-
-## 1. Main Dashboard - Orchestrator-Driven Architecture
-
-![My BP Dashboard](mybp-dashboard-updated.png)
-**AI-Orchestrated My BP Dashboard** - Properly implements MVP multi-agentic architecture:
-- **Your next recommended action**: AI system determines priority tasks (medication dose adjustment needed)
-- **Available anytime**: Non-priority features users can access independently (BP recording, accessibility settings)
-- **Orchestrator control**: System guides users through care pathway rather than presenting inappropriate clinical choices
-- **AI-managed monitoring**: Shows "Next AI review: 7 October 2024" instead of GP appointments to reduce clinical burden
-- **MVP alignment**: Follows orchestrator-driven approach where AI controls clinical decisions, patients control appropriate self-monitoring
+### Main Dashboard  
+![Main Dashboard](bp-main-dashboard-iphone.png)
+**Main Dashboard** - Updated AI-orchestrated landing page showing recommended next steps determined by the multiagentic system: medication review, BP measurement with Lifelight™, blood test scheduling, ABPM results review, and diagnostic pathway tracking.
 
 ---
 
-## 2. Accessibility and Language Settings (2 screens)
+## ABPM Results & Diagnostic Pathway Journey (2 screens)
 
-### 2.1 Enhanced Accessibility Settings Page
-![Accessibility Settings](mybp-accessibility-settings.png)
-**NHS Best Practice Accessibility Settings** - Comprehensive options following NHS guidance:
-- **Text and display**: Text size dropdown (Standard/Large/Extra large) and bold text option
-- **Navigation and interaction**: Enhanced focus indicators, button labels, reduce motion, larger touch targets
-- **Language and communication**: 9 languages (English, Welsh, Urdu, Bengali, Hindi, Punjabi, Polish, Somali, Arabic) plus BSL interpretation and Easy read format
-- **Alerts and notifications**: Enhanced screen reader support and audio confirmation sounds
-- **NHS compliance**: WCAG 2.1 AA standards with realistic NHS App features
+### 1. ABPM Results Summary
+![ABPM Results](abpm-results-iphone.png)
+**24-Hour ABPM Results** - Comprehensive ABPM results display aligned with MVP document specifications. Shows day/night averages (148/86 mmHg daytime, 135/78 mmHg nighttime), 9% nocturnal dipping analysis, clinical interpretation, and quality indicators. Includes Stage 1 hypertension diagnosis with proper GP review messaging per NICE guidelines.
 
-### 2.2 Settings Confirmation
-![Settings Confirmation](mybp-accessibility-confirmation.png)
-**NHS-Standard Confirmation Page** - Professional confirmation interface:
-- Success notification with proper accessibility markup
-- Organized settings display by functional categories (Text and display, Navigation and interaction, Language and communication)
-- Individual change links for granular control
-- Clear Back to My BP and Change settings action buttons
+### 2. Diagnostic Pathway Tracker
+![Diagnostic Pathway Tracker](abpm-pathway-tracker-iphone.png)
+**Diagnostic Pathway Progress** - Category C patient journey implementation following MVP document workflow. Step-by-step tracking from initial elevated reading (155/92 mmHg) through repeat measurements, ABPM at Boots pharmacy, to GP confirmation. Features NHS-compliant status badges (Complete, In progress, Pending), timeline summary, and care team information. Emphasizes "GP approval required" per MVP requirements before treatment can commence.
 
 ---
 
-## 3. Blood Pressure Measurement Journey (8 screens)
+## Patient Onboarding & Consent Flow (8 screens)
 
-### 3.1 Measurement Options
-![BP Measurement Options](bp-measurement-main.png)
-**Enhanced Measurement Options** - Clean choice interface:
-- **Lifelight™ technology**: Use built-in NHS App technology (takes about 2 minutes)
-- **Community locations**: Visit local pharmacy or health centre for assisted measurement
-- **NHS-appropriate language**: Professional British terminology throughout
-- **Information architecture**: Clean choice without overwhelming detail
+### Updated Main Dashboard  
+![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
+**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", changed "Benefits and privacy information" to "Service information and privacy", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
 
-### 3.2 Embedded Lifelight™ Interface
-![Lifelight Embedded Interface](lifelight-embedded-interface.png)
-**Corrected Lifelight™ Technology Interface** - Fixed based on actual technology specifications:
-- **Measurement method**: Cheek-based microblushes detection (not fingertip)
-- **Trademark compliance**: Lifelight™ symbols throughout
-- **Camera interface**: Facial positioning guidance for left cheek visibility
-- **Comprehensive preparation**: All Lifelight-specific guidance in context
-- **Technology explanation**: Accurate description of microblushes detection methodology
-- **NICE compliance**: Multiple readings (3) automatically taken and averaged
+### 1. Welcome Page
+![Onboarding Welcome](onboarding-welcome.png)
+**Welcome to My BP** - Patient-friendly introduction to AI-powered blood pressure management tool. Updated with simple language removing all jargon: removed "free at the point of use" terminology, eliminated "agent" terminology and complex Category A, B, C references, simplified technical language for patient accessibility, and made content patient-focused rather than manager/policymaker oriented.
 
-### 3.3 Lifelight™ Results - NICE Compliant
-![Lifelight Results](lifelight-results.png)
-**NICE/BHS Guidelines Compliant Results** - Following clinical best practices:
-- **Multiple readings**: Shows 3 individual readings (152/95, 146/91, 146/90 mmHg)
-- **Automatic averaging**: Displays averaged result (148/92 mmHg) per NICE guidelines
-- **Clinical explanation**: Information box explaining averaging methodology for accuracy
-- **AI system response**: Immediate orchestrator-driven next actions
-- **Patient notes**: Optional structured note-taking with guidance
-- **Educational content**: Clear explanation of blood pressure components
+### 2. Benefits & Privacy  
+![Onboarding Benefits](onboarding-benefits.png)
+**Benefits & Privacy** - Patient-focused content explaining "How My BP helps you" with primary objectives emphasizing "clinical outcomes and clinical safety". Updated sections include "Your safety comes first", "What you'll get from My BP", "Access and support options", and "How we keep you safe" - all using patient-friendly language instead of complex policy terminology. Excellent privacy section maintained as model for plain English communication.
 
-### 3.4 Community Locations
-![Community Locations](community-locations.png)
-**Community Location Selection** - Professional NHS language:
-- **Realistic staffing**: "Trained pharmacist or healthcare assistant support" (not volunteers)
-- **Location details**: Distances, opening hours, accessibility features
-- **Service information**: All locations provide Lifelight™ technology and professional support
-- **Context-relevant preparation**: Tips specific to appointment-based measurement
+### 3. Simulation Disclaimer
+![Onboarding Disclaimer](onboarding-disclaimer.png)
+**Simulation Disclaimer** - Clear demonstration warnings with proper NHS design system styling. Fixed alignment issues by removing emoji warning triangles and updating to proper NHS warning callout formatting. Enhanced scope explanation using patient-friendly language.
 
-### 3.5 Appointment Booking
+### 4. Data Usage Statement
+![Onboarding Data Usage](onboarding-data-usage.png)
+**Data Usage Statement** - Comprehensive data collection table with fixed header alignment using proper NHS table classes. Enhanced clinical oversight section with specific safety standards and real-world guidance. Added actionable links and contact information for data rights requests. Improved "Your rights" section with clear paths for users to exercise their rights including NHS Digital contact details and ICO links.
+
+### 5. Consent Form
+![Onboarding Consent](onboarding-consent.png)
+**Give Your Consent** - Plain English consent interface removing all jargon. Eliminated "you agree to the comprehensive terms" language and all "multi-agentic" and "multi-agent" terminology. Rewrote "Summary of what you're consenting to" section as "What you're agreeing to" using simple, patient-friendly language following NHS content guidelines for appropriate reading age.
+
+### 6. Onboarding Complete (Consent Given)
+![Onboarding Completed - Consent](onboarding-completed-consent.png)
+**Onboarding Complete - Consent Given** - Success screen emphasizing the orchestrator-centered approach where the AI system determines the patient's specific care pathway and presents appropriate next steps based on NICE guidelines. Focuses on how the system will prescriptively guide patients rather than offering multiple upfront choices, reflecting the core orchestrator philosophy.
+
+### 7. Onboarding Complete (Consent Declined)  
+![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)
+**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines consent, offering clear alternative NHS services and option to restart onboarding process if they change their mind.
+
+---
+
+## Main Dashboard (Original)
+
+![Main Dashboard](bp-main-dashboard.png)
+**Main Dashboard** - Complete patient dashboard featuring:
+- **Emergency Support**: Clear emergency guidance with consistent red styling and "Call 999 immediately" message
+- **Current Status**: Latest BP reading with accurate traffic light status indicator
+- **Enhanced BP Trends**: Visual chart with correct traffic light color coding (green for normal, orange for elevated)
+- **Next Actions**: Appropriately timed action cards with proper urgency levels (no red for routine tasks)
+- **Medication Reminders**: Adherence tracking with visual progress indicators
+- **Lifestyle Progress**: Encouraging progress circles with positive color scheme
+- **Orchestrator-driven approach**: Actions determined by AI system based on NICE guidelines rather than patient choice
+
+This dashboard now aligns with NHS design principles and the MVP requirements, providing clear, non-confusing guidance to patients.
+
+---
+
+    ## Dose Titration Journey (5 screens)
+
+    ### 1. Landing Page
+    ![Dose Titration Landing](dose-titration-landing.png)
+    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start medication review based on NICE guidelines.
+
+    ### 2. Readings Review
+    ![Dose Titration Review](dose-titration-review.png)
+    **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
+
+    ### 3. Medication Recommendation
+    ![Dose Titration Recommendation](dose-titration-recommendation.png)
+    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan. Features reassuring language that the system will remind patients for monitoring rather than giving them tasks they cannot action today.
+
+    ### 4. Confirmation
+    ![Dose Titration Confirmation](dose-titration-confirmation.png)
+    **Dose Increase Confirmed** - Confirmation screen with streamlined care plan updates and safety information. Features patient-focused language that tells users only what they need to do today, with clear system reminders for future monitoring tasks. Updated to remove duplication and ensure clear, specific language for each reminder type. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
+
+    ### 5. Blood Test Scheduling
+    ![Blood Test Overview](blood-test-overview.png)
+    **Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
+
+---
+
+## BP Measurement Journey (5 screens)
+
+### 1. Introduction
+![BP Measurement Intro](bp-measurement-intro.png)
+**Lifelight Technology Introduction** - Comprehensive overview of contactless BP measurement, process explanation, and preparation tips.
+
+### 2. Location Selection
+![BP Measurement Locations](bp-measurement-locations.png)
+**Community Location Selection** - List of available venues with distances, opening hours, and facility information.
+
+### 3. Appointment Booking
 ![BP Measurement Appointment](bp-measurement-appointment.png)
-**Community Appointment Booking** - Simple booking interface:
-- Date/time selection with available slots
-- Contact details for reminders
-- SMS notification preferences
-- Clear appointment duration and requirements
+**Appointment Booking** - Date/time selection with contact details and SMS reminder options.
 
-### 3.6 Appointment Confirmation
+### 4. Booking Confirmation
 ![BP Measurement Confirmation](bp-measurement-confirmation.png)
-**Appointment Confirmed** - Complete booking details:
-- Full appointment information with reference number
-- Step-by-step process explanation
-- Preparation instructions and what to bring
-- Calendar integration options
-- Contact information for changes
+**Appointment Confirmed** - Complete booking details with preparation instructions, calendar integration, and contact information.
 
-### 3.7 Sample Results (Demo)
+### 5. Sample Results
 ![BP Measurement Results](bp-measurement-results.png)
-**Sample Measurement Results** - Demo results showing:
-- Latest measurement analysis with quality indicators
-- Recent trend data in tabular format
-- AI analysis including signal quality and clinical context
-- Next steps and recommendations
-- Clear normal/high status indicators
+**Sample Measurement Results** - Demo results showing measurement analysis, trend data, AI insights, and next steps.
 
 ---
 
-## 4. Dose Titration Journey (4 screens)
+## Blood Test Journey (5 screens)
 
-### 4.1 Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Medication Dose Review Landing** - Current situation overview:
-- Current medication status (Amlodipine 5mg daily)
-- Recent BP readings trend analysis
-- Target BP information (below 140/90 mmHg)
-- AI system review indication
-
-### 4.2 Readings Review
-![Dose Titration Review](dose-titration-review.png)
-**Confirm Blood Pressure Readings** - Patient-friendly review interface:
-- Tabular display of recent readings with status indicators
-- Trend analysis showing gradual BP increase
-- Confirmation options for data accuracy
-- Clear status labels (Above target, At upper limit, On target)
-
-### 4.3 AI Recommendation
-![Dose Titration Recommendation](dose-titration-recommendation.png)
-**AI Medication Recommendation** - Comprehensive clinical guidance:
-- Clear recommendation (increase to Amlodipine 10mg daily)
-- Clinical rationale based on NICE guidelines
-- Expected benefits and potential side effects
-- Monitoring plan with timeline
-- Patient acceptance/discussion options
-
-### 4.4 Confirmation
-![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Dose Increase Confirmed** - Complete confirmation with next steps:
-- Updated prescription details
-- What happens next timeline
-- Care plan updates with upcoming tasks
-- Important safety warnings
-- GP practice notification process
-
----
-
-## 5. Blood Test Journey (5 screens)
-
-### 5.1 Test Overview
+### 1. Test Overview
 ![Blood Test Overview](blood-test-overview.png)
-**U&E Test Overview** - Explanation and context:
-- Test due date and importance
-- Reasons for testing (medication monitoring)
-- NICE guidelines compliance
-- Test details (no fasting required, 5-10 minutes)
-- Preparation guidance
+**U&E Test Overview** - Explanation of why the test is needed, test details, and preparation information.
 
-### 5.2 Educational Information
+### 2. Educational Information
 ![Blood Test Information](blood-test-information.png)
-**Detailed U&E Information** - Comprehensive educational content:
-- What U&E stands for and measures
-- Component explanation (Urea, Creatinine, Sodium, Potassium)
-- Importance for BP medication safety
-- What to expect during testing
-- Frequency guidelines for different scenarios
+**Detailed U&E Information** - Comprehensive educational content about what the test measures and its importance for BP medication safety.
 
-### 5.3 Location Selection
+### 3. Location Selection
 ![Blood Test Locations](blood-test-locations.png)
-**Healthcare Facility Selection** - Various testing options:
-- Hospital pathology labs, health centres, and private facilities
-- Detailed facility information with opening hours
-- Accessibility features and parking information
-- NHS-funded service confirmation
-- Selection guidance based on convenience and needs
+**Healthcare Facility Selection** - Various testing locations including hospitals, health centres, and private labs with detailed facility information.
 
-### 5.4 Appointment Booking
+### 4. Appointment Booking
 ![Blood Test Appointment](blood-test-appointment.png)
-**U&E Test Appointment Booking** - Professional booking interface:
-- Selected location confirmation
-- Multiple date options with time slots
-- Contact details for notifications
-- SMS reminder preferences
-- Key information (duration, what to bring, fasting requirements)
+**Appointment Booking Form** - Date/time selection with contact details, notification preferences, and preparation reminders.
 
-### 5.5 Appointment Confirmation
+### 5. Final Confirmation
 ![Blood Test Confirmation](blood-test-confirmation.png)
-**Blood Test Appointment Confirmed** - Complete appointment details:
-- Full appointment information with reference number
-- Before appointment checklist
-- Step-by-step process explanation
-- Results timeline and notification process
-- Calendar integration and change contact information
-- Important safety warnings
+**Appointment Confirmation** - Complete appointment details, step-by-step process explanation, results information, and calendar integration.
 
 ---
 
-## Key Features Demonstrated
+## Lifestyle & Behaviour Change Hub (5 screens) - iPhone Optimized & MVP Aligned
 
-- **Multi-agentic Orchestration**: Central AI orchestrator determines next actions rather than presenting inappropriate user choices
-- **Corrected Patient Controls**: Removed patient-controlled clinical decisions (medication adjustment, blood test booking) - orchestrator determines these
-- **Enhanced BP Measurement**: Dual-option approach with embedded Lifelight™ technology and community pharmacy locations
+### 1. Lifestyle Hub Dashboard (iPhone Optimized)
+![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-iphone-optimized.png)
+**Lifestyle Hub Dashboard - iPhone Optimized & MVP Aligned** - Properly rendered at iPhone dimensions (393x852px) with enhanced clinical safety as the top priority featuring NHS emergency guidance, clear programme status showing "Currently attending" vs "Starting soon" with improved terminology to address user feedback, evidence-based NHS service integration with "NHS Healthier You" and NHS Exercise Referral programmes, AI system coordination notices, and NICE guideline-aligned goal tracking with clinical rationale.
+
+### 2. Weight Management Goal Tracking (iPhone Optimized)  
+![Weight Management Goal](weight-management-goal-iphone-optimized.png)
+**Weight Management Goal Tracking - iPhone Optimized** - Properly rendered for iPhone with improved mobile responsiveness, clinical context banner with NICE CG127 references, AI monitoring integration showing GP coordination, and NHS service referral options including free dietitian consultations and exercise programmes. All text properly displayed at mobile resolution.
+
+### 3. Physical Activity Goal Tracking (iPhone Optimized)
+![Physical Activity Goal](physical-activity-goal-iphone-optimized.png)
+**Physical Activity Goal Tracking - iPhone Optimized** - Mobile-optimized layout with NICE-compliant 150-minute weekly targets, 7-day streak counters, achievement badges, and culturally-appropriate exercise suggestions including traditional dance and community activities. Properly responsive design elements.
+
+### 4. Salt & Alcohol Monitoring (iPhone Optimized)
+![Salt & Alcohol Monitoring](salt-alcohol-monitoring-iphone-optimized.png)
+**Salt & Alcohol Monitoring - iPhone Optimized** - Dual-tab interface properly rendered for iPhone with NHS guideline-aligned targets (<6g salt daily, alcohol within NHS guidelines), progress trends, and educational resources. Fixed British English spelling throughout (flavouring not flavoring).
+
+### 5. Content Browser with Cultural Filtering (iPhone Optimized)
+![Content Browser](content-browser-iphone-optimized.png)
+**Content Browser - iPhone Optimized & Culturally Sensitive** - Properly rendered mobile layout featuring NHS-verified content from "Million Hearts and Minds" programme, improved cultural filtering using "community" rather than "culture" terminology, evidence-based programme content, and comprehensive accessibility features. Enhanced mobile responsiveness with properly aligned elements and fixed rendering issues.
+
+---
+
+## Key Features Implemented
+
+**Core ABPM & Diagnostic Pathway Features:**
+- **MVP Document Compliance**: Full implementation of Category C patient workflow per MVP specifications
+- **NICE Guidelines Adherence**: Strict compliance with NICE CG127 hypertension management protocols
+- **GP Approval Workflow**: Mandatory GP approval for new hypertension diagnoses as specified in MVP document
+- **Clinical Data Accuracy**: ABPM values match MVP examples (148/86 24-hour average, 148/86 daytime, 135/78 nighttime)
 - **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
 - **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **NHS-Compliant Accessibility**: Full compliance with NHS best practices and WCAG 2.1 AA standards including:
-  - Realistic text sizing options following NHS typography patterns
-  - Enhanced focus indicators and keyboard navigation support
-  - Larger touch targets for motor accessibility
-  - Proper semantic markup and ARIA labels
-  - System preference integration (reduced motion, high contrast)
-  - Screen reader enhancements and audio confirmation options
-- **Inclusive Design**: Multi-language support (9 languages), BSL interpretation, and Easy read formats
-- **Real-world Implementation**: Based on actual NHS App accessibility patterns and features
-- **MVP Architecture Compliance**: Orchestrator-driven user experience following multi-agentic demo specifications
-- **AI System Integration**: Embedded Lifelight™ technology demonstrates seamless AI-orchestrated health monitoring
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows for all patient pathways including NHS-standard accessibility personalization
+- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for iPhone resolution (393x852 pixels)
+- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
+- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information aligned with MVP examples
+- **Full User Journeys**: Complete end-to-end workflows for Category C diagnostic pathway
+- **ABPM Integration**: 24-hour ambulatory blood pressure monitoring results with clinical interpretation
+- **Diagnostic Pathway Tracking**: Step-by-step progress monitoring with NHS-compliant status badges (Complete/In progress/Pending)
+- **Status Management**: "Awaiting GP confirmation" and other workflow states clearly displayed per MVP requirements
+- **Evidence Package Compilation**: Clear indication that clinical evidence has been compiled for GP review
+- **Treatment Pathway Gate**: No progression to treatment without explicit GP approval as per MVP document
+- **AI Orchestration**: Multiagentic system-driven care management with Lifelight™ technology integration
 
-**Technology Corrections Applied:**
-- **Lifelight™ Technology**: Corrected to use cheek-based microblushes detection (not fingertip)
-- **NICE Guidelines**: Multiple readings (3) with automatic averaging for accuracy
-- **NHS Language**: Professional British terminology, realistic staffing references
-- **Trademark Compliance**: Lifelight™ symbols used throughout
-
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling to show complete content.
+All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content. Implementation follows MVP document Category C workflow specifications with mandatory GP approval gates, NICE guideline compliance, and AI orchestration through multiagentic care system integration.

@@ -1,0 +1,554 @@
+<!-- Lifestyle & Behaviour Change Hub -->
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Lifestyle Hub - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/pages/mybp/index",
+    text: "Back to My BP"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Lifestyle Hub",
+        subtitle: "NHS lifestyle support for better blood pressure management"
+      })}}
+
+      <!-- CLINICAL SAFETY BANNER -->
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Urgent advice: </span>
+              Important safety information
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>If you experience severe headache, chest pain, difficulty breathing, sudden vision changes, or dizziness with very high blood pressure, <strong>call 999 immediately</strong>. These may be signs of a hypertensive emergency.</p>
+          <p>Continue taking your prescribed medication even while making lifestyle changes. Do not stop or change medication without consulting your GP first.</p>
+        </div>
+      </div>
+
+      <!-- SECTION - YOUR NHS PROGRAMMES -->
+      {{ nhsappSectionHeading({
+        headingText: "Your NHS programmes"
+      }) }}
+
+      <div class="lifestyle-referrals">
+        <div class="nhsuk-card nhsuk-card--care">
+          <div class="nhsuk-card__content">
+            <div class="lifestyle-referral-header">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/referrals/nutrition-program">
+                  NHS Healthier You - Nutrition Programme
+                </a>
+              </h3>
+              <span class="nhsuk-tag nhsuk-tag--green">Currently attending</span>
+            </div>
+            <p class="nhsuk-card__description">
+              8-week evidence-based NHS nutrition programme with qualified dietitian support, free at point of use. Based on NICE CG127 guidelines.
+            </p>
+            <div class="lifestyle-referral-actions">
+              <p class="nhsuk-body-s nhsuk-u-margin-bottom-2">
+                <strong>Next session:</strong> Week 2 - Tuesday 2pm at Community Health Centre
+              </p>
+              <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">
+                <strong>Progress:</strong> Coordinated with your BP monitoring schedule by AI system
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--care">
+          <div class="nhsuk-card__content">
+            <div class="lifestyle-referral-header">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/referrals/exercise-program">
+                  NHS Exercise Referral - Local Walking Group
+                </a>
+              </h3>
+              <span class="nhsuk-tag nhsuk-tag--yellow">Starting soon</span>
+            </div>
+            <p class="nhsuk-card__description">
+              Weekly community walks in your local area with cardiac rehabilitation specialist supervision. Evidence-based NHS Exercise Referral scheme.
+            </p>
+            <div class="lifestyle-referral-actions">
+              <p class="nhsuk-body-s nhsuk-u-margin-bottom-2">
+                <strong>You're signed up!</strong> We'll contact you when we have 3 people to start the group
+              </p>
+              <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">
+                <strong>Expected start:</strong> Within 2-3 weeks
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI SYSTEM INTEGRATION INFO -->
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your support team:</strong> Your lifestyle activities work together with your blood pressure monitoring and medication plan. Our digital support automatically keeps track of your progress and shares updates with your healthcare team as needed.</p>
+      </div>
+
+      <!-- SECTION - YOUR GOALS (NICE GUIDELINE ALIGNED) -->
+      {{ nhsappSectionHeading({
+        headingText: "Your goals - aligned with NICE guidelines"
+      }) }}
+
+      <div class="lifestyle-goals-grid">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/goals/weight">
+                Weight Management
+              </a>
+            </h3>
+            <div class="lifestyle-goal-progress">
+              <div class="lifestyle-progress-bar">
+                <div class="lifestyle-progress-fill" style="width: 65%"></div>
+              </div>
+              <p class="nhsuk-body-s">3.2kg lost of 5kg target</p>
+              <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: 5-10% body weight reduction for BP improvement (NICE CG127)</p>
+            </div>
+            <div class="lifestyle-badges">
+              <span class="lifestyle-badge lifestyle-badge--bronze">2-week streak</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/goals/activity">
+                Physical Activity
+              </a>
+            </h3>
+            <div class="lifestyle-goal-progress">
+              <div class="lifestyle-progress-bar">
+                <div class="lifestyle-progress-fill" style="width: 80%"></div>
+              </div>
+              <p class="nhsuk-body-s">4 of 5 weekly goals met</p>
+              <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: 150 minutes moderate activity per week (NICE CG127)</p>
+            </div>
+            <div class="lifestyle-badges">
+              <span class="lifestyle-badge lifestyle-badge--silver">4-week achievement</span>
+              <span class="lifestyle-badge lifestyle-badge--streak">7-day streak</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/goals/nutrition">
+                Salt & Alcohol Reduction
+              </a>
+            </h3>
+            <div class="lifestyle-goal-progress">
+              <div class="lifestyle-progress-bar">
+                <div class="lifestyle-progress-fill" style="width: 45%"></div>
+              </div>
+              <p class="nhsuk-body-s">Making steady progress</p>
+              <p class="nhsuk-body-xs lifestyle-goal-clinical-note">Target: <6g salt daily, alcohol within NHS guidelines (NICE CG127)</p>
+            </div>
+            <div class="lifestyle-badges">
+              <span class="lifestyle-badge lifestyle-badge--bronze">1-week progress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - NHS & CULTURALLY TAILORED CONTENT -->
+      {{ nhsappSectionHeading({
+        headingText: "NHS content recommended for you"
+      }) }}
+
+      <div class="lifestyle-content-featured">
+        <div class="nhsuk-card nhsuk-card--feature">
+          <div class="nhsuk-card__content nhsuk-card__content--feature">
+            <div class="lifestyle-content-header">
+              <div class="lifestyle-content-icon">
+                <div class="lifestyle-content-icon-square lifestyle-content-icon-square--orange">🍽️</div>
+              </div>
+              <div class="lifestyle-content-text">
+                <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/caribbean-recipes">
+                    Heart-Healthy Caribbean Recipes
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Traditional recipes adapted for heart-healthy cooking with less salt and more herbs and spices. Part of NHS "Million Hearts and Minds" cultural health programme.
+                </p>
+              </div>
+            </div>
+            <div class="lifestyle-content-meta">
+              <span class="nhsuk-tag nhsuk-tag--blue">Recipes</span>
+              <span class="nhsuk-tag nhsuk-tag--orange">Caribbean</span>
+              <span class="nhsuk-tag nhsuk-tag--green">NHS Verified</span>
+              <span class="lifestyle-content-time">15 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card nhsuk-card--feature">
+          <div class="nhsuk-card__content nhsuk-card__content--feature">
+            <div class="lifestyle-content-header">
+              <div class="lifestyle-content-icon">
+                <div class="lifestyle-content-icon-square lifestyle-content-icon-square--purple">📋</div>
+              </div>
+              <div class="lifestyle-content-text">
+                <h3 class="nhsuk-card__heading nhsuk-card__heading--feature">
+                  <a class="nhsuk-card__link" href="/pages/mybp/lifestyle/content/ramadan-guidance">
+                    Managing Blood Pressure During Ramadan
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">
+                  Practical guidance for managing your medication and lifestyle during the holy month. Culturally-sensitive NHS advice reviewed by religious scholars.
+                </p>
+              </div>
+            </div>
+            <div class="lifestyle-content-meta">
+              <span class="nhsuk-tag nhsuk-tag--purple">Guidance</span>
+              <span class="nhsuk-tag nhsuk-tag--green">Muslim</span>
+              <span class="nhsuk-tag nhsuk-tag--green">NHS Verified</span>
+              <span class="lifestyle-content-time">8 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/lifestyle/content/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"></path>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293a1 1 0 0 1 -1.414-1.414l1.586-1.586h-5.172a1 1 0 0 1 0-2h5.172l-1.586-1.586a1 1 0 0 1 1.414-1.414l3.293 3.293a1 1 0 0 1 0 1.414z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Browse all NHS cultural content</span>
+        </a>
+      </div>
+
+      <!-- ACCESSIBILITY NOTICE -->
+      <div class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Access this content in other formats
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>This content is available in:</p>
+          <ul>
+            <li>Audio format (using screen reader or NHS app audio feature)</li>
+            <li>Large text version</li>
+            <li>EasyRead format</li>
+            <li>Multiple languages including Urdu, Bengali, Polish, and others</li>
+            <li>BSL interpretation available for video content</li>
+          </ul>
+          <p>For telephone support or face-to-face consultations for digitally excluded patients, contact your GP practice.</p>
+        </div>
+      </div>
+
+      <!-- SECTION - THIS WEEK'S ACHIEVEMENTS -->
+      {{ nhsappSectionHeading({
+        headingText: "This week's achievements"
+      }) }}
+
+      <div class="lifestyle-achievements">
+        <div class="lifestyle-achievement-item">
+          <div class="lifestyle-achievement-icon lifestyle-achievement-icon--completed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+          <div class="lifestyle-achievement-content">
+            <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Weekly activity goal reached</h4>
+            <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">150 minutes of moderate activity completed</p>
+          </div>
+        </div>
+
+        <div class="lifestyle-achievement-item">
+          <div class="lifestyle-achievement-icon lifestyle-achievement-icon--completed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+          <div class="lifestyle-achievement-content">
+            <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Cooking achievement unlocked</h4>
+            <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">Tried 3 new heart-healthy recipes</p>
+          </div>
+        </div>
+
+        <div class="lifestyle-achievement-item">
+          <div class="lifestyle-achievement-icon lifestyle-achievement-icon--progress">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="lifestyle-achievement-content">
+            <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Meditation streak in progress</h4>
+            <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">5 days - keep going to reach your 7-day goal!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  /* Lifestyle Hub Custom Styles */
+  .lifestyle-referrals .nhsuk-card {
+    margin-bottom: 16px;
+  }
+
+  .lifestyle-referral-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .lifestyle-referral-header .nhsuk-card__heading {
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  .lifestyle-referral-header .nhsuk-tag {
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
+
+  .lifestyle-goals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .lifestyle-goals-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  .lifestyle-goal-progress {
+    margin: 12px 0;
+  }
+
+  .lifestyle-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f4f5;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .lifestyle-progress-fill {
+    height: 100%;
+    background-color: #007f3b;
+    transition: width 0.3s ease;
+  }
+
+  .lifestyle-goal-clinical-note {
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  .lifestyle-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .lifestyle-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .lifestyle-badge--bronze {
+    background-color: #cd7f32;
+    color: white;
+  }
+
+  .lifestyle-badge--silver {
+    background-color: #c0c0c0;
+    color: #333;
+  }
+
+  .lifestyle-badge--gold {
+    background-color: #ffd700;
+    color: #333;
+  }
+
+  .lifestyle-badge--streak {
+    background-color: #ff6b35;
+    color: white;
+  }
+
+  .lifestyle-content-featured {
+    margin-bottom: 24px;
+  }
+
+  .lifestyle-content-featured .nhsuk-card {
+    margin-bottom: 16px;
+  }
+
+  .lifestyle-content-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .lifestyle-content-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .lifestyle-content-icon-square {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .lifestyle-content-icon-square--orange {
+    background: linear-gradient(135deg, #ff6b35 0%, #f39800 100%);
+  }
+
+  .lifestyle-content-icon-square--purple {
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+  }
+
+  .lifestyle-content-text {
+    flex: 1;
+  }
+
+  .lifestyle-content-header .nhsuk-card__heading {
+    margin-bottom: 0;
+  }
+
+  .lifestyle-content-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .lifestyle-content-time {
+    font-size: 14px;
+    color: #425563;
+  }
+
+  .lifestyle-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lifestyle-achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background-color: #f9fbfc;
+    border-radius: 8px;
+    border-left: 4px solid #007f3b;
+  }
+
+  .lifestyle-achievement-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lifestyle-achievement-icon--completed {
+    background-color: #007f3b;
+    color: white;
+  }
+
+  .lifestyle-achievement-icon--progress {
+    background-color: #ffb81c;
+    color: white;
+  }
+
+  .lifestyle-achievement-content {
+    flex: 1;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 767px) {
+    .lifestyle-referral-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .lifestyle-referral-header .nhsuk-tag {
+      margin-left: 0;
+      margin-top: 8px;
+    }
+    
+    .lifestyle-goals-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .lifestyle-content-featured .nhsuk-card {
+      margin-bottom: 12px;
+    }
+    
+    .lifestyle-content-header {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .lifestyle-content-logo {
+      margin-top: 2px;
+    }
+    
+    .lifestyle-achievements {
+      gap: 12px;
+    }
+    
+    .lifestyle-achievement-item {
+      padding: 12px;
+    }
+    
+    .lifestyle-badges {
+      gap: 6px;
+    }
+    
+    .lifestyle-badge {
+      font-size: 10px;
+      padding: 3px 6px;
+    }
+  }
+</style>
+{% endblock %}

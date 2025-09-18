@@ -1,0 +1,91 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Welcome to My BP" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Welcome to My BP
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Your AI-powered blood pressure management tool within the NHS App.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Clinical safety is our number one priority.</strong> My BP uses AI technology to support your blood pressure care according to NHS guidelines.</p>
+      </div>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>What My BP can help with
+            </span>
+          </h2>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Help coordinate your blood pressure care using AI technology</li>
+            <li>Support different care needs: ongoing management, routine monitoring, and new diagnosis</li>
+            <li>Provide medication recommendations that follow NICE guidelines</li>
+            <li>Help improve medicine-taking for all patients, especially those in underserved communities</li>
+            <li>Support your GP by automatically flagging when you need clinical review</li>
+            <li>Connect you with community blood pressure monitoring and lifestyle support</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How does the AI system work?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>My BP uses AI technology to provide different types of support:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Overall coordination</strong> - Making sure your care is safe and follows clinical guidelines</li>
+            <li><strong>Blood pressure tracking</strong> - Helping you monitor your readings</li>
+            <li><strong>Health assessments</strong> - Supporting diagnosis and monitoring</li>
+            <li><strong>Lifestyle support</strong> - Advice that fits your culture and daily life</li>
+            <li><strong>Treatment decisions</strong> - Helping you and your doctor choose the right treatment</li>
+            <li><strong>Medicine management</strong> - Optimising your medications safely</li>
+            <li><strong>Health monitoring</strong> - Coordinating tests and safety checks</li>
+            <li><strong>Medicine reminders</strong> - Helping you take medicines as prescribed</li>
+            <li><strong>Emergency alerts</strong> - Immediate help if something urgent comes up</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-m">Getting started</h2>
+      
+      <p>Before you can use My BP, we need to:</p>
+      
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Explain the benefits and privacy protections</li>
+        <li>Share important simulation disclaimer information</li>
+        <li>Show you our comprehensive data usage statement</li>
+        <li>Get your informed consent to proceed</li>
+      </ol>
+
+      <p>This helps us make sure you understand how My BP works and that you're happy to use it.</p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/benefits">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

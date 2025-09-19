@@ -1,7 +1,7 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "AI recommendation" %}
+{% set pageHeading = "Medication recommendation" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -17,12 +17,12 @@
       <div class="nhsuk-notification-banner" role="region" aria-labelledby="notification-banner-title">
         <div class="nhsuk-notification-banner__header">
           <h2 class="nhsuk-notification-banner__title" id="notification-banner-title">
-            AI recommendation ready
+            Medication recommendation ready
           </h2>
         </div>
         <div class="nhsuk-notification-banner__content">
           <p class="nhsuk-notification-banner__heading">
-            After reviewing your recent blood pressure readings, NICE guidelines recommend adjusting your medication.
+            Based on your recent blood pressure readings and NICE guidelines, a medication adjustment is recommended.
           </p>
         </div>
       </div>
@@ -91,9 +91,9 @@
           </ul>
           <h3 class="nhsuk-heading-s">Monitoring plan</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>BP check in 2-4 weeks</li>
-            <li>Contact GP if concerning symptoms develop</li>
-            <li>U&E blood test in 4-6 weeks</li>
+            <li>System will automatically remind you when it's time for your next blood pressure check</li>
+            <li>Call NHS 111 for concerning symptoms, 999 for severe symptoms</li>
+            <li>System will automatically remind you for U&E blood test when needed</li>
           </ul>
         </div>
       </div>

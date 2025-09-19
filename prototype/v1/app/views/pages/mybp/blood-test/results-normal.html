@@ -1,0 +1,149 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "U&E blood test results" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Test date"
+          },
+          value: {
+            html: "28 October 2024"
+          }
+        },
+        {
+          key: {
+            text: "✦⭐✧ AI system assessment"
+          },
+          value: {
+            html: "Normal results - continue current medication"
+          }
+        },
+        {
+          key: {
+            text: "Next test reminder"
+          },
+          value: {
+            html: "Our monitoring system will remind you in 3 months (28 January 2025)"
+          }
+        }
+        ]
+      }) }}
+
+      <div class="nhsuk-notification-banner nhsuk-notification-banner--success" role="region" aria-labelledby="notification-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="notification-banner-title">
+            Good news
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            Your kidney function is normal
+          </p>
+          <p>Your blood pressure medication is not affecting your kidneys. Continue taking it as prescribed.</p>
+        </div>
+      </div>
+
+      <!-- SECTION - RESULTS SUMMARY -->
+      {{ nhsappSectionHeading({
+        headingText: "Results summary"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">Kidney function</h3>
+              <p class="nhsuk-card__description">
+                <span class="nhsuk-tag nhsuk-tag--green">Normal</span><br>
+                Creatinine: 72 μmol/L<br>
+                eGFR: >90 mL/min/1.73m²
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">Electrolytes</h3>
+              <p class="nhsuk-card__description">
+                <span class="nhsuk-tag nhsuk-tag--green">Normal</span><br>
+                Sodium: 140 mmol/L<br>
+                Potassium: 4.8 mmol/L (upper normal)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - NEXT STEPS -->
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Non-urgent advice">💡</span>Next steps
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul>
+            <li><strong>Continue your medication</strong> - Your kidney function is normal, so keep taking your blood pressure medication as prescribed</li>
+            <li><strong>Next test reminder:</strong> Our monitoring system will contact you in 3 months (28 January 2025)</li>
+            <li><strong>Monitor potassium:</strong> Your potassium level is being watched as it's near the upper limit</li>
+            <li><strong>Support available:</strong> Our care coordination system is monitoring your progress and will contact you if any action is needed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/blood-test/results-normal-details">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">View detailed results and explanations</span>
+        </a>
+      </div>
+
+      <p class="nhsuk-u-margin-top-4"><a href="#ue-info">What is a U&E blood test?</a></p>
+
+      <!-- Information sections -->
+      <div class="nhsuk-expander-group">
+        <details class="nhsuk-details nhsuk-expander" id="ue-info">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What is a U&E blood test?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>U&E stands for "Urea and Electrolytes". This blood test measures several important chemicals in your blood:</p>
+            <ul>
+              <li><strong>Creatinine and eGFR</strong> - show how well your kidneys are filtering waste</li>
+              <li><strong>Urea</strong> - a waste product that should be filtered out by healthy kidneys</li>
+              <li><strong>Sodium and Potassium</strong> - electrolytes that help control fluid balance and heart rhythm</li>
+            </ul>
+            <p>For people taking blood pressure medication, this test is important because some medications can affect kidney function or electrolyte levels.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

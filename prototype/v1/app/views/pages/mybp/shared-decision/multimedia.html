@@ -1,0 +1,412 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Treatment Decision Resources" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to treatment comparison",
+    href: "/pages/mybp/shared-decision/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        {% if data.type == 'video' %}
+          Patient Stories: Amlodipine vs Lisinopril
+        {% elif data.type == 'audio' %}
+          Audio Experiences: Your Two Options
+        {% elif data.type == 'easyread' %}
+          Easy Read: Choosing Your Treatment
+        {% else %}
+          Treatment Decision Resources
+        {% endif %}
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        {% if data.type == 'video' %}
+          Watch real patients share their experiences with Amlodipine and Lisinopril to help you decide.
+        {% elif data.type == 'audio' %}
+          Listen to detailed patient journeys with both medications.
+        {% elif data.type == 'easyread' %}
+          Simple comparison of your two treatment options.
+        {% else %}
+          Resources to help you choose between your two treatment options.
+        {% endif %}
+      </p>
+
+      <div class="nhsuk-inset-text nhsuk-inset-text--blue">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>These resources are specifically focused on helping you choose between <strong>Amlodipine</strong> and <strong>Lisinopril</strong> - the two equally-suitable treatments identified for your situation.</p>
+      </div>
+
+      <!-- Content tabs -->
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Compare your two options
+        </h2>
+
+        <ul class="nhsuk-tabs__list">
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#amlodipine">
+              Amlodipine
+            </a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#lisinopril">
+              Lisinopril
+            </a>
+          </li>
+        </ul>
+
+        <!-- Amlodipine content -->
+        <div class="nhsuk-tabs__panel" id="amlodipine">
+          {% if data.type == 'video' %}
+            <div class="video-content">
+              <div class="video-placeholder">
+                <div class="video-thumbnail">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5,3 19,12 5,21"></polygon>
+                  </svg>
+                  <h3 class="nhsuk-heading-m">Sarah's Amlodipine Journey</h3>
+                  <p>"Two years on Amlodipine - here's my honest experience"</p>
+                  <button class="nhsuk-button play-video-btn">Play video (3:45)</button>
+                </div>
+              </div>
+              <div class="video-details">
+                <h4 class="nhsuk-heading-s">What Sarah shares:</h4>
+                <ul class="nhsuk-list nhsuk-list--bullet">
+                  <li>How the ankle swelling affected her initially</li>
+                  <li>Why she chose to stick with Amlodipine</li>
+                  <li>Her daily routine and timing</li>
+                  <li>How her blood pressure improved</li>
+                </ul>
+                <p class="nhsuk-body-s"><strong>Sarah, 54, Teacher from Birmingham</strong></p>
+              </div>
+            </div>
+          {% elif data.type == 'audio' %}
+            <div class="audio-content">
+              <div class="audio-player">
+                <div class="audio-thumbnail">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                </div>
+                <div class="audio-details">
+                  <h3 class="nhsuk-heading-m">Maria's Amlodipine Experience</h3>
+                  <p>"Starting treatment and managing side effects"</p>
+                  <button class="nhsuk-button play-audio-btn">Listen (4:20)</button>
+                </div>
+              </div>
+              <div class="audio-transcript">
+                <details class="nhsuk-details">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Read transcript
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <p>"I started taking Amlodipine when I was 52. At first, I was worried about the ankle swelling I'd heard about. My doctor said it was common but often gets better. True enough - I did get swollen ankles in the first few weeks, but by month three, it had pretty much gone away. Now my blood pressure is 135/82 consistently, and I take it every morning with my coffee. Very easy routine. If you're thinking about Amlodipine, I'd say give it a chance - the initial side effects often settle down."</p>
+                    <p><strong>Maria, 58, Nurse from London</strong></p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          {% elif data.type == 'easyread' %}
+            <div class="easyread-content">
+              <div class="easyread-section">
+                <div class="easyread-image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 9C9.24 9 7 11.24 7 14s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"></path>
+                    <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+                  </svg>
+                </div>
+                <div class="easyread-text">
+                  <h3 class="nhsuk-heading-m">What is Amlodipine?</h3>
+                  <p class="easyread-large">Amlodipine is a medicine.</p>
+                  <p class="easyread-large">It helps your heart pump blood more easily.</p>
+                  <p class="easyread-large">This lowers your blood pressure.</p>
+                </div>
+              </div>
+              
+              <div class="easyread-section">
+                <div class="easyread-image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                </div>
+                <div class="easyread-text">
+                  <h3 class="nhsuk-heading-m">When to take it</h3>
+                  <p class="easyread-large">Take 1 tablet every day.</p>
+                  <p class="easyread-large">Take it at the same time each day.</p>
+                  <p class="easyread-large">You can take it with or without food.</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Lisinopril content -->
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="lisinopril">
+          {% if data.type == 'video' %}
+            <div class="video-content">
+              <div class="video-placeholder">
+                <div class="video-thumbnail">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5,3 19,12 5,21"></polygon>
+                  </svg>
+                  <h3 class="nhsuk-heading-m">James's Lisinopril Story</h3>
+                  <p>"Managing the cough and loving the heart protection"</p>
+                  <button class="nhsuk-button play-video-btn">Play video (4:12)</button>
+                </div>
+              </div>
+              <div class="video-details">
+                <h4 class="nhsuk-heading-s">What James shares:</h4>
+                <ul class="nhsuk-list nhsuk-list--bullet">
+                  <li>How he dealt with the initial dry cough</li>
+                  <li>Why he values the heart and kidney protection</li>
+                  <li>His medication timing routine</li>
+                  <li>Blood pressure improvements after 6 months</li>
+                </ul>
+                <p class="nhsuk-body-s"><strong>James, 62, Retired Engineer from Manchester</strong></p>
+              </div>
+            </div>
+          {% elif data.type == 'audio' %}
+            <div class="audio-content">
+              <div class="audio-player">
+                <div class="audio-thumbnail">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                </div>
+                <div class="audio-details">
+                  <h3 class="nhsuk-heading-m">James's Lisinopril Experience</h3>
+                  <p>"From cough to confidence - my 6-month journey"</p>
+                  <button class="nhsuk-button play-audio-btn">Listen (3:55)</button>
+                </div>
+              </div>
+              <div class="audio-transcript">
+                <details class="nhsuk-details">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Read transcript
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <p>"I started Lisinopril after being diagnosed with high blood pressure at 61. The first few weeks were tough - I had this persistent dry cough that was really annoying. My doctor said to give it 6 weeks. I'm glad I did because the cough gradually went away. What I really like about Lisinopril is knowing it's protecting my heart and kidneys too, not just lowering my blood pressure. I take it every morning at 7am with a glass of water. Six months in, my blood pressure went from 158/95 to 138/84. Very pleased with the results."</p>
+                    <p><strong>James, 62, Retired Engineer from Manchester</strong></p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          {% elif data.type == 'easyread' %}
+            <div class="easyread-content">
+              <div class="easyread-section">
+                <h3 class="nhsuk-heading-m">Lisinopril - Easy Read</h3>
+                <div class="easyread-card">
+                  <div class="easyread-icon">💊</div>
+                  <div class="easyread-text">
+                    <h4>What is Lisinopril?</h4>
+                    <p>Lisinopril is a medicine that helps lower blood pressure. It also helps protect your heart and kidneys.</p>
+                  </div>
+                </div>
+                
+                <div class="easyread-card">
+                  <div class="easyread-icon">🕐</div>
+                  <div class="easyread-text">
+                    <h4>When to take it</h4>
+                    <p>Take one tablet every day at the same time. Morning is usually best.</p>
+                  </div>
+                </div>
+                
+                <div class="easyread-card">
+                  <div class="easyread-icon">⚠️</div>
+                  <div class="easyread-text">
+                    <h4>Side effects</h4>
+                    <p>Some people get a dry cough. This usually gets better after a few weeks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Cultural considerations section -->
+      <div class="nhsuk-card nhsuk-u-margin-top-6">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-l">
+            Cultural and dietary considerations
+          </h2>
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-m">Fasting and religious observances</h3>
+              <p>Both Amlodipine and Lisinopril can be taken during Ramadan and other fasting periods. Take your medication:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Before starting your fast (Suhur)</li>
+                <li>When breaking your fast (Iftar)</li>
+                <li>Speak to your pharmacist about timing</li>
+              </ul>
+              <p><strong>Slight advantage:</strong> Amlodipine offers more timing flexibility due to its longer action.</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-m">Traditional remedies</h3>
+              <p>Always tell your doctor or pharmacist if you use:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Herbal medicines</li>
+                <li>Traditional treatments</li>
+                <li>Supplements</li>
+                <li>Ayurvedic medicines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="nhsuk-u-margin-top-6">
+        <a href="/pages/mybp/shared-decision/index" class="nhsuk-button">
+          Make your treatment choice
+        </a>
+        <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+          Ready to decide between Amlodipine and Lisinopril? Your choice will be implemented by your AI care team.
+        </p>
+      </div>
+        </a>
+        <a href="/pages/mybp/shared-decision/chatbot" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-3">
+          Ask questions about treatments
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  .video-content, .audio-content, .easyread-content {
+    padding: 1rem 0;
+  }
+  
+  .video-placeholder {
+    background: #f0f4f5;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .video-thumbnail svg {
+    color: #005eb8;
+    margin-bottom: 1rem;
+  }
+  
+  .audio-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f0f4f5;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .audio-thumbnail {
+    flex-shrink: 0;
+  }
+  
+  .audio-thumbnail svg {
+    color: #005eb8;
+  }
+  
+  .easyread-content {
+    max-width: 600px;
+  }
+  
+  .easyread-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #005eb8;
+  }
+  
+  .easyread-image {
+    flex-shrink: 0;
+  }
+  
+  .easyread-image svg {
+    color: #005eb8;
+  }
+  
+  .easyread-large {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .play-video-btn, .play-audio-btn {
+    margin-top: 1rem;
+  }
+  
+  .video-details {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #d8dde0;
+  }
+  
+  @media (max-width: 48em) {
+    .easyread-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .audio-player {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Simulate video/audio playback
+  document.querySelectorAll('.play-video-btn, .play-audio-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.textContent = 'Playing...';
+      this.disabled = true;
+      
+      // Simulate loading
+      setTimeout(() => {
+        this.textContent = 'Pause';
+        this.disabled = false;
+      }, 1000);
+    });
+  });
+  
+  // Handle URL parameters for content type
+  const urlParams = new URLSearchParams(window.location.search);
+  const contentType = urlParams.get('type');
+  
+  if (contentType) {
+    // Update page content based on type
+    console.log('Content type:', contentType);
+  }
+</script>
+{% endblock %}

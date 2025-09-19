@@ -1,0 +1,86 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Audio and sound - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to accessibility",
+    href: "/pages/mybp/accessibility-hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Choose how My BP uses sound and voice to help you.
+      </p>
+
+      <form action="#" method="post">
+        
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              Voice and audio options
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="voice-readback" name="audio" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="voice-readback">
+                  <strong>Voice readback</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Read key information aloud, including blood pressure results and medication reminders
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="audio-descriptions" name="audio" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="audio-descriptions">
+                  <strong>Audio descriptions</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Descriptions of charts, graphs and visual content
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="ai-voice-system" name="audio" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="ai-voice-system">
+                  <strong>AI voice conversations</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Talk to the app using voice commands and have conversations with the AI system
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>These audio features work alongside your device's built-in accessibility tools like VoiceOver (iPhone) or TalkBack (Android).</p>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Save changes</button>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility-hub">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="m0 0h24v24h-24z" fill="none"/>
+              <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+            </svg>
+            <span class="nhsuk-action-link__text">Back to accessibility</span>
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

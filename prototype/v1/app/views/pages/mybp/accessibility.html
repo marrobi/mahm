@@ -1,0 +1,330 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "All accessibility options - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to accessibility",
+    href: "/pages/mybp/accessibility-hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Complete list of accessibility features designed for everyone. You can also use the <a href="/pages/mybp/accessibility-hub">organised accessibility hub</a> for easier navigation.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Tip:</strong> For a simpler experience, use our <a href="/pages/mybp/accessibility-hub">accessibility hub</a> which organises these options into focused categories.</p>
+      </div>
+
+      <!-- SECTION - VISUAL ACCESSIBILITY -->
+      {{ nhsappSectionHeading({
+        headingText: "Visual accessibility"
+      }) }}
+      
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Text and display options
+          </legend>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="large-text" name="visual" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="large-text">
+                <strong>Large text</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Increase text size for easier reading (especially helpful for elderly users)
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="high-contrast" name="visual" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="high-contrast">
+                <strong>High contrast mode</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Enhanced contrast for better visibility
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="focus-indicators" name="visual" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="focus-indicators">
+                <strong>Enhanced focus indicators</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Clearer highlighting when navigating with keyboard
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="reduce-motion" name="visual" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="reduce-motion">
+                <strong>Reduce motion</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Minimise animations and transitions
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- SECTION - AUDIO ACCESSIBILITY -->
+      {{ nhsappSectionHeading({
+        headingText: "Audio accessibility"
+      }) }}
+      
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Audio and voice options
+          </legend>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="voice-readback" name="audio" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="voice-readback">
+                <strong>Voice readback</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Read key information aloud, including blood pressure results and medication reminders
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="ai-voice-system" name="audio" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="ai-voice-system">
+                <strong>AI voice system conversations</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Interact with the system using voice commands and conversations
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="audio-descriptions" name="audio" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="audio-descriptions">
+                <strong>Audio descriptions</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Descriptions of charts, graphs and visual content
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- SECTION - LANGUAGE AND COMMUNICATION -->
+      {{ nhsappSectionHeading({
+        headingText: "Language and communication"
+      }) }}
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="language-select">
+          Preferred language
+        </label>
+        <div class="nhsuk-hint" id="language-hint">
+          My BP is available in multiple languages with full translation services
+        </div>
+        <select class="nhsuk-select" id="language-select" name="language" aria-describedby="language-hint">
+          <option value="en">English</option>
+          <option value="ur">Urdu</option>
+          <option value="hi">Hindi</option>
+          <option value="bn">Bengali</option>
+          <option value="pa">Punjabi</option>
+          <option value="ar">Arabic</option>
+          <option value="pl">Polish</option>
+          <option value="ro">Romanian</option>
+          <option value="tr">Turkish</option>
+          <option value="cy">Welsh</option>
+        </select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Communication preferences
+          </legend>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="easy-read" name="communication" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="easy-read">
+                <strong>EasyRead format</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Simplified language and clear explanations with pictures
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="bsl-support" name="communication" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="bsl-support">
+                <strong>British Sign Language (BSL) support</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Access to BSL interpreters for video consultations
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="cultural-adaptation" name="communication" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="cultural-adaptation">
+                <strong>Culturally-adapted content</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Information and advice tailored to your cultural background and practices
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- SECTION - PHYSICAL AND MOTOR -->
+      {{ nhsappSectionHeading({
+        headingText: "Physical and motor accessibility"
+      }) }}
+      
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Navigation and input options
+          </legend>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="keyboard-navigation" name="motor" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="keyboard-navigation">
+                <strong>Keyboard-only navigation</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Navigate the app using only keyboard commands
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="large-touch-targets" name="motor" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="large-touch-targets">
+                <strong>Large touch targets</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Bigger buttons and links for easier selection
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="voice-commands" name="motor" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="voice-commands">
+                <strong>Voice commands</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Control the app using voice instead of touch
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- SECTION - COGNITIVE ACCESSIBILITY -->
+      {{ nhsappSectionHeading({
+        headingText: "Cognitive accessibility"
+      }) }}
+      
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Memory and comprehension support
+          </legend>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="simplified-navigation" name="cognitive" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="simplified-navigation">
+                <strong>Simplified navigation</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Fewer menu options and clearer pathways
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="progress-indicators" name="cognitive" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="progress-indicators">
+                <strong>Clear progress indicators</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  Show where you are in multi-step processes
+                </span>
+              </label>
+            </div>
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="reminder-prompts" name="cognitive" type="checkbox">
+              <label class="nhsuk-checkboxes__label" for="reminder-prompts">
+                <strong>Extra reminder prompts</strong>
+                <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                  More frequent reminders for appointments and medication
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- SECTION - DIGITAL INCLUSION -->
+      {{ nhsappSectionHeading({
+        headingText: "Digital inclusion support"
+      }) }}
+      
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="digital-inclusion-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="digital-inclusion-title">
+            Need help using digital services?
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p>We recognise that not everyone can or wants to use digital health services. If you're digitally excluded, My BP ensures you get the same quality of care through:</p>
+          <ul>
+            <li><strong>Enhanced face-to-face appointments</strong> - More GP time freed up for those who need in-person care</li>
+            <li><strong>Telephone support</strong> - Full service available via phone calls</li>
+            <li><strong>Family/carer involvement</strong> - Support for family members to help with digital access</li>
+            <li><strong>Practice support</strong> - Staff assistance with using the digital tools</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="tel:01234567890">
+          📞 Call for digital support: 01234 567890
+        </a>
+      </div>
+
+      <!-- SECTION - ASSISTIVE TECHNOLOGY -->
+      {{ nhsappSectionHeading({
+        headingText: "Assistive technology compatibility"
+      }) }}
+      
+      <div style="background: #e8f4fd; border-left: 4px solid #005eb8; padding: 16px; border-radius: 4px;">
+        <h4>Screen reader compatibility</h4>
+        <p>My BP works with popular screen readers including:</p>
+        <ul class="nhsuk-list">
+          <li><strong>NVDA</strong> - Free screen reader for Windows</li>
+          <li><strong>JAWS</strong> - Professional screen reader</li>
+          <li><strong>VoiceOver</strong> - Built into Mac and iOS devices</li>
+          <li><strong>TalkBack</strong> - Built into Android devices</li>
+        </ul>
+        <p class="nhsuk-u-font-size-14">All content includes proper semantic markup and alt text for images.</p>
+      </div>
+
+      <button class="nhsuk-button" type="submit">Save accessibility preferences</button>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility-hub">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Back to accessibility hub</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

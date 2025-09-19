@@ -1,0 +1,263 @@
+{% extends 'layout-desktop.html' %}
+{% set page = 'analytics' %}
+{% set title = 'Clinical Analytics - My BP GP Analytics' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1 class="page-title">Clinical Analytics</h1>
+    <p class="page-subtitle">Evidence-based insights and NICE guideline adherence monitoring</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card primary">
+      <div class="stat-label">NICE Adherence</div>
+      <div class="stat-value">78%</div>
+      <div class="stat-sublabel">Target: 85% | QOF aligned</div>
+    </div>
+    <div class="stat-card success">
+      <div class="stat-label">BP Control Rate</div>
+      <div class="stat-value">72%</div>
+      <div class="stat-sublabel">Practice benchmark: 68%</div>
+    </div>
+    <div class="stat-card warning">
+      <div class="stat-label">Medication Adherence</div>
+      <div class="stat-value">84%</div>
+      <div class="stat-sublabel">Digital patients: 94%</div>
+    </div>
+    <div class="stat-card info">
+      <div class="stat-label">CV Risk Reduction</div>
+      <div class="stat-value">23%</div>
+      <div class="stat-sublabel">Estimated over 5 years</div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Treatment Effectiveness Analysis</h2>
+        <p class="card-subtitle">Medication performance by drug class and patient demographics</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Drug Class</th>
+              <th>Patients</th>
+              <th>Control Rate</th>
+              <th>Time to Target</th>
+              <th>Side Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ACE Inhibitors</strong></td>
+              <td>312</td>
+              <td><span class="badge success">76%</span></td>
+              <td>8.2 weeks</td>
+              <td>12% (mainly cough)</td>
+            </tr>
+            <tr>
+              <td><strong>Calcium Channel Blockers</strong></td>
+              <td>298</td>
+              <td><span class="badge success">74%</span></td>
+              <td>6.8 weeks</td>
+              <td>8% (ankle swelling)</td>
+            </tr>
+            <tr>
+              <td><strong>ARBs</strong></td>
+              <td>178</td>
+              <td><span class="badge success">79%</span></td>
+              <td>7.5 weeks</td>
+              <td>4% (well tolerated)</td>
+            </tr>
+            <tr>
+              <td><strong>Thiazide Diuretics</strong></td>
+              <td>156</td>
+              <td><span class="badge warning">68%</span></td>
+              <td>9.1 weeks</td>
+              <td>15% (electrolyte issues)</td>
+            </tr>
+            <tr>
+              <td><strong>Beta Blockers</strong></td>
+              <td>89</td>
+              <td><span class="badge warning">65%</span></td>
+              <td>10.3 weeks</td>
+              <td>18% (fatigue, erectile dysfunction)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">Quality Indicators</h3>
+          <p class="card-subtitle">Key performance metrics</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">BP recorded (annual)</span>
+                <span class="metric-value badge success">96%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Target achievement</span>
+                <span class="metric-value badge success">72%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Statin prescribing</span>
+                <span class="metric-value badge warning">68%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">ACR monitoring</span>
+                <span class="metric-value badge success">89%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Risk Stratification</h3>
+          <p class="card-subtitle">QRISK3 score distribution</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Low risk (<10%)</span>
+                <span class="metric-value">423</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 34%; background: #00a499;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Moderate risk (10-20%)</span>
+                <span class="metric-value">578</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 46%; background: #ffb81c;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">High risk (>20%)</span>
+                <span class="metric-value">246</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 20%; background: #d5281b;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Health Inequality Analysis</h2>
+        <p class="card-subtitle">Outcome disparities requiring targeted intervention</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Demographic</th>
+              <th>Control Rate</th>
+              <th>Gap</th>
+              <th>Intervention</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>White British</td>
+              <td>75%</td>
+              <td>+3%</td>
+              <td>Maintain current approach</td>
+            </tr>
+            <tr>
+              <td>South Asian</td>
+              <td>65%</td>
+              <td>-7%</td>
+              <td>Cultural adaptation needed</td>
+            </tr>
+            <tr>
+              <td>Black African/Caribbean</td>
+              <td>63%</td>
+              <td>-9%</td>
+              <td>Enhanced CCB prescribing</td>
+            </tr>
+            <tr>
+              <td>IMD Q1 (most deprived)</td>
+              <td>58%</td>
+              <td>-14%</td>
+              <td>Targeted outreach programme</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">AI Decision Accuracy</h2>
+        <p class="card-subtitle">Clinical validation of automated decisions</p>
+      </div>
+      <div class="card-content">
+        <div style="margin-bottom: 24px;">
+          <div class="metric">
+            <span class="metric-label">Overall accuracy</span>
+            <span class="metric-value">96.2%</span>
+          </div>
+          <div class="progress-bar" style="margin-top: 8px;">
+            <div class="progress-fill" style="width: 96%;"></div>
+          </div>
+        </div>
+        
+        <ul class="sidebar-list">
+          <li>
+            <div class="metric">
+              <span class="metric-label">Medication selection</span>
+              <span class="metric-value badge success">98%</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Dose titration</span>
+              <span class="metric-value badge success">95%</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Red flag identification</span>
+              <span class="metric-value badge success">100%</span>
+            </div>
+          </li>
+          <li>
+            <div class="metric">
+              <span class="metric-label">Lab interpretation</span>
+              <span class="metric-value badge success">94%</span>
+            </div>
+          </li>
+        </ul>
+        
+        <div style="margin-top: 16px; padding: 12px; background: #f0f9ff; border-radius: 6px;">
+          <strong>Clinical validation:</strong> All AI decisions reviewed by senior clinician monthly. Override rate: 3.8%
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -32,6 +32,25 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 - Focus on patient actions: BP measurements, viewing results, medication adherence, and safety reporting
 - Clear care pathway description without technical categories
 
+![Main Dashboard with Adherence](medication-adherence-main-dashboard.png)
+**Main Dashboard with Medication Adherence** - Updated landing page featuring AI-supported care with orchestrator-controlled medication management. Users view support plans and details but cannot directly adjust medications - this is managed by the multi-agentic system.
+
+---
+
+## Medication Adherence Journey (3 screens)
+
+### 1. Adherence Dashboard
+![Medication Adherence Dashboard](medication-adherence-dashboard.png)
+**Medication Adherence Dashboard** - Main dashboard showing 85% adherence rate with visual progress bar, recent improvements, and quick action options for viewing patterns and interventions.
+
+### 2. Your Medication History
+![Medication Adherence History](medication-adherence-history.png)
+**Your Medication History** - Easy-to-read calendar showing when you've taken your medication over the past 30 days. You often miss doses on Saturday and Sunday mornings. Includes weekly summary and tips to help improve your routine.
+
+### 3. Your Support Plan
+![Medication Adherence Interventions](medication-adherence-interventions.png)
+**Your Support Plan** - Comprehensive view of current support interventions including educational support, digital medication reminders, community pharmacy support, and family assistance. Uses British English throughout and shows realistic NHS services based on NICE guidelines.
+
 ---
 
 ## ABPM Results & Diagnostic Pathway Journey (2 screens)

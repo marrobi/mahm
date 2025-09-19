@@ -1,0 +1,274 @@
+<!-- Medication Adherence Dashboard -->
+
+<!-- Extends the NHS App layout from /app/views/layout-app.html -->
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Medication adherence dashboard" %}
+
+<!-- For adding a breadcrumb or back link -->
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Medication adherence dashboard"
+      })}}
+
+      <!-- CURRENT ADHERENCE OVERVIEW - IMPROVED DESIGN -->
+      <div class="nhsuk-card nhsuk-u-margin-bottom-5" style="background: linear-gradient(135deg, #005eb8 0%, #0072ce 100%); color: white; border: none;">
+        <div class="nhsuk-card__content" style="padding: 24px;">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h2 class="nhsuk-card__heading" style="color: white; margin-bottom: 8px;">Current adherence</h2>
+              <p style="color: rgba(255,255,255,0.8); margin-bottom: 16px; font-size: 14px;">Based on last 30 days</p>
+              
+              <!-- Circular Progress Indicator -->
+              <div style="position: relative; width: 120px; height: 120px; margin: 16px 0;">
+                <svg width="120" height="120" style="transform: rotate(-90deg);">
+                  <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"></circle>
+                  <circle cx="60" cy="60" r="54" fill="none" stroke="white" stroke-width="8" 
+                          stroke-dasharray="339.292" stroke-dashoffset="50.894" stroke-linecap="round"></circle>
+                </svg>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                  <div style="font-size: 28px; font-weight: bold; line-height: 1;">85%</div>
+                  <div style="font-size: 12px; opacity: 0.8;">adherence</div>
+                </div>
+              </div>
+              
+              <strong class="nhsuk-tag" style="background: #f47738; border: none;">Improving</strong>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <div style="padding: 20px 0;">
+                <div style="background: rgba(255,255,255,0.2); border-radius: 12px; padding: 20px; margin-bottom: 16px;">
+                  <h3 style="color: white; margin-bottom: 8px; font-size: 18px;">Progress to target</h3>
+                  <div style="background: rgba(255,255,255,0.3); height: 8px; border-radius: 4px; margin-bottom: 8px;">
+                    <div style="background: white; height: 8px; width: 94.4%; border-radius: 4px;"></div>
+                  </div>
+                  <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px;">85% of 90% target achieved</p>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 20px; font-weight: bold;">+20%</div>
+                    <div style="font-size: 12px; opacity: 0.8;">improvement</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 20px; font-weight: bold;">6</div>
+                    <div style="font-size: 12px; opacity: 0.8;">weeks prescribed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - RECENT PROGRESS - IMPROVED LAYOUT -->
+      {{ nhsappSectionHeading({
+        headingText: "Recent progress"
+      }) }}
+
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-left: 4px solid #00d024; background: #f0fff4;">
+        <div class="nhsuk-card__content" style="padding: 20px;">
+          <h3 style="color: #00a818; margin-bottom: 12px; display: flex; align-items: center;">
+            <span style="background: #00d024; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px;">
+              <span style="color: white; font-size: 16px;">✓</span>
+            </span>
+            Great improvement!
+          </h3>
+          <p style="margin-bottom: 16px; font-size: 16px;">Your adherence has increased from <strong>65% to 85%</strong> over the past 2 weeks following targeted interventions.</p>
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="font-size: 20px; font-weight: bold; color: #005eb8; margin-bottom: 4px;">+20%</div>
+                <div style="font-size: 14px; color: #425563;">Improvement in 2 weeks</div>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="font-size: 20px; font-weight: bold; color: #005eb8; margin-bottom: 4px;">148/86</div>
+                <div style="font-size: 14px; color: #425563;">mmHg (improving trend)</div>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="nhsuk-list nhsuk-list--bullet" style="margin-bottom: 0;">
+            <li>Weekend pill organiser significantly helping with consistency</li>
+            <li>Medication prescribed 6 weeks ago, now showing better clinical response</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION - QUICK ACTIONS - ENHANCED DESIGN -->
+      {{ nhsappSectionHeading({
+        headingText: "Quick actions"
+      }) }}
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-card nhsuk-card--clickable nhsuk-u-margin-bottom-4" style="height: 100%; transition: transform 0.2s ease;">
+            <a href="/pages/mybp/medication-adherence/history" style="text-decoration: none;">
+              <div class="nhsuk-card__content" style="padding: 20px; display: flex; flex-direction: column; height: 100%;">
+                <div style="background: #005eb8; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-size: 24px;">📊</span>
+                </div>
+                <h3 class="nhsuk-card__heading" style="color: #005eb8; margin-bottom: 8px; font-size: 18px;">View missed dose patterns</h3>
+                <p style="margin-bottom: 0; flex-grow: 1; color: #425563;">See when doses were missed and identify patterns to improve.</p>
+                <div style="margin-top: 12px; color: #005eb8; font-weight: bold; font-size: 14px;">View details →</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-card nhsuk-card--clickable nhsuk-u-margin-bottom-4" style="height: 100%; transition: transform 0.2s ease;">
+            <a href="/pages/mybp/medication-adherence/interventions" style="text-decoration: none;">
+              <div class="nhsuk-card__content" style="padding: 20px; display: flex; flex-direction: column; height: 100%;">
+                <div style="background: #f47738; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-size: 24px;">🎯</span>
+                </div>
+                <h3 class="nhsuk-card__heading" style="color: #005eb8; margin-bottom: 8px; font-size: 18px;">Active interventions</h3>
+                <p style="margin-bottom: 0; flex-grow: 1; color: #425563;">Track your current support plan and digital medication reminders.</p>
+                <div style="margin-top: 12px; color: #005eb8; font-weight: bold; font-size: 14px;">View plan →</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - CURRENT MEDICATION - IMPROVED DESIGN -->
+      {{ nhsappSectionHeading({
+        headingText: "Current medication"
+      }) }}
+      
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content" style="padding: 0;">
+          <div style="background: #f0f4f5; padding: 16px 20px; border-bottom: 1px solid #d8dde0;">
+            <h3 style="margin: 0; font-size: 16px; color: #005eb8;">Amlodipine</h3>
+          </div>
+          <div style="padding: 20px;">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-one-third">
+                <div style="text-align: center; padding: 16px; background: #f8f9fa; border-radius: 8px;">
+                  <div style="font-size: 24px; font-weight: bold; color: #005eb8; margin-bottom: 4px;">10mg</div>
+                  <div style="font-size: 14px; color: #425563;">Daily dose</div>
+                </div>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div style="text-align: center; padding: 16px; background: #f8f9fa; border-radius: 8px;">
+                  <div style="font-size: 24px; font-weight: bold; color: #005eb8; margin-bottom: 4px;">8:00</div>
+                  <div style="font-size: 14px; color: #425563;">AM</div>
+                </div>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div style="text-align: center; padding: 16px; background: #e8f4f8; border-radius: 8px; border: 2px solid #005eb8;">
+                  <div style="font-size: 14px; font-weight: bold; color: #005eb8; margin-bottom: 4px;">Morning</div>
+                  <div style="font-size: 14px; color: #425563;">With coffee</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - PERSONALIZED SUGGESTIONS - ENHANCED DESIGN -->
+      {{ nhsappSectionHeading({
+        headingText: "Personalized suggestions"
+      }) }}
+
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4" style="border-left: 4px solid #f47738; background: #fff8f5;">
+        <div class="nhsuk-card__content" style="padding: 20px;">
+          <h3 style="color: #f47738; margin-bottom: 12px; display: flex; align-items: center;">
+            <span style="background: #f47738; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px;">
+              <span style="color: white; font-size: 16px;">⚠</span>
+            </span>
+            Weekend reminder needed
+          </h3>
+          <p style="margin-bottom: 20px; font-size: 16px;">Your pattern shows you tend to miss doses on weekends during social activities. Missing medication during busy social activities is a common situation that many people experience, and we can work together to address it.</p>
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #005eb8; margin-bottom: 8px; font-size: 16px;">🔗 Habit linking strategy</h4>
+                <p style="margin: 0; font-size: 14px;">Take your medication with your morning coffee routine</p>
+              </div>
+              
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #005eb8; margin-bottom: 8px; font-size: 16px;">👁 Visual cues placement</h4>
+                <p style="margin: 0; font-size: 14px;">Keep pill organiser visible on kitchen counter near coffee machine</p>
+              </div>
+            </div>
+            
+            <div class="nhsuk-grid-column-one-half">
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #005eb8; margin-bottom: 8px; font-size: 16px;">📱 Weekend-specific support</h4>
+                <p style="margin: 0; font-size: 14px;">Set phone alarms for Saturday and Sunday at 8:00 AM</p>
+              </div>
+              
+              <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #005eb8; margin-bottom: 8px; font-size: 16px;">👥 Social support active</h4>
+                <p style="margin: 0; font-size: 14px;">Family member notification system helping to provide gentle reminders</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: #e8f4f8; border-radius: 8px; padding: 16px; margin-top: 16px;">
+            <p style="margin: 0; font-size: 14px; color: #005eb8;"><strong>✓ Behavioral assessment complete:</strong> Barriers identified as forgetfulness during social activities</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - NEXT STEPS - ENHANCED DESIGN -->
+      {{ nhsappSectionHeading({
+        headingText: "Next steps"
+      }) }}
+      
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content" style="padding: 20px;">
+          <div style="background: #e8f4f8; border-radius: 8px; padding: 16px; margin-bottom: 20px; border-left: 4px solid #005eb8;">
+            <p style="margin: 0; font-size: 14px; color: #005eb8;"><strong>📱 AI-supported care:</strong> We'll automatically remind you when any of these actions are needed. You don't need to remember or worry about these dates.</p>
+          </div>
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 16px; background: #f0f4f5; border-radius: 8px; border-left: 4px solid #005eb8;">
+                <div style="font-size: 18px; font-weight: bold; color: #005eb8; margin-bottom: 8px;">Fri 18 Oct</div>
+                <div style="font-size: 14px; color: #425563; margin-bottom: 4px;">AI adherence review</div>
+                <div style="font-size: 12px; color: #77818a;">We'll contact you</div>
+              </div>
+            </div>
+            
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 16px; background: #f0f4f5; border-radius: 8px; border-left: 4px solid #f47738;">
+                <div style="font-size: 18px; font-weight: bold; color: #f47738; margin-bottom: 8px;">6 weeks</div>
+                <div style="font-size: 14px; color: #425563; margin-bottom: 4px;">Orchestrator review</div>
+                <div style="font-size: 12px; color: #77818a;">System-managed</div>
+              </div>
+            </div>
+            
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 16px; background: #f0f4f5; border-radius: 8px; border-left: 4px solid #00a818;">
+                <div style="font-size: 18px; font-weight: bold; color: #00a818; margin-bottom: 8px;">2 weeks</div>
+                <div style="font-size: 14px; color: #425563; margin-bottom: 4px;">BP measurement reminder</div>
+                <div style="font-size: 12px; color: #77818a;">We'll prompt you</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

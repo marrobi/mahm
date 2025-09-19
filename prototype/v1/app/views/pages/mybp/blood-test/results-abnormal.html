@@ -1,0 +1,302 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "U&E blood test results" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Test date"
+          },
+          value: {
+            html: "15 November 2024"
+          }
+        },
+        {
+          key: {
+            text: "✦⭐✧ AI system assessment"
+          },
+          value: {
+            html: "Abnormal results - care coordination system monitoring"
+          }
+        },
+        {
+          key: {
+            text: "Next test due"
+          },
+          value: {
+            html: "29 November 2024 (2 weeks - urgent)"
+          }
+        }
+        ]
+      }) }}
+
+      <div class="nhsuk-notification-banner nhsuk-notification-banner--important" role="region" aria-labelledby="notification-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            Some of your results are abnormal
+          </p>
+          <p>Your care coordination system will contact you to discuss your medication. Do not stop taking your blood pressure medication unless told to by a healthcare professional.</p>
+        </div>
+      </div>
+
+      <p><a href="#ue-info">What is a U&E blood test?</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-8">
+
+      <h2>Your results</h2>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Creatinine - High -->
+      <h3>Creatinine: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--red">135 μmol/L</span></span></h3>
+      <p>The reference range is between 60 to 120 μmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--red">Increased</span> (was 70 μmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; right: 15%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; right: 10%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 135</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p><strong>This result is above the normal range.</strong> High creatinine may indicate your kidneys are not filtering waste as effectively. This could be related to your blood pressure medication.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#creatinine-info">What is a creatinine test?</a></p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#creatinine-history">View creatinine result history</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- eGFR - Low -->
+      <h3>eGFR: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--red">45 mL/min/1.73m²</span></span></h3>
+      <p>The reference range is above 60 mL/min/1.73m².</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--red">Significantly decreased</span> (was >90 mL/min/1.73m² in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Impaired</span>
+              <span style="font-size: 12px; color: #425563;">Mild reduction</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 33%, #ffb81c 33%, #ffb81c 66%, #00a499 66%, #00a499 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; left: 25%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; left: 20%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 45</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p><strong>This result indicates moderately reduced kidney function.</strong> This significant change from your previous result needs urgent attention and may require medication adjustment.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#egfr-info">What is an eGFR test?</a></p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#egfr-history">View eGFR result history</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Sodium - Normal -->
+      <h3>Sodium: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--green">142 mmol/L</span></span></h3>
+      <p>The reference range is between 135 to 145 mmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--white">Stable</span> (was 138 mmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; left: 60%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; left: 55%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 142</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p>Sodium helps regulate blood pressure and fluid balance. Your level is normal.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#sodium-info">What is a sodium test?</a></p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#sodium-history">View sodium result history</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Potassium - High -->
+      <h3>Potassium: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--red">5.8 mmol/L</span></span></h3>
+      <p>The reference range is between 3.5 to 5.0 mmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--red">Significantly increased</span> (was 4.2 mmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; right: 5%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; right: 0%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 5.8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p><strong>This result is above the normal range.</strong> High potassium can be dangerous and may affect your heart rhythm. This is likely related to your blood pressure medication and needs immediate attention.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#potassium-info">What is a potassium test?</a></p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#potassium-history">View potassium result history</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Urea - Normal -->
+      <h3>Urea: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--green">5.8 mmol/L</span></span></h3>
+      <p>The reference range is between 2.5 to 6.7 mmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--yellow">Slight increase</span> (was 5.0 mmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; left: 55%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; left: 50%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 5.8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p>Urea is a waste product filtered by your kidneys. While still in the normal range, the increase combined with other results suggests kidney function changes.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#urea-info">What is a urea test?</a></p>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <p><a href="#urea-history">View urea result history</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Urgent next steps -->
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Urgent advice">🔴</span>Urgent action needed
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p><strong>Our care coordination system will contact you by the end of tomorrow to discuss these results.</strong></p>
+          
+          <h4>What you must do:</h4>
+          <ul>
+            <li><strong>Continue taking your medication</strong> - do not stop unless advised by your care team</li>
+            <li><strong>Stay available for contact</strong> - our system will reach out to you</li>
+            <li><strong>Book urgent repeat test</strong> - due 29 November 2024</li>
+          </ul>
+
+          <h4>Contact your practice immediately if you experience:</h4>
+          <ul>
+            <li>Chest pain or irregular heartbeat</li>
+            <li>Severe weakness or muscle cramps</li>
+            <li>Nausea or vomiting</li>
+            <li>Difficulty breathing</li>
+          </ul>
+
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="img" aria-label="Warning">⚠️</span>
+              If our care coordination system hasn't contacted you by 5pm tomorrow
+            </h3>
+            <p><strong>Call your practice directly on 01234 567890</strong><br>
+            If they're closed, call NHS 111 for advice about your results.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information sections -->
+      <div class="nhsuk-expander-group">
+        <details class="nhsuk-details nhsuk-expander" id="ue-info">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What is a U&E blood test?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>U&E stands for "Urea and Electrolytes". This blood test measures several important chemicals in your blood:</p>
+            <ul>
+              <li><strong>Creatinine and eGFR</strong> - show how well your kidneys are filtering waste</li>
+              <li><strong>Urea</strong> - a waste product that should be filtered out by healthy kidneys</li>
+              <li><strong>Sodium and Potassium</strong> - electrolytes that help control fluid balance and heart rhythm</li>
+            </ul>
+            <p>For people taking blood pressure medication, this test is important because some medications can affect kidney function or electrolyte levels.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/blood-test/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Book your urgent follow-up test</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

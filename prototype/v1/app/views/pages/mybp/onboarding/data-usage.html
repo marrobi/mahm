@@ -1,0 +1,202 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "How we use your information" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back",
+    href: "/pages/mybp/onboarding/disclaimer"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        How we use your information
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Learn how My BP collects, uses, and protects your health information.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Quality monitoring:</strong> All system interactions are logged to ensure safety and continuously improve your care.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Information we collect</h2>
+
+      <div class="nhsuk-card-group">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Blood pressure readings</h3>
+            <p class="nhsuk-card__description">Your blood pressure measurements and how they were taken - used by our monitoring system to track your condition and check readings are accurate.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">24-hour monitoring results</h3>
+            <p class="nhsuk-card__description">Results from extended monitoring - used by our diagnostic system to help confirm if you have high blood pressure for your GP.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Medicines and side effects</h3>
+            <p class="nhsuk-card__description">Your medicines, how well you take them, and any side effects - used by our medicine management system to help find the right treatment and support you.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Lifestyle and cultural preferences</h3>
+            <p class="nhsuk-card__description">Your lifestyle, diet, and cultural preferences - used by our lifestyle support system to give you personalised advice that fits with your life and culture.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Treatment choices</h3>
+            <p class="nhsuk-card__description">Your treatment choices and what matters to you - used by our decision support system to help you make informed choices about your care.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Blood test results</h3>
+            <p class="nhsuk-card__description">Kidney and liver function results - used by our safety monitoring system to make sure your medicines are safe and working properly.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Warning signs and symptoms</h3>
+            <p class="nhsuk-card__description">Warning signs and urgent symptoms you report - used by our safety alert system to quickly identify when you need urgent medical help.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">Background information</h3>
+            <p class="nhsuk-card__description">Your background information and any barriers to healthcare - used by our care coordination system to personalise your care and ensure fair access to services.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">How we use your information</h2>
+
+      <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>Your healthcare
+            </span>
+          </h3>
+          <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Give you personalised care:</strong> Follow NHS guidelines to recommend the right treatment for you</li>
+            <li><strong>Keep you safe:</strong> Monitor for warning signs and alert your doctor when needed</li>
+            <li><strong>Coordinate your care:</strong> Work with your GP and other healthcare services</li>
+            <li><strong>Support you:</strong> Provide advice that fits your culture, language, and lifestyle</li>
+            <li><strong>Improve the service:</strong> Learn what works best to help future patients</li>
+            <li><strong>Help your doctor:</strong> Provide clear information to support their decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Anonymised data for improvement</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We use <strong>anonymised population-level data</strong> to improve the service and reduce health inequalities across different communities. Your personal information is never included.</p>
+      </div>
+
+      <p>Anonymised data helps us:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Monitor health inequality reduction across ethnic groups and socioeconomic areas</li>
+        <li>Improve system performance and safety protocols</li>
+        <li>Enhance cultural appropriateness of lifestyle support</li>
+        <li>Optimise resource allocation in underserved communities</li>
+        <li>Research effectiveness of AI-supported care coordination</li>
+      </ul>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What does anonymised mean?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Anonymised data means:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>All personal identifiers are permanently removed using NHS Digital standards</li>
+            <li>It cannot be linked back to you as an individual</li>
+            <li>It's used only for population health research and service improvement</li>
+            <li>It helps identify patterns that can improve care for everyone</li>
+            <li>It supports our mission to reduce health inequalities</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-m">Your rights</h2>
+
+      <p>You have important rights about how your information is used. If you need help with any of these, contact our <a href="https://digital.nhs.uk/about-nhs-digital/contact-us#data-protection-office" class="nhsuk-link">Data Protection Officer</a> or speak to your GP practice.</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Access:</strong> Request a copy of your information held in My BP</li>
+        <li><strong>Correct:</strong> Update incorrect information in your care records</li>
+        <li><strong>Delete:</strong> Request removal of your data (subject to clinical safety requirements)</li>
+        <li><strong>Withdraw:</strong> Stop using My BP at any time and return to standard GP care</li>
+        <li><strong>Complain:</strong> Contact <a href="https://digital.nhs.uk/about-nhs-digital/contact-us#complaints" class="nhsuk-link">NHS Digital</a>, your GP practice, or the <a href="https://ico.org.uk/make-a-complaint/" class="nhsuk-link">ICO</a></li>
+        <li><strong>Transparency:</strong> Request explanations of system recommendations from your GP</li>
+      </ul>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="https://digital.nhs.uk/about-nhs-digital/contact-us#data-protection-office">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Contact us about your data rights</span>
+        </a>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Clinical oversight and safety</h2>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your GP remains in charge:</strong> Your GP is always responsible for your care and makes the final decisions about your treatment. They can override any system recommendations at any time.</p>
+      </div>
+
+      <p>My BP follows strict safety standards:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>All recommendations follow <a href="https://www.nice.org.uk/guidance/ng136" class="nhsuk-link">NICE clinical guidelines</a> for hypertension</li>
+        <li>Your healthcare team can access and review all system recommendations</li>
+        <li>Clinical safety officers monitor the system for any issues</li>
+        <li>Regular safety reviews ensure the system works as intended</li>
+        <li>If you have any urgent symptoms, you should always contact your GP or call 999</li>
+      </ul>
+
+      <p>For more information, see the <a href="#" class="nhsuk-link">NHS Digital privacy notice</a> and <a href="#" class="nhsuk-link">My BP clinical governance framework</a>.</p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/onboarding/consent">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Continue</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

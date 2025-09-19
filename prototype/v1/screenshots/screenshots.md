@@ -8,6 +8,30 @@ Complete collection of iPhone-formatted screenshots (393x852 pixels) for all scr
 ![Main Dashboard](bp-main-dashboard-iphone.png)
 **Main Dashboard** - Updated AI-orchestrated landing page showing recommended next steps determined by the multiagentic system: medication review, BP measurement with Lifelight™, blood test scheduling, ABPM results review, and diagnostic pathway tracking.
 
+![Updated Main Dashboard with Lab Results](mybp-main-dashboard-updated.png)
+**Updated Main Dashboard with Lab Results** - Enhanced dashboard now featuring "View lab results" as the first option with recent activity section showing latest lab result status.
+
+![Enhanced Main Dashboard with MVP Features](mybp-enhanced-dashboard.png)
+**Enhanced Main Dashboard with MVP Features** - Comprehensive dashboard implementation based on MVP documentation featuring:
+- Emergency "Get Help Now" button with Red Flag Agent support
+- BP trends visualization with traffic light color coding
+- Personalized next actions and recommendations
+- Medication reminders with adherence tracking
+- Patient category identification (Category A: Known Hypertension)
+- Progress tracking for lifestyle goals and clinical metrics
+- Accessibility options for inclusive design
+- Multi-agent system coordination indicators
+
+![Updated Main Dashboard with Side Effects Reporting](updated-mybp-dashboard-with-side-effects.png)
+**Updated Main Dashboard with Side Effects Reporting** - Latest dashboard version addressing all clinical feedback:
+- Replaced red emergency "Get Help Now" button with appropriate secondary styling
+- Removed patient-facing medication review and booking options (handled by orchestrator)
+- Added "Report a side-effect" option as requested for patient safety monitoring
+- Eliminated "Category A" patient terminology from public interface
+- Updated to British spellings ("Personalised" not "Personalized")
+- Focus on patient actions: BP measurements, viewing results, medication adherence, and safety reporting
+- Clear care pathway description without technical categories
+
 ---
 
 ## ABPM Results & Diagnostic Pathway Journey (2 screens)

@@ -24,26 +24,74 @@
       })}}
 
       <p class="nhsuk-lede-text">
-        Manage your blood pressure with AI-supported care.
+        Manage your blood pressure and medication with AI-supported care from our NHS system.
       </p>
 
       <!-- EMERGENCY SUPPORT BUTTON -->
-      <div class="emergency-support nhsuk-u-margin-bottom-4">
-        <div class="nhsuk-care-card nhsuk-care-card--urgent">
-          <div class="nhsuk-care-card__heading-container">
-            <h2 class="nhsuk-care-card__heading">
-              <span role="img" aria-label="Emergency">🚨</span>
-              Emergency support
-            </h2>
-          </div>
-          <div class="nhsuk-care-card__content">
-            <p>If you're experiencing severe symptoms, chest pain, difficulty breathing, or your BP is over 180/110 mmHg</p>
-            <p><strong>Call 999 immediately</strong></p>
-            <p class="nhsuk-u-margin-top-3 nhsuk-u-secondary-text-colour">For non-emergency concerns, contact your GP practice or call 111</p>
+      <div class="nhsuk-u-margin-bottom-4">
+        <a href="/pages/mybp/emergency" class="nhsuk-button nhsuk-button--secondary" role="button">
+          Get Help & Emergency Support
+        </a>
+        <p class="nhsuk-u-font-size-14 nhsuk-u-margin-top-1">For urgent BP concerns or medication side effects</p>
+      </div>
+
+      <!-- SECTION - BP TRENDS -->
+      {{ nhsappSectionHeading({
+        headingText: "Your BP trends"
+      }) }}
+      
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 16px; border-radius: 8px; border-left: 4px solid #ffb81c;">
+            <h4 class="nhsuk-u-margin-bottom-2">Latest reading: <span class="nhsuk-tag nhsuk-tag--orange">142/88 mmHg</span></h4>
+            <p class="nhsuk-u-margin-bottom-2"><strong>Status:</strong> Above target - medication review recommended</p>
+            <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-0">Target: &lt;140/90 mmHg | Taken: 3 days ago | Trend: ↗️ Slightly increasing</p>
           </div>
         </div>
       </div>
 
+      <!-- SECTION - NEXT ACTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Next actions for you"
+      }) }}
+      
+      <div class="nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-notification-banner" role="region" aria-labelledby="next-actions-title">
+          <div class="nhsuk-notification-banner__header">
+            <h2 class="nhsuk-notification-banner__title" id="next-actions-title">
+              Personalised recommendations
+            </h2>
+          </div>
+          <div class="nhsuk-notification-banner__content">
+            <ol class="nhsuk-list nhsuk-list--number">
+              <li><strong>Take your next BP reading</strong> - Due in 3 days</li>
+              <li><strong>Check your latest lab results</strong> - U&E test results are available to view</li>
+              <li><strong>Continue taking your medication</strong> - Amlodipine 5mg daily as prescribed</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - MEDICATION REMINDERS -->
+      {{ nhsappSectionHeading({
+        headingText: "Medication reminders"
+      }) }}
+      
+      <div class="nhsuk-u-margin-bottom-4">
+        <div style="background: #ffffff; border: 2px solid #00a499; padding: 16px; border-radius: 8px;">
+          <h4 class="nhsuk-u-margin-bottom-2">Today's medication: <span class="nhsuk-tag nhsuk-tag--green">Taken ✓</span></h4>
+          <p class="nhsuk-u-margin-bottom-2"><strong>Amlodipine 5mg</strong> - Taken at 8:00 AM</p>
+          <p class="nhsuk-u-font-size-14 nhsuk-u-margin-bottom-2">Next dose: Tomorrow at 8:00 AM</p>
+          <p class="nhsuk-u-font-size-14">💡 <strong>Adherence rate:</strong> 94% this month (excellent!)</p>
+        </div>
+      </div>
+
+      <!-- SECTION - HYPERTENSION MANAGEMENT -->
+      {{ nhsappSectionHeading({
+        headingText: "Manage your care"
+      }) }}
+
+      <p>Your care is coordinated by our AI system following NICE guidelines:</p>
       <!-- ONBOARDING NOTICE FOR NEW USERS -->
       {% if data['consent'] != 'yes' %}
       <div class="nhsuk-care-card nhsuk-care-card--immediate">
@@ -111,6 +159,9 @@
         stacked: true,
         cards: [
           {
+            title: "View lab results",
+            href: "/pages/mybp/blood-test/results",
+            description: "Check your latest U&E blood test results and kidney function monitoring."
             title: "Medication review scheduled",
             href: "/pages/mybp/dose-titration/index",
             description: "MyBP has scheduled a medication review based on your recent blood pressure readings. This will be ready for you shortly."
@@ -121,6 +172,14 @@
             description: "Your AI care system has determined you need a blood pressure check using Lifelight™ technology."
           },
           {
+            title: "Report a side-effect",
+            href: "/pages/mybp/side-effects",
+            description: "Report any side effects from your blood pressure medication for safety monitoring."
+          },
+          {
+            title: "Medication information",
+            href: "/pages/mybp/medication-info",
+            description: "View information about your current blood pressure medication and how it works."
             title: "Safety blood test arranged",
             href: "/pages/mybp/blood-test/index",
             description: "Your AI care system has scheduled your U&E (kidney function) safety monitoring blood test."
@@ -268,7 +327,7 @@
 
       <!-- SECTION - RECENT ACTIVITY -->
       {{ nhsappSectionHeading({
-        headingText: "Recent activity"
+        headingText: "Recent activity & progress tracking"
       }) }}
 
       <ul class="nhsuk-list">

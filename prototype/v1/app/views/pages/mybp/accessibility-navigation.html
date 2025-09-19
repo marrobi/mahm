@@ -1,0 +1,109 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Navigation and motor - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to accessibility",
+    href: "/pages/mybp/accessibility-hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Make My BP easier to navigate and control.
+      </p>
+
+      <form action="#" method="post">
+        
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              Touch and navigation
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="large-touch-targets" name="motor" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="large-touch-targets">
+                  <strong>Large touch targets</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Bigger buttons and links for easier selection
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="keyboard-navigation" name="motor" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="keyboard-navigation">
+                  <strong>Enhanced keyboard navigation</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Improved focus indicators and keyboard shortcuts
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="voice-commands" name="motor" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="voice-commands">
+                  <strong>Voice commands</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Control the app using voice instead of touch
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              Cognitive support
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="simplified-navigation" name="cognitive" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="simplified-navigation">
+                  <strong>Simplified navigation</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Clearer menus with fewer options per page
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="extra-reminders" name="cognitive" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="extra-reminders">
+                  <strong>Extra reminders</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    More frequent reminders for appointments and medication
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Save changes</button>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility-hub">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="m0 0h24v24h-24z" fill="none"/>
+              <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+            </svg>
+            <span class="nhsuk-action-link__text">Back to accessibility</span>
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,239 @@
+<!-- Active Interventions -->
+
+<!-- Extends the NHS App layout from /app/views/layout-app.html -->
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Active interventions" %}
+
+<!-- For adding a breadcrumb or back link -->
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to adherence dashboard",
+    href: "/pages/mybp/medication-adherence/dashboard"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Active interventions"
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Your personalized support plan to help improve medication adherence.
+      </p>
+
+      <!-- SECTION - CURRENT SUPPORT PLAN -->
+      {{ nhsappSectionHeading({
+        headingText: "Current support plan"
+      }) }}
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Plan started:</strong> 2 weeks ago. Duration: 8 weeks total (6 weeks remaining)</p>
+      </div>
+
+      <!-- INTERVENTION 1 -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h3 class="nhsuk-summary-card__title">Community Pharmacy Support</h3>
+          <strong class="nhsuk-tag nhsuk-tag--blue">Active</strong>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+              <p>NHS Community Pharmacy Consultation Service providing medication adherence support and guidance.</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><strong>Service:</strong> New Medicine Service (NMS) follow-up</li>
+                <li><strong>Location:</strong> Boots Pharmacy, High Street</li>
+                <li><strong>Contact:</strong> 01234 567890</li>
+                <li><strong>Duration:</strong> 6-week support programme</li>
+              </ul>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <p class="nhsuk-u-secondary-text-colour"><strong>Recent contact:</strong></p>
+              <p><strong>2 weeks ago</strong><br>Pill organiser provided</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERVENTION 2 -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h3 class="nhsuk-summary-card__title">Digital Medication Support</h3>
+          <strong class="nhsuk-tag nhsuk-tag--blue">Active</strong>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <p>NHS App automated medication reminders with personalised timing for identified risk patterns.</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Standard reminders:</strong> Daily at 8:00 AM</li>
+            <li><strong>Weekend support:</strong> Enhanced alerts Saturday and Sunday</li>
+            <li><strong>Backup system:</strong> 10:00 AM reminder if dose not confirmed</li>
+            <li><strong>Recent effectiveness:</strong> 95% response rate to weekend reminders</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- INTERVENTION 3 -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h3 class="nhsuk-summary-card__title">Weekend pill organiser</h3>
+          <strong class="nhsuk-tag nhsuk-tag--green">Implemented</strong>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <p>7-day pill organiser with clear weekend compartments to address weekend non-compliance pattern.</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Provided:</strong> 2 weeks ago during pharmacy consultation</li>
+            <li><strong>Type:</strong> Large compartment weekly organiser</li>
+            <li><strong>Instructions:</strong> Fill every Sunday evening for the week ahead</li>
+            <li><strong>Impact:</strong> Weekend adherence improved from 30% to 60%</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- INTERVENTION 4 -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h3 class="nhsuk-summary-card__title">Family member notification system</h3>
+          <strong class="nhsuk-tag nhsuk-tag--blue">Active</strong>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+              <p>Automated notifications to nominated family member when doses are missed to provide gentle reminders.</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><strong>Contact:</strong> Sarah Wright (daughter)</li>
+                <li><strong>Method:</strong> SMS notifications</li>
+                <li><strong>Trigger:</strong> If dose not confirmed by 10:00 AM</li>
+                <li><strong>Frequency:</strong> Maximum 2 reminders per week</li>
+              </ul>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <p class="nhsuk-u-secondary-text-colour"><strong>Recent activity:</strong></p>
+              <p>3 notifications sent this month<br>All followed by dose confirmation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERVENTION 4 -->
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h3 class="nhsuk-summary-card__title">SMS reminder optimisation</h3>
+          <strong class="nhsuk-tag nhsuk-tag--blue">Active</strong>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <p>Customized reminder schedule with weekend-specific alerts to address identified non-compliance patterns.</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Weekday reminders:</strong> 8:00 AM daily</li>
+            <li><strong>Weekend reminders:</strong> 8:00 AM and 7:00 PM (if morning missed)</li>
+            <li><strong>Backup reminder:</strong> 10:00 AM if dose not confirmed</li>
+            <li><strong>Recent effectiveness:</strong> 95% response rate to weekend reminders</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION - BEHAVIORAL SUPPORT STRATEGIES -->
+      {{ nhsappSectionHeading({
+        headingText: "Behavioral support strategies"
+      }) }}
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Strategy</th>
+              <th class="nhsuk-table__header" scope="col">Implementation</th>
+              <th class="nhsuk-table__header" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Habit linking</td>
+              <td class="nhsuk-table__cell">Take medication with morning coffee</td>
+              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">Working well</strong></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Visual cues</td>
+              <td class="nhsuk-table__cell">Pill organiser next to coffee machine</td>
+              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">Implemented</strong></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Social support</td>
+              <td class="nhsuk-table__cell">Weekend reminders during social activities</td>
+              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--blue">In progress</strong></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Education</td>
+              <td class="nhsuk-table__cell">Educational call on importance of consistent dosing</td>
+              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">Completed</strong></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Side effect review</td>
+              <td class="nhsuk-table__cell">Assessment confirmed no significant medication issues</td>
+              <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">Completed</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION - PROGRESS MONITORING -->
+      {{ nhsappSectionHeading({
+        headingText: "Progress monitoring"
+      }) }}
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Next review:</strong> Continue monitoring for 8 weeks total (6 weeks remaining). GP assessment at completion to evaluate overall response.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>2-week assessment (completed):</strong> Adherence improved from 65% to 85%</li>
+        <li><strong>4-week assessment:</strong> Due 1 November 2024 - BP response evaluation</li>
+        <li><strong>6-week assessment:</strong> Due 15 November 2024 - Intervention effectiveness review</li>
+        <li><strong>8-week completion:</strong> Final assessment 29 November 2024 with care plan adjustment</li>
+      </ul>
+
+      <!-- SECTION - SUPPORT CONTACTS -->
+      {{ nhsappSectionHeading({
+        headingText: "Support contacts"
+      }) }}
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <h4 class="nhsuk-heading-s">Pharmacy support</h4>
+          <p><strong>Boots Pharmacy, High Street</strong><br>
+          Phone: 01234 567890<br>
+          Pharmacist: Mr. James Anderson<br>
+          Available: Mon-Sat 9:00-18:00</p>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <h4 class="nhsuk-heading-s">GP practice</h4>
+          <p><strong>Riverside Medical Centre</strong><br>
+          Phone: 01234 123456<br>
+          Practice nurse: Mrs. Lisa Thompson<br>
+          Available: Mon-Fri 8:00-18:00</p>
+        </div>
+      </div>
+
+      <!-- SECTION - EMERGENCY SUPPORT -->
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            If you have concerns
+          </span>
+        </h3>
+        <p>Contact your GP practice immediately if you experience concerning symptoms like severe ankle swelling, chest pain, or difficulty breathing.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

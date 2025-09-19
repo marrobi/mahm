@@ -1,0 +1,102 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Language and communication - My BP" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to accessibility",
+    href: "/pages/mybp/accessibility-hub"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Choose your language and communication preferences.
+      </p>
+
+      <form action="#" method="post">
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label--l" for="language-select">
+            Preferred language
+          </label>
+          <div class="nhsuk-hint" id="language-hint">
+            My BP is available in multiple languages with full translation services
+          </div>
+          <select class="nhsuk-select" id="language-select" name="language" aria-describedby="language-hint">
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+            <option value="pa">Punjabi</option>
+            <option value="ar">Arabic</option>
+            <option value="pl">Polish</option>
+            <option value="ro">Romanian</option>
+            <option value="tr">Turkish</option>
+            <option value="cy">Welsh</option>
+          </select>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              Communication support
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="easy-read" name="communication" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="easy-read">
+                  <strong>EasyRead format</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Simplified language and clear explanations with pictures
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="bsl-support" name="communication" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="bsl-support">
+                  <strong>British Sign Language (BSL) support</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Access to BSL interpreters for video consultations
+                  </span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="cultural-adaptation" name="communication" type="checkbox">
+                <label class="nhsuk-checkboxes__label" for="cultural-adaptation">
+                  <strong>Culturally-adapted content</strong>
+                  <span class="nhsuk-hint nhsuk-checkboxes__hint">
+                    Information and advice tailored to your cultural background
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Save changes</button>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/pages/mybp/accessibility-hub">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="m0 0h24v24h-24z" fill="none"/>
+              <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+            </svg>
+            <span class="nhsuk-action-link__text">Back to accessibility</span>
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

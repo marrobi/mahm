@@ -1,0 +1,140 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Side effect reported" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/pages/mybp/index",
+        text: "My BP"
+      },
+      {
+        text: "Side effect reported"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation">
+        <h1 class="nhsuk-panel__title">
+          Side effect report submitted
+        </h1>
+        <div class="nhsuk-panel__body">
+          Reference: <strong>SE-2024-1101-001</strong><br>
+          Submitted: 1 November 2024 at 2:30 PM
+        </div>
+      </div>
+
+      <h2>What happens next</h2>
+
+      <div class="nhsuk-grid-row nhsuk-card-group">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">AI system review</h3>
+              <p class="nhsuk-card__description">Our AI safety monitoring system will review your report within 2 hours and assess the severity of the side effects.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">GP notification</h3>
+              <p class="nhsuk-card__description">If needed, your GP will be notified automatically and may contact you within 24 hours to discuss your symptoms.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">Medication review</h3>
+              <p class="nhsuk-card__description">Your medication may be reviewed by our prescribing system to determine if any changes are needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Important:</strong> Continue taking your medication as prescribed unless specifically told to stop by a healthcare professional.</p>
+      </div>
+
+      <h3>Safety information</h3>
+      <div class="nhsuk-warning-callout">
+        <h4 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            If your symptoms get worse
+          </span>
+        </h4>
+        <ul>
+          <li><strong>Severe symptoms:</strong> Call 999 immediately</li>
+          <li><strong>Urgent concerns:</strong> Call your GP practice or NHS 111</li>
+          <li><strong>Out of hours:</strong> Contact NHS 111</li>
+        </ul>
+      </div>
+
+      <h3>Your report summary</h3>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Medication
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Amlodipine 5mg daily
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Reported symptoms
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Ankle swelling, mild dizziness
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Duration
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            About a week
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Severity
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Mild to moderate - not affecting daily activities
+          </dd>
+        </div>
+      </dl>
+
+      <div class="nhsuk-u-margin-top-6">
+        <a href="/pages/mybp/index" class="nhsuk-button">
+          Return to My BP dashboard
+        </a>
+      </div>
+
+      <div class="nhsuk-u-margin-top-4">
+        <h3>Additional resources</h3>
+        <ul class="nhsuk-list">
+          <li><a href="/pages/mybp/medication-info">Learn more about your medication</a></li>
+          <li><a href="/pages/mybp/emergency">Emergency support and contacts</a></li>
+          <li><a href="https://yellowcard.mhra.gov.uk/">Report to the Yellow Card Scheme</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

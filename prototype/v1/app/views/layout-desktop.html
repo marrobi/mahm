@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "My BP GP Analytics" }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .header {
+      background: #0f172a;
+      color: white;
+      padding: 16px 0;
+      border-bottom: 3px solid #005eb8;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      background: #1e293b;
+      color: white;
+    }
+    
+    .main {
+      padding: 32px 0;
+    }
+    
+    .page-header {
+      margin-bottom: 32px;
+    }
+    
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .page-subtitle {
+      color: #64748b;
+      font-size: 18px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid;
+    }
+    
+    .stat-card.primary { border-left-color: #005eb8; }
+    .stat-card.success { border-left-color: #00a499; }
+    .stat-card.warning { border-left-color: #ffb81c; }
+    .stat-card.danger { border-left-color: #d5281b; }
+    
+    .stat-value {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    
+    .stat-sublabel {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .card-header {
+      padding: 24px 24px 0;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 24px;
+    }
+    
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .card-subtitle {
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .card-content {
+      padding: 0 24px 24px;
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .table th {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid #e2e8f0;
+      font-weight: 600;
+      color: #475569;
+      font-size: 14px;
+    }
+    
+    .table td {
+      padding: 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .badge.success { background: #dcfce7; color: #166534; }
+    .badge.warning { background: #fef3c7; color: #92400e; }
+    .badge.danger { background: #fee2e2; color: #991b1b; }
+    .badge.info { background: #dbeafe; color: #1e40af; }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: #00a499;
+      transition: width 0.3s ease;
+    }
+    
+    .sidebar-list {
+      list-style: none;
+    }
+    
+    .sidebar-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    
+    .sidebar-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .metric-label {
+      color: #475569;
+      font-size: 14px;
+    }
+    
+    .metric-value {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1>NHS My BP</h1>
+          <span style="background: #005eb8; padding: 4px 8px; border-radius: 4px; font-size: 12px;">GP Analytics</span>
+        </div>
+        <nav class="nav">
+          <a href="/pages/mybp/gp-dashboard-overview" {% if page == 'overview' %}class="active"{% endif %}>Overview</a>
+          <a href="/pages/mybp/gp-dashboard-patients" {% if page == 'patients' %}class="active"{% endif %}>Patient Management</a>
+          <a href="/pages/mybp/gp-dashboard-analytics" {% if page == 'analytics' %}class="active"{% endif %}>Clinical Analytics</a>
+          <a href="/pages/mybp/gp-dashboard-system" {% if page == 'system' %}class="active"{% endif %}>System Performance</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+</body>
+</html>

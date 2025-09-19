@@ -1,0 +1,161 @@
+<!-- Medication Adherence History -->
+
+<!-- Extends the NHS App layout from /app/views/layout-app.html -->
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Your Medication History" %}
+
+<!-- For adding a breadcrumb or back link -->
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to adherence dashboard",
+    href: "/pages/mybp/medication-adherence/dashboard"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        heading: "Your Medication History"
+      })}}
+
+      <p class="nhsuk-lede-text">
+        Understanding when you miss doses helps identify the best support strategies.
+      </p>
+
+      <!-- SECTION - PATTERN ANALYSIS -->
+      {{ nhsappSectionHeading({
+        headingText: "Pattern analysis"
+      }) }}
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Weekend pattern identified:</strong> You often miss doses on Saturday and Sunday mornings, particularly during social activities and disrupted routines.</p>
+      </div>
+
+      <!-- SECTION - MISSED DOSES CALENDAR -->
+      {{ nhsappSectionHeading({
+        headingText: "Last 30 days - October 2024"
+      }) }}
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table" style="width: 100%; text-align: center;">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Mon</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Tue</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Wed</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Thu</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Fri</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Sat</th>
+              <th class="nhsuk-table__header" scope="col" style="width: 14.28%;">Sun</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="background-color: #f0f4f5; color: #768692;">30</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">1 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">2 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">3 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">4 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #fde8e6;">5 ✗</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">6 ✓</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">7 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">8 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">9 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">10 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">11 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #fde8e6;">12 ✗</td>
+              <td class="nhsuk-table__cell" style="background-color: #fde8e6;">13 ✗</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">14 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">15 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">16 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">17 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">18 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">19 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #fde8e6;">20 ✗</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">21 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">22 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">23 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">24 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">25 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #fde8e6;">26 ✗</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">27 ✓</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">28 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">29 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">30 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #d5e8f3;">31 ✓</td>
+              <td class="nhsuk-table__cell" style="background-color: #f0f4f5; color: #768692;">1</td>
+              <td class="nhsuk-table__cell" style="background-color: #f0f4f5; color: #768692;">2</td>
+              <td class="nhsuk-table__cell" style="background-color: #f0f4f5; color: #768692;">3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nhsuk-grid-row nhsuk-u-margin-top-4">
+        <div class="nhsuk-grid-column-one-half">
+          <div style="display: flex; align-items: center; margin-bottom: 8px;">
+            <div style="width: 20px; height: 20px; background-color: #d5e8f3; margin-right: 8px; border-radius: 3px;"></div>
+            <span>Dose taken ✓</span>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <div style="display: flex; align-items: center; margin-bottom: 8px;">
+            <div style="width: 20px; height: 20px; background-color: #fde8e6; margin-right: 8px; border-radius: 3px;"></div>
+            <span>Dose missed ✗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION - IMPACT ON BLOOD PRESSURE -->
+      {{ nhsappSectionHeading({
+        headingText: "Impact on blood pressure"
+      }) }}
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Missed doses were affecting BP control
+          </span>
+        </h3>
+        <p>Your BP readings had been trending upward despite dose optimisation, which was linked to missed weekend doses. Since interventions started, BP is responding better.</p>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Sept 26:</strong> 140/86 mmHg (missed dose day)</li>
+        <li><strong>Oct 3:</strong> 145/92 mmHg (after missing doses 5th & 6th)</li>
+        <li><strong>Oct 14:</strong> 142/88 mmHg (after missing doses 12th & 13th)</li>
+        <li><strong>Oct 29:</strong> 148/86 mmHg (improving with better adherence)</li>
+      </ul>
+
+      <!-- SECTION - RECOMMENDED ACTIONS -->
+      {{ nhsappSectionHeading({
+        headingText: "Recommended actions"
+      }) }}
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Set weekend alarms:</strong> Phone reminders for Saturday and Sunday at 8:00 AM</li>
+        <li><strong>Prepare for social events:</strong> Take medication before going out</li>
+        <li><strong>Use visual cues:</strong> Keep pill organiser somewhere you'll see it on weekends</li>
+        <li><strong>Track improvements:</strong> Continue monitoring daily to maintain progress</li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

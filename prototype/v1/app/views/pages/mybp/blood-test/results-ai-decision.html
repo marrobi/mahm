@@ -1,0 +1,187 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "U&E blood test results" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Test date"
+          },
+          value: {
+            html: "15 November 2024"
+          }
+        },
+        {
+          key: {
+            text: "My BP system assessment"
+          },
+          value: {
+            html: "My BP has reviewed your results - treatment plan updated following NICE guidelines"
+          }
+        },
+        {
+          key: {
+            text: "Next test due"
+          },
+          value: {
+            html: "29 November 2024 (2 weeks - our system will remind you)"
+          }
+        }
+        ]
+      }) }}
+
+      <div class="nhsuk-notification-banner" role="region" aria-labelledby="notification-banner-title">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="notification-banner-title">
+            Treatment plan updated
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            My BP has reviewed your results
+          </p>
+          <p>Based on your U&E test results, our system has made adjustments to your treatment plan following NICE guidelines. Your GP has been notified.</p>
+        </div>
+      </div>
+
+      <p><a href="#ue-info">What is a U&E blood test?</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-8">
+
+      <h2>Your results</h2>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Creatinine - Slightly elevated -->
+      <h3>Creatinine: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--yellow">125 μmol/L</span></span></h3>
+      <p>The reference range is between 60 to 120 μmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--yellow">Slight increase</span> (was 95 μmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; right: 20%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; right: 15%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 125</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p><strong>This result is slightly above the normal range.</strong> The small increase suggests your kidneys are working harder but function remains adequate. This level allows for safe medication adjustments.</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- Potassium - Normal -->
+      <h3>Potassium: <span class="nhsuk-u-display-block"><span class="nhsuk-tag nhsuk-tag--green">4.2 mmol/L</span></span></h3>
+      <p>The reference range is between 3.5 to 5.0 mmol/L.</p>
+      <div class="nhsuk-u-margin-bottom-3">
+        <strong>Change from baseline:</strong> <span class="nhsuk-tag nhsuk-tag--white">Stable</span> (was 4.1 mmol/L in July 2024)
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+      <div class="nhsuk-grid-row nhsuk-u-margin-bottom-2">
+        <div class="nhsuk-grid-column-full">
+          <div style="background: #f0f4f5; padding: 12px; border-radius: 4px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: #425563;">Low</span>
+              <span style="font-size: 12px; color: #425563;">Normal</span>
+              <span style="font-size: 12px; color: #425563;">High</span>
+            </div>
+            <div style="height: 20px; background: linear-gradient(to right, #d5281b 0%, #d5281b 25%, #00a499 25%, #00a499 75%, #d5281b 75%, #d5281b 100%); border-radius: 4px; position: relative;">
+              <div style="position: absolute; top: -5px; left: 45%; width: 2px; height: 30px; background: #003087;"></div>
+              <div style="position: absolute; top: 25px; left: 40%; font-size: 12px; color: #003087; font-weight: bold;">Your result: 4.2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <h4>What this means</h4>
+      <p>Your potassium level is normal and stable. This allows safe use of ACE inhibitors without risk of dangerous potassium elevation.</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <!-- AI Decision Summary -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            NICE guideline recommendation
+          </h3>
+          <p class="nhsuk-card__description">
+            Based on your test results, our system has recommended <strong>adding Ramipril 2.5mg daily</strong> instead of increasing your current Amlodipine dose.
+          </p>
+          <p class="nhsuk-card__description">
+            This follows NICE guidelines for Step 2 hypertension treatment and is the safest option given your kidney function results.
+          </p>
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="results-ai-decision-details">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm3.707 10.293-3 3a1 1 0 0 1-1.414-1.414l1.586-1.586h-4.879a1 1 0 0 1 0-2h4.879l-1.586-1.586a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">View detailed recommendation and medication plan</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information sections -->
+      <div class="nhsuk-expander-group">
+        <details class="nhsuk-details nhsuk-expander" id="ue-info">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What is a U&E blood test?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>U&E stands for "Urea and Electrolytes". This blood test measures several important chemicals in your blood that help us monitor your kidney function and ensure your blood pressure medications are safe.</p>
+            <ul>
+              <li><strong>Creatinine:</strong> A waste product that your kidneys filter out</li>
+              <li><strong>Potassium:</strong> Essential for heart rhythm and muscle function</li>
+              <li><strong>Sodium:</strong> Important for fluid balance</li>
+              <li><strong>Urea:</strong> Another waste product filtered by kidneys</li>
+            </ul>
+            <p>Regular monitoring ensures your treatment remains safe and effective.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="nhsuk-action-link nhsuk-u-margin-top-4">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="m0 0h24v24h-24z" fill="none"/>
+            <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+          </svg>
+          <span class="nhsuk-action-link__text">Return to My BP dashboard</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,12 +1,23 @@
 {% extends 'layout-app.html' %}
 
 {% set hub = "Your health" %}
-{% set pageHeading = "Report a Side Effect" %}
+{% set pageHeading = "Report a side-effect" %}
 
 {% block beforeContent %}
-  {{ backLink({
-    text: "Back to My BP",
-    href: "/pages/mybp/index"
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/pages/mybp/index",
+        text: "My BP"
+      },
+      {
+        text: "Report a side-effect"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -14,114 +25,139 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-xl">
-        Report a side effect
-      </h1>
+      <h1>Report a side-effect</h1>
 
-      <p class="nhsuk-lede-text">
-        Tell us about any side effects you're experiencing with your current blood pressure medication.
-      </p>
-
-      <div class="nhsuk-warning-callout">
-        <h2 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Urgent symptoms
-          </span>
-        </h2>
-        <p>If you're experiencing severe symptoms like chest pain, difficulty breathing, or severe dizziness, call 999 immediately.</p>
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Reporting side effects helps us keep your medication safe and effective. Your AI care team will review any reported side effects and contact your GP if needed.</p>
       </div>
 
-      <form method="post" action="/pages/mybp/side-effects/submit">
-        
+      <h2>Current medication</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">Amlodipine 5mg</h3>
+          <p class="nhsuk-card__description">
+            <strong>Started:</strong> 15 June 2024<br>
+            <strong>Daily dose:</strong> One tablet in the morning<br>
+            <strong>Purpose:</strong> Blood pressure control
+          </p>
+        </div>
+      </div>
+
+      <form action="/pages/mybp/side-effects-submitted" method="post" novalidate>
+
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-            Current medication
+            <h2 class="nhsuk-fieldset__heading">
+              Are you experiencing any side effects?
+            </h2>
           </legend>
-          
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p><strong>Your current medication:</strong> Amlodipine 5mg daily</p>
-            <p><strong>Started:</strong> 6 weeks ago</p>
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="side-effects-yes" name="side-effects" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="side-effects-yes">
+                Yes, I'm experiencing side effects
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="side-effects-no" name="side-effects" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="side-effects-no">
+                No, I'm not experiencing side effects
+              </label>
+            </div>
           </div>
         </fieldset>
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-            What side effects are you experiencing?
-          </legend>
+        <div class="nhsuk-form-group" id="side-effects-details" style="display: none;">
+          <h3>Tell us about your side effects</h3>
           
           <div class="nhsuk-checkboxes">
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-1" name="side-effects" type="checkbox" value="ankle-swelling">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-1">
+              <input class="nhsuk-checkboxes__input" id="side-effect-swelling" name="side-effects-list" type="checkbox" value="ankle-swelling">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-swelling">
                 Ankle or leg swelling
               </label>
             </div>
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-2" name="side-effects" type="checkbox" value="dizziness">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-2">
-                Dizziness or lightheadedness
+              <input class="nhsuk-checkboxes__input" id="side-effect-dizziness" name="side-effects-list" type="checkbox" value="dizziness">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-dizziness">
+                Dizziness or feeling faint
               </label>
             </div>
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-3" name="side-effects" type="checkbox" value="fatigue">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-3">
-                Feeling tired or weak
-              </label>
-            </div>
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-4" name="side-effects" type="checkbox" value="headache">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-4">
+              <input class="nhsuk-checkboxes__input" id="side-effect-headaches" name="side-effects-list" type="checkbox" value="headaches">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-headaches">
                 Headaches
               </label>
             </div>
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-5" name="side-effects" type="checkbox" value="flushing">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-5">
-                Skin flushing or feeling hot
+              <input class="nhsuk-checkboxes__input" id="side-effect-flushing" name="side-effects-list" type="checkbox" value="flushing">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-flushing">
+                Flushing or feeling hot
               </label>
             </div>
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-6" name="side-effects" type="checkbox" value="nausea">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-6">
-                Nausea or stomach problems
+              <input class="nhsuk-checkboxes__input" id="side-effect-tiredness" name="side-effects-list" type="checkbox" value="tiredness">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-tiredness">
+                Unusual tiredness
               </label>
             </div>
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="side-effect-7" name="side-effects" type="checkbox" value="other">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-7">
+              <input class="nhsuk-checkboxes__input" id="side-effect-other" name="side-effects-list" type="checkbox" value="other">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="side-effect-other">
                 Other symptoms
               </label>
             </div>
           </div>
-        </fieldset>
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="severity">
-            How severe are these side effects?
-          </label>
-          <select class="nhsuk-select" id="severity" name="severity">
-            <option value="">Select severity</option>
-            <option value="mild">Mild - Not affecting daily activities</option>
-            <option value="moderate">Moderate - Some impact on daily activities</option>
-            <option value="severe">Severe - Significantly affecting daily activities</option>
-          </select>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="details">
-            Additional details (optional)
-          </label>
-          <div class="nhsuk-hint" id="details-hint">
-            Tell us more about when the symptoms occur or any other relevant information.
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="side-effects-description">
+              <strong>Please describe your symptoms</strong>
+            </label>
+            <div class="nhsuk-hint" id="side-effects-description-hint">
+              Include when they started, how severe they are, and how they affect your daily life.
+            </div>
+            <textarea class="nhsuk-textarea" id="side-effects-description" name="side-effects-description" rows="4" aria-describedby="side-effects-description-hint"></textarea>
           </div>
-          <textarea class="nhsuk-textarea" id="details" name="details" rows="4" aria-describedby="details-hint"></textarea>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend">
+                <strong>How long have you been experiencing these symptoms?</strong>
+              </legend>
+              <div class="nhsuk-radios nhsuk-radios--small">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duration-days" name="symptoms-duration" type="radio" value="1-3-days">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duration-days">
+                    1-3 days
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duration-week" name="symptoms-duration" type="radio" value="1-week">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duration-week">
+                    About a week
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duration-weeks" name="symptoms-duration" type="radio" value="2-weeks">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duration-weeks">
+                    2 weeks or more
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
 
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p><strong>What happens next:</strong> My BP will review your report immediately. If any urgent action is needed, your GP will be contacted within 2 hours.</p>
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Serious side effects
+            </span>
+          </h3>
+          <p>If you experience chest pain, difficulty breathing, severe swelling, or allergic reactions, stop taking your medication and call 999 immediately.</p>
         </div>
 
         <button class="nhsuk-button" type="submit">
@@ -130,6 +166,32 @@
 
       </form>
 
+      <div class="nhsuk-u-margin-top-6">
+        <h3>Need help?</h3>
+        <ul class="nhsuk-list">
+          <li><strong>Urgent concerns:</strong> Call your GP practice or NHS 111</li>
+          <li><strong>General questions:</strong> Speak to your pharmacist</li>
+          <li><strong>Official reporting:</strong> <a href="https://yellowcard.mhra.gov.uk/">Yellow Card Scheme</a></li>
+        </ul>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    // Show/hide side effects details based on radio selection
+    const radioButtons = document.querySelectorAll('input[name="side-effects"]');
+    const detailsSection = document.getElementById('side-effects-details');
+    
+    radioButtons.forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        if (this.value === 'yes') {
+          detailsSection.style.display = 'block';
+        } else {
+          detailsSection.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
 {% endblock %}

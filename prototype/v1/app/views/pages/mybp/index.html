@@ -148,6 +148,11 @@
         </div>
       </div>
 
+      {{ nhsappSectionHeading({
+        headingText: "What you can do"
+      }) }}
+
+      <p>Here's how you can support your blood pressure management:</p>
       <!-- SECTION - AI RECOMMENDED NEXT STEPS -->
       {{ nhsappSectionHeading({
         headingText: "Your recommended next steps"
@@ -159,6 +164,12 @@
         stacked: true,
         cards: [
           {
+            title: "View your BP readings",
+            href: "/pages/mybp/dashboard",
+            description: "See your blood pressure trends and progress over time with visual charts."
+          },
+          {
+            title: "Submit a BP reading",
             title: "Medication adherence dashboard",
             href: "/pages/mybp/medication-adherence/dashboard",
             description: "View your medication taking patterns and get personalized support to improve adherence."
@@ -166,10 +177,12 @@
           {
             title: "Report a side effect",
             href: "/pages/mybp/dose-titration/index",
-            description: "Report any side effects you're experiencing with your current blood pressure medication."
+            description: "Report any side effects you're experiencing with your current blood pressure medication."       },
+          {
             title: "View lab results",
             href: "/pages/mybp/blood-test/results",
-            description: "Check your latest U&E blood test results and kidney function monitoring."
+            description: "Check your latest U&E blood test results and kidney function monitoring."       },
+          {
             title: "Medication review scheduled",
             href: "/pages/mybp/dose-titration/index",
             description: "MyBP has scheduled a medication review based on your recent blood pressure readings. This will be ready for you shortly."
@@ -180,6 +193,15 @@
             description: "Your AI care system has determined you need a blood pressure check using Lifelight™ technology."
           },
           {
+            title: "Report a side effect",
+            href: "/pages/mybp/side-effects",
+            description: "Tell us about any side effects you're experiencing with your current medication."
+          },
+          {
+            title: "Ask a question",
+            href: "/pages/mybp/shared-decision/chatbot",
+            description: "Get answers about your blood pressure, medications, or treatment from our AI assistant."       },
+          {
             title: "Report a side-effect",
             href: "/pages/mybp/side-effects",
             description: "Report any side effects from your blood pressure medication for safety monitoring."
@@ -187,7 +209,8 @@
           {
             title: "Medication information",
             href: "/pages/mybp/medication-info",
-            description: "View information about your current blood pressure medication and how it works."
+            description: "View information about your current blood pressure medication and how it works."       },
+          {
             title: "Safety blood test arranged",
             href: "/pages/mybp/blood-test/index",
             description: "Your AI care system has scheduled your U&E (kidney function) safety monitoring blood test."

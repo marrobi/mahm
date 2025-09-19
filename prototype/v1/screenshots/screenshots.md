@@ -165,7 +165,7 @@ This dashboard now aligns with NHS design principles and the MVP requirements, p
 
 ---
 
-## Blood Test Journey (5 screens)
+## Key Features of Multiagentic System
 
 ### 1. Test Overview
 ![Blood Test Overview](blood-test-overview.png)

@@ -1,0 +1,134 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  MAHM GP Dashboard - Professional Tools
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to Professional Tools",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        MAHM GP Dashboard - Professional Tools
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Multi-Agentic Hypertension Management - Healthcare professional dashboard suite
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Professional Interface:</strong> These tools are designed for healthcare professionals and accessed via desktop/tablet browsers, separate from the patient-facing NHS App.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-l">Available dashboards</h2>
+
+      <div class="nhsuk-card-group">
+        <div class="nhsuk-card-group__item nhsuk-grid-column-full">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                              <a class="nhsuk-card__link" href="/professional/gp-dashboard">
+                Practice Analytics Dashboard
+              </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                Main dashboard with practice-level hypertension management analytics, health inequality monitoring, and AI system performance metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card-group__item nhsuk-grid-column-one-half">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/professional/gp-dashboard-analytics">
+                  Advanced Analytics
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                Detailed analytics and reporting tools for practice performance metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card-group__item nhsuk-grid-column-one-half">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/professional/gp-dashboard-patients">
+                  Patient Management
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                Individual patient drill-down and population management tools.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card-group__item nhsuk-grid-column-one-half">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/professional/gp-dashboard-overview">
+                  Practice Overview
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                High-level practice summary and key performance indicators.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-card-group__item nhsuk-grid-column-one-half">
+          <div class="nhsuk-card__clickable">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                <a class="nhsuk-card__link" href="/professional/gp-dashboard-system">
+                  System Status
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                AI system status, integration health, and technical monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">About MAHM</h2>
+      
+      <p>The Multi-Agentic Hypertension Management (MAHM) system is a demonstration of AI-supported healthcare delivery for blood pressure management. This professional dashboard provides healthcare teams with:</p>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Practice-level analytics and reporting</li>
+        <li>Health inequality monitoring and intervention tracking</li>
+        <li>AI system performance and safety monitoring</li>
+        <li>Individual patient management and drill-down capabilities</li>
+        <li>EHR integration status and data flow monitoring</li>
+      </ul>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Demo system
+          </span>
+        </h3>
+        <p>This is a demonstration system using simulated data only. Not for clinical use.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

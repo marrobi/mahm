@@ -1,0 +1,184 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "BP Surveillance Dashboard" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to Home",
+    href: "/pages/home-p9"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        Blood pressure surveillance & monitoring
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Regular blood pressure monitoring following NICE guidelines and NHS Health Check recommendations.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>✨ Surveillance monitoring:</strong> We help you track your blood pressure over time according to NHS guidelines. This includes regular monitoring whether you have Apple Watch readings, home measurements, or need scheduled NHS Health Checks.</p>
+      </div>
+
+      <!-- Current Status -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Your monitoring status
+          </h2>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+                <div style="font-size: 28px; font-weight: bold; color: #005eb8; margin-bottom: 8px;">Normal</div>
+                <div style="font-size: 14px; color: #425563;">Current status</div>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+                <div style="font-size: 28px; font-weight: bold; color: #005eb8; margin-bottom: 8px;">132/84</div>
+                <div style="font-size: 14px; color: #425563;">Latest reading</div>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div style="text-align: center; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+                <div style="font-size: 28px; font-weight: bold; color: #005eb8; margin-bottom: 8px;">5</div>
+                <div style="font-size: 14px; color: #425563;">Readings this month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample BP Chart Area -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Recent readings (Last 30 days)
+          </h2>
+          <div style="background: #f0f4f5; padding: 20px; min-height: 200px;">
+            <div style="display: flex; justify-content: space-between; align-items: end; height: 160px; border-bottom: 2px solid #768692; border-left: 2px solid #768692; padding: 0 10px 10px 0; position: relative;">
+              <!-- Normal range background -->
+              <div style="position: absolute; bottom: 45px; left: 0; right: 10px; height: 50px; background: rgba(0, 112, 60, 0.1); border: 1px dashed #00703c;"></div>
+              <div style="position: absolute; bottom: 100px; left: 5px; font-size: 12px; color: #00703c; font-weight: bold;">Normal Range</div>
+              <div style="position: absolute; bottom: 87px; left: 5px; font-size: 10px; color: #00703c;">(120-140 mmHg)</div>
+              
+              <!-- Chart bars -->
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 30px; height: 80px; background: #00703c; margin-bottom: 10px;"></div>
+                <small style="font-size: 11px; text-align: center; line-height: 1.2;">2 wks<br/>ago</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 30px; height: 75px; background: #00703c; margin-bottom: 10px;"></div>
+                <small style="font-size: 11px; text-align: center; line-height: 1.2;">1 wk<br/>ago</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 30px; height: 85px; background: #00703c; margin-bottom: 10px;"></div>
+                <small style="font-size: 11px; text-align: center; line-height: 1.2;">3 days<br/>ago</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 30px; height: 82px; background: #00703c; margin-bottom: 10px;"></div>
+                <small style="font-size: 11px; text-align: center; line-height: 1.2;">Today</small>
+              </div>
+              
+              <!-- Y-axis labels -->
+              <div style="position: absolute; left: -30px; bottom: 130px; font-size: 10px; color: #768692;">160</div>
+              <div style="position: absolute; left: -30px; bottom: 90px; font-size: 10px; color: #768692;">140</div>
+              <div style="position: absolute; left: -30px; bottom: 50px; font-size: 10px; color: #768692;">120</div>
+              <div style="position: absolute; left: -30px; bottom: 10px; font-size: 10px; color: #768692;">100</div>
+            </div>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px;"><strong>Your Blood Pressure Trends</strong><br/>
+            Systolic pressure - all readings within normal range</p>
+          </div>
+          
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-top-4">Latest readings</h3>
+          <ul class="nhsuk-list">
+            <li><strong>Today:</strong> 132/84 mmHg - <span style="color: #00703c;">Normal</span> (Apple Watch)</li>
+            <li><strong>3 days ago:</strong> 128/82 mmHg - <span style="color: #00703c;">Normal</span> (Home monitor)</li>
+            <li><strong>1 week ago:</strong> 135/85 mmHg - <span style="color: #00703c;">Normal</span> (Pharmacy check)</li>
+            <li><strong>2 weeks ago:</strong> 130/83 mmHg - <span style="color: #00703c;">Normal</span> (GP surgery)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Surveillance Schedule -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Your monitoring schedule (NICE guidelines)
+          </h2>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-s">Regular monitoring</h3>
+              <ul class="nhsuk-list">
+                <li><strong>Current frequency:</strong> Monthly checks</li>
+                <li><strong>Apple Watch:</strong> Daily readings available</li>
+                <li><strong>Home monitoring:</strong> Weekly recommended</li>
+                <li><strong>Professional checks:</strong> Every 3 months</li>
+              </ul>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <h3 class="nhsuk-heading-s">NHS Health Checks</h3>
+              <ul class="nhsuk-list">
+                <li><strong>Last check:</strong> April 2025</li>
+                <li><strong>Next due:</strong> April 2026</li>
+                <li><strong>Frequency:</strong> Every 5 years (ages 40-74)</li>
+                <li><strong>Includes:</strong> BP, cholesterol, diabetes screening</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="/pages/mybp/bp-measurement/index">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="m0 0h24v24h-24z" fill="none"/>
+                <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
+              </svg>
+              <span class="nhsuk-action-link__text">Take a blood pressure reading now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Analysis -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            ✨ Surveillance insights
+          </h2>
+          <p><strong>Trend analysis:</strong> Your blood pressure readings consistently show normal values over the past 6 months.</p>
+          <p><strong>Risk assessment:</strong> Based on your readings and risk factors, you remain at low risk for developing hypertension.</p>
+          <p><strong>Recommendations:</strong> Continue regular monitoring and maintain healthy lifestyle habits.</p>
+          <p><strong>Next review:</strong> We'll automatically notify you when your next NHS Health Check is due.</p>
+        </div>
+      </div>
+
+      <!-- Digital Integration Info -->
+      <div class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Connected devices and data sources
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Your surveillance monitoring integrates with:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Apple Watch</strong> - Daily readings automatically synced</li>
+            <li><strong>Home BP monitors</strong> - Manual entry via NHS App</li>
+            <li><strong>Pharmacy checks</strong> - Direct integration with participating pharmacies</li>
+            <li><strong>GP surgery</strong> - Readings shared with your healthcare record</li>
+            <li><strong>NHS Health Checks</strong> - Automatic scheduling and reminders</li>
+          </ul>
+          <p>All data follows NHS Digital standards and GDPR compliance.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

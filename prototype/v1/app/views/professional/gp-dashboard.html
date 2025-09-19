@@ -1,23 +1,12 @@
-{% extends 'layout-app.html' %}
-
-{% set hub = "Professional tools" %}
-{% set pageHeading = "GP Practice Analytics Dashboard" %}
-
-{% block beforeContent %}
-  {{ backLink({
-    text: "Back to Professional Tools",
-    href: "/"
-  }) }}
-{% endblock %}
+{% extends 'layout-desktop.html' %}
+{% set page = 'main' %}
+{% set title = 'GP Practice Analytics Dashboard - MAHM' %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-
-      {{ dynamicPageTitle({
-        title: pageHeading,
-        titleSecondary: true
-      })}}
+  <div class="page-header">
+    <h1 class="page-title">GP Practice Analytics Dashboard</h1>
+    <p class="page-subtitle">Practice-level hypertension management analytics with health inequality monitoring</p>
+  </div>
 
       <p class="nhsuk-lede-text">
         Practice-level hypertension management analytics with health inequality monitoring.
@@ -35,9 +24,7 @@
       </div>
 
       <!-- SECTION - PRACTICE OVERVIEW -->
-      {{ nhsappSectionHeading({
-        headingText: "Practice-wide NICE guidelines adherence"
-      }) }}
+      <h2 class="nhsuk-heading-l">Practice-wide NICE guidelines adherence</h2>
       
       <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
         <div class="nhsuk-grid-column-one-third">
@@ -64,9 +51,7 @@
       </div>
 
       <!-- SECTION - HEALTH INEQUALITY MONITORING -->
-      {{ nhsappSectionHeading({
-        headingText: "Health inequality monitoring"
-      }) }}
+      <h2 class="nhsuk-heading-l">Health inequality monitoring</h2>
       
       <div class="nhsuk-notification-banner" role="region" aria-labelledby="inequality-banner-title">
         <div class="nhsuk-notification-banner__header">
@@ -132,9 +117,7 @@
       </table>
 
       <!-- SECTION - AGENT PERFORMANCE -->
-      {{ nhsappSectionHeading({
-        headingText: "Multi-agent system performance"
-      }) }}
+      <h2 class="nhsuk-heading-l">Multi-agent system performance</h2>
       
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-one-half">
@@ -158,9 +141,7 @@
       </div>
 
       <!-- SECTION - WORKLOAD REDUCTION -->
-      {{ nhsappSectionHeading({
-        headingText: "Practice workload impact"
-      }) }}
+      <h2 class="nhsuk-heading-l">Practice workload impact</h2>
       
       <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
         <div class="nhsuk-care-card__heading-container">
@@ -180,9 +161,7 @@
       </div>
 
       <!-- SECTION - EHR INTEGRATION STATUS -->
-      {{ nhsappSectionHeading({
-        headingText: "EHR integration status"
-      }) }}
+      <h2 class="nhsuk-heading-l">EHR integration status</h2>
       
       <table class="nhsuk-table">
         <caption class="nhsuk-table__caption">System connectivity status</caption>
@@ -223,12 +202,12 @@
       </table>
 
       <div class="nhsuk-action-link">
-        <a class="nhsuk-action-link__link" href="/">
+        <a class="nhsuk-action-link__link" href="/professional/">
           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
             <path d="m0 0h24v24h-24z" fill="none"/>
             <path d="m12 2a10 10 0 1 0 10 10 10.011 10.011 0 0 0 -10-10zm5.293 11.293-3.293 3.293v-8.586l3.293 3.293a1 1 0 0 1 0 1.414z"/>
           </svg>
-          <span class="nhsuk-action-link__text">Return to professional tools</span>
+          <span class="nhsuk-action-link__text">Return to GP dashboard hub</span>
         </a>
       </div>
 

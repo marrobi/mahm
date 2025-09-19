@@ -1,0 +1,141 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Urgent Blood Pressure Check" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-care-card nhsuk-care-card--urgent">
+        <div class="nhsuk-care-card__heading-container">
+          <h2 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Urgent">⚠️</span>
+            High Blood Pressure Alert
+          </h2>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <p>Your recent blood pressure reading of <strong>195/115 mmHg</strong> is very high and requires immediate attention.</p>
+        </div>
+      </div>
+
+      <h1 class="nhsuk-heading-xl">
+        Do you have any of these symptoms?
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Please tell us if you're experiencing any of the following symptoms right now.
+      </p>
+
+      <form action="/pages/mybp/red-flag-emergency/immediate-action" method="post">
+        
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Check all symptoms you are experiencing now:
+          </legend>
+
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="severe-headache" name="symptoms" type="checkbox" value="severe-headache">
+              <label class="nhsuk-checkboxes__label" for="severe-headache">
+                <strong>Severe headache</strong> (worse than usual)
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="vision-problems" name="symptoms" type="checkbox" value="vision-problems">
+              <label class="nhsuk-checkboxes__label" for="vision-problems">
+                <strong>Vision problems</strong> (blurred vision, seeing spots, or vision loss)
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="chest-pain" name="symptoms" type="checkbox" value="chest-pain">
+              <label class="nhsuk-checkboxes__label" for="chest-pain">
+                <strong>Chest pain</strong> or tightness
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="breathing-difficulty" name="symptoms" type="checkbox" value="breathing-difficulty">
+              <label class="nhsuk-checkboxes__label" for="breathing-difficulty">
+                <strong>Difficulty breathing</strong> or shortness of breath
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="nausea-vomiting" name="symptoms" type="checkbox" value="nausea-vomiting">
+              <label class="nhsuk-checkboxes__label" for="nausea-vomiting">
+                <strong>Nausea or vomiting</strong>
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="confusion" name="symptoms" type="checkbox" value="confusion">
+              <label class="nhsuk-checkboxes__label" for="confusion">
+                <strong>Confusion</strong> or feeling unusually unwell
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="severe-anxiety" name="symptoms" type="checkbox" value="severe-anxiety">
+              <label class="nhsuk-checkboxes__label" for="severe-anxiety">
+                <strong>Severe anxiety</strong> or feeling of impending doom
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="pregnancy" name="symptoms" type="checkbox" value="pregnancy">
+              <label class="nhsuk-checkboxes__label" for="pregnancy">
+                <strong>I am pregnant</strong> (high BP in pregnancy requires immediate specialist care)
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="no-symptoms" name="symptoms" type="checkbox" value="no-symptoms">
+              <label class="nhsuk-checkboxes__label" for="no-symptoms">
+                <strong>No symptoms</strong> - I feel fine
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue to safety advice
+          </button>
+        </div>
+
+      </form>
+
+      <div class="nhsuk-care-card nhsuk-care-card--immediate">
+        <div class="nhsuk-care-card__heading-container">
+          <h3 class="nhsuk-care-card__heading">
+            <span role="img" aria-label="Immediate">🚨</span>
+            Call 999 immediately if:
+          </h3>
+        </div>
+        <div class="nhsuk-care-card__content">
+          <ul class="nhsuk-list">
+            <li>You have severe chest pain or difficulty breathing</li>
+            <li>You have sudden vision loss</li>
+            <li>You are pregnant with high blood pressure</li>
+          </ul>
+          <p>
+            <a href="tel:999" class="nhsuk-button nhsuk-button--reverse">
+              Call 999 now
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

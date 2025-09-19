@@ -1,0 +1,72 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Red Flag Emergency Flow" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to My BP",
+    href: "/pages/mybp/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Red Flag Emergency Flow
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Emergency blood pressure management workflow for urgent safety escalation.
+      </p>
+
+      <h2 class="nhsuk-heading-m">Emergency Flow Screens</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "1. Symptom Confirmation",
+            href: "/pages/mybp/red-flag-emergency/symptom-confirmation",
+            description: "Initial screening for symptoms accompanying high blood pressure reading."
+          },
+          {
+            title: "2. Immediate Action Guidance",
+            href: "/pages/mybp/red-flag-emergency/immediate-action",
+            description: "Safety instructions and immediate actions for patient to take."
+          },
+          {
+            title: "3. Escalation Status",
+            href: "/pages/mybp/red-flag-emergency/escalation-status",
+            description: "Real-time status of GP notification and care arrangement."
+          },
+          {
+            title: "4. Emergency Contacts",
+            href: "/pages/mybp/red-flag-emergency/emergency-contacts",
+            description: "Important phone numbers and emergency contact information."
+          }
+        ]
+      }) }}
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Red Flag Criteria:</strong> BP ≥180/110 mmHg with symptoms, signs of end-organ damage, severe medication non-compliance >14 days, pregnancy with elevated BP, or patient-reported chest pain/breathlessness.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Key Features</h2>
+      
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Immediate symptom assessment and triage</li>
+        <li>Clear safety instructions following NICE guidelines</li>
+        <li>Automatic GP practice notification</li>
+        <li>Real-time escalation status tracking</li>
+        <li>Emergency contact management</li>
+        <li>Direct 999 calling capability</li>
+        <li>Timeline-based care coordination</li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

@@ -2,46 +2,93 @@
 
 Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
 
+# My BP NHS App Prototype Screenshots
+
+Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and Red Flag Emergency Action Flow.
+
 ## Core Dashboard and Patient Journeys
 
 ### Main Dashboard  
-![Main Dashboard](bp-main-dashboard-iphone.png)
-**Main Dashboard** - Updated AI-orchestrated landing page showing recommended next steps determined by the multiagentic system: medication review, BP measurement with Lifelight™, blood test scheduling, ABPM results review, and diagnostic pathway tracking.
-
-![Updated Main Dashboard with Lab Results](mybp-main-dashboard-updated.png)
-**Updated Main Dashboard with Lab Results** - Enhanced dashboard now featuring "View lab results" as the first option with recent activity section showing latest lab result status.
-
-![Enhanced Main Dashboard with MVP Features](mybp-enhanced-dashboard.png)
-**Enhanced Main Dashboard with MVP Features** - Comprehensive dashboard implementation based on MVP documentation featuring:
-- Emergency "Get Help Now" button with Red Flag Agent support
-- BP trends visualization with traffic light color coding
-- Personalized next actions and recommendations
-- Medication reminders with adherence tracking
-- Patient category identification (Category A: Known Hypertension)
-- Progress tracking for lifestyle goals and clinical metrics
-- Accessibility options for inclusive design
-- Multi-agent system coordination indicators
-
-![Updated Main Dashboard with Side Effects Reporting](updated-mybp-dashboard-with-side-effects.png)
-**Updated Main Dashboard with Side Effects Reporting** - Latest dashboard version addressing all clinical feedback:
-- Replaced red emergency "Get Help Now" button with appropriate secondary styling
-- Removed patient-facing medication review and booking options (handled by orchestrator)
-- Added "Report a side-effect" option as requested for patient safety monitoring
-- Eliminated "Category A" patient terminology from public interface
-- Updated to British spellings ("Personalised" not "Personalized")
-- Focus on patient actions: BP measurements, viewing results, medication adherence, and safety reporting
-- Clear care pathway description without technical categories
-
-![Main Dashboard with Adherence](medication-adherence-main-dashboard.png)
-**Main Dashboard with Medication Adherence** - Updated landing page featuring AI-supported care with orchestrator-controlled medication management. Users view support plans and details but cannot directly adjust medications - this is managed by the multi-agentic system.
+![Main Dashboard](red-flag-dashboard.png)
+**Emergency Dashboard** - Care plan showing automatically arranged care based on clinical guidelines. During emergency situations, only essential emergency actions are displayed with clear guidance to call 999 or go to A&E.
 
 ---
 
-## Medication Adherence Journey (3 screens)
+## Red Flag Emergency Action Flow (5 screens)
 
-### 1. Adherence Dashboard
-![Medication Adherence Dashboard](medication-adherence-dashboard.png)
-**Medication Adherence Dashboard** - Main dashboard showing 85% adherence rate with visual progress bar, recent improvements, and quick action options for viewing patterns and interventions.
+### 1. Emergency Dashboard
+![Red Flag Dashboard](red-flag-dashboard.png)
+**Red Flag Emergency Dashboard** - When high BP with symptoms detected (195/115 mmHg), system shows only emergency information with direct link to emergency protocol. All other actions hidden during emergency.
+
+### 2. Symptom Confirmation  
+![Symptom Confirmation](red-flag-symptom-confirmation.png)
+**Emergency Symptom Assessment** - Comprehensive symptom checklist including pregnancy considerations, chest pain, vision problems, and other emergency indicators following NICE guidelines.
+
+### 3. Immediate Action Guidance
+![Immediate Action](red-flag-immediate-action.png)
+**Emergency Action Instructions** - Clear do's and don'ts while waiting for emergency help. Primary action is "Call 999 now" with safety guidance and automatic GP notification.
+
+### 4. Escalation Status
+![Escalation Status](red-flag-escalation-status.png)
+**Emergency Care Status** - Simple status showing "Go to A&E or call 999" with confirmation that GP practice has been automatically notified. No over-promising of coordination.
+
+### 5. Emergency Contacts
+![Emergency Contacts](red-flag-emergency-contacts.png)
+**Emergency Contact Information** - Contextual emergency contacts showing 999 and A&E details only. No NHS 111 for true emergencies. Clean design with proper NHS style compliance.
+
+---
+
+## Medication Dose Titration Journey (3 screens)
+
+### 1. Landing Page
+![Dose Titration Landing](dose-titration-landing.png)
+**Automatically Scheduled Medication Review** - Shows that we have automatically scheduled this review based on your blood pressure remaining high and may need dose adjustment, following clinical guidelines.
+
+### 2. Blood Pressure Measurement Journey
+![BP Measurement Intro](bp-measurement-intro.png)
+**Submit Additional Blood Pressure Reading** - Patient-friendly interface allowing submission of additional BP readings. Features Lifelight™ technology with proper trademark, "we" language throughout, and removed preparation instructions (moved to relevant sub-pages).
+
+### 3. Blood Test Journey  
+![Blood Test Overview](blood-test-overview.png)
+**U&E Blood Test Scheduled** - Shows "we have scheduled" language, clarifies user can choose precise appointment time for week commencing 14 November, and removes unnecessary medication list requirement for U&E tests.
+
+---
+
+## Patient-Friendly Language Implementation
+
+All technical terminology has been replaced with language patients can understand:
+
+### Key Language Changes
+- **"Your care system has"** → **"We have"** (patient-friendly first-person language)
+- **"NHS Hypertension Care Orchestrator"** → **"Your care system"** / **"We"** 
+- **"Clinical algorithm"** → **"Your care system"** (removes technical terms)
+- **"CG127 protocols"** → **"Clinical guidelines"** (removes technical protocol references)
+- **"Orchestrator-scheduled"** → **"Automatically scheduled"** (clear language patients understand)
+
+### Emergency Flow Improvements
+- **NHS Style Compliance**: Fixed capitalization from "Call 999 NOW" to "Call 999 now"
+- **Color Consistency**: Proper NHS design system standards without conflicting visual elements
+- **Emergency Priority**: Dashboard shows only emergency actions when emergency detected
+- **Clear Instructions**: Single, clear emergency pathway without over-promising NHS coordination
+
+### Blood Test Enhancements
+- **Removed** unnecessary requirement to "bring a list of all medications" for U&E blood tests
+- **Added** user choice for appointment booking with "Choose your appointment time" 
+- **Simplified** preparation instructions to essential items only
+- **Enhanced** patient understanding with clearer explanations
+
+### BP Measurement Improvements
+- **Updated** heading to full "Submit an additional blood pressure reading"
+- **Added** Lifelight™ trademark symbol consistently
+- **Replaced** all "your care system" references with "we"/"us"
+- **Removed** detailed preparation instructions from intro page (moved to relevant sub-pages)
+
+### Emergency Dashboard Optimization
+- **Simplified** to show only emergency alert and essential actions during emergency
+- **Removed** medication dose review and additional actions sections when emergency is detected
+- **Focused** user attention on immediate required actions (call 999/go to A&E)
+
+The system now uses consistent, patient-friendly language throughout while maintaining clinical accuracy and NHS design system compliance.
 
 ### 2. Your Medication History
 ![Medication Adherence History](medication-adherence-history.png)
@@ -145,7 +192,7 @@ This dashboard now aligns with NHS design principles and the MVP requirements, p
 
 ### 1. Introduction
 ![BP Measurement Intro](bp-measurement-intro.png)
-**Lifelight Technology Introduction** - Comprehensive overview of contactless BP measurement, process explanation, and preparation tips.
+**Patient-Initiated Additional Readings** - Clear explanation that while your care system determines when readings are clinically required, patients can submit additional readings anytime to help your care system make more informed care decisions.
 
 ### 2. Location Selection
 ![BP Measurement Locations](bp-measurement-locations.png)
@@ -169,7 +216,7 @@ This dashboard now aligns with NHS design principles and the MVP requirements, p
 
 ### 1. Test Overview
 ![Blood Test Overview](blood-test-overview.png)
-**U&E Test Overview** - Explanation of why the test is needed, test details, and preparation information.
+**Automatically Scheduled Blood Test** - Shows that your care system has automatically scheduled a U&E blood test following NICE guidelines after medication dose increase. Emphasizes this is automatically determined care, not patient choice.
 
 ### 2. Educational Information
 ![Blood Test Information](blood-test-information.png)
@@ -189,49 +236,25 @@ This dashboard now aligns with NHS design principles and the MVP requirements, p
 
 ---
 
-## Lifestyle & Behaviour Change Hub (5 screens) - iPhone Optimized & MVP Aligned
+## Key Features Demonstrated
 
-### 1. Lifestyle Hub Dashboard (iPhone Optimized)
-![Lifestyle Hub Dashboard](lifestyle-hub-dashboard-iphone-optimized.png)
-**Lifestyle Hub Dashboard - iPhone Optimized & MVP Aligned** - Properly rendered at iPhone dimensions (393x852px) with enhanced clinical safety as the top priority featuring NHS emergency guidance, clear programme status showing "Currently attending" vs "Starting soon" with improved terminology to address user feedback, evidence-based NHS service integration with "NHS Healthier You" and NHS Exercise Referral programmes, AI system coordination notices, and NICE guideline-aligned goal tracking with clinical rationale.
-
-### 2. Weight Management Goal Tracking (iPhone Optimized)  
-![Weight Management Goal](weight-management-goal-iphone-optimized.png)
-**Weight Management Goal Tracking - iPhone Optimized** - Properly rendered for iPhone with improved mobile responsiveness, clinical context banner with NICE CG127 references, AI monitoring integration showing GP coordination, and NHS service referral options including free dietitian consultations and exercise programmes. All text properly displayed at mobile resolution.
-
-### 3. Physical Activity Goal Tracking (iPhone Optimized)
-![Physical Activity Goal](physical-activity-goal-iphone-optimized.png)
-**Physical Activity Goal Tracking - iPhone Optimized** - Mobile-optimized layout with NICE-compliant 150-minute weekly targets, 7-day streak counters, achievement badges, and culturally-appropriate exercise suggestions including traditional dance and community activities. Properly responsive design elements.
-
-### 4. Salt & Alcohol Monitoring (iPhone Optimized)
-![Salt & Alcohol Monitoring](salt-alcohol-monitoring-iphone-optimized.png)
-**Salt & Alcohol Monitoring - iPhone Optimized** - Dual-tab interface properly rendered for iPhone with NHS guideline-aligned targets (<6g salt daily, alcohol within NHS guidelines), progress trends, and educational resources. Fixed British English spelling throughout (flavouring not flavoring).
-
-### 5. Content Browser with Cultural Filtering (iPhone Optimized)
-![Content Browser](content-browser-iphone-optimized.png)
-**Content Browser - iPhone Optimized & Culturally Sensitive** - Properly rendered mobile layout featuring NHS-verified content from "Million Hearts and Minds" programme, improved cultural filtering using "community" rather than "culture" terminology, evidence-based programme content, and comprehensive accessibility features. Enhanced mobile responsiveness with properly aligned elements and fixed rendering issues.
-
----
-
-## Key Features Implemented
-
-**Core ABPM & Diagnostic Pathway Features:**
-- **MVP Document Compliance**: Full implementation of Category C patient workflow per MVP specifications
-- **NICE Guidelines Adherence**: Strict compliance with NICE CG127 hypertension management protocols
-- **GP Approval Workflow**: Mandatory GP approval for new hypertension diagnoses as specified in MVP document
-- **Clinical Data Accuracy**: ABPM values match MVP examples (148/86 24-hour average, 148/86 daytime, 135/78 nighttime)
-- **Patient-Centered Language**: Clear, jargon-free communication throughout all screens
+- **AI-Supported Care**: Your care system makes all clinical decisions based on NICE guidelines - patients no longer choose their care options
+- **Clear Role Separation**: 
+  - Care system determines: medication reviews, dose adjustments, blood test scheduling, clinical monitoring
+  - Patients can initiate: additional BP readings only (care system still reviews and incorporates these)
 - **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for iPhone resolution (393x852 pixels)
+- **Multiagent Architecture**: System reflects that your care system makes clinical decisions, not the patient
+- **Patient-Centered Language**: Clear explanation of care system vs patient roles throughout all screens
+- **Interactive Navigation**: Working forms, radio buttons, and user input handling for patient-initiated actions only
+- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
 - **Accessibility**: Proper semantic HTML structure and NHS design system compliance
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information aligned with MVP examples
-- **Full User Journeys**: Complete end-to-end workflows for Category C diagnostic pathway
-- **ABPM Integration**: 24-hour ambulatory blood pressure monitoring results with clinical interpretation
-- **Diagnostic Pathway Tracking**: Step-by-step progress monitoring with NHS-compliant status badges (Complete/In progress/Pending)
-- **Status Management**: "Awaiting GP confirmation" and other workflow states clearly displayed per MVP requirements
-- **Evidence Package Compilation**: Clear indication that clinical evidence has been compiled for GP review
-- **Treatment Pathway Gate**: No progression to treatment without explicit GP approval as per MVP document
-- **AI Orchestration**: Multiagentic system-driven care management with Lifelight™ technology integration
+- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
+- **Full User Journeys**: Complete end-to-end workflows respecting care system vs patient boundaries
+- **Emergency Management**: Red Flag Alert system with comprehensive emergency action flow following NICE CG127 guidelines
+- **Clinical Compliance**: Hypertensive emergency protocols with proper escalation pathways
+- **Direct Phone Integration**: `tel:` links for immediate calling capability (999, A&E)
+- **Real-Time Status Tracking**: Emergency care status with clear next steps
+- **Automated Care Arrangement**: Care system automatically schedules care based on clinical protocols without patient choice
+- **NHS Style Compliance**: Proper color usage, correct capitalization, and clean visual design
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling where needed to show complete content. Implementation follows MVP document Category C workflow specifications with mandatory GP approval gates, NICE guideline compliance, and AI orchestration through multiagentic care system integration.
+All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling to show complete content. Implementation follows clinical guidelines with AI-orchestrated care management and patient safety prioritization.

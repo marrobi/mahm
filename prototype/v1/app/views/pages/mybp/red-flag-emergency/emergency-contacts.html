@@ -1,0 +1,67 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Emergency Contacts" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to care status",
+    href: "/pages/mybp/red-flag-emergency/escalation-status"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Emergency: Go to A&E or call 999
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Your blood pressure emergency requires immediate hospital care.
+      </p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="img" aria-label="Warning">⚠️</span>
+          Emergency action required
+        </h3>
+        <p><strong>Blood pressure 195/115 mmHg with symptoms</strong> indicates a hypertensive emergency requiring immediate hospital assessment.</p>
+      </div>
+
+      <div class="nhsuk-action-link" style="margin-bottom: 32px;">
+        <a class="nhsuk-action-link__link" href="tel:999" style="background-color: #d5281b; color: white;">
+          <span class="nhsuk-action-link__text" style="color: white; font-weight: bold;">📞 Call 999 now</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-summary-card">
+        <div class="nhsuk-summary-card__header">
+          <h2 class="nhsuk-summary-card__title">
+            🏥 Nearest A&E Department
+          </h2>
+        </div>
+        <div class="nhsuk-summary-card__body">
+          <p><strong>St Thomas' Hospital A&E</strong></p>
+          <p>Westminster Bridge Road, London SE1 7EH</p>
+          <p><strong>24 hours emergency care</strong></p>
+          
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="tel:02071887188" style="background-color: #005eb8; color: white;">
+              <span class="nhsuk-action-link__text" style="color: white;">📞 Call A&E - 020 7188 7188</span>
+            </a>
+          </div>
+          
+          <p class="nhsuk-u-secondary-text-colour">🚗 Do not drive yourself - get someone else to drive or call 999</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your GP practice has been automatically notified</strong> of this emergency.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

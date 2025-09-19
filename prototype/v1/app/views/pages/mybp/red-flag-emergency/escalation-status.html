@@ -1,0 +1,49 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set pageHeading = "Emergency Care Status" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to safety actions",
+    href: "/pages/mybp/red-flag-emergency/immediate-action"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        Go to A&E or call 999
+      </h1>
+
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" style="border-left-color: #d5281b;">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          🚨 Emergency: Immediate hospital care needed
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <p>Your blood pressure (195/115 mmHg) with symptoms requires immediate hospital treatment.</p>
+        </div>
+      </div>
+
+      <div class="nhsuk-action-link" style="margin-bottom: 32px;">
+        <a class="nhsuk-action-link__link" href="tel:999" style="background-color: #d5281b; color: white;">
+          <span class="nhsuk-action-link__text" style="color: white; font-weight: bold;">📞 Call 999 now</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Your GP practice has been automatically notified</strong> of this emergency.</p>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/pages/mybp/red-flag-emergency/emergency-contacts" style="background-color: #005eb8; color: white;">
+          <span class="nhsuk-action-link__text" style="color: white;">View emergency contacts</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

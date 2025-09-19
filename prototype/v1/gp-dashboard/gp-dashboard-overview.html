@@ -1,0 +1,203 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Practice Overview - MAHM GP Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to GP Dashboard Hub",
+    href: "/gp-dashboard/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <h1 class="page-title">Practice Overview</h1>
+    <p class="page-subtitle">Real-time insights into your practice's hypertension management programme</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card primary">
+      <div class="stat-label">Active Patients</div>
+      <div class="stat-value">1,247</div>
+      <div class="stat-sublabel">389 using digital platform (31%)</div>
+    </div>
+    <div class="stat-card success">
+      <div class="stat-label">NICE Compliance</div>
+      <div class="stat-value">78%</div>
+      <div class="stat-sublabel">Target: 85% | Up 3% this month</div>
+    </div>
+    <div class="stat-card warning">
+      <div class="stat-label">BP Control Rate</div>
+      <div class="stat-value">72%</div>
+      <div class="stat-sublabel">Target: <140/90 mmHg | Improving</div>
+    </div>
+    <div class="stat-card danger">
+      <div class="stat-label">Red Flag Alerts</div>
+      <div class="stat-value">12</div>
+      <div class="stat-sublabel">Last 30 days | All escalated</div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Health Inequality Monitoring</h2>
+        <p class="card-subtitle">BP control gaps requiring targeted intervention</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Patient Group</th>
+              <th>Control Rate</th>
+              <th>Gap vs Average</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IMD Quintile 1 (most deprived)</td>
+              <td>58%</td>
+              <td>-14%</td>
+              <td><span class="badge danger">Critical</span></td>
+            </tr>
+            <tr>
+              <td>South Asian ethnicity</td>
+              <td>65%</td>
+              <td>-7%</td>
+              <td><span class="badge warning">Below target</span></td>
+            </tr>
+            <tr>
+              <td>Elderly (75+)</td>
+              <td>69%</td>
+              <td>-3%</td>
+              <td><span class="badge warning">Monitoring</span></td>
+            </tr>
+            <tr>
+              <td>Digitally excluded</td>
+              <td>61%</td>
+              <td>-11%</td>
+              <td><span class="badge danger">Priority</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">Today's Priorities</h3>
+          <p class="card-subtitle">Immediate actions required</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Urgent escalations</span>
+                <span class="metric-value badge danger">3</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Overdue reviews</span>
+                <span class="metric-value badge warning">15</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Medication adjustments</span>
+                <span class="metric-value badge info">8</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Failed lab contacts</span>
+                <span class="metric-value badge warning">2</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">System Performance</h3>
+          <p class="card-subtitle">AI agent coordination</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Orchestrating Agent</span>
+                <span class="metric-value badge success">99.2%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Red Flag Agent</span>
+                <span class="metric-value badge success">100%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Monitoring Agent</span>
+                <span class="metric-value badge success">94%</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Titration Agent</span>
+                <span class="metric-value badge success">87%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 32px;">
+    <div class="card-header">
+      <h2 class="card-title">Estimated Workload Impact</h2>
+      <p class="card-subtitle">Time savings through AI-supported care coordination</p>
+    </div>
+    <div class="card-content">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+        <div>
+          <div class="metric-label">Routine BP monitoring</div>
+          <div class="metric-value">12 hours/week saved</div>
+          <div class="progress-bar" style="margin-top: 8px;">
+            <div class="progress-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="metric-label">Medication titration</div>
+          <div class="metric-value">8 hours/week saved</div>
+          <div class="progress-bar" style="margin-top: 8px;">
+            <div class="progress-fill" style="width: 70%;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="metric-label">Patient education</div>
+          <div class="metric-value">6 hours/week saved</div>
+          <div class="progress-bar" style="margin-top: 8px;">
+            <div class="progress-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="metric-label">Administrative tasks</div>
+          <div class="metric-value">15 hours/week saved</div>
+          <div class="progress-bar" style="margin-top: 8px;">
+            <div class="progress-fill" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #005eb8;">
+        <strong>Total estimated saving: 41 hours/week</strong> - equivalent to 1 FTE clinician
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,221 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Patient Management - MAHM GP Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    text: "Back to GP Dashboard Hub",
+    href: "/gp-dashboard/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <h1 class="page-title">Patient Management</h1>
+    <p class="page-subtitle">Individual patient oversight and AI-supported care coordination</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card primary">
+      <div class="stat-label">Total Patients</div>
+      <div class="stat-value">1,247</div>
+      <div class="stat-sublabel">Active in hypertension programme</div>
+    </div>
+    <div class="stat-card warning">
+      <div class="stat-label">Requiring Review</div>
+      <div class="stat-value">23</div>
+      <div class="stat-sublabel">AI-flagged for clinician attention</div>
+    </div>
+    <div class="stat-card success">
+      <div class="stat-label">Well Controlled</div>
+      <div class="stat-value">897</div>
+      <div class="stat-sublabel">Meeting target <140/90 mmHg</div>
+    </div>
+    <div class="stat-card danger">
+      <div class="stat-label">High Risk</div>
+      <div class="stat-value">47</div>
+      <div class="stat-sublabel">Enhanced monitoring active</div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Patients Requiring Immediate Attention</h2>
+        <p class="card-subtitle">AI-escalated cases for clinical review</p>
+      </div>
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>NHS Number</th>
+              <th>Last BP</th>
+              <th>Alert Type</th>
+              <th>Action Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sarah Thompson</strong><br><span style="color: #64748b; font-size: 12px;">Age 67</span></td>
+              <td>485 377 5524</td>
+              <td><span class="badge danger">185/115</span><br><span style="color: #64748b; font-size: 12px;">2 hours ago</span></td>
+              <td><span class="badge danger">Red Flag</span></td>
+              <td>Emergency assessment recommended</td>
+            </tr>
+            <tr>
+              <td><strong>Michael Chen</strong><br><span style="color: #64748b; font-size: 12px;">Age 54</span></td>
+              <td>943 567 1290</td>
+              <td><span class="badge warning">165/102</span><br><span style="color: #64748b; font-size: 12px;">1 day ago</span></td>
+              <td><span class="badge warning">Rising trend</span></td>
+              <td>Medication review scheduled</td>
+            </tr>
+            <tr>
+              <td><strong>Jennifer Adams</strong><br><span style="color: #64748b; font-size: 12px;">Age 45</span></td>
+              <td>276 891 4537</td>
+              <td><span class="badge warning">155/95</span><br><span style="color: #64748b; font-size: 12px;">3 days ago</span></td>
+              <td><span class="badge info">Lab results</span></td>
+              <td>High potassium (5.9) - contact today</td>
+            </tr>
+            <tr>
+              <td><strong>Robert Wilson</strong><br><span style="color: #64748b; font-size: 12px;">Age 72</span></td>
+              <td>158 224 7836</td>
+              <td><span class="badge warning">170/100</span><br><span style="color: #64748b; font-size: 12px;">1 week ago</span></td>
+              <td><span class="badge warning">Missed readings</span></td>
+              <td>Non-adherence suspected</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <h3 class="card-title">AI Decision Summary</h3>
+          <p class="card-subtitle">Automated actions taken today</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Medication adjustments</span>
+                <span class="metric-value">8</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Lab tests ordered</span>
+                <span class="metric-value">12</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Appointments scheduled</span>
+                <span class="metric-value">5</span>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Patient messages sent</span>
+                <span class="metric-value">34</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Patient Pathway Status</h3>
+          <p class="card-subtitle">Treatment stage distribution</p>
+        </div>
+        <div class="card-content">
+          <ul class="sidebar-list">
+            <li>
+              <div class="metric">
+                <span class="metric-label">Newly diagnosed</span>
+                <span class="metric-value">89</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 15%;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Single therapy</span>
+                <span class="metric-value">456</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 45%;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Combination therapy</span>
+                <span class="metric-value">578</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 60%;"></div>
+              </div>
+            </li>
+            <li>
+              <div class="metric">
+                <span class="metric-label">Complex/resistant</span>
+                <span class="metric-value">124</span>
+              </div>
+              <div class="progress-bar" style="margin-top: 4px;">
+                <div class="progress-fill" style="width: 25%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 32px;">
+    <div class="card-header">
+      <h2 class="card-title">Recent AI-Supported Decisions</h2>
+      <p class="card-subtitle">Clinical decisions made following NICE guidelines in the last 7 days</p>
+    </div>
+    <div class="card-content">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Clinical Scenario</th>
+            <th>AI Decision</th>
+            <th>Rationale</th>
+            <th>Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>James Mitchell</strong><br><span style="color: #64748b; font-size: 12px;">Age 58</span></td>
+            <td>BP 145/92 on Amlodipine 5mg<br>U&E: Creatinine 125, K+ 4.2</td>
+            <td>Added Ramipril 2.5mg instead of increasing Amlodipine</td>
+            <td>NICE NG136 Step 2: ACE inhibitor + CCB combination</td>
+            <td><span class="badge success">BP now 138/85</span></td>
+          </tr>
+          <tr>
+            <td><strong>Emma Rodriguez</strong><br><span style="color: #64748b; font-size: 12px;">Age 62</span></td>
+            <td>Persistent dry cough on Lisinopril<br>BP 155/98</td>
+            <td>Switched to Candesartan 8mg</td>
+            <td>ARB alternative for ACE inhibitor intolerance</td>
+            <td><span class="badge success">Cough resolved</span></td>
+          </tr>
+          <tr>
+            <td><strong>David Park</strong><br><span style="color: #64748b; font-size: 12px;">Age 48</span></td>
+            <td>New diagnosis: BP 165/105<br>No comorbidities</td>
+            <td>Started Amlodipine 5mg + lifestyle advice</td>
+            <td>NICE NG136 Step 1: CCB first-line for this demographic</td>
+            <td><span class="badge info">4-week review</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

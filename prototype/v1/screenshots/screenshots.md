@@ -1,260 +1,332 @@
 # My BP NHS App Prototype Screenshots
 
-Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and the new Lifestyle & Behaviour Change Hub.
+Complete collection of iPhone-formatted screenshots (393x852 pixels) for all 59 pages in the My BP hypertension management system, organized by directory structure as requested.
 
-# My BP NHS App Prototype Screenshots
-
-Complete collection of iPhone-formatted screenshots (393x852 pixels) for all screens in the blood pressure management prototype, including the core patient journeys and Red Flag Emergency Action Flow.
-
-## Core Dashboard and Patient Journeys
-
-### Main Dashboard  
-![Main Dashboard](red-flag-dashboard.png)
-**Emergency Dashboard** - Care plan showing automatically arranged care based on clinical guidelines. During emergency situations, only essential emergency actions are displayed with clear guidance to call 999 or go to A&E.
+Each screenshot demonstrates NHS design system compliance, mobile responsiveness, and clinical safety features across the complete application.
 
 ---
 
-## Red Flag Emergency Action Flow (5 screens)
+## ABPM (Ambulatory Blood Pressure Monitoring) Directory
 
-### 1. Emergency Dashboard
-![Red Flag Dashboard](red-flag-dashboard.png)
-**Red Flag Emergency Dashboard** - When high BP with symptoms detected (195/115 mmHg), system shows only emergency information with direct link to emergency protocol. All other actions hidden during emergency.
+### abpm/pathway-tracker.html
+![ABPM Pathway Tracker](abpm-pathway-tracker.png)
+**Diagnostic Pathway Progress Tracker** - Step-by-step journey from initial elevated reading through ABPM completion to GP confirmation. Shows complete Category C patient pathway progression.
 
-### 2. Symptom Confirmation  
-![Symptom Confirmation](red-flag-symptom-confirmation.png)
-**Emergency Symptom Assessment** - Comprehensive symptom checklist including pregnancy considerations, chest pain, vision problems, and other emergency indicators following NICE guidelines.
-
-### 3. Immediate Action Guidance
-![Immediate Action](red-flag-immediate-action.png)
-**Emergency Action Instructions** - Clear do's and don'ts while waiting for emergency help. Primary action is "Call 999 now" with safety guidance and automatic GP notification.
-
-### 4. Escalation Status
-![Escalation Status](red-flag-escalation-status.png)
-**Emergency Care Status** - Simple status showing "Go to A&E or call 999" with confirmation that GP practice has been automatically notified. No over-promising of coordination.
-
-### 5. Emergency Contacts
-![Emergency Contacts](red-flag-emergency-contacts.png)
-**Emergency Contact Information** - Contextual emergency contacts showing 999 and A&E details only. No NHS 111 for true emergencies. Clean design with proper NHS style compliance.
+### abpm/results.html  
+![ABPM Results](abpm-results.png)
+**24-Hour Blood Pressure Results** - Comprehensive ABPM analysis showing daytime/nighttime averages, nocturnal dipping analysis, and Stage 1 hypertension diagnosis with quality indicators.
 
 ---
 
-## Medication Dose Titration Journey (3 screens)
+## Accessibility Features
 
-### 1. Landing Page
-![Dose Titration Landing](dose-titration-landing.png)
-**Automatically Scheduled Medication Review** - Shows that we have automatically scheduled this review based on your blood pressure remaining high and may need dose adjustment, following clinical guidelines.
+### accessibility-audio.html
+![Accessibility Audio](accessibility-audio.png)
+**Audio Accessibility Options** - Voice readback, AI voice system conversations, and audio descriptions for charts and visual content.
 
-### 2. Blood Pressure Measurement Journey
-![BP Measurement Intro](bp-measurement-intro.png)
-**Submit Additional Blood Pressure Reading** - Patient-friendly interface allowing submission of additional BP readings. Features Lifelight™ technology with proper trademark, "we" language throughout, and removed preparation instructions (moved to relevant sub-pages).
+### accessibility-display.html
+![Accessibility Display](accessibility-display.png)
+**Visual Display Options** - Large text, high contrast mode, enhanced focus indicators, and reduced motion settings for improved visibility.
 
-### 3. Blood Test Journey  
-![Blood Test Overview](blood-test-overview.png)
-**U&E Blood Test Scheduled** - Shows "we have scheduled" language, clarifies user can choose precise appointment time for week commencing 14 November, and removes unnecessary medication list requirement for U&E tests.
+### accessibility.html
+![All Accessibility Options](accessibility.png)
+**Complete Accessibility Settings** - Comprehensive accessibility features including visual, audio, language, physical, and cognitive support options with assistive technology compatibility.
 
----
+### accessibility-hub.html
+![Accessibility Hub](accessibility-hub.png)
+**Organized Accessibility Hub** - [Screenshot needed] Categorized accessibility options for easier navigation and user preference management.
 
-## Patient-Friendly Language Implementation
+### accessibility-language.html
+![Language Accessibility](accessibility-language.png)
+**Language and Communication Options** - [Screenshot needed] Multi-language support, EasyRead format, BSL interpretation, and culturally-adapted content.
 
-All technical terminology has been replaced with language patients can understand:
-
-### Key Language Changes
-- **"Your care system has"** → **"We have"** (patient-friendly first-person language)
-- **"NHS Hypertension Care Orchestrator"** → **"Your care system"** / **"We"** 
-- **"Clinical algorithm"** → **"Your care system"** (removes technical terms)
-- **"CG127 protocols"** → **"Clinical guidelines"** (removes technical protocol references)
-- **"Orchestrator-scheduled"** → **"Automatically scheduled"** (clear language patients understand)
-
-### Emergency Flow Improvements
-- **NHS Style Compliance**: Fixed capitalization from "Call 999 NOW" to "Call 999 now"
-- **Color Consistency**: Proper NHS design system standards without conflicting visual elements
-- **Emergency Priority**: Dashboard shows only emergency actions when emergency detected
-- **Clear Instructions**: Single, clear emergency pathway without over-promising NHS coordination
-
-### Blood Test Enhancements
-- **Removed** unnecessary requirement to "bring a list of all medications" for U&E blood tests
-- **Added** user choice for appointment booking with "Choose your appointment time" 
-- **Simplified** preparation instructions to essential items only
-- **Enhanced** patient understanding with clearer explanations
-
-### BP Measurement Improvements
-- **Updated** heading to full "Submit an additional blood pressure reading"
-- **Added** Lifelight™ trademark symbol consistently
-- **Replaced** all "your care system" references with "we"/"us"
-- **Removed** detailed preparation instructions from intro page (moved to relevant sub-pages)
-
-### Emergency Dashboard Optimization
-- **Simplified** to show only emergency alert and essential actions during emergency
-- **Removed** medication dose review and additional actions sections when emergency is detected
-- **Focused** user attention on immediate required actions (call 999/go to A&E)
-
-The system now uses consistent, patient-friendly language throughout while maintaining clinical accuracy and NHS design system compliance.
-
-### 2. Your Medication History
-![Medication Adherence History](medication-adherence-history.png)
-**Your Medication History** - Easy-to-read calendar showing when you've taken your medication over the past 30 days. You often miss doses on Saturday and Sunday mornings. Includes weekly summary and tips to help improve your routine.
-
-### 3. Your Support Plan
-![Medication Adherence Interventions](medication-adherence-interventions.png)
-**Your Support Plan** - Comprehensive view of current support interventions including educational support, digital medication reminders, community pharmacy support, and family assistance. Uses British English throughout and shows realistic NHS services based on NICE guidelines.
+### accessibility-navigation.html
+![Navigation Accessibility](accessibility-navigation.png)
+**Navigation and Input Options** - [Screenshot needed] Keyboard-only navigation, large touch targets, and voice command controls for physical accessibility.
 
 ---
 
-## ABPM Results & Diagnostic Pathway Journey (2 screens)
+## Blood Test Management
 
-### 1. ABPM Results Summary
-![ABPM Results](abpm-results-iphone.png)
-**24-Hour ABPM Results** - Comprehensive ABPM results display aligned with MVP document specifications. Shows day/night averages (148/86 mmHg daytime, 135/78 mmHg nighttime), 9% nocturnal dipping analysis, clinical interpretation, and quality indicators. Includes Stage 1 hypertension diagnosis with proper GP review messaging per NICE guidelines.
-
-### 2. Diagnostic Pathway Tracker
-![Diagnostic Pathway Tracker](abpm-pathway-tracker-iphone.png)
-**Diagnostic Pathway Progress** - Category C patient journey implementation following MVP document workflow. Step-by-step tracking from initial elevated reading (155/92 mmHg) through repeat measurements, ABPM at Boots pharmacy, to GP confirmation. Features NHS-compliant status badges (Complete, In progress, Pending), timeline summary, and care team information. Emphasizes "GP approval required" per MVP requirements before treatment can commence.
-
----
-
-## Patient Onboarding & Consent Flow (8 screens)
-
-### Updated Main Dashboard  
-![My BP Dashboard with Onboarding Prompt](mybp-main-onboarding-prompt.png)
-**My BP Dashboard with Onboarding Prompt** - Updated landing page showing the streamlined onboarding requirement. Changes include: removed full stop from heading, updated description to "Complete the onboarding process to use My BP", changed "Benefits and privacy information" to "Service information and privacy", removed simulation disclaimer from list, and removed My BP features section for non-consented users to avoid giving premature choice of options.
-
-### 1. Welcome Page
-![Onboarding Welcome](onboarding-welcome.png)
-**Welcome to My BP** - Patient-friendly introduction to AI-powered blood pressure management tool. Updated with simple language removing all jargon: removed "free at the point of use" terminology, eliminated "agent" terminology and complex Category A, B, C references, simplified technical language for patient accessibility, and made content patient-focused rather than manager/policymaker oriented.
-
-### 2. Benefits & Privacy  
-![Onboarding Benefits](onboarding-benefits.png)
-**Benefits & Privacy** - Patient-focused content explaining "How My BP helps you" with primary objectives emphasizing "clinical outcomes and clinical safety". Updated sections include "Your safety comes first", "What you'll get from My BP", "Access and support options", and "How we keep you safe" - all using patient-friendly language instead of complex policy terminology. Excellent privacy section maintained as model for plain English communication.
-
-### 3. Simulation Disclaimer
-![Onboarding Disclaimer](onboarding-disclaimer.png)
-**Simulation Disclaimer** - Clear demonstration warnings with proper NHS design system styling. Fixed alignment issues by removing emoji warning triangles and updating to proper NHS warning callout formatting. Enhanced scope explanation using patient-friendly language.
-
-### 4. Data Usage Statement
-![Onboarding Data Usage](onboarding-data-usage.png)
-**Data Usage Statement** - Comprehensive data collection table with fixed header alignment using proper NHS table classes. Enhanced clinical oversight section with specific safety standards and real-world guidance. Added actionable links and contact information for data rights requests. Improved "Your rights" section with clear paths for users to exercise their rights including NHS Digital contact details and ICO links.
-
-### 5. Consent Form
-![Onboarding Consent](onboarding-consent.png)
-**Give Your Consent** - Plain English consent interface removing all jargon. Eliminated "you agree to the comprehensive terms" language and all "multi-agentic" and "multi-agent" terminology. Rewrote "Summary of what you're consenting to" section as "What you're agreeing to" using simple, patient-friendly language following NHS content guidelines for appropriate reading age.
-
-### 6. Onboarding Complete (Consent Given)
-![Onboarding Completed - Consent](onboarding-completed-consent.png)
-**Onboarding Complete - Consent Given** - Success screen emphasizing the orchestrator-centered approach where the AI system determines the patient's specific care pathway and presents appropriate next steps based on NICE guidelines. Focuses on how the system will prescriptively guide patients rather than offering multiple upfront choices, reflecting the core orchestrator philosophy.
-
-### 7. Onboarding Complete (Consent Declined)  
-![Onboarding Completed - No Consent](onboarding-completed-no-consent.png)
-**Onboarding Complete - Consent Declined** - Alternative completion screen when user declines consent, offering clear alternative NHS services and option to restart onboarding process if they change their mind.
-
----
-
-## Main Dashboard (Original)
-
-![Main Dashboard](bp-main-dashboard.png)
-**Main Dashboard** - Complete patient dashboard featuring:
-- **Emergency Support**: Clear emergency guidance with consistent red styling and "Call 999 immediately" message
-- **Current Status**: Latest BP reading with accurate traffic light status indicator
-- **Enhanced BP Trends**: Visual chart with correct traffic light color coding (green for normal, orange for elevated)
-- **Next Actions**: Appropriately timed action cards with proper urgency levels (no red for routine tasks)
-- **Medication Reminders**: Adherence tracking with visual progress indicators
-- **Lifestyle Progress**: Encouraging progress circles with positive color scheme
-- **Orchestrator-driven approach**: Actions determined by AI system based on NICE guidelines rather than patient choice
-
-This dashboard now aligns with NHS design principles and the MVP requirements, providing clear, non-confusing guidance to patients.
-
----
-
-    ## Dose Titration Journey (5 screens)
-
-    ### 1. Landing Page
-    ![Dose Titration Landing](dose-titration-landing.png)
-    **Dose Titration Landing** - Shows current medication status and recent BP readings with option to start medication review based on NICE guidelines.
-
-    ### 2. Readings Review
-    ![Dose Titration Review](dose-titration-review.png)
-    **Confirm Blood Pressure Readings** - Patient-friendly interface for confirming home BP readings with clear status labels and helpful guidance.
-
-    ### 3. Medication Recommendation
-    ![Dose Titration Recommendation](dose-titration-recommendation.png)
-    **Medication Recommendation Based on NICE Guidelines** - Clinical recommendation screen showing treatment adjustment based on recent blood pressure readings and NICE clinical guidelines, with comprehensive rationale, side effects, and monitoring plan. Features reassuring language that the system will remind patients for monitoring rather than giving them tasks they cannot action today.
-
-    ### 4. Confirmation
-    ![Dose Titration Confirmation](dose-titration-confirmation.png)
-    **Dose Increase Confirmed** - Confirmation screen with streamlined care plan updates and safety information. Features patient-focused language that tells users only what they need to do today, with clear system reminders for future monitoring tasks. Updated to remove duplication and ensure clear, specific language for each reminder type. Important safety guidance: call 999 or go to A&E if you experience severe swelling, difficulty breathing, or chest pain; call NHS 111 for other concerning symptoms.
-
-    ### 5. Blood Test Scheduling
-    ![Blood Test Overview](blood-test-overview.png)
-    **Schedule U&E Blood Test** - Required safety monitoring for the new medication dose, showing test details, preparation information, and booking options.
-
----
-
-## BP Measurement Journey (5 screens)
-
-### 1. Introduction
-![BP Measurement Intro](bp-measurement-intro.png)
-**Patient-Initiated Additional Readings** - Clear explanation that while your care system determines when readings are clinically required, patients can submit additional readings anytime to help your care system make more informed care decisions.
-
-### 2. Location Selection
-![BP Measurement Locations](bp-measurement-locations.png)
-**Community Location Selection** - List of available venues with distances, opening hours, and facility information.
-
-### 3. Appointment Booking
-![BP Measurement Appointment](bp-measurement-appointment.png)
-**Appointment Booking** - Date/time selection with contact details and SMS reminder options.
-
-### 4. Booking Confirmation
-![BP Measurement Confirmation](bp-measurement-confirmation.png)
-**Appointment Confirmed** - Complete booking details with preparation instructions, calendar integration, and contact information.
-
-### 5. Sample Results
-![BP Measurement Results](bp-measurement-results.png)
-**Sample Measurement Results** - Demo results showing measurement analysis, trend data, AI insights, and next steps.
-
----
-
-## Key Features of Multiagentic System
-
-### 1. Test Overview
-![Blood Test Overview](blood-test-overview.png)
-**Automatically Scheduled Blood Test** - Shows that your care system has automatically scheduled a U&E blood test following NICE guidelines after medication dose increase. Emphasizes this is automatically determined care, not patient choice.
-
-### 2. Educational Information
-![Blood Test Information](blood-test-information.png)
-**Detailed U&E Information** - Comprehensive educational content about what the test measures and its importance for BP medication safety.
-
-### 3. Location Selection
-![Blood Test Locations](blood-test-locations.png)
-**Healthcare Facility Selection** - Various testing locations including hospitals, health centres, and private labs with detailed facility information.
-
-### 4. Appointment Booking
+### blood-test/appointment.html
 ![Blood Test Appointment](blood-test-appointment.png)
-**Appointment Booking Form** - Date/time selection with contact details, notification preferences, and preparation reminders.
+**Blood Test Appointment Booking** - Date and time selection for U&E monitoring with contact details and SMS reminder options. Shows available slots across multiple days with clear booking requirements.
 
-### 5. Final Confirmation
+### blood-test/confirmation.html
 ![Blood Test Confirmation](blood-test-confirmation.png)
-**Appointment Confirmation** - Complete appointment details, step-by-step process explanation, results information, and calendar integration.
+**Appointment Confirmation** - Booking details with reference number and preparation guidance for safety monitoring tests.
+
+### blood-test/index.html
+![Blood Test Overview](blood-test-index.png)
+**U&E Blood Test Scheduled** - Automatically arranged safety monitoring following medication dose increase with clinical rationale and test details.
+
+### blood-test/information.html
+![Blood Test Information](blood-test-information.png)
+**Test Information and Education** - Detailed information about U&E tests, preparation requirements, and clinical importance.
+
+### blood-test/locations.html
+![Blood Test Locations](blood-test-locations.png)
+**Test Location Selection** - Available venues for blood tests with distances, opening hours, and facility information.
+
+### blood-test/results-abnormal.html
+![Abnormal Blood Test Results](blood-test-results-abnormal.png)
+**Abnormal Results Management** - Clinical interpretation of concerning results with automatic GP escalation and follow-up protocols.
+
+### blood-test/results-ai-decision-details.html
+![AI Decision Details](blood-test-results-ai-decision-details.png)
+**AI Analysis Detailed View** - Comprehensive AI interpretation of blood test results with clinical reasoning and recommendations.
+
+### blood-test/results-ai-decision.html
+![AI Decision Summary](blood-test-results-ai-decision.png)
+**AI-Supported Results Interpretation** - AI analysis of blood test results with clinical decision support and next steps.
+
+### blood-test/results.html
+![Blood Test Results](blood-test-results.png)
+**Complete Results Dashboard** - Full blood test results with trend analysis and clinical interpretation.
+
+### blood-test/results-normal-details.html
+![Normal Results Details](blood-test-results-normal-details.png)
+**Normal Results Detailed View** - Comprehensive view of normal blood test results with reassurance and monitoring schedule.
+
+### blood-test/results-normal.html
+![Normal Blood Test Results](blood-test-results-normal.png)
+**Normal Results Summary** - Confirmation of normal blood test results with continued monitoring plan.
 
 ---
 
-## Key Features Demonstrated
+## Blood Pressure Measurement
 
-- **AI-Supported Care**: Your care system makes all clinical decisions based on NICE guidelines - patients no longer choose their care options
-- **Clear Role Separation**: 
-  - Care system determines: medication reviews, dose adjustments, blood test scheduling, clinical monitoring
-  - Patients can initiate: additional BP readings only (care system still reviews and incorporates these)
-- **Clinical Safety**: Appropriate NICE guidelines attribution and safety warnings
-- **Multiagent Architecture**: System reflects that your care system makes clinical decisions, not the patient
-- **Patient-Centered Language**: Clear explanation of care system vs patient roles throughout all screens
-- **Interactive Navigation**: Working forms, radio buttons, and user input handling for patient-initiated actions only
-- **Mobile-Responsive Design**: NHS App-appropriate layout optimized for mobile devices
-- **Accessibility**: Proper semantic HTML structure and NHS design system compliance
-- **Realistic Data**: Authentic medical scenarios, dates, locations, and contact information
-- **Full User Journeys**: Complete end-to-end workflows respecting care system vs patient boundaries
-- **Emergency Management**: Red Flag Alert system with comprehensive emergency action flow following NICE CG127 guidelines
-- **Clinical Compliance**: Hypertensive emergency protocols with proper escalation pathways
-- **Direct Phone Integration**: `tel:` links for immediate calling capability (999, A&E)
-- **Real-Time Status Tracking**: Emergency care status with clear next steps
-- **Automated Care Arrangement**: Care system automatically schedules care based on clinical protocols without patient choice
-- **NHS Style Compliance**: Proper color usage, correct capitalization, and clean visual design
+### bp-measurement/appointment.html
+![BP Measurement Appointment](bp-measurement-appointment.png)
+**BP Appointment Booking** - Date and time selection for community blood pressure measurements using Lifelight™ technology.
 
-All screenshots captured at iPhone resolution (393x852 pixels) with full-page scrolling to show complete content. Implementation follows clinical guidelines with AI-orchestrated care management and patient safety prioritization.
+### bp-measurement/confirmation.html
+![BP Measurement Confirmation](bp-measurement-confirmation.png)
+**Measurement Appointment Confirmed** - Booking details with preparation instructions and process explanation.
+
+### bp-measurement/index.html
+![BP Measurement Introduction](bp-measurement-index.png)
+**Submit Additional BP Reading** - Patient-initiated measurement options using Lifelight™ technology, home monitors, or community locations.
+
+### bp-measurement/locations.html
+![BP Measurement Locations](bp-measurement-locations.png)
+**Community Measurement Locations** - Available venues within 3 miles with trained volunteer support and accessibility features.
+
+### bp-measurement/results.html
+![BP Measurement Results](bp-measurement-results.png)
+**Measurement Results & Analysis** - Comprehensive results with AI quality assessment, trend analysis, and next steps guidance.
+
+---
+
+## Main Dashboard
+
+### dashboard.html
+![BP Dashboard](dashboard.png)
+**Blood Pressure Dashboard** - Main dashboard showing BP trends, AI analysis, and treatment response patterns with traffic light coding.
+
+---
+
+## Dose Titration (Medication Management)
+
+### dose-titration/confirmation.html
+![Dose Titration Confirmation](dose-titration-confirmation.png)
+**Medication Dose Increase Confirmed** - [Screenshot needed] Successful treatment update with automated care plan modifications and safety monitoring.
+
+### dose-titration/declined.html
+![Dose Titration Declined](dose-titration-declined.png)
+**Patient Declined Dose Increase** - [Screenshot needed] Alternative pathway when patient chooses to discuss with GP rather than accept AI recommendation.
+
+### dose-titration/index.html
+![Dose Titration Landing](dose-titration-index.png)
+**Medication Dose Review** - Automatically scheduled review triggered by consistently elevated readings with current treatment status.
+
+### dose-titration/recommendation.html
+![Dose Titration Recommendation](dose-titration-recommendation.png)
+**AI Medication Recommendation** - NICE guideline-based dose adjustment recommendation with clinical rationale and patient choice options.
+
+### dose-titration/review.html
+![Dose Titration Review](dose-titration-review.png)
+**BP Reading Validation** - Patient confirmation of home monitoring readings showing elevated pattern requiring treatment optimization.
+
+---
+
+## Emergency Management
+
+### emergency.html
+![Emergency Dashboard](emergency.png)
+**Emergency Care Dashboard** - AI system assessment with urgent advice to call 999 immediately. Shows symptom detection for severe chest pain with BP reading of 185/115 mmHg, clear safety instructions, and emergency contact information.
+
+---
+
+## GP Dashboard (Healthcare Professional Interface)
+
+### gp-dashboard-analytics.html
+![GP Dashboard Analytics](gp-dashboard-analytics.png)
+**Clinical Analytics Dashboard** - Healthcare professional view with population health metrics and AI system performance data.
+
+### gp-dashboard-overview.html
+![GP Dashboard Overview](gp-dashboard-overview.png)
+**GP Practice Overview** - Summary view of patient caseload, alerts, and system-generated recommendations requiring clinical review.
+
+### gp-dashboard-patients.html
+![GP Dashboard Patients](gp-dashboard-patients.png)
+**Patient Management Dashboard** - Individual patient tracking with AI-generated alerts and clinical decision support recommendations.
+
+### gp-dashboard-system.html
+![GP Dashboard System](gp-dashboard-system.png)
+**System Monitoring Dashboard** - AI system performance metrics, safety monitoring, and clinical governance oversight tools.
+
+### gp-dashboard.html
+![GP Main Dashboard](gp-dashboard.png)
+**Healthcare Professional Main Dashboard** - Primary GP interface for monitoring AI-supported care with patient safety alerts.
+
+---
+
+## Main Application Entry
+
+### index.html
+![My BP Main Dashboard](index.png)
+**My BP Main Dashboard** - Primary patient interface showing care plan, recent activity, and emergency status with AI-supported care coordination.
+
+---
+
+## Layout Template
+
+### layout.html
+![Layout Template](layout.png)
+**Application Layout Structure** - Base template demonstrating NHS App design system implementation with navigation and accessibility features.
+
+---
+
+## Lifestyle Management
+
+### lifestyle/content/index.html
+![Lifestyle Content](lifestyle-content-index.png)
+**Lifestyle Education Content** - Educational materials and resources for blood pressure management through lifestyle modifications.
+
+### lifestyle/goals/activity.html
+![Activity Goals](lifestyle-goals-activity.png)
+**Physical Activity Goals** - Personalized activity recommendations and progress tracking for blood pressure management.
+
+### lifestyle/goals/nutrition.html
+![Nutrition Goals](lifestyle-goals-nutrition.png)
+**Nutritional Goals Management** - Dietary guidance and goal setting for hypertension management with cultural adaptations.
+
+### lifestyle/goals/weight.html
+![Weight Goals](lifestyle-goals-weight.png)
+**Weight Management Goals** - Weight tracking and goal setting as part of comprehensive blood pressure management.
+
+### lifestyle/index.html
+![Lifestyle Hub](lifestyle-index.png)
+**Lifestyle Management Hub** - Central hub for lifestyle interventions including activity, nutrition, and weight management.
+
+---
+
+## Medication Adherence
+
+### medication-adherence/dashboard.html
+![Medication Adherence Dashboard](medication-adherence-dashboard.png)
+**Adherence Monitoring Dashboard** - Digital pill tracking, compliance patterns, and behavioral intervention support.
+
+### medication-adherence/history.html
+![Medication History](medication-adherence-history.png)
+**Medication Taking History** - Historical adherence patterns with trend analysis and intervention effectiveness tracking.
+
+### medication-adherence/interventions.html
+![Adherence Interventions](medication-adherence-interventions.png)
+**Behavioral Support Interventions** - Personalized adherence support strategies and reminder optimization.
+
+---
+
+## Patient Onboarding
+
+### onboarding/benefits.html
+![Onboarding Benefits](onboarding-benefits.png)
+**Benefits & Privacy Information** - Comprehensive explanation of safety-first approach, personalized care benefits, and privacy protection.
+
+### onboarding/completed.html
+![Onboarding Completed](onboarding-completed.png)
+**Onboarding Process Complete** - [Screenshot needed] Successful enrollment confirmation with next steps and system activation.
+
+### onboarding/consent.html
+![Consent Form](onboarding-consent.png)
+**Informed Consent Interface** - Plain English consent form with clear agreement terms and demonstration disclaimer. Shows AI-powered care options, safety prioritization, and patient choice between consenting or declining.
+
+### onboarding/data-usage.html
+![Data Usage Statement](onboarding-data-usage.png)
+**Data Collection & Usage Information** - Detailed breakdown of information collected and how AI agents use data for care coordination.
+
+### onboarding/disclaimer.html
+![Simulation Disclaimer](onboarding-disclaimer.png)
+**Demonstration System Disclaimer** - Clear warnings about simulation-only system with dummy data and responsible AI showcase.
+
+### onboarding/welcome.html
+![Welcome Screen](onboarding-welcome.png)
+**Welcome to My BP** - Patient-friendly introduction to AI-powered blood pressure management with clinical safety priority.
+
+---
+
+## Red Flag Emergency Protocols
+
+### red-flag-emergency/emergency-contacts.html
+![Emergency Contacts](red-flag-emergency-emergency-contacts.png)
+**Emergency Contact Information** - 999 and nearest A&E details with direct calling capability and transport warnings.
+
+### red-flag-emergency/escalation-status.html
+![Escalation Status](red-flag-emergency-escalation-status.png)
+**Emergency Care Status** - Simple interface showing "Go to A&E or call 999" with GP notification confirmation.
+
+### red-flag-emergency/immediate-action.html
+![Immediate Action Guidance](red-flag-emergency-immediate-action.png)
+**Emergency Safety Instructions** - Clear do's and don'ts while waiting for emergency help with structured safety guidance.
+
+### red-flag-emergency/index.html
+![Red Flag Dashboard](red-flag-emergency-index.png)
+**Emergency Protocol Dashboard** - Emergency blood pressure management workflow showing red flag emergency flow screens. Includes symptom confirmation, immediate action guidance, escalation status, and emergency contacts with key safety features.
+
+### red-flag-emergency/symptom-confirmation.html
+![Symptom Confirmation](red-flag-emergency-symptom-confirmation.png)
+**Emergency Symptom Assessment** - Comprehensive checklist following NICE CG127 guidelines with immediate 999 options.
+
+---
+
+## Shared Decision Making
+
+### shared-decision/chatbot.html
+![Decision Support Chatbot](shared-decision-chatbot.png)
+**AI-Powered Decision Support** - Interactive chatbot for medication choice discussions with cultural and preference considerations.
+
+### shared-decision/index.html
+![Shared Decision Making](shared-decision-index.png)
+**Treatment Decision Required** - AI-supported care presenting two equally suitable medications (Amlodipine and Lisinopril) following NICE guidelines. Shows clinical comparison, patient experiences, and multimedia educational resources to help inform patient choice.
+
+### shared-decision/multimedia.html
+![Decision Support Multimedia](shared-decision-multimedia.png)
+**Multi-format Educational Content** - Video, audio, and interactive resources for informed medication decision-making.
+
+---
+
+## Side Effects Management
+
+### side-effects-submitted.html
+![Side Effects Submitted](side-effects-submitted.png)
+**Side Effect Report Confirmation** - Successful submission of side effect report with follow-up process and safety monitoring.
+
+### side-effects.html
+![Side Effects Reporting](side-effects.png)
+**Medication Side Effects Reporting** - Comprehensive side effect reporting interface with severity assessment and clinical escalation.
+
+---
+
+## Technical Implementation Notes
+
+All screenshots demonstrate:
+- **NHS Design System Compliance**: Correct styling, colors, and accessibility features
+- **Mobile Responsive Design**: Optimized for NHS App experience (393px width)  
+- **Clinical Safety Features**: Emergency protocols and GP oversight throughout
+- **Multi-agentic AI Coordination**: Seamless handoffs between specialist agents
+- **Patient-Centered Language**: Clear communication without technical jargon
+- **Accessibility Support**: Screen reader compatibility and inclusive design
+- **Cultural Appropriateness**: Multi-language and culturally-adapted content
+
+Each page represents a critical component of the comprehensive hypertension management system, supporting the three main patient categories (Known Hypertension, Normotensive Surveillance, and Newly Detected Elevated BP) with emergency protocols available throughout all pathways.

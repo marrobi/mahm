@@ -34,15 +34,15 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### accessibility-hub.html
 ![Accessibility Hub](accessibility-hub.png)
-**Organized Accessibility Hub** - Categorized accessibility options for easier navigation and user preference management.
+**Organized Accessibility Hub** - [Screenshot needed] Categorized accessibility options for easier navigation and user preference management.
 
 ### accessibility-language.html
 ![Language Accessibility](accessibility-language.png)
-**Language and Communication Options** - Multi-language support, EasyRead format, BSL interpretation, and culturally-adapted content.
+**Language and Communication Options** - [Screenshot needed] Multi-language support, EasyRead format, BSL interpretation, and culturally-adapted content.
 
 ### accessibility-navigation.html
 ![Navigation Accessibility](accessibility-navigation.png)
-**Navigation and Input Options** - Keyboard-only navigation, large touch targets, and voice command controls for physical accessibility.
+**Navigation and Input Options** - [Screenshot needed] Keyboard-only navigation, large touch targets, and voice command controls for physical accessibility.
 
 ---
 
@@ -50,7 +50,7 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### blood-test/appointment.html
 ![Blood Test Appointment](blood-test-appointment.png)
-**Blood Test Appointment Booking** - Date and time selection for U&E monitoring with preparation instructions.
+**Blood Test Appointment Booking** - Date and time selection for U&E monitoring with contact details and SMS reminder options. Shows available slots across multiple days with clear booking requirements.
 
 ### blood-test/confirmation.html
 ![Blood Test Confirmation](blood-test-confirmation.png)
@@ -130,11 +130,11 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### dose-titration/confirmation.html
 ![Dose Titration Confirmation](dose-titration-confirmation.png)
-**Medication Dose Increase Confirmed** - Successful treatment update with automated care plan modifications and safety monitoring.
+**Medication Dose Increase Confirmed** - [Screenshot needed] Successful treatment update with automated care plan modifications and safety monitoring.
 
 ### dose-titration/declined.html
 ![Dose Titration Declined](dose-titration-declined.png)
-**Patient Declined Dose Increase** - Alternative pathway when patient chooses to discuss with GP rather than accept AI recommendation.
+**Patient Declined Dose Increase** - [Screenshot needed] Alternative pathway when patient chooses to discuss with GP rather than accept AI recommendation.
 
 ### dose-titration/index.html
 ![Dose Titration Landing](dose-titration-index.png)
@@ -154,7 +154,7 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### emergency.html
 ![Emergency Dashboard](emergency.png)
-**Emergency Care Dashboard** - Hypertensive emergency alert with immediate protocol activation and clinical safety measures.
+**Emergency Care Dashboard** - AI system assessment with urgent advice to call 999 immediately. Shows symptom detection for severe chest pain with BP reading of 185/115 mmHg, clear safety instructions, and emergency contact information.
 
 ---
 
@@ -246,11 +246,11 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### onboarding/completed.html
 ![Onboarding Completed](onboarding-completed.png)
-**Onboarding Process Complete** - Successful enrollment confirmation with next steps and system activation.
+**Onboarding Process Complete** - [Screenshot needed] Successful enrollment confirmation with next steps and system activation.
 
 ### onboarding/consent.html
 ![Consent Form](onboarding-consent.png)
-**Informed Consent Interface** - Plain English consent form with clear agreement terms and demonstration disclaimer.
+**Informed Consent Interface** - Plain English consent form with clear agreement terms and demonstration disclaimer. Shows AI-powered care options, safety prioritization, and patient choice between consenting or declining.
 
 ### onboarding/data-usage.html
 ![Data Usage Statement](onboarding-data-usage.png)
@@ -282,7 +282,7 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### red-flag-emergency/index.html
 ![Red Flag Dashboard](red-flag-emergency-index.png)
-**Emergency Protocol Activation** - Initial emergency dashboard with protocol activation and immediate action requirements.
+**Emergency Protocol Dashboard** - Emergency blood pressure management workflow showing red flag emergency flow screens. Includes symptom confirmation, immediate action guidance, escalation status, and emergency contacts with key safety features.
 
 ### red-flag-emergency/symptom-confirmation.html
 ![Symptom Confirmation](red-flag-emergency-symptom-confirmation.png)
@@ -298,7 +298,7 @@ Each screenshot demonstrates NHS design system compliance, mobile responsiveness
 
 ### shared-decision/index.html
 ![Shared Decision Making](shared-decision-index.png)
-**Treatment Option Selection** - Patient-centered medication choice interface with multimedia educational resources.
+**Treatment Decision Required** - AI-supported care presenting two equally suitable medications (Amlodipine and Lisinopril) following NICE guidelines. Shows clinical comparison, patient experiences, and multimedia educational resources to help inform patient choice.
 
 ### shared-decision/multimedia.html
 ![Decision Support Multimedia](shared-decision-multimedia.png)
